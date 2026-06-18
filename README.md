@@ -2,7 +2,7 @@
 
 OurWorldSystem is an open-source, static-first public-interest atlas of countries and map units in the global world-system. It is intended to visualize structural positions such as core, semi-periphery, periphery, uncertainty, conflict exposure, press freedom, political freedom, quality of life, ecological pressure, and forms of extraction or externalization.
 
-The current app uses real static Natural Earth geometry, mock world-system demo data, and an initial real World Bank WDI quality-of-life indicator pipeline. Mock classifications remain placeholders and must not be interpreted as empirical findings.
+The current app uses real static Natural Earth geometry, mock world-system demo data, an initial real World Bank WDI quality-of-life indicator pipeline, and a first UCDP conflict indicator pipeline. Mock classifications remain placeholders and must not be interpreted as empirical findings.
 
 ## Principles
 
@@ -61,6 +61,7 @@ Mock frontend data lives in:
 The first real public indicator output lives in:
 
 - `static/data/indicators/quality-of-life.world-bank.latest.json`
+- `static/data/indicators/conflict.ucdp.latest.json`
 
 Geometry lives in:
 
@@ -77,7 +78,11 @@ The default thematic view is **World-system position**, which summarizes the cur
 
 Missing data is always displayed as `No data`. Null, undefined, or absent indicator values are not converted to zero and are not treated as neutral or average conditions.
 
-Most current criterion-layer values are mock/demo values only. The quality-of-life layer can now use real World Bank WDI data when the generated static indicator file is present. It keeps mock HDI values intact and falls back to a temporary project-specific `quality_of_life_score` only when HDI is missing. That score is not HDI.
+Most current criterion-layer values are mock/demo values only. The quality-of-life layer can now use real World Bank WDI data when the generated static indicator file is present. The conflict layer can use UCDP country-year and UCDP/PRIO state-based armed-conflict data when `conflict.ucdp.latest.json` is present. Real UCDP records override demo conflict flags; unmatched map units remain no-data or visibly demo-only.
+
+The UCDP conflict layer distinguishes organized violence within a map unit's territory from state involvement in state-based armed conflict. `war_on_territory` means the UCDP country-year dataset records organized violence within that map unit's borders in the latest available year. It is not a claim of state responsibility. `involved_in_conflict` means the UCDP/PRIO Armed Conflict Dataset participant fields could be confidently mapped to the map-unit registry for the latest year.
+
+Fatality values are UCDP best estimates for organized violence in the processed layer. They are not adult/child breakdowns and must not be described as complete civilian death counts. Child casualties remain `null`; a later child-casualty layer should use a real source such as UN CAAC or UNICEF.
 
 Fetch World Bank WDI indicators with:
 
@@ -85,7 +90,13 @@ Fetch World Bank WDI indicators with:
 npm run data:build
 ```
 
-This downloads raw API responses to ignored files under `data/raw/world-bank/`, writes processed JSON to `data/processed/`, and writes the frontend static output to `static/data/indicators/`. The initial indicators are life expectancy (`SP.DYN.LE00.IN`), GNI per capita PPP (`NY.GNP.PCAP.PP.CD`), secondary gross enrollment (`SE.SEC.ENRR`), and population (`SP.POP.TOTL`).
+Fetch only UCDP conflict indicators with:
+
+```sh
+npm run data:fetch:ucdp
+```
+
+`npm run data:build` downloads both World Bank and UCDP outputs. World Bank raw API responses are stored under `data/raw/world-bank/`; UCDP raw ZIP/CSV files are stored under `data/raw/ucdp/`; generated frontend outputs are written to `static/data/indicators/`. The initial World Bank indicators are life expectancy (`SP.DYN.LE00.IN`), GNI per capita PPP (`NY.GNP.PCAP.PP.CD`), secondary gross enrollment (`SE.SEC.ENRR`), and population (`SP.POP.TOTL`).
 
 `quality_of_life_score` is a transparent temporary visualization score. It requires at least life expectancy and GNI per capita PPP, optionally includes secondary enrollment, and must never be labeled as HDI. Missing World Bank values remain missing and display as `No data`; they are not fabricated or imputed.
 

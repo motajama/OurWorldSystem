@@ -55,7 +55,7 @@ export const MAP_LAYERS: MapLayerDefinition[] = [
 		label: 'War and conflict',
 		shortLabel: 'Conflict',
 		description:
-			'Demo conflict layer separating war on territory, conflict involvement, and no active war.',
+			'UCDP-backed conflict layer separating organized violence on territory from state involvement in state-based armed conflict.',
 		kind: 'categorical',
 		noDataLabel: 'No conflict data'
 	},
@@ -148,20 +148,20 @@ const LEGEND_ITEMS: Record<MapLayerId, Omit<MapLayerLegendItem, 'fillClass'>[]> 
 	conflict: [
 		{
 			value: 'active_war_on_territory',
-			label: 'Active war on territory',
-			description: 'Mock unit flagged with active war on its territory',
+			label: 'Organized violence on territory',
+			description: 'UCDP country-year record has organized violence within the map unit borders',
 			color: '#7f1d1d'
 		},
 		{
 			value: 'involved_in_war',
-			label: 'Involved in war',
-			description: 'Mock unit involved in conflict without war on its territory',
+			label: 'State involved in conflict',
+			description: 'UCDP/PRIO maps the state actor to an active state-based conflict',
 			color: '#ea580c'
 		},
 		{
 			value: 'no_active_war',
-			label: 'No active war',
-			description: 'Mock unit has both conflict flags set to false',
+			label: 'No active UCDP flag',
+			description: 'UCDP flags are explicitly false in the latest processed year',
 			color: '#94a3b8'
 		},
 		{
@@ -337,19 +337,16 @@ export function getMapUnitLayerValue(mapUnit: MapUnit | null, layerId: MapLayerI
 		case 'conflict': {
 			const conflict = mapUnit.conflict;
 
-			if (
-				!conflict ||
-				conflict.war_on_territory === null ||
-				conflict.war_on_territory === undefined ||
-				conflict.involved_in_conflict === null ||
-				conflict.involved_in_conflict === undefined
-			) {
+			if (!conflict) {
 				return 'no_data';
 			}
 
 			if (conflict.war_on_territory) return 'active_war_on_territory';
 			if (conflict.involved_in_conflict) return 'involved_in_war';
-			return 'no_active_war';
+			if (conflict.war_on_territory === false && conflict.involved_in_conflict === false) {
+				return 'no_active_war';
+			}
+			return 'no_data';
 		}
 		case 'press_freedom': {
 			const score = mapUnit.press_freedom?.score;
