@@ -10,17 +10,25 @@
 		loadMapUnitRegistry,
 		type RegistryIndexes
 	} from '$lib/mapUnitRegistry';
+	import {
+		DEFAULT_MAP_LAYER_ID,
+		getMapLayerDefinition,
+		getMapLayerLegendItems,
+		getMapUnitFillClass,
+		getMapUnitLayerValue
+	} from '$lib/mapLayers';
 	import type {
 		GeoFeatureProperties,
+		MapLayerId,
 		MapUnit,
 		MapUnitId,
-		MapUnitRegistryRecord,
-		WorldSystemClass
+		MapUnitRegistryRecord
 	} from '$lib/types';
 
 	type Props = {
 		units: MapUnit[];
 		selectedId: MapUnitId | null;
+		selectedLayer?: MapLayerId;
 		onSelect: (unit: MapUnit) => void;
 	};
 
@@ -79,7 +87,7 @@
 	const worldTopologyUrl = `${base}/${worldTopologyPath}`;
 	const disputedTopologyUrl = `${base}/${disputedTopologyPath}`;
 
-	let { units, selectedId, onSelect }: Props = $props();
+	let { units, selectedId, selectedLayer = DEFAULT_MAP_LAYER_ID, onSelect }: Props = $props();
 	let features = $state<RenderFeature[]>([]);
 	let disputedFeatures = $state<RenderFeature[]>([]);
 	let geometryStatus = $state('Loading Natural Earth geometry.');
@@ -87,19 +95,14 @@
 	let registryDiagnostic = $state<string | null>(null);
 	let notice = $state<string | null>(null);
 
-	const classColors: Record<WorldSystemClass, string> = {
-		core: '#5eead4',
-		'semi-periphery': '#facc15',
-		periphery: '#fb923c',
-		uncertain: '#a78bfa',
-		no_data: '#64748b',
-		disputed: '#f87171'
-	};
-
 	const disputedNotice =
 		'This is a disputed or special map unit in the Natural Earth source layer. OurWorldSystem does not adjudicate sovereignty.';
 
 	const unitById = $derived(new Map(units.map((unit) => [unit.id, unit])));
+	const selectedLayerDefinition = $derived(getMapLayerDefinition(selectedLayer));
+	const selectedLayerLegendByValue = $derived(
+		new Map(getMapLayerLegendItems(selectedLayer).map((item) => [item.value, item]))
+	);
 
 	function isValidTopologyObject(value: unknown): value is TopologyGeometryObject {
 		if (!value || typeof value !== 'object') {
@@ -414,6 +417,11 @@
 		onSelect(createNoDataUnit(renderFeature));
 	}
 
+	function getLayerValueLabel(unit: MapUnit | null) {
+		const value = getMapUnitLayerValue(unit, selectedLayer);
+		return selectedLayerLegendByValue.get(value)?.label ?? selectedLayerDefinition.noDataLabel;
+	}
+
 	function handleKeydown(
 		event: KeyboardEvent,
 		renderFeature: RenderFeature,
@@ -554,7 +562,7 @@
 			<p>Static Natural Earth layer</p>
 			<h2 id="map-title">World-system map units</h2>
 		</div>
-		<span>{units.length} mock units</span>
+		<span>{selectedLayerDefinition.shortLabel} · {units.length} mock units</span>
 	</div>
 
 	<div class="map-frame">
@@ -566,9 +574,9 @@
 		>
 			<title>OurWorldSystem Natural Earth map layer</title>
 			<desc id="map-description">
-				A static Natural Earth world map. Matched map units are colored by mock world-system class.
-				Unmatched geometry is neutral. Disputed and breakaway areas are drawn as a subtle overlay
-				when available.
+				A static Natural Earth world map. Matched map units are colored by the selected
+				{selectedLayerDefinition.label} layer. Unmatched geometry is shown as no data. Disputed and
+				breakaway areas are drawn as a subtle overlay when available.
 			</desc>
 			<rect width={viewBox.width} height={viewBox.height} fill="#07111f" />
 
@@ -580,18 +588,19 @@
 						{@const unit = renderFeature.unit}
 						{@const selected =
 							unit?.id === selectedId || (!unit && renderFeature.id === selectedId)}
+						{@const valueLabel = getLayerValueLabel(unit)}
 						<path
+							class={`map-unit ${getMapUnitFillClass(unit, selectedLayer)}`}
 							class:selected
 							class:matched={Boolean(unit)}
 							d={renderFeature.path}
-							fill={unit ? classColors[unit.world_system.class] : classColors.no_data}
 							role="button"
 							tabindex="0"
-							aria-label={`Select ${unit?.name ?? renderFeature.name}`}
+							aria-label={`Select ${unit?.name ?? renderFeature.name}. ${selectedLayerDefinition.label}: ${valueLabel}`}
 							onclick={() => selectFeature(renderFeature)}
 							onkeydown={(event) => handleKeydown(event, renderFeature)}
 						>
-							<title>{unit?.name ?? renderFeature.name}</title>
+							<title>{unit?.name ?? renderFeature.name}: {selectedLayerDefinition.label} - {valueLabel}</title>
 						</path>
 					{/each}
 				</g>
@@ -600,16 +609,17 @@
 					<g class="disputed-layer" aria-label="Natural Earth disputed and breakaway areas">
 						{#each disputedFeatures as renderFeature (renderFeature.renderKey)}
 							{@const unit = renderFeature.unit}
+							{@const valueLabel = getLayerValueLabel(unit)}
 							<path
 								class:selected={unit?.id === selectedId}
 								d={renderFeature.path}
 								role="button"
 								tabindex="0"
-								aria-label={`Inspect disputed or special map unit: ${unit?.name ?? renderFeature.name}`}
+								aria-label={`Inspect disputed or special map unit: ${unit?.name ?? renderFeature.name}. ${selectedLayerDefinition.label}: ${valueLabel}`}
 								onclick={() => selectFeature(renderFeature, true)}
 								onkeydown={(event) => handleKeydown(event, renderFeature, true)}
 							>
-								<title>{unit?.name ?? renderFeature.name}</title>
+								<title>{unit?.name ?? renderFeature.name}: {selectedLayerDefinition.label} - {valueLabel}</title>
 							</path>
 						{/each}
 					</g>
@@ -697,6 +707,124 @@
 
 	path {
 		cursor: pointer;
+	}
+
+	.map-unit.layer-world-system-core {
+		fill: #5eead4;
+	}
+
+	.map-unit.layer-world-system-semi-periphery {
+		fill: #facc15;
+	}
+
+	.map-unit.layer-world-system-periphery {
+		fill: #fb923c;
+	}
+
+	.map-unit.layer-world-system-uncertain {
+		fill: #a78bfa;
+	}
+
+	.map-unit.layer-world-system-disputed {
+		fill: #f87171;
+	}
+
+	.map-unit.layer-world-system-no-data,
+	.map-unit.layer-conflict-no-data,
+	.map-unit.layer-press-freedom-no-data,
+	.map-unit.layer-political-freedom-no-data,
+	.map-unit.layer-quality-of-life-no-data,
+	.map-unit.layer-exploitation-no-data,
+	.map-unit.layer-ecology-no-data {
+		fill: #64748b;
+	}
+
+	.map-unit.layer-conflict-active-war-on-territory {
+		fill: #7f1d1d;
+	}
+
+	.map-unit.layer-conflict-involved-in-war {
+		fill: #ea580c;
+	}
+
+	.map-unit.layer-conflict-no-active-war {
+		fill: #94a3b8;
+	}
+
+	.map-unit.layer-press-freedom-good {
+		fill: #2dd4bf;
+	}
+
+	.map-unit.layer-press-freedom-satisfactory {
+		fill: #84cc16;
+	}
+
+	.map-unit.layer-press-freedom-problematic {
+		fill: #facc15;
+	}
+
+	.map-unit.layer-press-freedom-difficult {
+		fill: #f97316;
+	}
+
+	.map-unit.layer-press-freedom-very-serious {
+		fill: #be123c;
+	}
+
+	.map-unit.layer-political-freedom-free {
+		fill: #38bdf8;
+	}
+
+	.map-unit.layer-political-freedom-partly-free {
+		fill: #facc15;
+	}
+
+	.map-unit.layer-political-freedom-not-free {
+		fill: #c026d3;
+	}
+
+	.map-unit.layer-quality-of-life-very-high {
+		fill: #06b6d4;
+	}
+
+	.map-unit.layer-quality-of-life-high {
+		fill: #22c55e;
+	}
+
+	.map-unit.layer-quality-of-life-medium {
+		fill: #f59e0b;
+	}
+
+	.map-unit.layer-quality-of-life-low {
+		fill: #dc2626;
+	}
+
+	.map-unit.layer-exploitation-high-extraction-risk {
+		fill: #9a3412;
+	}
+
+	.map-unit.layer-exploitation-medium-extraction-risk {
+		fill: #ca8a04;
+	}
+
+	.map-unit.layer-exploitation-low-extraction-risk {
+		fill: #0f766e;
+	}
+
+	.map-unit.layer-ecology-strong {
+		fill: #14b8a6;
+	}
+
+	.map-unit.layer-ecology-mixed {
+		fill: #a3e635;
+	}
+
+	.map-unit.layer-ecology-weak {
+		fill: #f97316;
+	}
+
+	.map-unit.layer-ecology-severe {
+		fill: #b91c1c;
 	}
 
 	path:hover,

@@ -1,7 +1,7 @@
 {
 	"meta": {
 		"title": "OurWorldSystem mock world-system dataset",
-		"description": "Temporary static mock indicator data keyed by map-unit registry IDs. Values are placeholders and must not be interpreted as final classifications.",
+		"description": "Temporary static mock indicator data keyed by map-unit registry IDs. Values, scores, and layer bins are demo placeholders and must not be interpreted as empirical findings.",
 		"mock": true,
 		"version": "0.1.0",
 		"generated_at": "2026-06-18"
@@ -26,31 +26,32 @@
 				"child_casualties_verified": null,
 				"notes": "Mock-data note; future versions should cite UCDP and UN sources."
 			},
-			"press_freedom": { "source": "RSF", "score": null, "category": null, "year": 2026 },
+			"press_freedom": { "source": "mock", "score": 64, "category": "Demo only", "year": 2026 },
 			"political_freedom": {
-				"source": "Freedom House / V-Dem",
-				"score": null,
-				"category": null,
+				"source": "mock",
+				"score": 83,
+				"category": "Demo only",
 				"year": 2026
 			},
 			"quality_of_life": {
-				"hdi": null,
+				"hdi": 0.92,
 				"ihdi": null,
 				"life_expectancy": null,
 				"education_index": null
 			},
 			"ecology": {
-				"epi_score": null,
+				"epi_score": 55,
 				"material_footprint_per_capita": null,
 				"co2_per_capita": null,
 				"ewaste_generated_kg_per_capita": null
 			},
 			"exploitation_position": {
+				"extraction_risk": "medium",
 				"resource_export_dependency": null,
 				"foreign_value_added_share": null,
 				"domestic_value_capture": null,
-				"ewaste_import_risk": null,
-				"notes": null
+				"ewaste_import_risk": "medium",
+				"notes": "Demo-only extraction/externalization values; not empirical data."
 			},
 			"sources": ["mock"],
 			"last_updated": "2026-06-18"
@@ -74,31 +75,32 @@
 				"child_casualties_verified": null,
 				"notes": "Mock-data note; future versions should cite UCDP and UN sources."
 			},
-			"press_freedom": { "source": "RSF", "score": null, "category": null, "year": 2026 },
+			"press_freedom": { "source": "mock", "score": 18, "category": "Demo only", "year": 2026 },
 			"political_freedom": {
-				"source": "Freedom House / V-Dem",
-				"score": null,
-				"category": null,
+				"source": "mock",
+				"score": 12,
+				"category": "Demo only",
 				"year": 2026
 			},
 			"quality_of_life": {
-				"hdi": null,
+				"hdi": 0.76,
 				"ihdi": null,
 				"life_expectancy": null,
 				"education_index": null
 			},
 			"ecology": {
-				"epi_score": null,
+				"epi_score": 41,
 				"material_footprint_per_capita": null,
 				"co2_per_capita": null,
 				"ewaste_generated_kg_per_capita": null
 			},
 			"exploitation_position": {
+				"extraction_risk": "medium",
 				"resource_export_dependency": null,
 				"foreign_value_added_share": null,
 				"domestic_value_capture": null,
-				"ewaste_import_risk": null,
-				"notes": null
+				"ewaste_import_risk": "low",
+				"notes": "Demo-only extraction/externalization values; not empirical data."
 			},
 			"sources": ["mock"],
 			"last_updated": "2026-06-18"
@@ -122,31 +124,32 @@
 				"child_casualties_verified": null,
 				"notes": "Mock-data note; future versions should cite UCDP and UN sources."
 			},
-			"press_freedom": { "source": "RSF", "score": null, "category": null, "year": 2026 },
+			"press_freedom": { "source": "mock", "score": 82, "category": "Demo only", "year": 2026 },
 			"political_freedom": {
-				"source": "Freedom House / V-Dem",
-				"score": null,
-				"category": null,
+				"source": "mock",
+				"score": 91,
+				"category": "Demo only",
 				"year": 2026
 			},
 			"quality_of_life": {
-				"hdi": null,
+				"hdi": 0.89,
 				"ihdi": null,
 				"life_expectancy": null,
 				"education_index": null
 			},
 			"ecology": {
-				"epi_score": null,
+				"epi_score": 67,
 				"material_footprint_per_capita": null,
 				"co2_per_capita": null,
 				"ewaste_generated_kg_per_capita": null
 			},
 			"exploitation_position": {
+				"extraction_risk": "low",
 				"resource_export_dependency": null,
 				"foreign_value_added_share": null,
 				"domestic_value_capture": null,
-				"ewaste_import_risk": null,
-				"notes": null
+				"ewaste_import_risk": "low",
+				"notes": "Demo-only extraction/externalization values; not empirical data."
 			},
 			"sources": ["mock"],
 			"last_updated": "2026-06-18"
@@ -170,31 +173,32 @@
 				"child_casualties_verified": null,
 				"notes": "Mock-data note; future versions should cite UCDP and UN sources."
 			},
-			"press_freedom": { "source": "RSF", "score": null, "category": null, "year": 2026 },
+			"press_freedom": { "source": "mock", "score": 86, "category": "Demo only", "year": 2026 },
 			"political_freedom": {
-				"source": "Freedom House / V-Dem",
-				"score": null,
-				"category": null,
+				"source": "mock",
+				"score": 94,
+				"category": "Demo only",
 				"year": 2026
 			},
 			"quality_of_life": {
-				"hdi": null,
+				"hdi": 0.94,
 				"ihdi": null,
 				"life_expectancy": null,
 				"education_index": null
 			},
 			"ecology": {
-				"epi_score": null,
+				"epi_score": 73,
 				"material_footprint_per_capita": null,
 				"co2_per_capita": null,
 				"ewaste_generated_kg_per_capita": null
 			},
 			"exploitation_position": {
+				"extraction_risk": "low",
 				"resource_export_dependency": null,
 				"foreign_value_added_share": null,
 				"domestic_value_capture": null,
-				"ewaste_import_risk": null,
-				"notes": null
+				"ewaste_import_risk": "low",
+				"notes": "Demo-only extraction/externalization values; not empirical data."
 			},
 			"sources": ["mock"],
 			"last_updated": "2026-06-18"
@@ -218,31 +222,32 @@
 				"child_casualties_verified": null,
 				"notes": "Mock-data note; future versions should cite UCDP and UN sources."
 			},
-			"press_freedom": { "source": "RSF", "score": null, "category": null, "year": 2026 },
+			"press_freedom": { "source": "mock", "score": 58, "category": "Demo only", "year": 2026 },
 			"political_freedom": {
-				"source": "Freedom House / V-Dem",
-				"score": null,
-				"category": null,
+				"source": "mock",
+				"score": 74,
+				"category": "Demo only",
 				"year": 2026
 			},
 			"quality_of_life": {
-				"hdi": null,
+				"hdi": 0.75,
 				"ihdi": null,
 				"life_expectancy": null,
 				"education_index": null
 			},
 			"ecology": {
-				"epi_score": null,
+				"epi_score": 52,
 				"material_footprint_per_capita": null,
 				"co2_per_capita": null,
 				"ewaste_generated_kg_per_capita": null
 			},
 			"exploitation_position": {
+				"extraction_risk": "medium",
 				"resource_export_dependency": null,
 				"foreign_value_added_share": null,
 				"domestic_value_capture": null,
-				"ewaste_import_risk": null,
-				"notes": null
+				"ewaste_import_risk": "medium",
+				"notes": "Demo-only extraction/externalization values; not empirical data."
 			},
 			"sources": ["mock"],
 			"last_updated": "2026-06-18"
@@ -266,31 +271,32 @@
 				"child_casualties_verified": null,
 				"notes": "Mock-data note; future versions should cite UCDP and UN sources."
 			},
-			"press_freedom": { "source": "RSF", "score": null, "category": null, "year": 2026 },
+			"press_freedom": { "source": "mock", "score": 48, "category": "Demo only", "year": 2026 },
 			"political_freedom": {
-				"source": "Freedom House / V-Dem",
-				"score": null,
-				"category": null,
+				"source": "mock",
+				"score": 55,
+				"category": "Demo only",
 				"year": 2026
 			},
 			"quality_of_life": {
-				"hdi": null,
+				"hdi": 0.64,
 				"ihdi": null,
 				"life_expectancy": null,
 				"education_index": null
 			},
 			"ecology": {
-				"epi_score": null,
+				"epi_score": 34,
 				"material_footprint_per_capita": null,
 				"co2_per_capita": null,
 				"ewaste_generated_kg_per_capita": null
 			},
 			"exploitation_position": {
+				"extraction_risk": "medium",
 				"resource_export_dependency": null,
 				"foreign_value_added_share": null,
 				"domestic_value_capture": null,
-				"ewaste_import_risk": null,
-				"notes": null
+				"ewaste_import_risk": "medium",
+				"notes": "Demo-only extraction/externalization values; not empirical data."
 			},
 			"sources": ["mock"],
 			"last_updated": "2026-06-18"
@@ -314,31 +320,32 @@
 				"child_casualties_verified": null,
 				"notes": "Mock-data note; future versions should cite UCDP and UN sources."
 			},
-			"press_freedom": { "source": "RSF", "score": null, "category": null, "year": 2026 },
+			"press_freedom": { "source": "mock", "score": 74, "category": "Demo only", "year": 2026 },
 			"political_freedom": {
-				"source": "Freedom House / V-Dem",
-				"score": null,
-				"category": null,
+				"source": "mock",
+				"score": 79,
+				"category": "Demo only",
 				"year": 2026
 			},
 			"quality_of_life": {
-				"hdi": null,
+				"hdi": 0.71,
 				"ihdi": null,
 				"life_expectancy": null,
 				"education_index": null
 			},
 			"ecology": {
-				"epi_score": null,
+				"epi_score": 46,
 				"material_footprint_per_capita": null,
 				"co2_per_capita": null,
 				"ewaste_generated_kg_per_capita": null
 			},
 			"exploitation_position": {
+				"extraction_risk": "high",
 				"resource_export_dependency": null,
 				"foreign_value_added_share": null,
 				"domestic_value_capture": null,
-				"ewaste_import_risk": null,
-				"notes": null
+				"ewaste_import_risk": "medium",
+				"notes": "Demo-only extraction/externalization values; not empirical data."
 			},
 			"sources": ["mock"],
 			"last_updated": "2026-06-18"
@@ -362,31 +369,32 @@
 				"child_casualties_verified": null,
 				"notes": "Mock-data note; future versions should cite UCDP and UN sources."
 			},
-			"press_freedom": { "source": "RSF", "score": null, "category": null, "year": 2026 },
+			"press_freedom": { "source": "mock", "score": 37, "category": "Demo only", "year": 2026 },
 			"political_freedom": {
-				"source": "Freedom House / V-Dem",
-				"score": null,
-				"category": null,
+				"source": "mock",
+				"score": 31,
+				"category": "Demo only",
 				"year": 2026
 			},
 			"quality_of_life": {
-				"hdi": null,
+				"hdi": 0.49,
 				"ihdi": null,
 				"life_expectancy": null,
 				"education_index": null
 			},
 			"ecology": {
-				"epi_score": null,
+				"epi_score": 27,
 				"material_footprint_per_capita": null,
 				"co2_per_capita": null,
 				"ewaste_generated_kg_per_capita": null
 			},
 			"exploitation_position": {
+				"extraction_risk": "high",
 				"resource_export_dependency": null,
 				"foreign_value_added_share": null,
 				"domestic_value_capture": null,
-				"ewaste_import_risk": null,
-				"notes": null
+				"ewaste_import_risk": "high",
+				"notes": "Demo-only extraction/externalization values; not empirical data."
 			},
 			"sources": ["mock"],
 			"last_updated": "2026-06-18"
@@ -410,31 +418,32 @@
 				"child_casualties_verified": null,
 				"notes": "Mock-data note; future versions should cite UCDP and UN sources."
 			},
-			"press_freedom": { "source": "RSF", "score": null, "category": null, "year": 2026 },
+			"press_freedom": { "source": "mock", "score": 62, "category": "Demo only", "year": 2026 },
 			"political_freedom": {
-				"source": "Freedom House / V-Dem",
-				"score": null,
-				"category": null,
+				"source": "mock",
+				"score": 61,
+				"category": "Demo only",
 				"year": 2026
 			},
 			"quality_of_life": {
-				"hdi": null,
+				"hdi": 0.73,
 				"ihdi": null,
 				"life_expectancy": null,
 				"education_index": null
 			},
 			"ecology": {
-				"epi_score": null,
+				"epi_score": 39,
 				"material_footprint_per_capita": null,
 				"co2_per_capita": null,
 				"ewaste_generated_kg_per_capita": null
 			},
 			"exploitation_position": {
+				"extraction_risk": "medium",
 				"resource_export_dependency": null,
 				"foreign_value_added_share": null,
 				"domestic_value_capture": null,
-				"ewaste_import_risk": null,
-				"notes": null
+				"ewaste_import_risk": "low",
+				"notes": "Demo-only extraction/externalization values; not empirical data."
 			},
 			"sources": ["mock"],
 			"last_updated": "2026-06-18"
@@ -458,31 +467,32 @@
 				"child_casualties_verified": null,
 				"notes": "Mock-data note; future versions should cite UCDP, UN OCHA, and verified casualty sources."
 			},
-			"press_freedom": { "source": "RSF", "score": null, "category": null, "year": 2026 },
+			"press_freedom": { "source": "mock", "score": 29, "category": "Demo only", "year": 2026 },
 			"political_freedom": {
-				"source": "Freedom House / V-Dem",
-				"score": null,
-				"category": null,
+				"source": "mock",
+				"score": 28,
+				"category": "Demo only",
 				"year": 2026
 			},
 			"quality_of_life": {
-				"hdi": null,
+				"hdi": 0.69,
 				"ihdi": null,
 				"life_expectancy": null,
 				"education_index": null
 			},
 			"ecology": {
-				"epi_score": null,
+				"epi_score": 32,
 				"material_footprint_per_capita": null,
 				"co2_per_capita": null,
 				"ewaste_generated_kg_per_capita": null
 			},
 			"exploitation_position": {
+				"extraction_risk": "no_data",
 				"resource_export_dependency": null,
 				"foreign_value_added_share": null,
 				"domestic_value_capture": null,
 				"ewaste_import_risk": null,
-				"notes": null
+				"notes": "Demo-only extraction/externalization values; not empirical data."
 			},
 			"sources": ["mock"],
 			"last_updated": "2026-06-18"
@@ -506,31 +516,32 @@
 				"child_casualties_verified": null,
 				"notes": "Mock-data note; future versions should cite UCDP and UN sources where applicable."
 			},
-			"press_freedom": { "source": "RSF", "score": null, "category": null, "year": 2026 },
+			"press_freedom": { "source": "mock", "score": 91, "category": "Demo only", "year": 2026 },
 			"political_freedom": {
-				"source": "Freedom House / V-Dem",
-				"score": null,
-				"category": null,
+				"source": "mock",
+				"score": 88,
+				"category": "Demo only",
 				"year": 2026
 			},
 			"quality_of_life": {
-				"hdi": null,
+				"hdi": 0.9,
 				"ihdi": null,
 				"life_expectancy": null,
 				"education_index": null
 			},
 			"ecology": {
-				"epi_score": null,
+				"epi_score": 69,
 				"material_footprint_per_capita": null,
 				"co2_per_capita": null,
 				"ewaste_generated_kg_per_capita": null
 			},
 			"exploitation_position": {
+				"extraction_risk": "low",
 				"resource_export_dependency": null,
 				"foreign_value_added_share": null,
 				"domestic_value_capture": null,
-				"ewaste_import_risk": null,
-				"notes": null
+				"ewaste_import_risk": "medium",
+				"notes": "Demo-only extraction/externalization values; not empirical data."
 			},
 			"sources": ["mock"],
 			"last_updated": "2026-06-18"
@@ -554,31 +565,32 @@
 				"child_casualties_verified": null,
 				"notes": "Mock-data note; future versions should cite UCDP and UN sources where applicable."
 			},
-			"press_freedom": { "source": "RSF", "score": null, "category": null, "year": 2026 },
+			"press_freedom": { "source": "mock", "score": 66, "category": "Demo only", "year": 2026 },
 			"political_freedom": {
-				"source": "Freedom House / V-Dem",
-				"score": null,
-				"category": null,
+				"source": "mock",
+				"score": 52,
+				"category": "Demo only",
 				"year": 2026
 			},
 			"quality_of_life": {
-				"hdi": null,
+				"hdi": 0.77,
 				"ihdi": null,
 				"life_expectancy": null,
 				"education_index": null
 			},
 			"ecology": {
-				"epi_score": null,
+				"epi_score": 44,
 				"material_footprint_per_capita": null,
 				"co2_per_capita": null,
 				"ewaste_generated_kg_per_capita": null
 			},
 			"exploitation_position": {
+				"extraction_risk": "medium",
 				"resource_export_dependency": null,
 				"foreign_value_added_share": null,
 				"domestic_value_capture": null,
-				"ewaste_import_risk": null,
-				"notes": null
+				"ewaste_import_risk": "low",
+				"notes": "Demo-only extraction/externalization values; not empirical data."
 			},
 			"sources": ["mock"],
 			"last_updated": "2026-06-18"

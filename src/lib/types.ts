@@ -46,6 +46,26 @@ export type WorldSystemClass =
 	| 'no_data'
 	| 'disputed';
 
+export type MapLayerId =
+	| 'world_system'
+	| 'conflict'
+	| 'press_freedom'
+	| 'political_freedom'
+	| 'quality_of_life'
+	| 'exploitation'
+	| 'ecology';
+
+export type MapLayerKind = 'categorical' | 'sequential' | 'diverging' | 'boolean';
+
+export interface MapLayerDefinition {
+	id: MapLayerId;
+	label: string;
+	shortLabel: string;
+	description: string;
+	kind: MapLayerKind;
+	noDataLabel: string;
+}
+
 export type Confidence = 'high' | 'medium' | 'low';
 
 export interface SourceRecord {
@@ -69,8 +89,8 @@ export interface WorldSystemAssessment {
 }
 
 export interface ConflictAssessment {
-	war_on_territory: boolean;
-	involved_in_conflict: boolean;
+	war_on_territory: boolean | null;
+	involved_in_conflict: boolean | null;
 	active_conflicts: string[];
 	fatalities_best_estimate: number | null;
 	child_casualties_verified: number | null;
@@ -99,10 +119,11 @@ export interface EcologyAssessment {
 }
 
 export interface ExploitationPosition {
+	extraction_risk?: string | number | null;
 	resource_export_dependency: number | null;
 	foreign_value_added_share: number | null;
 	domestic_value_capture: number | null;
-	ewaste_import_risk: string | null;
+	ewaste_import_risk: string | number | null;
 	notes: string | null;
 }
 

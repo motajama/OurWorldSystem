@@ -8,7 +8,11 @@
 
 	let { unit }: Props = $props();
 
-	const formatBoolean = (value: boolean) => (value ? 'Yes' : 'No');
+	const formatBoolean = (value: boolean | null) => {
+		if (value === null) return 'No data';
+
+		return value ? 'Yes' : 'No';
+	};
 	const formatValue = (value: number | string | null) => (value === null ? 'No data' : value);
 </script>
 
