@@ -1,9 +1,19 @@
 <script lang="ts">
 	import { base } from '$app/paths';
-	import { onMount } from 'svelte';
-	import { geoNaturalEarth1, geoPath } from 'd3';
+	import { onDestroy, onMount } from 'svelte';
+	import {
+		geoNaturalEarth1,
+		geoPath,
+		select,
+		zoom,
+		zoomIdentity,
+		type D3ZoomEvent,
+		type ZoomBehavior,
+		type ZoomTransform
+	} from 'd3';
 	import { feature } from 'topojson-client';
 	import type { Feature, FeatureCollection, GeoJsonProperties, Geometry } from 'geojson';
+	import MapControls from '$lib/components/MapControls.svelte';
 	import {
 		buildRegistryIndexes,
 		findRegistryRecordForNaturalEarthFeature,
@@ -86,6 +96,10 @@
 	const disputedTopologyPath = 'geo/disputed.topojson';
 	const worldTopologyUrl = `${base}/${worldTopologyPath}`;
 	const disputedTopologyUrl = `${base}/${disputedTopologyPath}`;
+	const minZoomScale = 1;
+	const maxZoomScale = 8;
+	const zoomStep = 1.5;
+	const keyboardPanStep = 44;
 
 	let { units, selectedId, selectedLayer = DEFAULT_MAP_LAYER_ID, onSelect }: Props = $props();
 	let features = $state<RenderFeature[]>([]);
@@ -94,10 +108,24 @@
 	let geometryDiagnostic = $state<string | null>(null);
 	let registryDiagnostic = $state<string | null>(null);
 	let notice = $state<string | null>(null);
+	let svgElement = $state<SVGSVGElement | null>(null);
+	let zoomBehavior: ZoomBehavior<SVGSVGElement, unknown> | null = null;
+	let currentTransform = $state<ZoomTransform>(zoomIdentity);
+	let isDraggingMap = $state(false);
+	let pointerStart: { x: number; y: number } | null = null;
+	let suppressNextFeatureClick = false;
 
 	const disputedNotice =
 		'This is a disputed or special map unit in the Natural Earth source layer. OurWorldSystem does not adjudicate sovereignty.';
 
+	const zoomPercent = $derived(Math.round(currentTransform.k * 100));
+	const canZoomIn = $derived(currentTransform.k < maxZoomScale - 0.01);
+	const canZoomOut = $derived(currentTransform.k > minZoomScale + 0.01);
+	const canResetZoom = $derived(
+		Math.abs(currentTransform.k - 1) > 0.01 ||
+			Math.abs(currentTransform.x) > 0.5 ||
+			Math.abs(currentTransform.y) > 0.5
+	);
 	const unitById = $derived(new Map(units.map((unit) => [unit.id, unit])));
 	const selectedLayerDefinition = $derived(getMapLayerDefinition(selectedLayer));
 	const selectedLayerLegendByValue = $derived(
@@ -417,6 +445,19 @@
 		onSelect(createNoDataUnit(renderFeature));
 	}
 
+	function handleFeatureClick(
+		event: MouseEvent,
+		renderFeature: RenderFeature,
+		isDisputedOverlay = false
+	) {
+		if (event.defaultPrevented || suppressNextFeatureClick) {
+			suppressNextFeatureClick = false;
+			return;
+		}
+
+		selectFeature(renderFeature, isDisputedOverlay);
+	}
+
 	function getLayerValueLabel(unit: MapUnit | null) {
 		const value = getMapUnitLayerValue(unit, selectedLayer);
 		return selectedLayerLegendByValue.get(value)?.label ?? selectedLayerDefinition.noDataLabel;
@@ -430,7 +471,113 @@
 		if (event.key === 'Enter' || event.key === ' ') {
 			event.preventDefault();
 			selectFeature(renderFeature, isDisputedOverlay);
+		} else if (event.key === 'Escape') {
+			event.preventDefault();
+			if (document.activeElement instanceof HTMLElement) {
+				document.activeElement.blur();
+			}
 		}
+	}
+
+	function zoomSelection() {
+		if (!svgElement || !zoomBehavior) return null;
+
+		return select<SVGSVGElement, unknown>(svgElement);
+	}
+
+	function applyZoomTransform(transform: ZoomTransform) {
+		const selection = zoomSelection();
+
+		if (!selection || !zoomBehavior) return;
+
+		selection
+			.transition()
+			.duration(window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 180)
+			.call(zoomBehavior.transform, transform);
+	}
+
+	function zoomBy(factor: number) {
+		const selection = zoomSelection();
+
+		if (!selection || !zoomBehavior) return;
+
+		selection
+			.transition()
+			.duration(window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 160)
+			.call(zoomBehavior.scaleBy, factor);
+	}
+
+	function zoomIn() {
+		zoomBy(zoomStep);
+	}
+
+	function zoomOut() {
+		zoomBy(1 / zoomStep);
+	}
+
+	function resetZoom() {
+		applyZoomTransform(zoomIdentity);
+	}
+
+	function fitToWorld() {
+		// The Natural Earth projection is pre-fit to the SVG viewport, so identity
+		// is the full-world fit transform for the generated paths.
+		applyZoomTransform(zoomIdentity);
+	}
+
+	function panBy(dx: number, dy: number) {
+		const selection = zoomSelection();
+
+		if (!selection || !zoomBehavior) return;
+
+		selection
+			.transition()
+			.duration(window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 120)
+			.call(zoomBehavior.translateBy, dx / currentTransform.k, dy / currentTransform.k);
+	}
+
+	function handleMapKeydown(event: KeyboardEvent) {
+		if (event.target !== svgElement) return;
+
+		if (event.key === '+' || event.key === '=') {
+			event.preventDefault();
+			zoomIn();
+		} else if (event.key === '-') {
+			event.preventDefault();
+			zoomOut();
+		} else if (event.key === '0') {
+			event.preventDefault();
+			resetZoom();
+		} else if (event.key === 'ArrowLeft') {
+			event.preventDefault();
+			panBy(keyboardPanStep, 0);
+		} else if (event.key === 'ArrowRight') {
+			event.preventDefault();
+			panBy(-keyboardPanStep, 0);
+		} else if (event.key === 'ArrowUp') {
+			event.preventDefault();
+			panBy(0, keyboardPanStep);
+		} else if (event.key === 'ArrowDown') {
+			event.preventDefault();
+			panBy(0, -keyboardPanStep);
+		} else if (event.key === 'Escape') {
+			event.preventDefault();
+			if (document.activeElement instanceof HTMLElement) {
+				document.activeElement.blur();
+			}
+		}
+	}
+
+	function handleMapPointerDown(event: PointerEvent) {
+		pointerStart = { x: event.clientX, y: event.clientY };
+	}
+
+	function handleMapPointerUp(event: PointerEvent) {
+		if (!pointerStart) return;
+
+		const distance = Math.hypot(event.clientX - pointerStart.x, event.clientY - pointerStart.y);
+		suppressNextFeatureClick = distance > 4;
+		pointerStart = null;
 	}
 
 	async function fetchTopology(url: string): Promise<TopologyFetchResult> {
@@ -462,6 +609,32 @@
 	}
 
 	onMount(async () => {
+		if (svgElement) {
+			zoomBehavior = zoom<SVGSVGElement, unknown>()
+				.scaleExtent([minZoomScale, maxZoomScale])
+				.extent([
+					[0, 0],
+					[viewBox.width, viewBox.height]
+				])
+				.translateExtent([
+					[0, 0],
+					[viewBox.width, viewBox.height]
+				])
+				.on('start', () => {
+					isDraggingMap = true;
+				})
+				.on('zoom', (event: D3ZoomEvent<SVGSVGElement, unknown>) => {
+					currentTransform = event.transform;
+				})
+				.on('end', () => {
+					isDraggingMap = false;
+				});
+
+			select<SVGSVGElement, unknown>(svgElement)
+				.call(zoomBehavior)
+				.on('dblclick.zoom', null);
+		}
+
 		let registryIndexes: RegistryIndexes | null = null;
 
 		try {
@@ -554,6 +727,12 @@
 				'The TopoJSON file was fetched successfully, but D3 could not render it.';
 		}
 	});
+
+	onDestroy(() => {
+		if (svgElement) {
+			select(svgElement).on('.zoom', null);
+		}
+	});
 </script>
 
 <section class="map-shell" aria-labelledby="map-title">
@@ -566,15 +745,38 @@
 	</div>
 
 	<div class="map-frame">
+		<MapControls
+			{zoomPercent}
+			{canZoomIn}
+			{canZoomOut}
+			canReset={canResetZoom}
+			canFit={canResetZoom}
+			onZoomIn={zoomIn}
+			onZoomOut={zoomOut}
+			onReset={resetZoom}
+			onFit={fitToWorld}
+		/>
+		<!-- svelte-ignore a11y_no_noninteractive_tabindex (the SVG is the keyboard-focusable map navigation surface) -->
+		<!-- svelte-ignore a11y_no_noninteractive_element_interactions (the SVG handles map navigation keys and pointer panning) -->
 		<svg
+			bind:this={svgElement}
+			class:dragging={isDraggingMap}
 			viewBox={`0 0 ${viewBox.width} ${viewBox.height}`}
 			role="img"
 			aria-describedby="map-description"
+			aria-label="Interactive world map. Use plus and minus to zoom, zero to reset, and arrow keys to pan."
 			preserveAspectRatio="xMidYMid meet"
+			tabindex="0"
+			onkeydown={handleMapKeydown}
+			onpointerdown={handleMapPointerDown}
+			onpointerup={handleMapPointerUp}
+			onpointercancel={() => {
+				pointerStart = null;
+			}}
 		>
 			<title>OurWorldSystem Natural Earth map layer</title>
 			<desc id="map-description">
-				A static Natural Earth world map. Matched map units are colored by the selected
+				An interactive Natural Earth world map. Matched map units are colored by the selected
 				{selectedLayerDefinition.label} layer. Unmatched geometry is shown as no data. Disputed and
 				breakaway areas are drawn as a subtle overlay when available.
 			</desc>
@@ -583,47 +785,52 @@
 			{#if features.length === 0}
 				<text class="empty-label" x="500" y="250">{geometryStatus}</text>
 			{:else}
-				<g class="base-layer" aria-label="Natural Earth Admin 0 map units">
-					{#each features as renderFeature (renderFeature.renderKey)}
-						{@const unit = renderFeature.unit}
-						{@const selected =
-							unit?.id === selectedId || (!unit && renderFeature.id === selectedId)}
-						{@const valueLabel = getLayerValueLabel(unit)}
-						<path
-							class={`map-unit ${getMapUnitFillClass(unit, selectedLayer)}`}
-							class:selected
-							class:matched={Boolean(unit)}
-							d={renderFeature.path}
-							role="button"
-							tabindex="0"
-							aria-label={`Select ${unit?.name ?? renderFeature.name}. ${selectedLayerDefinition.label}: ${valueLabel}`}
-							onclick={() => selectFeature(renderFeature)}
-							onkeydown={(event) => handleKeydown(event, renderFeature)}
-						>
-							<title>{unit?.name ?? renderFeature.name}: {selectedLayerDefinition.label} - {valueLabel}</title>
-						</path>
-					{/each}
-				</g>
-
-				{#if disputedFeatures.length > 0}
-					<g class="disputed-layer" aria-label="Natural Earth disputed and breakaway areas">
-						{#each disputedFeatures as renderFeature (renderFeature.renderKey)}
+				<g
+					class="map-viewport"
+					transform={`translate(${currentTransform.x} ${currentTransform.y}) scale(${currentTransform.k})`}
+				>
+					<g class="base-layer" aria-label="Natural Earth Admin 0 map units">
+						{#each features as renderFeature (renderFeature.renderKey)}
 							{@const unit = renderFeature.unit}
+							{@const selected =
+								unit?.id === selectedId || (!unit && renderFeature.id === selectedId)}
 							{@const valueLabel = getLayerValueLabel(unit)}
 							<path
-								class:selected={unit?.id === selectedId}
+								class={`map-unit ${getMapUnitFillClass(unit, selectedLayer)}`}
+								class:selected
+								class:matched={Boolean(unit)}
 								d={renderFeature.path}
 								role="button"
 								tabindex="0"
-								aria-label={`Inspect disputed or special map unit: ${unit?.name ?? renderFeature.name}. ${selectedLayerDefinition.label}: ${valueLabel}`}
-								onclick={() => selectFeature(renderFeature, true)}
-								onkeydown={(event) => handleKeydown(event, renderFeature, true)}
+								aria-label={`Select ${unit?.name ?? renderFeature.name}. ${selectedLayerDefinition.label}: ${valueLabel}`}
+								onclick={(event) => handleFeatureClick(event, renderFeature)}
+								onkeydown={(event) => handleKeydown(event, renderFeature)}
 							>
 								<title>{unit?.name ?? renderFeature.name}: {selectedLayerDefinition.label} - {valueLabel}</title>
 							</path>
 						{/each}
 					</g>
-				{/if}
+
+					{#if disputedFeatures.length > 0}
+						<g class="disputed-layer" aria-label="Natural Earth disputed and breakaway areas">
+							{#each disputedFeatures as renderFeature (renderFeature.renderKey)}
+								{@const unit = renderFeature.unit}
+								{@const valueLabel = getLayerValueLabel(unit)}
+								<path
+									class:selected={unit?.id === selectedId}
+									d={renderFeature.path}
+									role="button"
+									tabindex="0"
+									aria-label={`Inspect disputed or special map unit: ${unit?.name ?? renderFeature.name}. ${selectedLayerDefinition.label}: ${valueLabel}`}
+									onclick={(event) => handleFeatureClick(event, renderFeature, true)}
+									onkeydown={(event) => handleKeydown(event, renderFeature, true)}
+								>
+									<title>{unit?.name ?? renderFeature.name}: {selectedLayerDefinition.label} - {valueLabel}</title>
+								</path>
+							{/each}
+						</g>
+					{/if}
+				</g>
 			{/if}
 		</svg>
 	</div>
@@ -682,10 +889,12 @@
 	}
 
 	.map-frame {
+		position: relative;
 		display: grid;
 		min-height: min(58vh, 44rem);
 		border: 1px solid rgba(148, 163, 184, 0.22);
 		background: #020617;
+		overflow: hidden;
 	}
 
 	svg {
@@ -693,6 +902,17 @@
 		width: 100%;
 		height: 100%;
 		min-height: min(58vh, 44rem);
+		cursor: grab;
+		touch-action: none;
+	}
+
+	svg:focus-visible {
+		outline: 2px solid #67e8f9;
+		outline-offset: -3px;
+	}
+
+	svg.dragging {
+		cursor: grabbing;
 	}
 
 	path {
