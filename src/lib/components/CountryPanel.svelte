@@ -9,11 +9,12 @@
 	let { unit }: Props = $props();
 
 	const formatBoolean = (value: boolean | null) => {
-		if (value === null) return 'No data';
+		if (value === null || value === undefined) return 'No data';
 
 		return value ? 'Yes' : 'No';
 	};
-	const formatValue = (value: number | string | null) => (value === null ? 'No data' : value);
+	const formatValue = (value: number | string | null | undefined) =>
+		value === null || value === undefined ? 'No data' : value;
 
 	const isSourcedValue = (value: unknown): value is SourcedIndicatorValue =>
 		Boolean(value && typeof value === 'object' && 'value' in value);
@@ -73,19 +74,46 @@
 			<h3>Conflict</h3>
 			<dl>
 				<div>
-					<dt>War on territory</dt>
+					<dt>War/organized violence on territory</dt>
 					<dd>{formatBoolean(unit.conflict.war_on_territory)}</dd>
 				</div>
 				<div>
-					<dt>Involved in conflict</dt>
+					<dt>State involvement</dt>
 					<dd>{formatBoolean(unit.conflict.involved_in_conflict)}</dd>
 				</div>
 				<div>
+					<dt>Latest year</dt>
+					<dd>{formatValue(unit.conflict.latest_year)}</dd>
+				</div>
+				<div>
 					<dt>Fatalities estimate</dt>
-					<dd>{formatValue(unit.conflict.fatalities_best_estimate)}</dd>
+					<dd>{formatNumber(unit.conflict.fatalities_best_estimate, { maximumFractionDigits: 0 })}</dd>
+				</div>
+				<div>
+					<dt>Child casualties</dt>
+					<dd>
+						{unit.conflict.child_casualties_verified === null
+							? 'Not available in this layer'
+							: formatValue(unit.conflict.child_casualties_verified)}
+					</dd>
+				</div>
+				<div>
+					<dt>Source</dt>
+					<dd>{unit.conflict.source ?? 'No data'}</dd>
 				</div>
 			</dl>
+			{#if unit.conflict.active_conflicts.length > 0}
+				<ul class="compact-list">
+					{#each unit.conflict.active_conflicts as conflict (conflict)}
+						<li>{conflict}</li>
+					{/each}
+				</ul>
+			{/if}
 			<p class="muted">{unit.conflict.notes}</p>
+			<p class="muted">
+				UCDP fatality estimates are not an adult/child breakdown and should not be read as
+				complete civilian death counts.
+			</p>
 		</section>
 
 		<section>
@@ -311,6 +339,14 @@
 		display: flex;
 		flex-wrap: wrap;
 		gap: 0.45rem;
+	}
+
+	.compact-list {
+		margin: 0.8rem 0 0;
+		padding-left: 1rem;
+		color: #cbd5e1;
+		font-size: 0.88rem;
+		line-height: 1.45;
 	}
 
 	@media (max-width: 920px) {

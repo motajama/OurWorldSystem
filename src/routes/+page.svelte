@@ -10,6 +10,7 @@
 		DataEnvelope,
 		MapLayerId,
 		MapUnit,
+		UcdpConflictDataset,
 		WorldBankQualityOfLifeDataset
 	} from '$lib/types';
 
@@ -38,6 +39,17 @@
 		}
 
 		return (await response.json()) as WorldBankQualityOfLifeDataset;
+	}
+
+	async function loadOptionalUcdpConflicts() {
+		const response = await fetch(`${base}/data/indicators/conflict.ucdp.latest.json`);
+
+		if (!response.ok) {
+			if (response.status === 404) return null;
+			throw new Error(`Failed to load UCDP conflict data: ${response.status}`);
+		}
+
+		return (await response.json()) as UcdpConflictDataset;
 	}
 
 	function mergeWorldBankQualityOfLife(
@@ -77,11 +89,63 @@
 		});
 	}
 
+	function mergeUcdpConflicts(mapUnits: MapUnit[], ucdpData: UcdpConflictDataset | null) {
+		if (!ucdpData) return mapUnits;
+
+		const recordsById = new Map(ucdpData.records.map((record) => [record.id, record]));
+
+		return mapUnits.map((unit) => {
+			const record = recordsById.get(unit.id);
+
+			if (!record) {
+				const mockOnly = unit.sources.includes('mock') || unit.sources.includes('mock_demo_data');
+
+				return {
+					...unit,
+					conflict: mockOnly
+						? {
+								...unit.conflict,
+								notes: `${unit.conflict.notes} Demo conflict values only; no UCDP record matched this map unit.`
+							}
+						: {
+								war_on_territory: null,
+								involved_in_conflict: null,
+								active_conflicts: [],
+								fatalities_best_estimate: null,
+								child_casualties_verified: null,
+								latest_year: null,
+								source: null,
+								notes: 'No UCDP conflict record matched this map unit.'
+							}
+				};
+			}
+
+			return {
+				...unit,
+				conflict: {
+					war_on_territory: record.conflict_summary.war_on_territory,
+					involved_in_conflict: record.conflict_summary.involved_in_conflict,
+					active_conflicts: record.conflict_summary.active_conflicts,
+					fatalities_best_estimate: record.conflict_summary.fatalities_best_estimate,
+					child_casualties_verified: null,
+					latest_year: Math.max(
+						record.territory?.latest_year ?? 0,
+						record.state_involvement.latest_year ?? 0
+					),
+					source: 'UCDP',
+					notes: record.conflict_summary.notes
+				},
+				sources: [...new Set([...unit.sources.filter((source) => source !== 'mock'), ...record.sources])]
+			};
+		});
+	}
+
 	onMount(async () => {
 		try {
-			const [response, worldBankData] = await Promise.all([
+			const [response, worldBankData, ucdpData] = await Promise.all([
 				fetch(`${base}/data/world-system.latest.json`),
-				loadOptionalWorldBankQualityOfLife()
+				loadOptionalWorldBankQualityOfLife(),
+				loadOptionalUcdpConflicts()
 			]);
 
 			if (!response.ok) {
@@ -89,7 +153,10 @@
 			}
 
 			const data = (await response.json()) as DataEnvelope;
-			const mergedUnits = mergeWorldBankQualityOfLife(data.map_units, worldBankData);
+			const mergedUnits = mergeUcdpConflicts(
+				mergeWorldBankQualityOfLife(data.map_units, worldBankData),
+				ucdpData
+			);
 			units = mergedUnits;
 			selectedId = mergedUnits[0]?.id ?? null;
 			selectedUnit = mergedUnits[0] ?? null;

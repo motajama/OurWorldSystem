@@ -11,6 +11,48 @@
 			"provenance_required": true
 		},
 		{
+			"id": "ucdp_country_year",
+			"title": "UCDP Country-Year Dataset on Organized Violence within Country Borders",
+			"publisher": "Uppsala Conflict Data Program",
+			"type": "csv",
+			"url": "https://ucdp.uu.se/downloads/organizedviolencecy/organizedviolencecy-261-csv.zip",
+			"version": "26.1",
+			"coverage": "Global country-year data for organized violence within country borders, 1989-2025.",
+			"license_or_terms_note": "UCDP download center states current datasets are free of charge and licensed under CC BY 4.0 with required citation of relevant publications.",
+			"citation_note": "Cite the UCDP OrganizedViolenceCY version number and the UCDP GED publications requested by UCDP, including Sundberg and Melander (2013) and the current organized violence annual update.",
+			"retrieval_method": "scripts/data/fetch-ucdp-conflicts.mjs",
+			"methodological_note": "Used for organized violence occurring within a map unit's territory. This is not a claim of state responsibility and is not a complete civilian casualty count.",
+			"provenance_required": true
+		},
+		{
+			"id": "ucdp_prio_armed_conflict",
+			"title": "UCDP/PRIO Armed Conflict Dataset",
+			"publisher": "Uppsala Conflict Data Program",
+			"type": "csv",
+			"url": "https://ucdp.uu.se/downloads/ucdpprio/ucdp-prio-acd-261-csv.zip",
+			"version": "26.1",
+			"coverage": "Global conflict-year data for state-based armed conflicts, 1946-2025.",
+			"license_or_terms_note": "UCDP download center states current datasets are free of charge and licensed under CC BY 4.0 with required citation of relevant publications.",
+			"citation_note": "Cite the UCDP/PRIO Armed Conflict Dataset version number, Gleditsch et al. (2002), and the current UCDP annual organized violence publication requested by UCDP.",
+			"retrieval_method": "scripts/data/fetch-ucdp-conflicts.mjs",
+			"methodological_note": "Used only for state involvement in state-based armed conflict where participant fields can be mapped confidently. Location is not treated as physical territory of violence.",
+			"provenance_required": true
+		},
+		{
+			"id": "ucdp_ged_global",
+			"title": "UCDP Georeferenced Event Dataset (GED) Global",
+			"publisher": "Uppsala Conflict Data Program",
+			"type": "csv/api",
+			"url": "https://ucdp.uu.se/downloads/ged/ged261-csv.zip",
+			"version": "26.1",
+			"coverage": "Global event-level organized violence data, 1989-2025.",
+			"license_or_terms_note": "UCDP download center states current datasets are free of charge and licensed under CC BY 4.0 with required citation of relevant publications. The UCDP API requires an access token.",
+			"citation_note": "Cite the UCDP GED version number, Sundberg and Melander (2013), and the current UCDP annual organized violence publication requested by UCDP.",
+			"retrieval_method": "Configured for future use; the first conflict pipeline does not download GED by default.",
+			"methodological_note": "Event-level layer planned for later if file size and frontend use are acceptable. It should remain distinct from country-year territorial aggregation and state-involvement data.",
+			"provenance_required": true
+		},
+		{
 			"id": "natural_earth",
 			"title": "Natural Earth Admin 0 Countries and Breakaway/Disputed Areas",
 			"publisher": "Natural Earth",

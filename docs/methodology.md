@@ -4,13 +4,28 @@ OurWorldSystem treats world-system classification as a reproducible, data-driven
 
 ## Current Status
 
-The first frontend scaffold uses Natural Earth geometry, mock world-system data, and an initial real World Bank WDI quality-of-life pipeline. World-system classes, confidence values, and most criterion-layer values remain placeholders for interface development.
+The first frontend scaffold uses Natural Earth geometry, mock world-system data, an initial real World Bank WDI quality-of-life pipeline, and a first UCDP conflict pipeline. World-system classes, confidence values, and most criterion-layer values remain placeholders for interface development.
 
 The default map layer is the overall world-system position. This is a synthetic model view intended to summarize multiple structural dimensions with uncertainty and provenance. It should not be read as a direct copy of any single source indicator.
 
 Criterion layers are separate thematic views for individual dimensions: war/conflict, press freedom, political freedom, quality of life, ecological performance, and extraction/externalization. They let users inspect one family of evidence at a time instead of treating the overall class as self-explanatory.
 
-Most current criterion-layer values are mock/demo values only. The quality-of-life layer can use real World Bank WDI values when `static/data/indicators/quality-of-life.world-bank.latest.json` is present. Mock HDI values remain demo data unless replaced later by a properly sourced UNDP HDI pipeline.
+Most current criterion-layer values are mock/demo values only. The quality-of-life layer can use real World Bank WDI values when `static/data/indicators/quality-of-life.world-bank.latest.json` is present. The conflict layer can use real UCDP values when `static/data/indicators/conflict.ucdp.latest.json` is present. Mock HDI values remain demo data unless replaced later by a properly sourced UNDP HDI pipeline.
+
+## UCDP Conflict Data
+
+The initial conflict pipeline uses UCDP public CSV datasets rather than proprietary APIs:
+
+- UCDP Country-Year Dataset on Organized Violence within Country Borders version 26.1.
+- UCDP/PRIO Armed Conflict Dataset version 26.1.
+
+These sources answer different questions and must not be merged into a single moral or legal claim. The country-year dataset is used for organized violence occurring within a map unit's borders. This supports a `war_on_territory` display flag, but the label should be read as territorial exposure to organized violence, not state responsibility.
+
+The UCDP/PRIO Armed Conflict Dataset is used for state involvement in state-based armed conflict when participant fields can be matched confidently to the OurWorldSystem registry. Its `location` field is not treated as the physical location of violence; UCDP/PRIO defines location as the government side or incompatibility location depending on conflict type.
+
+Fatality estimates in this layer are UCDP estimates for organized violence. They should not be described as complete civilian death counts. They also do not provide adult/child casualty splits. `child_casualties_verified` remains `null` by design, with a user-facing note that child casualties are not available in this layer.
+
+A future child-casualty layer should be sourced separately from a dataset designed for that question, such as UN CAAC or UNICEF reporting, and should preserve its own definitions, verification thresholds, source year, and uncertainty.
 
 ## World Bank WDI Quality-of-Life Data
 

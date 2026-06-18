@@ -1,6 +1,6 @@
 # Future Data Pipeline
 
-The first scaffold has a geometry pipeline, checked-in mock indicator JSON under `static/data/`, and an initial World Bank WDI quality-of-life pipeline.
+The first scaffold has a geometry pipeline, checked-in mock indicator JSON under `static/data/`, an initial World Bank WDI quality-of-life pipeline, and a first UCDP conflict pipeline.
 
 ## Registry Validation
 
@@ -10,7 +10,7 @@ Run:
 npm run validate:data
 ```
 
-This checks `static/data/map-units.registry.json`, `static/data/world-system.latest.json`, and the optional World Bank quality-of-life output when present.
+This checks `static/data/map-units.registry.json`, `static/data/world-system.latest.json`, and the optional World Bank quality-of-life and UCDP conflict outputs when present.
 
 The map-unit registry exists because geometry source properties are not stable application identities. Natural Earth provides geometry and helpful aliases, but codes such as `ISO_A3` or `ADM0_A3` can be `-99`, and `-99` is not unique. The validation script rejects `-99` as a registry or mock indicator ID and rejects Natural Earth alias arrays that contain only `-99`.
 
@@ -65,6 +65,37 @@ education_score = clamp(secondary_enrollment_gross / 100, 0, 1), if available
 ```
 
 The score is computed only when life expectancy and GNI per capita PPP are present. Missing World Bank values remain absent and should display as `No data`.
+
+## UCDP Conflict Pipeline
+
+Run:
+
+```sh
+npm run data:fetch:ucdp
+```
+
+This calls `scripts/data/fetch-ucdp-conflicts.mjs` and fetches:
+
+- UCDP Country-Year Dataset on Organized Violence within Country Borders version 26.1.
+- UCDP/PRIO Armed Conflict Dataset version 26.1.
+
+The script uses built-in `fetch`, saves raw ZIP/CSV files under `data/raw/ucdp/`, parses CSV without adding a package dependency, and writes `static/data/indicators/conflict.ucdp.latest.json`.
+
+The UCDP API currently requires an access token, so this pipeline prefers versioned public CSV downloads from the UCDP Dataset Download Center. The URLs are constants in the script and can be overridden with:
+
+```sh
+UCDP_COUNTRY_YEAR_URL=... UCDP_PRIO_ARMED_CONFLICT_URL=... npm run data:fetch:ucdp
+```
+
+The script prints detected CSV headers and fails if required columns are missing. It maps source rows to the map-unit registry through registry IDs, ISO3-like fields, display names, aliases, and documented manual aliases. Natural Earth placeholder code `-99` is never accepted as an ID.
+
+The output distinguishes:
+
+- `war_on_territory`: organized violence within the map unit's territory from UCDP country-year data.
+- `involved_in_conflict`: state actor involvement in state-based armed conflict from UCDP/PRIO when participant fields map confidently.
+- `fatalities_best_estimate`: UCDP best estimate for organized violence in the processed country-year layer.
+
+These fields must not be used to infer state responsibility for violence on territory. Fatality estimates are not adult/child breakdowns and are not complete civilian casualty counts. Child casualties remain `null` until a separate UN CAAC, UNICEF, or equivalent child-casualty source is added.
 
 ## General Indicator Pipeline
 

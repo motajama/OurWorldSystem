@@ -94,6 +94,8 @@ export interface ConflictAssessment {
 	active_conflicts: string[];
 	fatalities_best_estimate: number | null;
 	child_casualties_verified: number | null;
+	latest_year?: number | null;
+	source?: string | null;
 	notes: string;
 }
 
@@ -208,5 +210,46 @@ export interface WorldBankQualityOfLifeDataset {
 		source_country_name?: string | null;
 	}[];
 	latest_years?: Record<string, number | null>;
+	notes: string[];
+}
+
+export interface UcdpConflictRecord {
+	id: MapUnitId;
+	territory: {
+		has_organized_violence: boolean | null;
+		latest_year: number;
+		fatalities_best_estimate: number | null;
+		fatalities_low: number | null;
+		fatalities_high: number | null;
+		event_count: number | null;
+		source: 'ucdp_country_year';
+	} | null;
+	state_involvement: {
+		involved_in_state_based_conflict: boolean | null;
+		latest_year: number | null;
+		conflict_count: number;
+		conflicts: Array<{
+			conflict_id: string;
+			name: string;
+			year: number;
+			type: string;
+			intensity_level: string;
+			cumulative_intensity: string;
+		}>;
+		source: 'ucdp_prio_armed_conflict';
+	};
+	conflict_summary: ConflictAssessment;
+	data_quality: 'partial' | 'good' | 'sparse';
+	sources: string[];
+}
+
+export interface UcdpConflictDataset {
+	dataset_id: 'conflict_ucdp_latest';
+	source_ids: ['ucdp_country_year', 'ucdp_prio_armed_conflict'];
+	retrieved_at: string;
+	version: string;
+	latest_year: number;
+	records: UcdpConflictRecord[];
+	unmatched_source_rows: Array<Record<string, string | number | null>>;
 	notes: string[];
 }
