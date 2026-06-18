@@ -31,6 +31,26 @@
 			"url": "https://data.worldbank.org/",
 			"license": null,
 			"notes": "Planned public source for development and economic indicators."
+		},
+		{
+			"id": "natural_earth",
+			"title": "Natural Earth Admin 0 Countries and Breakaway/Disputed Areas",
+			"purpose": "Base geometry for static map-unit rendering and disputed-area overlay.",
+			"publisher": "Natural Earth",
+			"url": "https://www.naturalearthdata.com/",
+			"license": "Public domain; review Natural Earth terms and attribution guidance before redistribution.",
+			"retrieval_notes": "Downloaded by scripts/geo/build-natural-earth.sh from the Natural Earth CDN. Admin 0 countries are used as de facto base boundaries; disputed/breakaway areas are rendered separately as an overlay.",
+			"notes": "Geometry is not political recognition and does not adjudicate sovereignty."
+		},
+		{
+			"id": "mapshaper",
+			"title": "Mapshaper",
+			"purpose": "Command-line conversion and simplification from Natural Earth shapefiles to TopoJSON.",
+			"publisher": "Mapshaper project",
+			"url": "https://github.com/mbloch/mapshaper",
+			"license": "BSD-3-Clause; verify package license for the installed version.",
+			"retrieval_notes": "Run locally through npx in scripts/geo/build-natural-earth.sh.",
+			"notes": "Used as a build-time tool only; it is not a runtime service."
 		}
 	]
 }

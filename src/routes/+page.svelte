@@ -8,13 +8,13 @@
 
 	let units = $state<MapUnit[]>([]);
 	let selectedId = $state<string | null>(null);
+	let selectedUnit = $state<MapUnit | null>(null);
 	let loading = $state(true);
 	let error = $state<string | null>(null);
 
-	const selectedUnit = $derived(units.find((unit) => unit.id === selectedId) ?? units[0] ?? null);
-
 	function selectUnit(unit: MapUnit) {
 		selectedId = unit.id;
+		selectedUnit = unit;
 	}
 
 	onMount(async () => {
@@ -28,6 +28,7 @@
 			const data = (await response.json()) as DataEnvelope;
 			units = data.map_units;
 			selectedId = data.map_units[0]?.id ?? null;
+			selectedUnit = data.map_units[0] ?? null;
 		} catch (loadError) {
 			error = loadError instanceof Error ? loadError.message : 'Failed to load mock data.';
 		} finally {
@@ -53,7 +54,7 @@
 			{:else if error}
 				<div class="state-message error">{error}</div>
 			{:else}
-				<WorldMap {units} selectedId={selectedUnit?.id ?? null} onSelect={selectUnit} />
+				<WorldMap {units} {selectedId} onSelect={selectUnit} />
 			{/if}
 		</div>
 

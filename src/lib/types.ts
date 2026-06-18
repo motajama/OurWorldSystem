@@ -1,4 +1,6 @@
-export type MapUnitType = 'UN member' | 'territory' | 'disputed' | 'special';
+export type MapUnitId = string;
+
+export type MapUnitType = 'UN member' | 'territory' | 'disputed' | 'special' | 'no_data';
 
 export type WorldSystemClass =
 	| 'core'
@@ -10,12 +12,16 @@ export type WorldSystemClass =
 
 export type Confidence = 'high' | 'medium' | 'low';
 
-export interface SourceReference {
+export interface SourceRecord {
 	id: string;
-	name: string;
+	name?: string;
+	title?: string;
+	purpose?: string;
 	publisher: string;
 	url: string | null;
-	license: string | null;
+	license?: string | null;
+	terms?: string | null;
+	retrieval_notes?: string;
 	notes: string;
 }
 
@@ -65,7 +71,7 @@ export interface ExploitationPosition {
 }
 
 export interface MapUnit {
-	id: string;
+	id: MapUnitId;
 	name: string;
 	map_unit_type: MapUnitType;
 	sovereignty_note: string | null;
@@ -78,6 +84,24 @@ export interface MapUnit {
 	exploitation_position: ExploitationPosition;
 	sources: string[];
 	last_updated: string;
+}
+
+export type MapUnitRecord = MapUnit;
+
+export interface GeoFeatureProperties {
+	ADM0_A3?: string;
+	ISO_A3?: string;
+	NAME?: string;
+	NAME_LONG?: string;
+	SOV_A3?: string;
+	TYPE?: string;
+	ADMIN?: string;
+	FCLASS_ISO?: string;
+	FCLASS_US?: string;
+	FCLASS_FR?: string;
+	FCLASS_RU?: string;
+	FCLASS_CN?: string;
+	[key: string]: string | number | null | undefined;
 }
 
 export interface DataEnvelope {

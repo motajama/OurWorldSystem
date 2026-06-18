@@ -3,11 +3,12 @@
 	import { onMount } from 'svelte';
 	import { geoNaturalEarth1, geoPath } from 'd3';
 	import { feature } from 'topojson-client';
-	import type { MapUnit, WorldSystemClass } from '$lib/types';
+	import type { Feature, FeatureCollection, GeoJsonProperties, Geometry } from 'geojson';
+	import type { GeoFeatureProperties, MapUnit, MapUnitId, WorldSystemClass } from '$lib/types';
 
 	type Props = {
 		units: MapUnit[];
-		selectedId: string | null;
+		selectedId: MapUnitId | null;
 		onSelect: (unit: MapUnit) => void;
 	};
 
@@ -16,10 +17,61 @@
 		objects?: Record<string, unknown>;
 	};
 
+	type TopologyGeometryObject = {
+		type?: string;
+		geometries?: unknown[];
+	};
+
+	type TopologyFetchResult =
+		| {
+				ok: true;
+				url: string;
+				topology: TopologyObject;
+		  }
+		| {
+				ok: false;
+				url: string;
+				status: number | null;
+				message: string;
+		  };
+
+	type ExtractionResult =
+		| {
+				ok: true;
+				features: Feature<Geometry, GeoFeatureProperties>[];
+				objectKey: string;
+				availableObjectKeys: string[];
+		  }
+		| {
+				ok: false;
+				message: string;
+				availableObjectKeys: string[];
+		  };
+
+	type RenderFeature = {
+		id: string;
+		renderKey: string;
+		name: string;
+		path: string;
+		unit: MapUnit | null;
+		properties: GeoFeatureProperties;
+	};
+
+	const viewBox = {
+		width: 1000,
+		height: 520
+	};
+	const worldTopologyPath = 'geo/world.topojson';
+	const disputedTopologyPath = 'geo/disputed.topojson';
+	const worldTopologyUrl = `${base}/${worldTopologyPath}`;
+	const disputedTopologyUrl = `${base}/${disputedTopologyPath}`;
+
 	let { units, selectedId, onSelect }: Props = $props();
-	let topojsonAvailable = $state(false);
-	let geometryStatus = $state('Checking for local TopoJSON geometry.');
-	let outlinePath = $state<string | null>(null);
+	let features = $state<RenderFeature[]>([]);
+	let disputedFeatures = $state<RenderFeature[]>([]);
+	let geometryStatus = $state('Loading Natural Earth geometry.');
+	let geometryDiagnostic = $state<string | null>(null);
+	let notice = $state<string | null>(null);
 
 	const classColors: Record<WorldSystemClass, string> = {
 		core: '#5eead4',
@@ -30,62 +82,401 @@
 		disputed: '#f87171'
 	};
 
-	const fallbackPositions: Record<string, { x: number; y: number }> = {
-		USA: { x: 17, y: 38 },
-		BRA: { x: 32, y: 66 },
-		DEU: { x: 51, y: 33 },
-		CZE: { x: 53, y: 36 },
-		UKR: { x: 58, y: 38 },
-		ZAF: { x: 56, y: 77 },
-		COD: { x: 55, y: 61 },
-		PSE: { x: 60, y: 44 },
-		IND: { x: 70, y: 51 },
-		CHN: { x: 77, y: 41 },
-		TWN: { x: 83, y: 48 },
-		XKO: { x: 55, y: 40 }
+	const disputedNotice =
+		'This is a disputed or special map unit in the Natural Earth source layer. OurWorldSystem does not adjudicate sovereignty.';
+
+	const unitById = $derived(new Map(units.map((unit) => [unit.id, unit])));
+
+	const naturalEarthAliases: Record<string, MapUnitId> = {
+		KOS: 'XKO'
 	};
 
-	const positionedUnits = $derived(
-		units.map((unit) => {
-			const fallback = fallbackPositions[unit.id] ?? { x: 50, y: 50 };
+	function isValidTopologyObject(value: unknown): value is TopologyGeometryObject {
+		if (!value || typeof value !== 'object') {
+			return false;
+		}
+
+		const object = value as TopologyGeometryObject;
+
+		return (
+			object.type === 'GeometryCollection' ||
+			object.type === 'Point' ||
+			object.type === 'MultiPoint' ||
+			object.type === 'LineString' ||
+			object.type === 'MultiLineString' ||
+			object.type === 'Polygon' ||
+			object.type === 'MultiPolygon'
+		);
+	}
+
+	function getTopologyObject(topology: TopologyObject, preferredKeys: string[] = []) {
+		const objects = topology.objects ?? {};
+		const keys = Object.keys(objects);
+		const orderedKeys = [...preferredKeys, ...keys.filter((key) => !preferredKeys.includes(key))];
+
+		for (const key of orderedKeys) {
+			const object = objects[key];
+
+			if (isValidTopologyObject(object)) {
+				return { key, object };
+			}
+		}
+
+		return null;
+	}
+
+	function normalizeProperties(properties: GeoJsonProperties): GeoFeatureProperties {
+		return (properties ?? {}) as GeoFeatureProperties;
+	}
+
+	function normalizeFeatureResult(
+		result:
+			| Feature<Geometry, GeoFeatureProperties>
+			| FeatureCollection<Geometry, GeoFeatureProperties>
+	): Feature<Geometry, GeoFeatureProperties>[] {
+		if (result.type === 'FeatureCollection') {
+			return result.features;
+		}
+
+		if (result.type === 'Feature') {
+			return [result];
+		}
+
+		return [];
+	}
+
+	function extractFeatures(
+		topology: TopologyObject,
+		url: string,
+		preferredKeys: string[] = []
+	): ExtractionResult {
+		const topologyObject = getTopologyObject(topology, preferredKeys);
+		const availableObjectKeys = Object.keys(topology.objects ?? {});
+
+		if (!topologyObject) {
+			return {
+				ok: false,
+				availableObjectKeys,
+				message:
+					availableObjectKeys.length > 0
+						? `Attempted ${url}. No valid TopoJSON object found. Available object keys: ${availableObjectKeys.join(', ')}.`
+						: `Attempted ${url}. No TopoJSON object keys were found in the file.`
+			};
+		}
+
+		try {
+			const result = feature(
+				topology as Parameters<typeof feature>[0],
+				topologyObject.object as Parameters<typeof feature>[1]
+			) as
+				| Feature<Geometry, GeoFeatureProperties>
+				| FeatureCollection<Geometry, GeoFeatureProperties>;
+			const extractedFeatures = normalizeFeatureResult(result).map((geoFeature) => ({
+				...geoFeature,
+				properties: normalizeProperties(geoFeature.properties)
+			}));
+
+			if (extractedFeatures.length === 0) {
+				return {
+					ok: false,
+					availableObjectKeys,
+					message: `TopoJSON object "${topologyObject.key}" loaded, but it produced no GeoJSON features.`
+				};
+			}
 
 			return {
-				...unit,
-				x: fallback.x,
-				y: fallback.y
+				ok: true,
+				features: extractedFeatures,
+				objectKey: topologyObject.key,
+				availableObjectKeys
 			};
-		})
-	);
+		} catch (error) {
+			const message = error instanceof Error ? error.message : 'Unknown TopoJSON conversion error.';
+			return {
+				ok: false,
+				availableObjectKeys,
+				message: `Could not extract features from TopoJSON object "${topologyObject.key}": ${message}`
+			};
+		}
+	}
 
-	onMount(async () => {
+	function getJoinCandidates(properties: GeoFeatureProperties): MapUnitId[] {
+		const candidates = [
+			properties.ISO_A3,
+			properties.ADM0_A3,
+			properties.SOV_A3,
+			properties.FCLASS_ISO,
+			properties.FCLASS_US,
+			properties.FCLASS_FR,
+			properties.FCLASS_RU,
+			properties.FCLASS_CN,
+			properties.id
+		].filter((value): value is string => Boolean(value && value !== '-99'));
+
+		return candidates.flatMap((candidate) =>
+			[candidate, naturalEarthAliases[candidate]].filter(Boolean)
+		);
+	}
+
+	function findUnit(properties: GeoFeatureProperties): MapUnit | null {
+		for (const candidate of getJoinCandidates(properties)) {
+			const unit = unitById.get(candidate);
+
+			if (unit) {
+				return unit;
+			}
+		}
+
+		return null;
+	}
+
+	function getFeatureName(properties: GeoFeatureProperties) {
+		return (
+			properties.NAME_LONG ??
+			properties.NAME ??
+			properties.ADMIN ??
+			properties.ISO_A3 ??
+			properties.ADM0_A3 ??
+			'Unnamed map unit'
+		);
+	}
+
+	function getFeatureId(properties: GeoFeatureProperties, fallback: string) {
+		return (
+			properties.ISO_A3 ?? properties.ADM0_A3 ?? properties.SOV_A3 ?? properties.id ?? fallback
+		);
+	}
+
+	function getRenderKey(layerName: string, index: number, properties: GeoFeatureProperties) {
+		// Natural Earth may use "-99" as a non-unique placeholder code, so render keys
+		// must not rely only on ISO/ADM codes.
+		return [
+			layerName,
+			index,
+			properties.ADM0_A3,
+			properties.ISO_A3,
+			properties.SOV_A3,
+			properties.NAME_LONG,
+			properties.NAME,
+			properties.ADMIN
+		]
+			.filter(Boolean)
+			.join('::');
+	}
+
+	function createNoDataUnit(renderFeature: RenderFeature): MapUnit {
+		const id = String(getFeatureId(renderFeature.properties, renderFeature.id));
+
+		return {
+			id,
+			name: renderFeature.name,
+			map_unit_type: 'no_data',
+			sovereignty_note: null,
+			world_system: {
+				class: 'no_data',
+				score: null,
+				confidence: 'low',
+				explanation: 'Geometry exists but no indicator record is available yet.'
+			},
+			conflict: {
+				war_on_territory: false,
+				involved_in_conflict: false,
+				active_conflicts: [],
+				fatalities_best_estimate: null,
+				child_casualties_verified: null,
+				notes: 'No indicator record is available yet.'
+			},
+			press_freedom: {
+				source: 'No data',
+				score: null,
+				category: null,
+				year: 2026
+			},
+			political_freedom: {
+				source: 'No data',
+				score: null,
+				category: null,
+				year: 2026
+			},
+			quality_of_life: {
+				hdi: null,
+				ihdi: null,
+				life_expectancy: null,
+				education_index: null
+			},
+			ecology: {
+				epi_score: null,
+				material_footprint_per_capita: null,
+				co2_per_capita: null,
+				ewaste_generated_kg_per_capita: null
+			},
+			exploitation_position: {
+				resource_export_dependency: null,
+				foreign_value_added_share: null,
+				domestic_value_capture: null,
+				ewaste_import_risk: null,
+				notes: null
+			},
+			sources: ['natural_earth'],
+			last_updated: '2026-06-18'
+		};
+	}
+
+	function renderFeatures(
+		geoFeatures: Feature<Geometry, GeoFeatureProperties>[],
+		path: ReturnType<typeof geoPath>,
+		layerName: string
+	): RenderFeature[] {
+		return geoFeatures
+			.map((geoFeature: Feature<Geometry, GeoFeatureProperties>, index) => {
+				const properties = geoFeature.properties ?? {};
+				const featurePath = path(geoFeature);
+
+				if (!featurePath) {
+					return null;
+				}
+
+				const id = getFeatureId(
+					properties,
+					properties.NAME_LONG ?? properties.NAME ?? `feature-${index}`
+				);
+
+				return {
+					id: String(id),
+					renderKey: getRenderKey(layerName, index, properties),
+					name: getFeatureName(properties),
+					path: featurePath,
+					unit: findUnit(properties),
+					properties
+				};
+			})
+			.filter((renderFeature): renderFeature is RenderFeature => Boolean(renderFeature));
+	}
+
+	function selectFeature(renderFeature: RenderFeature, isDisputedOverlay = false) {
+		if (renderFeature.unit) {
+			notice = null;
+			onSelect(renderFeature.unit);
+			return;
+		}
+
+		if (isDisputedOverlay) {
+			notice = disputedNotice;
+		} else {
+			notice = null;
+		}
+
+		onSelect(createNoDataUnit(renderFeature));
+	}
+
+	function handleKeydown(
+		event: KeyboardEvent,
+		renderFeature: RenderFeature,
+		isDisputedOverlay = false
+	) {
+		if (event.key === 'Enter' || event.key === ' ') {
+			event.preventDefault();
+			selectFeature(renderFeature, isDisputedOverlay);
+		}
+	}
+
+	async function fetchTopology(url: string): Promise<TopologyFetchResult> {
 		try {
-			const response = await fetch(`${base}/geo/world.topojson`);
+			const response = await fetch(url);
 
 			if (!response.ok) {
-				geometryStatus = 'No local TopoJSON found. Showing the temporary clickable grid.';
-				return;
+				return {
+					ok: false,
+					url,
+					status: response.status,
+					message: `HTTP ${response.status} while fetching ${url}`
+				};
 			}
 
-			const topology = (await response.json()) as TopologyObject;
-			const objectName = Object.keys(topology.objects ?? {})[0];
+			return {
+				ok: true,
+				url,
+				topology: (await response.json()) as TopologyObject
+			};
+		} catch (error) {
+			return {
+				ok: false,
+				url,
+				status: null,
+				message: error instanceof Error ? error.message : `Failed to fetch ${url}`
+			};
+		}
+	}
 
-			if (!objectName || !topology.objects) {
-				geometryStatus = 'Local TopoJSON has no drawable object. Showing the temporary grid.';
-				return;
-			}
+	onMount(async () => {
+		const worldTopology = await fetchTopology(worldTopologyUrl);
 
-			const collection = feature(
-				topology as Parameters<typeof feature>[0],
-				topology.objects[objectName] as Parameters<typeof feature>[1]
+		if (!worldTopology.ok) {
+			geometryDiagnostic =
+				worldTopology.status === 404
+					? `Attempted ${worldTopology.url}. File was not found; run npm run geo:build and rebuild the static site.`
+					: `Attempted ${worldTopology.url}. ${worldTopology.message}.`;
+			geometryStatus = 'Natural Earth base geometry could not be loaded.';
+			return;
+		}
+
+		const extractedWorld = extractFeatures(worldTopology.topology, worldTopology.url, [
+			'ne_110m_admin_0_countries'
+		]);
+
+		if (!extractedWorld.ok) {
+			geometryDiagnostic = extractedWorld.message;
+			geometryStatus = 'Natural Earth base geometry loaded, but no features could be extracted.';
+			return;
+		}
+
+		try {
+			const worldCollection: FeatureCollection<Geometry, GeoFeatureProperties> = {
+				type: 'FeatureCollection',
+				features: extractedWorld.features
+			};
+			const projection = geoNaturalEarth1().fitSize(
+				[viewBox.width, viewBox.height],
+				worldCollection
 			);
-			const projection = geoNaturalEarth1().fitSize([1000, 520], collection);
-			const path = geoPath(projection)(collection);
+			const path = geoPath(projection);
+			const renderedWorldFeatures = renderFeatures(extractedWorld.features, path, 'base');
 
-			outlinePath = path;
-			topojsonAvailable = Boolean(path);
-			geometryStatus = 'Local TopoJSON loaded. Mock map units remain clickable overlay points.';
+			if (renderedWorldFeatures.length === 0) {
+				geometryDiagnostic = `TopoJSON object "${extractedWorld.objectKey}" produced ${extractedWorld.features.length} features, but none generated drawable SVG paths.`;
+				geometryStatus =
+					'Natural Earth base geometry loaded, but no drawable paths could be rendered.';
+				return;
+			}
+
+			const disputedTopology = await fetchTopology(disputedTopologyUrl);
+
+			features = renderedWorldFeatures;
+
+			if (disputedTopology.ok) {
+				const extractedDisputed = extractFeatures(disputedTopology.topology, disputedTopology.url, [
+					'ne_50m_admin_0_breakaway_disputed_areas'
+				]);
+
+				if (extractedDisputed.ok) {
+					disputedFeatures = renderFeatures(extractedDisputed.features, path, 'disputed');
+					geometryDiagnostic = `Attempted ${worldTopology.url}. Available object keys: ${extractedWorld.availableObjectKeys.join(', ')}. Extracted ${extractedWorld.features.length} base features from "${extractedWorld.objectKey}". Attempted ${disputedTopology.url}. Available object keys: ${extractedDisputed.availableObjectKeys.join(', ')}. Extracted ${extractedDisputed.features.length} disputed overlay features from "${extractedDisputed.objectKey}".`;
+				} else {
+					geometryDiagnostic = extractedDisputed.message;
+				}
+			} else if (disputedTopology.status !== 404) {
+				geometryDiagnostic = `Attempted optional overlay ${disputedTopology.url}. ${disputedTopology.message}.`;
+			} else {
+				geometryDiagnostic = `Attempted ${worldTopology.url}. Available object keys: ${extractedWorld.availableObjectKeys.join(', ')}. Extracted ${extractedWorld.features.length} base features from "${extractedWorld.objectKey}". Optional overlay ${disputedTopology.url} returned HTTP 404.`;
+			}
+
+			geometryStatus = disputedTopology.ok
+				? `Natural Earth base geometry loaded from object "${extractedWorld.objectKey}" with disputed overlay.`
+				: `Natural Earth base geometry loaded from object "${extractedWorld.objectKey}". Optional disputed overlay not found.`;
 		} catch {
-			geometryStatus = 'No local TopoJSON found. Showing the temporary clickable grid.';
+			geometryStatus = 'Natural Earth geometry loaded, but projection or rendering failed.';
+			geometryDiagnostic =
+				'The TopoJSON file was fetched successfully, but D3 could not render it.';
 		}
 	});
 </script>
@@ -93,72 +484,87 @@
 <section class="map-shell" aria-labelledby="map-title">
 	<div class="map-heading">
 		<div>
-			<p>Static atlas preview</p>
+			<p>Static Natural Earth layer</p>
 			<h2 id="map-title">World-system map units</h2>
 		</div>
 		<span>{units.length} mock units</span>
 	</div>
 
 	<div class="map-frame">
-		<svg viewBox="0 0 1000 520" role="img" aria-describedby="map-description">
-			<title>Temporary OurWorldSystem world map scaffold</title>
+		<svg
+			viewBox={`0 0 ${viewBox.width} ${viewBox.height}`}
+			role="img"
+			aria-describedby="map-description"
+			preserveAspectRatio="xMidYMid meet"
+		>
+			<title>OurWorldSystem Natural Earth map layer</title>
 			<desc id="map-description">
-				A temporary map-like grid with clickable mock map units until local TopoJSON geometry is
-				added.
+				A static Natural Earth world map. Matched map units are colored by mock world-system class.
+				Unmatched geometry is neutral. Disputed and breakaway areas are drawn as a subtle overlay
+				when available.
 			</desc>
-			<defs>
-				<pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse">
-					<path d="M 80 0 L 0 0 0 80" fill="none" stroke="rgba(148, 163, 184, 0.16)" />
-				</pattern>
-			</defs>
-			<rect width="1000" height="520" fill="#07111f" />
-			<rect width="1000" height="520" fill="url(#grid)" />
-			<ellipse cx="500" cy="265" rx="455" ry="205" fill="rgba(15, 23, 42, 0.9)" />
-			<path
-				d="M120 210 C190 150 280 150 340 205 C395 258 310 295 220 275 C160 262 85 254 120 210Z"
-				fill="#122033"
-				stroke="#334155"
-			/>
-			<path
-				d="M420 170 C535 108 735 135 840 225 C910 285 830 375 690 350 C548 324 365 262 420 170Z"
-				fill="#122033"
-				stroke="#334155"
-			/>
-			<path
-				d="M410 330 C480 290 605 318 640 392 C665 448 575 468 500 430 C432 396 355 365 410 330Z"
-				fill="#122033"
-				stroke="#334155"
-			/>
+			<rect width={viewBox.width} height={viewBox.height} fill="#07111f" />
 
-			{#if topojsonAvailable && outlinePath}
-				<path class="topo-outline" d={outlinePath} />
-			{/if}
-
-			{#each positionedUnits as unit (unit.id)}
-				{@const selected = selectedId === unit.id}
-				<g transform={`translate(${unit.x * 10} ${unit.y * 5.2})`}>
-					<button
-						class:selected
-						aria-label={`Select ${unit.name}`}
-						onclick={() => onSelect(unit)}
-						style={`--unit-color: ${classColors[unit.world_system.class]}`}
-					>
-						<circle r={selected ? 18 : 14}></circle>
-						<text y="4">{unit.id}</text>
-					</button>
+			{#if features.length === 0}
+				<text class="empty-label" x="500" y="250">{geometryStatus}</text>
+			{:else}
+				<g class="base-layer" aria-label="Natural Earth Admin 0 map units">
+					{#each features as renderFeature (renderFeature.renderKey)}
+						{@const unit = renderFeature.unit}
+						{@const selected =
+							unit?.id === selectedId || (!unit && renderFeature.id === selectedId)}
+						<path
+							class:selected
+							class:matched={Boolean(unit)}
+							d={renderFeature.path}
+							fill={unit ? classColors[unit.world_system.class] : classColors.no_data}
+							role="button"
+							tabindex="0"
+							aria-label={`Select ${unit?.name ?? renderFeature.name}`}
+							onclick={() => selectFeature(renderFeature)}
+							onkeydown={(event) => handleKeydown(event, renderFeature)}
+						>
+							<title>{unit?.name ?? renderFeature.name}</title>
+						</path>
+					{/each}
 				</g>
-			{/each}
+
+				{#if disputedFeatures.length > 0}
+					<g class="disputed-layer" aria-label="Natural Earth disputed and breakaway areas">
+						{#each disputedFeatures as renderFeature (renderFeature.renderKey)}
+							{@const unit = renderFeature.unit}
+							<path
+								class:selected={unit?.id === selectedId}
+								d={renderFeature.path}
+								role="button"
+								tabindex="0"
+								aria-label={`Inspect disputed or special map unit: ${unit?.name ?? renderFeature.name}`}
+								onclick={() => selectFeature(renderFeature, true)}
+								onkeydown={(event) => handleKeydown(event, renderFeature, true)}
+							>
+								<title>{unit?.name ?? renderFeature.name}</title>
+							</path>
+						{/each}
+					</g>
+				{/if}
+			{/if}
 		</svg>
 	</div>
 
+	{#if notice}
+		<p class="notice" role="status">{notice}</p>
+	{/if}
 	<p class="status">{geometryStatus}</p>
+	{#if geometryDiagnostic}
+		<p class="diagnostic" role="status">{geometryDiagnostic}</p>
+	{/if}
 </section>
 
 <style>
 	.map-shell {
 		display: grid;
 		min-height: 100%;
-		grid-template-rows: auto 1fr auto;
+		grid-template-rows: auto 1fr auto auto;
 		gap: 1rem;
 		padding: clamp(1rem, 2vw, 1.6rem);
 	}
@@ -196,6 +602,7 @@
 	}
 
 	.map-frame {
+		display: grid;
 		min-height: min(58vh, 44rem);
 		border: 1px solid rgba(148, 163, 184, 0.22);
 		background: #020617;
@@ -208,49 +615,75 @@
 		min-height: min(58vh, 44rem);
 	}
 
-	.topo-outline {
-		fill: rgba(30, 41, 59, 0.9);
-		stroke: rgba(203, 213, 225, 0.38);
-		stroke-width: 0.8;
+	path {
+		stroke: rgba(15, 23, 42, 0.96);
+		stroke-width: 0.45;
+		vector-effect: non-scaling-stroke;
+		transition:
+			fill 140ms ease,
+			filter 140ms ease,
+			stroke 140ms ease;
 	}
 
-	button {
+	path {
 		cursor: pointer;
 	}
 
-	circle {
-		fill: var(--unit-color);
-		stroke: rgba(255, 255, 255, 0.9);
-		stroke-width: 2;
-		transition:
-			r 140ms ease,
-			filter 140ms ease;
+	path:hover,
+	path:focus-visible {
+		filter: brightness(1.2);
+		stroke: #f8fafc;
+		stroke-width: 1.1;
+		outline: none;
 	}
 
-	text {
-		fill: #020617;
-		font-size: 0.76rem;
-		font-weight: 900;
+	path.selected {
+		filter: drop-shadow(0 0 8px rgba(226, 232, 240, 0.76));
+		stroke: #f8fafc;
+		stroke-width: 1.4;
+	}
+
+	.disputed-layer path {
+		cursor: pointer;
+		fill: rgba(248, 113, 113, 0.05);
+		stroke: rgba(248, 113, 113, 0.78);
+		stroke-dasharray: 3 3;
+		stroke-width: 1.15;
+		pointer-events: auto;
+	}
+
+	.disputed-layer path:hover,
+	.disputed-layer path:focus-visible {
+		fill: rgba(248, 113, 113, 0.12);
+		stroke: #fecaca;
+	}
+
+	.empty-label {
+		fill: #94a3b8;
+		font-size: 1rem;
 		text-anchor: middle;
-		pointer-events: none;
 	}
 
-	button:hover circle,
-	button:focus-visible circle,
-	button.selected circle {
-		filter: drop-shadow(0 0 10px rgba(226, 232, 240, 0.75));
-	}
-
-	button:focus-visible {
-		outline: 3px solid #bfdbfe;
-		outline-offset: 4px;
+	.status,
+	.notice,
+	.diagnostic {
+		margin: 0;
+		font-size: 0.88rem;
+		line-height: 1.45;
 	}
 
 	.status {
-		margin: 0;
 		color: #94a3b8;
-		font-size: 0.88rem;
-		line-height: 1.45;
+	}
+
+	.notice {
+		border-left: 3px solid #f87171;
+		padding-left: 0.75rem;
+		color: #fecaca;
+	}
+
+	.diagnostic {
+		color: #fcd34d;
 	}
 
 	@media (max-width: 700px) {
