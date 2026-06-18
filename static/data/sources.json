@@ -1,0 +1,36 @@
+{
+	"sources": [
+		{
+			"id": "mock",
+			"name": "Mock scaffold data",
+			"publisher": "OurWorldSystem",
+			"url": null,
+			"license": "Temporary development fixture",
+			"notes": "Placeholder data for UI scaffolding only. Do not cite as empirical output."
+		},
+		{
+			"id": "rsf",
+			"name": "World Press Freedom Index",
+			"publisher": "Reporters Without Borders",
+			"url": "https://rsf.org/",
+			"license": null,
+			"notes": "Planned public source for press freedom indicators."
+		},
+		{
+			"id": "ucdp",
+			"name": "Uppsala Conflict Data Program",
+			"publisher": "Uppsala University",
+			"url": "https://ucdp.uu.se/",
+			"license": null,
+			"notes": "Planned public source for conflict indicators."
+		},
+		{
+			"id": "world_bank",
+			"name": "World Development Indicators",
+			"publisher": "World Bank",
+			"url": "https://data.worldbank.org/",
+			"license": null,
+			"notes": "Planned public source for development and economic indicators."
+		}
+	]
+}

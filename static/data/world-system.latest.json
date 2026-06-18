@@ -1,0 +1,587 @@
+{
+	"meta": {
+		"title": "OurWorldSystem mock world-system dataset",
+		"description": "Temporary static mock data for the first frontend scaffold. Values are placeholders and must not be interpreted as final classifications.",
+		"mock": true,
+		"version": "0.1.0",
+		"generated_at": "2026-06-18"
+	},
+	"map_units": [
+		{
+			"id": "USA",
+			"name": "United States",
+			"map_unit_type": "UN member",
+			"sovereignty_note": null,
+			"world_system": {
+				"class": "core",
+				"score": 0.91,
+				"confidence": "high",
+				"explanation": "Mock classification based on high income, financial centrality, and military reach."
+			},
+			"conflict": {
+				"war_on_territory": false,
+				"involved_in_conflict": true,
+				"active_conflicts": [],
+				"fatalities_best_estimate": null,
+				"child_casualties_verified": null,
+				"notes": "Mock-data note; future versions should cite UCDP and UN sources."
+			},
+			"press_freedom": { "source": "RSF", "score": null, "category": null, "year": 2026 },
+			"political_freedom": {
+				"source": "Freedom House / V-Dem",
+				"score": null,
+				"category": null,
+				"year": 2026
+			},
+			"quality_of_life": {
+				"hdi": null,
+				"ihdi": null,
+				"life_expectancy": null,
+				"education_index": null
+			},
+			"ecology": {
+				"epi_score": null,
+				"material_footprint_per_capita": null,
+				"co2_per_capita": null,
+				"ewaste_generated_kg_per_capita": null
+			},
+			"exploitation_position": {
+				"resource_export_dependency": null,
+				"foreign_value_added_share": null,
+				"domestic_value_capture": null,
+				"ewaste_import_risk": null,
+				"notes": null
+			},
+			"sources": ["mock"],
+			"last_updated": "2026-06-18"
+		},
+		{
+			"id": "CHN",
+			"name": "China",
+			"map_unit_type": "UN member",
+			"sovereignty_note": null,
+			"world_system": {
+				"class": "semi-periphery",
+				"score": 0.78,
+				"confidence": "medium",
+				"explanation": "Mock classification reflecting major industrial capacity and uneven global hierarchy indicators."
+			},
+			"conflict": {
+				"war_on_territory": false,
+				"involved_in_conflict": false,
+				"active_conflicts": [],
+				"fatalities_best_estimate": null,
+				"child_casualties_verified": null,
+				"notes": "Mock-data note; future versions should cite UCDP and UN sources."
+			},
+			"press_freedom": { "source": "RSF", "score": null, "category": null, "year": 2026 },
+			"political_freedom": {
+				"source": "Freedom House / V-Dem",
+				"score": null,
+				"category": null,
+				"year": 2026
+			},
+			"quality_of_life": {
+				"hdi": null,
+				"ihdi": null,
+				"life_expectancy": null,
+				"education_index": null
+			},
+			"ecology": {
+				"epi_score": null,
+				"material_footprint_per_capita": null,
+				"co2_per_capita": null,
+				"ewaste_generated_kg_per_capita": null
+			},
+			"exploitation_position": {
+				"resource_export_dependency": null,
+				"foreign_value_added_share": null,
+				"domestic_value_capture": null,
+				"ewaste_import_risk": null,
+				"notes": null
+			},
+			"sources": ["mock"],
+			"last_updated": "2026-06-18"
+		},
+		{
+			"id": "CZE",
+			"name": "Czechia",
+			"map_unit_type": "UN member",
+			"sovereignty_note": null,
+			"world_system": {
+				"class": "core",
+				"score": 0.82,
+				"confidence": "medium",
+				"explanation": "Mock classification for a high-income EU member with dependency and value-chain caveats."
+			},
+			"conflict": {
+				"war_on_territory": false,
+				"involved_in_conflict": false,
+				"active_conflicts": [],
+				"fatalities_best_estimate": null,
+				"child_casualties_verified": null,
+				"notes": "Mock-data note; future versions should cite UCDP and UN sources."
+			},
+			"press_freedom": { "source": "RSF", "score": null, "category": null, "year": 2026 },
+			"political_freedom": {
+				"source": "Freedom House / V-Dem",
+				"score": null,
+				"category": null,
+				"year": 2026
+			},
+			"quality_of_life": {
+				"hdi": null,
+				"ihdi": null,
+				"life_expectancy": null,
+				"education_index": null
+			},
+			"ecology": {
+				"epi_score": null,
+				"material_footprint_per_capita": null,
+				"co2_per_capita": null,
+				"ewaste_generated_kg_per_capita": null
+			},
+			"exploitation_position": {
+				"resource_export_dependency": null,
+				"foreign_value_added_share": null,
+				"domestic_value_capture": null,
+				"ewaste_import_risk": null,
+				"notes": null
+			},
+			"sources": ["mock"],
+			"last_updated": "2026-06-18"
+		},
+		{
+			"id": "DEU",
+			"name": "Germany",
+			"map_unit_type": "UN member",
+			"sovereignty_note": null,
+			"world_system": {
+				"class": "core",
+				"score": 0.88,
+				"confidence": "high",
+				"explanation": "Mock classification based on industrial centrality, high income, and EU core role."
+			},
+			"conflict": {
+				"war_on_territory": false,
+				"involved_in_conflict": false,
+				"active_conflicts": [],
+				"fatalities_best_estimate": null,
+				"child_casualties_verified": null,
+				"notes": "Mock-data note; future versions should cite UCDP and UN sources."
+			},
+			"press_freedom": { "source": "RSF", "score": null, "category": null, "year": 2026 },
+			"political_freedom": {
+				"source": "Freedom House / V-Dem",
+				"score": null,
+				"category": null,
+				"year": 2026
+			},
+			"quality_of_life": {
+				"hdi": null,
+				"ihdi": null,
+				"life_expectancy": null,
+				"education_index": null
+			},
+			"ecology": {
+				"epi_score": null,
+				"material_footprint_per_capita": null,
+				"co2_per_capita": null,
+				"ewaste_generated_kg_per_capita": null
+			},
+			"exploitation_position": {
+				"resource_export_dependency": null,
+				"foreign_value_added_share": null,
+				"domestic_value_capture": null,
+				"ewaste_import_risk": null,
+				"notes": null
+			},
+			"sources": ["mock"],
+			"last_updated": "2026-06-18"
+		},
+		{
+			"id": "BRA",
+			"name": "Brazil",
+			"map_unit_type": "UN member",
+			"sovereignty_note": null,
+			"world_system": {
+				"class": "semi-periphery",
+				"score": 0.58,
+				"confidence": "medium",
+				"explanation": "Mock classification reflecting regional power, commodity exposure, and uneven development."
+			},
+			"conflict": {
+				"war_on_territory": false,
+				"involved_in_conflict": false,
+				"active_conflicts": [],
+				"fatalities_best_estimate": null,
+				"child_casualties_verified": null,
+				"notes": "Mock-data note; future versions should cite UCDP and UN sources."
+			},
+			"press_freedom": { "source": "RSF", "score": null, "category": null, "year": 2026 },
+			"political_freedom": {
+				"source": "Freedom House / V-Dem",
+				"score": null,
+				"category": null,
+				"year": 2026
+			},
+			"quality_of_life": {
+				"hdi": null,
+				"ihdi": null,
+				"life_expectancy": null,
+				"education_index": null
+			},
+			"ecology": {
+				"epi_score": null,
+				"material_footprint_per_capita": null,
+				"co2_per_capita": null,
+				"ewaste_generated_kg_per_capita": null
+			},
+			"exploitation_position": {
+				"resource_export_dependency": null,
+				"foreign_value_added_share": null,
+				"domestic_value_capture": null,
+				"ewaste_import_risk": null,
+				"notes": null
+			},
+			"sources": ["mock"],
+			"last_updated": "2026-06-18"
+		},
+		{
+			"id": "IND",
+			"name": "India",
+			"map_unit_type": "UN member",
+			"sovereignty_note": null,
+			"world_system": {
+				"class": "semi-periphery",
+				"score": 0.61,
+				"confidence": "medium",
+				"explanation": "Mock classification reflecting scale, services and manufacturing growth, and persistent inequality."
+			},
+			"conflict": {
+				"war_on_territory": false,
+				"involved_in_conflict": false,
+				"active_conflicts": [],
+				"fatalities_best_estimate": null,
+				"child_casualties_verified": null,
+				"notes": "Mock-data note; future versions should cite UCDP and UN sources."
+			},
+			"press_freedom": { "source": "RSF", "score": null, "category": null, "year": 2026 },
+			"political_freedom": {
+				"source": "Freedom House / V-Dem",
+				"score": null,
+				"category": null,
+				"year": 2026
+			},
+			"quality_of_life": {
+				"hdi": null,
+				"ihdi": null,
+				"life_expectancy": null,
+				"education_index": null
+			},
+			"ecology": {
+				"epi_score": null,
+				"material_footprint_per_capita": null,
+				"co2_per_capita": null,
+				"ewaste_generated_kg_per_capita": null
+			},
+			"exploitation_position": {
+				"resource_export_dependency": null,
+				"foreign_value_added_share": null,
+				"domestic_value_capture": null,
+				"ewaste_import_risk": null,
+				"notes": null
+			},
+			"sources": ["mock"],
+			"last_updated": "2026-06-18"
+		},
+		{
+			"id": "ZAF",
+			"name": "South Africa",
+			"map_unit_type": "UN member",
+			"sovereignty_note": null,
+			"world_system": {
+				"class": "semi-periphery",
+				"score": 0.52,
+				"confidence": "medium",
+				"explanation": "Mock classification for a regional industrial center with extractive and inequality constraints."
+			},
+			"conflict": {
+				"war_on_territory": false,
+				"involved_in_conflict": false,
+				"active_conflicts": [],
+				"fatalities_best_estimate": null,
+				"child_casualties_verified": null,
+				"notes": "Mock-data note; future versions should cite UCDP and UN sources."
+			},
+			"press_freedom": { "source": "RSF", "score": null, "category": null, "year": 2026 },
+			"political_freedom": {
+				"source": "Freedom House / V-Dem",
+				"score": null,
+				"category": null,
+				"year": 2026
+			},
+			"quality_of_life": {
+				"hdi": null,
+				"ihdi": null,
+				"life_expectancy": null,
+				"education_index": null
+			},
+			"ecology": {
+				"epi_score": null,
+				"material_footprint_per_capita": null,
+				"co2_per_capita": null,
+				"ewaste_generated_kg_per_capita": null
+			},
+			"exploitation_position": {
+				"resource_export_dependency": null,
+				"foreign_value_added_share": null,
+				"domestic_value_capture": null,
+				"ewaste_import_risk": null,
+				"notes": null
+			},
+			"sources": ["mock"],
+			"last_updated": "2026-06-18"
+		},
+		{
+			"id": "COD",
+			"name": "Democratic Republic of the Congo",
+			"map_unit_type": "UN member",
+			"sovereignty_note": null,
+			"world_system": {
+				"class": "periphery",
+				"score": 0.24,
+				"confidence": "medium",
+				"explanation": "Mock classification reflecting resource extraction exposure and low value capture."
+			},
+			"conflict": {
+				"war_on_territory": true,
+				"involved_in_conflict": true,
+				"active_conflicts": [],
+				"fatalities_best_estimate": null,
+				"child_casualties_verified": null,
+				"notes": "Mock-data note; future versions should cite UCDP and UN sources."
+			},
+			"press_freedom": { "source": "RSF", "score": null, "category": null, "year": 2026 },
+			"political_freedom": {
+				"source": "Freedom House / V-Dem",
+				"score": null,
+				"category": null,
+				"year": 2026
+			},
+			"quality_of_life": {
+				"hdi": null,
+				"ihdi": null,
+				"life_expectancy": null,
+				"education_index": null
+			},
+			"ecology": {
+				"epi_score": null,
+				"material_footprint_per_capita": null,
+				"co2_per_capita": null,
+				"ewaste_generated_kg_per_capita": null
+			},
+			"exploitation_position": {
+				"resource_export_dependency": null,
+				"foreign_value_added_share": null,
+				"domestic_value_capture": null,
+				"ewaste_import_risk": null,
+				"notes": null
+			},
+			"sources": ["mock"],
+			"last_updated": "2026-06-18"
+		},
+		{
+			"id": "UKR",
+			"name": "Ukraine",
+			"map_unit_type": "UN member",
+			"sovereignty_note": null,
+			"world_system": {
+				"class": "uncertain",
+				"score": null,
+				"confidence": "low",
+				"explanation": "Mock classification marked uncertain because active war substantially changes indicators."
+			},
+			"conflict": {
+				"war_on_territory": true,
+				"involved_in_conflict": true,
+				"active_conflicts": [],
+				"fatalities_best_estimate": null,
+				"child_casualties_verified": null,
+				"notes": "Mock-data note; future versions should cite UCDP and UN sources."
+			},
+			"press_freedom": { "source": "RSF", "score": null, "category": null, "year": 2026 },
+			"political_freedom": {
+				"source": "Freedom House / V-Dem",
+				"score": null,
+				"category": null,
+				"year": 2026
+			},
+			"quality_of_life": {
+				"hdi": null,
+				"ihdi": null,
+				"life_expectancy": null,
+				"education_index": null
+			},
+			"ecology": {
+				"epi_score": null,
+				"material_footprint_per_capita": null,
+				"co2_per_capita": null,
+				"ewaste_generated_kg_per_capita": null
+			},
+			"exploitation_position": {
+				"resource_export_dependency": null,
+				"foreign_value_added_share": null,
+				"domestic_value_capture": null,
+				"ewaste_import_risk": null,
+				"notes": null
+			},
+			"sources": ["mock"],
+			"last_updated": "2026-06-18"
+		},
+		{
+			"id": "PSE",
+			"name": "Palestine",
+			"map_unit_type": "disputed",
+			"sovereignty_note": "Displayed as a map unit without deciding sovereignty disputes.",
+			"world_system": {
+				"class": "disputed",
+				"score": null,
+				"confidence": "low",
+				"explanation": "Mock entry prioritizes neutral display, conflict context, uncertainty, and source notes."
+			},
+			"conflict": {
+				"war_on_territory": true,
+				"involved_in_conflict": true,
+				"active_conflicts": [],
+				"fatalities_best_estimate": null,
+				"child_casualties_verified": null,
+				"notes": "Mock-data note; future versions should cite UCDP, UN OCHA, and verified casualty sources."
+			},
+			"press_freedom": { "source": "RSF", "score": null, "category": null, "year": 2026 },
+			"political_freedom": {
+				"source": "Freedom House / V-Dem",
+				"score": null,
+				"category": null,
+				"year": 2026
+			},
+			"quality_of_life": {
+				"hdi": null,
+				"ihdi": null,
+				"life_expectancy": null,
+				"education_index": null
+			},
+			"ecology": {
+				"epi_score": null,
+				"material_footprint_per_capita": null,
+				"co2_per_capita": null,
+				"ewaste_generated_kg_per_capita": null
+			},
+			"exploitation_position": {
+				"resource_export_dependency": null,
+				"foreign_value_added_share": null,
+				"domestic_value_capture": null,
+				"ewaste_import_risk": null,
+				"notes": null
+			},
+			"sources": ["mock"],
+			"last_updated": "2026-06-18"
+		},
+		{
+			"id": "TWN",
+			"name": "Taiwan",
+			"map_unit_type": "special",
+			"sovereignty_note": "Displayed neutrally as a map unit; this atlas does not decide sovereignty disputes.",
+			"world_system": {
+				"class": "uncertain",
+				"score": null,
+				"confidence": "low",
+				"explanation": "Mock entry separates structural indicators from sovereignty status and flags uncertainty."
+			},
+			"conflict": {
+				"war_on_territory": false,
+				"involved_in_conflict": false,
+				"active_conflicts": [],
+				"fatalities_best_estimate": null,
+				"child_casualties_verified": null,
+				"notes": "Mock-data note; future versions should cite UCDP and UN sources where applicable."
+			},
+			"press_freedom": { "source": "RSF", "score": null, "category": null, "year": 2026 },
+			"political_freedom": {
+				"source": "Freedom House / V-Dem",
+				"score": null,
+				"category": null,
+				"year": 2026
+			},
+			"quality_of_life": {
+				"hdi": null,
+				"ihdi": null,
+				"life_expectancy": null,
+				"education_index": null
+			},
+			"ecology": {
+				"epi_score": null,
+				"material_footprint_per_capita": null,
+				"co2_per_capita": null,
+				"ewaste_generated_kg_per_capita": null
+			},
+			"exploitation_position": {
+				"resource_export_dependency": null,
+				"foreign_value_added_share": null,
+				"domestic_value_capture": null,
+				"ewaste_import_risk": null,
+				"notes": null
+			},
+			"sources": ["mock"],
+			"last_updated": "2026-06-18"
+		},
+		{
+			"id": "XKO",
+			"name": "Kosovo",
+			"map_unit_type": "disputed",
+			"sovereignty_note": "Displayed neutrally as a map unit; recognition status varies by source.",
+			"world_system": {
+				"class": "disputed",
+				"score": null,
+				"confidence": "low",
+				"explanation": "Mock entry marks status complexity and defers classification until sourced indicators exist."
+			},
+			"conflict": {
+				"war_on_territory": false,
+				"involved_in_conflict": false,
+				"active_conflicts": [],
+				"fatalities_best_estimate": null,
+				"child_casualties_verified": null,
+				"notes": "Mock-data note; future versions should cite UCDP and UN sources where applicable."
+			},
+			"press_freedom": { "source": "RSF", "score": null, "category": null, "year": 2026 },
+			"political_freedom": {
+				"source": "Freedom House / V-Dem",
+				"score": null,
+				"category": null,
+				"year": 2026
+			},
+			"quality_of_life": {
+				"hdi": null,
+				"ihdi": null,
+				"life_expectancy": null,
+				"education_index": null
+			},
+			"ecology": {
+				"epi_score": null,
+				"material_footprint_per_capita": null,
+				"co2_per_capita": null,
+				"ewaste_generated_kg_per_capita": null
+			},
+			"exploitation_position": {
+				"resource_export_dependency": null,
+				"foreign_value_added_share": null,
+				"domestic_value_capture": null,
+				"ewaste_import_risk": null,
+				"notes": null
+			},
+			"sources": ["mock"],
+			"last_updated": "2026-06-18"
+		}
+	]
+}
