@@ -2,6 +2,42 @@ export type MapUnitId = string;
 
 export type MapUnitType = 'UN member' | 'territory' | 'disputed' | 'special' | 'no_data';
 
+export type RecognitionStatus =
+	| 'un_member'
+	| 'non_un_member'
+	| 'disputed'
+	| 'territory'
+	| 'special'
+	| 'unknown';
+
+export interface NaturalEarthAlias {
+	adm0_a3: string[];
+	iso_a3: string[];
+	sov_a3: string[];
+	name_aliases: string[];
+}
+
+export interface ExternalIds {
+	iso3: string | null;
+	iso2: string | null;
+	un_m49: string | null;
+	world_bank: string | null;
+	oecd: string | null;
+}
+
+export interface MapUnitRegistryRecord {
+	id: MapUnitId;
+	display_name: string;
+	short_name: string;
+	map_unit_type: MapUnitType;
+	recognition_status: RecognitionStatus;
+	sovereignty_note: string | null;
+	natural_earth: NaturalEarthAlias;
+	external_ids: ExternalIds;
+	data_notes: string[];
+	last_reviewed: string;
+}
+
 export type WorldSystemClass =
 	| 'core'
 	| 'semi-periphery'

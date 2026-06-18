@@ -1,6 +1,46 @@
 # Data Schema
 
-The frontend currently reads mock indicator data from `static/data/world-system.latest.json` and geometry from `static/geo/`.
+The frontend currently reads the stable map-unit registry from `static/data/map-units.registry.json`, mock indicator data from `static/data/world-system.latest.json`, and geometry from `static/geo/`.
+
+## Map-Unit Registry
+
+Natural Earth geometry properties are not the application identity system. They are source metadata for drawing geometry and for building join candidates. Some Natural Earth records use `ISO_A3` or `ADM0_A3` value `-99`; that value is a placeholder and must never be used as a semantic map-unit ID.
+
+`static/data/map-units.registry.json` is an array of records:
+
+```ts
+{
+  id: string;
+  display_name: string;
+  short_name: string;
+  map_unit_type: "UN member" | "territory" | "disputed" | "special" | "no_data";
+  recognition_status:
+    | "un_member"
+    | "non_un_member"
+    | "disputed"
+    | "territory"
+    | "special"
+    | "unknown";
+  sovereignty_note: string | null;
+  natural_earth: {
+    adm0_a3: string[];
+    iso_a3: string[];
+    sov_a3: string[];
+    name_aliases: string[];
+  };
+  external_ids: {
+    iso3: string | null;
+    iso2: string | null;
+    un_m49: string | null;
+    world_bank: string | null;
+    oecd: string | null;
+  };
+  data_notes: string[];
+  last_reviewed: string;
+}
+```
+
+Future public datasets should be mapped into registry `id` values using documented source IDs such as ISO-3, UN M49, World Bank, OECD, or explicit manual crosswalks for special cases. Indicator files should not duplicate registry metadata except where a legacy UI field still requires it.
 
 ## Envelope
 
@@ -23,7 +63,7 @@ The frontend currently reads mock indicator data from `static/data/world-system.
 {
   id: string;
   name: string;
-  map_unit_type: "UN member" | "territory" | "disputed" | "special";
+  map_unit_type: "UN member" | "territory" | "disputed" | "special" | "no_data";
   sovereignty_note: string | null;
   world_system: {
     class: "core" | "semi-periphery" | "periphery" | "uncertain" | "no_data" | "disputed";
@@ -81,7 +121,7 @@ The frontend currently reads mock indicator data from `static/data/world-system.
 
 ## Geometry Files
 
-`static/geo/world.topojson` is generated from Natural Earth Admin 0 countries and stores a base world geometry layer. It is joined to map-unit records using Natural Earth properties such as:
+`static/geo/world.topojson` is generated from Natural Earth Admin 0 countries and stores a base world geometry layer. The frontend first resolves geometry through the registry's Natural Earth aliases. If no registry record matches, it may fall back to mock indicator data for development. If neither exists, the feature is still rendered as a synthetic `no_data` map unit.
 
 ```ts
 {
@@ -103,3 +143,5 @@ The frontend currently reads mock indicator data from `static/data/world-system.
 `static/geo/disputed.topojson` is optional and is generated from Natural Earth breakaway/disputed areas when that source archive is available.
 
 Geometry records are not indicator records. Natural Earth geometry is used for map drawing and spatial reference; mock world-system data remains in `static/data/world-system.latest.json`.
+
+Disputed and special map units are represented neutrally. A registry record can describe recognition status and source aliases without deciding sovereignty, and separate geometry records such as ISR/PSE or KOR/PRK remain separate where the geometry and data model do so.

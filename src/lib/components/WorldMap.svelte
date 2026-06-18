@@ -4,7 +4,19 @@
 	import { geoNaturalEarth1, geoPath } from 'd3';
 	import { feature } from 'topojson-client';
 	import type { Feature, FeatureCollection, GeoJsonProperties, Geometry } from 'geojson';
-	import type { GeoFeatureProperties, MapUnit, MapUnitId, WorldSystemClass } from '$lib/types';
+	import {
+		buildRegistryIndexes,
+		findRegistryRecordForNaturalEarthFeature,
+		loadMapUnitRegistry,
+		type RegistryIndexes
+	} from '$lib/mapUnitRegistry';
+	import type {
+		GeoFeatureProperties,
+		MapUnit,
+		MapUnitId,
+		MapUnitRegistryRecord,
+		WorldSystemClass
+	} from '$lib/types';
 
 	type Props = {
 		units: MapUnit[];
@@ -54,6 +66,7 @@
 		name: string;
 		path: string;
 		unit: MapUnit | null;
+		registryRecord: MapUnitRegistryRecord | null;
 		properties: GeoFeatureProperties;
 	};
 
@@ -71,6 +84,7 @@
 	let disputedFeatures = $state<RenderFeature[]>([]);
 	let geometryStatus = $state('Loading Natural Earth geometry.');
 	let geometryDiagnostic = $state<string | null>(null);
+	let registryDiagnostic = $state<string | null>(null);
 	let notice = $state<string | null>(null);
 
 	const classColors: Record<WorldSystemClass, string> = {
@@ -86,10 +100,6 @@
 		'This is a disputed or special map unit in the Natural Earth source layer. OurWorldSystem does not adjudicate sovereignty.';
 
 	const unitById = $derived(new Map(units.map((unit) => [unit.id, unit])));
-
-	const naturalEarthAliases: Record<string, MapUnitId> = {
-		KOS: 'XKO'
-	};
 
 	function isValidTopologyObject(value: unknown): value is TopologyGeometryObject {
 		if (!value || typeof value !== 'object') {
@@ -200,7 +210,7 @@
 		}
 	}
 
-	function getJoinCandidates(properties: GeoFeatureProperties): MapUnitId[] {
+	function getFallbackJoinCandidates(properties: GeoFeatureProperties): MapUnitId[] {
 		const candidates = [
 			properties.ISO_A3,
 			properties.ADM0_A3,
@@ -213,13 +223,11 @@
 			properties.id
 		].filter((value): value is string => Boolean(value && value !== '-99'));
 
-		return candidates.flatMap((candidate) =>
-			[candidate, naturalEarthAliases[candidate]].filter(Boolean)
-		);
+		return candidates;
 	}
 
-	function findUnit(properties: GeoFeatureProperties): MapUnit | null {
-		for (const candidate of getJoinCandidates(properties)) {
+	function findFallbackIndicatorUnit(properties: GeoFeatureProperties): MapUnit | null {
+		for (const candidate of getFallbackJoinCandidates(properties)) {
 			const unit = unitById.get(candidate);
 
 			if (unit) {
@@ -228,6 +236,30 @@
 		}
 
 		return null;
+	}
+
+	function applyRegistryMetadata(unit: MapUnit, registryRecord: MapUnitRegistryRecord): MapUnit {
+		return {
+			...unit,
+			name: registryRecord.display_name,
+			map_unit_type: registryRecord.map_unit_type,
+			sovereignty_note: registryRecord.sovereignty_note
+		};
+	}
+
+	function findUnit(
+		properties: GeoFeatureProperties,
+		registryRecord: MapUnitRegistryRecord | null
+	): MapUnit | null {
+		if (registryRecord) {
+			const registryUnit = unitById.get(registryRecord.id);
+
+			if (registryUnit) {
+				return applyRegistryMetadata(registryUnit, registryRecord);
+			}
+		}
+
+		return findFallbackIndicatorUnit(properties);
 	}
 
 	function getFeatureName(properties: GeoFeatureProperties) {
@@ -242,9 +274,13 @@
 	}
 
 	function getFeatureId(properties: GeoFeatureProperties, fallback: string) {
-		return (
-			properties.ISO_A3 ?? properties.ADM0_A3 ?? properties.SOV_A3 ?? properties.id ?? fallback
-		);
+		for (const value of [properties.ISO_A3, properties.ADM0_A3, properties.SOV_A3, properties.id]) {
+			if (value && value !== '-99') {
+				return value;
+			}
+		}
+
+		return fallback;
 	}
 
 	function getRenderKey(layerName: string, index: number, properties: GeoFeatureProperties) {
@@ -265,13 +301,16 @@
 	}
 
 	function createNoDataUnit(renderFeature: RenderFeature): MapUnit {
-		const id = String(getFeatureId(renderFeature.properties, renderFeature.id));
+		const id = renderFeature.registryRecord?.id ?? renderFeature.id;
+		const name = renderFeature.registryRecord?.display_name ?? renderFeature.name;
+		const mapUnitType = renderFeature.registryRecord?.map_unit_type ?? 'no_data';
+		const sovereigntyNote = renderFeature.registryRecord?.sovereignty_note ?? null;
 
 		return {
 			id,
-			name: renderFeature.name,
-			map_unit_type: 'no_data',
-			sovereignty_note: null,
+			name,
+			map_unit_type: mapUnitType,
+			sovereignty_note: sovereigntyNote,
 			world_system: {
 				class: 'no_data',
 				score: null,
@@ -325,7 +364,8 @@
 	function renderFeatures(
 		geoFeatures: Feature<Geometry, GeoFeatureProperties>[],
 		path: ReturnType<typeof geoPath>,
-		layerName: string
+		layerName: string,
+		indexes: RegistryIndexes | null
 	): RenderFeature[] {
 		return geoFeatures
 			.map((geoFeature: Feature<Geometry, GeoFeatureProperties>, index) => {
@@ -336,17 +376,22 @@
 					return null;
 				}
 
+				const registryRecord = indexes
+					? findRegistryRecordForNaturalEarthFeature(properties, indexes)
+					: null;
 				const id = getFeatureId(
 					properties,
-					properties.NAME_LONG ?? properties.NAME ?? `feature-${index}`
+					`natural-earth:${layerName}:${index}:${properties.NAME_LONG ?? properties.NAME ?? 'feature'}`
 				);
+				const name = registryRecord?.display_name ?? getFeatureName(properties);
 
 				return {
-					id: String(id),
+					id: registryRecord?.id ?? String(id),
 					renderKey: getRenderKey(layerName, index, properties),
-					name: getFeatureName(properties),
+					name,
 					path: featurePath,
-					unit: findUnit(properties),
+					unit: findUnit(properties, registryRecord),
+					registryRecord,
 					properties
 				};
 			})
@@ -409,6 +454,18 @@
 	}
 
 	onMount(async () => {
+		let registryIndexes: RegistryIndexes | null = null;
+
+		try {
+			const registry = await loadMapUnitRegistry(base);
+			registryIndexes = buildRegistryIndexes(registry);
+		} catch (error) {
+			registryDiagnostic =
+				error instanceof Error
+					? `${error.message}. Rendering will continue with Natural Earth geometry and mock indicators only.`
+					: 'Map-unit registry could not be loaded. Rendering will continue with Natural Earth geometry and mock indicators only.';
+		}
+
 		const worldTopology = await fetchTopology(worldTopologyUrl);
 
 		if (!worldTopology.ok) {
@@ -440,7 +497,12 @@
 				worldCollection
 			);
 			const path = geoPath(projection);
-			const renderedWorldFeatures = renderFeatures(extractedWorld.features, path, 'base');
+			const renderedWorldFeatures = renderFeatures(
+				extractedWorld.features,
+				path,
+				'base',
+				registryIndexes
+			);
 
 			if (renderedWorldFeatures.length === 0) {
 				geometryDiagnostic = `TopoJSON object "${extractedWorld.objectKey}" produced ${extractedWorld.features.length} features, but none generated drawable SVG paths.`;
@@ -459,7 +521,12 @@
 				]);
 
 				if (extractedDisputed.ok) {
-					disputedFeatures = renderFeatures(extractedDisputed.features, path, 'disputed');
+					disputedFeatures = renderFeatures(
+						extractedDisputed.features,
+						path,
+						'disputed',
+						registryIndexes
+					);
 					geometryDiagnostic = `Attempted ${worldTopology.url}. Available object keys: ${extractedWorld.availableObjectKeys.join(', ')}. Extracted ${extractedWorld.features.length} base features from "${extractedWorld.objectKey}". Attempted ${disputedTopology.url}. Available object keys: ${extractedDisputed.availableObjectKeys.join(', ')}. Extracted ${extractedDisputed.features.length} disputed overlay features from "${extractedDisputed.objectKey}".`;
 				} else {
 					geometryDiagnostic = extractedDisputed.message;
@@ -557,6 +624,9 @@
 	<p class="status">{geometryStatus}</p>
 	{#if geometryDiagnostic}
 		<p class="diagnostic" role="status">{geometryDiagnostic}</p>
+	{/if}
+	{#if registryDiagnostic}
+		<p class="diagnostic" role="status">{registryDiagnostic}</p>
 	{/if}
 </section>
 
