@@ -2,6 +2,20 @@
 
 The first scaffold has a small geometry pipeline and checked-in mock indicator JSON under `static/data/`.
 
+## Registry Validation
+
+Run:
+
+```sh
+npm run validate:data
+```
+
+This checks `static/data/map-units.registry.json` and `static/data/world-system.latest.json`.
+
+The map-unit registry exists because geometry source properties are not stable application identities. Natural Earth provides geometry and helpful aliases, but codes such as `ISO_A3` or `ADM0_A3` can be `-99`, and `-99` is not unique. The validation script rejects `-99` as a registry or mock indicator ID and rejects Natural Earth alias arrays that contain only `-99`.
+
+Future data import scripts should normalize public datasets into registry IDs before writing frontend JSON. Use source identifiers such as ISO-3, UN M49, World Bank, OECD, and documented manual crosswalks for disputed or special map units. Do not use geometry as political recognition, and do not merge disputed records simply to satisfy a source dataset.
+
 ## Geometry Pipeline
 
 Run:

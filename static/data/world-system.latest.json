@@ -1,7 +1,7 @@
 {
 	"meta": {
 		"title": "OurWorldSystem mock world-system dataset",
-		"description": "Temporary static mock data for the first frontend scaffold. Values are placeholders and must not be interpreted as final classifications.",
+		"description": "Temporary static mock indicator data keyed by map-unit registry IDs. Values are placeholders and must not be interpreted as final classifications.",
 		"mock": true,
 		"version": "0.1.0",
 		"generated_at": "2026-06-18"

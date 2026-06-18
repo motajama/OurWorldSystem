@@ -1,0 +1,604 @@
+[
+	{
+		"id": "USA",
+		"display_name": "United States",
+		"short_name": "United States",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": ["USA"],
+			"iso_a3": ["USA"],
+			"sov_a3": ["US1"],
+			"name_aliases": ["United States", "United States of America"]
+		},
+		"external_ids": {
+			"iso3": "USA",
+			"iso2": "US",
+			"un_m49": "840",
+			"world_bank": "USA",
+			"oecd": "USA"
+		},
+		"data_notes": [],
+		"last_reviewed": "2026-06-18"
+	},
+	{
+		"id": "CHN",
+		"display_name": "China",
+		"short_name": "China",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": ["CHN"],
+			"iso_a3": ["CHN"],
+			"sov_a3": ["CH1"],
+			"name_aliases": ["China"]
+		},
+		"external_ids": {
+			"iso3": "CHN",
+			"iso2": "CN",
+			"un_m49": "156",
+			"world_bank": "CHN",
+			"oecd": null
+		},
+		"data_notes": [],
+		"last_reviewed": "2026-06-18"
+	},
+	{
+		"id": "CZE",
+		"display_name": "Czechia",
+		"short_name": "Czechia",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": ["CZE"],
+			"iso_a3": ["CZE"],
+			"sov_a3": ["CZE"],
+			"name_aliases": ["Czechia", "Czech Republic"]
+		},
+		"external_ids": {
+			"iso3": "CZE",
+			"iso2": "CZ",
+			"un_m49": "203",
+			"world_bank": "CZE",
+			"oecd": "CZE"
+		},
+		"data_notes": [],
+		"last_reviewed": "2026-06-18"
+	},
+	{
+		"id": "DEU",
+		"display_name": "Germany",
+		"short_name": "Germany",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": ["DEU"],
+			"iso_a3": ["DEU"],
+			"sov_a3": ["DEU"],
+			"name_aliases": ["Germany"]
+		},
+		"external_ids": {
+			"iso3": "DEU",
+			"iso2": "DE",
+			"un_m49": "276",
+			"world_bank": "DEU",
+			"oecd": "DEU"
+		},
+		"data_notes": [],
+		"last_reviewed": "2026-06-18"
+	},
+	{
+		"id": "BRA",
+		"display_name": "Brazil",
+		"short_name": "Brazil",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": ["BRA"],
+			"iso_a3": ["BRA"],
+			"sov_a3": ["BRA"],
+			"name_aliases": ["Brazil"]
+		},
+		"external_ids": {
+			"iso3": "BRA",
+			"iso2": "BR",
+			"un_m49": "076",
+			"world_bank": "BRA",
+			"oecd": null
+		},
+		"data_notes": [],
+		"last_reviewed": "2026-06-18"
+	},
+	{
+		"id": "IND",
+		"display_name": "India",
+		"short_name": "India",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": ["IND"],
+			"iso_a3": ["IND"],
+			"sov_a3": ["IND"],
+			"name_aliases": ["India"]
+		},
+		"external_ids": {
+			"iso3": "IND",
+			"iso2": "IN",
+			"un_m49": "356",
+			"world_bank": "IND",
+			"oecd": null
+		},
+		"data_notes": [],
+		"last_reviewed": "2026-06-18"
+	},
+	{
+		"id": "ZAF",
+		"display_name": "South Africa",
+		"short_name": "South Africa",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": ["ZAF"],
+			"iso_a3": ["ZAF"],
+			"sov_a3": ["ZAF"],
+			"name_aliases": ["South Africa"]
+		},
+		"external_ids": {
+			"iso3": "ZAF",
+			"iso2": "ZA",
+			"un_m49": "710",
+			"world_bank": "ZAF",
+			"oecd": null
+		},
+		"data_notes": [],
+		"last_reviewed": "2026-06-18"
+	},
+	{
+		"id": "COD",
+		"display_name": "Democratic Republic of the Congo",
+		"short_name": "DR Congo",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": ["COD"],
+			"iso_a3": ["COD"],
+			"sov_a3": ["COD"],
+			"name_aliases": [
+				"Democratic Republic of the Congo",
+				"Dem. Rep. Congo",
+				"DR Congo"
+			]
+		},
+		"external_ids": {
+			"iso3": "COD",
+			"iso2": "CD",
+			"un_m49": "180",
+			"world_bank": "COD",
+			"oecd": null
+		},
+		"data_notes": [],
+		"last_reviewed": "2026-06-18"
+	},
+	{
+		"id": "UKR",
+		"display_name": "Ukraine",
+		"short_name": "Ukraine",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": ["UKR"],
+			"iso_a3": ["UKR"],
+			"sov_a3": ["UKR"],
+			"name_aliases": ["Ukraine"]
+		},
+		"external_ids": {
+			"iso3": "UKR",
+			"iso2": "UA",
+			"un_m49": "804",
+			"world_bank": "UKR",
+			"oecd": null
+		},
+		"data_notes": [],
+		"last_reviewed": "2026-06-18"
+	},
+	{
+		"id": "PSE",
+		"display_name": "Palestine",
+		"short_name": "Palestine",
+		"map_unit_type": "disputed",
+		"recognition_status": "non_un_member",
+		"sovereignty_note": "Displayed as a map unit with contested and limited recognition; OurWorldSystem does not decide sovereignty disputes.",
+		"natural_earth": {
+			"adm0_a3": ["PSX"],
+			"iso_a3": ["PSE"],
+			"sov_a3": [],
+			"name_aliases": ["Palestine", "Palestinian territories"]
+		},
+		"external_ids": {
+			"iso3": "PSE",
+			"iso2": "PS",
+			"un_m49": "275",
+			"world_bank": "PSE",
+			"oecd": null
+		},
+		"data_notes": ["Kept separate from ISR where the geometry source does so."],
+		"last_reviewed": "2026-06-18"
+	},
+	{
+		"id": "TWN",
+		"display_name": "Taiwan",
+		"short_name": "Taiwan",
+		"map_unit_type": "special",
+		"recognition_status": "disputed",
+		"sovereignty_note": "Displayed as a separate map unit where source geometry and public datasets do so; recognition and sovereignty claims vary by source.",
+		"natural_earth": {
+			"adm0_a3": ["TWN"],
+			"iso_a3": ["TWN"],
+			"sov_a3": ["TWN"],
+			"name_aliases": ["Taiwan"]
+		},
+		"external_ids": {
+			"iso3": "TWN",
+			"iso2": "TW",
+			"un_m49": "158",
+			"world_bank": null,
+			"oecd": null
+		},
+		"data_notes": ["Some public datasets use custom or non-ISO identifiers for Taiwan."],
+		"last_reviewed": "2026-06-18"
+	},
+	{
+		"id": "XKO",
+		"display_name": "Kosovo",
+		"short_name": "Kosovo",
+		"map_unit_type": "disputed",
+		"recognition_status": "disputed",
+		"sovereignty_note": "Displayed as a separate map unit where source geometry and public datasets do so; recognition status varies by source.",
+		"natural_earth": {
+			"adm0_a3": ["KOS"],
+			"iso_a3": [],
+			"sov_a3": ["KOS"],
+			"name_aliases": ["Kosovo"]
+		},
+		"external_ids": {
+			"iso3": "XKO",
+			"iso2": "XK",
+			"un_m49": null,
+			"world_bank": "XKX",
+			"oecd": null
+		},
+		"data_notes": ["Uses XKO as an application registry id; Natural Earth uses KOS."],
+		"last_reviewed": "2026-06-18"
+	},
+	{
+		"id": "RUS",
+		"display_name": "Russia",
+		"short_name": "Russia",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": ["RUS"],
+			"iso_a3": ["RUS"],
+			"sov_a3": ["RUS"],
+			"name_aliases": ["Russia", "Russian Federation"]
+		},
+		"external_ids": {
+			"iso3": "RUS",
+			"iso2": "RU",
+			"un_m49": "643",
+			"world_bank": "RUS",
+			"oecd": null
+		},
+		"data_notes": [],
+		"last_reviewed": "2026-06-18"
+	},
+	{
+		"id": "FRA",
+		"display_name": "France",
+		"short_name": "France",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": ["FRA"],
+			"iso_a3": [],
+			"sov_a3": ["FR1"],
+			"name_aliases": ["France"]
+		},
+		"external_ids": {
+			"iso3": "FRA",
+			"iso2": "FR",
+			"un_m49": "250",
+			"world_bank": "FRA",
+			"oecd": "FRA"
+		},
+		"data_notes": ["Natural Earth ISO_A3 can be -99 for this geometry; registry id remains FRA."],
+		"last_reviewed": "2026-06-18"
+	},
+	{
+		"id": "GBR",
+		"display_name": "United Kingdom",
+		"short_name": "United Kingdom",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": ["GBR"],
+			"iso_a3": ["GBR"],
+			"sov_a3": ["GB1"],
+			"name_aliases": ["United Kingdom", "United Kingdom of Great Britain and Northern Ireland"]
+		},
+		"external_ids": {
+			"iso3": "GBR",
+			"iso2": "GB",
+			"un_m49": "826",
+			"world_bank": "GBR",
+			"oecd": "GBR"
+		},
+		"data_notes": [],
+		"last_reviewed": "2026-06-18"
+	},
+	{
+		"id": "ISR",
+		"display_name": "Israel",
+		"short_name": "Israel",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": ["ISR"],
+			"iso_a3": ["ISR"],
+			"sov_a3": ["IS1"],
+			"name_aliases": ["Israel"]
+		},
+		"external_ids": {
+			"iso3": "ISR",
+			"iso2": "IL",
+			"un_m49": "376",
+			"world_bank": "ISR",
+			"oecd": "ISR"
+		},
+		"data_notes": ["Kept separate from PSE where the geometry source does so."],
+		"last_reviewed": "2026-06-18"
+	},
+	{
+		"id": "TUR",
+		"display_name": "Turkiye",
+		"short_name": "Turkiye",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": ["TUR"],
+			"iso_a3": ["TUR"],
+			"sov_a3": ["TUR"],
+			"name_aliases": ["Turkiye", "Turkey"]
+		},
+		"external_ids": {
+			"iso3": "TUR",
+			"iso2": "TR",
+			"un_m49": "792",
+			"world_bank": "TUR",
+			"oecd": "TUR"
+		},
+		"data_notes": [],
+		"last_reviewed": "2026-06-18"
+	},
+	{
+		"id": "IRN",
+		"display_name": "Iran",
+		"short_name": "Iran",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": ["IRN"],
+			"iso_a3": ["IRN"],
+			"sov_a3": ["IRN"],
+			"name_aliases": ["Iran", "Iran, Islamic Republic of"]
+		},
+		"external_ids": {
+			"iso3": "IRN",
+			"iso2": "IR",
+			"un_m49": "364",
+			"world_bank": "IRN",
+			"oecd": null
+		},
+		"data_notes": [],
+		"last_reviewed": "2026-06-18"
+	},
+	{
+		"id": "SAU",
+		"display_name": "Saudi Arabia",
+		"short_name": "Saudi Arabia",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": ["SAU"],
+			"iso_a3": ["SAU"],
+			"sov_a3": ["SAU"],
+			"name_aliases": ["Saudi Arabia"]
+		},
+		"external_ids": {
+			"iso3": "SAU",
+			"iso2": "SA",
+			"un_m49": "682",
+			"world_bank": "SAU",
+			"oecd": null
+		},
+		"data_notes": [],
+		"last_reviewed": "2026-06-18"
+	},
+	{
+		"id": "JPN",
+		"display_name": "Japan",
+		"short_name": "Japan",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": ["JPN"],
+			"iso_a3": ["JPN"],
+			"sov_a3": ["JPN"],
+			"name_aliases": ["Japan"]
+		},
+		"external_ids": {
+			"iso3": "JPN",
+			"iso2": "JP",
+			"un_m49": "392",
+			"world_bank": "JPN",
+			"oecd": "JPN"
+		},
+		"data_notes": [],
+		"last_reviewed": "2026-06-18"
+	},
+	{
+		"id": "KOR",
+		"display_name": "South Korea",
+		"short_name": "South Korea",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": ["KOR"],
+			"iso_a3": ["KOR"],
+			"sov_a3": ["KOR"],
+			"name_aliases": ["South Korea", "Republic of Korea"]
+		},
+		"external_ids": {
+			"iso3": "KOR",
+			"iso2": "KR",
+			"un_m49": "410",
+			"world_bank": "KOR",
+			"oecd": "KOR"
+		},
+		"data_notes": ["Kept separate from PRK where Natural Earth does so."],
+		"last_reviewed": "2026-06-18"
+	},
+	{
+		"id": "PRK",
+		"display_name": "North Korea",
+		"short_name": "North Korea",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": ["PRK"],
+			"iso_a3": ["PRK"],
+			"sov_a3": ["PRK"],
+			"name_aliases": ["North Korea", "Dem. Rep. Korea", "Democratic People's Republic of Korea"]
+		},
+		"external_ids": {
+			"iso3": "PRK",
+			"iso2": "KP",
+			"un_m49": "408",
+			"world_bank": "PRK",
+			"oecd": null
+		},
+		"data_notes": ["Kept separate from KOR where Natural Earth does so."],
+		"last_reviewed": "2026-06-18"
+	},
+	{
+		"id": "VNM",
+		"display_name": "Vietnam",
+		"short_name": "Vietnam",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": ["VNM"],
+			"iso_a3": ["VNM"],
+			"sov_a3": ["VNM"],
+			"name_aliases": ["Vietnam", "Viet Nam"]
+		},
+		"external_ids": {
+			"iso3": "VNM",
+			"iso2": "VN",
+			"un_m49": "704",
+			"world_bank": "VNM",
+			"oecd": null
+		},
+		"data_notes": [],
+		"last_reviewed": "2026-06-18"
+	},
+	{
+		"id": "MEX",
+		"display_name": "Mexico",
+		"short_name": "Mexico",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": ["MEX"],
+			"iso_a3": ["MEX"],
+			"sov_a3": ["MEX"],
+			"name_aliases": ["Mexico"]
+		},
+		"external_ids": {
+			"iso3": "MEX",
+			"iso2": "MX",
+			"un_m49": "484",
+			"world_bank": "MEX",
+			"oecd": "MEX"
+		},
+		"data_notes": [],
+		"last_reviewed": "2026-06-18"
+	},
+	{
+		"id": "CAN",
+		"display_name": "Canada",
+		"short_name": "Canada",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": ["CAN"],
+			"iso_a3": ["CAN"],
+			"sov_a3": ["CAN"],
+			"name_aliases": ["Canada"]
+		},
+		"external_ids": {
+			"iso3": "CAN",
+			"iso2": "CA",
+			"un_m49": "124",
+			"world_bank": "CAN",
+			"oecd": "CAN"
+		},
+		"data_notes": [],
+		"last_reviewed": "2026-06-18"
+	},
+	{
+		"id": "AUS",
+		"display_name": "Australia",
+		"short_name": "Australia",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": ["AUS"],
+			"iso_a3": ["AUS"],
+			"sov_a3": ["AU1"],
+			"name_aliases": ["Australia"]
+		},
+		"external_ids": {
+			"iso3": "AUS",
+			"iso2": "AU",
+			"un_m49": "036",
+			"world_bank": "AUS",
+			"oecd": "AUS"
+		},
+		"data_notes": [],
+		"last_reviewed": "2026-06-18"
+	}
+]
