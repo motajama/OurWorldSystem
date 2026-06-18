@@ -2,7 +2,7 @@
 
 OurWorldSystem is an open-source, static-first public-interest atlas of countries and map units in the global world-system. It is intended to visualize structural positions such as core, semi-periphery, periphery, uncertainty, conflict exposure, press freedom, political freedom, quality of life, ecological pressure, and forms of extraction or externalization.
 
-The current app uses real static Natural Earth geometry with mock indicator data. Classifications are placeholders and must not be interpreted as empirical findings.
+The current app uses real static Natural Earth geometry, mock world-system demo data, and an initial real World Bank WDI quality-of-life indicator pipeline. Mock classifications remain placeholders and must not be interpreted as empirical findings.
 
 ## Principles
 
@@ -56,6 +56,11 @@ Mock frontend data lives in:
 - `static/data/map-units.registry.json`
 - `static/data/world-system.latest.json`
 - `static/data/sources.json`
+- `static/data/source-manifest.json`
+
+The first real public indicator output lives in:
+
+- `static/data/indicators/quality-of-life.world-bank.latest.json`
 
 Geometry lives in:
 
@@ -72,7 +77,17 @@ The default thematic view is **World-system position**, which summarizes the cur
 
 Missing data is always displayed as `No data`. Null, undefined, or absent indicator values are not converted to zero and are not treated as neutral or average conditions.
 
-The current criterion-layer values are mock/demo values only. They exist to exercise the interface and bins, not to represent current empirical conditions.
+Most current criterion-layer values are mock/demo values only. The quality-of-life layer can now use real World Bank WDI data when the generated static indicator file is present. It keeps mock HDI values intact and falls back to a temporary project-specific `quality_of_life_score` only when HDI is missing. That score is not HDI.
+
+Fetch World Bank WDI indicators with:
+
+```sh
+npm run data:build
+```
+
+This downloads raw API responses to ignored files under `data/raw/world-bank/`, writes processed JSON to `data/processed/`, and writes the frontend static output to `static/data/indicators/`. The initial indicators are life expectancy (`SP.DYN.LE00.IN`), GNI per capita PPP (`NY.GNP.PCAP.PP.CD`), secondary gross enrollment (`SE.SEC.ENRR`), and population (`SP.POP.TOTL`).
+
+`quality_of_life_score` is a transparent temporary visualization score. It requires at least life expectancy and GNI per capita PPP, optionally includes secondary enrollment, and must never be labeled as HDI. Missing World Bank values remain missing and display as `No data`; they are not fabricated or imputed.
 
 Future data pipelines should generate static JSON from public sources such as OECD, UN, UCDP, RSF, V-Dem, Freedom House, World Bank, UNDP, UNEP, and related open datasets.
 

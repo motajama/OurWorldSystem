@@ -45,7 +45,8 @@ export const MAP_LAYERS: MapLayerDefinition[] = [
 		id: 'world_system',
 		label: 'World-system position',
 		shortLabel: 'Position',
-		description: 'Overall mock world-system classification with uncertainty and disputed-status output.',
+		description:
+			'Overall mock world-system classification with uncertainty and disputed-status output.',
 		kind: 'categorical',
 		noDataLabel: 'No model output'
 	},
@@ -53,7 +54,8 @@ export const MAP_LAYERS: MapLayerDefinition[] = [
 		id: 'conflict',
 		label: 'War and conflict',
 		shortLabel: 'Conflict',
-		description: 'Demo conflict layer separating war on territory, conflict involvement, and no active war.',
+		description:
+			'Demo conflict layer separating war on territory, conflict involvement, and no active war.',
 		kind: 'categorical',
 		noDataLabel: 'No conflict data'
 	},
@@ -69,7 +71,8 @@ export const MAP_LAYERS: MapLayerDefinition[] = [
 		id: 'political_freedom',
 		label: 'Political freedom',
 		shortLabel: 'Political',
-		description: 'Demo score bins for political freedom. Current values are mock placeholders only.',
+		description:
+			'Demo score bins for political freedom. Current values are mock placeholders only.',
 		kind: 'sequential',
 		noDataLabel: 'No political freedom data'
 	},
@@ -77,7 +80,8 @@ export const MAP_LAYERS: MapLayerDefinition[] = [
 		id: 'quality_of_life',
 		label: 'Quality of life',
 		shortLabel: 'Life',
-		description: 'Demo HDI bins for quality of life. Current values are mock placeholders only.',
+		description:
+			'Quality-of-life bins using HDI when present, otherwise a temporary project score from World Bank WDI indicators.',
 		kind: 'sequential',
 		noDataLabel: 'No quality-of-life data'
 	},
@@ -207,11 +211,36 @@ const LEGEND_ITEMS: Record<MapLayerId, Omit<MapLayerLegendItem, 'fillClass'>[]> 
 		{ value: 'no_data', label: 'No data', description: 'No numeric score', color: '#64748b' }
 	],
 	quality_of_life: [
-		{ value: 'very_high', label: 'Very high', description: 'HDI 0.8 or higher', color: '#06b6d4' },
-		{ value: 'high', label: 'High', description: 'HDI 0.7 to below 0.8', color: '#22c55e' },
-		{ value: 'medium', label: 'Medium', description: 'HDI 0.55 to below 0.7', color: '#f59e0b' },
-		{ value: 'low', label: 'Low', description: 'HDI below 0.55', color: '#dc2626' },
-		{ value: 'no_data', label: 'No data', description: 'No HDI value', color: '#64748b' }
+		{
+			value: 'very_high',
+			label: 'Very high',
+			description: 'HDI or project quality-of-life score 0.8 or higher',
+			color: '#06b6d4'
+		},
+		{
+			value: 'high',
+			label: 'High',
+			description: 'HDI or project quality-of-life score 0.7 to below 0.8',
+			color: '#22c55e'
+		},
+		{
+			value: 'medium',
+			label: 'Medium',
+			description: 'HDI or project quality-of-life score 0.55 to below 0.7',
+			color: '#f59e0b'
+		},
+		{
+			value: 'low',
+			label: 'Low',
+			description: 'HDI or project quality-of-life score below 0.55',
+			color: '#dc2626'
+		},
+		{
+			value: 'no_data',
+			label: 'No data',
+			description: 'No HDI or project quality-of-life score',
+			color: '#64748b'
+		}
 	],
 	exploitation: [
 		{
@@ -250,6 +279,16 @@ const LEGEND_ITEMS: Record<MapLayerId, Omit<MapLayerLegendItem, 'fillClass'>[]> 
 
 function isNumeric(value: unknown): value is number {
 	return typeof value === 'number' && Number.isFinite(value);
+}
+
+function getQualityOfLifeMapScore(mapUnit: MapUnit): number | null {
+	const hdi = mapUnit.quality_of_life?.hdi;
+
+	if (isNumeric(hdi)) return hdi;
+
+	const score = mapUnit.quality_of_life?.quality_of_life_score;
+
+	return isNumeric(score) ? score : null;
 }
 
 function normalizeRisk(value: string | number | null | undefined): MapLayerValue | null {
@@ -331,12 +370,12 @@ export function getMapUnitLayerValue(mapUnit: MapUnit | null, layerId: MapLayerI
 			return 'not_free';
 		}
 		case 'quality_of_life': {
-			const hdi = mapUnit.quality_of_life?.hdi;
+			const score = getQualityOfLifeMapScore(mapUnit);
 
-			if (!isNumeric(hdi)) return 'no_data';
-			if (hdi >= 0.8) return 'very_high';
-			if (hdi >= 0.7) return 'high';
-			if (hdi >= 0.55) return 'medium';
+			if (!isNumeric(score)) return 'no_data';
+			if (score >= 0.8) return 'very_high';
+			if (score >= 0.7) return 'high';
+			if (score >= 0.55) return 'medium';
 			return 'low';
 		}
 		case 'exploitation': {
