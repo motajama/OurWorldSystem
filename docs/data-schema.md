@@ -72,8 +72,8 @@ Future public datasets should be mapped into registry `id` values using document
     explanation: string;
   };
   conflict: {
-    war_on_territory: boolean;
-    involved_in_conflict: boolean;
+    war_on_territory: boolean | null;
+    involved_in_conflict: boolean | null;
     active_conflicts: string[];
     fatalities_best_estimate: number | null;
     child_casualties_verified: number | null;
@@ -104,16 +104,53 @@ Future public datasets should be mapped into registry `id` values using document
     ewaste_generated_kg_per_capita: number | null;
   };
   exploitation_position: {
+    extraction_risk?: string | number | null;
     resource_export_dependency: number | null;
     foreign_value_added_share: number | null;
     domestic_value_capture: number | null;
-    ewaste_import_risk: string | null;
+    ewaste_import_risk: string | number | null;
     notes: string | null;
   };
   sources: string[];
   last_updated: string;
 }
 ```
+
+## Thematic Layers
+
+The map UI does not read colors directly from indicator records. It routes thematic display through `src/lib/mapLayers.ts`.
+
+Layer IDs:
+
+```ts
+type MapLayerId =
+  | "world_system"
+  | "conflict"
+  | "press_freedom"
+  | "political_freedom"
+  | "quality_of_life"
+  | "exploitation"
+  | "ecology";
+```
+
+The default layer is `world_system`. It shows the overall mock model classification. Criterion layers show one indicator family at a time: conflict flags, press freedom score bins, political freedom score bins, HDI bins, explicit extraction-risk fields, or EPI score bins.
+
+Each layer has:
+
+```ts
+{
+  id: MapLayerId;
+  label: string;
+  shortLabel: string;
+  description: string;
+  kind: "categorical" | "sequential" | "diverging" | "boolean";
+  noDataLabel: string;
+}
+```
+
+Every layer includes an explicit `no_data` legend item. Missing objects, null scores, undefined values, and absent risk fields must remain `no_data`; they must not be coerced to zero, low risk, no conflict, or any neutral category.
+
+Current values in `world-system.latest.json` are mock/demo values. Future real data pipelines should generate the same field families, or compatible generated fields, and let the layer API handle binning, labels, fill classes, and legend items.
 
 ## Source Registry
 

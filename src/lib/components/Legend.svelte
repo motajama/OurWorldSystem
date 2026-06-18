@@ -1,57 +1,20 @@
 <script lang="ts">
-	import type { WorldSystemClass } from '$lib/types';
+	import { getMapLayerDefinition, getMapLayerLegendItems } from '$lib/mapLayers';
+	import type { MapLayerId } from '$lib/types';
 
-	type LegendItem = {
-		key: WorldSystemClass;
-		label: string;
-		description: string;
-		color: string;
+	type Props = {
+		selectedLayer: MapLayerId;
 	};
 
-	const items: LegendItem[] = [
-		{
-			key: 'core',
-			label: 'Core',
-			description: 'High structural advantage in the mock model',
-			color: '#5eead4'
-		},
-		{
-			key: 'semi-periphery',
-			label: 'Semi-periphery',
-			description: 'Mixed structural position in the mock model',
-			color: '#facc15'
-		},
-		{
-			key: 'periphery',
-			label: 'Periphery',
-			description: 'Lower structural advantage in the mock model',
-			color: '#fb923c'
-		},
-		{
-			key: 'uncertain',
-			label: 'Uncertain',
-			description: 'Insufficient confidence for a settled class',
-			color: '#a78bfa'
-		},
-		{
-			key: 'no_data',
-			label: 'No data',
-			description: 'No current model output',
-			color: '#64748b'
-		},
-		{
-			key: 'disputed',
-			label: 'Disputed',
-			description: 'Displayed neutrally as a map unit',
-			color: '#f87171'
-		}
-	];
+	let { selectedLayer }: Props = $props();
+	const layer = $derived(getMapLayerDefinition(selectedLayer));
+	const items = $derived(getMapLayerLegendItems(selectedLayer));
 </script>
 
 <section class="legend" aria-labelledby="legend-title">
-	<h2 id="legend-title">World-system class</h2>
+	<h2 id="legend-title">{layer.label}</h2>
 	<ul>
-		{#each items as item (item.key)}
+		{#each items as item (item.value)}
 			<li>
 				<span class="swatch" style={`--swatch-color: ${item.color}`}></span>
 				<span>

@@ -2,19 +2,26 @@
 	import { base, resolve } from '$app/paths';
 	import { onMount } from 'svelte';
 	import CountryPanel from '$lib/components/CountryPanel.svelte';
+	import LayerSelector from '$lib/components/LayerSelector.svelte';
 	import Legend from '$lib/components/Legend.svelte';
 	import WorldMap from '$lib/components/WorldMap.svelte';
-	import type { DataEnvelope, MapUnit } from '$lib/types';
+	import { DEFAULT_MAP_LAYER_ID } from '$lib/mapLayers';
+	import type { DataEnvelope, MapLayerId, MapUnit } from '$lib/types';
 
 	let units = $state<MapUnit[]>([]);
 	let selectedId = $state<string | null>(null);
 	let selectedUnit = $state<MapUnit | null>(null);
+	let selectedLayer = $state<MapLayerId>(DEFAULT_MAP_LAYER_ID);
 	let loading = $state(true);
 	let error = $state<string | null>(null);
 
 	function selectUnit(unit: MapUnit) {
 		selectedId = unit.id;
 		selectedUnit = unit;
+	}
+
+	function selectLayer(layerId: MapLayerId) {
+		selectedLayer = layerId;
 	}
 
 	onMount(async () => {
@@ -48,19 +55,20 @@
 				<a href={resolve('/methodology/')}>Methodology</a>
 				<a href="https://github.com/" rel="noreferrer">Open-source project</a>
 			</header>
+			<LayerSelector selectedLayer={selectedLayer} onLayerChange={selectLayer} />
 
 			{#if loading}
 				<div class="state-message">Loading static mock data...</div>
 			{:else if error}
 				<div class="state-message error">{error}</div>
 			{:else}
-				<WorldMap {units} {selectedId} onSelect={selectUnit} />
+				<WorldMap {units} {selectedId} {selectedLayer} onSelect={selectUnit} />
 			{/if}
 		</div>
 
 		<div class="side-column">
 			<CountryPanel unit={selectedUnit} />
-			<Legend />
+			<Legend {selectedLayer} />
 		</div>
 	</section>
 </main>
@@ -82,7 +90,7 @@
 	.map-column {
 		display: grid;
 		min-width: 0;
-		grid-template-rows: auto 1fr;
+		grid-template-rows: auto auto 1fr;
 	}
 
 	header {

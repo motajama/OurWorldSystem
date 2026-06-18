@@ -6,6 +6,12 @@ OurWorldSystem treats world-system classification as a reproducible, data-driven
 
 The first frontend scaffold uses Natural Earth geometry and mock indicator data. Scores, classes, confidence values, and explanations are placeholders for interface development.
 
+The default map layer is the overall world-system position. This is a synthetic model view intended to summarize multiple structural dimensions with uncertainty and provenance. It should not be read as a direct copy of any single source indicator.
+
+Criterion layers are separate thematic views for individual dimensions: war/conflict, press freedom, political freedom, quality of life, ecological performance, and extraction/externalization. They let users inspect one family of evidence at a time instead of treating the overall class as self-explanatory.
+
+All current criterion-layer values are mock/demo values only. They are included to test the interface, legend switching, no-data handling, and layer API. They must not be cited as real measurements or current empirical findings.
+
 ## Geometry Method
 
 The base map uses Natural Earth Admin 0 countries. Natural Earth Admin 0 countries are rendered primarily as de facto control boundaries suitable for small-scale web mapping. Geometry is not the same as political recognition.
@@ -17,6 +23,18 @@ OurWorldSystem does not treat Natural Earth identifiers as stable political or s
 Natural Earth placeholder codes such as `-99` are never valid semantic IDs. They can appear in source properties, but they are ignored for registry matching. The frontend tries registry aliases first, then development-only mock indicator IDs, and finally renders unmatched geometry as neutral `no_data` map units. Missing registry coverage therefore does not hide geometry.
 
 Indicator data remains separate from geometry and registry metadata. Future public datasets should map into registry IDs through documented crosswalks rather than by assuming one source code system is authoritative.
+
+## Missing Data
+
+Missing data is a first-class map state. Null, undefined, or absent indicator values are shown as `No data`. They are not converted to zero, not treated as normal or peaceful conditions, and not hidden behind neutral colors.
+
+For example, a missing conflict object means no conflict data is available. It does not mean no active war. A missing score for press freedom, political freedom, HDI, or ecology means no numeric score is available for that layer.
+
+## Layer API
+
+The layer definitions in `src/lib/mapLayers.ts` are the bridge between static indicator records and map display. Each layer defines its label, description, kind, no-data label, legend entries, binning logic, and CSS fill class.
+
+Future real indicators should plug into the same API by generating static JSON fields for each map-unit registry ID. Updating the bin thresholds, labels, or provenance can happen in the layer module and source registry without changing the geometry renderer.
 
 ## Future Model Requirements
 
