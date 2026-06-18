@@ -1,6 +1,6 @@
 # Data Schema
 
-The frontend currently reads `static/data/world-system.latest.json`.
+The frontend currently reads mock indicator data from `static/data/world-system.latest.json` and geometry from `static/geo/`.
 
 ## Envelope
 
@@ -78,3 +78,28 @@ The frontend currently reads `static/data/world-system.latest.json`.
 ## Source Registry
 
 `static/data/sources.json` stores source metadata keyed by source id. Every displayed indicator should eventually resolve to a source entry with source name, publisher, URL, license, notes, and year.
+
+## Geometry Files
+
+`static/geo/world.topojson` is generated from Natural Earth Admin 0 countries and stores a base world geometry layer. It is joined to map-unit records using Natural Earth properties such as:
+
+```ts
+{
+  ADM0_A3?: string;
+  ISO_A3?: string;
+  NAME?: string;
+  NAME_LONG?: string;
+  SOV_A3?: string;
+  TYPE?: string;
+  ADMIN?: string;
+  FCLASS_ISO?: string;
+  FCLASS_US?: string;
+  FCLASS_FR?: string;
+  FCLASS_RU?: string;
+  FCLASS_CN?: string;
+}
+```
+
+`static/geo/disputed.topojson` is optional and is generated from Natural Earth breakaway/disputed areas when that source archive is available.
+
+Geometry records are not indicator records. Natural Earth geometry is used for map drawing and spatial reference; mock world-system data remains in `static/data/world-system.latest.json`.

@@ -4,7 +4,15 @@ OurWorldSystem treats world-system classification as a reproducible, data-driven
 
 ## Current Status
 
-The first frontend scaffold uses mock data only. Scores, classes, confidence values, and explanations are placeholders for interface development.
+The first frontend scaffold uses Natural Earth geometry and mock indicator data. Scores, classes, confidence values, and explanations are placeholders for interface development.
+
+## Geometry Method
+
+The base map uses Natural Earth Admin 0 countries. Natural Earth Admin 0 countries are rendered primarily as de facto control boundaries suitable for small-scale web mapping. Geometry is not the same as political recognition.
+
+Natural Earth breakaway and disputed areas are handled as a separate overlay when the optional source layer is available. The overlay is intentionally subtle. It is a signal that the source geometry contains disputed or special-status features, not a settlement of sovereignty.
+
+OurWorldSystem joins geometry to mock indicator records by Natural Earth identifiers such as `ISO_A3` and `ADM0_A3`. Indicator data remains separate from geometry.
 
 ## Future Model Requirements
 
@@ -29,4 +37,4 @@ Future classifications should:
 
 ## Disputed Territories
 
-Disputed or special-status units should be shown neutrally. The atlas should record notes and source attribution but should not decide sovereignty disputes.
+Disputed or special-status units should be shown neutrally. The atlas should record notes and source attribution but should not decide sovereignty disputes. When geometry and data differ, the UI should make that uncertainty visible rather than hiding it or hard-coding a political judgment.

@@ -1,6 +1,23 @@
 # Future Data Pipeline
 
-The first scaffold has no data pipeline. It uses checked-in mock JSON under `static/data/`.
+The first scaffold has a small geometry pipeline and checked-in mock indicator JSON under `static/data/`.
+
+## Geometry Pipeline
+
+Run:
+
+```sh
+npm run geo:build
+```
+
+This downloads Natural Earth source archives into `data/raw/natural-earth/` and writes generated TopoJSON to `static/geo/`.
+
+- `static/geo/world.topojson` comes from Natural Earth Admin 0 countries at 110m scale.
+- `static/geo/disputed.topojson` comes from Natural Earth breakaway/disputed areas at 50m scale when that optional archive is available.
+
+Natural Earth Admin 0 countries are used primarily as de facto boundaries for small-scale web rendering. The disputed/breakaway layer is rendered separately. Geometry is not political recognition, and the pipeline must not hard-code sovereignty judgments.
+
+## Indicator Pipeline
 
 Future pipeline stages should be reproducible and static-output oriented:
 
