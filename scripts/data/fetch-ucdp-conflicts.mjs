@@ -3,6 +3,7 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { promisify } from 'node:util';
 import { fileURLToPath } from 'node:url';
+import { markOptionalIndicatorDatasetAvailable } from './optional-indicator-index.mjs';
 
 const execFileAsync = promisify(execFile);
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -499,6 +500,7 @@ async function main() {
 	};
 
 	await writeFile(outputPath, `${JSON.stringify(output, null, '\t')}\n`);
+	await markOptionalIndicatorDatasetAvailable(repoRoot, path.basename(outputPath));
 	console.log('UCDP conflict indicator dataset written.');
 	console.log(`Latest year: ${output.latest_year}`);
 	console.log(`Matched records: ${output.records.length}`);

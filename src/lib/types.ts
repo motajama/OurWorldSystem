@@ -186,6 +186,10 @@ export interface DataEnvelope {
 	map_units: MapUnit[];
 }
 
+export interface OptionalIndicatorIndex {
+	optional_datasets: string[];
+}
+
 export interface WorldBankQualityOfLifeRecord {
 	id: MapUnitId;
 	source_country_code: string;

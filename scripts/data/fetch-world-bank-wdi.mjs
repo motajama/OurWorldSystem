@@ -1,6 +1,7 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { markOptionalIndicatorDatasetAvailable } from './optional-indicator-index.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(__dirname, '../..');
@@ -233,6 +234,7 @@ async function main() {
 	const serialized = `${JSON.stringify(output, null, '\t')}\n`;
 	await writeFile(staticOutputPath, serialized);
 	await writeFile(processedOutputPath, serialized);
+	await markOptionalIndicatorDatasetAvailable(repoRoot, path.basename(staticOutputPath));
 
 	console.log('World Bank WDI quality-of-life dataset written.');
 	console.log(`Matched registry records: ${output.records.length}`);

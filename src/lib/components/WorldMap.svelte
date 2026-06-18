@@ -1,3 +1,33 @@
+<script lang="ts" module>
+	const DEBUG_MAP_LIFECYCLE = false;
+	const MAP_DEBUG_PREFIX = '[OurWorldSystem:map-debug]';
+	let worldMapInstanceCounter = 0;
+
+	function mapDebug(instanceId: number, message: string, details?: unknown) {
+		if (!DEBUG_MAP_LIFECYCLE) return;
+
+		console.debug(
+			MAP_DEBUG_PREFIX,
+			new Date().toISOString(),
+			`WorldMap#${instanceId}`,
+			message,
+			details
+		);
+	}
+
+	function mapTrace(instanceId: number, message: string, details?: unknown) {
+		if (!DEBUG_MAP_LIFECYCLE) return;
+
+		console.trace(
+			MAP_DEBUG_PREFIX,
+			new Date().toISOString(),
+			`WorldMap#${instanceId}`,
+			message,
+			details
+		);
+	}
+</script>
+
 <script lang="ts">
 	import { base } from '$app/paths';
 	import { onDestroy, onMount } from 'svelte';
@@ -92,6 +122,7 @@
 		width: 1000,
 		height: 520
 	};
+	const worldMapInstanceId = ++worldMapInstanceCounter;
 	const worldTopologyPath = 'geo/world.topojson';
 	const disputedTopologyPath = 'geo/disputed.topojson';
 	const worldTopologyUrl = `${base}/${worldTopologyPath}`;
@@ -398,7 +429,7 @@
 		layerName: string,
 		indexes: RegistryIndexes | null
 	): RenderFeature[] {
-		return geoFeatures
+		const renderedFeatures = geoFeatures
 			.map((geoFeature: Feature<Geometry, GeoFeatureProperties>, index) => {
 				const properties = geoFeature.properties ?? {};
 				const featurePath = path(geoFeature);
@@ -427,6 +458,14 @@
 				};
 			})
 			.filter((renderFeature): renderFeature is RenderFeature => Boolean(renderFeature));
+
+		mapDebug(worldMapInstanceId, 'world paths recomputed', {
+			layerName,
+			inputFeatureCount: geoFeatures.length,
+			renderedPathCount: renderedFeatures.length
+		});
+
+		return renderedFeatures;
 	}
 
 	function selectFeature(renderFeature: RenderFeature, isDisputedOverlay = false) {
@@ -490,6 +529,8 @@
 
 		if (!selection || !zoomBehavior) return;
 
+		mapTrace(worldMapInstanceId, 'programmatic zoom transform applied', transform.toString());
+
 		selection
 			.transition()
 			.duration(window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 180)
@@ -516,10 +557,12 @@
 	}
 
 	function resetZoom() {
+		mapTrace(worldMapInstanceId, 'resetZoom called');
 		applyZoomTransform(zoomIdentity);
 	}
 
 	function fitToWorld() {
+		mapTrace(worldMapInstanceId, 'fitToWorld called');
 		// The Natural Earth projection is pre-fit to the SVG viewport, so identity
 		// is the full-world fit transform for the generated paths.
 		applyZoomTransform(zoomIdentity);
@@ -581,10 +624,17 @@
 	}
 
 	async function fetchTopology(url: string): Promise<TopologyFetchResult> {
+		mapDebug(worldMapInstanceId, 'geometry fetch start', { url });
+
 		try {
 			const response = await fetch(url);
 
 			if (!response.ok) {
+				mapDebug(worldMapInstanceId, 'geometry fetch end', {
+					url,
+					ok: false,
+					status: response.status
+				});
 				return {
 					ok: false,
 					url,
@@ -593,12 +643,23 @@
 				};
 			}
 
+			mapDebug(worldMapInstanceId, 'geometry fetch end', {
+				url,
+				ok: true,
+				status: response.status
+			});
+
 			return {
 				ok: true,
 				url,
 				topology: (await response.json()) as TopologyObject
 			};
 		} catch (error) {
+			mapDebug(worldMapInstanceId, 'geometry fetch end', {
+				url,
+				ok: false,
+				error: error instanceof Error ? error.message : 'unknown'
+			});
 			return {
 				ok: false,
 				url,
@@ -609,6 +670,12 @@
 	}
 
 	onMount(async () => {
+		mapDebug(worldMapInstanceId, 'WorldMap mount', {
+			selectedLayer,
+			selectedId,
+			unitCount: units.length
+		});
+
 		if (svgElement) {
 			zoomBehavior = zoom<SVGSVGElement, unknown>()
 				.scaleExtent([minZoomScale, maxZoomScale])
@@ -625,6 +692,7 @@
 				})
 				.on('zoom', (event: D3ZoomEvent<SVGSVGElement, unknown>) => {
 					currentTransform = event.transform;
+					mapDebug(worldMapInstanceId, 'zoom event', event.transform.toString());
 				})
 				.on('end', () => {
 					isDraggingMap = false;
@@ -633,14 +701,21 @@
 			select<SVGSVGElement, unknown>(svgElement)
 				.call(zoomBehavior)
 				.on('dblclick.zoom', null);
+
+			mapDebug(worldMapInstanceId, 'zoom initialized', zoomIdentity.toString());
 		}
 
 		let registryIndexes: RegistryIndexes | null = null;
 
 		try {
+			mapDebug(worldMapInstanceId, 'registry fetch start');
 			const registry = await loadMapUnitRegistry(base);
 			registryIndexes = buildRegistryIndexes(registry);
+			mapDebug(worldMapInstanceId, 'registry fetch end', { recordCount: registry.length });
 		} catch (error) {
+			mapDebug(worldMapInstanceId, 'registry fetch end', {
+				error: error instanceof Error ? error.message : 'unknown'
+			});
 			registryDiagnostic =
 				error instanceof Error
 					? `${error.message}. Rendering will continue with Natural Earth geometry and mock indicators only.`
@@ -729,9 +804,22 @@
 	});
 
 	onDestroy(() => {
+		mapDebug(worldMapInstanceId, 'WorldMap destroy');
+
 		if (svgElement) {
 			select(svgElement).on('.zoom', null);
 		}
+	});
+
+	$effect(() => {
+		mapDebug(worldMapInstanceId, 'selectedLayer changed', selectedLayer);
+	});
+
+	$effect(() => {
+		mapDebug(worldMapInstanceId, 'render path count changed', {
+			base: features.length,
+			disputed: disputedFeatures.length
+		});
 	});
 </script>
 

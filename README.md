@@ -63,6 +63,11 @@ The first real public indicator output lives in:
 - `static/data/indicators/quality-of-life.world-bank.latest.json`
 - `static/data/indicators/conflict.ucdp.latest.json`
 
+Indicator files under `static/data/indicators/` are optional during development. The frontend
+reads `static/data/indicators/index.json` first and only fetches optional datasets listed
+there, so a pipeline that has not been run yet does not produce missing-file console noise or
+block the app. Generated data scripts update that index when they write a dataset.
+
 Geometry lives in:
 
 - `static/geo/world.topojson`
@@ -81,6 +86,8 @@ The default thematic view is **World-system position**, which summarizes the cur
 Missing data is always displayed as `No data`. Null, undefined, or absent indicator values are not converted to zero and are not treated as neutral or average conditions.
 
 Most current criterion-layer values are mock/demo values only. The quality-of-life layer can now use real World Bank WDI data when the generated static indicator file is present. The conflict layer can use UCDP country-year and UCDP/PRIO state-based armed-conflict data when `conflict.ucdp.latest.json` is present. Real UCDP records override demo conflict flags; unmatched map units remain no-data or visibly demo-only.
+
+When `conflict.ucdp.latest.json` is not listed in the optional indicator index, the conflict layer keeps existing mock conflict values where present and otherwise falls back to `No data`. Run `npm run data:fetch:ucdp` to generate and register the UCDP conflict dataset when network access and source availability allow it.
 
 The UCDP conflict layer distinguishes organized violence within a map unit's territory from state involvement in state-based armed conflict. `war_on_territory` means the UCDP country-year dataset records organized violence within that map unit's borders in the latest available year. It is not a claim of state responsibility. `involved_in_conflict` means the UCDP/PRIO Armed Conflict Dataset participant fields could be confidently mapped to the map-unit registry for the latest year.
 

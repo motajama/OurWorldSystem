@@ -2,6 +2,8 @@
 
 The frontend currently reads the stable map-unit registry from `static/data/map-units.registry.json`, mock indicator data from `static/data/world-system.latest.json`, optional World Bank WDI quality-of-life indicators from `static/data/indicators/quality-of-life.world-bank.latest.json`, optional UCDP conflict indicators from `static/data/indicators/conflict.ucdp.latest.json`, and geometry from `static/geo/`.
 
+Optional indicator files are discovered through `static/data/indicators/index.json`. During development, a missing optional indicator is treated as "dataset not available yet" rather than an application error. Required base files such as `world-system.latest.json`, `map-units.registry.json`, and base geometry still fail clearly when missing or invalid.
+
 ## Map-Unit Registry
 
 Natural Earth geometry properties are not the application identity system. They are source metadata for drawing geometry and for building join candidates. Some Natural Earth records use `ISO_A3` or `ADM0_A3` value `-99`; that value is a placeholder and must never be used as a semantic map-unit ID.
@@ -217,6 +219,8 @@ A later UNDP HDI integration should be added as a separate source and field, pre
 
 - `ucdp_country_year`: UCDP Country-Year Dataset on Organized Violence within Country Borders version 26.1.
 - `ucdp_prio_armed_conflict`: UCDP/PRIO Armed Conflict Dataset version 26.1.
+
+This dataset is optional in local development. If it has not been generated, the frontend skips the request, preserves existing mock conflict values, and displays `No data` where no conflict value exists. Run `npm run data:fetch:ucdp` to generate `conflict.ucdp.latest.json` and add it to the optional indicator index.
 
 The output schema is:
 

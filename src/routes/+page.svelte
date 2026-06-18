@@ -1,7 +1,20 @@
+<script lang="ts" module>
+	const DEBUG_MAP_LIFECYCLE = false;
+	const MAP_DEBUG_PREFIX = '[OurWorldSystem:map-debug]';
+	let pageInstanceCounter = 0;
+
+	function mapDebug(instanceId: number, message: string, details?: unknown) {
+		if (!DEBUG_MAP_LIFECYCLE) return;
+
+		console.debug(MAP_DEBUG_PREFIX, new Date().toISOString(), `page#${instanceId}`, message, details);
+	}
+</script>
+
 <script lang="ts">
 	import { base, resolve } from '$app/paths';
 	import { onMount } from 'svelte';
 	import CountryPanel from '$lib/components/CountryPanel.svelte';
+	import { fetchJson, fetchOptionalJson } from '$lib/dataLoading';
 	import LayerSelector from '$lib/components/LayerSelector.svelte';
 	import Legend from '$lib/components/Legend.svelte';
 	import WorldMap from '$lib/components/WorldMap.svelte';
@@ -10,9 +23,16 @@
 		DataEnvelope,
 		MapLayerId,
 		MapUnit,
+		OptionalIndicatorIndex,
 		UcdpConflictDataset,
 		WorldBankQualityOfLifeDataset
 	} from '$lib/types';
+
+	const pageInstanceId = ++pageInstanceCounter;
+	const optionalIndicatorFiles = {
+		worldBankQualityOfLife: 'quality-of-life.world-bank.latest.json',
+		ucdpConflicts: 'conflict.ucdp.latest.json'
+	} as const;
 
 	let units = $state<MapUnit[]>([]);
 	let selectedId = $state<string | null>(null);
@@ -27,29 +47,39 @@
 	}
 
 	function selectLayer(layerId: MapLayerId) {
+		mapDebug(pageInstanceId, 'selectedLayer changed', {
+			from: selectedLayer,
+			to: layerId
+		});
 		selectedLayer = layerId;
 	}
 
-	async function loadOptionalWorldBankQualityOfLife() {
-		const response = await fetch(`${base}/data/indicators/quality-of-life.world-bank.latest.json`);
-
-		if (!response.ok) {
-			if (response.status === 404) return null;
-			throw new Error(`Failed to load World Bank quality-of-life data: ${response.status}`);
-		}
-
-		return (await response.json()) as WorldBankQualityOfLifeDataset;
+	async function loadOptionalIndicatorIndex() {
+		return fetchJson<OptionalIndicatorIndex>(`${base}/data/indicators/index.json`);
 	}
 
-	async function loadOptionalUcdpConflicts() {
-		const response = await fetch(`${base}/data/indicators/conflict.ucdp.latest.json`);
+	function isOptionalIndicatorAvailable(
+		optionalIndicatorIndex: OptionalIndicatorIndex,
+		fileName: string
+	) {
+		return optionalIndicatorIndex.optional_datasets.includes(fileName);
+	}
 
-		if (!response.ok) {
-			if (response.status === 404) return null;
-			throw new Error(`Failed to load UCDP conflict data: ${response.status}`);
-		}
+	async function loadOptionalWorldBankQualityOfLife(optionalIndicatorIndex: OptionalIndicatorIndex) {
+		const fileName = optionalIndicatorFiles.worldBankQualityOfLife;
 
-		return (await response.json()) as UcdpConflictDataset;
+		return fetchOptionalJson<WorldBankQualityOfLifeDataset>(
+			`${base}/data/indicators/${fileName}`,
+			{ available: isOptionalIndicatorAvailable(optionalIndicatorIndex, fileName) }
+		);
+	}
+
+	async function loadOptionalUcdpConflicts(optionalIndicatorIndex: OptionalIndicatorIndex) {
+		const fileName = optionalIndicatorFiles.ucdpConflicts;
+
+		return fetchOptionalJson<UcdpConflictDataset>(`${base}/data/indicators/${fileName}`, {
+			available: isOptionalIndicatorAvailable(optionalIndicatorIndex, fileName)
+		});
 	}
 
 	function mergeWorldBankQualityOfLife(
@@ -58,9 +88,15 @@
 	) {
 		if (!worldBankData) return mapUnits;
 
+		mapDebug(pageInstanceId, 'indicator merge start', {
+			indicator: 'world-bank-quality-of-life',
+			unitCount: mapUnits.length,
+			recordCount: worldBankData.records.length
+		});
+
 		const recordsById = new Map(worldBankData.records.map((record) => [record.id, record]));
 
-		return mapUnits.map((unit) => {
+		const mergedUnits = mapUnits.map((unit) => {
 			const record = recordsById.get(unit.id);
 
 			if (!record) return unit;
@@ -87,14 +123,27 @@
 				sources: [...new Set([...unit.sources, ...record.sources])]
 			};
 		});
+
+		mapDebug(pageInstanceId, 'indicator merge end', {
+			indicator: 'world-bank-quality-of-life',
+			unitCount: mergedUnits.length
+		});
+
+		return mergedUnits;
 	}
 
 	function mergeUcdpConflicts(mapUnits: MapUnit[], ucdpData: UcdpConflictDataset | null) {
 		if (!ucdpData) return mapUnits;
 
+		mapDebug(pageInstanceId, 'indicator merge start', {
+			indicator: 'ucdp-conflicts',
+			unitCount: mapUnits.length,
+			recordCount: ucdpData.records.length
+		});
+
 		const recordsById = new Map(ucdpData.records.map((record) => [record.id, record]));
 
-		return mapUnits.map((unit) => {
+		const mergedUnits = mapUnits.map((unit) => {
 			const record = recordsById.get(unit.id);
 
 			if (!record) {
@@ -138,32 +187,49 @@
 				sources: [...new Set([...unit.sources.filter((source) => source !== 'mock'), ...record.sources])]
 			};
 		});
+
+		mapDebug(pageInstanceId, 'indicator merge end', {
+			indicator: 'ucdp-conflicts',
+			unitCount: mergedUnits.length
+		});
+
+		return mergedUnits;
 	}
 
 	onMount(async () => {
+		mapDebug(pageInstanceId, 'page mount');
+		mapDebug(pageInstanceId, 'page data load start');
+
 		try {
-			const [response, worldBankData, ucdpData] = await Promise.all([
-				fetch(`${base}/data/world-system.latest.json`),
-				loadOptionalWorldBankQualityOfLife(),
-				loadOptionalUcdpConflicts()
+			const [data, optionalIndicatorIndex] = await Promise.all([
+				fetchJson<DataEnvelope>(`${base}/data/world-system.latest.json`),
+				loadOptionalIndicatorIndex()
 			]);
 
-			if (!response.ok) {
-				throw new Error(`Failed to load mock data: ${response.status}`);
-			}
+			const [worldBankData, ucdpData] = await Promise.all([
+				loadOptionalWorldBankQualityOfLife(optionalIndicatorIndex),
+				loadOptionalUcdpConflicts(optionalIndicatorIndex)
+			]);
 
-			const data = (await response.json()) as DataEnvelope;
 			const mergedUnits = mergeUcdpConflicts(
 				mergeWorldBankQualityOfLife(data.map_units, worldBankData),
 				ucdpData
 			);
 			units = mergedUnits;
+			mapDebug(pageInstanceId, 'map unit data assigned in parent', {
+				unitCount: mergedUnits.length,
+				firstId: mergedUnits[0]?.id ?? null
+			});
 			selectedId = mergedUnits[0]?.id ?? null;
 			selectedUnit = mergedUnits[0] ?? null;
 		} catch (loadError) {
 			error = loadError instanceof Error ? loadError.message : 'Failed to load mock data.';
 		} finally {
 			loading = false;
+			mapDebug(pageInstanceId, 'page data load end', {
+				unitCount: units.length,
+				error
+			});
 		}
 	});
 </script>
