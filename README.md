@@ -17,7 +17,7 @@ The current app uses real static Natural Earth geometry, mock world-system demo 
 
 - SvelteKit and TypeScript
 - Static GitHub Pages build with `@sveltejs/adapter-static`
-- D3 and TopoJSON for local geometry rendering
+- D3 and TopoJSON for local geometry rendering and interactive SVG map navigation
 - Natural Earth base geometry generated at build time with Mapshaper
 - Static JSON data under `static/data/`
 
@@ -69,6 +69,8 @@ Geometry lives in:
 - `static/geo/disputed.topojson` when the optional Natural Earth disputed/breakaway layer is available
 
 The base geometry is Natural Earth Admin 0 countries at 110m scale. This layer is rendered primarily as de facto control boundaries. Disputed and breakaway areas are handled as a separate subtle overlay when available. This geometry choice does not imply political recognition or a sovereignty position.
+
+The main map is an interactive SVG map with D3 zoom and pan controls, mouse wheel or trackpad zoom, drag panning, and keyboard shortcuts for focused map navigation. It does not use external tiles, proprietary map services, tracking, or map API tokens.
 
 Natural Earth properties are source metadata for geometry, not stable application identities. Some Natural Earth features use placeholder codes such as `-99`, and those values must never be used as semantic map-unit IDs. OurWorldSystem therefore keeps a separate map-unit registry in `static/data/map-units.registry.json`. The registry provides stable neutral IDs, display names, Natural Earth aliases, external dataset IDs, recognition-status notes, and review dates.
 
