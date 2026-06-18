@@ -1,6 +1,6 @@
 # Future Data Pipeline
 
-The first scaffold has a small geometry pipeline and checked-in mock indicator JSON under `static/data/`.
+The first scaffold has a geometry pipeline, checked-in mock indicator JSON under `static/data/`, and an initial World Bank WDI quality-of-life pipeline.
 
 ## Registry Validation
 
@@ -10,7 +10,7 @@ Run:
 npm run validate:data
 ```
 
-This checks `static/data/map-units.registry.json` and `static/data/world-system.latest.json`.
+This checks `static/data/map-units.registry.json`, `static/data/world-system.latest.json`, and the optional World Bank quality-of-life output when present.
 
 The map-unit registry exists because geometry source properties are not stable application identities. Natural Earth provides geometry and helpful aliases, but codes such as `ISO_A3` or `ADM0_A3` can be `-99`, and `-99` is not unique. The validation script rejects `-99` as a registry or mock indicator ID and rejects Natural Earth alias arrays that contain only `-99`.
 
@@ -31,7 +31,42 @@ This downloads Natural Earth source archives into `data/raw/natural-earth/` and 
 
 Natural Earth Admin 0 countries are used primarily as de facto boundaries for small-scale web rendering. The disputed/breakaway layer is rendered separately. Geometry is not political recognition, and the pipeline must not hard-code sovereignty judgments.
 
-## Indicator Pipeline
+## World Bank WDI Quality-of-Life Pipeline
+
+Run:
+
+```sh
+npm run data:build
+```
+
+This calls `scripts/data/fetch-world-bank-wdi.mjs` and fetches the selected World Bank World Development Indicators from:
+
+```text
+https://api.worldbank.org/v2/country/all/indicator/{INDICATOR}?format=json&per_page=20000
+```
+
+Initial indicators:
+
+- `SP.DYN.LE00.IN`: life expectancy at birth, total (years)
+- `NY.GNP.PCAP.PP.CD`: GNI per capita, PPP (current international $)
+- `SE.SEC.ENRR`: school enrollment, secondary (% gross)
+- `SP.POP.TOTL`: population, total
+
+The script writes raw API responses to `data/raw/world-bank/{indicator}.json`, which is ignored by git. It writes processed output to `data/processed/quality-of-life.world-bank.latest.json` and frontend static output to `static/data/indicators/quality-of-life.world-bank.latest.json`.
+
+The script selects the latest non-null year per country and normalizes World Bank country codes through registry `external_ids.world_bank`, `external_ids.iso3`, then registry `id`. Unmatched source countries are reported in the output instead of being forced into the registry.
+
+The generated `quality_of_life_score` is a temporary OurWorldSystem visualization composite, not HDI. It uses:
+
+```text
+life_expectancy_score = clamp((life_expectancy - 50) / (85 - 50), 0, 1)
+income_score = clamp((ln(gni_per_capita_ppp) - ln(1000)) / (ln(75000) - ln(1000)), 0, 1)
+education_score = clamp(secondary_enrollment_gross / 100, 0, 1), if available
+```
+
+The score is computed only when life expectancy and GNI per capita PPP are present. Missing World Bank values remain absent and should display as `No data`.
+
+## General Indicator Pipeline
 
 Future pipeline stages should be reproducible and static-output oriented:
 

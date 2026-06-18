@@ -104,11 +104,23 @@ export interface IndicatorAssessment {
 	year: number;
 }
 
+export interface SourcedIndicatorValue {
+	value: number;
+	year: number;
+	indicator: string;
+	source?: string;
+}
+
 export interface QualityOfLifeAssessment {
 	hdi: number | null;
 	ihdi: number | null;
-	life_expectancy: number | null;
+	life_expectancy: number | SourcedIndicatorValue | null;
 	education_index: number | null;
+	gni_per_capita_ppp?: SourcedIndicatorValue | null;
+	secondary_enrollment_gross?: SourcedIndicatorValue | null;
+	population?: SourcedIndicatorValue | null;
+	quality_of_life_score?: number | null;
+	source?: string | null;
 }
 
 export interface EcologyAssessment {
@@ -170,4 +182,31 @@ export interface DataEnvelope {
 		generated_at: string;
 	};
 	map_units: MapUnit[];
+}
+
+export interface WorldBankQualityOfLifeRecord {
+	id: MapUnitId;
+	source_country_code: string;
+	values: {
+		life_expectancy?: SourcedIndicatorValue;
+		gni_per_capita_ppp?: SourcedIndicatorValue;
+		secondary_enrollment_gross?: SourcedIndicatorValue;
+		population?: SourcedIndicatorValue;
+	};
+	quality_of_life_score: number | null;
+	data_quality: 'partial' | 'good' | 'sparse';
+	sources: string[];
+}
+
+export interface WorldBankQualityOfLifeDataset {
+	dataset_id: 'quality_of_life_world_bank_latest';
+	source_id: 'world_bank_wdi';
+	retrieved_at: string;
+	records: WorldBankQualityOfLifeRecord[];
+	unmatched_source_countries: {
+		source_country_code: string;
+		source_country_name?: string | null;
+	}[];
+	latest_years?: Record<string, number | null>;
+	notes: string[];
 }

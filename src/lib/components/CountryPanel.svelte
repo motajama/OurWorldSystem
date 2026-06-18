@@ -1,6 +1,6 @@
 <script lang="ts">
 	import SourceBadge from '$lib/components/SourceBadge.svelte';
-	import type { MapUnit } from '$lib/types';
+	import type { MapUnit, SourcedIndicatorValue } from '$lib/types';
 
 	type Props = {
 		unit: MapUnit | null;
@@ -14,6 +14,35 @@
 		return value ? 'Yes' : 'No';
 	};
 	const formatValue = (value: number | string | null) => (value === null ? 'No data' : value);
+
+	const isSourcedValue = (value: unknown): value is SourcedIndicatorValue =>
+		Boolean(value && typeof value === 'object' && 'value' in value);
+
+	const numericValue = (value: number | SourcedIndicatorValue | null | undefined) => {
+		if (typeof value === 'number') return value;
+		if (isSourcedValue(value)) return value.value;
+		return null;
+	};
+
+	const formatNumber = (
+		value: number | SourcedIndicatorValue | null | undefined,
+		options?: Intl.NumberFormatOptions
+	) => {
+		const number = numericValue(value);
+
+		if (number === null) return 'No data';
+
+		return new Intl.NumberFormat('en', options).format(number);
+	};
+
+	const formatSourcedValue = (
+		value: number | SourcedIndicatorValue | null | undefined,
+		options?: Intl.NumberFormatOptions
+	) => {
+		if (!isSourcedValue(value)) return formatNumber(value, options);
+
+		return `${formatNumber(value, options)} (${value.source ?? 'World Bank WDI'}, ${value.year})`;
+	};
 </script>
 
 <aside class="panel" aria-labelledby="panel-title">
@@ -60,6 +89,62 @@
 		</section>
 
 		<section>
+			<h3>Quality of life</h3>
+			<dl>
+				<div>
+					<dt>HDI</dt>
+					<dd>{formatNumber(unit.quality_of_life.hdi, { maximumFractionDigits: 3 })}</dd>
+				</div>
+				<div>
+					<dt>Project score</dt>
+					<dd>
+						{formatNumber(unit.quality_of_life.quality_of_life_score, {
+							maximumFractionDigits: 3
+						})}
+					</dd>
+				</div>
+				<div>
+					<dt>Life expectancy</dt>
+					<dd>
+						{formatSourcedValue(unit.quality_of_life.life_expectancy, {
+							maximumFractionDigits: 1
+						})}
+					</dd>
+				</div>
+				<div>
+					<dt>GNI per capita PPP</dt>
+					<dd>
+						{formatSourcedValue(unit.quality_of_life.gni_per_capita_ppp, {
+							maximumFractionDigits: 0
+						})}
+					</dd>
+				</div>
+				<div>
+					<dt>Secondary enrollment</dt>
+					<dd>
+						{formatSourcedValue(unit.quality_of_life.secondary_enrollment_gross, {
+							maximumFractionDigits: 1
+						})}
+					</dd>
+				</div>
+				<div>
+					<dt>Population</dt>
+					<dd>
+						{formatSourcedValue(unit.quality_of_life.population, {
+							maximumFractionDigits: 0
+						})}
+					</dd>
+				</div>
+			</dl>
+			{#if unit.quality_of_life.quality_of_life_score !== undefined && unit.quality_of_life.quality_of_life_score !== null}
+				<p class="muted">
+					The project score is a temporary OurWorldSystem composite from World Bank WDI life,
+					income, and available education indicators. It is not HDI.
+				</p>
+			{/if}
+		</section>
+
+		<section>
 			<h3>Indicators</h3>
 			<dl>
 				<div>
@@ -69,10 +154,6 @@
 				<div>
 					<dt>Political freedom</dt>
 					<dd>{unit.political_freedom.source}, {unit.political_freedom.year}</dd>
-				</div>
-				<div>
-					<dt>HDI</dt>
-					<dd>{formatValue(unit.quality_of_life.hdi)}</dd>
 				</div>
 				<div>
 					<dt>CO2 per capita</dt>

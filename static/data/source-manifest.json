@@ -1,0 +1,44 @@
+{
+	"sources": [
+		{
+			"id": "world_bank_wdi",
+			"title": "World Bank World Development Indicators",
+			"publisher": "World Bank",
+			"type": "api",
+			"url": "https://api.worldbank.org/v2/",
+			"license_note": "World Bank Open Data is generally available under CC BY 4.0; verify indicator-specific terms before redistribution.",
+			"retrieval_method": "scripts/data/fetch-world-bank-wdi.mjs",
+			"provenance_required": true
+		},
+		{
+			"id": "natural_earth",
+			"title": "Natural Earth Admin 0 Countries and Breakaway/Disputed Areas",
+			"publisher": "Natural Earth",
+			"type": "download",
+			"url": "https://www.naturalearthdata.com/",
+			"license_note": "Natural Earth data is public domain; review Natural Earth terms and attribution guidance before redistribution.",
+			"retrieval_method": "scripts/geo/build-natural-earth.sh",
+			"provenance_required": true
+		},
+		{
+			"id": "mapshaper",
+			"title": "Mapshaper",
+			"publisher": "Mapshaper project",
+			"type": "build_tool",
+			"url": "https://github.com/mbloch/mapshaper",
+			"license_note": "BSD-3-Clause; verify package license for the installed version.",
+			"retrieval_method": "npx mapshaper in scripts/geo/build-natural-earth.sh",
+			"provenance_required": true
+		},
+		{
+			"id": "mock_demo_data",
+			"title": "OurWorldSystem mock demo data",
+			"publisher": "OurWorldSystem",
+			"type": "fixture",
+			"url": null,
+			"license_note": "Temporary project fixture for interface development only.",
+			"retrieval_method": "Manually maintained static JSON in static/data/world-system.latest.json",
+			"provenance_required": false
+		}
+	]
+}
