@@ -9,6 +9,10 @@ const paths = {
 	registry: path.join(repoRoot, 'static/data/map-units.registry.json'),
 	sourceManifest: path.join(repoRoot, 'static/data/source-manifest.json'),
 	indicatorIndex: path.join(repoRoot, 'static/data/indicators/index.json'),
+	productiveComplexity: path.join(
+		repoRoot,
+		'static/data/indicators/productive-complexity.latest.json'
+	),
 	output: path.join(
 		repoRoot,
 		'static/data/indicators/world-system.structural-v1.placeholder.json'
@@ -91,30 +95,68 @@ function emptyComponents() {
 	};
 }
 
-function placeholderRecordFor(registryRecord, availableSourceIds, missingSourceIds) {
+function productiveComplexityById(data) {
+	const records = Array.isArray(data?.records) ? data.records : [];
+	return new Map(
+		records
+			.filter(
+				(record) =>
+					isObject(record) &&
+					typeof record.id === 'string' &&
+					typeof record.productive_complexity_score === 'number' &&
+					Number.isFinite(record.productive_complexity_score)
+			)
+			.map((record) => [record.id, record])
+	);
+}
+
+function componentLimitations(hasProductiveComplexity, isDisputed) {
+	const limitations = [
+		'Placeholder record only; do not use as a Wallersteinian classification.',
+		hasProductiveComplexity
+			? 'Productive complexity is available as one component only; value capture, extraction autonomy, ecological externalization, and geopolitical-financial power remain missing.'
+			: 'Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.',
+		isDisputed
+			? 'This disputed or special map unit requires neutral source crosswalk review before comparable structural scoring.'
+			: 'Registry identity exists, but structural source coverage is not yet complete.'
+	];
+
+	return limitations;
+}
+
+function placeholderRecordFor(registryRecord, availableSourceIds, missingSourceIds, productiveRecord) {
 	const isDisputed = registryRecord?.map_unit_type === 'disputed';
+	const components = emptyComponents();
+	if (productiveRecord) components.productive_complexity = productiveRecord.productive_complexity_score;
+	const recordSources = productiveRecord ? ['atlas_economic_complexity'] : [];
 
 	return {
 		id: registryRecord.id,
 		class: isDisputed ? 'disputed' : 'no_data',
 		score: null,
 		confidence: 'low',
-		components: emptyComponents(),
+		components,
 		data_coverage: {
 			available_source_ids: [...availableSourceIds].sort(),
 			missing_source_ids: missingSourceIds,
-			component_status: componentStatusFor(availableSourceIds)
+			component_status: componentStatusFor(availableSourceIds),
+			component_inputs: {
+				productive_complexity: productiveRecord
+					? {
+							source_id: 'atlas_economic_complexity',
+							source_country_code: productiveRecord.source_country_code,
+							latest_year: productiveRecord.latest_year,
+							values: productiveRecord.values,
+							score_method: productiveRecord.score_method,
+							data_quality: productiveRecord.data_quality
+						}
+					: null
+			}
 		},
 		explanation:
-			'Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.',
-		limitations: [
-			'Placeholder record only; do not use as a Wallersteinian classification.',
-			'Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.',
-			isDisputed
-				? 'This disputed or special map unit requires neutral source crosswalk review before comparable structural scoring.'
-				: 'Registry identity exists, but structural source coverage is not yet available.'
-		],
-		sources: [],
+			'Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.',
+		limitations: componentLimitations(Boolean(productiveRecord), isDisputed),
+		sources: recordSources,
 		review_status: 'not_started'
 	};
 }
@@ -138,8 +180,22 @@ async function main() {
 	const missingManifestEntries = plannedSourceIds.filter((sourceId) => !sourceIdsInManifest.has(sourceId));
 
 	const availableSourceIds = new Set();
+	let productiveComplexity = null;
+	if (await exists(paths.productiveComplexity)) {
+		productiveComplexity = await readJson(paths.productiveComplexity);
+		if (
+			productiveComplexity?.status === 'data_loaded' &&
+			Array.isArray(productiveComplexity.records) &&
+			productiveComplexity.records.length > 0
+		) {
+			availableSourceIds.add('atlas_economic_complexity');
+		}
+	}
+
 	for (const entry of Array.isArray(indicatorIndex) ? indicatorIndex : []) {
-		if (entry?.id === 'world_system_structural_v1') continue;
+		if (entry?.id === 'world_system_structural_v1' || entry?.id === 'productive_complexity_latest') {
+			continue;
+		}
 
 		const datasetPath = toRelativeStaticPath(entry?.path);
 		const datasetExists = datasetPath ? await exists(path.join(repoRoot, datasetPath)) : false;
@@ -151,9 +207,17 @@ async function main() {
 	}
 
 	const missingSourceIds = plannedSourceIds.filter((sourceId) => !availableSourceIds.has(sourceId));
+	const productiveRecordsById = productiveComplexityById(productiveComplexity);
 	const records = registry
 		.filter((record) => isObject(record) && typeof record.id === 'string')
-		.map((record) => placeholderRecordFor(record, availableSourceIds, missingSourceIds));
+		.map((record) =>
+			placeholderRecordFor(
+				record,
+				availableSourceIds,
+				missingSourceIds,
+				productiveRecordsById.get(record.id)
+			)
+		);
 
 	const output = {
 		dataset_id: 'world_system_structural_v1',
@@ -163,9 +227,25 @@ async function main() {
 		planned_source_ids: plannedSourceIds,
 		missing_source_ids: missingSourceIds,
 		component_requirements: componentRequirements,
+		component_inputs: {
+			productive_complexity: productiveComplexity
+				? {
+						path: '/data/indicators/productive-complexity.latest.json',
+						status: productiveComplexity.status,
+						record_count: Array.isArray(productiveComplexity.records)
+							? productiveComplexity.records.length
+							: 0
+					}
+				: {
+						path: '/data/indicators/productive-complexity.latest.json',
+						status: 'missing',
+						record_count: 0
+					}
+		},
 		notes: [
 			'This placeholder intentionally does not compute final world-system classifications.',
 			'The current provisional world-system proxy remains separate from this future structural model.',
+			'Productive complexity, when present, is one component and does not determine world-system position by itself.',
 			'Implement source pipelines and reviewed component transformations before changing model_status to draft, review, or published.'
 		]
 	};
@@ -175,6 +255,11 @@ async function main() {
 
 	console.log(`Wrote ${relativePath(paths.output)}`);
 	console.log(`Records: ${records.length}`);
+	console.log(
+		`Productive complexity records: ${productiveRecordsById.size} (${
+			productiveComplexity?.status ?? 'missing'
+		})`
+	);
 	console.log(`Available planned source ids: ${[...availableSourceIds].sort().join(', ') || 'none'}`);
 	console.log(`Missing planned source ids: ${missingSourceIds.join(', ') || 'none'}`);
 

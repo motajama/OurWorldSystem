@@ -1,6 +1,6 @@
 # Future Data Pipeline
 
-The first scaffold has a geometry pipeline, checked-in mock indicator JSON under `static/data/`, an initial World Bank WDI quality-of-life pipeline, and a first UCDP conflict pipeline.
+The first scaffold has a geometry pipeline, checked-in mock indicator JSON under `static/data/`, an initial World Bank WDI quality-of-life pipeline, a first UCDP conflict pipeline, and a local Atlas of Economic Complexity import for the `productive_complexity` structural component.
 
 ## CI Commands
 
@@ -40,7 +40,9 @@ Current data generation scripts are split by source:
 ```sh
 npm run data:fetch:worldbank
 npm run data:fetch:ucdp
+npm run data:import:complexity
 npm run data:build:worldsystem
+npm run data:build:worldsystem:structural
 npm run data:build
 npm run registry:seed
 npm run registry:review
@@ -181,6 +183,53 @@ npm run validate:worldsystem
 The validator checks schema, registry IDs, uniqueness, classes, score ranges, confidence, source, review status, class distribution, and no-data coverage against available World Bank records.
 
 Future versions should replace this proxy with a documented structural model that includes OECD TiVA, trade/value-chain data, material footprint, e-waste, ecological externalization, military/geopolitical position, financial centrality, conflict exposure, and political-freedom indicators.
+
+## Atlas Productive-Complexity Import
+
+Run:
+
+```sh
+npm run data:import:complexity
+```
+
+This calls `scripts/data/import-atlas-economic-complexity.mjs` and reads local CSV files from:
+
+```text
+data/raw/atlas-economic-complexity/
+```
+
+Download Atlas of Economic Complexity data manually from:
+
+```text
+https://atlas.hks.harvard.edu/data-downloads/
+```
+
+Supported file names include `country_complexity.csv`, `country_product_exports.csv`, and `product_complexity.csv`. The importer also scans other CSVs in that directory if it can detect common country-code, year, ECI, export-value, or diversity columns.
+
+The importer writes:
+
+- `static/data/indicators/productive-complexity.latest.json`
+
+If no CSV files are present, it writes a valid placeholder with `status: "no_source_file"` and zero records, then exits successfully. Missing Atlas files must not fail CI.
+
+The importer normalizes source country codes through registry `external_ids.iso3`, registry `id`, `natural_earth.iso_a3`, and `natural_earth.adm0_a3`. Natural Earth placeholder code `-99` is never accepted. Unmatched rows are reported in the output instead of being forced into the registry.
+
+The component score is a 0-100 percentile rank across matched records. ECI receives 75% weight when export diversity is also available; diversity receives 25%. If only one usable indicator is present, that percentile is used and data quality reflects the reduced evidence. This is one structural component only and does not determine world-system class.
+
+Validate it with:
+
+```sh
+npm run validate:productive-complexity
+```
+
+Then rebuild the structural placeholder:
+
+```sh
+npm run data:build:worldsystem:structural
+npm run validate:worldsystem:structural
+```
+
+The structural placeholder can include `components.productive_complexity` where data exists, but it remains `model_status: "not_yet_computable"` until value capture, extraction autonomy, ecological externalization, and geopolitical-financial power are implemented and reviewed.
 
 ## UCDP Conflict Pipeline
 

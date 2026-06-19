@@ -7,6 +7,11 @@ dist/
 !.env.example
 
 data/raw/
+!data/raw/
+data/raw/*
+!data/raw/atlas-economic-complexity/
+data/raw/atlas-economic-complexity/*
+!data/raw/atlas-economic-complexity/README.md
 data/interim/
 *.parquet
 *.duckdb

@@ -24,6 +24,14 @@
 		"description": "Optional UCDP conflict indicators."
 	},
 	{
+		"id": "productive_complexity_latest",
+		"path": "/data/indicators/productive-complexity.latest.json",
+		"required": false,
+		"available": true,
+		"source_ids": ["atlas_economic_complexity"],
+		"description": "Optional productive-complexity component imported from local Atlas of Economic Complexity CSV files. Placeholder output is valid when raw files are absent."
+	},
+	{
 		"id": "world_system_structural_v1",
 		"path": "/data/indicators/world-system.structural-v1.placeholder.json",
 		"required": false,

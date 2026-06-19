@@ -151,6 +151,13 @@ if (!Array.isArray(data?.records)) {
 					}
 				}
 			}
+
+			if (
+				record.data_coverage.component_inputs !== undefined &&
+				!isObject(record.data_coverage.component_inputs)
+			) {
+				errors.push(`${label}: data_coverage.component_inputs must be an object when present.`);
+			}
 		}
 
 		if (typeof record.explanation !== 'string' || record.explanation.trim().length === 0) {
@@ -172,11 +179,8 @@ if (!Array.isArray(data?.records)) {
 		}
 
 		if (data.model_status === 'not_yet_computable') {
-			const hasComponentScore = componentKeys.some(
-				(componentKey) => record.components?.[componentKey] !== null
-			);
-			if (record.score !== null || hasComponentScore) {
-				errors.push(`${label}: placeholder output must not include computed scores.`);
+			if (record.score !== null) {
+				errors.push(`${label}: placeholder output must not include final world-system scores.`);
 			}
 		}
 	}
@@ -196,6 +200,10 @@ if (!isObject(data?.component_requirements)) {
 			errors.push(`component_requirements.${componentKey} must be an array.`);
 		}
 	}
+}
+
+if (data?.component_inputs !== undefined && !isObject(data.component_inputs)) {
+	errors.push('component_inputs must be an object when present.');
 }
 
 if (data?.model_status !== 'not_yet_computable' && Array.isArray(data?.records)) {

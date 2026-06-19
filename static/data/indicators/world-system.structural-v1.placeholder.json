@@ -1,7 +1,7 @@
 {
 	"dataset_id": "world_system_structural_v1",
 	"model_status": "not_yet_computable",
-	"generated_at": "2026-06-19T17:18:16.476Z",
+	"generated_at": "2026-06-19T17:58:34.798Z",
 	"records": [
 		{
 			"id": "AFG",
@@ -34,13 +34,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -76,13 +79,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -118,13 +124,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -160,13 +169,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -202,13 +214,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -244,13 +259,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -286,13 +304,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -328,13 +349,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -370,13 +394,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -412,13 +439,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -454,13 +484,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -496,13 +529,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -538,13 +574,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -580,13 +619,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -622,13 +664,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -664,13 +709,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -706,13 +754,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -748,13 +799,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -790,13 +844,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -832,13 +889,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -874,13 +934,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -916,13 +979,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -958,13 +1024,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -1000,13 +1069,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -1042,13 +1114,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -1084,13 +1159,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -1126,13 +1204,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -1168,13 +1249,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -1210,13 +1294,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -1252,13 +1339,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -1294,13 +1384,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -1336,13 +1429,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -1378,13 +1474,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -1420,13 +1519,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -1462,13 +1564,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -1504,13 +1609,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -1546,13 +1654,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -1588,13 +1699,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -1630,13 +1744,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -1672,13 +1789,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -1714,13 +1834,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -1756,13 +1879,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -1798,13 +1924,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -1840,13 +1969,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -1882,13 +2014,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -1924,13 +2059,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -1966,13 +2104,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -2008,13 +2149,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -2050,13 +2194,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -2092,13 +2239,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -2134,13 +2284,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -2176,13 +2329,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -2218,13 +2374,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -2260,13 +2419,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -2302,13 +2464,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -2344,13 +2509,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -2386,13 +2554,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -2428,13 +2599,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -2470,13 +2644,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -2512,13 +2689,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -2554,13 +2734,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -2596,13 +2779,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -2638,13 +2824,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -2680,13 +2869,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -2722,13 +2914,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -2764,13 +2959,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -2806,13 +3004,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -2848,13 +3049,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -2890,13 +3094,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -2932,13 +3139,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -2974,13 +3184,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -3016,13 +3229,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -3058,13 +3274,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -3100,13 +3319,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -3142,13 +3364,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -3184,13 +3409,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -3226,13 +3454,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -3268,13 +3499,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -3310,13 +3544,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -3352,9 +3589,12 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
@@ -3394,13 +3634,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -3436,13 +3679,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -3478,13 +3724,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -3520,13 +3769,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -3562,13 +3814,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -3604,13 +3859,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -3646,13 +3904,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -3688,13 +3949,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -3730,13 +3994,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -3772,13 +4039,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -3814,13 +4084,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -3856,13 +4129,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -3898,13 +4174,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -3940,13 +4219,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -3982,13 +4264,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -4024,13 +4309,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -4066,13 +4354,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -4108,13 +4399,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -4150,13 +4444,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -4192,13 +4489,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -4234,13 +4534,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -4276,13 +4579,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -4318,13 +4624,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -4360,13 +4669,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -4402,13 +4714,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -4444,13 +4759,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -4486,13 +4804,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -4528,13 +4849,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -4570,13 +4894,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -4612,13 +4939,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -4654,13 +4984,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -4696,9 +5029,12 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
@@ -4738,13 +5074,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -4780,13 +5119,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -4822,13 +5164,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -4864,9 +5209,12 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
@@ -4906,13 +5254,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -4948,13 +5299,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -4990,13 +5344,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -5032,13 +5389,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -5074,13 +5434,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -5116,13 +5479,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -5158,13 +5524,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -5200,13 +5569,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -5242,13 +5614,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -5284,13 +5659,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -5326,13 +5704,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -5368,13 +5749,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -5410,13 +5794,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -5452,13 +5839,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -5494,13 +5884,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -5536,13 +5929,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -5578,13 +5974,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -5620,13 +6019,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -5662,13 +6064,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -5704,13 +6109,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -5746,9 +6154,12 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
@@ -5788,13 +6199,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -5830,13 +6244,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -5872,13 +6289,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -5914,13 +6334,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -5956,13 +6379,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -5998,13 +6424,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -6040,13 +6469,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -6082,13 +6514,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -6124,13 +6559,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -6166,13 +6604,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -6208,13 +6649,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -6250,13 +6694,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -6292,13 +6739,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -6334,13 +6784,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -6376,13 +6829,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -6418,13 +6874,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -6460,13 +6919,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -6502,13 +6964,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -6544,13 +7009,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -6586,13 +7054,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -6628,13 +7099,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -6670,13 +7144,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -6712,13 +7189,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -6754,13 +7234,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -6796,13 +7279,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -6838,13 +7324,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -6880,13 +7369,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -6922,13 +7414,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -6964,13 +7459,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -7006,13 +7504,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -7048,13 +7549,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -7090,13 +7594,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -7132,13 +7639,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -7174,13 +7684,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -7216,13 +7729,16 @@
 					"extraction_autonomy": "missing",
 					"ecological_externalization": "missing",
 					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null
 				}
 			},
-			"explanation": "Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.",
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
 			"limitations": [
 				"Placeholder record only; do not use as a Wallersteinian classification.",
 				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
-				"Registry identity exists, but structural source coverage is not yet available."
+				"Registry identity exists, but structural source coverage is not yet complete."
 			],
 			"sources": [],
 			"review_status": "not_started"
@@ -7278,9 +7794,17 @@
 			"sipri_military_expenditure"
 		]
 	},
+	"component_inputs": {
+		"productive_complexity": {
+			"path": "/data/indicators/productive-complexity.latest.json",
+			"status": "no_source_file",
+			"record_count": 0
+		}
+	},
 	"notes": [
 		"This placeholder intentionally does not compute final world-system classifications.",
 		"The current provisional world-system proxy remains separate from this future structural model.",
+		"Productive complexity, when present, is one component and does not determine world-system position by itself.",
 		"Implement source pipelines and reviewed component transformations before changing model_status to draft, review, or published."
 	]
 }
