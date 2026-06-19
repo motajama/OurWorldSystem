@@ -2,7 +2,7 @@
 
 OurWorldSystem is an open-source, static-first public-interest atlas of countries and map units in the global world-system. It is intended to visualize structural positions such as core, semi-periphery, periphery, uncertainty, conflict exposure, press freedom, political freedom, quality of life, ecological pressure, and forms of extraction or externalization.
 
-The current app uses real static Natural Earth geometry, a conservative provisional world-system proxy, preserved mock/demo world-system records, an initial real World Bank WDI quality-of-life indicator pipeline, a first UCDP conflict indicator pipeline, a local Atlas of Economic Complexity import for productive complexity, and a World Bank WDI extraction dependency/autonomy component. The default world-system layer is provisional, experimental, and needs review; it must not be interpreted as a final academic classification.
+The current app uses real static Natural Earth geometry, a conservative provisional world-system proxy, mock/demo world-system seed records, an empty manual curated-override file, an initial real World Bank WDI quality-of-life indicator pipeline, a first UCDP conflict indicator pipeline, a local Atlas of Economic Complexity import for productive complexity, and a World Bank WDI extraction dependency/autonomy component. The default world-system layer is provisional, experimental, and needs review; it must not be interpreted as a final academic classification.
 
 ## Principles
 
@@ -94,6 +94,7 @@ Mock frontend data lives in:
 
 - `static/data/map-units.registry.json`
 - `static/data/world-system.latest.json`
+- `static/data/world-system.curated-overrides.json`
 - `static/data/sources.json`
 - `static/data/source-manifest.json`
 
@@ -126,7 +127,7 @@ Mock world-system indicators in `static/data/world-system.latest.json` join thro
 
 Disputed and breakaway overlay features are hoverable and clickable. Their labels use the best available Natural Earth name/status properties and a neutral reminder that OurWorldSystem does not adjudicate sovereignty. When an overlay feature has no matching disputed or special registry record, the detail panel opens a synthetic no-data map-unit record sourced to Natural Earth.
 
-The default thematic view is **World-system position**. It now prefers `world-system.provisional.latest.json`, then falls back to the preserved demo records in `world-system.latest.json`, then to `No data`. The provisional dataset keeps demo/curated classes where present as `source: "demo_curated"` and uses World Bank quality-of-life, GNI, extraction dependency/autonomy, and optional productive-complexity components as a conservative proxy. High quality of life alone cannot generate `core`; extraction autonomy is a filter, not proof of core status; structurally unconfirmed high-welfare records are usually `semi-periphery` or `uncertain`. This is a limited visualization proxy, not a final Wallersteinian classification.
+The default thematic view is **World-system position**. It now prefers `world-system.provisional.latest.json`, then falls back to the demo records in `world-system.latest.json`, then to `No data`. Demo records are UI/demo seeds only; they are not reviewed Wallersteinian classifications and cannot create authoritative `core` classifications. The provisional dataset labels demo-derived records as `legacy_demo_seed` or `legacy_demo_seed_reinterpreted`, uses `curated_reviewed` only for the separate override file, and uses World Bank quality-of-life, GNI, extraction dependency/autonomy, and optional productive-complexity components as a conservative proxy. High quality of life alone cannot generate `core`; extraction autonomy is a filter, not proof of core status; structurally unconfirmed high-welfare records are usually `semi-periphery` or `uncertain`. This is a limited visualization proxy, not a final Wallersteinian classification.
 
 The map can also switch to criterion layers for war/conflict, press freedom, political freedom, quality of life, extraction dependency, and ecology. These layers are defined in `src/lib/mapLayers.ts`; each layer has a stable ID, label, description, binning rule, legend items, and explicit no-data category. The extraction layer uses the generated World Bank WDI component when present and falls back to demo risk fields otherwise.
 
@@ -181,7 +182,9 @@ npm run data:build:worldsystem
 
 The provisional proxy is deliberately conservative because the previous quality-of-life/GNI-heavy rule overproduced `core`. Core status is not high income, high welfare, or low extraction dependency. In Wallersteinian terms it requires positive structural evidence of value capture, control of profitable production processes, productive complexity, GVC control, geopolitical-financial power, or explicit curated review.
 
-Non-demo records can be provisional `core` only when `quality_of_life_score >= 0.88`, at least one positive structural support is present (`productive_complexity_score >= 75`, future `value_capture_score >= 70`, or future `geopolitical_financial_power_score >= 70`), at least one extraction/autonomy filter support is present (`extraction_autonomy_score >= 75` or `extraction_dependency_score <= 20`), extraction dependency does not block the claim, and the record is not disputed/special/territory. If quality is very high but positive structural evidence is missing, the record is normally low-confidence `semi-periphery` with the explanation that value-capture or productive-complexity evidence is unavailable. A continuous proxy score may be high while the class remains `semi-periphery`.
+Derived records can be provisional `core` only when `quality_of_life_score >= 0.88`, at least one positive structural support is present (`productive_complexity_score >= 75`, future `value_capture_score >= 70`, or future `geopolitical_financial_power_score >= 70`), at least one extraction/autonomy filter support is present (`extraction_autonomy_score >= 75` or `extraction_dependency_score <= 20`), extraction dependency does not block the claim, and the record is not disputed/special/territory. Demo seed records cannot become core. If a legacy demo seed says `core` without a curated override and without positive structural evidence, the provisional output is low-confidence `semi-periphery` with `source: "legacy_demo_seed_reinterpreted"`. If quality is very high but positive structural evidence is missing, the record is normally low-confidence `semi-periphery` with the explanation that value-capture or productive-complexity evidence is unavailable. A continuous proxy score may be high while the class remains `semi-periphery`.
+
+Manual reviewed classifications belong in `static/data/world-system.curated-overrides.json` with `source: "curated_reviewed"`, rationale, reviewer, and review date. The file is currently empty, so CZE, DEU, and USA demo examples are not reviewed structural classifications. The provisional model may produce zero core records until reviewed overrides or stronger structural evidence are added; this is intentional.
 
 `semi-periphery` is not a residual middle-income bin. It represents a mixed structural position with some core-like and some periphery-like processes, including many high-development cases whose value-capture and GVC evidence is not yet complete. Contradictory signals, such as high welfare with high resource dependence, are marked `uncertain`; missing values remain `no_data`; disputed map units without explicit curated classification remain `disputed`.
 
@@ -193,7 +196,7 @@ Future data pipelines should generate static JSON from public sources such as OE
 
 ## World-system model roadmap
 
-The current default world-system layer is a conservative provisional proxy. It preserves demo records from `static/data/world-system.latest.json` and derives broader coverage from World Bank WDI quality-of-life, income-related, and extraction dependency/autonomy indicators in `static/data/indicators/world-system.provisional.latest.json`. This is not a final Wallersteinian classification.
+The current default world-system layer is a conservative provisional proxy. It treats demo records from `static/data/world-system.latest.json` as UI/demo seeds, applies optional reviewed overrides from `static/data/world-system.curated-overrides.json`, and derives broader coverage from World Bank WDI quality-of-life, income-related, and extraction dependency/autonomy indicators in `static/data/indicators/world-system.provisional.latest.json`. This is not a final Wallersteinian classification.
 
 The planned structural model v1 is documented in `docs/world-system-methodology.md` and scaffolded as `world_system_structural_v1`. It will treat core, semi-periphery, and periphery as relational positions in the capitalist world-economy, not as income or quality-of-life bins. Planned components are value capture and GVC position, productive complexity, extraction autonomy, ecological unequal exchange or externalization, and geopolitical-financial-institutional power.
 

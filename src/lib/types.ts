@@ -85,7 +85,13 @@ export interface WorldSystemAssessment {
 	class: WorldSystemClass;
 	score: number | null;
 	confidence: Confidence;
-	source?: 'derived_world_bank_quality_proxy' | 'demo_curated' | string;
+	source?:
+		| 'derived_world_bank_quality_proxy'
+		| 'derived_conservative_structural_proxy'
+		| 'legacy_demo_seed'
+		| 'legacy_demo_seed_reinterpreted'
+		| 'curated_reviewed'
+		| string;
 	model_status?: 'provisional' | 'provisional_conservative_proxy' | string;
 	explanation: string;
 	structural_supports?: string[];
@@ -272,12 +278,17 @@ export interface ProvisionalWorldSystemRecord {
 	world_system: {
 		class: WorldSystemClass;
 		score: number | null;
-		confidence: 'low' | 'medium';
+		confidence: 'low' | 'medium' | 'high';
 		source:
 			| 'derived_world_bank_quality_proxy'
 			| 'derived_conservative_structural_proxy'
-			| 'demo_curated';
+			| 'legacy_demo_seed'
+			| 'legacy_demo_seed_reinterpreted'
+			| 'curated_reviewed';
 		explanation: string;
+		rationale?: string | null;
+		reviewed_by?: string | null;
+		reviewed_at?: string | null;
 	};
 	components: {
 		quality_of_life_score: number | null;
@@ -297,6 +308,7 @@ export interface ProvisionalWorldSystemRecord {
 		classification_reason?: string;
 	};
 	review_status: 'needs_review' | string;
+	classification_status?: 'provisional_model' | 'demo_only' | 'curated_reviewed' | string;
 }
 
 export interface ProvisionalWorldSystemDataset {

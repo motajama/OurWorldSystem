@@ -74,21 +74,25 @@ Planned evidence includes military expenditure, reserve-currency and financial-c
 
 ## Provisional Model Versus Structural Model
 
-The current dataset `world_system_provisional_latest` is a temporary conservative proxy. It preserves checked-in demo records and otherwise derives broad coverage from World Bank WDI quality-of-life and income-related indicators, World Bank WDI extraction dependency/autonomy, and optional productive-complexity data. Each record is marked for review.
+The current dataset `world_system_provisional_latest` is a temporary conservative proxy. It treats checked-in demo records as UI/demo seeds only and otherwise derives broad coverage from World Bank WDI quality-of-life and income-related indicators, World Bank WDI extraction dependency/autonomy, and optional productive-complexity data. Each non-curated record is marked for review.
+
+The original demo examples in `static/data/world-system.latest.json`, including CZE, DEU, and USA, were created to exercise UI and layer behavior. They were not reviewed structural Wallersteinian classifications. Demo source labels must use `legacy_demo_seed` or `legacy_demo_seed_reinterpreted`, never curated language.
+
+Real manual curation must live in `static/data/world-system.curated-overrides.json` with `source: "curated_reviewed"`, a rationale, reviewer, and review date. A curated override has priority over the derived model and may assign `core` when the rationale is present. The file can validly contain an empty `records` array until manual review is complete.
 
 The previous quality-of-life-heavy rule overproduced `core`. In the conservative proxy, high welfare or high GNI cannot generate `core` by itself. Extraction autonomy is also not positive proof of core status. It is a negative filter and corroborating condition: high extraction autonomy or low extraction dependency can disqualify or support a claim, but it does not demonstrate value capture, productive complexity, GVC control, financial centrality, or geopolitical power.
 
-Non-demo core classification requires all of the following:
+Derived core classification requires all of the following:
 
 - `quality_of_life_score >= 0.88`;
 - at least one positive structural support, currently `productive_complexity_score >= 75` where Atlas data exists, or future `value_capture_score >= 70` or `geopolitical_financial_power_score >= 70`;
 - at least one negative/filter support such as `extraction_autonomy_score >= 75` or `extraction_dependency_score <= 20`;
 - no extraction-dependency block at `extraction_dependency_score >= 35`;
-- no disputed, special, or territory status unless explicitly curated.
+- no disputed, special, or territory status unless explicitly reviewed through a curated override.
 
 If productive-complexity and value-capture evidence are both missing, derived records must not become `core`, even if their continuous proxy score is very high. A map unit may score 97 on the welfare/income proxy and still remain `semi-periphery` because score and class answer different questions. High quality-of-life countries may remain semi-periphery until TiVA/GVC, value-capture, productive-complexity, financial, or geopolitical evidence is added.
 
-The current model deliberately under-classifies `core` rather than over-classifying it. If welfare is core-like but positive structural evidence is incomplete, the provisional class is usually `semi-periphery`; if high welfare conflicts with high resource dependence, it is `uncertain`.
+Demo seeds cannot create `core`. If a legacy demo seed says `core` but there is no curated override and no positive structural evidence, it is reinterpreted as low-confidence `semi-periphery` with `source: "legacy_demo_seed_reinterpreted"`. The current model deliberately under-classifies `core` rather than over-classifying it. It may produce zero core records until reviewed overrides or stronger structural data are added; this is preferable to overproducing core from welfare data. If welfare is core-like but positive structural evidence is incomplete, the provisional class is usually `semi-periphery`; if high welfare conflicts with high resource dependence, it is `uncertain`.
 
 This use of `semi-periphery` is methodological, not merely income-based. It describes mixed structural positions with both core-like and periphery-like processes, including high-development map units whose value capture, ownership, production-chain control, or extraction autonomy has not yet been demonstrated.
 

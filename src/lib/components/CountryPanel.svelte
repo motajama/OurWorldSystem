@@ -56,12 +56,15 @@
 				'core_like_welfare_autonomy_missing_positive_structural_evidence');
 
 	const isCuratedCore = (unit: MapUnit) =>
-		unit.world_system.class === 'core' && unit.world_system.source === 'demo_curated';
+		unit.world_system.class === 'core' && unit.world_system.source === 'curated_reviewed';
 
 	const isStructurallyDerivedCore = (unit: MapUnit) =>
 		unit.world_system.class === 'core' &&
 		typeof unit.world_system.source === 'string' &&
 		unit.world_system.source.startsWith('derived');
+
+	const isReinterpretedDemoSeed = (unit: MapUnit) =>
+		unit.world_system.source === 'legacy_demo_seed_reinterpreted';
 </script>
 
 <aside class="panel" aria-labelledby="panel-title">
@@ -109,8 +112,14 @@
 					productive complexity is currently available. Provisional class: semi-periphery.
 				</p>
 			{/if}
+			{#if isReinterpretedDemoSeed(unit)}
+				<p class="warning">
+					Original demo seed data are not treated as reviewed classification. This provisional
+					class was reinterpreted under stricter structural rules.
+				</p>
+			{/if}
 			{#if isCuratedCore(unit)}
-				<p class="muted">Core classification source: curated/demo record pending review.</p>
+				<p class="muted">Core classification source: reviewed curated override.</p>
 			{:else if isStructurallyDerivedCore(unit)}
 				<p class="muted">Core classification source: structurally derived provisional record.</p>
 			{/if}

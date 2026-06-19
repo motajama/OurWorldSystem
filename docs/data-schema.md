@@ -1,6 +1,6 @@
 # Data Schema
 
-The frontend currently reads the stable map-unit registry from `static/data/map-units.registry.json`, mock/demo indicator data from `static/data/world-system.latest.json`, optional World Bank WDI quality-of-life indicators from `static/data/indicators/quality-of-life.world-bank.latest.json`, optional provisional world-system indicators from `static/data/indicators/world-system.provisional.latest.json`, optional UCDP conflict indicators from `static/data/indicators/conflict.ucdp.latest.json`, optional productive-complexity component data from `static/data/indicators/productive-complexity.latest.json`, optional World Bank WDI extraction dependency data from `static/data/indicators/extraction-dependency.world-bank.latest.json`, and geometry from `static/geo/`.
+The frontend currently reads the stable map-unit registry from `static/data/map-units.registry.json`, mock/demo indicator data from `static/data/world-system.latest.json`, optional curated world-system overrides from `static/data/world-system.curated-overrides.json`, optional World Bank WDI quality-of-life indicators from `static/data/indicators/quality-of-life.world-bank.latest.json`, optional provisional world-system indicators from `static/data/indicators/world-system.provisional.latest.json`, optional UCDP conflict indicators from `static/data/indicators/conflict.ucdp.latest.json`, optional productive-complexity component data from `static/data/indicators/productive-complexity.latest.json`, optional World Bank WDI extraction dependency data from `static/data/indicators/extraction-dependency.world-bank.latest.json`, and geometry from `static/geo/`.
 
 Optional indicator files are discovered through `static/data/indicators/index.json`. During development, a missing optional indicator is treated as "dataset not available yet" rather than an application error. Optional entries can set `available: false`; the frontend skips those entries entirely so a not-yet-generated optional dataset does not create normal browser 404 noise. Required base files such as `world-system.latest.json`, `map-units.registry.json`, and base geometry still fail clearly when missing or invalid.
 
@@ -134,7 +134,13 @@ Future public datasets should be mapped into registry `id` values using document
     class: "core" | "semi-periphery" | "periphery" | "uncertain" | "no_data" | "disputed";
     score: number | null;
     confidence: "high" | "medium" | "low";
-    source?: "derived_world_bank_quality_proxy" | "demo_curated" | string;
+    source?:
+      | "derived_world_bank_quality_proxy"
+      | "derived_conservative_structural_proxy"
+      | "legacy_demo_seed"
+      | "legacy_demo_seed_reinterpreted"
+      | "curated_reviewed"
+      | string;
     model_status?: "provisional" | string;
     explanation: string;
   };
@@ -235,7 +241,7 @@ Every layer includes an explicit `no_data` legend item. Missing objects, null sc
 
 The rendered SVG map uses D3 Equal Earth as its default equal-area projection. This improves visual comparison of territorial surface areas while still distorting shapes and distances like any world projection.
 
-Current values in `world-system.latest.json` are mock/demo values. The generated provisional proxy lives in `world-system.provisional.latest.json` and keeps demo classes distinguishable as `source: "demo_curated"`. Real indicator pipelines should write separate static files and merge by registry ID in the frontend or a build step. The layer API handles binning, labels, fill classes, and legend items.
+Current values in `world-system.latest.json` are mock/demo values. They are UI/demo seeds, not reviewed structural classifications. The generated provisional proxy lives in `world-system.provisional.latest.json` and keeps demo classes distinguishable as `source: "legacy_demo_seed"` or `source: "legacy_demo_seed_reinterpreted"`. Demo records must not generate authoritative `core` classifications. Real indicator pipelines should write separate static files and merge by registry ID in the frontend or a build step. The layer API handles binning, labels, fill classes, and legend items.
 
 ## Provisional World-System Indicators
 
@@ -246,7 +252,13 @@ The output schema is:
 ```ts
 {
   dataset_id: "world_system_provisional_latest";
-  source_ids: ["world_bank_wdi", "mock_demo_data"];
+  source_ids: [
+    "world_bank_wdi",
+    "world_bank_wdi_extraction",
+    "atlas_economic_complexity",
+    "legacy_demo_seed",
+    "world_system_curated_overrides"
+  ];
   model_status: "provisional_conservative_proxy";
   generated_at: string;
   methodology_note: string;
@@ -265,8 +277,13 @@ The output schema is:
       source:
         | "derived_world_bank_quality_proxy"
         | "derived_conservative_structural_proxy"
-        | "demo_curated";
+        | "legacy_demo_seed"
+        | "legacy_demo_seed_reinterpreted"
+        | "curated_reviewed";
       explanation: string;
+      rationale?: string | null;
+      reviewed_by?: string | null;
+      reviewed_at?: string | null;
     };
     components: {
       quality_of_life_score: number | null; // original 0-1 World Bank-derived score
@@ -285,7 +302,8 @@ The output schema is:
       downgraded_from_previous_proxy_core: boolean;
       classification_reason: string;
     };
-    review_status: "needs_review";
+    review_status: "needs_review" | "reviewed";
+    classification_status?: "provisional_model" | "demo_only" | "curated_reviewed";
   }>;
   diagnostics: {
     total_records: number;
@@ -293,7 +311,9 @@ The output schema is:
     class_distribution: Record<string, number>;
     core_count: number;
     derived_core_count: number;
-    curated_demo_core_count: number;
+    curated_reviewed_core_count: number;
+    legacy_demo_seed_count: number;
+    demo_seed_reinterpreted_count: number;
     high_score_non_core_count: number;
     downgraded_from_previous_proxy_core_count: number;
     core_candidates: Array<Record<string, unknown>>;
@@ -305,11 +325,35 @@ The output schema is:
 }
 ```
 
-The model preserves demo records from `world-system.latest.json` as `demo_curated`. Derived records use World Bank WDI quality-of-life and GNI only as welfare proxies. Extraction autonomy and low extraction dependency are negative/filter supports: they can corroborate a core claim or block extraction-dependent cases, but they do not prove core status.
+The model treats demo records from `world-system.latest.json` as legacy demo seeds. Demo records may provide sample display values, but they are not reviewed structural classifications and cannot create `core`. If a demo seed says `core`, the builder emits low-confidence `semi-periphery` with `source: "legacy_demo_seed_reinterpreted"` unless a separate reviewed override exists. Derived records use World Bank WDI quality-of-life and GNI only as welfare proxies. Extraction autonomy and low extraction dependency are negative/filter supports: they can corroborate a core claim or block extraction-dependent cases, but they do not prove core status.
 
 Derived `core` requires `quality_of_life_score >= 0.88`, at least one positive structural support (`productive_complexity_score >= 75`, future `value_capture_score >= 70`, or future `geopolitical_financial_power_score >= 70`), at least one extraction/autonomy filter support, and no extraction-dependency block at `extraction_dependency_score >= 35`. Disputed, special, and territory records cannot become derived core.
 
-This file is intentionally marked `model_status: "provisional_conservative_proxy"` and every generated or demo-preserved record is `review_status: "needs_review"` unless it was already reviewed. High quality of life alone cannot produce `core`; quality of life plus extraction autonomy cannot produce `core`; a high continuous proxy score can still be `semi-periphery` when positive structural evidence is missing. Many high-welfare records remain `semi-periphery` or `uncertain` until value-capture/GVC or productive-complexity evidence is added. `semi-periphery` is a mixed structural position, not merely a middle-income bin. The file does not yet include OECD TiVA, complete trade/value-chain data, material footprint, e-waste, ecological externalization, military/geopolitical position, financial centrality, conflict exposure, or political-freedom indicators. The current model deliberately under-classifies core rather than over-classifying it.
+Real manual classifications use `static/data/world-system.curated-overrides.json`:
+
+```json
+{
+  "dataset_id": "world_system_curated_overrides",
+  "status": "manual_review_required",
+  "records": [
+    {
+      "id": "USA",
+      "world_system": {
+        "class": "core",
+        "confidence": "medium",
+        "source": "curated_reviewed",
+        "rationale": "...",
+        "reviewed_by": "...",
+        "reviewed_at": "YYYY-MM-DD"
+      }
+    }
+  ]
+}
+```
+
+The current override file intentionally has an empty `records` array. Do not add CZE, DEU, USA, or any other map unit until the classification has been explicitly reviewed. A valid provisional run may produce zero core records; that is methodologically preferable to overproducing core from welfare data.
+
+This file is intentionally marked `model_status: "provisional_conservative_proxy"` and every generated or demo-seed record is `review_status: "needs_review"`. High quality of life alone cannot produce `core`; quality of life plus extraction autonomy cannot produce `core`; a high continuous proxy score can still be `semi-periphery` when positive structural evidence is missing. Many high-welfare records remain `semi-periphery` or `uncertain` until value-capture/GVC or productive-complexity evidence is added. `semi-periphery` is a mixed structural position, not merely a middle-income bin. The file does not yet include OECD TiVA, complete trade/value-chain data, material footprint, e-waste, ecological externalization, military/geopolitical position, financial centrality, conflict exposure, or political-freedom indicators. The current model deliberately under-classifies core rather than over-classifying it.
 
 ## Structural World-System Model V1
 
