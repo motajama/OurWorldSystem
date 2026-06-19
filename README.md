@@ -43,6 +43,7 @@ http://127.0.0.1:5173/
 
 ```sh
 npm run geo:build
+npm run registry:seed
 npm run health:data
 npm run validate:data
 npm run check
@@ -78,6 +79,7 @@ The deployment workflow is `.github/workflows/deploy-gh-pages.yml`. On a push to
 ```sh
 npm ci
 npm run geo:build
+npm run registry:seed
 npm run health:data
 npm run validate:data
 npm run check
@@ -113,6 +115,8 @@ The map uses D3 Equal Earth, an equal-area projection, by default. This makes vi
 
 Natural Earth properties are source metadata for geometry, not stable application identities. Some Natural Earth features use placeholder codes such as `-99`, and those values must never be used as semantic map-unit IDs. OurWorldSystem therefore keeps a separate map-unit registry in `static/data/map-units.registry.json`. The registry provides stable neutral IDs, display names, Natural Earth aliases, external dataset IDs, recognition-status notes, and review dates.
 
+After rebuilding geometry, run `npm run registry:seed`. This updates the registry so every Natural Earth Admin 0 base feature has a map-unit registry record. Existing curated records are preserved and enriched only with missing Natural Earth aliases. New generated records are marked `review_status: "needs_review"` and are not political recognition or sovereignty decisions.
+
 Mock world-system indicators in `static/data/world-system.latest.json` join through registry IDs where available. Disputed and special cases such as Palestine, Taiwan, and Kosovo are kept as neutral map units with notes and source aliases; the atlas does not merge them into other records or decide sovereignty disputes. Missing registry entries do not block map rendering: unmatched Natural Earth features are shown as neutral `no_data` map units until the registry and indicator data are expanded.
 
 Disputed and breakaway overlay features are hoverable and clickable. Their labels use the best available Natural Earth name/status properties and a neutral reminder that OurWorldSystem does not adjudicate sovereignty. When an overlay feature has no matching disputed or special registry record, the detail panel opens a synthetic no-data map-unit record sourced to Natural Earth.
@@ -145,6 +149,8 @@ npm run data:fetch:ucdp
 
 `quality_of_life_score` is a transparent temporary visualization score. It requires at least life expectancy and GNI per capita PPP, optionally includes secondary enrollment, and must never be labeled as HDI. Missing World Bank values remain missing and display as `No data`; they are not fabricated or imputed.
 
+The World Bank pipeline joins through `external_ids.world_bank`, `external_ids.iso3`, and registry IDs. Source countries that still do not match the registry are reported, while World Bank aggregate regions are ignored unless the registry explicitly includes them.
+
 Future data pipelines should generate static JSON from public sources such as OECD, UN, UCDP, RSF, V-Dem, Freedom House, World Bank, UNDP, UNEP, and related open datasets.
 
 Validate registry and mock-data joins with:
@@ -170,11 +176,12 @@ Generated candidates are not authoritative data. They are Natural Earth-derived 
 Recommended data completion workflow:
 
 1. `npm run geo:build`
-2. `npm run data:build`
-3. `npm run data:coverage`
-4. Review `static/data/generated/map-units.candidates.json`
-5. Manually promote verified candidates into `static/data/map-units.registry.json`
-6. Rerun `npm run health:data`, `npm run validate:data`, `npm run check`, and `npm run build`
+2. `npm run registry:seed`
+3. `npm run data:build`
+4. `npm run data:coverage`
+5. Review generated `needs_review` registry records and `static/data/generated/map-units.candidates.json`
+6. Manually mark verified registry records with reviewed metadata when appropriate
+7. Rerun `npm run health:data`, `npm run validate:data`, `npm run check`, and `npm run build`
 
 Do not fabricate missing indicator values. Keep real public data, mock/demo data, generated registry candidates, and missing data visibly distinct.
 

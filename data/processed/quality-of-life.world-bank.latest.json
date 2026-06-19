@@ -1,7 +1,7 @@
 {
 	"dataset_id": "quality_of_life_world_bank_latest",
 	"source_id": "world_bank_wdi",
-	"retrieved_at": "2026-06-18T13:22:41.712Z",
+	"retrieved_at": "2026-06-19T13:47:38.571Z",
 	"indicators": {
 		"SP.DYN.LE00.IN": {
 			"label": "Life expectancy at birth, total (years)",
@@ -21,6 +21,192 @@
 		}
 	},
 	"records": [
+		{
+			"id": "AFG",
+			"source_country_code": "AFG",
+			"values": {
+				"life_expectancy": {
+					"value": 66.289,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 2210,
+					"year": 2023,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 59.6136016845703,
+					"year": 2023,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 42647492,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.4151,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "AGO",
+			"source_country_code": "AGO",
+			"values": {
+				"life_expectancy": {
+					"value": 64.805,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 9460,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 51.4839046246776,
+					"year": 2023,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 37885849,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.4861,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "ALB",
+			"source_country_code": "ALB",
+			"values": {
+				"life_expectancy": {
+					"value": 79.776,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 26500,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 108.355392456055,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 2377128,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.8699,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "ARE",
+			"source_country_code": "ARE",
+			"values": {
+				"life_expectancy": {
+					"value": 83.069,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 81530,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 102.129724902444,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 10986400,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.9816,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "ARG",
+			"source_country_code": "ARG",
+			"values": {
+				"life_expectancy": {
+					"value": 77.543,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 29800,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 105.574584297051,
+					"year": 2023,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 45696159,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.8577,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "ARM",
+			"source_country_code": "ARM",
+			"values": {
+				"life_expectancy": {
+					"value": 78.319512195122,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 22020,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 90.9458714101262,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 3033500,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.8116,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
 		{
 			"id": "AUS",
 			"source_country_code": "AUS",
@@ -47,6 +233,409 @@
 				}
 			},
 			"quality_of_life_score": 0.9757,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "AUT",
+			"source_country_code": "AUT",
+			"values": {
+				"life_expectancy": {
+					"value": 81.9951219512195,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 74160,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 100.622657775879,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 9177982,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.9705,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "AZE",
+			"source_country_code": "AZE",
+			"values": {
+				"life_expectancy": {
+					"value": 74.576,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 24220,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 91.1228035886648,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 10202830,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.7839,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "BDI",
+			"source_country_code": "BDI",
+			"values": {
+				"life_expectancy": {
+					"value": 63.818,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 1200,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 23.1256008148193,
+					"year": 2025,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 14047786,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.2228,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "BEL",
+			"source_country_code": "BEL",
+			"values": {
+				"life_expectancy": {
+					"value": 82.3,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 74770,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 142.960266113281,
+					"year": 2023,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 11858610,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.974,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "BEN",
+			"source_country_code": "BEN",
+			"values": {
+				"life_expectancy": {
+					"value": 60.961,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 4390,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 43.5606498718262,
+					"year": 2022,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 14462724,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.3638,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "BFA",
+			"source_country_code": "BFA",
+			"values": {
+				"life_expectancy": {
+					"value": 61.292,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 2720,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 29.9905774531085,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 23548781,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.2848,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "BGD",
+			"source_country_code": "BGD",
+			"values": {
+				"life_expectancy": {
+					"value": 74.93,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 10060,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 64.2997191043961,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 173562364,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.63,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "BGR",
+			"source_country_code": "BGR",
+			"values": {
+				"life_expectancy": {
+					"value": 75.7609756097561,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 39850,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 94.7816314697266,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 6441421,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.8458,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "BHS",
+			"source_country_code": "BHS",
+			"values": {
+				"life_expectancy": {
+					"value": 74.71,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 39550,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 79.4858750299258,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 401283,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.7842,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "BIH",
+			"source_country_code": "BIH",
+			"values": {
+				"life_expectancy": {
+					"value": 78.044,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 24990,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 87.8663787841797,
+					"year": 2023,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 3164253,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.8085,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "BLR",
+			"source_country_code": "BLR",
+			"values": {
+				"life_expectancy": {
+					"value": 74.3653414634147,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 32300,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 94.7902702871216,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 9132629,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.8163,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "BLZ",
+			"source_country_code": "BLZ",
+			"values": {
+				"life_expectancy": {
+					"value": 73.739,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 13760,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 86.4571583269413,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 417072,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.7167,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "BOL",
+			"source_country_code": "BOL",
+			"values": {
+				"life_expectancy": {
+					"value": 68.739,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 12620,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 90.5272216796875,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 12413315,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.676,
 			"data_quality": "good",
 			"sources": [
 				"world_bank_wdi"
@@ -84,6 +673,130 @@
 			]
 		},
 		{
+			"id": "BRN",
+			"source_country_code": "BRN",
+			"values": {
+				"life_expectancy": {
+					"value": 75.501,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 92750,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 91.8381544399811,
+					"year": 2023,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 462721,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.8823,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "BTN",
+			"source_country_code": "BTN",
+			"values": {
+				"life_expectancy": {
+					"value": 73.262,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 15320,
+					"year": 2023,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 86.1810001963554,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 791524,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.7195,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "BWA",
+			"source_country_code": "BWA",
+			"values": {
+				"life_expectancy": {
+					"value": 69.293,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 20570,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 70.6292572021484,
+					"year": 2021,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 2521139,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.6526,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "CAF",
+			"source_country_code": "CAF",
+			"values": {
+				"life_expectancy": {
+					"value": 57.671,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 1340,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 15.8074398040772,
+					"year": 2017,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 5330690,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.1483,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
 			"id": "CAN",
 			"source_country_code": "CAN",
 			"values": {
@@ -115,6 +828,68 @@
 			]
 		},
 		{
+			"id": "CIV",
+			"source_country_code": "CIV",
+			"values": {
+				"life_expectancy": {
+					"value": 62.11,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 7360,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 65.3065056618336,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 31934230,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.4871,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "CMR",
+			"source_country_code": "CMR",
+			"values": {
+				"life_expectancy": {
+					"value": 63.968,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 5490,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 44.840795775403,
+					"year": 2023,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 29123744,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.414,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
 			"id": "COD",
 			"source_country_code": "COD",
 			"values": {
@@ -140,6 +915,156 @@
 				}
 			},
 			"quality_of_life_score": 0.3436,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "COG",
+			"source_country_code": "COG",
+			"values": {
+				"life_expectancy": {
+					"value": 66.001,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 6340,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 50.520320892334,
+					"year": 2012,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 6332961,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.4634,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "COL",
+			"source_country_code": "COL",
+			"values": {
+				"life_expectancy": {
+					"value": 77.913,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 21890,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 101.573776245117,
+					"year": 2022,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 52886363,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.8374,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "CRI",
+			"source_country_code": "CRI",
+			"values": {
+				"life_expectancy": {
+					"value": 80.996,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 28840,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 121.810760498047,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 5129910,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.8881,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "CUB",
+			"source_country_code": "CUB",
+			"values": {
+				"life_expectancy": {
+					"value": 78.264,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"secondary_enrollment_gross": {
+					"value": 91.7456844321038,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 10979783,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": null,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "CYP",
+			"source_country_code": "CYP",
+			"values": {
+				"life_expectancy": {
+					"value": 81.821,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 56200,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 106.741279602051,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 1358282,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.9474,
 			"data_quality": "good",
 			"sources": [
 				"world_bank_wdi"
@@ -208,6 +1133,342 @@
 			]
 		},
 		{
+			"id": "DJI",
+			"source_country_code": "DJI",
+			"values": {
+				"life_expectancy": {
+					"value": 66.202,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 8030,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"population": {
+					"value": 1168722,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.4727,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "DOM",
+			"source_country_code": "DOM",
+			"values": {
+				"life_expectancy": {
+					"value": 73.868,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 26050,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 76.3648403372637,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 11427557,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.7336,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "DZA",
+			"source_country_code": "DZA",
+			"values": {
+				"life_expectancy": {
+					"value": 76.475,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 17290,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 105.164131811213,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 46814308,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.8055,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "ECU",
+			"source_country_code": "ECU",
+			"values": {
+				"life_expectancy": {
+					"value": 77.579,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 15410,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 92.8118025876465,
+					"year": 2023,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 18135478,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.7832,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "EGY",
+			"source_country_code": "EGY",
+			"values": {
+				"life_expectancy": {
+					"value": 71.806,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 18230,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 84.8286031306453,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 116538258,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.7146,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "ERI",
+			"source_country_code": "ERI",
+			"values": {
+				"life_expectancy": {
+					"value": 68.893,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 1720,
+					"year": 2011,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 44.0441284179688,
+					"year": 2022,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 3535603,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.3686,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "ESP",
+			"source_country_code": "ESP",
+			"values": {
+				"life_expectancy": {
+					"value": 83.8878048780488,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 57670,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 118.537803649902,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 48848840,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.9691,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "EST",
+			"source_country_code": "EST",
+			"values": {
+				"life_expectancy": {
+					"value": 79.2951219512195,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 48880,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 108.538726806641,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 1372341,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.9126,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "ETH",
+			"source_country_code": "ETH",
+			"values": {
+				"life_expectancy": {
+					"value": 67.603,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 3280,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 33.9114221981431,
+					"year": 2015,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 132059767,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.3724,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "FIN",
+			"source_country_code": "FIN",
+			"values": {
+				"life_expectancy": {
+					"value": 82.3365853658537,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 65640,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 142.395156860352,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 5619911,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.9643,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "FJI",
+			"source_country_code": "FJI",
+			"values": {
+				"life_expectancy": {
+					"value": 67.463,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 14490,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 98.0927630329298,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 928784,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.6997,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
 			"id": "FRA",
 			"source_country_code": "FRA",
 			"values": {
@@ -233,6 +1494,37 @@
 				}
 			},
 			"quality_of_life_score": 0.9684,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "GAB",
+			"source_country_code": "GAB",
+			"values": {
+				"life_expectancy": {
+					"value": 68.511,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 20400,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 70.2639966402203,
+					"year": 2019,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 2538952,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.6433,
 			"data_quality": "good",
 			"sources": [
 				"world_bank_wdi"
@@ -270,6 +1562,497 @@
 			]
 		},
 		{
+			"id": "GEO",
+			"source_country_code": "GEO",
+			"values": {
+				"life_expectancy": {
+					"value": 74.657,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 26200,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 100.959315536762,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 3699557,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.8203,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "GHA",
+			"source_country_code": "GHA",
+			"values": {
+				"life_expectancy": {
+					"value": 65.695,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 7720,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 75.7174682617188,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 34427414,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.5597,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "GIN",
+			"source_country_code": "GIN",
+			"values": {
+				"life_expectancy": {
+					"value": 60.904,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 4130,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 38.5548782348633,
+					"year": 2014,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 14754785,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.3419,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "GMB",
+			"source_country_code": "GMB",
+			"values": {
+				"life_expectancy": {
+					"value": 66.057,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 3430,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 107.027125590442,
+					"year": 2021,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 2759988,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.5814,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "GNB",
+			"source_country_code": "GNB",
+			"values": {
+				"life_expectancy": {
+					"value": 64.254,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 3140,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 34.3966407775879,
+					"year": 2006,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 2201352,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.3387,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "GNQ",
+			"source_country_code": "GNQ",
+			"values": {
+				"life_expectancy": {
+					"value": 63.906,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 12330,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 17.7594795227051,
+					"year": 2005,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 1892516,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.3856,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "GRC",
+			"source_country_code": "GRC",
+			"values": {
+				"life_expectancy": {
+					"value": 81.8390243902439,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 43340,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 105.191741943359,
+					"year": 2023,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 10405134,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.9276,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "GRL",
+			"source_country_code": "GRL",
+			"values": {
+				"life_expectancy": {
+					"value": 70.2734146341463,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 40270,
+					"year": 2007,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"population": {
+					"value": 56836,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.7176,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "GTM",
+			"source_country_code": "GTM",
+			"values": {
+				"life_expectancy": {
+					"value": 72.746,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 14170,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 49.5765804970836,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 18406359,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.5866,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "GUY",
+			"source_country_code": "GUY",
+			"values": {
+				"life_expectancy": {
+					"value": 70.319,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 52290,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 91.4304496450171,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 831087,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.8038,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "HND",
+			"source_country_code": "HND",
+			"values": {
+				"life_expectancy": {
+					"value": 73.044,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 6900,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 51.7639813154374,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 10825703,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.5411,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "HRV",
+			"source_country_code": "HRV",
+			"values": {
+				"life_expectancy": {
+					"value": 78.9292682926829,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 49740,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 105.025161743164,
+					"year": 2023,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 3866200,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.9105,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "HTI",
+			"source_country_code": "HTI",
+			"values": {
+				"life_expectancy": {
+					"value": 65.119,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 3190,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 17.1656093597412,
+					"year": 1986,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 11772557,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.2908,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "HUN",
+			"source_country_code": "HUN",
+			"values": {
+				"life_expectancy": {
+					"value": 76.7243902439025,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 47290,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 107.350929260254,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 9562065,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.8856,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "CHE",
+			"source_country_code": "CHE",
+			"values": {
+				"life_expectancy": {
+					"value": 84.4073170731707,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 91110,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 101.4287109375,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 9005582,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.9944,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "CHL",
+			"source_country_code": "CHL",
+			"values": {
+				"life_expectancy": {
+					"value": 81.359,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 34320,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 105.608551025391,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 19764771,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.905,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
 			"id": "CHN",
 			"source_country_code": "CHN",
 			"values": {
@@ -295,6 +2078,37 @@
 				}
 			},
 			"quality_of_life_score": 0.8286,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "IDN",
+			"source_country_code": "IDN",
+			"values": {
+				"life_expectancy": {
+					"value": 71.288,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 16010,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 97.1701841816,
+					"year": 2025,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 283487931,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.7408,
 			"data_quality": "good",
 			"sources": [
 				"world_bank_wdi"
@@ -332,6 +2146,37 @@
 			]
 		},
 		{
+			"id": "IRL",
+			"source_country_code": "IRL",
+			"values": {
+				"life_expectancy": {
+					"value": 83.009756097561,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 101180,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 130.604965209961,
+					"year": 2022,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 5395790,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.981,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
 			"id": "IRN",
 			"source_country_code": "IRN",
 			"values": {
@@ -357,6 +2202,68 @@
 				}
 			},
 			"quality_of_life_score": 0.7797,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "IRQ",
+			"source_country_code": "IRQ",
+			"values": {
+				"life_expectancy": {
+					"value": 72.424,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 14530,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 50.5742416381836,
+					"year": 2007,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 46042015,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.5888,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "ISL",
+			"source_country_code": "ISL",
+			"values": {
+				"life_expectancy": {
+					"value": 82.809756097561,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 84060,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 108.911361694336,
+					"year": 2023,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 386506,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.9791,
 			"data_quality": "good",
 			"sources": [
 				"world_bank_wdi"
@@ -394,6 +2301,99 @@
 			]
 		},
 		{
+			"id": "ITA",
+			"source_country_code": "ITA",
+			"values": {
+				"life_expectancy": {
+					"value": 83.9512195121951,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 61620,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 100.678756713867,
+					"year": 2023,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 58952704,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.9748,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "JAM",
+			"source_country_code": "JAM",
+			"values": {
+				"life_expectancy": {
+					"value": 71.606,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 12690,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 84.4572372436523,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 2839175,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.6835,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "JOR",
+			"source_country_code": "JOR",
+			"values": {
+				"life_expectancy": {
+					"value": 77.981,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 10570,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 91.7518621587381,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 11552876,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.7544,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
 			"id": "JPN",
 			"source_country_code": "JPN",
 			"values": {
@@ -419,6 +2419,130 @@
 				}
 			},
 			"quality_of_life_score": 0.9676,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "KAZ",
+			"source_country_code": "KAZ",
+			"values": {
+				"life_expectancy": {
+					"value": 74.531,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 37590,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 97.6167311117902,
+					"year": 2025,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 20592571,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.839,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "KEN",
+			"source_country_code": "KEN",
+			"values": {
+				"life_expectancy": {
+					"value": 63.834,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 6540,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 84.3083880306996,
+					"year": 2023,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 56432944,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.5578,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "KGZ",
+			"source_country_code": "KGZ",
+			"values": {
+				"life_expectancy": {
+					"value": 72.4,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 7900,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 91.7258848952929,
+					"year": 2025,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 7221868,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.6787,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "KHM",
+			"source_country_code": "KHM",
+			"values": {
+				"life_expectancy": {
+					"value": 70.817,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 7910,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 58.7893230437643,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 17638801,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.5539,
 			"data_quality": "good",
 			"sources": [
 				"world_bank_wdi"
@@ -456,6 +2580,409 @@
 			]
 		},
 		{
+			"id": "KWT",
+			"source_country_code": "KWT",
+			"values": {
+				"life_expectancy": {
+					"value": 84.580487804878,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 63270,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 95.3934020996094,
+					"year": 2015,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 4897263,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.9675,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "LAO",
+			"source_country_code": "LAO",
+			"values": {
+				"life_expectancy": {
+					"value": 69.225,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 9160,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 50.5430058959811,
+					"year": 2025,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 7769819,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.5226,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "LBN",
+			"source_country_code": "LBN",
+			"values": {
+				"life_expectancy": {
+					"value": 77.945,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 12420,
+					"year": 2023,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 63.7923011779785,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 5805962,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.6733,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "LBR",
+			"source_country_code": "LBR",
+			"values": {
+				"life_expectancy": {
+					"value": 62.324,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 1750,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 37.7416801452637,
+					"year": 2020,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 5612817,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.2864,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "LBY",
+			"source_country_code": "LBY",
+			"values": {
+				"life_expectancy": {
+					"value": 71.121,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 15400,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 97.6095123291016,
+					"year": 2006,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 7381023,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.7376,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "LKA",
+			"source_country_code": "LKA",
+			"values": {
+				"life_expectancy": {
+					"value": 77.672,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 15240,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 87.9534065332114,
+					"year": 2023,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 21916000,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.767,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "LSO",
+			"source_country_code": "LSO",
+			"values": {
+				"life_expectancy": {
+					"value": 57.798,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 3580,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 59.3586515505342,
+					"year": 2017,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 2337423,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.3706,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "LTU",
+			"source_country_code": "LTU",
+			"values": {
+				"life_expectancy": {
+					"value": 77.1951219512195,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 53920,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 104.860809326172,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 2888278,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.9002,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "LUX",
+			"source_country_code": "LUX",
+			"values": {
+				"life_expectancy": {
+					"value": 83.1951219512195,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 110650,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 108.577438354492,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 677012,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.9828,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "LVA",
+			"source_country_code": "LVA",
+			"values": {
+				"life_expectancy": {
+					"value": 76.4292682926829,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 42660,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 101.252647399902,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 1866124,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.8748,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "MAR",
+			"source_country_code": "MAR",
+			"values": {
+				"life_expectancy": {
+					"value": 75.493,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 10260,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 89.9834863018408,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 38081173,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.7225,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "MDA",
+			"source_country_code": "MDA",
+			"values": {
+				"life_expectancy": {
+					"value": 71.332,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 18710,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 99.3439166347193,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 2402306,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.7604,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "MDG",
+			"source_country_code": "MDG",
+			"values": {
+				"life_expectancy": {
+					"value": 63.835,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 1830,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 34.1320359801924,
+					"year": 2021,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 31964956,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.2922,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
 			"id": "MEX",
 			"source_country_code": "MEX",
 			"values": {
@@ -487,6 +3014,750 @@
 			]
 		},
 		{
+			"id": "MKD",
+			"source_country_code": "MKD",
+			"values": {
+				"life_expectancy": {
+					"value": 76.6165853658537,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 25610,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 90.0724868774414,
+					"year": 2023,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 1824359,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.8041,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "MLI",
+			"source_country_code": "MLI",
+			"values": {
+				"life_expectancy": {
+					"value": 60.675,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 3230,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 38.9389470920545,
+					"year": 2023,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 24478595,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.322,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "MMR",
+			"source_country_code": "MMR",
+			"values": {
+				"life_expectancy": {
+					"value": 67.095,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 5890,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 77.0191497802734,
+					"year": 2018,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 54500091,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.5564,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "MNE",
+			"source_country_code": "MNE",
+			"values": {
+				"life_expectancy": {
+					"value": 77.890243902439,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 33970,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 93.8724975585938,
+					"year": 2023,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 623525,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.8507,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "MNG",
+			"source_country_code": "MNG",
+			"values": {
+				"life_expectancy": {
+					"value": 72.3980487804878,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 17000,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 96.8181201904352,
+					"year": 2023,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 3524788,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.7548,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "MOZ",
+			"source_country_code": "MOZ",
+			"values": {
+				"life_expectancy": {
+					"value": 63.797,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 1520,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 37.2411918640137,
+					"year": 2017,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 34631766,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.2879,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "MRT",
+			"source_country_code": "MRT",
+			"values": {
+				"life_expectancy": {
+					"value": 68.713,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 7300,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 36.0277030077074,
+					"year": 2020,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 5169395,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.4518,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "MWI",
+			"source_country_code": "MWI",
+			"values": {
+				"life_expectancy": {
+					"value": 67.561,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 1830,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 36.644092994481,
+					"year": 2023,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 21655286,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.3361,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "MYS",
+			"source_country_code": "MYS",
+			"values": {
+				"life_expectancy": {
+					"value": 76.821,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 37450,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 80.2757406864183,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 35557673,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.8027,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "NAM",
+			"source_country_code": "NAM",
+			"values": {
+				"life_expectancy": {
+					"value": 67.516,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 11300,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 81.9566828199727,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 3030131,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.6272,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "NER",
+			"source_country_code": "NER",
+			"values": {
+				"life_expectancy": {
+					"value": 61.433,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 2030,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 19.8664761204349,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 27032412,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.2298,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "NGA",
+			"source_country_code": "NGA",
+			"values": {
+				"life_expectancy": {
+					"value": 54.635,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 8850,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 46.8931503295898,
+					"year": 2023,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 232679478,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.3688,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "NIC",
+			"source_country_code": "NIC",
+			"values": {
+				"life_expectancy": {
+					"value": 75.1,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 8270,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 70.1749572753906,
+					"year": 2023,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 6916140,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.6361,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "NLD",
+			"source_country_code": "NLD",
+			"values": {
+				"life_expectancy": {
+					"value": 81.9658536585366,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 84970,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 137.514724731445,
+					"year": 2023,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 17993485,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.9711,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "NOR",
+			"source_country_code": "NOR",
+			"values": {
+				"life_expectancy": {
+					"value": 83.1609756097561,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 106830,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 116.254272460938,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 5572279,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.9825,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "NPL",
+			"source_country_code": "NPL",
+			"values": {
+				"life_expectancy": {
+					"value": 70.636,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 5830,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 90.3878462155916,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 29651054,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.6339,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "NZL",
+			"source_country_code": "NZL",
+			"values": {
+				"life_expectancy": {
+					"value": 82.009756097561,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 53600,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 114.231056213379,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 5287500,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.9456,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "OMN",
+			"source_country_code": "OMN",
+			"values": {
+				"life_expectancy": {
+					"value": 80.246,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 39340,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 95.1220397949219,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 5281538,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.8886,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "PAK",
+			"source_country_code": "PAK",
+			"values": {
+				"life_expectancy": {
+					"value": 67.799,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 6100,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 48.2805022055997,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 251269164,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.4701,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "PAN",
+			"source_country_code": "PAN",
+			"values": {
+				"life_expectancy": {
+					"value": 79.775,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 39260,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 76.5998992919922,
+					"year": 2017,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 4515577,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.8223,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "PER",
+			"source_country_code": "PER",
+			"values": {
+				"life_expectancy": {
+					"value": 77.941,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 16780,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 108.289047241211,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 34217848,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.8172,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "PHL",
+			"source_country_code": "PHL",
+			"values": {
+				"life_expectancy": {
+					"value": 69.946,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 13330,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 85.2945085684493,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 115843670,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.6742,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "PNG",
+			"source_country_code": "PNG",
+			"values": {
+				"life_expectancy": {
+					"value": 66.256,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 4580,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 52.0929750873194,
+					"year": 2023,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 10576502,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.4459,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "POL",
+			"source_country_code": "POL",
+			"values": {
+				"life_expectancy": {
+					"value": 78.409756097561,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 49540,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 107.881309509277,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 36559233,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.9052,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
 			"id": "PRK",
 			"source_country_code": "PRK",
 			"values": {
@@ -507,6 +3778,68 @@
 				}
 			},
 			"quality_of_life_score": null,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "PRT",
+			"source_country_code": "PRT",
+			"values": {
+				"life_expectancy": {
+					"value": 82.3829268292683,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 50730,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 120.347076416016,
+					"year": 2023,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 10694681,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.9449,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "PRY",
+			"source_country_code": "PRY",
+			"values": {
+				"life_expectancy": {
+					"value": 73.982,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 17930,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 79.1305613911018,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 6929153,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.715,
 			"data_quality": "good",
 			"sources": [
 				"world_bank_wdi"
@@ -544,6 +3877,68 @@
 			]
 		},
 		{
+			"id": "QAT",
+			"source_country_code": "QAT",
+			"values": {
+				"life_expectancy": {
+					"value": 82.522,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 121900,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 99.578857421875,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 2857822,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.975,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "ROU",
+			"source_country_code": "ROU",
+			"values": {
+				"life_expectancy": {
+					"value": 76.4585365853659,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 47920,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 81.6316070556641,
+					"year": 2023,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 19051804,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.8228,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
 			"id": "RUS",
 			"source_country_code": "RUS",
 			"values": {
@@ -569,6 +3964,37 @@
 				}
 			},
 			"quality_of_life_score": 0.8284,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "RWA",
+			"source_country_code": "RWA",
+			"values": {
+				"life_expectancy": {
+					"value": 68.017,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 3620,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 48.790277194547,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 14256567,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.4335,
 			"data_quality": "good",
 			"sources": [
 				"world_bank_wdi"
@@ -606,6 +4032,688 @@
 			]
 		},
 		{
+			"id": "SDN",
+			"source_country_code": "SDN",
+			"values": {
+				"life_expectancy": {
+					"value": 66.521,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 2050,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 43.5378608703613,
+					"year": 2019,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 50448963,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.3579,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "SEN",
+			"source_country_code": "SEN",
+			"values": {
+				"life_expectancy": {
+					"value": 68.924,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 4920,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 44.0673682244069,
+					"year": 2023,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 18501984,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.4501,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "SLB",
+			"source_country_code": "SLB",
+			"values": {
+				"life_expectancy": {
+					"value": 70.694,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 2680,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 49.0498504638672,
+					"year": 2012,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 819198,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.4367,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "SLE",
+			"source_country_code": "SLE",
+			"values": {
+				"life_expectancy": {
+					"value": 61.964,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 3490,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 86.9079513549805,
+					"year": 2023,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 8642022,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.5001,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "SLV",
+			"source_country_code": "SLV",
+			"values": {
+				"life_expectancy": {
+					"value": 72.302,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 12420,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 62.1425847697468,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 6338193,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.614,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "SOM",
+			"source_country_code": "SOM",
+			"values": {
+				"life_expectancy": {
+					"value": 58.967,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 1630,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 3.34785008430481,
+					"year": 2023,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 19009151,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.1343,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "SRB",
+			"source_country_code": "SRB",
+			"values": {
+				"life_expectancy": {
+					"value": 75.9682926829268,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 30770,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 89.8402786254883,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 6586476,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.8113,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "SSD",
+			"source_country_code": "SSD",
+			"values": {
+				"life_expectancy": {
+					"value": 57.738,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 1010,
+					"year": 2015,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 122.120628356934,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 11943408,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.4078,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "SUR",
+			"source_country_code": "SUR",
+			"values": {
+				"life_expectancy": {
+					"value": 73.757,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 20000,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 76.1109237670898,
+					"year": 2023,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 634431,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.7112,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "SVK",
+			"source_country_code": "SVK",
+			"values": {
+				"life_expectancy": {
+					"value": 78.3707317073171,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 47040,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 93.1929931640625,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 5422069,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.8782,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "SVN",
+			"source_country_code": "SVN",
+			"values": {
+				"life_expectancy": {
+					"value": 82.2853658536585,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 56520,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 107.626876831055,
+					"year": 2023,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 2127400,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.9523,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "SWE",
+			"source_country_code": "SWE",
+			"values": {
+				"life_expectancy": {
+					"value": 84.0634146341463,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 75000,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 131.96354675293,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 10569709,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.9911,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "SWZ",
+			"source_country_code": "SWZ",
+			"values": {
+				"life_expectancy": {
+					"value": 64.264,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 10760,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 82.023935767308,
+					"year": 2016,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 1242822,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.5927,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "SYR",
+			"source_country_code": "SYR",
+			"values": {
+				"life_expectancy": {
+					"value": 72.56,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 4610,
+					"year": 2022,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 38.736930847168,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 24672760,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.462,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "TCD",
+			"source_country_code": "TCD",
+			"values": {
+				"life_expectancy": {
+					"value": 55.238,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 2710,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 23.49298947746,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 20299123,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.2052,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "TGO",
+			"source_country_code": "TGO",
+			"values": {
+				"life_expectancy": {
+					"value": 62.935,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 3380,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 63.4192515229188,
+					"year": 2023,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 9515236,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.4286,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "THA",
+			"source_country_code": "THA",
+			"values": {
+				"life_expectancy": {
+					"value": 76.564,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 23960,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 92.0872315506486,
+					"year": 2025,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 71668011,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.8052,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "TJK",
+			"source_country_code": "TJK",
+			"values": {
+				"life_expectancy": {
+					"value": 71.927,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 7100,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 86.9035257819264,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 10590927,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.6498,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "TKM",
+			"source_country_code": "TKM",
+			"values": {
+				"life_expectancy": {
+					"value": 70.201,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 21020,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 94.6464126735365,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 7494498,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.743,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "TLS",
+			"source_country_code": "TLS",
+			"values": {
+				"life_expectancy": {
+					"value": 67.904,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 5040,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 84.7410404382553,
+					"year": 2020,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 1400638,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.5779,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "TTO",
+			"source_country_code": "TTO",
+			"values": {
+				"life_expectancy": {
+					"value": 73.617,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 36580,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 95.6815649255588,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 1368333,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.8218,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "TUN",
+			"source_country_code": "TUN",
+			"values": {
+				"life_expectancy": {
+					"value": 76.711,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 14230,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 90.3264236450195,
+					"year": 2016,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 12277109,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.7605,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
 			"id": "TUR",
 			"source_country_code": "TUR",
 			"values": {
@@ -631,6 +4739,68 @@
 				}
 			},
 			"quality_of_life_score": 0.8877,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "TZA",
+			"source_country_code": "TZA",
+			"values": {
+				"life_expectancy": {
+					"value": 67.212,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 4130,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 28.231330871582,
+					"year": 2021,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 68560157,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.3675,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "UGA",
+			"source_country_code": "UGA",
+			"values": {
+				"life_expectancy": {
+					"value": 68.487,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 3190,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 24.0911102294922,
+					"year": 2007,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 50015092,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.3459,
 			"data_quality": "good",
 			"sources": [
 				"world_bank_wdi"
@@ -668,6 +4838,37 @@
 			]
 		},
 		{
+			"id": "URY",
+			"source_country_code": "URY",
+			"values": {
+				"life_expectancy": {
+					"value": 78.287,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 34170,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 119.105005958635,
+					"year": 2023,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 3386588,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.8754,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
 			"id": "USA",
 			"source_country_code": "USA",
 			"values": {
@@ -693,6 +4894,68 @@
 				}
 			},
 			"quality_of_life_score": 0.9334,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "UZB",
+			"source_country_code": "UZB",
+			"values": {
+				"life_expectancy": {
+					"value": 72.528,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 12000,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 98.1198414913864,
+					"year": 2025,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 36361859,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.7335,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "VEN",
+			"source_country_code": "VEN",
+			"values": {
+				"life_expectancy": {
+					"value": 72.673,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 20800,
+					"year": 2011,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 97.7908172607422,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 28405543,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.7762,
 			"data_quality": "good",
 			"sources": [
 				"world_bank_wdi"
@@ -730,6 +4993,37 @@
 			]
 		},
 		{
+			"id": "VUT",
+			"source_country_code": "VUT",
+			"values": {
+				"life_expectancy": {
+					"value": 71.654,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 4140,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 134.670675170038,
+					"year": 2023,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 327777,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.6492,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
 			"id": "XKO",
 			"source_country_code": "XKX",
 			"values": {
@@ -750,6 +5044,37 @@
 				}
 			},
 			"quality_of_life_score": 0.7398,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "YEM",
+			"source_country_code": "YEM",
+			"values": {
+				"life_expectancy": {
+					"value": 69.439,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 3020,
+					"year": 2013,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 43.6906890869141,
+					"year": 2016,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 40583164,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.4161,
 			"data_quality": "good",
 			"sources": [
 				"world_bank_wdi"
@@ -785,6 +5110,68 @@
 			"sources": [
 				"world_bank_wdi"
 			]
+		},
+		{
+			"id": "ZMB",
+			"source_country_code": "ZMB",
+			"values": {
+				"life_expectancy": {
+					"value": 66.528,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 3850,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 56.7889289855957,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 21314956,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.4508,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "ZWE",
+			"source_country_code": "ZWE",
+			"values": {
+				"life_expectancy": {
+					"value": 63.064,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 5870,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 52.4158515930176,
+					"year": 2013,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 16634373,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.4358,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
 		}
 	],
 	"unmatched_source_countries": [
@@ -793,44 +5180,8 @@
 			"source_country_name": "Aruba"
 		},
 		{
-			"source_country_code": "AFE",
-			"source_country_name": "Africa Eastern and Southern"
-		},
-		{
-			"source_country_code": "AFG",
-			"source_country_name": "Afghanistan"
-		},
-		{
-			"source_country_code": "AFW",
-			"source_country_name": "Africa Western and Central"
-		},
-		{
-			"source_country_code": "AGO",
-			"source_country_name": "Angola"
-		},
-		{
-			"source_country_code": "ALB",
-			"source_country_name": "Albania"
-		},
-		{
 			"source_country_code": "AND",
 			"source_country_name": "Andorra"
-		},
-		{
-			"source_country_code": "ARB",
-			"source_country_name": "Arab World"
-		},
-		{
-			"source_country_code": "ARE",
-			"source_country_name": "United Arab Emirates"
-		},
-		{
-			"source_country_code": "ARG",
-			"source_country_name": "Argentina"
-		},
-		{
-			"source_country_code": "ARM",
-			"source_country_name": "Armenia"
 		},
 		{
 			"source_country_code": "ASM",
@@ -841,104 +5192,16 @@
 			"source_country_name": "Antigua and Barbuda"
 		},
 		{
-			"source_country_code": "AUT",
-			"source_country_name": "Austria"
-		},
-		{
-			"source_country_code": "AZE",
-			"source_country_name": "Azerbaijan"
-		},
-		{
-			"source_country_code": "BDI",
-			"source_country_name": "Burundi"
-		},
-		{
-			"source_country_code": "BEL",
-			"source_country_name": "Belgium"
-		},
-		{
-			"source_country_code": "BEN",
-			"source_country_name": "Benin"
-		},
-		{
-			"source_country_code": "BFA",
-			"source_country_name": "Burkina Faso"
-		},
-		{
-			"source_country_code": "BGD",
-			"source_country_name": "Bangladesh"
-		},
-		{
-			"source_country_code": "BGR",
-			"source_country_name": "Bulgaria"
-		},
-		{
 			"source_country_code": "BHR",
 			"source_country_name": "Bahrain"
-		},
-		{
-			"source_country_code": "BHS",
-			"source_country_name": "Bahamas, The"
-		},
-		{
-			"source_country_code": "BIH",
-			"source_country_name": "Bosnia and Herzegovina"
-		},
-		{
-			"source_country_code": "BLR",
-			"source_country_name": "Belarus"
-		},
-		{
-			"source_country_code": "BLZ",
-			"source_country_name": "Belize"
 		},
 		{
 			"source_country_code": "BMU",
 			"source_country_name": "Bermuda"
 		},
 		{
-			"source_country_code": "BOL",
-			"source_country_name": "Bolivia"
-		},
-		{
 			"source_country_code": "BRB",
 			"source_country_name": "Barbados"
-		},
-		{
-			"source_country_code": "BRN",
-			"source_country_name": "Brunei Darussalam"
-		},
-		{
-			"source_country_code": "BTN",
-			"source_country_name": "Bhutan"
-		},
-		{
-			"source_country_code": "BWA",
-			"source_country_name": "Botswana"
-		},
-		{
-			"source_country_code": "CAF",
-			"source_country_name": "Central African Republic"
-		},
-		{
-			"source_country_code": "CEB",
-			"source_country_name": "Central Europe and the Baltics"
-		},
-		{
-			"source_country_code": "CIV",
-			"source_country_name": "Cote d'Ivoire"
-		},
-		{
-			"source_country_code": "CMR",
-			"source_country_name": "Cameroon"
-		},
-		{
-			"source_country_code": "COG",
-			"source_country_name": "Congo, Rep."
-		},
-		{
-			"source_country_code": "COL",
-			"source_country_name": "Colombia"
 		},
 		{
 			"source_country_code": "COM",
@@ -949,32 +5212,12 @@
 			"source_country_name": "Cabo Verde"
 		},
 		{
-			"source_country_code": "CRI",
-			"source_country_name": "Costa Rica"
-		},
-		{
-			"source_country_code": "CSS",
-			"source_country_name": "Caribbean small states"
-		},
-		{
-			"source_country_code": "CUB",
-			"source_country_name": "Cuba"
-		},
-		{
 			"source_country_code": "CUW",
 			"source_country_name": "Curacao"
 		},
 		{
 			"source_country_code": "CYM",
 			"source_country_name": "Cayman Islands"
-		},
-		{
-			"source_country_code": "CYP",
-			"source_country_name": "Cyprus"
-		},
-		{
-			"source_country_code": "DJI",
-			"source_country_name": "Djibouti"
 		},
 		{
 			"source_country_code": "DMA",
@@ -985,12 +5228,174 @@
 			"source_country_name": "Denmark"
 		},
 		{
-			"source_country_code": "DOM",
-			"source_country_name": "Dominican Republic"
+			"source_country_code": "FRO",
+			"source_country_name": "Faroe Islands"
 		},
 		{
-			"source_country_code": "DZA",
-			"source_country_name": "Algeria"
+			"source_country_code": "FSM",
+			"source_country_name": "Micronesia, Fed. Sts."
+		},
+		{
+			"source_country_code": "GIB",
+			"source_country_name": "Gibraltar"
+		},
+		{
+			"source_country_code": "GRD",
+			"source_country_name": "Grenada"
+		},
+		{
+			"source_country_code": "GUM",
+			"source_country_name": "Guam"
+		},
+		{
+			"source_country_code": "HKG",
+			"source_country_name": "Hong Kong SAR, China"
+		},
+		{
+			"source_country_code": "CHI",
+			"source_country_name": "Channel Islands"
+		},
+		{
+			"source_country_code": "IMN",
+			"source_country_name": "Isle of Man"
+		},
+		{
+			"source_country_code": "KIR",
+			"source_country_name": "Kiribati"
+		},
+		{
+			"source_country_code": "KNA",
+			"source_country_name": "St. Kitts and Nevis"
+		},
+		{
+			"source_country_code": "LCA",
+			"source_country_name": "St. Lucia"
+		},
+		{
+			"source_country_code": "LIE",
+			"source_country_name": "Liechtenstein"
+		},
+		{
+			"source_country_code": "MAC",
+			"source_country_name": "Macao SAR, China"
+		},
+		{
+			"source_country_code": "MAF",
+			"source_country_name": "St. Martin (French part)"
+		},
+		{
+			"source_country_code": "MCO",
+			"source_country_name": "Monaco"
+		},
+		{
+			"source_country_code": "MDV",
+			"source_country_name": "Maldives"
+		},
+		{
+			"source_country_code": "MHL",
+			"source_country_name": "Marshall Islands"
+		},
+		{
+			"source_country_code": "MLT",
+			"source_country_name": "Malta"
+		},
+		{
+			"source_country_code": "MNP",
+			"source_country_name": "Northern Mariana Islands"
+		},
+		{
+			"source_country_code": "MUS",
+			"source_country_name": "Mauritius"
+		},
+		{
+			"source_country_code": "NCL",
+			"source_country_name": "New Caledonia"
+		},
+		{
+			"source_country_code": "NRU",
+			"source_country_name": "Nauru"
+		},
+		{
+			"source_country_code": "PLW",
+			"source_country_name": "Palau"
+		},
+		{
+			"source_country_code": "PRI",
+			"source_country_name": "Puerto Rico (US)"
+		},
+		{
+			"source_country_code": "PYF",
+			"source_country_name": "French Polynesia"
+		},
+		{
+			"source_country_code": "SGP",
+			"source_country_name": "Singapore"
+		},
+		{
+			"source_country_code": "SMR",
+			"source_country_name": "San Marino"
+		},
+		{
+			"source_country_code": "STP",
+			"source_country_name": "Sao Tome and Principe"
+		},
+		{
+			"source_country_code": "SXM",
+			"source_country_name": "Sint Maarten (Dutch part)"
+		},
+		{
+			"source_country_code": "SYC",
+			"source_country_name": "Seychelles"
+		},
+		{
+			"source_country_code": "TCA",
+			"source_country_name": "Turks and Caicos Islands"
+		},
+		{
+			"source_country_code": "TON",
+			"source_country_name": "Tonga"
+		},
+		{
+			"source_country_code": "TUV",
+			"source_country_name": "Tuvalu"
+		},
+		{
+			"source_country_code": "VCT",
+			"source_country_name": "St. Vincent and the Grenadines"
+		},
+		{
+			"source_country_code": "VGB",
+			"source_country_name": "British Virgin Islands"
+		},
+		{
+			"source_country_code": "VIR",
+			"source_country_name": "Virgin Islands (U.S.)"
+		},
+		{
+			"source_country_code": "WSM",
+			"source_country_name": "Samoa"
+		}
+	],
+	"ignored_aggregate_regions": [
+		{
+			"source_country_code": "AFE",
+			"source_country_name": "Africa Eastern and Southern"
+		},
+		{
+			"source_country_code": "AFW",
+			"source_country_name": "Africa Western and Central"
+		},
+		{
+			"source_country_code": "ARB",
+			"source_country_name": "Arab World"
+		},
+		{
+			"source_country_code": "CEB",
+			"source_country_name": "Central Europe and the Baltics"
+		},
+		{
+			"source_country_code": "CSS",
+			"source_country_name": "Caribbean small states"
 		},
 		{
 			"source_country_code": "EAP",
@@ -1013,32 +5418,8 @@
 			"source_country_name": "Europe & Central Asia"
 		},
 		{
-			"source_country_code": "ECU",
-			"source_country_name": "Ecuador"
-		},
-		{
-			"source_country_code": "EGY",
-			"source_country_name": "Egypt, Arab Rep."
-		},
-		{
 			"source_country_code": "EMU",
 			"source_country_name": "Euro area"
-		},
-		{
-			"source_country_code": "ERI",
-			"source_country_name": "Eritrea"
-		},
-		{
-			"source_country_code": "ESP",
-			"source_country_name": "Spain"
-		},
-		{
-			"source_country_code": "EST",
-			"source_country_name": "Estonia"
-		},
-		{
-			"source_country_code": "ETH",
-			"source_country_name": "Ethiopia"
 		},
 		{
 			"source_country_code": "EUU",
@@ -1049,112 +5430,8 @@
 			"source_country_name": "Fragile and conflict affected situations"
 		},
 		{
-			"source_country_code": "FIN",
-			"source_country_name": "Finland"
-		},
-		{
-			"source_country_code": "FJI",
-			"source_country_name": "Fiji"
-		},
-		{
-			"source_country_code": "FRO",
-			"source_country_name": "Faroe Islands"
-		},
-		{
-			"source_country_code": "FSM",
-			"source_country_name": "Micronesia, Fed. Sts."
-		},
-		{
-			"source_country_code": "GAB",
-			"source_country_name": "Gabon"
-		},
-		{
-			"source_country_code": "GEO",
-			"source_country_name": "Georgia"
-		},
-		{
-			"source_country_code": "GHA",
-			"source_country_name": "Ghana"
-		},
-		{
-			"source_country_code": "GIB",
-			"source_country_name": "Gibraltar"
-		},
-		{
-			"source_country_code": "GIN",
-			"source_country_name": "Guinea"
-		},
-		{
-			"source_country_code": "GMB",
-			"source_country_name": "Gambia, The"
-		},
-		{
-			"source_country_code": "GNB",
-			"source_country_name": "Guinea-Bissau"
-		},
-		{
-			"source_country_code": "GNQ",
-			"source_country_name": "Equatorial Guinea"
-		},
-		{
-			"source_country_code": "GRC",
-			"source_country_name": "Greece"
-		},
-		{
-			"source_country_code": "GRD",
-			"source_country_name": "Grenada"
-		},
-		{
-			"source_country_code": "GRL",
-			"source_country_name": "Greenland"
-		},
-		{
-			"source_country_code": "GTM",
-			"source_country_name": "Guatemala"
-		},
-		{
-			"source_country_code": "GUM",
-			"source_country_name": "Guam"
-		},
-		{
-			"source_country_code": "GUY",
-			"source_country_name": "Guyana"
-		},
-		{
-			"source_country_code": "HKG",
-			"source_country_name": "Hong Kong SAR, China"
-		},
-		{
-			"source_country_code": "HND",
-			"source_country_name": "Honduras"
-		},
-		{
 			"source_country_code": "HPC",
 			"source_country_name": "Heavily indebted poor countries (HIPC)"
-		},
-		{
-			"source_country_code": "HRV",
-			"source_country_name": "Croatia"
-		},
-		{
-			"source_country_code": "HTI",
-			"source_country_name": "Haiti"
-		},
-		{
-			"source_country_code": "HUN",
-			"source_country_name": "Hungary"
-		},
-		{
-			"source_country_code": "CHE",
-			"source_country_name": "Switzerland"
-		},
-		{
-			"source_country_code": "CHI",
-			"source_country_name": "Channel Islands"
-		},
-		{
-			"source_country_code": "CHL",
-			"source_country_name": "Chile"
 		},
 		{
 			"source_country_code": "IBD",
@@ -1173,92 +5450,12 @@
 			"source_country_name": "IDA blend"
 		},
 		{
-			"source_country_code": "IDN",
-			"source_country_name": "Indonesia"
-		},
-		{
 			"source_country_code": "IDX",
 			"source_country_name": "IDA only"
 		},
 		{
-			"source_country_code": "IMN",
-			"source_country_name": "Isle of Man"
-		},
-		{
-			"source_country_code": "IRL",
-			"source_country_name": "Ireland"
-		},
-		{
-			"source_country_code": "IRQ",
-			"source_country_name": "Iraq"
-		},
-		{
-			"source_country_code": "ISL",
-			"source_country_name": "Iceland"
-		},
-		{
-			"source_country_code": "ITA",
-			"source_country_name": "Italy"
-		},
-		{
-			"source_country_code": "JAM",
-			"source_country_name": "Jamaica"
-		},
-		{
-			"source_country_code": "JOR",
-			"source_country_name": "Jordan"
-		},
-		{
-			"source_country_code": "KAZ",
-			"source_country_name": "Kazakhstan"
-		},
-		{
-			"source_country_code": "KEN",
-			"source_country_name": "Kenya"
-		},
-		{
-			"source_country_code": "KGZ",
-			"source_country_name": "Kyrgyz Republic"
-		},
-		{
-			"source_country_code": "KHM",
-			"source_country_name": "Cambodia"
-		},
-		{
-			"source_country_code": "KIR",
-			"source_country_name": "Kiribati"
-		},
-		{
-			"source_country_code": "KNA",
-			"source_country_name": "St. Kitts and Nevis"
-		},
-		{
-			"source_country_code": "KWT",
-			"source_country_name": "Kuwait"
-		},
-		{
 			"source_country_code": "LAC",
 			"source_country_name": "Latin America & Caribbean (excluding high income)"
-		},
-		{
-			"source_country_code": "LAO",
-			"source_country_name": "Lao PDR"
-		},
-		{
-			"source_country_code": "LBN",
-			"source_country_name": "Lebanon"
-		},
-		{
-			"source_country_code": "LBR",
-			"source_country_name": "Liberia"
-		},
-		{
-			"source_country_code": "LBY",
-			"source_country_name": "Libya"
-		},
-		{
-			"source_country_code": "LCA",
-			"source_country_name": "St. Lucia"
 		},
 		{
 			"source_country_code": "LCN",
@@ -1269,228 +5466,40 @@
 			"source_country_name": "Least developed countries: UN classification"
 		},
 		{
-			"source_country_code": "LIE",
-			"source_country_name": "Liechtenstein"
-		},
-		{
-			"source_country_code": "LKA",
-			"source_country_name": "Sri Lanka"
-		},
-		{
 			"source_country_code": "LMY",
 			"source_country_name": "Low & middle income"
-		},
-		{
-			"source_country_code": "LSO",
-			"source_country_name": "Lesotho"
 		},
 		{
 			"source_country_code": "LTE",
 			"source_country_name": "Late-demographic dividend"
 		},
 		{
-			"source_country_code": "LTU",
-			"source_country_name": "Lithuania"
-		},
-		{
-			"source_country_code": "LUX",
-			"source_country_name": "Luxembourg"
-		},
-		{
-			"source_country_code": "LVA",
-			"source_country_name": "Latvia"
-		},
-		{
-			"source_country_code": "MAC",
-			"source_country_name": "Macao SAR, China"
-		},
-		{
-			"source_country_code": "MAF",
-			"source_country_name": "St. Martin (French part)"
-		},
-		{
-			"source_country_code": "MAR",
-			"source_country_name": "Morocco"
-		},
-		{
-			"source_country_code": "MCO",
-			"source_country_name": "Monaco"
-		},
-		{
-			"source_country_code": "MDA",
-			"source_country_name": "Moldova"
-		},
-		{
-			"source_country_code": "MDG",
-			"source_country_name": "Madagascar"
-		},
-		{
-			"source_country_code": "MDV",
-			"source_country_name": "Maldives"
-		},
-		{
 			"source_country_code": "MEA",
 			"source_country_name": "Middle East, North Africa, Afghanistan & Pakistan"
-		},
-		{
-			"source_country_code": "MHL",
-			"source_country_name": "Marshall Islands"
 		},
 		{
 			"source_country_code": "MIC",
 			"source_country_name": "Middle income"
 		},
 		{
-			"source_country_code": "MKD",
-			"source_country_name": "North Macedonia"
-		},
-		{
-			"source_country_code": "MLI",
-			"source_country_name": "Mali"
-		},
-		{
-			"source_country_code": "MLT",
-			"source_country_name": "Malta"
-		},
-		{
-			"source_country_code": "MMR",
-			"source_country_name": "Myanmar"
-		},
-		{
 			"source_country_code": "MNA",
 			"source_country_name": "Middle East, North Africa, Afghanistan & Pakistan (excluding high income)"
-		},
-		{
-			"source_country_code": "MNE",
-			"source_country_name": "Montenegro"
-		},
-		{
-			"source_country_code": "MNG",
-			"source_country_name": "Mongolia"
-		},
-		{
-			"source_country_code": "MNP",
-			"source_country_name": "Northern Mariana Islands"
-		},
-		{
-			"source_country_code": "MOZ",
-			"source_country_name": "Mozambique"
-		},
-		{
-			"source_country_code": "MRT",
-			"source_country_name": "Mauritania"
-		},
-		{
-			"source_country_code": "MUS",
-			"source_country_name": "Mauritius"
-		},
-		{
-			"source_country_code": "MWI",
-			"source_country_name": "Malawi"
-		},
-		{
-			"source_country_code": "MYS",
-			"source_country_name": "Malaysia"
 		},
 		{
 			"source_country_code": "NAC",
 			"source_country_name": "North America"
 		},
 		{
-			"source_country_code": "NAM",
-			"source_country_name": "Namibia"
-		},
-		{
-			"source_country_code": "NCL",
-			"source_country_name": "New Caledonia"
-		},
-		{
-			"source_country_code": "NER",
-			"source_country_name": "Niger"
-		},
-		{
-			"source_country_code": "NGA",
-			"source_country_name": "Nigeria"
-		},
-		{
-			"source_country_code": "NIC",
-			"source_country_name": "Nicaragua"
-		},
-		{
-			"source_country_code": "NLD",
-			"source_country_name": "Netherlands"
-		},
-		{
-			"source_country_code": "NOR",
-			"source_country_name": "Norway"
-		},
-		{
-			"source_country_code": "NPL",
-			"source_country_name": "Nepal"
-		},
-		{
-			"source_country_code": "NRU",
-			"source_country_name": "Nauru"
-		},
-		{
-			"source_country_code": "NZL",
-			"source_country_name": "New Zealand"
-		},
-		{
 			"source_country_code": "OED",
 			"source_country_name": "OECD members"
-		},
-		{
-			"source_country_code": "OMN",
-			"source_country_name": "Oman"
 		},
 		{
 			"source_country_code": "OSS",
 			"source_country_name": "Other small states"
 		},
 		{
-			"source_country_code": "PAK",
-			"source_country_name": "Pakistan"
-		},
-		{
-			"source_country_code": "PAN",
-			"source_country_name": "Panama"
-		},
-		{
-			"source_country_code": "PER",
-			"source_country_name": "Peru"
-		},
-		{
-			"source_country_code": "PHL",
-			"source_country_name": "Philippines"
-		},
-		{
-			"source_country_code": "PLW",
-			"source_country_name": "Palau"
-		},
-		{
-			"source_country_code": "PNG",
-			"source_country_name": "Papua New Guinea"
-		},
-		{
-			"source_country_code": "POL",
-			"source_country_name": "Poland"
-		},
-		{
 			"source_country_code": "PRE",
 			"source_country_name": "Pre-demographic dividend"
-		},
-		{
-			"source_country_code": "PRI",
-			"source_country_name": "Puerto Rico (US)"
-		},
-		{
-			"source_country_code": "PRT",
-			"source_country_name": "Portugal"
-		},
-		{
-			"source_country_code": "PRY",
-			"source_country_name": "Paraguay"
 		},
 		{
 			"source_country_code": "PSS",
@@ -1501,68 +5510,12 @@
 			"source_country_name": "Post-demographic dividend"
 		},
 		{
-			"source_country_code": "PYF",
-			"source_country_name": "French Polynesia"
-		},
-		{
-			"source_country_code": "QAT",
-			"source_country_name": "Qatar"
-		},
-		{
-			"source_country_code": "ROU",
-			"source_country_name": "Romania"
-		},
-		{
-			"source_country_code": "RWA",
-			"source_country_name": "Rwanda"
-		},
-		{
 			"source_country_code": "SAS",
 			"source_country_name": "South Asia"
 		},
 		{
-			"source_country_code": "SDN",
-			"source_country_name": "Sudan"
-		},
-		{
-			"source_country_code": "SEN",
-			"source_country_name": "Senegal"
-		},
-		{
-			"source_country_code": "SGP",
-			"source_country_name": "Singapore"
-		},
-		{
-			"source_country_code": "SLB",
-			"source_country_name": "Solomon Islands"
-		},
-		{
-			"source_country_code": "SLE",
-			"source_country_name": "Sierra Leone"
-		},
-		{
-			"source_country_code": "SLV",
-			"source_country_name": "El Salvador"
-		},
-		{
-			"source_country_code": "SMR",
-			"source_country_name": "San Marino"
-		},
-		{
-			"source_country_code": "SOM",
-			"source_country_name": "Somalia, Fed. Rep."
-		},
-		{
-			"source_country_code": "SRB",
-			"source_country_name": "Serbia"
-		},
-		{
 			"source_country_code": "SSA",
 			"source_country_name": "Sub-Saharan Africa (excluding high income)"
-		},
-		{
-			"source_country_code": "SSD",
-			"source_country_name": "South Sudan"
 		},
 		{
 			"source_country_code": "SSF",
@@ -1573,50 +5526,6 @@
 			"source_country_name": "Small states"
 		},
 		{
-			"source_country_code": "STP",
-			"source_country_name": "Sao Tome and Principe"
-		},
-		{
-			"source_country_code": "SUR",
-			"source_country_name": "Suriname"
-		},
-		{
-			"source_country_code": "SVK",
-			"source_country_name": "Slovak Republic"
-		},
-		{
-			"source_country_code": "SVN",
-			"source_country_name": "Slovenia"
-		},
-		{
-			"source_country_code": "SWE",
-			"source_country_name": "Sweden"
-		},
-		{
-			"source_country_code": "SWZ",
-			"source_country_name": "Eswatini"
-		},
-		{
-			"source_country_code": "SXM",
-			"source_country_name": "Sint Maarten (Dutch part)"
-		},
-		{
-			"source_country_code": "SYC",
-			"source_country_name": "Seychelles"
-		},
-		{
-			"source_country_code": "SYR",
-			"source_country_name": "Syrian Arab Republic"
-		},
-		{
-			"source_country_code": "TCA",
-			"source_country_name": "Turks and Caicos Islands"
-		},
-		{
-			"source_country_code": "TCD",
-			"source_country_name": "Chad"
-		},
-		{
 			"source_country_code": "TEA",
 			"source_country_name": "East Asia & Pacific (IDA & IBRD countries)"
 		},
@@ -1625,36 +5534,12 @@
 			"source_country_name": "Europe & Central Asia (IDA & IBRD countries)"
 		},
 		{
-			"source_country_code": "TGO",
-			"source_country_name": "Togo"
-		},
-		{
-			"source_country_code": "THA",
-			"source_country_name": "Thailand"
-		},
-		{
-			"source_country_code": "TJK",
-			"source_country_name": "Tajikistan"
-		},
-		{
-			"source_country_code": "TKM",
-			"source_country_name": "Turkmenistan"
-		},
-		{
 			"source_country_code": "TLA",
 			"source_country_name": "Latin America & the Caribbean (IDA & IBRD countries)"
 		},
 		{
-			"source_country_code": "TLS",
-			"source_country_name": "Timor-Leste"
-		},
-		{
 			"source_country_code": "TMN",
 			"source_country_name": "Middle East, North Africa, Afghanistan & Pakistan (IDA & IBRD)"
-		},
-		{
-			"source_country_code": "TON",
-			"source_country_name": "Tonga"
 		},
 		{
 			"source_country_code": "TSA",
@@ -1665,72 +5550,8 @@
 			"source_country_name": "Sub-Saharan Africa (IDA & IBRD countries)"
 		},
 		{
-			"source_country_code": "TTO",
-			"source_country_name": "Trinidad and Tobago"
-		},
-		{
-			"source_country_code": "TUN",
-			"source_country_name": "Tunisia"
-		},
-		{
-			"source_country_code": "TUV",
-			"source_country_name": "Tuvalu"
-		},
-		{
-			"source_country_code": "TZA",
-			"source_country_name": "Tanzania"
-		},
-		{
-			"source_country_code": "UGA",
-			"source_country_name": "Uganda"
-		},
-		{
-			"source_country_code": "URY",
-			"source_country_name": "Uruguay"
-		},
-		{
-			"source_country_code": "UZB",
-			"source_country_name": "Uzbekistan"
-		},
-		{
-			"source_country_code": "VCT",
-			"source_country_name": "St. Vincent and the Grenadines"
-		},
-		{
-			"source_country_code": "VEN",
-			"source_country_name": "Venezuela, RB"
-		},
-		{
-			"source_country_code": "VGB",
-			"source_country_name": "British Virgin Islands"
-		},
-		{
-			"source_country_code": "VIR",
-			"source_country_name": "Virgin Islands (U.S.)"
-		},
-		{
-			"source_country_code": "VUT",
-			"source_country_name": "Vanuatu"
-		},
-		{
 			"source_country_code": "WLD",
 			"source_country_name": "World"
-		},
-		{
-			"source_country_code": "WSM",
-			"source_country_name": "Samoa"
-		},
-		{
-			"source_country_code": "YEM",
-			"source_country_name": "Yemen, Rep."
-		},
-		{
-			"source_country_code": "ZMB",
-			"source_country_name": "Zambia"
-		},
-		{
-			"source_country_code": "ZWE",
-			"source_country_name": "Zimbabwe"
 		}
 	],
 	"latest_years": {
@@ -1741,6 +5562,7 @@
 	},
 	"notes": [
 		"quality_of_life_score is project-specific and must not be described as HDI.",
-		"Missing World Bank indicator values remain absent and are displayed as no_data."
+		"Missing World Bank indicator values remain absent and are displayed as no_data.",
+		"World Bank aggregate regions are ignored unless explicitly represented in the registry."
 	]
 }

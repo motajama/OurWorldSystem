@@ -44,6 +44,99 @@ function recordCount(data) {
 	return null;
 }
 
+function isObject(value) {
+	return Boolean(value && typeof value === 'object' && !Array.isArray(value));
+}
+
+function normalizeCode(value) {
+	if (typeof value !== 'string') return null;
+	const normalized = value.trim().toUpperCase();
+	return normalized.length > 0 && normalized !== '-99' ? normalized : null;
+}
+
+function normalizeName(value) {
+	if (typeof value !== 'string') return null;
+	const normalized = value.trim().toLowerCase().replace(/\s+/g, ' ');
+	return normalized.length > 0 ? normalized : null;
+}
+
+function firstGeometryCollection(topojson) {
+	if (!isObject(topojson?.objects)) return [];
+
+	const preferred = topojson.objects.ne_110m_admin_0_countries;
+	if (preferred?.type === 'GeometryCollection' && Array.isArray(preferred.geometries)) {
+		return preferred.geometries;
+	}
+
+	const collection = Object.values(topojson.objects).find(
+		(object) => object?.type === 'GeometryCollection' && Array.isArray(object.geometries)
+	);
+	return collection?.geometries ?? [];
+}
+
+function buildRegistryIndexes(registry) {
+	const byCode = new Map();
+	const byName = new Map();
+
+	for (const record of Array.isArray(registry) ? registry : []) {
+		if (!isObject(record)) continue;
+		const naturalEarth = isObject(record.natural_earth) ? record.natural_earth : {};
+
+		for (const code of [
+			...(Array.isArray(naturalEarth.iso_a3) ? naturalEarth.iso_a3 : []),
+			...(Array.isArray(naturalEarth.adm0_a3) ? naturalEarth.adm0_a3 : []),
+			...(Array.isArray(naturalEarth.sov_a3) ? naturalEarth.sov_a3 : []),
+			record?.external_ids?.iso3,
+			record?.external_ids?.world_bank,
+			record?.id
+		]) {
+			const normalizedCode = normalizeCode(code);
+			if (normalizedCode && !byCode.has(normalizedCode)) byCode.set(normalizedCode, record);
+		}
+
+		for (const alias of [
+			record.display_name,
+			record.short_name,
+			...(Array.isArray(naturalEarth.name_aliases) ? naturalEarth.name_aliases : [])
+		]) {
+			const normalizedName = normalizeName(alias);
+			if (normalizedName && !byName.has(normalizedName)) byName.set(normalizedName, record);
+		}
+	}
+
+	return { byCode, byName };
+}
+
+function registryRecordForFeature(properties, indexes) {
+	for (const key of ['ISO_A3', 'ADM0_A3', 'SOV_A3']) {
+		const code = normalizeCode(properties?.[key]);
+		if (!code) continue;
+		const record = indexes.byCode.get(code);
+		if (record) return record;
+	}
+
+	for (const key of ['NAME', 'NAME_LONG', 'ADMIN']) {
+		const name = normalizeName(properties?.[key]);
+		if (!name) continue;
+		const record = indexes.byName.get(name);
+		if (record) return record;
+	}
+
+	return null;
+}
+
+function naturalEarthCoverage(topojson, registry) {
+	const geometries = firstGeometryCollection(topojson);
+	const indexes = buildRegistryIndexes(registry);
+	let matched = 0;
+
+	for (const geometry of geometries) {
+		if (registryRecordForFeature(geometry?.properties ?? {}, indexes)) matched += 1;
+	}
+
+	return { matched, total: geometries.length };
+}
+
 async function checkRequiredFile(relativePath) {
 	if (!(await exists(path.join(repoRoot, relativePath)))) {
 		errors.push(`Missing required file: ${relativePath}`);
@@ -88,7 +181,26 @@ for (const relativePath of requiredFiles) {
 console.log('\nCounts:');
 const registry = requiredData.get('static/data/map-units.registry.json');
 const worldSystem = requiredData.get('static/data/world-system.latest.json');
+const worldTopojson = requiredData.get('static/geo/world.topojson');
+const neCoverage = naturalEarthCoverage(worldTopojson, registry);
 console.log(`registry records: ${Array.isArray(registry) ? registry.length : 0}`);
+console.log(`Natural Earth feature count: ${neCoverage.total}`);
+console.log(`Natural Earth registry coverage: ${neCoverage.matched}/${neCoverage.total}`);
+console.log(
+	`generated registry records: ${
+		Array.isArray(registry)
+			? registry.filter((record) => record?.review_status === 'needs_review').length
+			: 0
+	}`
+);
+console.log(
+	`reviewed/curated registry records: ${
+		Array.isArray(registry)
+			? registry.filter((record) => record?.review_status === 'reviewed' || record?.last_reviewed)
+					.length
+			: 0
+	}`
+);
 console.log(
 	`mock world-system records: ${Array.isArray(worldSystem?.map_units) ? worldSystem.map_units.length : 0}`
 );

@@ -8,6 +8,7 @@
 		"build": "vite build",
 		"preview": "vite preview",
 		"geo:build": "bash scripts/geo/build-natural-earth.sh",
+		"registry:seed": "node scripts/data/seed-map-unit-registry-from-natural-earth.mjs",
 		"data:fetch:worldbank": "node scripts/data/fetch-world-bank-wdi.mjs",
 		"data:fetch:ucdp": "node scripts/data/fetch-ucdp-conflicts.mjs",
 		"data:build": "npm run data:fetch:worldbank && npm run data:fetch:ucdp",

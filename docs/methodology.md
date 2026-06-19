@@ -59,6 +59,8 @@ Natural Earth breakaway and disputed areas are handled as a separate overlay whe
 
 OurWorldSystem does not treat Natural Earth identifiers as stable political or semantic IDs. Natural Earth supplies geometry and source properties; OurWorldSystem supplies a transparent map-unit registry. The registry stores neutral application IDs, display names, Natural Earth aliases, external dataset IDs, recognition status, sovereignty notes, and review dates.
 
+The registry can contain both curated and generated records. Generated records are seeded from Natural Earth Admin 0 geometry so the map has broad reproducible coverage, but they are marked `needs_review`, keep missing external IDs as `null`, and must not be read as political recognition. Human review is still required for display names, source crosswalks, recognition status, and sovereignty notes.
+
 Natural Earth placeholder codes such as `-99` are never valid semantic IDs. They can appear in source properties, but they are ignored for registry matching. The frontend tries registry aliases first, then development-only mock indicator IDs, and finally renders unmatched geometry as neutral `no_data` map units. Missing registry coverage therefore does not hide geometry.
 
 Indicator data remains separate from geometry and registry metadata. Future public datasets should map into registry IDs through documented crosswalks rather than by assuming one source code system is authoritative.
@@ -71,7 +73,7 @@ For example, a missing conflict object means no conflict data is available. It d
 
 Optional generated indicator files are listed in `static/data/indicators/index.json`. The frontend only fetches optional entries that are not marked `available: false`; unavailable optional datasets are skipped without normal browser 404s. Required base data and required geometry still fail clearly when missing or invalid.
 
-Data completion uses a separate coverage workflow so generated suggestions are not confused with reviewed facts. `npm run data:coverage` reads Natural Earth geometry, the registry, mock world-system data, and available optional indicators. It reports coverage against both the authoritative registry and Natural Earth base features, then writes generated candidate records for unmatched base or disputed overlay features.
+Data completion uses separate seed and coverage workflows so generated suggestions are not confused with reviewed facts. `npm run registry:seed` runs after `npm run geo:build` and ensures Natural Earth Admin 0 base features have registry records. `npm run data:coverage` reads Natural Earth geometry, the registry, mock world-system data, and available optional indicators. It reports coverage against both the registry and Natural Earth base features, then writes generated candidate records for unmatched base or disputed overlay features.
 
 These candidates are source-derived review aids. They are not sovereignty decisions and not authoritative map units. A candidate can be low confidence and still be useful because the next step is human review, source checking, and manual promotion into the registry. Missing indicators remain missing throughout this process; generated registry candidates must not be used to fabricate data coverage.
 
@@ -96,11 +98,12 @@ Future classifications should:
 The recommended data completion workflow is:
 
 1. Run `npm run geo:build`.
-2. Run `npm run data:build` for public indicator outputs when network access and source availability permit.
-3. Run `npm run data:coverage`.
-4. Review `static/data/generated/map-units.candidates.json`.
-5. Manually promote verified records into `static/data/map-units.registry.json`.
-6. Rerun validation and build commands.
+2. Run `npm run registry:seed`.
+3. Run `npm run data:build` for public indicator outputs when network access and source availability permit.
+4. Run `npm run data:coverage`.
+5. Review generated `needs_review` registry records and `static/data/generated/map-units.candidates.json`.
+6. Mark verified registry records with reviewed metadata when appropriate.
+7. Rerun validation and build commands.
 
 ## Candidate Indicator Families
 

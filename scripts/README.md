@@ -9,6 +9,7 @@ GitHub Actions runs the local, deterministic static build path:
 ```sh
 npm ci
 npm run geo:build
+npm run registry:seed
 npm run health:data
 npm run validate:data
 npm run check
@@ -40,6 +41,7 @@ Current data generation scripts are split by source:
 npm run data:fetch:worldbank
 npm run data:fetch:ucdp
 npm run data:build
+npm run registry:seed
 npm run data:coverage
 ```
 
@@ -52,6 +54,8 @@ npm run data:coverage
 - `static/data/generated/map-unit-coverage.summary.json`
 
 The candidate file is review infrastructure only. Generated candidates are not authoritative registry records and must not be used as indicator IDs until manually reviewed and promoted into `static/data/map-units.registry.json`.
+
+`registry:seed` reads `static/geo/world.topojson` and updates `static/data/map-units.registry.json` so Natural Earth Admin 0 base features have registry coverage. It preserves curated fields on matched records, adds missing Natural Earth aliases, and creates generated records marked `review_status: "needs_review"` for unmatched features. It also writes `data/processed/map-unit-registry-seed-report.json`.
 
 ## Registry Validation
 
@@ -70,6 +74,8 @@ npm run health:data
 ```
 
 The map-unit registry exists because geometry source properties are not stable application identities. Natural Earth provides geometry and helpful aliases, but codes such as `ISO_A3` or `ADM0_A3` can be `-99`, and `-99` is not unique. The validation script rejects `-99` as a registry or mock indicator ID and rejects Natural Earth alias arrays that contain only `-99`.
+
+Validation also reports Natural Earth registry coverage and fails if base-geometry coverage falls below 95%. Generated registry records are valid only as `needs_review`; curated records can use `review_status: "reviewed"` or omit the field while retaining `last_reviewed`.
 
 Future data import scripts should normalize public datasets into registry IDs before writing frontend JSON. Use source identifiers such as ISO-3, UN M49, World Bank, OECD, and documented manual crosswalks for disputed or special map units. Do not use geometry as political recognition, and do not merge disputed records simply to satisfy a source dataset.
 
@@ -114,6 +120,8 @@ Initial indicators:
 The script writes raw API responses to `data/raw/world-bank/{indicator}.json`, which is ignored by git. It writes processed output to `data/processed/quality-of-life.world-bank.latest.json` and frontend static output to `static/data/indicators/quality-of-life.world-bank.latest.json`.
 
 The script selects the latest non-null year per country and normalizes World Bank country codes through registry `external_ids.world_bank`, `external_ids.iso3`, then registry `id`. Unmatched source countries are reported in the output instead of being forced into the registry.
+
+World Bank aggregate regions are ignored when they do not exist in the registry. They are listed separately as `ignored_aggregate_regions` so unmatched country counts are useful for registry review.
 
 The generated `quality_of_life_score` is a temporary OurWorldSystem visualization composite, not HDI. It uses:
 
@@ -165,11 +173,12 @@ Each indicator index entry must include `id`, `path`, `required`, `available`, `
 Use this review loop to expand coverage without fabricating data:
 
 1. `npm run geo:build`
-2. `npm run data:build`
-3. `npm run data:coverage`
-4. Review `static/data/generated/map-units.candidates.json`
-5. Manually promote reviewed candidates into `static/data/map-units.registry.json`
-6. Rerun `npm run health:data`, `npm run validate:data`, `npm run check`, and `npm run build`
+2. `npm run registry:seed`
+3. `npm run data:build`
+4. `npm run data:coverage`
+5. Review generated `needs_review` registry records and `static/data/generated/map-units.candidates.json`
+6. Manually mark verified registry records with reviewed metadata when appropriate
+7. Rerun `npm run health:data`, `npm run validate:data`, `npm run check`, and `npm run build`
 
 Keep four categories distinct in code and documentation: real public data, mock/demo data, generated registry candidates, and missing data.
 
