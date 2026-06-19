@@ -44,6 +44,14 @@
 
 		return `${formatNumber(value, options)} (${value.source ?? 'World Bank WDI'}, ${value.year})`;
 	};
+
+	const isProvisionalWorldSystem = (modelStatus: string | undefined) =>
+		typeof modelStatus === 'string' && modelStatus.includes('provisional');
+
+	const hasHighWelfareSemiPeriphery = (unit: MapUnit) =>
+		unit.world_system.class === 'semi-periphery' &&
+		typeof unit.quality_of_life.quality_of_life_score === 'number' &&
+		unit.quality_of_life.quality_of_life_score >= 0.88;
 </script>
 
 <aside class="panel" aria-labelledby="panel-title">
@@ -71,15 +79,22 @@
 					<dd>{unit.world_system.confidence}</dd>
 				</div>
 				<div>
+					<dt>Model status</dt>
+					<dd>{unit.world_system.model_status ?? 'No data'}</dd>
+				</div>
+				<div>
 					<dt>Source</dt>
 					<dd>{unit.world_system.source ?? 'No data'}</dd>
 				</div>
 			</dl>
-			{#if unit.world_system.model_status === 'provisional'}
+			{#if isProvisionalWorldSystem(unit.world_system.model_status)}
 				<p class="warning">
-					Provisional derived model. This is an experimental proxy and needs review; it is not a
-					final world-systems classification.
+					Provisional classification. Core status requires structural value-chain evidence; high
+					quality of life alone is not enough.
 				</p>
+			{/if}
+			{#if hasHighWelfareSemiPeriphery(unit)}
+				<p class="muted">High welfare/core-like profile, but structural evidence is incomplete.</p>
 			{/if}
 			<p>{unit.world_system.explanation}</p>
 		</section>

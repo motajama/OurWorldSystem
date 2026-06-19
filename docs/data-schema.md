@@ -247,7 +247,7 @@ The output schema is:
 {
   dataset_id: "world_system_provisional_latest";
   source_ids: ["world_bank_wdi", "mock_demo_data"];
-  model_status: "provisional";
+  model_status: "provisional_conservative_proxy";
   generated_at: string;
   methodology_note: string;
   records: Array<{
@@ -262,7 +262,10 @@ The output schema is:
         | "no_data";
       score: number | null; // 0-100 when present
       confidence: "low" | "medium";
-      source: "derived_world_bank_quality_proxy" | "demo_curated";
+      source:
+        | "derived_world_bank_quality_proxy"
+        | "derived_conservative_structural_proxy"
+        | "demo_curated";
       explanation: string;
     };
     components: {
@@ -270,16 +273,31 @@ The output schema is:
       gni_per_capita_ppp: number | null;
       life_expectancy: number | null;
       secondary_enrollment_gross: number | null;
+      extraction_dependency_score: number | null;
+      extraction_autonomy_score: number | null;
+      productive_complexity_score: number | null;
+      structural_supports: string[];
+      previous_proxy_class: string;
+      downgraded_from_previous_proxy_core: boolean;
+      classification_reason: string;
     };
     review_status: "needs_review";
   }>;
+  diagnostics: {
+    total_records: number;
+    previous_proxy_core_count: number;
+    class_distribution: Record<string, number>;
+    downgraded_from_previous_proxy_core_count: number;
+    core_candidates: Array<Record<string, unknown>>;
+    downgraded_high_quality: Array<Record<string, unknown>>;
+  };
   notes: string[];
 }
 ```
 
-The model preserves demo records from `world-system.latest.json` as `demo_curated`; derived records use the World Bank WDI quality-of-life score with a small normalized log-income adjustment. Provisional bins are `core >= 78`, `semi-periphery >= 55 and < 78`, and `periphery < 55`. Missing values remain `no_data`, and disputed map units without stable comparable data can remain `disputed`.
+The model preserves demo records from `world-system.latest.json` as `demo_curated`. Derived records use World Bank WDI quality-of-life and GNI only as welfare proxies, then require structural support from extraction autonomy, low extraction dependency, productive complexity, or curated/demo review before assigning provisional `core`.
 
-This file is intentionally marked `model_status: "provisional"` and every record is `review_status: "needs_review"`. It does not yet include OECD TiVA, trade/value-chain data, material footprint, e-waste, ecological externalization, military/geopolitical position, financial centrality, conflict exposure, or political-freedom indicators.
+This file is intentionally marked `model_status: "provisional_conservative_proxy"` and every record is `review_status: "needs_review"`. High quality of life alone cannot produce `core`; many high-welfare records remain `semi-periphery` or `uncertain` until value-capture/GVC evidence is added. `semi-periphery` is a mixed structural position, not merely a middle-income bin. The file does not yet include OECD TiVA, complete trade/value-chain data, material footprint, e-waste, ecological externalization, military/geopolitical position, financial centrality, conflict exposure, or political-freedom indicators.
 
 ## Structural World-System Model V1
 

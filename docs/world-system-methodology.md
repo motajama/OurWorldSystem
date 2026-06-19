@@ -26,7 +26,7 @@ Using HDI or GNI alone would miss several core world-system questions:
 - whether local consumption is achieved by externalizing material, carbon, waste, or labor costs elsewhere;
 - whether the map unit exercises monetary, financial, military, institutional, or rule-setting power.
 
-The current provisional proxy uses World Bank quality-of-life and income-related signals only because they are available in the initial static pipeline. It is useful for early visualization coverage, but it is not a final Wallersteinian model.
+The current provisional proxy uses World Bank quality-of-life and income-related signals for welfare context, plus early extraction dependency/autonomy and optional productive-complexity components where available. It is useful for early visualization coverage, but it is not a final Wallersteinian model.
 
 ## Structural Evidence Families
 
@@ -74,9 +74,13 @@ Planned evidence includes military expenditure, reserve-currency and financial-c
 
 ## Provisional Model Versus Structural Model
 
-The current dataset `world_system_provisional_latest` is a temporary proxy. It preserves checked-in demo records and otherwise derives broad coverage from World Bank WDI quality-of-life and income-related indicators. Its bins are temporary and each record is marked for review.
+The current dataset `world_system_provisional_latest` is a temporary conservative proxy. It preserves checked-in demo records and otherwise derives broad coverage from World Bank WDI quality-of-life and income-related indicators, World Bank WDI extraction dependency/autonomy, and optional productive-complexity data. Each record is marked for review.
 
-The future dataset `world_system_structural_v1` should be a separate model with its own source IDs, component scores, data coverage, explanation, limitations, and review status. It should not overwrite or silently replace the provisional proxy until validation, documentation, and review are complete.
+The previous quality-of-life-heavy rule overproduced `core`. In the conservative proxy, high welfare or high GNI cannot generate `core` by itself. Non-demo core classification requires `quality_of_life_score >= 0.88`, no extraction-dependency block, and at least two structural supports such as high extraction autonomy, low extraction dependency, high productive complexity, or curated/demo review. If welfare is core-like but structural evidence is incomplete, the provisional class is usually `semi-periphery`; if high welfare conflicts with high resource dependence, it is `uncertain`.
+
+This use of `semi-periphery` is methodological, not merely income-based. It describes mixed structural positions with both core-like and periphery-like processes, including high-development map units whose value capture, ownership, production-chain control, or extraction autonomy has not yet been demonstrated.
+
+The future dataset `world_system_structural_v1` should be a separate model with its own source IDs, component scores, data coverage, explanation, limitations, and review status. It should not overwrite or silently replace the provisional proxy until validation, documentation, and review are complete. Needed future evidence includes OECD TiVA or similar GVC/value-capture data, Atlas/BACI/Comtrade productive-complexity and trade-structure data, stronger extraction-dependency measures, UNEP material footprints, finance/geopolitical power indicators, and ecological externalization data.
 
 The structural v1 scaffold currently emits a placeholder file with `model_status: "not_yet_computable"`. That is intentional: the required source pipelines and component transformations are not complete yet. It may include available `productive_complexity` and `extraction_autonomy` component values for review, but it still does not infer a final world-system class or total score.
 

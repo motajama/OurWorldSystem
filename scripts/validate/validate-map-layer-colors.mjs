@@ -214,7 +214,7 @@ function mergeUnits(
 							score: provisionalWorldSystemRecord.world_system.score,
 							confidence: provisionalWorldSystemRecord.world_system.confidence,
 							source: provisionalWorldSystemRecord.world_system.source,
-							model_status: 'provisional',
+							model_status: provisionalWorldSystem?.model_status ?? 'provisional',
 							explanation: provisionalWorldSystemRecord.world_system.explanation
 						},
 						sources: [...new Set([...(unit.sources ?? []), 'world_bank_wdi', 'mock_demo_data'])]
@@ -396,6 +396,21 @@ const worldBankQuality = readJsonIfPresent(paths.worldBankQuality);
 const worldBankExtraction = readJsonIfPresent(paths.worldBankExtraction);
 const worldSystemDemoById = normalizeWorldSystemDemoData(worldSystem);
 const provisionalWorldSystemById = normalizeProvisionalWorldSystemData(provisionalWorldSystem);
+const provisionalWorldSystemDistribution = {};
+for (const record of provisionalWorldSystemById.values()) {
+	const classValue = record.world_system?.class ?? 'no_data';
+	provisionalWorldSystemDistribution[classValue] =
+		(provisionalWorldSystemDistribution[classValue] ?? 0) + 1;
+}
+if (provisionalWorldSystemById.size > 0) {
+	console.log(
+		`Conservative world_system distribution: ${JSON.stringify(
+			provisionalWorldSystemDistribution,
+			null,
+			2
+		)}`
+	);
+}
 const unitsById = mergeUnits(
 	registry,
 	worldSystemDemoById,

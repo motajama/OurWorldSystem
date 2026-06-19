@@ -13,6 +13,7 @@
 
 <section class="legend" aria-labelledby="legend-title">
 	<h2 id="legend-title">{layer.label}</h2>
+	<p class="subtitle">{layer.description}</p>
 	<ul>
 		{#each items as item (item.value)}
 			<li>
@@ -33,10 +34,17 @@
 	}
 
 	h2 {
-		margin: 0 0 0.85rem;
+		margin: 0 0 0.35rem;
 		color: #f8fafc;
 		font-size: 0.95rem;
 		letter-spacing: 0;
+	}
+
+	.subtitle {
+		margin: 0 0 0.85rem;
+		color: #94a3b8;
+		font-size: 0.76rem;
+		line-height: 1.35;
 	}
 
 	ul {
