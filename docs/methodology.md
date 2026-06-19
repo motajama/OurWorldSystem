@@ -12,7 +12,7 @@ The default map layer is the overall world-system position. This is a synthetic 
 
 Criterion layers are separate thematic views for individual dimensions: war/conflict, press freedom, political freedom, quality of life, ecological performance, and extraction/externalization. They let users inspect one family of evidence at a time instead of treating the overall class as self-explanatory.
 
-Most current criterion-layer values are mock/demo values only. The quality-of-life layer can use real World Bank WDI values when `static/data/indicators/quality-of-life.world-bank.latest.json` is present. The world-system layer can use `static/data/indicators/world-system.provisional.latest.json` when present, then falls back to the demo data, then to no-data. The conflict layer can use real UCDP values when `static/data/indicators/conflict.ucdp.latest.json` is present. Mock HDI values remain demo data unless replaced later by a properly sourced UNDP HDI pipeline.
+Most current criterion-layer values are mock/demo values only. The quality-of-life layer can use real World Bank WDI values when `static/data/indicators/quality-of-life.world-bank.latest.json` is present. The extraction layer can use World Bank WDI extraction dependency/autonomy values when `static/data/indicators/extraction-dependency.world-bank.latest.json` is present. The world-system layer can use `static/data/indicators/world-system.provisional.latest.json` when present, then falls back to the demo data, then to no-data. The conflict layer can use real UCDP values when `static/data/indicators/conflict.ucdp.latest.json` is present. Mock HDI values remain demo data unless replaced later by a properly sourced UNDP HDI pipeline.
 
 ## UCDP Conflict Data
 

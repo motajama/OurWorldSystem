@@ -2,7 +2,7 @@
 
 OurWorldSystem is an open-source, static-first public-interest atlas of countries and map units in the global world-system. It is intended to visualize structural positions such as core, semi-periphery, periphery, uncertainty, conflict exposure, press freedom, political freedom, quality of life, ecological pressure, and forms of extraction or externalization.
 
-The current app uses real static Natural Earth geometry, a provisional World Bank-derived world-system proxy, preserved mock/demo world-system records, an initial real World Bank WDI quality-of-life indicator pipeline, a first UCDP conflict indicator pipeline, and a local Atlas of Economic Complexity import for productive complexity. The default world-system layer is provisional, experimental, and needs review; it must not be interpreted as a final academic classification.
+The current app uses real static Natural Earth geometry, a provisional World Bank-derived world-system proxy, preserved mock/demo world-system records, an initial real World Bank WDI quality-of-life indicator pipeline, a first UCDP conflict indicator pipeline, a local Atlas of Economic Complexity import for productive complexity, and a World Bank WDI extraction dependency/autonomy component. The default world-system layer is provisional, experimental, and needs review; it must not be interpreted as a final academic classification.
 
 ## Principles
 
@@ -103,6 +103,7 @@ The first real public indicator outputs live in:
 - `static/data/indicators/world-system.provisional.latest.json`
 - `static/data/indicators/conflict.ucdp.latest.json`
 - `static/data/indicators/productive-complexity.latest.json`
+- `static/data/indicators/extraction-dependency.world-bank.latest.json`
 
 Geometry lives in:
 
@@ -127,7 +128,7 @@ Disputed and breakaway overlay features are hoverable and clickable. Their label
 
 The default thematic view is **World-system position**. It now prefers `world-system.provisional.latest.json`, then falls back to the preserved demo records in `world-system.latest.json`, then to `No data`. The provisional dataset keeps demo/curated classes where present as `source: "demo_curated"` and derives broader coverage from World Bank quality-of-life and income-related indicators as `source: "derived_world_bank_quality_proxy"`. This is a limited visualization proxy, not a final Wallersteinian classification.
 
-The map can also switch to criterion layers for war/conflict, press freedom, political freedom, quality of life, extraction/externalization, and ecology. These layers are defined in `src/lib/mapLayers.ts`; each layer has a stable ID, label, description, binning rule, legend items, and explicit no-data category. Future real indicators should populate the existing JSON fields or generated equivalents, then reuse the same layer API for map coloring and legends.
+The map can also switch to criterion layers for war/conflict, press freedom, political freedom, quality of life, extraction dependency, and ecology. These layers are defined in `src/lib/mapLayers.ts`; each layer has a stable ID, label, description, binning rule, legend items, and explicit no-data category. The extraction layer uses the generated World Bank WDI component when present and falls back to demo risk fields otherwise.
 
 Missing data is always displayed as `No data`. Null, undefined, or absent indicator values are not converted to zero and are not treated as neutral or average conditions.
 
@@ -159,6 +160,15 @@ npm run data:import:complexity
 
 Place manually downloaded Atlas CSV files in `data/raw/atlas-economic-complexity/`. Supported names include `country_complexity.csv`, `country_product_exports.csv`, and `product_complexity.csv`; the importer can also scan other CSVs with recognizable country-code, year, ECI, export-value, or diversity columns. If no files are present, it writes a valid `no_source_file` placeholder and exits successfully.
 
+Fetch World Bank WDI extraction dependency/autonomy indicators with:
+
+```sh
+npm run data:fetch:extraction
+npm run validate:extraction
+```
+
+This writes `static/data/indicators/extraction-dependency.world-bank.latest.json` and raw World Bank responses under `data/raw/world-bank/extraction/`. The score uses resource rents, fuel exports, ores/metals exports, agricultural raw materials exports, food exports, manufactures exports, high-tech exports, and medium/high-tech exports where WDI provides them. Higher `extraction_dependency_score` means stronger resource-rent or low-processing export dependence; higher `extraction_autonomy_score` means lower extraction dependence and more manufacturing/high-tech orientation. This is a structural component only, not a final world-system classification, and it needs later BACI or Comtrade product-level refinement.
+
 `npm run data:build` downloads World Bank data, attempts the optional UCDP fetch without letting UCDP source failures break the build, then generates the provisional world-system proxy. World Bank raw API responses are stored under `data/raw/world-bank/`; UCDP raw ZIP/CSV files are stored under `data/raw/ucdp/`; generated frontend outputs are written to `static/data/indicators/`. The initial World Bank indicators are life expectancy (`SP.DYN.LE00.IN`), GNI per capita PPP (`NY.GNP.PCAP.PP.CD`), secondary gross enrollment (`SE.SEC.ENRR`), and population (`SP.POP.TOTL`).
 
 `quality_of_life_score` is a transparent temporary visualization score. It requires at least life expectancy and GNI per capita PPP, optionally includes secondary enrollment, and must never be labeled as HDI. Missing World Bank values remain missing and display as `No data`; they are not fabricated or imputed.
@@ -183,7 +193,7 @@ The current default world-system layer is a provisional proxy. It preserves demo
 
 The planned structural model v1 is documented in `docs/world-system-methodology.md` and scaffolded as `world_system_structural_v1`. It will treat core, semi-periphery, and periphery as relational positions in the capitalist world-economy, not as income or quality-of-life bins. Planned components are value capture and GVC position, productive complexity, extraction autonomy, ecological unequal exchange or externalization, and geopolitical-financial-institutional power.
 
-Planned source families include OECD TiVA, UN Comtrade, CEPII BACI, the Atlas of Economic Complexity, UNEP material flows, Yale EPI, the Global E-waste Monitor, UNCTAD FDI, and SIPRI military expenditure. These are listed in `static/data/source-manifest.json`. The first implemented structural component is `productive_complexity`, imported from local Atlas CSV files when available.
+Planned source families include OECD TiVA, UN Comtrade, CEPII BACI, the Atlas of Economic Complexity, World Bank WDI extraction/export-structure indicators, UNEP material flows, Yale EPI, the Global E-waste Monitor, UNCTAD FDI, and SIPRI military expenditure. These are listed in `static/data/source-manifest.json`. The first implemented structural components are `productive_complexity`, imported from local Atlas CSV files when available, and `extraction_autonomy`, generated from WDI as a broad first approximation.
 
 Build the structural placeholder with:
 
@@ -199,7 +209,7 @@ npm run validate:worldsystem:structural
 
 The placeholder writes `static/data/indicators/world-system.structural-v1.placeholder.json` with `model_status: "not_yet_computable"`. It exists to lock the future schema and identify missing planned data sources, not to classify map units.
 
-When `productive-complexity.latest.json` contains loaded data, the structural placeholder includes `components.productive_complexity` and the source component inputs for matching map units. This still does not compute final world-system class. Later structural model versions should combine productive complexity with value capture, extraction dependency or autonomy, ecological externalization, and geopolitical-financial power.
+When `productive-complexity.latest.json` or `extraction-dependency.world-bank.latest.json` contains loaded data, the structural placeholder includes `components.productive_complexity` or `components.extraction_autonomy` and the source component inputs for matching map units. This still does not compute final world-system class. Later structural model versions should combine these components with value capture, ecological externalization, and geopolitical-financial power.
 
 Validate registry and mock-data joins with:
 

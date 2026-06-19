@@ -1,6 +1,6 @@
 # Future Data Pipeline
 
-The first scaffold has a geometry pipeline, checked-in mock indicator JSON under `static/data/`, an initial World Bank WDI quality-of-life pipeline, a first UCDP conflict pipeline, and a local Atlas of Economic Complexity import for the `productive_complexity` structural component.
+The first scaffold has a geometry pipeline, checked-in mock indicator JSON under `static/data/`, an initial World Bank WDI quality-of-life pipeline, a first UCDP conflict pipeline, a local Atlas of Economic Complexity import for the `productive_complexity` structural component, and a World Bank WDI extraction dependency/autonomy component.
 
 ## CI Commands
 
@@ -39,6 +39,7 @@ Current data generation scripts are split by source:
 
 ```sh
 npm run data:fetch:worldbank
+npm run data:fetch:extraction
 npm run data:fetch:ucdp
 npm run data:import:complexity
 npm run data:build:worldsystem
@@ -49,7 +50,7 @@ npm run registry:review
 npm run data:coverage
 ```
 
-`data:build` runs the World Bank fetcher, attempts the optional UCDP fetch, and then builds the provisional world-system proxy. UCDP source failures are intentionally non-fatal for `data:build` because the default map layer should still be reproducible from local World Bank data and demo records. Run individual fetchers when only one generated output needs to be refreshed.
+`data:build` runs the World Bank quality-of-life fetcher, attempts the optional UCDP fetch, and then builds the provisional world-system proxy. UCDP source failures are intentionally non-fatal for `data:build` because the default map layer should still be reproducible from local World Bank data and demo records. Run individual fetchers when only one generated output needs to be refreshed.
 
 `data:coverage` does not fetch external data. It compares current static geometry and data files, then writes:
 
@@ -75,7 +76,7 @@ Run:
 npm run validate:data
 ```
 
-This checks `static/data/map-units.registry.json`, `static/data/world-system.latest.json`, and the optional World Bank quality-of-life and UCDP conflict outputs when present.
+This checks `static/data/map-units.registry.json`, `static/data/world-system.latest.json`, and the optional World Bank quality-of-life, World Bank extraction, and UCDP conflict outputs when present.
 
 For a concise inventory, run:
 
@@ -230,6 +231,54 @@ npm run validate:worldsystem:structural
 ```
 
 The structural placeholder can include `components.productive_complexity` where data exists, but it remains `model_status: "not_yet_computable"` until value capture, extraction autonomy, ecological externalization, and geopolitical-financial power are implemented and reviewed.
+
+## World Bank Extraction Dependency Pipeline
+
+Run:
+
+```sh
+npm run data:fetch:extraction
+```
+
+This calls `scripts/data/fetch-world-bank-extraction.mjs`, uses built-in `fetch`, and downloads these World Bank WDI indicators for all countries:
+
+- `NY.GDP.TOTL.RT.ZS`: total natural resources rents (% of GDP)
+- `TX.VAL.FUEL.ZS.UN`: fuel exports (% of merchandise exports)
+- `TX.VAL.MMTL.ZS.UN`: ores and metals exports (% of merchandise exports)
+- `TX.VAL.AGRI.ZS.UN`: agricultural raw materials exports (% of merchandise exports)
+- `TX.VAL.FOOD.ZS.UN`: food exports (% of merchandise exports)
+- `TX.VAL.MANF.ZS.UN`: manufactures exports (% of merchandise exports)
+- `TX.VAL.TECH.MF.ZS`: high-technology exports (% of manufactured exports)
+- `TX.MNF.TECH.ZS.UN`: medium and high-tech exports (% manufactured exports), when WDI provides it
+
+Raw responses are written to:
+
+```text
+data/raw/world-bank/extraction/
+```
+
+The generated frontend component is:
+
+- `static/data/indicators/extraction-dependency.world-bank.latest.json`
+
+The script matches source country codes through registry `external_ids.world_bank`, `external_ids.iso3`, and registry `id`. It ignores World Bank aggregate regions unless they have an explicit registry record, and it never accepts Natural Earth placeholder code `-99` as an ID. Missing indicator values remain missing; they are not fabricated.
+
+`extraction_dependency_score` is a 0-100 weighted mean of clamped dependency signals. `extraction_autonomy_score` is higher where dependency is lower and manufacturing/high-tech export signals are stronger. This is a first structural component only, not a final core/periphery classification. Commodity dependence needs later BACI or UN Comtrade product-level refinement.
+
+Validate it with:
+
+```sh
+npm run validate:extraction
+```
+
+Then rebuild the structural placeholder:
+
+```sh
+npm run data:build:worldsystem:structural
+npm run validate:worldsystem:structural
+```
+
+The structural placeholder can include `components.extraction_autonomy` where WDI extraction data exists, but it remains `model_status: "not_yet_computable"` until the wider structural model is implemented and reviewed.
 
 ## UCDP Conflict Pipeline
 

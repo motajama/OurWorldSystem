@@ -19,6 +19,10 @@ const paths = {
 		repoRoot,
 		'static/data/indicators/quality-of-life.world-bank.latest.json'
 	),
+	worldBankExtraction: path.join(
+		repoRoot,
+		'static/data/indicators/extraction-dependency.world-bank.latest.json'
+	),
 	worldMap: path.join(repoRoot, 'src/lib/components/WorldMap.svelte')
 };
 
@@ -178,10 +182,14 @@ function mergeUnits(
 	registry,
 	worldSystemDemoById,
 	provisionalWorldSystemById,
-	worldBankQualityData
+	worldBankQualityData,
+	worldBankExtractionData
 ) {
 	const worldBankQualityById = new Map(
 		(worldBankQualityData?.records ?? []).map((record) => [record.id, record])
+	);
+	const worldBankExtractionById = new Map(
+		(worldBankExtractionData?.records ?? []).map((record) => [record.id, record])
 	);
 
 	return new Map(
@@ -213,18 +221,39 @@ function mergeUnits(
 					}
 				: unit;
 			const worldBankRecord = worldBankQualityById.get(record.id);
+			const extractionRecord = worldBankExtractionById.get(record.id);
+			const withExtraction = extractionRecord
+				? {
+						...worldSystemUnit,
+						exploitation_position: {
+							...worldSystemUnit.exploitation_position,
+							extraction_risk: extractionRecord.extraction_dependency_score,
+							extraction_dependency_score: extractionRecord.extraction_dependency_score,
+							extraction_autonomy_score: extractionRecord.extraction_autonomy_score,
+							extraction_values: extractionRecord.values,
+							extraction_latest_year: extractionRecord.latest_year,
+							extraction_data_quality: extractionRecord.data_quality,
+							extraction_source_country_code: extractionRecord.source_country_code,
+							notes:
+								'World Bank WDI extraction dependency/autonomy component. This is not a final world-system class.'
+						},
+						sources: [
+							...new Set([...(worldSystemUnit.sources ?? []), ...extractionRecord.sources])
+						]
+					}
+				: worldSystemUnit;
 
-			if (!worldBankRecord) return [record.id, worldSystemUnit];
+			if (!worldBankRecord) return [record.id, withExtraction];
 
 			return [
 				record.id,
 				{
-					...worldSystemUnit,
+					...withExtraction,
 					quality_of_life: {
-						...worldSystemUnit.quality_of_life,
+						...withExtraction.quality_of_life,
 						life_expectancy: worldBankRecord.values.life_expectancy
 							? { ...worldBankRecord.values.life_expectancy, source: 'World Bank WDI' }
-							: worldSystemUnit.quality_of_life.life_expectancy,
+							: withExtraction.quality_of_life.life_expectancy,
 						gni_per_capita_ppp: worldBankRecord.values.gni_per_capita_ppp
 							? { ...worldBankRecord.values.gni_per_capita_ppp, source: 'World Bank WDI' }
 							: null,
@@ -240,7 +269,7 @@ function mergeUnits(
 						quality_of_life_score: worldBankRecord.quality_of_life_score,
 						source: 'World Bank WDI'
 					},
-					sources: [...new Set([...(worldSystemUnit.sources ?? []), ...worldBankRecord.sources])]
+					sources: [...new Set([...(withExtraction.sources ?? []), ...worldBankRecord.sources])]
 				}
 			];
 		})
@@ -258,6 +287,12 @@ function getQualityOfLifeMapScore(mapUnit) {
 
 function normalizeRisk(value) {
 	if (typeof value === 'number') {
+		if (value > 1) {
+			if (value >= 65) return 'high_extraction_risk';
+			if (value >= 35) return 'medium_extraction_risk';
+			if (value >= 0) return 'low_extraction_risk';
+			return null;
+		}
 		if (value >= 0.67) return 'high_extraction_risk';
 		if (value >= 0.34) return 'medium_extraction_risk';
 		if (value >= 0) return 'low_extraction_risk';
@@ -320,6 +355,7 @@ function getMapUnitLayerValue(mapUnit, layerId) {
 		}
 		case 'exploitation':
 			return (
+				normalizeRisk(mapUnit.exploitation_position?.extraction_dependency_score) ??
 				normalizeRisk(mapUnit.exploitation_position?.extraction_risk) ??
 				normalizeRisk(mapUnit.exploitation_position?.ewaste_import_risk) ??
 				'no_data'
@@ -357,13 +393,15 @@ const registry = readJson(paths.registry);
 const worldSystem = readJson(paths.worldSystem);
 const provisionalWorldSystem = readJsonIfPresent(paths.provisionalWorldSystem);
 const worldBankQuality = readJsonIfPresent(paths.worldBankQuality);
+const worldBankExtraction = readJsonIfPresent(paths.worldBankExtraction);
 const worldSystemDemoById = normalizeWorldSystemDemoData(worldSystem);
 const provisionalWorldSystemById = normalizeProvisionalWorldSystemData(provisionalWorldSystem);
 const unitsById = mergeUnits(
 	registry,
 	worldSystemDemoById,
 	provisionalWorldSystemById,
-	worldBankQuality
+	worldBankQuality,
+	worldBankExtraction
 );
 const registryIndexes = buildRegistryIndexes(registry);
 const geoFeatures = feature(topology, getTopologyObject(topology)).features;
@@ -462,6 +500,17 @@ for (const [layerId, values] of Object.entries(layerValues)) {
 	) {
 		console.error(
 			`World-system no_data ratio ${(noDataCount / drawable.length).toFixed(3)} exceeds 40% despite provisional World Bank-derived data.`
+		);
+		failed = true;
+	}
+
+	if (
+		layerId === 'exploitation' &&
+		(worldBankExtraction?.records?.length ?? 0) > 0 &&
+		noDataCount / drawable.length > 0.4
+	) {
+		console.error(
+			`Exploitation no_data ratio ${(noDataCount / drawable.length).toFixed(3)} exceeds 40% despite World Bank extraction data.`
 		);
 		failed = true;
 	}

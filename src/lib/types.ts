@@ -136,6 +136,12 @@ export interface EcologyAssessment {
 
 export interface ExploitationPosition {
 	extraction_risk?: string | number | null;
+	extraction_dependency_score?: number | null;
+	extraction_autonomy_score?: number | null;
+	extraction_values?: Partial<Record<ExtractionDependencyValueKey, SourcedIndicatorValue>>;
+	extraction_latest_year?: number | null;
+	extraction_data_quality?: 'good' | 'partial' | 'sparse' | null;
+	extraction_source_country_code?: string | null;
 	resource_export_dependency: number | null;
 	foreign_value_added_share: number | null;
 	domestic_value_capture: number | null;
@@ -211,6 +217,45 @@ export interface WorldBankQualityOfLifeDataset {
 	retrieved_at: string;
 	records: WorldBankQualityOfLifeRecord[];
 	unmatched_source_countries: {
+		source_country_code: string;
+		source_country_name?: string | null;
+	}[];
+	latest_years?: Record<string, number | null>;
+	notes: string[];
+}
+
+export type ExtractionDependencyValueKey =
+	| 'natural_resource_rents_gdp_pct'
+	| 'fuel_exports_merchandise_pct'
+	| 'ores_metals_exports_merchandise_pct'
+	| 'agricultural_raw_exports_merchandise_pct'
+	| 'food_exports_merchandise_pct'
+	| 'manufactures_exports_merchandise_pct'
+	| 'high_tech_exports_manufactured_pct'
+	| 'medium_high_tech_exports_manufactured_pct';
+
+export interface WorldBankExtractionRecord {
+	id: MapUnitId;
+	source_country_code: string;
+	latest_year: number;
+	values: Partial<Record<ExtractionDependencyValueKey, SourcedIndicatorValue>>;
+	extraction_dependency_score: number | null;
+	extraction_autonomy_score: number | null;
+	data_quality: 'good' | 'partial' | 'sparse';
+	sources: string[];
+}
+
+export interface WorldBankExtractionDataset {
+	dataset_id: 'extraction_dependency_world_bank_latest';
+	source_id: 'world_bank_wdi_extraction';
+	model_component: 'extraction_dependency';
+	generated_at: string;
+	records: WorldBankExtractionRecord[];
+	unmatched_source_countries: {
+		source_country_code: string;
+		source_country_name?: string | null;
+	}[];
+	ignored_aggregate_regions?: {
 		source_country_code: string;
 		source_country_name?: string | null;
 	}[];

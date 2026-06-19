@@ -87,10 +87,10 @@ export const MAP_LAYERS: MapLayerDefinition[] = [
 	},
 	{
 		id: 'exploitation',
-		label: 'Extraction / externalization',
+		label: 'Extraction dependency',
 		shortLabel: 'Extraction',
 		description:
-			'Demo extraction-risk layer using explicit mock risk fields when present; otherwise no data.',
+			'Extraction dependency bins from World Bank WDI resource-rent and export-structure indicators when present, falling back to explicit demo risk fields.',
 		kind: 'categorical',
 		noDataLabel: 'No extraction data'
 	},
@@ -246,25 +246,25 @@ const LEGEND_ITEMS: Record<MapLayerId, Omit<MapLayerLegendItem, 'fillClass'>[]> 
 		{
 			value: 'high_extraction_risk',
 			label: 'High extraction risk',
-			description: 'Explicit mock risk is high',
+			description: 'Extraction dependency score 65 or higher',
 			color: '#9a3412'
 		},
 		{
 			value: 'medium_extraction_risk',
 			label: 'Medium extraction risk',
-			description: 'Explicit mock risk is medium',
+			description: 'Extraction dependency score 35 to below 65',
 			color: '#ca8a04'
 		},
 		{
 			value: 'low_extraction_risk',
 			label: 'Low extraction risk',
-			description: 'Explicit mock risk is low',
+			description: 'Extraction dependency score below 35',
 			color: '#0f766e'
 		},
 		{
 			value: 'no_data',
 			label: 'No data',
-			description: 'No explicit extraction-risk field',
+			description: 'No extraction dependency score',
 			color: '#64748b'
 		}
 	],
@@ -295,6 +295,12 @@ function getQualityOfLifeMapScore(mapUnit: MapUnit): number | null {
 
 function normalizeRisk(value: string | number | null | undefined): MapLayerValue | null {
 	if (typeof value === 'number') {
+		if (value > 1) {
+			if (value >= 65) return 'high_extraction_risk';
+			if (value >= 35) return 'medium_extraction_risk';
+			if (value >= 0) return 'low_extraction_risk';
+			return null;
+		}
 		if (value >= 0.67) return 'high_extraction_risk';
 		if (value >= 0.34) return 'medium_extraction_risk';
 		if (value >= 0) return 'low_extraction_risk';
@@ -379,6 +385,7 @@ export function getMapUnitLayerValue(mapUnit: MapUnit | null, layerId: MapLayerI
 		}
 		case 'exploitation': {
 			const risk =
+				normalizeRisk(mapUnit.exploitation_position?.extraction_dependency_score) ??
 				normalizeRisk(mapUnit.exploitation_position?.extraction_risk) ??
 				normalizeRisk(mapUnit.exploitation_position?.ewaste_import_risk);
 

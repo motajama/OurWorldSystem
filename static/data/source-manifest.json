@@ -11,6 +11,17 @@
 			"provenance_required": true
 		},
 		{
+			"id": "world_bank_wdi_extraction",
+			"title": "World Bank WDI extraction and export-structure indicators",
+			"publisher": "World Bank",
+			"type": "api",
+			"url": "https://api.worldbank.org/v2/",
+			"license_note": "World Bank Open Data is generally available under CC BY 4.0; verify indicator-specific terms before redistribution.",
+			"retrieval_method": "scripts/data/fetch-world-bank-extraction.mjs",
+			"provenance_required": true,
+			"methodological_note": "Used to estimate extraction dependency/autonomy from resource rents and export composition; not sufficient alone for world-system class."
+		},
+		{
 			"id": "ucdp_country_year",
 			"title": "UCDP Country-Year Dataset on Organized Violence within Country Borders",
 			"publisher": "Uppsala Conflict Data Program",
