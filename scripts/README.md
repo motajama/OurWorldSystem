@@ -2,6 +2,40 @@
 
 The first scaffold has a geometry pipeline, checked-in mock indicator JSON under `static/data/`, an initial World Bank WDI quality-of-life pipeline, and a first UCDP conflict pipeline.
 
+## CI Commands
+
+GitHub Actions runs the local, deterministic static build path:
+
+```sh
+npm ci
+npm run geo:build
+npm run validate:data
+npm run check
+npm run build
+```
+
+`npm run health:data` is useful before CI because it prints whether required assets exist and reports record counts, but CI keeps `validate:data` as the hard gate.
+
+Required files:
+
+- `static/geo/world.topojson`
+- `static/data/map-units.registry.json`
+- `static/data/world-system.latest.json`
+- `static/data/source-manifest.json`
+
+Optional indicator files under `static/data/indicators/` are validated only when present. Missing UCDP output must not fail CI.
+
+Current data generation scripts are split by source stability:
+
+```sh
+npm run data:build:required
+npm run data:build:optional
+```
+
+`data:build:required` runs the World Bank WDI pipeline. `data:build` is an alias for this required pipeline.
+
+`data:build:optional` runs the UCDP conflict pipeline. Run it when network access and UCDP source availability allow.
+
 ## Registry Validation
 
 Run:
@@ -11,6 +45,12 @@ npm run validate:data
 ```
 
 This checks `static/data/map-units.registry.json`, `static/data/world-system.latest.json`, and the optional World Bank quality-of-life and UCDP conflict outputs when present.
+
+For a concise inventory, run:
+
+```sh
+npm run health:data
+```
 
 The map-unit registry exists because geometry source properties are not stable application identities. Natural Earth provides geometry and helpful aliases, but codes such as `ISO_A3` or `ADM0_A3` can be `-99`, and `-99` is not unique. The validation script rejects `-99` as a registry or mock indicator ID and rejects Natural Earth alias arrays that contain only `-99`.
 

@@ -11,6 +11,7 @@
 		"data:fetch:worldbank": "node scripts/data/fetch-world-bank-wdi.mjs",
 		"data:fetch:ucdp": "node scripts/data/fetch-ucdp-conflicts.mjs",
 		"data:build": "npm run data:fetch:worldbank && npm run data:fetch:ucdp",
+		"health:data": "node scripts/validate/data-healthcheck.mjs",
 		"validate:data": "node scripts/validate/validate-map-units.mjs && node scripts/validate/validate-indicators.mjs && node scripts/validate/validate-conflict-indicators.mjs",
 		"prepare": "svelte-kit sync || echo ''",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",

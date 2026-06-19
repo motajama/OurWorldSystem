@@ -14,6 +14,31 @@
 		WorldBankQualityOfLifeDataset
 	} from '$lib/types';
 
+	type OptionalIndicatorIndexEntry = {
+		id: string;
+		path: string;
+		required: boolean;
+		source_ids: string[];
+		description: string;
+	};
+
+	const fallbackOptionalIndicators: OptionalIndicatorIndexEntry[] = [
+		{
+			id: 'quality_of_life_world_bank_latest',
+			path: '/data/indicators/quality-of-life.world-bank.latest.json',
+			required: false,
+			source_ids: ['world_bank_wdi'],
+			description: 'Optional World Bank WDI quality-of-life indicators.'
+		},
+		{
+			id: 'conflict_ucdp_latest',
+			path: '/data/indicators/conflict.ucdp.latest.json',
+			required: false,
+			source_ids: ['ucdp_country_year', 'ucdp_prio_armed_conflict'],
+			description: 'Optional UCDP conflict indicators.'
+		}
+	];
+
 	let units = $state<MapUnit[]>([]);
 	let selectedId = $state<string | null>(null);
 	let selectedUnit = $state<MapUnit | null>(null);
@@ -30,8 +55,37 @@
 		selectedLayer = layerId;
 	}
 
-	async function loadOptionalWorldBankQualityOfLife() {
-		const response = await fetch(`${base}/data/indicators/quality-of-life.world-bank.latest.json`);
+	function staticUrl(path: string) {
+		return `${base}${path.startsWith('/') ? path : `/${path}`}`;
+	}
+
+	async function loadOptionalIndicatorIndex() {
+		try {
+			const response = await fetch(`${base}/data/indicators/index.json`);
+
+			if (!response.ok) return fallbackOptionalIndicators;
+
+			const index = (await response.json()) as OptionalIndicatorIndexEntry[];
+			if (!Array.isArray(index)) return fallbackOptionalIndicators;
+
+			return index;
+		} catch {
+			return fallbackOptionalIndicators;
+		}
+	}
+
+	function optionalIndicatorPath(index: OptionalIndicatorIndexEntry[], id: string) {
+		const fallback = fallbackOptionalIndicators.find((indicator) => indicator.id === id);
+		const indexed = index.find((indicator) => indicator.id === id);
+
+		return indexed?.path ?? fallback?.path ?? null;
+	}
+
+	async function loadOptionalWorldBankQualityOfLife(index: OptionalIndicatorIndexEntry[]) {
+		const path = optionalIndicatorPath(index, 'quality_of_life_world_bank_latest');
+		if (!path) return null;
+
+		const response = await fetch(staticUrl(path));
 
 		if (!response.ok) {
 			if (response.status === 404) return null;
@@ -41,8 +95,11 @@
 		return (await response.json()) as WorldBankQualityOfLifeDataset;
 	}
 
-	async function loadOptionalUcdpConflicts() {
-		const response = await fetch(`${base}/data/indicators/conflict.ucdp.latest.json`);
+	async function loadOptionalUcdpConflicts(index: OptionalIndicatorIndexEntry[]) {
+		const path = optionalIndicatorPath(index, 'conflict_ucdp_latest');
+		if (!path) return null;
+
+		const response = await fetch(staticUrl(path));
 
 		if (!response.ok) {
 			if (response.status === 404) return null;
@@ -142,10 +199,13 @@
 
 	onMount(async () => {
 		try {
-			const [response, worldBankData, ucdpData] = await Promise.all([
+			const [response, indicatorIndex] = await Promise.all([
 				fetch(`${base}/data/world-system.latest.json`),
-				loadOptionalWorldBankQualityOfLife(),
-				loadOptionalUcdpConflicts()
+				loadOptionalIndicatorIndex()
+			]);
+			const [worldBankData, ucdpData] = await Promise.all([
+				loadOptionalWorldBankQualityOfLife(indicatorIndex),
+				loadOptionalUcdpConflicts(indicatorIndex)
 			]);
 
 			if (!response.ok) {
