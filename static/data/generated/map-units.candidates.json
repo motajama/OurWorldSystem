@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-06-19T13:17:10.283Z",
+    "generated_at": "2026-06-19T13:30:43.901Z",
     "generated_from": "natural_earth",
     "authoritative": false,
     "notes": [
@@ -37,7 +37,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::TZA::TZA::TANZANIA::1",
@@ -66,7 +66,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::SAH::ESH::WESTERN_SAHARA::2",
@@ -95,7 +95,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::KAZ::KAZ::KAZAKHSTAN::5",
@@ -124,7 +124,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::UZB::UZB::UZBEKISTAN::6",
@@ -153,7 +153,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::PNG::PNG::PAPUA_NEW_GUINEA::7",
@@ -182,7 +182,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::IDN::IDN::INDONESIA::8",
@@ -211,7 +211,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::ARG::ARG::ARGENTINA::9",
@@ -240,7 +240,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::CHL::CHL::CHILE::10",
@@ -269,7 +269,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::SOM::SOM::SOMALIA::12",
@@ -298,7 +298,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::KEN::KEN::KENYA::13",
@@ -327,7 +327,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::SDN::SDN::SUDAN::14",
@@ -356,7 +356,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::TCD::TCD::CHAD::15",
@@ -385,7 +385,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::HTI::HTI::HAITI::16",
@@ -414,7 +414,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::DOM::DOM::DOMINICAN_REPUBLIC::17",
@@ -443,7 +443,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::BHS::BHS::BAHAMAS::19",
@@ -472,7 +472,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::NOR::NORWAY::21",
@@ -501,7 +501,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::GRL::GRL::GREENLAND::22",
@@ -530,7 +530,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::TLS::TLS::TIMOR_LESTE::24",
@@ -559,7 +559,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::LSO::LSO::LESOTHO::26",
@@ -588,7 +588,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::URY::URY::URUGUAY::28",
@@ -617,7 +617,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::BOL::BOL::BOLIVIA::30",
@@ -646,7 +646,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::PER::PER::PERU::31",
@@ -675,7 +675,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::COL::COL::COLOMBIA::32",
@@ -704,7 +704,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::PAN::PAN::PANAMA::33",
@@ -733,7 +733,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::CRI::CRI::COSTA_RICA::34",
@@ -762,7 +762,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::NIC::NIC::NICARAGUA::35",
@@ -791,7 +791,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::HND::HND::HONDURAS::36",
@@ -820,7 +820,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::SLV::SLV::EL_SALVADOR::37",
@@ -849,7 +849,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::GTM::GTM::GUATEMALA::38",
@@ -878,7 +878,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::BLZ::BLZ::BELIZE::39",
@@ -907,7 +907,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::VEN::VEN::VENEZUELA::40",
@@ -936,7 +936,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::GUY::GUY::GUYANA::41",
@@ -965,7 +965,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::SUR::SUR::SURINAME::42",
@@ -994,7 +994,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::ECU::ECU::ECUADOR::44",
@@ -1023,7 +1023,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::JAM::JAM::JAMAICA::46",
@@ -1052,7 +1052,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::CUB::CUB::CUBA::47",
@@ -1081,7 +1081,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::ZWE::ZWE::ZIMBABWE::48",
@@ -1110,7 +1110,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::BWA::BWA::BOTSWANA::49",
@@ -1139,7 +1139,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::NAM::NAM::NAMIBIA::50",
@@ -1168,7 +1168,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::SEN::SEN::SENEGAL::51",
@@ -1197,7 +1197,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::MLI::MLI::MALI::52",
@@ -1226,7 +1226,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::MRT::MRT::MAURITANIA::53",
@@ -1255,7 +1255,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::BEN::BEN::BENIN::54",
@@ -1284,7 +1284,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::NER::NER::NIGER::55",
@@ -1313,7 +1313,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::NGA::NGA::NIGERIA::56",
@@ -1342,7 +1342,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::CMR::CMR::CAMEROON::57",
@@ -1371,7 +1371,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::TGO::TGO::TOGO::58",
@@ -1400,7 +1400,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::GHA::GHA::GHANA::59",
@@ -1429,7 +1429,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::CIV::CIV::COTE_D_IVOIRE::60",
@@ -1458,7 +1458,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::GIN::GIN::GUINEA::61",
@@ -1487,7 +1487,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::GNB::GNB::GUINEA_BISSAU::62",
@@ -1516,7 +1516,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::LBR::LBR::LIBERIA::63",
@@ -1545,7 +1545,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::SLE::SLE::SIERRA_LEONE::64",
@@ -1574,7 +1574,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::BFA::BFA::BURKINA_FASO::65",
@@ -1603,7 +1603,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::CAF::CAF::CENTRAL_AFRICAN_REPUBLIC::66",
@@ -1632,7 +1632,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::COG::COG::REPUBLIC_OF_THE_CONGO::67",
@@ -1661,7 +1661,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::GAB::GAB::GABON::68",
@@ -1690,7 +1690,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::GNQ::GNQ::EQUATORIAL_GUINEA::69",
@@ -1719,7 +1719,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::ZMB::ZMB::ZAMBIA::70",
@@ -1748,7 +1748,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::MWI::MWI::MALAWI::71",
@@ -1777,7 +1777,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::MOZ::MOZ::MOZAMBIQUE::72",
@@ -1806,7 +1806,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::SWZ::SWZ::KINGDOM_OF_ESWATINI::73",
@@ -1835,7 +1835,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::AGO::AGO::ANGOLA::74",
@@ -1864,7 +1864,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::BDI::BDI::BURUNDI::75",
@@ -1893,7 +1893,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::LBN::LBN::LEBANON::77",
@@ -1922,7 +1922,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::MDG::MDG::MADAGASCAR::78",
@@ -1951,7 +1951,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::GMB::GMB::THE_GAMBIA::80",
@@ -1980,7 +1980,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::TUN::TUN::TUNISIA::81",
@@ -2009,7 +2009,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::DZA::DZA::ALGERIA::82",
@@ -2038,7 +2038,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::JOR::JOR::JORDAN::83",
@@ -2067,7 +2067,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::ARE::ARE::UNITED_ARAB_EMIRATES::84",
@@ -2096,7 +2096,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::QAT::QAT::QATAR::85",
@@ -2125,7 +2125,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::KWT::KWT::KUWAIT::86",
@@ -2154,7 +2154,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::IRQ::IRQ::IRAQ::87",
@@ -2183,7 +2183,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::OMN::OMN::OMAN::88",
@@ -2212,7 +2212,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::VUT::VUT::VANUATU::89",
@@ -2241,7 +2241,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::KHM::KHM::CAMBODIA::90",
@@ -2270,7 +2270,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::THA::THA::THAILAND::91",
@@ -2299,7 +2299,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::LAO::LAO::LAO_PDR::92",
@@ -2328,7 +2328,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::MMR::MMR::MYANMAR::93",
@@ -2357,7 +2357,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::MNG::MNG::MONGOLIA::97",
@@ -2386,7 +2386,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::BGD::BGD::BANGLADESH::99",
@@ -2415,7 +2415,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::BTN::BTN::BHUTAN::100",
@@ -2444,7 +2444,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::NPL::NPL::NEPAL::101",
@@ -2473,7 +2473,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::PAK::PAK::PAKISTAN::102",
@@ -2502,7 +2502,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::AFG::AFG::AFGHANISTAN::103",
@@ -2531,7 +2531,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::TJK::TJK::TAJIKISTAN::104",
@@ -2560,7 +2560,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::KGZ::KGZ::KYRGYZSTAN::105",
@@ -2589,7 +2589,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::TKM::TKM::TURKMENISTAN::106",
@@ -2618,7 +2618,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::SYR::SYR::SYRIA::108",
@@ -2647,7 +2647,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::ARM::ARM::ARMENIA::109",
@@ -2676,7 +2676,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::SWE::SWE::SWEDEN::110",
@@ -2705,7 +2705,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::BLR::BLR::BELARUS::111",
@@ -2734,7 +2734,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::POL::POL::POLAND::113",
@@ -2763,7 +2763,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::AUT::AUT::AUSTRIA::114",
@@ -2792,7 +2792,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::HUN::HUN::HUNGARY::115",
@@ -2821,7 +2821,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::MDA::MDA::MOLDOVA::116",
@@ -2850,7 +2850,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::ROU::ROU::ROMANIA::117",
@@ -2879,7 +2879,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::LTU::LTU::LITHUANIA::118",
@@ -2908,7 +2908,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::LVA::LVA::LATVIA::119",
@@ -2937,7 +2937,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::EST::EST::ESTONIA::120",
@@ -2966,7 +2966,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::BGR::BGR::BULGARIA::122",
@@ -2995,7 +2995,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::GRC::GRC::GREECE::123",
@@ -3024,7 +3024,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::ALB::ALB::ALBANIA::125",
@@ -3053,7 +3053,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::HRV::HRV::CROATIA::126",
@@ -3082,7 +3082,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::CHE::CHE::SWITZERLAND::127",
@@ -3111,7 +3111,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::LUX::LUX::LUXEMBOURG::128",
@@ -3140,7 +3140,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::BEL::BEL::BELGIUM::129",
@@ -3169,7 +3169,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::NLD::NLD::NETHERLANDS::130",
@@ -3198,7 +3198,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::PRT::PRT::PORTUGAL::131",
@@ -3227,7 +3227,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::ESP::ESP::SPAIN::132",
@@ -3256,7 +3256,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::IRL::IRL::IRELAND::133",
@@ -3285,7 +3285,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::SLB::SLB::SOLOMON_ISLANDS::135",
@@ -3314,7 +3314,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::NZL::NZL::NEW_ZEALAND::136",
@@ -3343,7 +3343,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::LKA::LKA::SRI_LANKA::138",
@@ -3372,7 +3372,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::ITA::ITA::ITALY::141",
@@ -3401,7 +3401,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::DNK::DNK::DENMARK::142",
@@ -3430,7 +3430,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::ISL::ISL::ICELAND::144",
@@ -3459,7 +3459,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::AZE::AZE::AZERBAIJAN::145",
@@ -3488,7 +3488,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::GEO::GEO::GEORGIA::146",
@@ -3517,7 +3517,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::PHL::PHL::PHILIPPINES::147",
@@ -3546,7 +3546,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::MYS::MYS::MALAYSIA::148",
@@ -3575,7 +3575,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::BRN::BRN::BRUNEI_DARUSSALAM::149",
@@ -3604,7 +3604,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::SVN::SVN::SLOVENIA::150",
@@ -3633,7 +3633,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::FIN::FIN::FINLAND::151",
@@ -3662,7 +3662,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::SVK::SVK::SLOVAKIA::152",
@@ -3691,7 +3691,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::ERI::ERI::ERITREA::154",
@@ -3720,7 +3720,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::PRY::PRY::PARAGUAY::156",
@@ -3749,7 +3749,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::YEM::YEM::YEMEN::157",
@@ -3778,7 +3778,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::ATA::ATA::ANTARCTICA::159",
@@ -3807,7 +3807,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::CYN::NORTHERN_CYPRUS::160",
@@ -3836,7 +3836,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::CYP::CYP::CYPRUS::161",
@@ -3865,7 +3865,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::MAR::MAR::MOROCCO::162",
@@ -3894,7 +3894,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::EGY::EGY::EGYPT::163",
@@ -3923,7 +3923,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::LBY::LBY::LIBYA::164",
@@ -3952,7 +3952,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::ETH::ETH::ETHIOPIA::165",
@@ -3981,7 +3981,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::DJI::DJI::DJIBOUTI::166",
@@ -4010,7 +4010,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::SOL::SOMALILAND::167",
@@ -4039,7 +4039,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::UGA::UGA::UGANDA::168",
@@ -4068,7 +4068,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::RWA::RWA::RWANDA::169",
@@ -4097,7 +4097,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::BIH::BIH::BOSNIA_AND_HERZEGOVINA::170",
@@ -4126,7 +4126,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::MKD::MKD::NORTH_MACEDONIA::171",
@@ -4155,7 +4155,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::SRB::SRB::SERBIA::172",
@@ -4184,7 +4184,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::MNE::MNE::MONTENEGRO::173",
@@ -4213,7 +4213,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::TTO::TTO::TRINIDAD_AND_TOBAGO::175",
@@ -4242,7 +4242,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE::SDS::SSD::SOUTH_SUDAN::176",
@@ -4271,7 +4271,7 @@
       "reason": "Natural Earth base feature does not match the authoritative map-unit registry.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE_DISPUTED::PAK::PAKISTAN::8",
@@ -4301,7 +4301,7 @@
       "reason": "Natural Earth disputed overlay feature does not match a disputed or special registry record.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE_DISPUTED::SDN::SUDAN::9",
@@ -4331,7 +4331,7 @@
       "reason": "Natural Earth disputed overlay feature does not match a disputed or special registry record.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE_DISPUTED::GUY::GUYANA::11",
@@ -4361,7 +4361,7 @@
       "reason": "Natural Earth disputed overlay feature does not match a disputed or special registry record.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE_DISPUTED::KEN::KENYA::13",
@@ -4391,7 +4391,7 @@
       "reason": "Natural Earth disputed overlay feature does not match a disputed or special registry record.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE_DISPUTED::MAR::MOROCCO::14",
@@ -4421,7 +4421,7 @@
       "reason": "Natural Earth disputed overlay feature does not match a disputed or special registry record.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE_DISPUTED::CYN::NORTHERN_CYPRUS::15",
@@ -4451,7 +4451,7 @@
       "reason": "Natural Earth disputed overlay feature does not match a disputed or special registry record.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE_DISPUTED::SOL::SOMALILAND::17",
@@ -4481,7 +4481,7 @@
       "reason": "Natural Earth disputed overlay feature does not match a disputed or special registry record.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE_DISPUTED::B35::GEORGIA::18",
@@ -4511,7 +4511,7 @@
       "reason": "Natural Earth disputed overlay feature does not match a disputed or special registry record.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE_DISPUTED::MDA::MOLDOVA::19",
@@ -4541,7 +4541,7 @@
       "reason": "Natural Earth disputed overlay feature does not match a disputed or special registry record.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE_DISPUTED::B37::GEORGIA::20",
@@ -4571,7 +4571,7 @@
       "reason": "Natural Earth disputed overlay feature does not match a disputed or special registry record.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE_DISPUTED::AZE::AZERBAIJAN::21",
@@ -4601,7 +4601,7 @@
       "reason": "Natural Earth disputed overlay feature does not match a disputed or special registry record.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE_DISPUTED::KAS::SIACHEN_GLACIER::22",
@@ -4631,7 +4631,7 @@
       "reason": "Natural Earth disputed overlay feature does not match a disputed or special registry record.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     },
     {
       "candidate_id": "NE_DISPUTED::MYS::MALAYSIA::27",
@@ -4661,7 +4661,7 @@
       "reason": "Natural Earth disputed overlay feature does not match a disputed or special registry record.",
       "needs_review": true,
       "generated_from": "natural_earth",
-      "generated_at": "2026-06-19T13:17:10.283Z"
+      "generated_at": "2026-06-19T13:30:43.901Z"
     }
   ]
 }
