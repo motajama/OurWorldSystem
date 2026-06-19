@@ -5,6 +5,7 @@
 	import LayerSelector from '$lib/components/LayerSelector.svelte';
 	import Legend from '$lib/components/Legend.svelte';
 	import WorldMap from '$lib/components/WorldMap.svelte';
+	import { normalizeWorldSystemDemoData } from '$lib/dataNormalization';
 	import { DEFAULT_MAP_LAYER_ID } from '$lib/mapLayers';
 	import { loadMapUnitRegistry } from '$lib/mapUnitRegistry';
 	import type {
@@ -45,6 +46,11 @@
 	];
 
 	let units = $state<MapUnit[]>([]);
+	let registry = $state<MapUnitRegistryRecord[]>([]);
+	let worldSystemDemoById = $state<Map<string, MapUnit>>(new Map());
+	let worldBankQualityById = $state<Map<string, WorldBankQualityOfLifeDataset['records'][number]>>(
+		new Map()
+	);
 	let selectedId = $state<string | null>(null);
 	let selectedUnit = $state<MapUnit | null>(null);
 	let selectedLayer = $state<MapLayerId>(DEFAULT_MAP_LAYER_ID);
@@ -141,16 +147,15 @@
 
 	function mergeRegistryAndWorldSystemDemo(
 		registry: MapUnitRegistryRecord[],
-		worldSystemData: DataEnvelope
+		worldSystemDemoData: Map<string, MapUnit>
 	) {
 		const registryById = new Map(registry.map((record) => [record.id, record]));
-		const demoUnitsById = new Map(worldSystemData.map_units.map((unit) => [unit.id, unit]));
 		const registryUnits = registry.map((record) => {
-			const demoUnit = demoUnitsById.get(record.id);
+			const demoUnit = worldSystemDemoData.get(record.id);
 
 			return demoUnit ? applyRegistryMetadata(demoUnit, record) : createRegistryNoDataUnit(record);
 		});
-		const demoUnitsWithoutRegistryRecord = worldSystemData.map_units.filter(
+		const demoUnitsWithoutRegistryRecord = [...worldSystemDemoData.values()].filter(
 			(unit) => !registryById.has(unit.id)
 		);
 
@@ -302,7 +307,7 @@
 
 	onMount(async () => {
 		try {
-			const [response, registry, indicatorIndex] = await Promise.all([
+			const [response, loadedRegistry, indicatorIndex] = await Promise.all([
 				fetch(`${base}/data/world-system.latest.json`),
 				loadMapUnitRegistry(base),
 				loadOptionalIndicatorIndex()
@@ -317,11 +322,21 @@
 			}
 
 			const data = (await response.json()) as DataEnvelope;
-			const registryBackedUnits = mergeRegistryAndWorldSystemDemo(registry, data);
+			const normalizedWorldSystemDemoData = normalizeWorldSystemDemoData(data);
+			const normalizedWorldBankQualityData = new Map(
+				(worldBankData?.records ?? []).map((record) => [record.id, record])
+			);
+			const registryBackedUnits = mergeRegistryAndWorldSystemDemo(
+				loadedRegistry,
+				normalizedWorldSystemDemoData
+			);
 			const mergedUnits = mergeUcdpConflicts(
 				mergeWorldBankQualityOfLife(registryBackedUnits, worldBankData),
 				ucdpData
 			);
+			registry = loadedRegistry;
+			worldSystemDemoById = normalizedWorldSystemDemoData;
+			worldBankQualityById = normalizedWorldBankQualityData;
 			units = mergedUnits;
 			selectedId = mergedUnits[0]?.id ?? null;
 			selectedUnit = mergedUnits[0] ?? null;
@@ -351,7 +366,15 @@
 			{:else if error}
 				<div class="state-message error">{error}</div>
 			{:else}
-				<WorldMap {units} {selectedId} {selectedLayer} onSelect={selectUnit} />
+				<WorldMap
+					{units}
+					{registry}
+					{worldSystemDemoById}
+					{worldBankQualityById}
+					{selectedId}
+					{selectedLayer}
+					onSelect={selectUnit}
+				/>
 			{/if}
 		</div>
 
