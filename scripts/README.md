@@ -162,18 +162,22 @@ Inputs:
 
 - `static/data/map-units.registry.json`
 - `static/data/indicators/quality-of-life.world-bank.latest.json`
+- `static/data/indicators/extraction-dependency.world-bank.latest.json`
+- `static/data/indicators/productive-complexity.latest.json`
 - `static/data/world-system.latest.json`
 
-The output is a provisional, derived, experimental proxy for the default `world_system` layer. It is not a final Wallersteinian classification. The builder preserves existing demo records as `source: "demo_curated"` and derives other records from World Bank WDI quality-of-life data as `source: "derived_world_bank_quality_proxy"`.
+The output is a conservative provisional proxy for the default `world_system` layer. It is not a final Wallersteinian classification. The builder preserves existing demo records as `source: "demo_curated"` and derives other records from available welfare and structural component data.
 
-The provisional score is 0-100. It starts from the World Bank-derived `quality_of_life_score` and applies a small normalized log-income adjustment when GNI per capita PPP is available. Current temporary bins are:
+The previous quality-of-life/GNI-heavy provisional rule overproduced `core`. The conservative rule treats quality of life as a welfare proxy, not structural world-system position:
 
-- `core`: score >= 78
-- `semi-periphery`: score >= 55 and < 78
-- `periphery`: score < 55
-- `uncertain`: insufficient or contradictory signals
+- `core`: requires `quality_of_life_score >= 0.88`, no extraction-dependency block, and at least two structural supports such as `extraction_autonomy_score >= 75`, `extraction_dependency_score <= 20`, `productive_complexity_score >= 70`, or curated/demo core review.
+- `semi-periphery`: absorbs mixed or structurally unconfirmed cases, including many high-development map units with incomplete value-chain evidence.
+- `periphery`: low welfare proxy, high extraction dependency, or low extraction autonomy unless other structural evidence suggests semi-periphery.
+- `uncertain`: insufficient or contradictory signals, including high welfare with high resource dependence or special/territory comparability problems.
 - `disputed`: disputed map units without stable comparable data
 - `no_data`: missing values
+
+`semi-periphery` is not a residual middle-income category. It is a mixed structural position with both core-like and periphery-like processes. Future data needed for a stronger model includes OECD TiVA/GVC value capture, Atlas/BACI/Comtrade productive complexity and trade structure, extraction dependency, UNEP material footprints, finance/geopolitical power, and ecological externalization.
 
 Validate it with:
 
@@ -181,7 +185,9 @@ Validate it with:
 npm run validate:worldsystem
 ```
 
-The validator checks schema, registry IDs, uniqueness, classes, score ranges, confidence, source, review status, class distribution, and no-data coverage against available World Bank records.
+The validator checks schema, registry IDs, uniqueness, classes, score ranges, confidence, source, review status, model status, class distribution, no-data coverage against available World Bank records, and the conservative core rules. A quality-only source cannot be `core`, and non-demo `core` records must include at least two structural support reasons.
+
+The builder also prints diagnostics: total records, class distribution, records downgraded from previous proxy core, top core candidates with components, and top downgraded high-quality records with reasons.
 
 Future versions should replace this proxy with a documented structural model that includes OECD TiVA, trade/value-chain data, material footprint, e-waste, ecological externalization, military/geopolitical position, financial centrality, conflict exposure, and political-freedom indicators.
 

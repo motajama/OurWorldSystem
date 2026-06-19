@@ -46,7 +46,7 @@ export const MAP_LAYERS: MapLayerDefinition[] = [
 		label: 'World-system position',
 		shortLabel: 'Position',
 		description:
-			'Provisional world-system proxy preserving demo classes and deriving broader coverage from World Bank quality-of-life data.',
+			'Provisional conservative proxy; structural model in progress.',
 		kind: 'categorical',
 		noDataLabel: 'No model output'
 	},
@@ -111,19 +111,19 @@ const LEGEND_ITEMS: Record<MapLayerId, Omit<MapLayerLegendItem, 'fillClass'>[]> 
 		{
 			value: 'core',
 			label: 'Core',
-			description: 'High provisional proxy score; needs structural review',
+			description: 'Conservative provisional class with structural supports; needs review',
 			color: '#5eead4'
 		},
 		{
 			value: 'semi-periphery',
 			label: 'Semi-periphery',
-			description: 'Middle provisional proxy score; needs structural review',
+			description: 'Mixed or core-like but structurally unconfirmed position',
 			color: '#facc15'
 		},
 		{
 			value: 'periphery',
 			label: 'Periphery',
-			description: 'Lower provisional proxy score; needs structural review',
+			description: 'Lower welfare or extraction-dependency signal; needs review',
 			color: '#fb923c'
 		},
 		{

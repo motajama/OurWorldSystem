@@ -26,7 +26,11 @@ const validClasses = new Set([
 	'no_data'
 ]);
 const validConfidence = new Set(['low', 'medium']);
-const validSources = new Set(['derived_world_bank_quality_proxy', 'demo_curated']);
+const validSources = new Set([
+	'derived_world_bank_quality_proxy',
+	'derived_conservative_structural_proxy',
+	'demo_curated'
+]);
 
 async function readJson(filePath) {
 	const text = await readFile(filePath, 'utf8');
@@ -76,8 +80,8 @@ if (data?.dataset_id !== 'world_system_provisional_latest') {
 	errors.push('dataset_id must be world_system_provisional_latest.');
 }
 
-if (data?.model_status !== 'provisional') {
-	errors.push('model_status must be provisional.');
+if (typeof data?.model_status !== 'string' || !data.model_status.includes('provisional')) {
+	errors.push('model_status must be a string containing provisional.');
 }
 
 if (!Array.isArray(data?.records)) {
@@ -133,6 +137,31 @@ if (!Array.isArray(data?.records)) {
 			errors.push(`${label}: source must be present and valid.`);
 		}
 
+		if (!isObject(record.components)) {
+			errors.push(`${label}: components must be present.`);
+			continue;
+		}
+
+		const structuralSupports = Array.isArray(record.components.structural_supports)
+			? record.components.structural_supports
+			: [];
+		const onlyQualityProxy = record.world_system.source === 'derived_world_bank_quality_proxy';
+		const curatedOrDemo = record.world_system.source === 'demo_curated';
+
+		if (onlyQualityProxy && classValue === 'core') {
+			errors.push(`${label}: quality-only proxy records must not be core.`);
+		}
+
+		if (classValue === 'core' && !curatedOrDemo && structuralSupports.length < 2) {
+			errors.push(
+				`${label}: core records must include at least two structural support reasons or be demo_curated.`
+			);
+		}
+
+		if (classValue === 'core' && record.world_system.confidence === 'medium' && structuralSupports.length < 2) {
+			errors.push(`${label}: medium-confidence core requires at least two structural supports.`);
+		}
+
 		if (
 			typeof record.world_system.explanation !== 'string' ||
 			record.world_system.explanation.trim().length === 0
@@ -160,6 +189,24 @@ console.log(`World Bank comparable ids: ${comparableCount}`);
 console.log(`Class distribution: ${JSON.stringify(distribution, null, 2)}`);
 console.log(
 	`no_data among World Bank comparable ids: ${noDataWithWorldBankData}/${comparableCount}`
+);
+console.log(`Model status: ${data?.model_status ?? 'missing'}`);
+console.log(
+	`Downgraded/core candidate diagnostics: ${JSON.stringify(
+		{
+			previous_proxy_core_count: data?.diagnostics?.previous_proxy_core_count ?? null,
+			downgraded_from_previous_proxy_core_count:
+				data?.diagnostics?.downgraded_from_previous_proxy_core_count ?? null,
+			core_candidate_count: Array.isArray(data?.diagnostics?.core_candidates)
+				? data.diagnostics.core_candidates.length
+				: null,
+			downgraded_high_quality_count: Array.isArray(data?.diagnostics?.downgraded_high_quality)
+				? data.diagnostics.downgraded_high_quality.length
+				: null
+		},
+		null,
+		2
+	)}`
 );
 
 if (comparableCount > 0 && noDataComparableRatio > 0.4) {

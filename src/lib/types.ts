@@ -86,7 +86,7 @@ export interface WorldSystemAssessment {
 	score: number | null;
 	confidence: Confidence;
 	source?: 'derived_world_bank_quality_proxy' | 'demo_curated' | string;
-	model_status?: 'provisional' | string;
+	model_status?: 'provisional' | 'provisional_conservative_proxy' | string;
 	explanation: string;
 }
 
@@ -269,7 +269,10 @@ export interface ProvisionalWorldSystemRecord {
 		class: WorldSystemClass;
 		score: number | null;
 		confidence: 'low' | 'medium';
-		source: 'derived_world_bank_quality_proxy' | 'demo_curated';
+		source:
+			| 'derived_world_bank_quality_proxy'
+			| 'derived_conservative_structural_proxy'
+			| 'demo_curated';
 		explanation: string;
 	};
 	components: {
@@ -277,17 +280,32 @@ export interface ProvisionalWorldSystemRecord {
 		gni_per_capita_ppp: number | null;
 		life_expectancy: number | null;
 		secondary_enrollment_gross: number | null;
+		extraction_dependency_score?: number | null;
+		extraction_autonomy_score?: number | null;
+		productive_complexity_score?: number | null;
+		structural_supports?: string[];
+		previous_proxy_class?: WorldSystemClass;
+		downgraded_from_previous_proxy_core?: boolean;
+		classification_reason?: string;
 	};
 	review_status: 'needs_review' | string;
 }
 
 export interface ProvisionalWorldSystemDataset {
 	dataset_id: 'world_system_provisional_latest';
-	source_ids: ['world_bank_wdi', 'mock_demo_data'];
-	model_status: 'provisional';
+	source_ids: string[];
+	model_status: 'provisional' | 'provisional_conservative_proxy' | string;
 	generated_at: string;
 	methodology_note: string;
 	records: ProvisionalWorldSystemRecord[];
+	diagnostics?: {
+		total_records: number;
+		previous_proxy_core_count: number;
+		class_distribution: Partial<Record<WorldSystemClass, number>>;
+		downgraded_from_previous_proxy_core_count: number;
+		core_candidates: Array<Record<string, unknown>>;
+		downgraded_high_quality: Array<Record<string, unknown>>;
+	};
 	notes: string[];
 }
 

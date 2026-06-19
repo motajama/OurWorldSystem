@@ -42,9 +42,14 @@
 			path: '/data/indicators/world-system.provisional.latest.json',
 			required: false,
 			available: true,
-			source_ids: ['world_bank_wdi', 'mock_demo_data'],
+			source_ids: [
+				'world_bank_wdi',
+				'world_bank_wdi_extraction',
+				'atlas_economic_complexity',
+				'mock_demo_data'
+			],
 			description:
-				'Optional provisional world-system proxy derived from World Bank quality-of-life indicators while preserving demo world-system classes.'
+				'Optional conservative provisional world-system proxy requiring structural support before core classification.'
 		},
 		{
 			id: 'conflict_ucdp_latest',
