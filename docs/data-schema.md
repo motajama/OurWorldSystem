@@ -275,8 +275,12 @@ The output schema is:
       secondary_enrollment_gross: number | null;
       extraction_dependency_score: number | null;
       extraction_autonomy_score: number | null;
+      value_capture_score: number | null;
       productive_complexity_score: number | null;
+      geopolitical_financial_power_score: number | null;
       structural_supports: string[];
+      positive_structural_supports: string[];
+      negative_or_filter_supports: string[];
       previous_proxy_class: string;
       downgraded_from_previous_proxy_core: boolean;
       classification_reason: string;
@@ -287,17 +291,25 @@ The output schema is:
     total_records: number;
     previous_proxy_core_count: number;
     class_distribution: Record<string, number>;
+    core_count: number;
+    derived_core_count: number;
+    curated_demo_core_count: number;
+    high_score_non_core_count: number;
     downgraded_from_previous_proxy_core_count: number;
     core_candidates: Array<Record<string, unknown>>;
+    high_score_non_core: Array<Record<string, unknown>>;
+    prevented_missing_positive_structural_evidence: Array<Record<string, unknown>>;
     downgraded_high_quality: Array<Record<string, unknown>>;
   };
   notes: string[];
 }
 ```
 
-The model preserves demo records from `world-system.latest.json` as `demo_curated`. Derived records use World Bank WDI quality-of-life and GNI only as welfare proxies, then require structural support from extraction autonomy, low extraction dependency, productive complexity, or curated/demo review before assigning provisional `core`.
+The model preserves demo records from `world-system.latest.json` as `demo_curated`. Derived records use World Bank WDI quality-of-life and GNI only as welfare proxies. Extraction autonomy and low extraction dependency are negative/filter supports: they can corroborate a core claim or block extraction-dependent cases, but they do not prove core status.
 
-This file is intentionally marked `model_status: "provisional_conservative_proxy"` and every record is `review_status: "needs_review"`. High quality of life alone cannot produce `core`; many high-welfare records remain `semi-periphery` or `uncertain` until value-capture/GVC evidence is added. `semi-periphery` is a mixed structural position, not merely a middle-income bin. The file does not yet include OECD TiVA, complete trade/value-chain data, material footprint, e-waste, ecological externalization, military/geopolitical position, financial centrality, conflict exposure, or political-freedom indicators.
+Derived `core` requires `quality_of_life_score >= 0.88`, at least one positive structural support (`productive_complexity_score >= 75`, future `value_capture_score >= 70`, or future `geopolitical_financial_power_score >= 70`), at least one extraction/autonomy filter support, and no extraction-dependency block at `extraction_dependency_score >= 35`. Disputed, special, and territory records cannot become derived core.
+
+This file is intentionally marked `model_status: "provisional_conservative_proxy"` and every generated or demo-preserved record is `review_status: "needs_review"` unless it was already reviewed. High quality of life alone cannot produce `core`; quality of life plus extraction autonomy cannot produce `core`; a high continuous proxy score can still be `semi-periphery` when positive structural evidence is missing. Many high-welfare records remain `semi-periphery` or `uncertain` until value-capture/GVC or productive-complexity evidence is added. `semi-periphery` is a mixed structural position, not merely a middle-income bin. The file does not yet include OECD TiVA, complete trade/value-chain data, material footprint, e-waste, ecological externalization, military/geopolitical position, financial centrality, conflict exposure, or political-freedom indicators. The current model deliberately under-classifies core rather than over-classifying it.
 
 ## Structural World-System Model V1
 

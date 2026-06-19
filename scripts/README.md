@@ -168,16 +168,16 @@ Inputs:
 
 The output is a conservative provisional proxy for the default `world_system` layer. It is not a final Wallersteinian classification. The builder preserves existing demo records as `source: "demo_curated"` and derives other records from available welfare and structural component data.
 
-The previous quality-of-life/GNI-heavy provisional rule overproduced `core`. The conservative rule treats quality of life as a welfare proxy, not structural world-system position:
+The previous quality-of-life/GNI-heavy provisional rule overproduced `core`. The conservative rule treats quality of life as a welfare proxy, not structural world-system position. Extraction autonomy and low extraction dependency are negative/filter supports: they can corroborate a core claim or block extraction-dependent cases, but they cannot create core status by themselves.
 
-- `core`: requires `quality_of_life_score >= 0.88`, no extraction-dependency block, and at least two structural supports such as `extraction_autonomy_score >= 75`, `extraction_dependency_score <= 20`, `productive_complexity_score >= 70`, or curated/demo core review.
+- `core`: for derived records, requires `quality_of_life_score >= 0.88`, at least one positive structural support such as `productive_complexity_score >= 75` or future `value_capture_score >= 70` / `geopolitical_financial_power_score >= 70`, at least one extraction/autonomy filter support such as `extraction_autonomy_score >= 75` or `extraction_dependency_score <= 20`, no extraction-dependency block at `extraction_dependency_score >= 35`, and no disputed/special/territory status unless explicitly curated.
 - `semi-periphery`: absorbs mixed or structurally unconfirmed cases, including many high-development map units with incomplete value-chain evidence.
 - `periphery`: low welfare proxy, high extraction dependency, or low extraction autonomy unless other structural evidence suggests semi-periphery.
 - `uncertain`: insufficient or contradictory signals, including high welfare with high resource dependence or special/territory comparability problems.
 - `disputed`: disputed map units without stable comparable data
 - `no_data`: missing values
 
-`semi-periphery` is not a residual middle-income category. It is a mixed structural position with both core-like and periphery-like processes. Future data needed for a stronger model includes OECD TiVA/GVC value capture, Atlas/BACI/Comtrade productive complexity and trade structure, extraction dependency, UNEP material footprints, finance/geopolitical power, and ecological externalization.
+`semi-periphery` is not a residual middle-income category. It is a mixed structural position with both core-like and periphery-like processes. High quality-of-life countries may remain semi-periphery until TiVA/GVC, value-capture, productive-complexity, finance, or geopolitical data are added. A record can have a high continuous proxy score and still be semi-periphery when positive structural evidence is missing. The current proxy deliberately under-classifies core rather than over-classifying it.
 
 Validate it with:
 
@@ -185,9 +185,9 @@ Validate it with:
 npm run validate:worldsystem
 ```
 
-The validator checks schema, registry IDs, uniqueness, classes, score ranges, confidence, source, review status, model status, class distribution, no-data coverage against available World Bank records, and the conservative core rules. A quality-only source cannot be `core`, and non-demo `core` records must include at least two structural support reasons.
+The validator checks schema, registry IDs, uniqueness, classes, score ranges, confidence, source, review status, model status, class distribution, no-data coverage against available World Bank records, and the conservative core rules. A quality-only source cannot be `core`; derived `core` requires productive-complexity, value-capture, or equivalent positive support; and medium/high-confidence core requires positive structural support or demo/curated source.
 
-The builder also prints diagnostics: total records, class distribution, records downgraded from previous proxy core, top core candidates with components, and top downgraded high-quality records with reasons.
+The builder also prints diagnostics: total records, class distribution, core count, derived core count, curated/demo core count, high-score non-core count, records prevented from becoming core because positive structural evidence is missing, top core candidates with components, and top downgraded high-quality records with reasons.
 
 Future versions should replace this proxy with a documented structural model that includes OECD TiVA, trade/value-chain data, material footprint, e-waste, ecological externalization, military/geopolitical position, financial centrality, conflict exposure, and political-freedom indicators.
 

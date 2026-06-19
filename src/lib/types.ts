@@ -88,6 +88,10 @@ export interface WorldSystemAssessment {
 	source?: 'derived_world_bank_quality_proxy' | 'demo_curated' | string;
 	model_status?: 'provisional' | 'provisional_conservative_proxy' | string;
 	explanation: string;
+	structural_supports?: string[];
+	positive_structural_supports?: string[];
+	negative_or_filter_supports?: string[];
+	classification_reason?: string;
 }
 
 export interface ConflictAssessment {
@@ -282,8 +286,12 @@ export interface ProvisionalWorldSystemRecord {
 		secondary_enrollment_gross: number | null;
 		extraction_dependency_score?: number | null;
 		extraction_autonomy_score?: number | null;
+		value_capture_score?: number | null;
 		productive_complexity_score?: number | null;
+		geopolitical_financial_power_score?: number | null;
 		structural_supports?: string[];
+		positive_structural_supports?: string[];
+		negative_or_filter_supports?: string[];
 		previous_proxy_class?: WorldSystemClass;
 		downgraded_from_previous_proxy_core?: boolean;
 		classification_reason?: string;
