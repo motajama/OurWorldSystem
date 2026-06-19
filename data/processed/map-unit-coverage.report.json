@@ -1,0 +1,402 @@
+{
+  "generated_at": "2026-06-19T13:03:33.363Z",
+  "inputs": {
+    "worldTopojson": "static/geo/world.topojson",
+    "disputedTopojson": "static/geo/disputed.topojson",
+    "registry": "static/data/map-units.registry.json",
+    "worldSystem": "static/data/world-system.latest.json",
+    "indicatorIndex": "static/data/indicators/index.json",
+    "report": "data/processed/map-unit-coverage.report.json",
+    "candidates": "static/data/generated/map-units.candidates.json",
+    "summary": "static/data/generated/map-unit-coverage.summary.json"
+  },
+  "counts": {
+    "total_base_natural_earth_features": 177,
+    "total_disputed_overlay_features": 28,
+    "registry_record_count": 26,
+    "matched_base_features": 30,
+    "unmatched_base_features": 147,
+    "matched_disputed_features": 15,
+    "unmatched_disputed_features": 13,
+    "mock_world_system_records": 12,
+    "world_bank_quality_of_life_records": 25,
+    "ucdp_conflict_records": null
+  },
+  "dataset_coverage": [
+    {
+      "id": "world_system_mock",
+      "record_count": 12,
+      "unique_record_count": 12,
+      "registry_matches": 12,
+      "natural_earth_base_matches": 12,
+      "coverage_against_registry_percent": 46.15,
+      "coverage_against_natural_earth_base_percent": 6.78
+    },
+    {
+      "id": "quality_of_life_world_bank_latest",
+      "record_count": 25,
+      "unique_record_count": 25,
+      "registry_matches": 25,
+      "natural_earth_base_matches": 25,
+      "coverage_against_registry_percent": 96.15,
+      "coverage_against_natural_earth_base_percent": 14.12
+    }
+  ],
+  "quality_checks": {
+    "records_with_id_minus_99_errors": [],
+    "duplicate_registry_ids": [],
+    "duplicate_alias_warnings": []
+  },
+  "matches": {
+    "base": [
+      {
+        "feature_index": 3,
+        "registry_id": "CAN"
+      },
+      {
+        "feature_index": 4,
+        "registry_id": "USA"
+      },
+      {
+        "feature_index": 11,
+        "registry_id": "COD"
+      },
+      {
+        "feature_index": 18,
+        "registry_id": "RUS"
+      },
+      {
+        "feature_index": 20,
+        "registry_id": "GBR"
+      },
+      {
+        "feature_index": 23,
+        "registry_id": "FRA"
+      },
+      {
+        "feature_index": 25,
+        "registry_id": "ZAF"
+      },
+      {
+        "feature_index": 27,
+        "registry_id": "MEX"
+      },
+      {
+        "feature_index": 29,
+        "registry_id": "BRA"
+      },
+      {
+        "feature_index": 43,
+        "registry_id": "FRA"
+      },
+      {
+        "feature_index": 45,
+        "registry_id": "USA"
+      },
+      {
+        "feature_index": 76,
+        "registry_id": "ISR"
+      },
+      {
+        "feature_index": 79,
+        "registry_id": "PSE"
+      },
+      {
+        "feature_index": 94,
+        "registry_id": "VNM"
+      },
+      {
+        "feature_index": 95,
+        "registry_id": "PRK"
+      },
+      {
+        "feature_index": 96,
+        "registry_id": "KOR"
+      },
+      {
+        "feature_index": 98,
+        "registry_id": "IND"
+      },
+      {
+        "feature_index": 107,
+        "registry_id": "IRN"
+      },
+      {
+        "feature_index": 112,
+        "registry_id": "UKR"
+      },
+      {
+        "feature_index": 121,
+        "registry_id": "DEU"
+      },
+      {
+        "feature_index": 124,
+        "registry_id": "TUR"
+      },
+      {
+        "feature_index": 134,
+        "registry_id": "FRA"
+      },
+      {
+        "feature_index": 137,
+        "registry_id": "AUS"
+      },
+      {
+        "feature_index": 139,
+        "registry_id": "CHN"
+      },
+      {
+        "feature_index": 140,
+        "registry_id": "TWN"
+      },
+      {
+        "feature_index": 143,
+        "registry_id": "GBR"
+      },
+      {
+        "feature_index": 153,
+        "registry_id": "CZE"
+      },
+      {
+        "feature_index": 155,
+        "registry_id": "JPN"
+      },
+      {
+        "feature_index": 158,
+        "registry_id": "SAU"
+      },
+      {
+        "feature_index": 174,
+        "registry_id": "XKO"
+      }
+    ],
+    "disputed": [
+      {
+        "feature_index": 0,
+        "registry_id": "IND"
+      },
+      {
+        "feature_index": 1,
+        "registry_id": "IND"
+      },
+      {
+        "feature_index": 2,
+        "registry_id": "IND"
+      },
+      {
+        "feature_index": 3,
+        "registry_id": "IND"
+      },
+      {
+        "feature_index": 4,
+        "registry_id": "IND"
+      },
+      {
+        "feature_index": 5,
+        "registry_id": "IND"
+      },
+      {
+        "feature_index": 6,
+        "registry_id": "CHN"
+      },
+      {
+        "feature_index": 7,
+        "registry_id": "CHN"
+      },
+      {
+        "feature_index": 10,
+        "registry_id": "FRA"
+      },
+      {
+        "feature_index": 12,
+        "registry_id": "ISR"
+      },
+      {
+        "feature_index": 16,
+        "registry_id": "RUS"
+      },
+      {
+        "feature_index": 23,
+        "registry_id": "RUS"
+      },
+      {
+        "feature_index": 24,
+        "registry_id": "UKR"
+      },
+      {
+        "feature_index": 25,
+        "registry_id": "IND"
+      },
+      {
+        "feature_index": 26,
+        "registry_id": "UKR"
+      }
+    ]
+  },
+  "unmatched": {
+    "base": [
+      "NE::FJI::FJI::FIJI::0",
+      "NE::TZA::TZA::TANZANIA::1",
+      "NE::SAH::ESH::WESTERN_SAHARA::2",
+      "NE::KAZ::KAZ::KAZAKHSTAN::5",
+      "NE::UZB::UZB::UZBEKISTAN::6",
+      "NE::PNG::PNG::PAPUA_NEW_GUINEA::7",
+      "NE::IDN::IDN::INDONESIA::8",
+      "NE::ARG::ARG::ARGENTINA::9",
+      "NE::CHL::CHL::CHILE::10",
+      "NE::SOM::SOM::SOMALIA::12",
+      "NE::KEN::KEN::KENYA::13",
+      "NE::SDN::SDN::SUDAN::14",
+      "NE::TCD::TCD::CHAD::15",
+      "NE::HTI::HTI::HAITI::16",
+      "NE::DOM::DOM::DOMINICAN_REPUBLIC::17",
+      "NE::BHS::BHS::BAHAMAS::19",
+      "NE::NOR::NORWAY::21",
+      "NE::GRL::GRL::GREENLAND::22",
+      "NE::TLS::TLS::TIMOR_LESTE::24",
+      "NE::LSO::LSO::LESOTHO::26",
+      "NE::URY::URY::URUGUAY::28",
+      "NE::BOL::BOL::BOLIVIA::30",
+      "NE::PER::PER::PERU::31",
+      "NE::COL::COL::COLOMBIA::32",
+      "NE::PAN::PAN::PANAMA::33",
+      "NE::CRI::CRI::COSTA_RICA::34",
+      "NE::NIC::NIC::NICARAGUA::35",
+      "NE::HND::HND::HONDURAS::36",
+      "NE::SLV::SLV::EL_SALVADOR::37",
+      "NE::GTM::GTM::GUATEMALA::38",
+      "NE::BLZ::BLZ::BELIZE::39",
+      "NE::VEN::VEN::VENEZUELA::40",
+      "NE::GUY::GUY::GUYANA::41",
+      "NE::SUR::SUR::SURINAME::42",
+      "NE::ECU::ECU::ECUADOR::44",
+      "NE::JAM::JAM::JAMAICA::46",
+      "NE::CUB::CUB::CUBA::47",
+      "NE::ZWE::ZWE::ZIMBABWE::48",
+      "NE::BWA::BWA::BOTSWANA::49",
+      "NE::NAM::NAM::NAMIBIA::50",
+      "NE::SEN::SEN::SENEGAL::51",
+      "NE::MLI::MLI::MALI::52",
+      "NE::MRT::MRT::MAURITANIA::53",
+      "NE::BEN::BEN::BENIN::54",
+      "NE::NER::NER::NIGER::55",
+      "NE::NGA::NGA::NIGERIA::56",
+      "NE::CMR::CMR::CAMEROON::57",
+      "NE::TGO::TGO::TOGO::58",
+      "NE::GHA::GHA::GHANA::59",
+      "NE::CIV::CIV::COTE_D_IVOIRE::60",
+      "NE::GIN::GIN::GUINEA::61",
+      "NE::GNB::GNB::GUINEA_BISSAU::62",
+      "NE::LBR::LBR::LIBERIA::63",
+      "NE::SLE::SLE::SIERRA_LEONE::64",
+      "NE::BFA::BFA::BURKINA_FASO::65",
+      "NE::CAF::CAF::CENTRAL_AFRICAN_REPUBLIC::66",
+      "NE::COG::COG::REPUBLIC_OF_THE_CONGO::67",
+      "NE::GAB::GAB::GABON::68",
+      "NE::GNQ::GNQ::EQUATORIAL_GUINEA::69",
+      "NE::ZMB::ZMB::ZAMBIA::70",
+      "NE::MWI::MWI::MALAWI::71",
+      "NE::MOZ::MOZ::MOZAMBIQUE::72",
+      "NE::SWZ::SWZ::KINGDOM_OF_ESWATINI::73",
+      "NE::AGO::AGO::ANGOLA::74",
+      "NE::BDI::BDI::BURUNDI::75",
+      "NE::LBN::LBN::LEBANON::77",
+      "NE::MDG::MDG::MADAGASCAR::78",
+      "NE::GMB::GMB::THE_GAMBIA::80",
+      "NE::TUN::TUN::TUNISIA::81",
+      "NE::DZA::DZA::ALGERIA::82",
+      "NE::JOR::JOR::JORDAN::83",
+      "NE::ARE::ARE::UNITED_ARAB_EMIRATES::84",
+      "NE::QAT::QAT::QATAR::85",
+      "NE::KWT::KWT::KUWAIT::86",
+      "NE::IRQ::IRQ::IRAQ::87",
+      "NE::OMN::OMN::OMAN::88",
+      "NE::VUT::VUT::VANUATU::89",
+      "NE::KHM::KHM::CAMBODIA::90",
+      "NE::THA::THA::THAILAND::91",
+      "NE::LAO::LAO::LAO_PDR::92",
+      "NE::MMR::MMR::MYANMAR::93",
+      "NE::MNG::MNG::MONGOLIA::97",
+      "NE::BGD::BGD::BANGLADESH::99",
+      "NE::BTN::BTN::BHUTAN::100",
+      "NE::NPL::NPL::NEPAL::101",
+      "NE::PAK::PAK::PAKISTAN::102",
+      "NE::AFG::AFG::AFGHANISTAN::103",
+      "NE::TJK::TJK::TAJIKISTAN::104",
+      "NE::KGZ::KGZ::KYRGYZSTAN::105",
+      "NE::TKM::TKM::TURKMENISTAN::106",
+      "NE::SYR::SYR::SYRIA::108",
+      "NE::ARM::ARM::ARMENIA::109",
+      "NE::SWE::SWE::SWEDEN::110",
+      "NE::BLR::BLR::BELARUS::111",
+      "NE::POL::POL::POLAND::113",
+      "NE::AUT::AUT::AUSTRIA::114",
+      "NE::HUN::HUN::HUNGARY::115",
+      "NE::MDA::MDA::MOLDOVA::116",
+      "NE::ROU::ROU::ROMANIA::117",
+      "NE::LTU::LTU::LITHUANIA::118",
+      "NE::LVA::LVA::LATVIA::119",
+      "NE::EST::EST::ESTONIA::120",
+      "NE::BGR::BGR::BULGARIA::122",
+      "NE::GRC::GRC::GREECE::123",
+      "NE::ALB::ALB::ALBANIA::125",
+      "NE::HRV::HRV::CROATIA::126",
+      "NE::CHE::CHE::SWITZERLAND::127",
+      "NE::LUX::LUX::LUXEMBOURG::128",
+      "NE::BEL::BEL::BELGIUM::129",
+      "NE::NLD::NLD::NETHERLANDS::130",
+      "NE::PRT::PRT::PORTUGAL::131",
+      "NE::ESP::ESP::SPAIN::132",
+      "NE::IRL::IRL::IRELAND::133",
+      "NE::SLB::SLB::SOLOMON_ISLANDS::135",
+      "NE::NZL::NZL::NEW_ZEALAND::136",
+      "NE::LKA::LKA::SRI_LANKA::138",
+      "NE::ITA::ITA::ITALY::141",
+      "NE::DNK::DNK::DENMARK::142",
+      "NE::ISL::ISL::ICELAND::144",
+      "NE::AZE::AZE::AZERBAIJAN::145",
+      "NE::GEO::GEO::GEORGIA::146",
+      "NE::PHL::PHL::PHILIPPINES::147",
+      "NE::MYS::MYS::MALAYSIA::148",
+      "NE::BRN::BRN::BRUNEI_DARUSSALAM::149",
+      "NE::SVN::SVN::SLOVENIA::150",
+      "NE::FIN::FIN::FINLAND::151",
+      "NE::SVK::SVK::SLOVAKIA::152",
+      "NE::ERI::ERI::ERITREA::154",
+      "NE::PRY::PRY::PARAGUAY::156",
+      "NE::YEM::YEM::YEMEN::157",
+      "NE::ATA::ATA::ANTARCTICA::159",
+      "NE::CYN::NORTHERN_CYPRUS::160",
+      "NE::CYP::CYP::CYPRUS::161",
+      "NE::MAR::MAR::MOROCCO::162",
+      "NE::EGY::EGY::EGYPT::163",
+      "NE::LBY::LBY::LIBYA::164",
+      "NE::ETH::ETH::ETHIOPIA::165",
+      "NE::DJI::DJI::DJIBOUTI::166",
+      "NE::SOL::SOMALILAND::167",
+      "NE::UGA::UGA::UGANDA::168",
+      "NE::RWA::RWA::RWANDA::169",
+      "NE::BIH::BIH::BOSNIA_AND_HERZEGOVINA::170",
+      "NE::MKD::MKD::NORTH_MACEDONIA::171",
+      "NE::SRB::SRB::SERBIA::172",
+      "NE::MNE::MNE::MONTENEGRO::173",
+      "NE::TTO::TTO::TRINIDAD_AND_TOBAGO::175",
+      "NE::SDS::SSD::SOUTH_SUDAN::176"
+    ],
+    "disputed": [
+      "NE_DISPUTED::PAK::PAKISTAN::8",
+      "NE_DISPUTED::SDN::SUDAN::9",
+      "NE_DISPUTED::GUY::GUYANA::11",
+      "NE_DISPUTED::KEN::KENYA::13",
+      "NE_DISPUTED::MAR::MOROCCO::14",
+      "NE_DISPUTED::CYN::NORTHERN_CYPRUS::15",
+      "NE_DISPUTED::SOL::SOMALILAND::17",
+      "NE_DISPUTED::B35::GEORGIA::18",
+      "NE_DISPUTED::MDA::MOLDOVA::19",
+      "NE_DISPUTED::B37::GEORGIA::20",
+      "NE_DISPUTED::AZE::AZERBAIJAN::21",
+      "NE_DISPUTED::KAS::SIACHEN_GLACIER::22",
+      "NE_DISPUTED::MYS::MALAYSIA::27"
+    ]
+  }
+}

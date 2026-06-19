@@ -71,6 +71,10 @@ For example, a missing conflict object means no conflict data is available. It d
 
 Optional generated indicator files are listed in `static/data/indicators/index.json`. The frontend only fetches optional entries that are not marked `available: false`; unavailable optional datasets are skipped without normal browser 404s. Required base data and required geometry still fail clearly when missing or invalid.
 
+Data completion uses a separate coverage workflow so generated suggestions are not confused with reviewed facts. `npm run data:coverage` reads Natural Earth geometry, the registry, mock world-system data, and available optional indicators. It reports coverage against both the authoritative registry and Natural Earth base features, then writes generated candidate records for unmatched base or disputed overlay features.
+
+These candidates are source-derived review aids. They are not sovereignty decisions and not authoritative map units. A candidate can be low confidence and still be useful because the next step is human review, source checking, and manual promotion into the registry. Missing indicators remain missing throughout this process; generated registry candidates must not be used to fabricate data coverage.
+
 ## Layer API
 
 The layer definitions in `src/lib/mapLayers.ts` are the bridge between static indicator records and map display. Each layer defines its label, description, kind, no-data label, legend entries, binning logic, and CSS fill class.
@@ -88,6 +92,15 @@ Future classifications should:
 - Avoid deciding sovereignty disputes.
 - Use the term map unit when sovereignty or recognition is disputed or ambiguous.
 - Provide a short explanation for each classification.
+
+The recommended data completion workflow is:
+
+1. Run `npm run geo:build`.
+2. Run `npm run data:build` for public indicator outputs when network access and source availability permit.
+3. Run `npm run data:coverage`.
+4. Review `static/data/generated/map-units.candidates.json`.
+5. Manually promote verified records into `static/data/map-units.registry.json`.
+6. Rerun validation and build commands.
 
 ## Candidate Indicator Families
 

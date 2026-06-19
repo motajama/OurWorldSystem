@@ -43,6 +43,8 @@ http://127.0.0.1:5173/
 
 ```sh
 npm run geo:build
+npm run health:data
+npm run validate:data
 npm run check
 npm run build
 ```
@@ -63,7 +65,26 @@ http://127.0.0.1:4173/OurWorldSystem/
 
 ## GitHub Pages
 
-The app is static and GitHub Pages compatible. The SvelteKit base path is `''` in development and `/OurWorldSystem` in production. GitHub Actions runs CI on pushes and pull requests, and `deploy-pages.yml` builds `build/` and deploys it with the official GitHub Pages actions on pushes to `main` or manual dispatch.
+The app is static and GitHub Pages compatible. The SvelteKit base path is `''` in development and `/OurWorldSystem` in production.
+
+This repository uses the GitHub Pages branch-source deployment model:
+
+- Source: `Branch`
+- Branch: `gh-pages`
+- Folder: `/ root`
+
+The deployment workflow is `.github/workflows/deploy-gh-pages.yml`. On a push to `main`, or a manual `workflow_dispatch`, it runs:
+
+```sh
+npm ci
+npm run geo:build
+npm run health:data
+npm run validate:data
+npm run check
+npm run build
+```
+
+It then copies `build/` into a temporary git repository, adds `.nojekyll`, commits the static output, and force-pushes that output to the `gh-pages` branch with `GITHUB_TOKEN`. GitHub Pages publishes the root of that branch. The workflow does not use the GitHub Pages Actions-source deploy path.
 
 ## Data
 
@@ -131,6 +152,31 @@ Validate registry and mock-data joins with:
 ```sh
 npm run validate:data
 ```
+
+Generate a map-unit coverage report and review-only candidate registry with:
+
+```sh
+npm run data:coverage
+```
+
+This writes:
+
+- `data/processed/map-unit-coverage.report.json`
+- `static/data/generated/map-units.candidates.json`
+- `static/data/generated/map-unit-coverage.summary.json`
+
+Generated candidates are not authoritative data. They are Natural Earth-derived review records for missing registry coverage. Review them manually, verify source identity and sovereignty notes, then promote only reviewed records into `static/data/map-units.registry.json`.
+
+Recommended data completion workflow:
+
+1. `npm run geo:build`
+2. `npm run data:build`
+3. `npm run data:coverage`
+4. Review `static/data/generated/map-units.candidates.json`
+5. Manually promote verified candidates into `static/data/map-units.registry.json`
+6. Rerun `npm run health:data`, `npm run validate:data`, `npm run check`, and `npm run build`
+
+Do not fabricate missing indicator values. Keep real public data, mock/demo data, generated registry candidates, and missing data visibly distinct.
 
 ## Documentation
 
