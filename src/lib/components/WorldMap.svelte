@@ -15,6 +15,7 @@
 	import { feature } from 'topojson-client';
 	import type { Feature, FeatureCollection, GeoJsonProperties, Geometry } from 'geojson';
 	import MapControls from '$lib/components/MapControls.svelte';
+	import { getMapColorDiagnostics } from '$lib/mapColorDiagnostics';
 	import {
 		buildRegistryIndexes,
 		findRegistryRecordForNaturalEarthFeature,
@@ -140,6 +141,7 @@
 	let pointerStart: { x: number; y: number } | null = null;
 	let suppressNextFeatureClick = false;
 	let didLogRenderCoverage = false;
+	let lastColorDiagnosticLayer: MapLayerId | null = null;
 
 	const disputedNotice =
 		'This is a disputed or special map unit in the Natural Earth source layer. OurWorldSystem does not adjudicate sovereignty.';
@@ -158,6 +160,14 @@
 	const selectedLayerDefinition = $derived(getMapLayerDefinition(selectedLayer));
 	const selectedLayerLegendByValue = $derived(
 		new Map(getMapLayerLegendItems(selectedLayer).map((item) => [item.value, item]))
+	);
+	const colorDiagnostics = $derived(getMapColorDiagnostics(features, selectedLayer));
+	const mostCommonFillClass = $derived(
+		Object.entries(colorDiagnostics.classDistribution).sort((a, b) => b[1] - a[1])[0]?.[0] ??
+			'none'
+	);
+	const selectedLayerNoDataCount = $derived(
+		colorDiagnostics.classDistribution[`layer-${selectedLayer.replaceAll('_', '-')}-no-data`] ?? 0
 	);
 
 	function isValidTopologyObject(value: unknown): value is TopologyGeometryObject {
@@ -572,7 +582,7 @@
 		return Boolean(
 			worldBankQualityById.has(unit.id) ||
 			unit.quality_of_life?.source === 'World Bank WDI' ||
-			unit.quality_of_life?.quality_of_life_score !== undefined ||
+			typeof unit.quality_of_life?.quality_of_life_score === 'number' ||
 			unit.sources.includes('world_bank_wdi')
 		);
 	}
@@ -918,6 +928,15 @@
 			select(svgElement).on('.zoom', null);
 		}
 	});
+
+	$effect(() => {
+		if (!dev || features.length === 0 || lastColorDiagnosticLayer === selectedLayer) {
+			return;
+		}
+
+		console.info('[OurWorldSystem:color-diagnostics]', colorDiagnostics);
+		lastColorDiagnosticLayer = selectedLayer;
+	});
 </script>
 
 <section class="map-shell" aria-labelledby="map-title">
@@ -1005,7 +1024,11 @@
 								{@const selected = unit.id === selectedId}
 								{@const description = getDisputedDescription(renderFeature)}
 								<path
+									class={`map-unit ${getMapUnitFillClass(unit, selectedLayer)}`}
 									class:selected
+									class:matched={renderFeature.hasIndicatorRecord}
+									class:registry-matched={Boolean(renderFeature.registryRecord)}
+									class:no-data={getMapUnitLayerValue(unit, selectedLayer) === 'no_data'}
 									d={renderFeature.path}
 									role="button"
 									tabindex="0"
@@ -1037,6 +1060,12 @@
 	{/if}
 	{#if dev && renderCoverageDiagnostic}
 		<p class="diagnostic" role="status">{renderCoverageDiagnostic}</p>
+	{/if}
+	{#if dev && features.length > 0}
+		<p class="diagnostic" role="status">
+			Layer {selectedLayer}: rendered {colorDiagnostics.totalPaths}, no_data {selectedLayerNoDataCount},
+			most common {mostCommonFillClass}
+		</p>
 	{/if}
 </section>
 
@@ -1127,6 +1156,11 @@
 
 	.map-unit.layer-world-system-core {
 		fill: #5eead4;
+	}
+
+	.map-unit[class*='layer-'] {
+		stroke: rgba(15, 23, 42, 0.96);
+		pointer-events: auto;
 	}
 
 	.map-unit.layer-world-system-semi-periphery {
@@ -1262,7 +1296,6 @@
 
 	.disputed-layer path {
 		cursor: pointer;
-		fill: rgba(248, 113, 113, 0.05);
 		stroke: rgba(248, 113, 113, 0.78);
 		stroke-dasharray: 3 3;
 		stroke-width: 1.15;
@@ -1271,7 +1304,6 @@
 
 	.disputed-layer path:hover,
 	.disputed-layer path:focus-visible {
-		fill: rgba(248, 113, 113, 0.12);
 		stroke: #fecaca;
 	}
 

@@ -25,6 +25,8 @@ Use `npm run health:data` for a quick local inventory of required files, optiona
 
 Natural Earth geometry properties are not the application identity system. They are source metadata for drawing geometry and for building join candidates. Some Natural Earth records use `ISO_A3` or `ADM0_A3` value `-99`; that value is a placeholder and must never be used as a semantic map-unit ID.
 
+Map rendering is geometry-driven, while map coloring is layer-driven. A Natural Earth feature is first matched to the map-unit registry, then to the merged static map-unit record, then to the selected layer value, and finally to a visible SVG fill class. A `no_data` color means the selected indicator is missing or not numeric for that matched map unit; it does not mean the geometry is missing. The quality-of-life layer uses HDI when available, otherwise the project World Bank WDI composite `quality_of_life_score`.
+
 `static/data/map-units.registry.json` is an array of records:
 
 ```ts
