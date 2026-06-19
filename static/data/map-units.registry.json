@@ -1791,22 +1791,14 @@
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
-				"FRA",
-				"ATF",
-				"NCL"
+				"FRA"
 			],
-			"iso_a3": [
-				"ATF",
-				"NCL"
-			],
+			"iso_a3": [],
 			"sov_a3": [
 				"FR1"
 			],
 			"name_aliases": [
-				"France",
-				"Fr. S. Antarctic Lands",
-				"French Southern and Antarctic Lands",
-				"New Caledonia"
+				"France"
 			]
 		},
 		"external_ids": {
@@ -1821,6 +1813,79 @@
 			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": "2026-06-18"
+	},
+	{
+		"id": "ATF",
+		"display_name": "French Southern and Antarctic Lands",
+		"short_name": "French Southern and Antarctic Lands",
+		"map_unit_type": "territory",
+		"recognition_status": "territory",
+		"sovereignty_note": "Natural Earth represents this as an Admin-0 dependency associated with France; OurWorldSystem records it as a separate map unit without adjudicating sovereignty.",
+		"natural_earth": {
+			"adm0_a3": [
+				"ATF"
+			],
+			"iso_a3": [
+				"ATF"
+			],
+			"sov_a3": [
+				"FR1"
+			],
+			"name_aliases": [
+				"Fr. S. Antarctic Lands",
+				"French Southern and Antarctic Lands"
+			]
+		},
+		"external_ids": {
+			"iso3": "ATF",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": null,
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Added to prevent valid Natural Earth ISO_A3=ATF from matching France.",
+			"Matched Natural Earth feature during registry matching validation."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "NCL",
+		"display_name": "New Caledonia",
+		"short_name": "New Caledonia",
+		"map_unit_type": "territory",
+		"recognition_status": "territory",
+		"sovereignty_note": "Natural Earth represents this as an Admin-0 dependency associated with France; OurWorldSystem records it as a separate map unit without adjudicating sovereignty.",
+		"natural_earth": {
+			"adm0_a3": [
+				"NCL"
+			],
+			"iso_a3": [
+				"NCL"
+			],
+			"sov_a3": [
+				"FR1"
+			],
+			"name_aliases": [
+				"New Caledonia"
+			]
+		},
+		"external_ids": {
+			"iso3": "NCL",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "NCL",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Added to prevent valid Natural Earth ISO_A3=NCL from matching France.",
+			"Matched Natural Earth feature during registry matching validation."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
 	},
 	{
 		"id": "GAB",
@@ -2004,18 +2069,50 @@
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
-				"GRL",
+				"GRL"
+			],
+			"iso_a3": [
+				"GRL"
+			],
+			"sov_a3": [
+				"DN1"
+			],
+			"name_aliases": [
+				"Greenland"
+			]
+		},
+		"external_ids": {
+			"iso3": "GRL",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "GRL",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "DNK",
+		"display_name": "Denmark",
+		"short_name": "Denmark",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
 				"DNK"
 			],
 			"iso_a3": [
-				"GRL",
 				"DNK"
 			],
 			"sov_a3": [
 				"DN1"
 			],
 			"name_aliases": [
-				"Greenland",
 				"Denmark"
 			]
 		},
@@ -2028,7 +2125,8 @@
 		},
 		"data_notes": [
 			"Generated from Natural Earth Admin 0 geometry; needs review.",
-			"Matched Natural Earth feature during registry seed."
+			"Added to separate Denmark from Greenland where Natural Earth shares SOV_A3=DN1.",
+			"Matched Natural Earth feature during registry matching validation."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -5632,22 +5730,17 @@
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
-				"GBR",
-				"FLK"
+				"GBR"
 			],
 			"iso_a3": [
-				"GBR",
-				"FLK"
+				"GBR"
 			],
 			"sov_a3": [
 				"GB1"
 			],
 			"name_aliases": [
 				"United Kingdom",
-				"United Kingdom of Great Britain and Northern Ireland",
-				"Falkland Is.",
-				"Falkland Islands / Malvinas",
-				"Falkland Islands"
+				"United Kingdom of Great Britain and Northern Ireland"
 			]
 		},
 		"external_ids": {
@@ -5663,6 +5756,44 @@
 		"last_reviewed": "2026-06-18"
 	},
 	{
+		"id": "FLK",
+		"display_name": "Falkland Islands / Malvinas",
+		"short_name": "Falkland Islands",
+		"map_unit_type": "territory",
+		"recognition_status": "territory",
+		"sovereignty_note": "Natural Earth marks this feature as disputed and as an Admin-0 dependency; OurWorldSystem records it neutrally as a separate map unit and does not adjudicate sovereignty.",
+		"natural_earth": {
+			"adm0_a3": [
+				"FLK"
+			],
+			"iso_a3": [
+				"FLK"
+			],
+			"sov_a3": [
+				"GB1"
+			],
+			"name_aliases": [
+				"Falkland Is.",
+				"Falkland Islands / Malvinas",
+				"Falkland Islands"
+			]
+		},
+		"external_ids": {
+			"iso3": "FLK",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": null,
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Added to prevent valid Natural Earth ISO_A3=FLK from matching the United Kingdom.",
+			"Matched Natural Earth feature during registry matching validation."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
 		"id": "USA",
 		"display_name": "United States",
 		"short_name": "United States",
@@ -5671,20 +5802,17 @@
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
-				"USA",
-				"PRI"
+				"USA"
 			],
 			"iso_a3": [
-				"USA",
-				"PRI"
+				"USA"
 			],
 			"sov_a3": [
 				"US1"
 			],
 			"name_aliases": [
 				"United States",
-				"United States of America",
-				"Puerto Rico"
+				"United States of America"
 			]
 		},
 		"external_ids": {
@@ -5698,6 +5826,42 @@
 			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": "2026-06-18"
+	},
+	{
+		"id": "PRI",
+		"display_name": "Puerto Rico",
+		"short_name": "Puerto Rico",
+		"map_unit_type": "territory",
+		"recognition_status": "territory",
+		"sovereignty_note": "Natural Earth represents this as an Admin-0 dependency associated with the United States; OurWorldSystem records it as a separate map unit without adjudicating sovereignty.",
+		"natural_earth": {
+			"adm0_a3": [
+				"PRI"
+			],
+			"iso_a3": [
+				"PRI"
+			],
+			"sov_a3": [
+				"US1"
+			],
+			"name_aliases": [
+				"Puerto Rico"
+			]
+		},
+		"external_ids": {
+			"iso3": "PRI",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "PRI",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Added to prevent valid Natural Earth ISO_A3=PRI from matching the United States.",
+			"Matched Natural Earth feature during registry matching validation."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
 	},
 	{
 		"id": "URY",
