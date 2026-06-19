@@ -1,0 +1,4 @@
+import{F as e,G as t,I as n,J as r,K as i,M as a,Y as o,c as s,j as c,p as l,x as u,y as d}from"../chunks/fLF65sw0.js";import{s as f}from"../chunks/6V5aj8zv.js";import"../chunks/xihTtKlq.js";var p=u(`<main class="methodology svelte-7o0w84"><a class="svelte-7o0w84">Back to atlas</a> <h1 class="svelte-7o0w84">Methodology</h1> <p class="svelte-7o0w84">OurWorldSystem treats world-system classes as transparent model outputs, not moral judgments or
+		permanent labels. The scaffold currently uses mock data only.</p> <p class="svelte-7o0w84">Future versions should combine open public indicators, source years, reproducible scripts, and
+		explicit uncertainty. Disputed or ambiguous sovereignty cases are represented neutrally as map
+		units with notes and source attribution.</p></main>`);function m(u,m){i(m,!0);var h=p();l(`7o0w84`,t=>{c(()=>{e.title=`Methodology · OurWorldSystem`})});var g=n(h);r(6),o(h),a(e=>s(g,`href`,e),[()=>f(`/`)]),d(u,h),t()}export{m as component};

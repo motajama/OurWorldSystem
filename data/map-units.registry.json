@@ -1,0 +1,6181 @@
+[
+	{
+		"id": "AFG",
+		"display_name": "Afghanistan",
+		"short_name": "Afghanistan",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"AFG"
+			],
+			"iso_a3": [
+				"AFG"
+			],
+			"sov_a3": [
+				"AFG"
+			],
+			"name_aliases": [
+				"Afghanistan"
+			]
+		},
+		"external_ids": {
+			"iso3": "AFG",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "AFG",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "ALB",
+		"display_name": "Albania",
+		"short_name": "Albania",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"ALB"
+			],
+			"iso_a3": [
+				"ALB"
+			],
+			"sov_a3": [
+				"ALB"
+			],
+			"name_aliases": [
+				"Albania"
+			]
+		},
+		"external_ids": {
+			"iso3": "ALB",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "ALB",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "DZA",
+		"display_name": "Algeria",
+		"short_name": "Algeria",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"DZA"
+			],
+			"iso_a3": [
+				"DZA"
+			],
+			"sov_a3": [
+				"DZA"
+			],
+			"name_aliases": [
+				"Algeria"
+			]
+		},
+		"external_ids": {
+			"iso3": "DZA",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "DZA",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "AGO",
+		"display_name": "Angola",
+		"short_name": "Angola",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"AGO"
+			],
+			"iso_a3": [
+				"AGO"
+			],
+			"sov_a3": [
+				"AGO"
+			],
+			"name_aliases": [
+				"Angola"
+			]
+		},
+		"external_ids": {
+			"iso3": "AGO",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "AGO",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "ATA",
+		"display_name": "Antarctica",
+		"short_name": "Antarctica",
+		"map_unit_type": "special",
+		"recognition_status": "unknown",
+		"sovereignty_note": "Generated from a Natural Earth feature with a non-standard or indeterminate classification; OurWorldSystem does not adjudicate sovereignty.",
+		"natural_earth": {
+			"adm0_a3": [
+				"ATA"
+			],
+			"iso_a3": [
+				"ATA"
+			],
+			"sov_a3": [
+				"ATA"
+			],
+			"name_aliases": [
+				"Antarctica"
+			]
+		},
+		"external_ids": {
+			"iso3": "ATA",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "ATA",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "ARG",
+		"display_name": "Argentina",
+		"short_name": "Argentina",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"ARG"
+			],
+			"iso_a3": [
+				"ARG"
+			],
+			"sov_a3": [
+				"ARG"
+			],
+			"name_aliases": [
+				"Argentina"
+			]
+		},
+		"external_ids": {
+			"iso3": "ARG",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "ARG",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "ARM",
+		"display_name": "Armenia",
+		"short_name": "Armenia",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"ARM"
+			],
+			"iso_a3": [
+				"ARM"
+			],
+			"sov_a3": [
+				"ARM"
+			],
+			"name_aliases": [
+				"Armenia"
+			]
+		},
+		"external_ids": {
+			"iso3": "ARM",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "ARM",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "AUS",
+		"display_name": "Australia",
+		"short_name": "Australia",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"AUS"
+			],
+			"iso_a3": [
+				"AUS"
+			],
+			"sov_a3": [
+				"AU1"
+			],
+			"name_aliases": [
+				"Australia"
+			]
+		},
+		"external_ids": {
+			"iso3": "AUS",
+			"iso2": "AU",
+			"un_m49": "036",
+			"world_bank": "AUS",
+			"oecd": "AUS"
+		},
+		"data_notes": [
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": "2026-06-18"
+	},
+	{
+		"id": "AUT",
+		"display_name": "Austria",
+		"short_name": "Austria",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"AUT"
+			],
+			"iso_a3": [
+				"AUT"
+			],
+			"sov_a3": [
+				"AUT"
+			],
+			"name_aliases": [
+				"Austria"
+			]
+		},
+		"external_ids": {
+			"iso3": "AUT",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "AUT",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "AZE",
+		"display_name": "Azerbaijan",
+		"short_name": "Azerbaijan",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"AZE"
+			],
+			"iso_a3": [
+				"AZE"
+			],
+			"sov_a3": [
+				"AZE"
+			],
+			"name_aliases": [
+				"Azerbaijan"
+			]
+		},
+		"external_ids": {
+			"iso3": "AZE",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "AZE",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "BHS",
+		"display_name": "Bahamas",
+		"short_name": "Bahamas",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"BHS"
+			],
+			"iso_a3": [
+				"BHS"
+			],
+			"sov_a3": [
+				"BHS"
+			],
+			"name_aliases": [
+				"Bahamas",
+				"The Bahamas"
+			]
+		},
+		"external_ids": {
+			"iso3": "BHS",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "BHS",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "BGD",
+		"display_name": "Bangladesh",
+		"short_name": "Bangladesh",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"BGD"
+			],
+			"iso_a3": [
+				"BGD"
+			],
+			"sov_a3": [
+				"BGD"
+			],
+			"name_aliases": [
+				"Bangladesh"
+			]
+		},
+		"external_ids": {
+			"iso3": "BGD",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "BGD",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "BLR",
+		"display_name": "Belarus",
+		"short_name": "Belarus",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"BLR"
+			],
+			"iso_a3": [
+				"BLR"
+			],
+			"sov_a3": [
+				"BLR"
+			],
+			"name_aliases": [
+				"Belarus"
+			]
+		},
+		"external_ids": {
+			"iso3": "BLR",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "BLR",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "BEL",
+		"display_name": "Belgium",
+		"short_name": "Belgium",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"BEL"
+			],
+			"iso_a3": [
+				"BEL"
+			],
+			"sov_a3": [
+				"BEL"
+			],
+			"name_aliases": [
+				"Belgium"
+			]
+		},
+		"external_ids": {
+			"iso3": "BEL",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "BEL",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "BLZ",
+		"display_name": "Belize",
+		"short_name": "Belize",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"BLZ"
+			],
+			"iso_a3": [
+				"BLZ"
+			],
+			"sov_a3": [
+				"BLZ"
+			],
+			"name_aliases": [
+				"Belize"
+			]
+		},
+		"external_ids": {
+			"iso3": "BLZ",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "BLZ",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "BEN",
+		"display_name": "Benin",
+		"short_name": "Benin",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"BEN"
+			],
+			"iso_a3": [
+				"BEN"
+			],
+			"sov_a3": [
+				"BEN"
+			],
+			"name_aliases": [
+				"Benin"
+			]
+		},
+		"external_ids": {
+			"iso3": "BEN",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "BEN",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "BTN",
+		"display_name": "Bhutan",
+		"short_name": "Bhutan",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"BTN"
+			],
+			"iso_a3": [
+				"BTN"
+			],
+			"sov_a3": [
+				"BTN"
+			],
+			"name_aliases": [
+				"Bhutan"
+			]
+		},
+		"external_ids": {
+			"iso3": "BTN",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "BTN",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "BOL",
+		"display_name": "Bolivia",
+		"short_name": "Bolivia",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"BOL"
+			],
+			"iso_a3": [
+				"BOL"
+			],
+			"sov_a3": [
+				"BOL"
+			],
+			"name_aliases": [
+				"Bolivia"
+			]
+		},
+		"external_ids": {
+			"iso3": "BOL",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "BOL",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "BIH",
+		"display_name": "Bosnia and Herzegovina",
+		"short_name": "Bosnia and Herz.",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"BIH"
+			],
+			"iso_a3": [
+				"BIH"
+			],
+			"sov_a3": [
+				"BIH"
+			],
+			"name_aliases": [
+				"Bosnia and Herz.",
+				"Bosnia and Herzegovina"
+			]
+		},
+		"external_ids": {
+			"iso3": "BIH",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "BIH",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "BWA",
+		"display_name": "Botswana",
+		"short_name": "Botswana",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"BWA"
+			],
+			"iso_a3": [
+				"BWA"
+			],
+			"sov_a3": [
+				"BWA"
+			],
+			"name_aliases": [
+				"Botswana"
+			]
+		},
+		"external_ids": {
+			"iso3": "BWA",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "BWA",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "BRA",
+		"display_name": "Brazil",
+		"short_name": "Brazil",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"BRA"
+			],
+			"iso_a3": [
+				"BRA"
+			],
+			"sov_a3": [
+				"BRA"
+			],
+			"name_aliases": [
+				"Brazil"
+			]
+		},
+		"external_ids": {
+			"iso3": "BRA",
+			"iso2": "BR",
+			"un_m49": "076",
+			"world_bank": "BRA",
+			"oecd": null
+		},
+		"data_notes": [
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": "2026-06-18"
+	},
+	{
+		"id": "BRN",
+		"display_name": "Brunei Darussalam",
+		"short_name": "Brunei",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"BRN"
+			],
+			"iso_a3": [
+				"BRN"
+			],
+			"sov_a3": [
+				"BRN"
+			],
+			"name_aliases": [
+				"Brunei",
+				"Brunei Darussalam"
+			]
+		},
+		"external_ids": {
+			"iso3": "BRN",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "BRN",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "BGR",
+		"display_name": "Bulgaria",
+		"short_name": "Bulgaria",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"BGR"
+			],
+			"iso_a3": [
+				"BGR"
+			],
+			"sov_a3": [
+				"BGR"
+			],
+			"name_aliases": [
+				"Bulgaria"
+			]
+		},
+		"external_ids": {
+			"iso3": "BGR",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "BGR",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "BFA",
+		"display_name": "Burkina Faso",
+		"short_name": "Burkina Faso",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"BFA"
+			],
+			"iso_a3": [
+				"BFA"
+			],
+			"sov_a3": [
+				"BFA"
+			],
+			"name_aliases": [
+				"Burkina Faso"
+			]
+		},
+		"external_ids": {
+			"iso3": "BFA",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "BFA",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "BDI",
+		"display_name": "Burundi",
+		"short_name": "Burundi",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"BDI"
+			],
+			"iso_a3": [
+				"BDI"
+			],
+			"sov_a3": [
+				"BDI"
+			],
+			"name_aliases": [
+				"Burundi"
+			]
+		},
+		"external_ids": {
+			"iso3": "BDI",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "BDI",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "KHM",
+		"display_name": "Cambodia",
+		"short_name": "Cambodia",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"KHM"
+			],
+			"iso_a3": [
+				"KHM"
+			],
+			"sov_a3": [
+				"KHM"
+			],
+			"name_aliases": [
+				"Cambodia"
+			]
+		},
+		"external_ids": {
+			"iso3": "KHM",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "KHM",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "CMR",
+		"display_name": "Cameroon",
+		"short_name": "Cameroon",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"CMR"
+			],
+			"iso_a3": [
+				"CMR"
+			],
+			"sov_a3": [
+				"CMR"
+			],
+			"name_aliases": [
+				"Cameroon"
+			]
+		},
+		"external_ids": {
+			"iso3": "CMR",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "CMR",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "CAN",
+		"display_name": "Canada",
+		"short_name": "Canada",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"CAN"
+			],
+			"iso_a3": [
+				"CAN"
+			],
+			"sov_a3": [
+				"CAN"
+			],
+			"name_aliases": [
+				"Canada"
+			]
+		},
+		"external_ids": {
+			"iso3": "CAN",
+			"iso2": "CA",
+			"un_m49": "124",
+			"world_bank": "CAN",
+			"oecd": "CAN"
+		},
+		"data_notes": [
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": "2026-06-18"
+	},
+	{
+		"id": "CAF",
+		"display_name": "Central African Republic",
+		"short_name": "Central African Rep.",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"CAF"
+			],
+			"iso_a3": [
+				"CAF"
+			],
+			"sov_a3": [
+				"CAF"
+			],
+			"name_aliases": [
+				"Central African Rep.",
+				"Central African Republic"
+			]
+		},
+		"external_ids": {
+			"iso3": "CAF",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "CAF",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "TCD",
+		"display_name": "Chad",
+		"short_name": "Chad",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"TCD"
+			],
+			"iso_a3": [
+				"TCD"
+			],
+			"sov_a3": [
+				"TCD"
+			],
+			"name_aliases": [
+				"Chad"
+			]
+		},
+		"external_ids": {
+			"iso3": "TCD",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "TCD",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "CHL",
+		"display_name": "Chile",
+		"short_name": "Chile",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"CHL"
+			],
+			"iso_a3": [
+				"CHL"
+			],
+			"sov_a3": [
+				"CHL"
+			],
+			"name_aliases": [
+				"Chile"
+			]
+		},
+		"external_ids": {
+			"iso3": "CHL",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "CHL",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "CHN",
+		"display_name": "China",
+		"short_name": "China",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"CHN"
+			],
+			"iso_a3": [
+				"CHN"
+			],
+			"sov_a3": [
+				"CH1"
+			],
+			"name_aliases": [
+				"China"
+			]
+		},
+		"external_ids": {
+			"iso3": "CHN",
+			"iso2": "CN",
+			"un_m49": "156",
+			"world_bank": "CHN",
+			"oecd": null
+		},
+		"data_notes": [
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": "2026-06-18"
+	},
+	{
+		"id": "COL",
+		"display_name": "Colombia",
+		"short_name": "Colombia",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"COL"
+			],
+			"iso_a3": [
+				"COL"
+			],
+			"sov_a3": [
+				"COL"
+			],
+			"name_aliases": [
+				"Colombia"
+			]
+		},
+		"external_ids": {
+			"iso3": "COL",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "COL",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "CRI",
+		"display_name": "Costa Rica",
+		"short_name": "Costa Rica",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"CRI"
+			],
+			"iso_a3": [
+				"CRI"
+			],
+			"sov_a3": [
+				"CRI"
+			],
+			"name_aliases": [
+				"Costa Rica"
+			]
+		},
+		"external_ids": {
+			"iso3": "CRI",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "CRI",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "CIV",
+		"display_name": "Côte d'Ivoire",
+		"short_name": "Côte d'Ivoire",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"CIV"
+			],
+			"iso_a3": [
+				"CIV"
+			],
+			"sov_a3": [
+				"CIV"
+			],
+			"name_aliases": [
+				"Côte d'Ivoire",
+				"Ivory Coast"
+			]
+		},
+		"external_ids": {
+			"iso3": "CIV",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "CIV",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "HRV",
+		"display_name": "Croatia",
+		"short_name": "Croatia",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"HRV"
+			],
+			"iso_a3": [
+				"HRV"
+			],
+			"sov_a3": [
+				"HRV"
+			],
+			"name_aliases": [
+				"Croatia"
+			]
+		},
+		"external_ids": {
+			"iso3": "HRV",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "HRV",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "CUB",
+		"display_name": "Cuba",
+		"short_name": "Cuba",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"CUB"
+			],
+			"iso_a3": [
+				"CUB"
+			],
+			"sov_a3": [
+				"CU1"
+			],
+			"name_aliases": [
+				"Cuba"
+			]
+		},
+		"external_ids": {
+			"iso3": "CUB",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "CUB",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "CYP",
+		"display_name": "Cyprus",
+		"short_name": "Cyprus",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"CYP"
+			],
+			"iso_a3": [
+				"CYP"
+			],
+			"sov_a3": [
+				"CYP"
+			],
+			"name_aliases": [
+				"Cyprus"
+			]
+		},
+		"external_ids": {
+			"iso3": "CYP",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "CYP",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "CZE",
+		"display_name": "Czechia",
+		"short_name": "Czechia",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"CZE"
+			],
+			"iso_a3": [
+				"CZE"
+			],
+			"sov_a3": [
+				"CZE"
+			],
+			"name_aliases": [
+				"Czechia",
+				"Czech Republic"
+			]
+		},
+		"external_ids": {
+			"iso3": "CZE",
+			"iso2": "CZ",
+			"un_m49": "203",
+			"world_bank": "CZE",
+			"oecd": "CZE"
+		},
+		"data_notes": [
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": "2026-06-18"
+	},
+	{
+		"id": "COD",
+		"display_name": "Democratic Republic of the Congo",
+		"short_name": "DR Congo",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"COD"
+			],
+			"iso_a3": [
+				"COD"
+			],
+			"sov_a3": [
+				"COD"
+			],
+			"name_aliases": [
+				"Democratic Republic of the Congo",
+				"Dem. Rep. Congo",
+				"DR Congo"
+			]
+		},
+		"external_ids": {
+			"iso3": "COD",
+			"iso2": "CD",
+			"un_m49": "180",
+			"world_bank": "COD",
+			"oecd": null
+		},
+		"data_notes": [
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": "2026-06-18"
+	},
+	{
+		"id": "DJI",
+		"display_name": "Djibouti",
+		"short_name": "Djibouti",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"DJI"
+			],
+			"iso_a3": [
+				"DJI"
+			],
+			"sov_a3": [
+				"DJI"
+			],
+			"name_aliases": [
+				"Djibouti"
+			]
+		},
+		"external_ids": {
+			"iso3": "DJI",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "DJI",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "DOM",
+		"display_name": "Dominican Republic",
+		"short_name": "Dominican Rep.",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"DOM"
+			],
+			"iso_a3": [
+				"DOM"
+			],
+			"sov_a3": [
+				"DOM"
+			],
+			"name_aliases": [
+				"Dominican Rep.",
+				"Dominican Republic"
+			]
+		},
+		"external_ids": {
+			"iso3": "DOM",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "DOM",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "ECU",
+		"display_name": "Ecuador",
+		"short_name": "Ecuador",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"ECU"
+			],
+			"iso_a3": [
+				"ECU"
+			],
+			"sov_a3": [
+				"ECU"
+			],
+			"name_aliases": [
+				"Ecuador"
+			]
+		},
+		"external_ids": {
+			"iso3": "ECU",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "ECU",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "EGY",
+		"display_name": "Egypt",
+		"short_name": "Egypt",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"EGY"
+			],
+			"iso_a3": [
+				"EGY"
+			],
+			"sov_a3": [
+				"EGY"
+			],
+			"name_aliases": [
+				"Egypt"
+			]
+		},
+		"external_ids": {
+			"iso3": "EGY",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "EGY",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "SLV",
+		"display_name": "El Salvador",
+		"short_name": "El Salvador",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"SLV"
+			],
+			"iso_a3": [
+				"SLV"
+			],
+			"sov_a3": [
+				"SLV"
+			],
+			"name_aliases": [
+				"El Salvador"
+			]
+		},
+		"external_ids": {
+			"iso3": "SLV",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "SLV",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "GNQ",
+		"display_name": "Equatorial Guinea",
+		"short_name": "Eq. Guinea",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"GNQ"
+			],
+			"iso_a3": [
+				"GNQ"
+			],
+			"sov_a3": [
+				"GNQ"
+			],
+			"name_aliases": [
+				"Eq. Guinea",
+				"Equatorial Guinea"
+			]
+		},
+		"external_ids": {
+			"iso3": "GNQ",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "GNQ",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "ERI",
+		"display_name": "Eritrea",
+		"short_name": "Eritrea",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"ERI"
+			],
+			"iso_a3": [
+				"ERI"
+			],
+			"sov_a3": [
+				"ERI"
+			],
+			"name_aliases": [
+				"Eritrea"
+			]
+		},
+		"external_ids": {
+			"iso3": "ERI",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "ERI",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "EST",
+		"display_name": "Estonia",
+		"short_name": "Estonia",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"EST"
+			],
+			"iso_a3": [
+				"EST"
+			],
+			"sov_a3": [
+				"EST"
+			],
+			"name_aliases": [
+				"Estonia"
+			]
+		},
+		"external_ids": {
+			"iso3": "EST",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "EST",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "ETH",
+		"display_name": "Ethiopia",
+		"short_name": "Ethiopia",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"ETH"
+			],
+			"iso_a3": [
+				"ETH"
+			],
+			"sov_a3": [
+				"ETH"
+			],
+			"name_aliases": [
+				"Ethiopia"
+			]
+		},
+		"external_ids": {
+			"iso3": "ETH",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "ETH",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "FJI",
+		"display_name": "Fiji",
+		"short_name": "Fiji",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"FJI"
+			],
+			"iso_a3": [
+				"FJI"
+			],
+			"sov_a3": [
+				"FJI"
+			],
+			"name_aliases": [
+				"Fiji"
+			]
+		},
+		"external_ids": {
+			"iso3": "FJI",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "FJI",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "FIN",
+		"display_name": "Finland",
+		"short_name": "Finland",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"FIN"
+			],
+			"iso_a3": [
+				"FIN"
+			],
+			"sov_a3": [
+				"FI1"
+			],
+			"name_aliases": [
+				"Finland"
+			]
+		},
+		"external_ids": {
+			"iso3": "FIN",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "FIN",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "FRA",
+		"display_name": "France",
+		"short_name": "France",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"FRA"
+			],
+			"iso_a3": [],
+			"sov_a3": [
+				"FR1"
+			],
+			"name_aliases": [
+				"France"
+			]
+		},
+		"external_ids": {
+			"iso3": "FRA",
+			"iso2": "FR",
+			"un_m49": "250",
+			"world_bank": "FRA",
+			"oecd": "FRA"
+		},
+		"data_notes": [
+			"Natural Earth ISO_A3 can be -99 for this geometry; registry id remains FRA.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": "2026-06-18"
+	},
+	{
+		"id": "ATF",
+		"display_name": "French Southern and Antarctic Lands",
+		"short_name": "French Southern and Antarctic Lands",
+		"map_unit_type": "territory",
+		"recognition_status": "territory",
+		"sovereignty_note": "Natural Earth represents this as an Admin-0 dependency associated with France; OurWorldSystem records it as a separate map unit without adjudicating sovereignty.",
+		"natural_earth": {
+			"adm0_a3": [
+				"ATF"
+			],
+			"iso_a3": [
+				"ATF"
+			],
+			"sov_a3": [
+				"FR1"
+			],
+			"name_aliases": [
+				"Fr. S. Antarctic Lands",
+				"French Southern and Antarctic Lands"
+			]
+		},
+		"external_ids": {
+			"iso3": "ATF",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": null,
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Added to prevent valid Natural Earth ISO_A3=ATF from matching France.",
+			"Matched Natural Earth feature during registry matching validation."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "NCL",
+		"display_name": "New Caledonia",
+		"short_name": "New Caledonia",
+		"map_unit_type": "territory",
+		"recognition_status": "territory",
+		"sovereignty_note": "Natural Earth represents this as an Admin-0 dependency associated with France; OurWorldSystem records it as a separate map unit without adjudicating sovereignty.",
+		"natural_earth": {
+			"adm0_a3": [
+				"NCL"
+			],
+			"iso_a3": [
+				"NCL"
+			],
+			"sov_a3": [
+				"FR1"
+			],
+			"name_aliases": [
+				"New Caledonia"
+			]
+		},
+		"external_ids": {
+			"iso3": "NCL",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "NCL",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Added to prevent valid Natural Earth ISO_A3=NCL from matching France.",
+			"Matched Natural Earth feature during registry matching validation."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "GAB",
+		"display_name": "Gabon",
+		"short_name": "Gabon",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"GAB"
+			],
+			"iso_a3": [
+				"GAB"
+			],
+			"sov_a3": [
+				"GAB"
+			],
+			"name_aliases": [
+				"Gabon"
+			]
+		},
+		"external_ids": {
+			"iso3": "GAB",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "GAB",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "GEO",
+		"display_name": "Georgia",
+		"short_name": "Georgia",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"GEO"
+			],
+			"iso_a3": [
+				"GEO"
+			],
+			"sov_a3": [
+				"GEO"
+			],
+			"name_aliases": [
+				"Georgia"
+			]
+		},
+		"external_ids": {
+			"iso3": "GEO",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "GEO",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "DEU",
+		"display_name": "Germany",
+		"short_name": "Germany",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"DEU"
+			],
+			"iso_a3": [
+				"DEU"
+			],
+			"sov_a3": [
+				"DEU"
+			],
+			"name_aliases": [
+				"Germany"
+			]
+		},
+		"external_ids": {
+			"iso3": "DEU",
+			"iso2": "DE",
+			"un_m49": "276",
+			"world_bank": "DEU",
+			"oecd": "DEU"
+		},
+		"data_notes": [
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": "2026-06-18"
+	},
+	{
+		"id": "GHA",
+		"display_name": "Ghana",
+		"short_name": "Ghana",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"GHA"
+			],
+			"iso_a3": [
+				"GHA"
+			],
+			"sov_a3": [
+				"GHA"
+			],
+			"name_aliases": [
+				"Ghana"
+			]
+		},
+		"external_ids": {
+			"iso3": "GHA",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "GHA",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "GRC",
+		"display_name": "Greece",
+		"short_name": "Greece",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"GRC"
+			],
+			"iso_a3": [
+				"GRC"
+			],
+			"sov_a3": [
+				"GRC"
+			],
+			"name_aliases": [
+				"Greece"
+			]
+		},
+		"external_ids": {
+			"iso3": "GRC",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "GRC",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "GRL",
+		"display_name": "Greenland",
+		"short_name": "Greenland",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"GRL"
+			],
+			"iso_a3": [
+				"GRL"
+			],
+			"sov_a3": [
+				"DN1"
+			],
+			"name_aliases": [
+				"Greenland"
+			]
+		},
+		"external_ids": {
+			"iso3": "GRL",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "GRL",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "DNK",
+		"display_name": "Denmark",
+		"short_name": "Denmark",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"DNK"
+			],
+			"iso_a3": [
+				"DNK"
+			],
+			"sov_a3": [
+				"DN1"
+			],
+			"name_aliases": [
+				"Denmark"
+			]
+		},
+		"external_ids": {
+			"iso3": "DNK",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "DNK",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Added to separate Denmark from Greenland where Natural Earth shares SOV_A3=DN1.",
+			"Matched Natural Earth feature during registry matching validation."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "GTM",
+		"display_name": "Guatemala",
+		"short_name": "Guatemala",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"GTM"
+			],
+			"iso_a3": [
+				"GTM"
+			],
+			"sov_a3": [
+				"GTM"
+			],
+			"name_aliases": [
+				"Guatemala"
+			]
+		},
+		"external_ids": {
+			"iso3": "GTM",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "GTM",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "GIN",
+		"display_name": "Guinea",
+		"short_name": "Guinea",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"GIN"
+			],
+			"iso_a3": [
+				"GIN"
+			],
+			"sov_a3": [
+				"GIN"
+			],
+			"name_aliases": [
+				"Guinea"
+			]
+		},
+		"external_ids": {
+			"iso3": "GIN",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "GIN",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "GNB",
+		"display_name": "Guinea-Bissau",
+		"short_name": "Guinea-Bissau",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"GNB"
+			],
+			"iso_a3": [
+				"GNB"
+			],
+			"sov_a3": [
+				"GNB"
+			],
+			"name_aliases": [
+				"Guinea-Bissau"
+			]
+		},
+		"external_ids": {
+			"iso3": "GNB",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "GNB",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "GUY",
+		"display_name": "Guyana",
+		"short_name": "Guyana",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"GUY"
+			],
+			"iso_a3": [
+				"GUY"
+			],
+			"sov_a3": [
+				"GUY"
+			],
+			"name_aliases": [
+				"Guyana"
+			]
+		},
+		"external_ids": {
+			"iso3": "GUY",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "GUY",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "HTI",
+		"display_name": "Haiti",
+		"short_name": "Haiti",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"HTI"
+			],
+			"iso_a3": [
+				"HTI"
+			],
+			"sov_a3": [
+				"HTI"
+			],
+			"name_aliases": [
+				"Haiti"
+			]
+		},
+		"external_ids": {
+			"iso3": "HTI",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "HTI",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "HND",
+		"display_name": "Honduras",
+		"short_name": "Honduras",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"HND"
+			],
+			"iso_a3": [
+				"HND"
+			],
+			"sov_a3": [
+				"HND"
+			],
+			"name_aliases": [
+				"Honduras"
+			]
+		},
+		"external_ids": {
+			"iso3": "HND",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "HND",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "HUN",
+		"display_name": "Hungary",
+		"short_name": "Hungary",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"HUN"
+			],
+			"iso_a3": [
+				"HUN"
+			],
+			"sov_a3": [
+				"HUN"
+			],
+			"name_aliases": [
+				"Hungary"
+			]
+		},
+		"external_ids": {
+			"iso3": "HUN",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "HUN",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "ISL",
+		"display_name": "Iceland",
+		"short_name": "Iceland",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"ISL"
+			],
+			"iso_a3": [
+				"ISL"
+			],
+			"sov_a3": [
+				"ISL"
+			],
+			"name_aliases": [
+				"Iceland"
+			]
+		},
+		"external_ids": {
+			"iso3": "ISL",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "ISL",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "IND",
+		"display_name": "India",
+		"short_name": "India",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"IND"
+			],
+			"iso_a3": [
+				"IND"
+			],
+			"sov_a3": [
+				"IND"
+			],
+			"name_aliases": [
+				"India"
+			]
+		},
+		"external_ids": {
+			"iso3": "IND",
+			"iso2": "IN",
+			"un_m49": "356",
+			"world_bank": "IND",
+			"oecd": null
+		},
+		"data_notes": [
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": "2026-06-18"
+	},
+	{
+		"id": "IDN",
+		"display_name": "Indonesia",
+		"short_name": "Indonesia",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"IDN"
+			],
+			"iso_a3": [
+				"IDN"
+			],
+			"sov_a3": [
+				"IDN"
+			],
+			"name_aliases": [
+				"Indonesia"
+			]
+		},
+		"external_ids": {
+			"iso3": "IDN",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "IDN",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "IRN",
+		"display_name": "Iran",
+		"short_name": "Iran",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"IRN"
+			],
+			"iso_a3": [
+				"IRN"
+			],
+			"sov_a3": [
+				"IRN"
+			],
+			"name_aliases": [
+				"Iran",
+				"Iran, Islamic Republic of"
+			]
+		},
+		"external_ids": {
+			"iso3": "IRN",
+			"iso2": "IR",
+			"un_m49": "364",
+			"world_bank": "IRN",
+			"oecd": null
+		},
+		"data_notes": [
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": "2026-06-18"
+	},
+	{
+		"id": "IRQ",
+		"display_name": "Iraq",
+		"short_name": "Iraq",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"IRQ"
+			],
+			"iso_a3": [
+				"IRQ"
+			],
+			"sov_a3": [
+				"IRQ"
+			],
+			"name_aliases": [
+				"Iraq"
+			]
+		},
+		"external_ids": {
+			"iso3": "IRQ",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "IRQ",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "IRL",
+		"display_name": "Ireland",
+		"short_name": "Ireland",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"IRL"
+			],
+			"iso_a3": [
+				"IRL"
+			],
+			"sov_a3": [
+				"IRL"
+			],
+			"name_aliases": [
+				"Ireland"
+			]
+		},
+		"external_ids": {
+			"iso3": "IRL",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "IRL",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "ISR",
+		"display_name": "Israel",
+		"short_name": "Israel",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"ISR"
+			],
+			"iso_a3": [
+				"ISR"
+			],
+			"sov_a3": [
+				"IS1"
+			],
+			"name_aliases": [
+				"Israel"
+			]
+		},
+		"external_ids": {
+			"iso3": "ISR",
+			"iso2": "IL",
+			"un_m49": "376",
+			"world_bank": "ISR",
+			"oecd": "ISR"
+		},
+		"data_notes": [
+			"Kept separate from PSE where the geometry source does so.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": "2026-06-18"
+	},
+	{
+		"id": "ITA",
+		"display_name": "Italy",
+		"short_name": "Italy",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"ITA"
+			],
+			"iso_a3": [
+				"ITA"
+			],
+			"sov_a3": [
+				"ITA"
+			],
+			"name_aliases": [
+				"Italy"
+			]
+		},
+		"external_ids": {
+			"iso3": "ITA",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "ITA",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "JAM",
+		"display_name": "Jamaica",
+		"short_name": "Jamaica",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"JAM"
+			],
+			"iso_a3": [
+				"JAM"
+			],
+			"sov_a3": [
+				"JAM"
+			],
+			"name_aliases": [
+				"Jamaica"
+			]
+		},
+		"external_ids": {
+			"iso3": "JAM",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "JAM",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "JPN",
+		"display_name": "Japan",
+		"short_name": "Japan",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"JPN"
+			],
+			"iso_a3": [
+				"JPN"
+			],
+			"sov_a3": [
+				"JPN"
+			],
+			"name_aliases": [
+				"Japan"
+			]
+		},
+		"external_ids": {
+			"iso3": "JPN",
+			"iso2": "JP",
+			"un_m49": "392",
+			"world_bank": "JPN",
+			"oecd": "JPN"
+		},
+		"data_notes": [
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": "2026-06-18"
+	},
+	{
+		"id": "JOR",
+		"display_name": "Jordan",
+		"short_name": "Jordan",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"JOR"
+			],
+			"iso_a3": [
+				"JOR"
+			],
+			"sov_a3": [
+				"JOR"
+			],
+			"name_aliases": [
+				"Jordan"
+			]
+		},
+		"external_ids": {
+			"iso3": "JOR",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "JOR",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "KAZ",
+		"display_name": "Kazakhstan",
+		"short_name": "Kazakhstan",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"KAZ"
+			],
+			"iso_a3": [
+				"KAZ"
+			],
+			"sov_a3": [
+				"KA1"
+			],
+			"name_aliases": [
+				"Kazakhstan"
+			]
+		},
+		"external_ids": {
+			"iso3": "KAZ",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "KAZ",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "KEN",
+		"display_name": "Kenya",
+		"short_name": "Kenya",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"KEN"
+			],
+			"iso_a3": [
+				"KEN"
+			],
+			"sov_a3": [
+				"KEN"
+			],
+			"name_aliases": [
+				"Kenya"
+			]
+		},
+		"external_ids": {
+			"iso3": "KEN",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "KEN",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "SWZ",
+		"display_name": "Kingdom of eSwatini",
+		"short_name": "eSwatini",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"SWZ"
+			],
+			"iso_a3": [
+				"SWZ"
+			],
+			"sov_a3": [
+				"SWZ"
+			],
+			"name_aliases": [
+				"eSwatini",
+				"Kingdom of eSwatini"
+			]
+		},
+		"external_ids": {
+			"iso3": "SWZ",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "SWZ",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "XKO",
+		"display_name": "Kosovo",
+		"short_name": "Kosovo",
+		"map_unit_type": "disputed",
+		"recognition_status": "disputed",
+		"sovereignty_note": "Displayed as a separate map unit where source geometry and public datasets do so; recognition status varies by source.",
+		"natural_earth": {
+			"adm0_a3": [
+				"KOS"
+			],
+			"iso_a3": [],
+			"sov_a3": [
+				"KOS"
+			],
+			"name_aliases": [
+				"Kosovo"
+			]
+		},
+		"external_ids": {
+			"iso3": "XKO",
+			"iso2": "XK",
+			"un_m49": null,
+			"world_bank": "XKX",
+			"oecd": null
+		},
+		"data_notes": [
+			"Uses XKO as an application registry id; Natural Earth uses KOS.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": "2026-06-18"
+	},
+	{
+		"id": "KWT",
+		"display_name": "Kuwait",
+		"short_name": "Kuwait",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"KWT"
+			],
+			"iso_a3": [
+				"KWT"
+			],
+			"sov_a3": [
+				"KWT"
+			],
+			"name_aliases": [
+				"Kuwait"
+			]
+		},
+		"external_ids": {
+			"iso3": "KWT",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "KWT",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "KGZ",
+		"display_name": "Kyrgyzstan",
+		"short_name": "Kyrgyzstan",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"KGZ"
+			],
+			"iso_a3": [
+				"KGZ"
+			],
+			"sov_a3": [
+				"KGZ"
+			],
+			"name_aliases": [
+				"Kyrgyzstan"
+			]
+		},
+		"external_ids": {
+			"iso3": "KGZ",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "KGZ",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "LAO",
+		"display_name": "Lao PDR",
+		"short_name": "Laos",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"LAO"
+			],
+			"iso_a3": [
+				"LAO"
+			],
+			"sov_a3": [
+				"LAO"
+			],
+			"name_aliases": [
+				"Laos",
+				"Lao PDR"
+			]
+		},
+		"external_ids": {
+			"iso3": "LAO",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "LAO",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "LVA",
+		"display_name": "Latvia",
+		"short_name": "Latvia",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"LVA"
+			],
+			"iso_a3": [
+				"LVA"
+			],
+			"sov_a3": [
+				"LVA"
+			],
+			"name_aliases": [
+				"Latvia"
+			]
+		},
+		"external_ids": {
+			"iso3": "LVA",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "LVA",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "LBN",
+		"display_name": "Lebanon",
+		"short_name": "Lebanon",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"LBN"
+			],
+			"iso_a3": [
+				"LBN"
+			],
+			"sov_a3": [
+				"LBN"
+			],
+			"name_aliases": [
+				"Lebanon"
+			]
+		},
+		"external_ids": {
+			"iso3": "LBN",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "LBN",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "LSO",
+		"display_name": "Lesotho",
+		"short_name": "Lesotho",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"LSO"
+			],
+			"iso_a3": [
+				"LSO"
+			],
+			"sov_a3": [
+				"LSO"
+			],
+			"name_aliases": [
+				"Lesotho"
+			]
+		},
+		"external_ids": {
+			"iso3": "LSO",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "LSO",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "LBR",
+		"display_name": "Liberia",
+		"short_name": "Liberia",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"LBR"
+			],
+			"iso_a3": [
+				"LBR"
+			],
+			"sov_a3": [
+				"LBR"
+			],
+			"name_aliases": [
+				"Liberia"
+			]
+		},
+		"external_ids": {
+			"iso3": "LBR",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "LBR",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "LBY",
+		"display_name": "Libya",
+		"short_name": "Libya",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"LBY"
+			],
+			"iso_a3": [
+				"LBY"
+			],
+			"sov_a3": [
+				"LBY"
+			],
+			"name_aliases": [
+				"Libya"
+			]
+		},
+		"external_ids": {
+			"iso3": "LBY",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "LBY",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "LTU",
+		"display_name": "Lithuania",
+		"short_name": "Lithuania",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"LTU"
+			],
+			"iso_a3": [
+				"LTU"
+			],
+			"sov_a3": [
+				"LTU"
+			],
+			"name_aliases": [
+				"Lithuania"
+			]
+		},
+		"external_ids": {
+			"iso3": "LTU",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "LTU",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "LUX",
+		"display_name": "Luxembourg",
+		"short_name": "Luxembourg",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"LUX"
+			],
+			"iso_a3": [
+				"LUX"
+			],
+			"sov_a3": [
+				"LUX"
+			],
+			"name_aliases": [
+				"Luxembourg"
+			]
+		},
+		"external_ids": {
+			"iso3": "LUX",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "LUX",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "MDG",
+		"display_name": "Madagascar",
+		"short_name": "Madagascar",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"MDG"
+			],
+			"iso_a3": [
+				"MDG"
+			],
+			"sov_a3": [
+				"MDG"
+			],
+			"name_aliases": [
+				"Madagascar"
+			]
+		},
+		"external_ids": {
+			"iso3": "MDG",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "MDG",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "MWI",
+		"display_name": "Malawi",
+		"short_name": "Malawi",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"MWI"
+			],
+			"iso_a3": [
+				"MWI"
+			],
+			"sov_a3": [
+				"MWI"
+			],
+			"name_aliases": [
+				"Malawi"
+			]
+		},
+		"external_ids": {
+			"iso3": "MWI",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "MWI",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "MYS",
+		"display_name": "Malaysia",
+		"short_name": "Malaysia",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"MYS"
+			],
+			"iso_a3": [
+				"MYS"
+			],
+			"sov_a3": [
+				"MYS"
+			],
+			"name_aliases": [
+				"Malaysia"
+			]
+		},
+		"external_ids": {
+			"iso3": "MYS",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "MYS",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "MLI",
+		"display_name": "Mali",
+		"short_name": "Mali",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"MLI"
+			],
+			"iso_a3": [
+				"MLI"
+			],
+			"sov_a3": [
+				"MLI"
+			],
+			"name_aliases": [
+				"Mali"
+			]
+		},
+		"external_ids": {
+			"iso3": "MLI",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "MLI",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "MRT",
+		"display_name": "Mauritania",
+		"short_name": "Mauritania",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"MRT"
+			],
+			"iso_a3": [
+				"MRT"
+			],
+			"sov_a3": [
+				"MRT"
+			],
+			"name_aliases": [
+				"Mauritania"
+			]
+		},
+		"external_ids": {
+			"iso3": "MRT",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "MRT",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "MEX",
+		"display_name": "Mexico",
+		"short_name": "Mexico",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"MEX"
+			],
+			"iso_a3": [
+				"MEX"
+			],
+			"sov_a3": [
+				"MEX"
+			],
+			"name_aliases": [
+				"Mexico"
+			]
+		},
+		"external_ids": {
+			"iso3": "MEX",
+			"iso2": "MX",
+			"un_m49": "484",
+			"world_bank": "MEX",
+			"oecd": "MEX"
+		},
+		"data_notes": [
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": "2026-06-18"
+	},
+	{
+		"id": "MDA",
+		"display_name": "Moldova",
+		"short_name": "Moldova",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"MDA"
+			],
+			"iso_a3": [
+				"MDA"
+			],
+			"sov_a3": [
+				"MDA"
+			],
+			"name_aliases": [
+				"Moldova"
+			]
+		},
+		"external_ids": {
+			"iso3": "MDA",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "MDA",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "MNG",
+		"display_name": "Mongolia",
+		"short_name": "Mongolia",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"MNG"
+			],
+			"iso_a3": [
+				"MNG"
+			],
+			"sov_a3": [
+				"MNG"
+			],
+			"name_aliases": [
+				"Mongolia"
+			]
+		},
+		"external_ids": {
+			"iso3": "MNG",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "MNG",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "MNE",
+		"display_name": "Montenegro",
+		"short_name": "Montenegro",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"MNE"
+			],
+			"iso_a3": [
+				"MNE"
+			],
+			"sov_a3": [
+				"MNE"
+			],
+			"name_aliases": [
+				"Montenegro"
+			]
+		},
+		"external_ids": {
+			"iso3": "MNE",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "MNE",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "MAR",
+		"display_name": "Morocco",
+		"short_name": "Morocco",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"MAR"
+			],
+			"iso_a3": [
+				"MAR"
+			],
+			"sov_a3": [
+				"MAR"
+			],
+			"name_aliases": [
+				"Morocco"
+			]
+		},
+		"external_ids": {
+			"iso3": "MAR",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "MAR",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "MOZ",
+		"display_name": "Mozambique",
+		"short_name": "Mozambique",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"MOZ"
+			],
+			"iso_a3": [
+				"MOZ"
+			],
+			"sov_a3": [
+				"MOZ"
+			],
+			"name_aliases": [
+				"Mozambique"
+			]
+		},
+		"external_ids": {
+			"iso3": "MOZ",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "MOZ",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "MMR",
+		"display_name": "Myanmar",
+		"short_name": "Myanmar",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"MMR"
+			],
+			"iso_a3": [
+				"MMR"
+			],
+			"sov_a3": [
+				"MMR"
+			],
+			"name_aliases": [
+				"Myanmar"
+			]
+		},
+		"external_ids": {
+			"iso3": "MMR",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "MMR",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "NAM",
+		"display_name": "Namibia",
+		"short_name": "Namibia",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"NAM"
+			],
+			"iso_a3": [
+				"NAM"
+			],
+			"sov_a3": [
+				"NAM"
+			],
+			"name_aliases": [
+				"Namibia"
+			]
+		},
+		"external_ids": {
+			"iso3": "NAM",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "NAM",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "NPL",
+		"display_name": "Nepal",
+		"short_name": "Nepal",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"NPL"
+			],
+			"iso_a3": [
+				"NPL"
+			],
+			"sov_a3": [
+				"NPL"
+			],
+			"name_aliases": [
+				"Nepal"
+			]
+		},
+		"external_ids": {
+			"iso3": "NPL",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "NPL",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "NLD",
+		"display_name": "Netherlands",
+		"short_name": "Netherlands",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"NLD"
+			],
+			"iso_a3": [
+				"NLD"
+			],
+			"sov_a3": [
+				"NL1"
+			],
+			"name_aliases": [
+				"Netherlands"
+			]
+		},
+		"external_ids": {
+			"iso3": "NLD",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "NLD",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "NZL",
+		"display_name": "New Zealand",
+		"short_name": "New Zealand",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"NZL"
+			],
+			"iso_a3": [
+				"NZL"
+			],
+			"sov_a3": [
+				"NZ1"
+			],
+			"name_aliases": [
+				"New Zealand"
+			]
+		},
+		"external_ids": {
+			"iso3": "NZL",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "NZL",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "NIC",
+		"display_name": "Nicaragua",
+		"short_name": "Nicaragua",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"NIC"
+			],
+			"iso_a3": [
+				"NIC"
+			],
+			"sov_a3": [
+				"NIC"
+			],
+			"name_aliases": [
+				"Nicaragua"
+			]
+		},
+		"external_ids": {
+			"iso3": "NIC",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "NIC",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "NER",
+		"display_name": "Niger",
+		"short_name": "Niger",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"NER"
+			],
+			"iso_a3": [
+				"NER"
+			],
+			"sov_a3": [
+				"NER"
+			],
+			"name_aliases": [
+				"Niger"
+			]
+		},
+		"external_ids": {
+			"iso3": "NER",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "NER",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "NGA",
+		"display_name": "Nigeria",
+		"short_name": "Nigeria",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"NGA"
+			],
+			"iso_a3": [
+				"NGA"
+			],
+			"sov_a3": [
+				"NGA"
+			],
+			"name_aliases": [
+				"Nigeria"
+			]
+		},
+		"external_ids": {
+			"iso3": "NGA",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "NGA",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "PRK",
+		"display_name": "North Korea",
+		"short_name": "North Korea",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"PRK"
+			],
+			"iso_a3": [
+				"PRK"
+			],
+			"sov_a3": [
+				"PRK"
+			],
+			"name_aliases": [
+				"North Korea",
+				"Dem. Rep. Korea",
+				"Democratic People's Republic of Korea"
+			]
+		},
+		"external_ids": {
+			"iso3": "PRK",
+			"iso2": "KP",
+			"un_m49": "408",
+			"world_bank": "PRK",
+			"oecd": null
+		},
+		"data_notes": [
+			"Kept separate from KOR where Natural Earth does so.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": "2026-06-18"
+	},
+	{
+		"id": "MKD",
+		"display_name": "North Macedonia",
+		"short_name": "North Macedonia",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"MKD"
+			],
+			"iso_a3": [
+				"MKD"
+			],
+			"sov_a3": [
+				"MKD"
+			],
+			"name_aliases": [
+				"North Macedonia"
+			]
+		},
+		"external_ids": {
+			"iso3": "MKD",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "MKD",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "CYN",
+		"display_name": "Northern Cyprus",
+		"short_name": "N. Cyprus",
+		"map_unit_type": "disputed",
+		"recognition_status": "disputed",
+		"sovereignty_note": "Generated from a Natural Earth feature marked as unrecognized, breakaway, or disputed; OurWorldSystem does not adjudicate sovereignty.",
+		"natural_earth": {
+			"adm0_a3": [
+				"CYN"
+			],
+			"iso_a3": [],
+			"sov_a3": [
+				"CYN"
+			],
+			"name_aliases": [
+				"N. Cyprus",
+				"Northern Cyprus"
+			]
+		},
+		"external_ids": {
+			"iso3": null,
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": null,
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "NOR",
+		"display_name": "Norway",
+		"short_name": "Norway",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"NOR"
+			],
+			"iso_a3": [],
+			"sov_a3": [
+				"NOR"
+			],
+			"name_aliases": [
+				"Norway"
+			]
+		},
+		"external_ids": {
+			"iso3": "NOR",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "NOR",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "OMN",
+		"display_name": "Oman",
+		"short_name": "Oman",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"OMN"
+			],
+			"iso_a3": [
+				"OMN"
+			],
+			"sov_a3": [
+				"OMN"
+			],
+			"name_aliases": [
+				"Oman"
+			]
+		},
+		"external_ids": {
+			"iso3": "OMN",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "OMN",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "PAK",
+		"display_name": "Pakistan",
+		"short_name": "Pakistan",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"PAK"
+			],
+			"iso_a3": [
+				"PAK"
+			],
+			"sov_a3": [
+				"PAK"
+			],
+			"name_aliases": [
+				"Pakistan"
+			]
+		},
+		"external_ids": {
+			"iso3": "PAK",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "PAK",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "PSE",
+		"display_name": "Palestine",
+		"short_name": "Palestine",
+		"map_unit_type": "disputed",
+		"recognition_status": "non_un_member",
+		"sovereignty_note": "Displayed as a map unit with contested and limited recognition; OurWorldSystem does not decide sovereignty disputes.",
+		"natural_earth": {
+			"adm0_a3": [
+				"PSX"
+			],
+			"iso_a3": [
+				"PSE"
+			],
+			"sov_a3": [
+				"IS1"
+			],
+			"name_aliases": [
+				"Palestine",
+				"Palestinian territories"
+			]
+		},
+		"external_ids": {
+			"iso3": "PSE",
+			"iso2": "PS",
+			"un_m49": "275",
+			"world_bank": "PSE",
+			"oecd": null
+		},
+		"data_notes": [
+			"Kept separate from ISR where the geometry source does so.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": "2026-06-18"
+	},
+	{
+		"id": "PAN",
+		"display_name": "Panama",
+		"short_name": "Panama",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"PAN"
+			],
+			"iso_a3": [
+				"PAN"
+			],
+			"sov_a3": [
+				"PAN"
+			],
+			"name_aliases": [
+				"Panama"
+			]
+		},
+		"external_ids": {
+			"iso3": "PAN",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "PAN",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "PNG",
+		"display_name": "Papua New Guinea",
+		"short_name": "Papua New Guinea",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"PNG"
+			],
+			"iso_a3": [
+				"PNG"
+			],
+			"sov_a3": [
+				"PNG"
+			],
+			"name_aliases": [
+				"Papua New Guinea"
+			]
+		},
+		"external_ids": {
+			"iso3": "PNG",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "PNG",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "PRY",
+		"display_name": "Paraguay",
+		"short_name": "Paraguay",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"PRY"
+			],
+			"iso_a3": [
+				"PRY"
+			],
+			"sov_a3": [
+				"PRY"
+			],
+			"name_aliases": [
+				"Paraguay"
+			]
+		},
+		"external_ids": {
+			"iso3": "PRY",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "PRY",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "PER",
+		"display_name": "Peru",
+		"short_name": "Peru",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"PER"
+			],
+			"iso_a3": [
+				"PER"
+			],
+			"sov_a3": [
+				"PER"
+			],
+			"name_aliases": [
+				"Peru"
+			]
+		},
+		"external_ids": {
+			"iso3": "PER",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "PER",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "PHL",
+		"display_name": "Philippines",
+		"short_name": "Philippines",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"PHL"
+			],
+			"iso_a3": [
+				"PHL"
+			],
+			"sov_a3": [
+				"PHL"
+			],
+			"name_aliases": [
+				"Philippines"
+			]
+		},
+		"external_ids": {
+			"iso3": "PHL",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "PHL",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "POL",
+		"display_name": "Poland",
+		"short_name": "Poland",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"POL"
+			],
+			"iso_a3": [
+				"POL"
+			],
+			"sov_a3": [
+				"POL"
+			],
+			"name_aliases": [
+				"Poland"
+			]
+		},
+		"external_ids": {
+			"iso3": "POL",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "POL",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "PRT",
+		"display_name": "Portugal",
+		"short_name": "Portugal",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"PRT"
+			],
+			"iso_a3": [
+				"PRT"
+			],
+			"sov_a3": [
+				"PRT"
+			],
+			"name_aliases": [
+				"Portugal"
+			]
+		},
+		"external_ids": {
+			"iso3": "PRT",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "PRT",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "QAT",
+		"display_name": "Qatar",
+		"short_name": "Qatar",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"QAT"
+			],
+			"iso_a3": [
+				"QAT"
+			],
+			"sov_a3": [
+				"QAT"
+			],
+			"name_aliases": [
+				"Qatar"
+			]
+		},
+		"external_ids": {
+			"iso3": "QAT",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "QAT",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "COG",
+		"display_name": "Republic of the Congo",
+		"short_name": "Congo",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"COG"
+			],
+			"iso_a3": [
+				"COG"
+			],
+			"sov_a3": [
+				"COG"
+			],
+			"name_aliases": [
+				"Congo",
+				"Republic of the Congo"
+			]
+		},
+		"external_ids": {
+			"iso3": "COG",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "COG",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "ROU",
+		"display_name": "Romania",
+		"short_name": "Romania",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"ROU"
+			],
+			"iso_a3": [
+				"ROU"
+			],
+			"sov_a3": [
+				"ROU"
+			],
+			"name_aliases": [
+				"Romania"
+			]
+		},
+		"external_ids": {
+			"iso3": "ROU",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "ROU",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "RUS",
+		"display_name": "Russia",
+		"short_name": "Russia",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"RUS"
+			],
+			"iso_a3": [
+				"RUS"
+			],
+			"sov_a3": [
+				"RUS"
+			],
+			"name_aliases": [
+				"Russia",
+				"Russian Federation"
+			]
+		},
+		"external_ids": {
+			"iso3": "RUS",
+			"iso2": "RU",
+			"un_m49": "643",
+			"world_bank": "RUS",
+			"oecd": null
+		},
+		"data_notes": [
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": "2026-06-18"
+	},
+	{
+		"id": "RWA",
+		"display_name": "Rwanda",
+		"short_name": "Rwanda",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"RWA"
+			],
+			"iso_a3": [
+				"RWA"
+			],
+			"sov_a3": [
+				"RWA"
+			],
+			"name_aliases": [
+				"Rwanda"
+			]
+		},
+		"external_ids": {
+			"iso3": "RWA",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "RWA",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "SAU",
+		"display_name": "Saudi Arabia",
+		"short_name": "Saudi Arabia",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"SAU"
+			],
+			"iso_a3": [
+				"SAU"
+			],
+			"sov_a3": [
+				"SAU"
+			],
+			"name_aliases": [
+				"Saudi Arabia"
+			]
+		},
+		"external_ids": {
+			"iso3": "SAU",
+			"iso2": "SA",
+			"un_m49": "682",
+			"world_bank": "SAU",
+			"oecd": null
+		},
+		"data_notes": [
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": "2026-06-18"
+	},
+	{
+		"id": "SEN",
+		"display_name": "Senegal",
+		"short_name": "Senegal",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"SEN"
+			],
+			"iso_a3": [
+				"SEN"
+			],
+			"sov_a3": [
+				"SEN"
+			],
+			"name_aliases": [
+				"Senegal"
+			]
+		},
+		"external_ids": {
+			"iso3": "SEN",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "SEN",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "SRB",
+		"display_name": "Serbia",
+		"short_name": "Serbia",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"SRB"
+			],
+			"iso_a3": [
+				"SRB"
+			],
+			"sov_a3": [
+				"SRB"
+			],
+			"name_aliases": [
+				"Serbia",
+				"Republic of Serbia"
+			]
+		},
+		"external_ids": {
+			"iso3": "SRB",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "SRB",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "SLE",
+		"display_name": "Sierra Leone",
+		"short_name": "Sierra Leone",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"SLE"
+			],
+			"iso_a3": [
+				"SLE"
+			],
+			"sov_a3": [
+				"SLE"
+			],
+			"name_aliases": [
+				"Sierra Leone"
+			]
+		},
+		"external_ids": {
+			"iso3": "SLE",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "SLE",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "SVK",
+		"display_name": "Slovakia",
+		"short_name": "Slovakia",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"SVK"
+			],
+			"iso_a3": [
+				"SVK"
+			],
+			"sov_a3": [
+				"SVK"
+			],
+			"name_aliases": [
+				"Slovakia"
+			]
+		},
+		"external_ids": {
+			"iso3": "SVK",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "SVK",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "SVN",
+		"display_name": "Slovenia",
+		"short_name": "Slovenia",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"SVN"
+			],
+			"iso_a3": [
+				"SVN"
+			],
+			"sov_a3": [
+				"SVN"
+			],
+			"name_aliases": [
+				"Slovenia"
+			]
+		},
+		"external_ids": {
+			"iso3": "SVN",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "SVN",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "SLB",
+		"display_name": "Solomon Islands",
+		"short_name": "Solomon Is.",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"SLB"
+			],
+			"iso_a3": [
+				"SLB"
+			],
+			"sov_a3": [
+				"SLB"
+			],
+			"name_aliases": [
+				"Solomon Is.",
+				"Solomon Islands"
+			]
+		},
+		"external_ids": {
+			"iso3": "SLB",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "SLB",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "SOM",
+		"display_name": "Somalia",
+		"short_name": "Somalia",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"SOM"
+			],
+			"iso_a3": [
+				"SOM"
+			],
+			"sov_a3": [
+				"SOM"
+			],
+			"name_aliases": [
+				"Somalia"
+			]
+		},
+		"external_ids": {
+			"iso3": "SOM",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "SOM",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "SOL",
+		"display_name": "Somaliland",
+		"short_name": "Somaliland",
+		"map_unit_type": "disputed",
+		"recognition_status": "disputed",
+		"sovereignty_note": "Generated from a Natural Earth feature marked as unrecognized, breakaway, or disputed; OurWorldSystem does not adjudicate sovereignty.",
+		"natural_earth": {
+			"adm0_a3": [
+				"SOL"
+			],
+			"iso_a3": [],
+			"sov_a3": [
+				"SOL"
+			],
+			"name_aliases": [
+				"Somaliland"
+			]
+		},
+		"external_ids": {
+			"iso3": null,
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": null,
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "ZAF",
+		"display_name": "South Africa",
+		"short_name": "South Africa",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"ZAF"
+			],
+			"iso_a3": [
+				"ZAF"
+			],
+			"sov_a3": [
+				"ZAF"
+			],
+			"name_aliases": [
+				"South Africa"
+			]
+		},
+		"external_ids": {
+			"iso3": "ZAF",
+			"iso2": "ZA",
+			"un_m49": "710",
+			"world_bank": "ZAF",
+			"oecd": null
+		},
+		"data_notes": [
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": "2026-06-18"
+	},
+	{
+		"id": "KOR",
+		"display_name": "South Korea",
+		"short_name": "South Korea",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"KOR"
+			],
+			"iso_a3": [
+				"KOR"
+			],
+			"sov_a3": [
+				"KOR"
+			],
+			"name_aliases": [
+				"South Korea",
+				"Republic of Korea"
+			]
+		},
+		"external_ids": {
+			"iso3": "KOR",
+			"iso2": "KR",
+			"un_m49": "410",
+			"world_bank": "KOR",
+			"oecd": "KOR"
+		},
+		"data_notes": [
+			"Kept separate from PRK where Natural Earth does so.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": "2026-06-18"
+	},
+	{
+		"id": "SSD",
+		"display_name": "South Sudan",
+		"short_name": "S. Sudan",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"SDS"
+			],
+			"iso_a3": [
+				"SSD"
+			],
+			"sov_a3": [
+				"SDS"
+			],
+			"name_aliases": [
+				"S. Sudan",
+				"South Sudan"
+			]
+		},
+		"external_ids": {
+			"iso3": "SSD",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "SSD",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "ESP",
+		"display_name": "Spain",
+		"short_name": "Spain",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"ESP"
+			],
+			"iso_a3": [
+				"ESP"
+			],
+			"sov_a3": [
+				"ESP"
+			],
+			"name_aliases": [
+				"Spain"
+			]
+		},
+		"external_ids": {
+			"iso3": "ESP",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "ESP",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "LKA",
+		"display_name": "Sri Lanka",
+		"short_name": "Sri Lanka",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"LKA"
+			],
+			"iso_a3": [
+				"LKA"
+			],
+			"sov_a3": [
+				"LKA"
+			],
+			"name_aliases": [
+				"Sri Lanka"
+			]
+		},
+		"external_ids": {
+			"iso3": "LKA",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "LKA",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "SDN",
+		"display_name": "Sudan",
+		"short_name": "Sudan",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"SDN"
+			],
+			"iso_a3": [
+				"SDN"
+			],
+			"sov_a3": [
+				"SDN"
+			],
+			"name_aliases": [
+				"Sudan"
+			]
+		},
+		"external_ids": {
+			"iso3": "SDN",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "SDN",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "SUR",
+		"display_name": "Suriname",
+		"short_name": "Suriname",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"SUR"
+			],
+			"iso_a3": [
+				"SUR"
+			],
+			"sov_a3": [
+				"SUR"
+			],
+			"name_aliases": [
+				"Suriname"
+			]
+		},
+		"external_ids": {
+			"iso3": "SUR",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "SUR",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "SWE",
+		"display_name": "Sweden",
+		"short_name": "Sweden",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"SWE"
+			],
+			"iso_a3": [
+				"SWE"
+			],
+			"sov_a3": [
+				"SWE"
+			],
+			"name_aliases": [
+				"Sweden"
+			]
+		},
+		"external_ids": {
+			"iso3": "SWE",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "SWE",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "CHE",
+		"display_name": "Switzerland",
+		"short_name": "Switzerland",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"CHE"
+			],
+			"iso_a3": [
+				"CHE"
+			],
+			"sov_a3": [
+				"CHE"
+			],
+			"name_aliases": [
+				"Switzerland"
+			]
+		},
+		"external_ids": {
+			"iso3": "CHE",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "CHE",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "SYR",
+		"display_name": "Syria",
+		"short_name": "Syria",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"SYR"
+			],
+			"iso_a3": [
+				"SYR"
+			],
+			"sov_a3": [
+				"SYR"
+			],
+			"name_aliases": [
+				"Syria"
+			]
+		},
+		"external_ids": {
+			"iso3": "SYR",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "SYR",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "TWN",
+		"display_name": "Taiwan",
+		"short_name": "Taiwan",
+		"map_unit_type": "special",
+		"recognition_status": "disputed",
+		"sovereignty_note": "Displayed as a separate map unit where source geometry and public datasets do so; recognition and sovereignty claims vary by source.",
+		"natural_earth": {
+			"adm0_a3": [
+				"TWN"
+			],
+			"iso_a3": [
+				"TWN"
+			],
+			"sov_a3": [
+				"TWN"
+			],
+			"name_aliases": [
+				"Taiwan"
+			]
+		},
+		"external_ids": {
+			"iso3": "TWN",
+			"iso2": "TW",
+			"un_m49": "158",
+			"world_bank": null,
+			"oecd": null
+		},
+		"data_notes": [
+			"Some public datasets use custom or non-ISO identifiers for Taiwan.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": "2026-06-18"
+	},
+	{
+		"id": "TJK",
+		"display_name": "Tajikistan",
+		"short_name": "Tajikistan",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"TJK"
+			],
+			"iso_a3": [
+				"TJK"
+			],
+			"sov_a3": [
+				"TJK"
+			],
+			"name_aliases": [
+				"Tajikistan"
+			]
+		},
+		"external_ids": {
+			"iso3": "TJK",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "TJK",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "TZA",
+		"display_name": "Tanzania",
+		"short_name": "Tanzania",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"TZA"
+			],
+			"iso_a3": [
+				"TZA"
+			],
+			"sov_a3": [
+				"TZA"
+			],
+			"name_aliases": [
+				"Tanzania",
+				"United Republic of Tanzania"
+			]
+		},
+		"external_ids": {
+			"iso3": "TZA",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "TZA",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "THA",
+		"display_name": "Thailand",
+		"short_name": "Thailand",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"THA"
+			],
+			"iso_a3": [
+				"THA"
+			],
+			"sov_a3": [
+				"THA"
+			],
+			"name_aliases": [
+				"Thailand"
+			]
+		},
+		"external_ids": {
+			"iso3": "THA",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "THA",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "GMB",
+		"display_name": "The Gambia",
+		"short_name": "Gambia",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"GMB"
+			],
+			"iso_a3": [
+				"GMB"
+			],
+			"sov_a3": [
+				"GMB"
+			],
+			"name_aliases": [
+				"Gambia",
+				"The Gambia"
+			]
+		},
+		"external_ids": {
+			"iso3": "GMB",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "GMB",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "TLS",
+		"display_name": "Timor-Leste",
+		"short_name": "Timor-Leste",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"TLS"
+			],
+			"iso_a3": [
+				"TLS"
+			],
+			"sov_a3": [
+				"TLS"
+			],
+			"name_aliases": [
+				"Timor-Leste",
+				"East Timor"
+			]
+		},
+		"external_ids": {
+			"iso3": "TLS",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "TLS",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "TGO",
+		"display_name": "Togo",
+		"short_name": "Togo",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"TGO"
+			],
+			"iso_a3": [
+				"TGO"
+			],
+			"sov_a3": [
+				"TGO"
+			],
+			"name_aliases": [
+				"Togo"
+			]
+		},
+		"external_ids": {
+			"iso3": "TGO",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "TGO",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "TTO",
+		"display_name": "Trinidad and Tobago",
+		"short_name": "Trinidad and Tobago",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"TTO"
+			],
+			"iso_a3": [
+				"TTO"
+			],
+			"sov_a3": [
+				"TTO"
+			],
+			"name_aliases": [
+				"Trinidad and Tobago"
+			]
+		},
+		"external_ids": {
+			"iso3": "TTO",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "TTO",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "TUN",
+		"display_name": "Tunisia",
+		"short_name": "Tunisia",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"TUN"
+			],
+			"iso_a3": [
+				"TUN"
+			],
+			"sov_a3": [
+				"TUN"
+			],
+			"name_aliases": [
+				"Tunisia"
+			]
+		},
+		"external_ids": {
+			"iso3": "TUN",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "TUN",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "TUR",
+		"display_name": "Turkiye",
+		"short_name": "Turkiye",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"TUR"
+			],
+			"iso_a3": [
+				"TUR"
+			],
+			"sov_a3": [
+				"TUR"
+			],
+			"name_aliases": [
+				"Turkiye",
+				"Turkey"
+			]
+		},
+		"external_ids": {
+			"iso3": "TUR",
+			"iso2": "TR",
+			"un_m49": "792",
+			"world_bank": "TUR",
+			"oecd": "TUR"
+		},
+		"data_notes": [
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": "2026-06-18"
+	},
+	{
+		"id": "TKM",
+		"display_name": "Turkmenistan",
+		"short_name": "Turkmenistan",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"TKM"
+			],
+			"iso_a3": [
+				"TKM"
+			],
+			"sov_a3": [
+				"TKM"
+			],
+			"name_aliases": [
+				"Turkmenistan"
+			]
+		},
+		"external_ids": {
+			"iso3": "TKM",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "TKM",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "UGA",
+		"display_name": "Uganda",
+		"short_name": "Uganda",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"UGA"
+			],
+			"iso_a3": [
+				"UGA"
+			],
+			"sov_a3": [
+				"UGA"
+			],
+			"name_aliases": [
+				"Uganda"
+			]
+		},
+		"external_ids": {
+			"iso3": "UGA",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "UGA",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "UKR",
+		"display_name": "Ukraine",
+		"short_name": "Ukraine",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"UKR"
+			],
+			"iso_a3": [
+				"UKR"
+			],
+			"sov_a3": [
+				"UKR"
+			],
+			"name_aliases": [
+				"Ukraine"
+			]
+		},
+		"external_ids": {
+			"iso3": "UKR",
+			"iso2": "UA",
+			"un_m49": "804",
+			"world_bank": "UKR",
+			"oecd": null
+		},
+		"data_notes": [
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": "2026-06-18"
+	},
+	{
+		"id": "ARE",
+		"display_name": "United Arab Emirates",
+		"short_name": "United Arab Emirates",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"ARE"
+			],
+			"iso_a3": [
+				"ARE"
+			],
+			"sov_a3": [
+				"ARE"
+			],
+			"name_aliases": [
+				"United Arab Emirates"
+			]
+		},
+		"external_ids": {
+			"iso3": "ARE",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "ARE",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "GBR",
+		"display_name": "United Kingdom",
+		"short_name": "United Kingdom",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"GBR"
+			],
+			"iso_a3": [
+				"GBR"
+			],
+			"sov_a3": [
+				"GB1"
+			],
+			"name_aliases": [
+				"United Kingdom",
+				"United Kingdom of Great Britain and Northern Ireland"
+			]
+		},
+		"external_ids": {
+			"iso3": "GBR",
+			"iso2": "GB",
+			"un_m49": "826",
+			"world_bank": "GBR",
+			"oecd": "GBR"
+		},
+		"data_notes": [
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": "2026-06-18"
+	},
+	{
+		"id": "FLK",
+		"display_name": "Falkland Islands / Malvinas",
+		"short_name": "Falkland Islands",
+		"map_unit_type": "territory",
+		"recognition_status": "territory",
+		"sovereignty_note": "Natural Earth marks this feature as disputed and as an Admin-0 dependency; OurWorldSystem records it neutrally as a separate map unit and does not adjudicate sovereignty.",
+		"natural_earth": {
+			"adm0_a3": [
+				"FLK"
+			],
+			"iso_a3": [
+				"FLK"
+			],
+			"sov_a3": [
+				"GB1"
+			],
+			"name_aliases": [
+				"Falkland Is.",
+				"Falkland Islands / Malvinas",
+				"Falkland Islands"
+			]
+		},
+		"external_ids": {
+			"iso3": "FLK",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": null,
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Added to prevent valid Natural Earth ISO_A3=FLK from matching the United Kingdom.",
+			"Matched Natural Earth feature during registry matching validation."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "USA",
+		"display_name": "United States",
+		"short_name": "United States",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"USA"
+			],
+			"iso_a3": [
+				"USA"
+			],
+			"sov_a3": [
+				"US1"
+			],
+			"name_aliases": [
+				"United States",
+				"United States of America"
+			]
+		},
+		"external_ids": {
+			"iso3": "USA",
+			"iso2": "US",
+			"un_m49": "840",
+			"world_bank": "USA",
+			"oecd": "USA"
+		},
+		"data_notes": [
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": "2026-06-18"
+	},
+	{
+		"id": "PRI",
+		"display_name": "Puerto Rico",
+		"short_name": "Puerto Rico",
+		"map_unit_type": "territory",
+		"recognition_status": "territory",
+		"sovereignty_note": "Natural Earth represents this as an Admin-0 dependency associated with the United States; OurWorldSystem records it as a separate map unit without adjudicating sovereignty.",
+		"natural_earth": {
+			"adm0_a3": [
+				"PRI"
+			],
+			"iso_a3": [
+				"PRI"
+			],
+			"sov_a3": [
+				"US1"
+			],
+			"name_aliases": [
+				"Puerto Rico"
+			]
+		},
+		"external_ids": {
+			"iso3": "PRI",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "PRI",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Added to prevent valid Natural Earth ISO_A3=PRI from matching the United States.",
+			"Matched Natural Earth feature during registry matching validation."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "URY",
+		"display_name": "Uruguay",
+		"short_name": "Uruguay",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"URY"
+			],
+			"iso_a3": [
+				"URY"
+			],
+			"sov_a3": [
+				"URY"
+			],
+			"name_aliases": [
+				"Uruguay"
+			]
+		},
+		"external_ids": {
+			"iso3": "URY",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "URY",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "UZB",
+		"display_name": "Uzbekistan",
+		"short_name": "Uzbekistan",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"UZB"
+			],
+			"iso_a3": [
+				"UZB"
+			],
+			"sov_a3": [
+				"UZB"
+			],
+			"name_aliases": [
+				"Uzbekistan"
+			]
+		},
+		"external_ids": {
+			"iso3": "UZB",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "UZB",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "VUT",
+		"display_name": "Vanuatu",
+		"short_name": "Vanuatu",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"VUT"
+			],
+			"iso_a3": [
+				"VUT"
+			],
+			"sov_a3": [
+				"VUT"
+			],
+			"name_aliases": [
+				"Vanuatu"
+			]
+		},
+		"external_ids": {
+			"iso3": "VUT",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "VUT",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "VEN",
+		"display_name": "Venezuela",
+		"short_name": "Venezuela",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"VEN"
+			],
+			"iso_a3": [
+				"VEN"
+			],
+			"sov_a3": [
+				"VEN"
+			],
+			"name_aliases": [
+				"Venezuela"
+			]
+		},
+		"external_ids": {
+			"iso3": "VEN",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "VEN",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "VNM",
+		"display_name": "Vietnam",
+		"short_name": "Vietnam",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"VNM"
+			],
+			"iso_a3": [
+				"VNM"
+			],
+			"sov_a3": [
+				"VNM"
+			],
+			"name_aliases": [
+				"Vietnam",
+				"Viet Nam"
+			]
+		},
+		"external_ids": {
+			"iso3": "VNM",
+			"iso2": "VN",
+			"un_m49": "704",
+			"world_bank": "VNM",
+			"oecd": null
+		},
+		"data_notes": [
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": "2026-06-18"
+	},
+	{
+		"id": "ESH",
+		"display_name": "Western Sahara",
+		"short_name": "W. Sahara",
+		"map_unit_type": "special",
+		"recognition_status": "unknown",
+		"sovereignty_note": "Generated from a Natural Earth feature with a non-standard or indeterminate classification; OurWorldSystem does not adjudicate sovereignty.",
+		"natural_earth": {
+			"adm0_a3": [
+				"SAH"
+			],
+			"iso_a3": [
+				"ESH"
+			],
+			"sov_a3": [
+				"SAH"
+			],
+			"name_aliases": [
+				"W. Sahara",
+				"Western Sahara"
+			]
+		},
+		"external_ids": {
+			"iso3": "ESH",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "ESH",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "YEM",
+		"display_name": "Yemen",
+		"short_name": "Yemen",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"YEM"
+			],
+			"iso_a3": [
+				"YEM"
+			],
+			"sov_a3": [
+				"YEM"
+			],
+			"name_aliases": [
+				"Yemen"
+			]
+		},
+		"external_ids": {
+			"iso3": "YEM",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "YEM",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "ZMB",
+		"display_name": "Zambia",
+		"short_name": "Zambia",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"ZMB"
+			],
+			"iso_a3": [
+				"ZMB"
+			],
+			"sov_a3": [
+				"ZMB"
+			],
+			"name_aliases": [
+				"Zambia"
+			]
+		},
+		"external_ids": {
+			"iso3": "ZMB",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "ZMB",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "ZWE",
+		"display_name": "Zimbabwe",
+		"short_name": "Zimbabwe",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"ZWE"
+			],
+			"iso_a3": [
+				"ZWE"
+			],
+			"sov_a3": [
+				"ZWE"
+			],
+			"name_aliases": [
+				"Zimbabwe"
+			]
+		},
+		"external_ids": {
+			"iso3": "ZWE",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "ZWE",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	}
+]

@@ -1,0 +1,56 @@
+{
+	"sources": [
+		{
+			"id": "mock",
+			"name": "Mock scaffold data",
+			"publisher": "OurWorldSystem",
+			"url": null,
+			"license": "Temporary development fixture",
+			"notes": "Placeholder data for UI scaffolding only, including demo thematic-layer scores and risk bins. Do not cite as empirical output."
+		},
+		{
+			"id": "rsf",
+			"name": "World Press Freedom Index",
+			"publisher": "Reporters Without Borders",
+			"url": "https://rsf.org/",
+			"license": null,
+			"notes": "Planned public source for press freedom indicators."
+		},
+		{
+			"id": "ucdp",
+			"name": "Uppsala Conflict Data Program",
+			"publisher": "Uppsala University",
+			"url": "https://ucdp.uu.se/",
+			"license": null,
+			"notes": "Planned public source for conflict indicators."
+		},
+		{
+			"id": "world_bank",
+			"name": "World Development Indicators",
+			"publisher": "World Bank",
+			"url": "https://data.worldbank.org/",
+			"license": null,
+			"notes": "Planned public source for development and economic indicators."
+		},
+		{
+			"id": "natural_earth",
+			"title": "Natural Earth Admin 0 Countries and Breakaway/Disputed Areas",
+			"purpose": "Base geometry for static map-unit rendering and disputed-area overlay.",
+			"publisher": "Natural Earth",
+			"url": "https://www.naturalearthdata.com/",
+			"license": "Public domain; review Natural Earth terms and attribution guidance before redistribution.",
+			"retrieval_notes": "Downloaded by scripts/geo/build-natural-earth.sh from the Natural Earth CDN. Admin 0 countries are used as de facto base boundaries; disputed/breakaway areas are rendered separately as an overlay.",
+			"notes": "Geometry is not political recognition and does not adjudicate sovereignty."
+		},
+		{
+			"id": "mapshaper",
+			"title": "Mapshaper",
+			"purpose": "Command-line conversion and simplification from Natural Earth shapefiles to TopoJSON.",
+			"publisher": "Mapshaper project",
+			"url": "https://github.com/mbloch/mapshaper",
+			"license": "BSD-3-Clause; verify package license for the installed version.",
+			"retrieval_notes": "Run locally through npx in scripts/geo/build-natural-earth.sh.",
+			"notes": "Used as a build-time tool only; it is not a runtime service."
+		}
+	]
+}
