@@ -33,11 +33,15 @@
 		MapLayerId,
 		MapUnit,
 		MapUnitId,
-		MapUnitRegistryRecord
+		MapUnitRegistryRecord,
+		WorldBankQualityOfLifeRecord
 	} from '$lib/types';
 
 	type Props = {
 		units: MapUnit[];
+		registry?: MapUnitRegistryRecord[];
+		worldSystemDemoById?: Map<MapUnitId, MapUnit>;
+		worldBankQualityById?: Map<MapUnitId, WorldBankQualityOfLifeRecord>;
 		selectedId: MapUnitId | null;
 		selectedLayer?: MapLayerId;
 		onSelect: (unit: MapUnit) => void;
@@ -113,7 +117,15 @@
 	const zoomStep = 1.5;
 	const keyboardPanStep = 44;
 
-	let { units, selectedId, selectedLayer = DEFAULT_MAP_LAYER_ID, onSelect }: Props = $props();
+	let {
+		units,
+		registry = [],
+		worldSystemDemoById = new Map(),
+		worldBankQualityById = new Map(),
+		selectedId,
+		selectedLayer = DEFAULT_MAP_LAYER_ID,
+		onSelect
+	}: Props = $props();
 	let features = $state<RenderFeature[]>([]);
 	let disputedFeatures = $state<RenderFeature[]>([]);
 	let geometryStatus = $state('Loading Natural Earth geometry.');
@@ -558,30 +570,50 @@
 
 	function hasWorldBankQualityData(unit: MapUnit) {
 		return Boolean(
+			worldBankQualityById.has(unit.id) ||
 			unit.quality_of_life?.source === 'World Bank WDI' ||
 			unit.quality_of_life?.quality_of_life_score !== undefined ||
 			unit.sources.includes('world_bank_wdi')
 		);
 	}
 
+	function hasWorldSystemDemoData(unit: MapUnit) {
+		return worldSystemDemoById.has(unit.id);
+	}
+
 	function buildRenderCoverageStats(
 		naturalEarthFeatureCount: number,
 		renderedWorldFeatures: RenderFeature[]
 	): RenderCoverageStats {
+		const matchedRegistryIds = new Set(
+			renderedWorldFeatures
+				.map((renderFeature) => renderFeature.registryRecord?.id)
+				.filter((id): id is string => Boolean(id))
+		);
+		const matchedWorldSystemDemoIds = new Set(
+			[...worldSystemDemoById.keys()].filter((id) => matchedRegistryIds.has(id))
+		);
+		const matchedWorldBankQualityIds = new Set(
+			[...worldBankQualityById.keys()].filter((id) => matchedRegistryIds.has(id))
+		);
+
 		return {
 			naturalEarthFeatures: naturalEarthFeatureCount,
 			drawablePaths: renderedWorldFeatures.length,
 			registryMatches: renderedWorldFeatures.filter((renderFeature) => renderFeature.registryRecord)
 				.length,
-			worldSystemDemoDataMatches: renderedWorldFeatures.filter(
-				(renderFeature) =>
-					renderFeature.hasIndicatorRecord &&
-					(renderFeature.unit.sources.includes('mock') ||
-						renderFeature.unit.sources.includes('mock_demo_data'))
-			).length,
-			worldBankQualityDataMatches: renderedWorldFeatures.filter((renderFeature) =>
-				hasWorldBankQualityData(renderFeature.unit)
-			).length,
+			worldSystemDemoDataMatches:
+				worldSystemDemoById.size > 0
+					? matchedWorldSystemDemoIds.size
+					: renderedWorldFeatures.filter((renderFeature) =>
+							renderFeature.hasIndicatorRecord ? hasWorldSystemDemoData(renderFeature.unit) : false
+						).length,
+			worldBankQualityDataMatches:
+				worldBankQualityById.size > 0
+					? matchedWorldBankQualityIds.size
+					: renderedWorldFeatures.filter((renderFeature) =>
+							hasWorldBankQualityData(renderFeature.unit)
+						).length,
 			noDataPaths: renderedWorldFeatures.filter(
 				(renderFeature) => getMapUnitLayerValue(renderFeature.unit, 'world_system') === 'no_data'
 			).length
@@ -589,7 +621,7 @@
 	}
 
 	function formatRenderCoverageStats(stats: RenderCoverageStats) {
-		return `Natural Earth features extracted: ${stats.naturalEarthFeatures}; drawable paths generated: ${stats.drawablePaths}; paths with registry match: ${stats.registryMatches}; paths with world-system demo data: ${stats.worldSystemDemoDataMatches}; paths with World Bank quality data: ${stats.worldBankQualityDataMatches}; paths with no_data: ${stats.noDataPaths}.`;
+		return `Natural Earth features=${stats.naturalEarthFeatures} drawablePaths=${stats.drawablePaths} registryMatches=${stats.registryMatches} worldSystemDemoMatches=${stats.worldSystemDemoDataMatches} worldBankMatches=${stats.worldBankQualityDataMatches} noDataPaths=${stats.noDataPaths}`;
 	}
 
 	function reportRenderCoverage(stats: RenderCoverageStats) {
@@ -600,7 +632,7 @@
 		}
 
 		if (dev && !didLogRenderCoverage) {
-			console.info(`[OurWorldSystem] ${message}`);
+			console.info(`[OurWorldSystem:render-coverage] ${message}`);
 			didLogRenderCoverage = true;
 		}
 	}
@@ -775,16 +807,19 @@
 			select<SVGSVGElement, unknown>(svgElement).call(zoomBehavior).on('dblclick.zoom', null);
 		}
 
-		let registryIndexes: RegistryIndexes | null = null;
+		let registryIndexes: RegistryIndexes | null =
+			registry.length > 0 ? buildRegistryIndexes(registry) : null;
 
-		try {
-			const registry = await loadMapUnitRegistry(base);
-			registryIndexes = buildRegistryIndexes(registry);
-		} catch (error) {
-			registryDiagnostic =
-				error instanceof Error
-					? `${error.message}. Rendering will continue with Natural Earth geometry and mock indicators only.`
-					: 'Map-unit registry could not be loaded. Rendering will continue with Natural Earth geometry and mock indicators only.';
+		if (!registryIndexes) {
+			try {
+				const loadedRegistry = await loadMapUnitRegistry(base);
+				registryIndexes = buildRegistryIndexes(loadedRegistry);
+			} catch (error) {
+				registryDiagnostic =
+					error instanceof Error
+						? `${error.message}. Rendering will continue with Natural Earth geometry and mock indicators only.`
+						: 'Map-unit registry could not be loaded. Rendering will continue with Natural Earth geometry and mock indicators only.';
+			}
 		}
 
 		const worldTopology = await fetchTopology(worldTopologyUrl);
@@ -1119,7 +1154,8 @@
 	.map-unit.layer-ecology-no-data {
 		fill: #64748b;
 		stroke: rgba(203, 213, 225, 0.34);
-		opacity: 0.68;
+		opacity: 0.88;
+		pointer-events: auto;
 	}
 
 	.map-unit.layer-conflict-active-war-on-territory {

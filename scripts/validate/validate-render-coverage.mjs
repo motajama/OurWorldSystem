@@ -123,6 +123,32 @@ function normalizeFeatureResult(result) {
 	return [];
 }
 
+function isRecordObject(value) {
+	return Boolean(value && typeof value === 'object' && !Array.isArray(value));
+}
+
+function normalizeWorldSystemDemoData(input) {
+	let records = [];
+
+	if (Array.isArray(input)) {
+		records = input;
+	} else if (isRecordObject(input) && Array.isArray(input.map_units)) {
+		records = input.map_units;
+	} else if (isRecordObject(input) && Array.isArray(input.records)) {
+		records = input.records;
+	} else if (isRecordObject(input)) {
+		records = Object.entries(input)
+			.filter(([key, value]) => key !== 'meta' && isRecordObject(value))
+			.map(([id, value]) => ({ id, ...value }));
+	}
+
+	return new Map(
+		records
+			.filter((record) => isRecordObject(record) && typeof record.id === 'string')
+			.map((record) => [record.id, record])
+	);
+}
+
 const topology = readJson(paths.worldTopology);
 const registry = readJson(paths.registry);
 const worldSystem = readJson(paths.worldSystem);
@@ -131,8 +157,10 @@ const worldBankQuality = readJsonIfPresent(paths.worldBankQuality);
 const topologyObject = getTopologyObject(topology, ['ne_110m_admin_0_countries']);
 const geoFeatures = normalizeFeatureResult(feature(topology, topologyObject.object));
 const registryIndexes = buildRegistryIndexes(registry);
-const worldSystemIds = new Set((worldSystem.map_units ?? []).map((unit) => unit.id));
-const worldBankQualityIds = new Set((worldBankQuality?.records ?? []).map((record) => record.id));
+const worldSystemDemoById = normalizeWorldSystemDemoData(worldSystem);
+const worldBankQualityById = new Map(
+	(worldBankQuality?.records ?? []).map((record) => [record.id, record])
+);
 
 const featureCollection = {
 	type: 'FeatureCollection',
@@ -149,8 +177,7 @@ const pathGenerator = geoPath(projection);
 
 let drawableCount = 0;
 let registryMatchedCount = 0;
-let worldSystemMatchedCount = 0;
-let worldBankQualityMatchedCount = 0;
+const matchedRegistryIds = new Set();
 
 for (const geoFeature of geoFeatures) {
 	const drawablePath = pathGenerator(geoFeature);
@@ -167,23 +194,25 @@ for (const geoFeature of geoFeatures) {
 	if (!registryRecord) continue;
 
 	registryMatchedCount += 1;
-
-	if (worldSystemIds.has(registryRecord.id)) {
-		worldSystemMatchedCount += 1;
-	}
-
-	if (worldBankQualityIds.has(registryRecord.id)) {
-		worldBankQualityMatchedCount += 1;
-	}
+	matchedRegistryIds.add(registryRecord.id);
 }
 
+const worldSystemMatchedCount = [...worldSystemDemoById.keys()].filter((id) =>
+	matchedRegistryIds.has(id)
+).length;
+const worldBankQualityMatchedCount = [...worldBankQualityById.keys()].filter((id) =>
+	matchedRegistryIds.has(id)
+).length;
 const minimumDrawableCount = Math.ceil(geoFeatures.length * 0.95);
 
 console.log(`Natural Earth feature count: ${geoFeatures.length}`);
-console.log(`registry matched count: ${registryMatchedCount}`);
-console.log(`world-system data matched count: ${worldSystemMatchedCount}`);
-console.log(`World Bank quality data matched count: ${worldBankQualityMatchedCount}`);
-console.log(`expected drawable count: ${drawableCount}`);
+console.log(`registry record count: ${Array.isArray(registry) ? registry.length : 0}`);
+console.log(`world-system demo record count: ${worldSystemDemoById.size}`);
+console.log(`World Bank quality record count: ${worldBankQualityById.size}`);
+console.log(`expected drawable geometry count: ${drawableCount}`);
+console.log(`registry match count: ${registryMatchedCount}`);
+console.log(`world-system demo match count: ${worldSystemMatchedCount}`);
+console.log(`World Bank quality match count: ${worldBankQualityMatchedCount}`);
 
 if (drawableCount < minimumDrawableCount) {
 	console.error(
