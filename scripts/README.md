@@ -1,6 +1,6 @@
 # Future Data Pipeline
 
-The first scaffold has a geometry pipeline, checked-in mock indicator JSON under `static/data/`, an initial World Bank WDI quality-of-life pipeline, a first UCDP conflict pipeline, a local Atlas of Economic Complexity import for the `productive_complexity` structural component, and a World Bank WDI extraction dependency/autonomy component.
+The first scaffold has a geometry pipeline, checked-in mock indicator JSON under `static/data/`, an initial World Bank WDI quality-of-life pipeline, a first UCDP conflict pipeline, a local Atlas of Economic Complexity import for the `productive_complexity` structural component, a World Bank WDI extraction dependency/autonomy component, and a provisional WDI export-structure `productive_capability_proxy`.
 
 ## CI Commands
 
@@ -42,6 +42,7 @@ npm run data:fetch:worldbank
 npm run data:fetch:extraction
 npm run data:fetch:ucdp
 npm run data:import:complexity
+npm run data:build:productive-capability
 npm run data:build:worldsystem
 npm run data:build:worldsystem:structural
 npm run data:build
@@ -163,15 +164,16 @@ Inputs:
 - `static/data/map-units.registry.json`
 - `static/data/indicators/quality-of-life.world-bank.latest.json`
 - `static/data/indicators/extraction-dependency.world-bank.latest.json`
+- `static/data/indicators/productive-capability.world-bank.latest.json`
 - `static/data/indicators/productive-complexity.latest.json`
 - `static/data/world-system.curated-overrides.json`
 - `static/data/world-system.latest.json`
 
 The output is a conservative provisional proxy for the default `world_system` layer. It is not a final Wallersteinian classification. The builder treats existing demo records as UI/demo seeds, applies optional `curated_reviewed` overrides from `static/data/world-system.curated-overrides.json`, and derives other records from available welfare and structural component data.
 
-The previous quality-of-life/GNI-heavy provisional rule overproduced `core`. The conservative rule treats quality of life as a welfare proxy, not structural world-system position. Extraction autonomy and low extraction dependency are negative/filter supports: they can corroborate a core claim or block extraction-dependent cases, but they cannot create core status by themselves.
+The previous quality-of-life/GNI-heavy provisional rule overproduced `core`. The stricter interim rule then produced zero derived core records, which was methodologically safer but too flat analytically. The current conservative rule treats quality of life as a welfare proxy, not structural world-system position. Extraction autonomy and low extraction dependency are negative/filter supports: they can corroborate a core claim or block extraction-dependent cases, but they cannot create core status by themselves. The provisional productive capability proxy provides limited positive structural support from export structure, not final productive complexity or value-chain control.
 
-- `core`: for derived records, requires `quality_of_life_score >= 0.88`, at least one positive structural support such as `productive_complexity_score >= 75` or future `value_capture_score >= 70` / `geopolitical_financial_power_score >= 70`, at least one extraction/autonomy filter support such as `extraction_autonomy_score >= 75` or `extraction_dependency_score <= 20`, no extraction-dependency block at `extraction_dependency_score >= 35`, and no disputed/special/territory status unless explicitly reviewed in a curated override. Demo seeds cannot create core.
+- `core`: for derived records, requires `quality_of_life_score >= 0.88`, `extraction_dependency_score` missing or `<= 25`, `extraction_autonomy_score` missing or `>= 65`, `productive_capability_score >= 70`, productive capability data quality other than `sparse`, and no disputed/special/territory status unless explicitly reviewed in a curated override. Demo seeds cannot create core.
 - `semi-periphery`: absorbs mixed or structurally unconfirmed cases, including many high-development map units with incomplete value-chain evidence.
 - `periphery`: low welfare proxy, high extraction dependency, or low extraction autonomy unless other structural evidence suggests semi-periphery.
 - `uncertain`: insufficient or contradictory signals, including high welfare with high resource dependence or special/territory comparability problems.
@@ -184,21 +186,21 @@ Reviewed manual overrides use:
 
 ```json
 {
-  "dataset_id": "world_system_curated_overrides",
-  "status": "manual_review_required",
-  "records": [
-    {
-      "id": "USA",
-      "world_system": {
-        "class": "core",
-        "confidence": "medium",
-        "source": "curated_reviewed",
-        "rationale": "...",
-        "reviewed_by": "...",
-        "reviewed_at": "YYYY-MM-DD"
-      }
-    }
-  ]
+	"dataset_id": "world_system_curated_overrides",
+	"status": "manual_review_required",
+	"records": [
+		{
+			"id": "USA",
+			"world_system": {
+				"class": "core",
+				"confidence": "medium",
+				"source": "curated_reviewed",
+				"rationale": "...",
+				"reviewed_by": "...",
+				"reviewed_at": "YYYY-MM-DD"
+			}
+		}
+	]
 }
 ```
 
@@ -212,7 +214,35 @@ npm run validate:worldsystem
 
 The validator checks schema, registry IDs, uniqueness, classes, score ranges, confidence, source, review status, model status, class distribution, no-data coverage against available World Bank records, and the conservative core rules. A quality-only source cannot be `core`; any source containing `demo` or `legacy_demo` cannot be `core`; derived `core` requires productive-complexity, value-capture, or equivalent positive support; and curated `core` requires `source: "curated_reviewed"` with rationale.
 
-The builder also prints diagnostics: total records, class distribution, core count, derived core count, curated reviewed core count, demo seed reinterpretation count, high-score non-core count, records prevented from becoming core because positive structural evidence is missing, top core candidates with components, and top downgraded high-quality records with reasons.
+The builder also prints diagnostics: total records, class distribution, core count, derived core count, derived productive-capability core count, curated reviewed core count, demo seed reinterpretation count, top productive capability scores, high-score countries kept semi-periphery because productive capability is missing/low, countries moved into provisional core by productive capability support, and top downgraded high-quality records with reasons.
+
+## Productive Capability Proxy
+
+Run:
+
+```sh
+npm run data:build:productive-capability
+npm run validate:productive-capability
+```
+
+This calls `scripts/data/build-productive-capability-proxy.mjs` and reads:
+
+- `static/data/map-units.registry.json`
+- `static/data/indicators/extraction-dependency.world-bank.latest.json`
+
+It writes:
+
+- `static/data/indicators/productive-capability.world-bank.latest.json`
+
+The proxy uses only WDI export-structure indicators already present in the extraction dataset:
+
+- manufactures exports as percent of merchandise exports (`TX.VAL.MANF.ZS.UN`)
+- high-technology exports as percent of manufactured exports (`TX.VAL.TECH.MF.ZS`)
+- medium/high-technology exports as percent of manufactured exports (`TX.MNF.TECH.ZS.UN`), where available
+
+Scoring uses transparent clamps: manufactures `/ 75`, high-tech `/ 25`, and medium/high-tech `/ 60`. When all three exist, weights are 0.40, 0.35, and 0.25. With manufactures plus high-tech, weights are 0.55 and 0.45. With manufactures only, the manufactures score is used and data quality is partial. No usable values produce `score: null` and sparse data quality.
+
+This is provisional positive structural support only. It measures export structure, not domestic value capture, ownership, GVC control, or final productive complexity. It should later be replaced or complemented by Atlas, BACI, Comtrade, and OECD TiVA evidence.
 
 Future versions should replace this proxy with a documented structural model that includes OECD TiVA, trade/value-chain data, material footprint, e-waste, ecological externalization, military/geopolitical position, financial centrality, conflict exposure, and political-freedom indicators.
 

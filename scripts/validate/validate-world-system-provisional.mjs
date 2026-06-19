@@ -29,11 +29,13 @@ const validConfidence = new Set(['low', 'medium', 'high']);
 const validSources = new Set([
 	'derived_world_bank_quality_proxy',
 	'derived_conservative_structural_proxy',
+	'derived_productive_capability_proxy',
 	'legacy_demo_seed',
 	'legacy_demo_seed_reinterpreted',
 	'curated_reviewed'
 ]);
 const positiveSupportPatterns = [
+	'productive_capability',
 	'productive_complexity',
 	'value_capture',
 	'geopolitical_financial_power'
@@ -78,7 +80,9 @@ function hasPositiveStructuralSupport(record) {
 }
 
 function highScoreSemiPeriphery(record) {
-	return record.world_system?.class === 'semi-periphery' && (record.world_system?.score ?? -1) >= 78;
+	return (
+		record.world_system?.class === 'semi-periphery' && (record.world_system?.score ?? -1) >= 78
+	);
 }
 
 const errors = [];
@@ -204,12 +208,32 @@ if (!Array.isArray(data?.records)) {
 		if (
 			derivedSource &&
 			classValue === 'core' &&
-			!isFiniteNumber(record.components.productive_complexity_score) &&
-			!isFiniteNumber(record.components.value_capture_score)
+			!isFiniteNumber(record.components.productive_capability_score)
 		) {
 			errors.push(
-				`${label}: derived core requires productive_complexity_score or value_capture_score data.`
+				`${label}: derived core requires productive_capability_score data in the provisional model.`
 			);
+		}
+
+		if (
+			derivedSource &&
+			classValue === 'core' &&
+			(!isFiniteNumber(record.components.productive_capability_score) ||
+				record.components.productive_capability_score < 70)
+		) {
+			errors.push(`${label}: derived core requires productive_capability_score >= 70.`);
+		}
+
+		if (
+			classValue === 'core' &&
+			isFiniteNumber(record.components.extraction_dependency_score) &&
+			record.components.extraction_dependency_score > 25
+		) {
+			errors.push(`${label}: core requires extraction_dependency_score missing or <= 25.`);
+		}
+
+		if (classValue === 'core' && record.world_system.confidence === 'high') {
+			errors.push(`${label}: confidence must never be high for core in the provisional model.`);
 		}
 
 		if (derivedSource && classValue === 'core' && !positiveSupportExists) {
@@ -234,7 +258,9 @@ if (!Array.isArray(data?.records)) {
 			!curatedReviewedWithRationale &&
 			positiveStructuralSupports.length === 0
 		) {
-			errors.push(`${label}: core requires positive_structural_supports or curated_reviewed rationale.`);
+			errors.push(
+				`${label}: core requires positive_structural_supports or curated_reviewed rationale.`
+			);
 		}
 
 		if (classValue === 'core' && !curatedReviewedWithRationale && !positiveSupportExists) {
@@ -291,6 +317,8 @@ if (!Array.isArray(data?.records)) {
 				confidence: record.world_system.confidence,
 				source: record.world_system.source,
 				quality_of_life_score: record.components.quality_of_life_score,
+				productive_capability_score: record.components.productive_capability_score,
+				productive_capability_data_quality: record.components.productive_capability_data_quality,
 				productive_complexity_score: record.components.productive_complexity_score,
 				value_capture_score: record.components.value_capture_score,
 				structural_supports: structuralSupports,

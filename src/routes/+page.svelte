@@ -16,6 +16,7 @@
 		ProvisionalWorldSystemDataset,
 		UcdpConflictDataset,
 		WorldBankExtractionDataset,
+		WorldBankProductiveCapabilityDataset,
 		WorldBankQualityOfLifeDataset
 	} from '$lib/types';
 
@@ -67,6 +68,15 @@
 			available: true,
 			source_ids: ['world_bank_wdi_extraction'],
 			description: 'Optional World Bank WDI extraction dependency and autonomy component.'
+		},
+		{
+			id: 'productive_capability_world_bank_latest',
+			path: '/data/indicators/productive-capability.world-bank.latest.json',
+			required: false,
+			available: true,
+			source_ids: ['world_bank_wdi_extraction'],
+			description:
+				'Optional provisional World Bank WDI export-structure proxy for productive capability support.'
 		}
 	];
 
@@ -268,6 +278,20 @@
 		return (await response.json()) as WorldBankExtractionDataset;
 	}
 
+	async function loadOptionalWorldBankProductiveCapability(index: OptionalIndicatorIndexEntry[]) {
+		const path = optionalIndicatorPath(index, 'productive_capability_world_bank_latest');
+		if (!path) return null;
+
+		const response = await fetch(staticUrl(path));
+
+		if (!response.ok) {
+			if (response.status === 404) return null;
+			throw new Error(`Failed to load World Bank productive capability data: ${response.status}`);
+		}
+
+		return (await response.json()) as WorldBankProductiveCapabilityDataset;
+	}
+
 	function mergeProvisionalWorldSystem(
 		mapUnits: MapUnit[],
 		provisionalData: ProvisionalWorldSystemDataset | null
@@ -413,7 +437,39 @@
 					extraction_latest_year: record.latest_year,
 					extraction_data_quality: record.data_quality,
 					extraction_source_country_code: record.source_country_code,
-					notes: 'World Bank WDI extraction dependency/autonomy component. This is not a final world-system class.'
+					notes:
+						'World Bank WDI extraction dependency/autonomy component. This is not a final world-system class.'
+				},
+				sources: [...new Set([...unit.sources, ...record.sources])]
+			};
+		});
+	}
+
+	function mergeWorldBankProductiveCapability(
+		mapUnits: MapUnit[],
+		productiveCapabilityData: WorldBankProductiveCapabilityDataset | null
+	) {
+		if (!productiveCapabilityData) return mapUnits;
+
+		const recordsById = new Map(
+			productiveCapabilityData.records.map((record) => [record.id, record])
+		);
+
+		return mapUnits.map((unit) => {
+			const record = recordsById.get(unit.id);
+			if (!record) return unit;
+
+			return {
+				...unit,
+				exploitation_position: {
+					...unit.exploitation_position,
+					productive_capability_score: record.productive_capability_score,
+					productive_capability_values: record.values,
+					productive_capability_latest_year: record.latest_year,
+					productive_capability_data_quality: record.data_quality,
+					productive_capability_positive_structural_support: record.positive_structural_support,
+					notes:
+						'World Bank WDI extraction dependency/autonomy and provisional productive capability proxy. This is not a final world-system class.'
 				},
 				sources: [...new Set([...unit.sources, ...record.sources])]
 			};
@@ -427,12 +483,18 @@
 				loadMapUnitRegistry(base),
 				loadOptionalIndicatorIndex()
 			]);
-			const [worldBankData, provisionalWorldSystemData, ucdpData, extractionData] =
-				await Promise.all([
+			const [
+				worldBankData,
+				provisionalWorldSystemData,
+				ucdpData,
+				extractionData,
+				productiveCapabilityData
+			] = await Promise.all([
 				loadOptionalWorldBankQualityOfLife(indicatorIndex),
 				loadOptionalProvisionalWorldSystem(indicatorIndex),
 				loadOptionalUcdpConflicts(indicatorIndex),
-				loadOptionalWorldBankExtraction(indicatorIndex)
+				loadOptionalWorldBankExtraction(indicatorIndex),
+				loadOptionalWorldBankProductiveCapability(indicatorIndex)
 			]);
 
 			if (!response.ok) {
@@ -449,12 +511,15 @@
 				normalizedWorldSystemDemoData
 			);
 			const mergedUnits = mergeUcdpConflicts(
-				mergeWorldBankExtraction(
-					mergeWorldBankQualityOfLife(
-						mergeProvisionalWorldSystem(registryBackedUnits, provisionalWorldSystemData),
-						worldBankData
+				mergeWorldBankProductiveCapability(
+					mergeWorldBankExtraction(
+						mergeWorldBankQualityOfLife(
+							mergeProvisionalWorldSystem(registryBackedUnits, provisionalWorldSystemData),
+							worldBankData
+						),
+						extractionData
 					),
-					extractionData
+					productiveCapabilityData
 				),
 				ucdpData
 			);

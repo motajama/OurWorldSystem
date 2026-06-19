@@ -20,6 +20,10 @@ const paths = {
 		repoRoot,
 		'static/data/indicators/productive-complexity.latest.json'
 	),
+	productiveCapability: path.join(
+		repoRoot,
+		'static/data/indicators/productive-capability.world-bank.latest.json'
+	),
 	curatedOverrides: path.join(repoRoot, 'static/data/world-system.curated-overrides.json'),
 	output: path.join(repoRoot, 'static/data/indicators/world-system.provisional.latest.json')
 };
@@ -39,13 +43,14 @@ const notes = [
 	'Quality-of-life data alone cannot generate core status.',
 	'Demo seed data cannot generate core status.',
 	'Extraction autonomy is a negative filter/corroborating condition, not positive proof of core status.',
-	'Core status requires positive structural support from productive complexity, value capture, geopolitical-financial power, or a curated_reviewed override with rationale.',
+	'Core status requires provisional positive structural support from the productive capability proxy, future productive complexity, value capture, geopolitical-financial power, or a curated_reviewed override with rationale.',
+	'The productive capability proxy is based on WDI export structure and is not final productive complexity or value-chain control evidence.',
 	'Many high-income countries may be provisionally semi-periphery until GVC/value-capture data are added.',
 	'Future versions should include value-chain position, ecological externalization, trade structure, extraction, financial centrality, and conflict/political indicators.'
 ];
 
 const methodologyNote =
-	'Experimental conservative provisional world-system proxy. Existing demo world-system records are treated as legacy demo seeds, not curated classifications. Real manual classifications must come from static/data/world-system.curated-overrides.json with source curated_reviewed and a rationale. Derived core requires positive structural evidence such as productive complexity, value capture, or geopolitical-financial power, plus low extraction-dependency/autonomy filters. Demo seed data cannot create core status. Extraction autonomy and low extraction dependency can corroborate core but cannot create it. High quality-of-life alone is capped at semi-periphery or uncertain. This is not a final Wallersteinian or dependency-theory classification.';
+	'Experimental conservative provisional world-system proxy. Existing demo world-system records are treated as legacy demo seeds, not curated classifications. Real manual classifications must come from static/data/world-system.curated-overrides.json with source curated_reviewed and a rationale. Derived core requires positive structural evidence from the provisional productive capability export-structure proxy, later productive complexity, value capture, or geopolitical-financial power, plus low extraction-dependency/autonomy filters. Demo seed data cannot create core status. Extraction autonomy and low extraction dependency can corroborate core but cannot create it. High quality-of-life alone is capped at semi-periphery or uncertain. The productive capability proxy is not final productive complexity and does not measure value-chain control. This is not a final Wallersteinian or dependency-theory classification.';
 
 function clamp(value, min, max) {
 	return Math.min(max, Math.max(min, value));
@@ -129,7 +134,12 @@ function recordsById(data, predicate = () => true) {
 	);
 }
 
-function componentsFromRecords(qualityRecord, extractionRecord, productiveRecord) {
+function componentsFromRecords(
+	qualityRecord,
+	extractionRecord,
+	productiveRecord,
+	productiveCapabilityRecord
+) {
 	return {
 		quality_of_life_score: isFiniteNumber(qualityRecord?.quality_of_life_score)
 			? round(qualityRecord.quality_of_life_score, 4)
@@ -155,12 +165,22 @@ function componentsFromRecords(qualityRecord, extractionRecord, productiveRecord
 		productive_complexity_score: isFiniteNumber(productiveRecord?.productive_complexity_score)
 			? round(productiveRecord.productive_complexity_score, 2)
 			: null,
+		productive_capability_score: isFiniteNumber(
+			productiveCapabilityRecord?.productive_capability_score
+		)
+			? round(productiveCapabilityRecord.productive_capability_score, 2)
+			: null,
+		productive_capability_data_quality: ['good', 'partial', 'sparse'].includes(
+			productiveCapabilityRecord?.data_quality
+		)
+			? productiveCapabilityRecord.data_quality
+			: null,
 		geopolitical_financial_power_score: null
 	};
 }
 
 function emptyComponents() {
-	return componentsFromRecords(null, null, null);
+	return componentsFromRecords(null, null, null, null);
 }
 
 function positiveStructuralSupports(components) {
@@ -171,6 +191,13 @@ function positiveStructuralSupports(components) {
 		components.productive_complexity_score >= 75
 	) {
 		supports.push('productive_complexity_score >= 75');
+	}
+	if (
+		isFiniteNumber(components.productive_capability_score) &&
+		components.productive_capability_score >= 70 &&
+		components.productive_capability_data_quality !== 'sparse'
+	) {
+		supports.push('productive_capability_score >= 70');
 	}
 	if (isFiniteNumber(components.value_capture_score) && components.value_capture_score >= 70) {
 		supports.push('value_capture_score >= 70');
@@ -187,7 +214,10 @@ function positiveStructuralSupports(components) {
 function negativeOrFilterSupports(components) {
 	const supports = [];
 
-	if (isFiniteNumber(components.extraction_autonomy_score) && components.extraction_autonomy_score >= 75) {
+	if (
+		isFiniteNumber(components.extraction_autonomy_score) &&
+		components.extraction_autonomy_score >= 75
+	) {
 		supports.push('extraction_autonomy_score >= 75');
 	}
 	if (
@@ -208,6 +238,7 @@ function hasStructuralComponent(components) {
 	return (
 		components.extraction_dependency_score !== null ||
 		components.extraction_autonomy_score !== null ||
+		components.productive_capability_score !== null ||
 		components.productive_complexity_score !== null ||
 		components.value_capture_score !== null ||
 		components.geopolitical_financial_power_score !== null
@@ -216,8 +247,7 @@ function hasStructuralComponent(components) {
 
 function isDisputedRegistryRecord(registryRecord) {
 	return (
-		registryRecord.map_unit_type === 'disputed' ||
-		registryRecord.recognition_status === 'disputed'
+		registryRecord.map_unit_type === 'disputed' || registryRecord.recognition_status === 'disputed'
 	);
 }
 
@@ -226,6 +256,10 @@ function isSpecialOrTerritory(registryRecord) {
 }
 
 function sourceForComponents(components) {
+	if (isFiniteNumber(components.productive_capability_score)) {
+		return 'derived_productive_capability_proxy';
+	}
+
 	return hasStructuralComponent(components)
 		? 'derived_conservative_structural_proxy'
 		: 'derived_world_bank_quality_proxy';
@@ -233,11 +267,19 @@ function sourceForComponents(components) {
 
 function confidenceFor(classValue, components, positiveSupportCount, signalsConflict) {
 	if (classValue === 'core') {
-		return positiveSupportCount >= 1 ? 'medium' : 'low';
+		if (components.productive_capability_data_quality === 'partial') return 'low';
+		return positiveSupportCount >= 1 && hasExtractionData(components) ? 'medium' : 'low';
 	}
 	if (!hasStructuralComponent(components)) return 'low';
 	if (signalsConflict) return 'low';
 	return 'medium';
+}
+
+function hasExtractionData(components) {
+	return (
+		isFiniteNumber(components.extraction_dependency_score) ||
+		isFiniteNumber(components.extraction_autonomy_score)
+	);
 }
 
 function curatedOverrideRecordFor(
@@ -245,18 +287,25 @@ function curatedOverrideRecordFor(
 	overrideRecord,
 	qualityRecord,
 	extractionRecord,
-	productiveRecord
+	productiveRecord,
+	productiveCapabilityRecord
 ) {
 	const overrideWorldSystem = overrideRecord.world_system ?? {};
 	const classValue = validClasses.has(overrideWorldSystem.class)
 		? overrideWorldSystem.class
 		: 'uncertain';
-	const components = componentsFromRecords(qualityRecord, extractionRecord, productiveRecord);
+	const components = componentsFromRecords(
+		qualityRecord,
+		extractionRecord,
+		productiveRecord,
+		productiveCapabilityRecord
+	);
 	const positiveSupports = positiveStructuralSupports(components);
 	const filterSupports = negativeOrFilterSupports(components);
 	const supports = structuralSupports(components);
 	const rationale =
-		typeof overrideWorldSystem.rationale === 'string' && overrideWorldSystem.rationale.trim().length > 0
+		typeof overrideWorldSystem.rationale === 'string' &&
+		overrideWorldSystem.rationale.trim().length > 0
 			? overrideWorldSystem.rationale.trim()
 			: null;
 
@@ -290,7 +339,14 @@ function curatedOverrideRecordFor(
 	};
 }
 
-function demoRecordFor(registryRecord, demoUnit, qualityRecord, extractionRecord, productiveRecord) {
+function demoRecordFor(
+	registryRecord,
+	demoUnit,
+	qualityRecord,
+	extractionRecord,
+	productiveRecord,
+	productiveCapabilityRecord
+) {
 	const demoWorldSystem = demoUnit.world_system ?? {};
 	const demoClass = validClasses.has(demoWorldSystem.class) ? demoWorldSystem.class : 'uncertain';
 	const classValue = demoClass === 'core' ? 'semi-periphery' : demoClass;
@@ -298,7 +354,12 @@ function demoRecordFor(registryRecord, demoUnit, qualityRecord, extractionRecord
 	const confidence = ['low', 'medium', 'high'].includes(demoWorldSystem.confidence)
 		? demoWorldSystem.confidence
 		: 'medium';
-	const components = componentsFromRecords(qualityRecord, extractionRecord, productiveRecord);
+	const components = componentsFromRecords(
+		qualityRecord,
+		extractionRecord,
+		productiveRecord,
+		productiveCapabilityRecord
+	);
 	const positiveSupports = positiveStructuralSupports(components);
 	const filterSupports = negativeOrFilterSupports(components);
 	const supports = structuralSupports(components);
@@ -312,7 +373,7 @@ function demoRecordFor(registryRecord, demoUnit, qualityRecord, extractionRecord
 			confidence: reinterpretedCore ? 'low' : confidence,
 			source: reinterpretedCore ? 'legacy_demo_seed_reinterpreted' : 'legacy_demo_seed',
 			explanation: reinterpretedCore
-				? 'Original demo seed marked this as core, but demo data are not treated as real curated classification. Without positive structural evidence of value capture or productive complexity, provisional class is semi-periphery.'
+				? 'Original demo seed marked this as core, but demo data are not treated as real curated classification. Without reviewed classification or sufficient productive capability support, provisional class is semi-periphery.'
 				: `${demoWorldSystem.explanation ?? 'Demo seed world-system class.'} This record is a UI/demo seed from static/data/world-system.latest.json and is not a reviewed structural classification.`
 		},
 		components: {
@@ -336,10 +397,16 @@ function noDataRecord(
 	qualityRecord,
 	extractionRecord,
 	productiveRecord,
+	productiveCapabilityRecord,
 	classValue = 'no_data',
 	explanation = null
 ) {
-	const components = componentsFromRecords(qualityRecord, extractionRecord, productiveRecord);
+	const components = componentsFromRecords(
+		qualityRecord,
+		extractionRecord,
+		productiveRecord,
+		productiveCapabilityRecord
+	);
 	return {
 		id: registryRecord.id,
 		world_system: {
@@ -365,8 +432,19 @@ function noDataRecord(
 	};
 }
 
-function derivedRecordFor(registryRecord, qualityRecord, extractionRecord, productiveRecord) {
-	const components = componentsFromRecords(qualityRecord, extractionRecord, productiveRecord);
+function derivedRecordFor(
+	registryRecord,
+	qualityRecord,
+	extractionRecord,
+	productiveRecord,
+	productiveCapabilityRecord
+) {
+	const components = componentsFromRecords(
+		qualityRecord,
+		extractionRecord,
+		productiveRecord,
+		productiveCapabilityRecord
+	);
 	const qualityScore = isFiniteNumber(qualityRecord?.quality_of_life_score)
 		? clamp(qualityRecord.quality_of_life_score, 0, 1)
 		: null;
@@ -388,6 +466,7 @@ function derivedRecordFor(registryRecord, qualityRecord, extractionRecord, produ
 			qualityRecord,
 			extractionRecord,
 			productiveRecord,
+			productiveCapabilityRecord,
 			'disputed',
 			'Disputed map unit without explicit curated classification. The provisional model does not decide sovereignty disputes.'
 		);
@@ -400,6 +479,7 @@ function derivedRecordFor(registryRecord, qualityRecord, extractionRecord, produ
 			qualityRecord,
 			extractionRecord,
 			productiveRecord,
+			productiveCapabilityRecord,
 			classValue,
 			classValue === 'uncertain'
 				? 'Special or territory record with comparability problems. Provisional classification is uncertain until reviewed against comparable structural data.'
@@ -408,7 +488,7 @@ function derivedRecordFor(registryRecord, qualityRecord, extractionRecord, produ
 	}
 
 	if (!hasQualityOrIncome && !hasAnyStructuralData) {
-		return noDataRecord(registryRecord, null, null, null);
+		return noDataRecord(registryRecord, null, null, null, null);
 	}
 
 	const highQualityResourceConflict =
@@ -429,13 +509,22 @@ function derivedRecordFor(registryRecord, qualityRecord, extractionRecord, produ
 		components.extraction_autonomy_score < 35;
 	const coreBlockedByExtraction =
 		isFiniteNumber(components.extraction_dependency_score) &&
-		components.extraction_dependency_score >= 35;
+		components.extraction_dependency_score > 25;
+	const coreBlockedByAutonomy =
+		isFiniteNumber(components.extraction_autonomy_score) &&
+		components.extraction_autonomy_score < 65;
 	const signalsConflict = highQualityResourceConflict || highIncomeResourceConflict;
-	const missingPositiveCoreEvidence = positiveSupports.length === 0;
+	const productiveCapabilityCoreSupport =
+		isFiniteNumber(components.productive_capability_score) &&
+		components.productive_capability_score >= 70 &&
+		components.productive_capability_data_quality !== 'sparse';
+	const missingPositiveCoreEvidence = !productiveCapabilityCoreSupport;
 	const hasSemiSignal =
 		(qualityScore !== null && qualityScore >= 0.65) ||
 		(isFiniteNumber(components.extraction_autonomy_score) &&
 			components.extraction_autonomy_score >= 45) ||
+		(isFiniteNumber(components.productive_capability_score) &&
+			components.productive_capability_score >= 45) ||
 		(isFiniteNumber(components.productive_complexity_score) &&
 			components.productive_complexity_score >= 45);
 	const hasPeripherySignal =
@@ -445,9 +534,9 @@ function derivedRecordFor(registryRecord, qualityRecord, extractionRecord, produ
 	const coreRequirementsMet =
 		qualityScore !== null &&
 		qualityScore >= 0.88 &&
-		positiveSupports.length >= 1 &&
-		filterSupports.length >= 1 &&
-		!coreBlockedByExtraction;
+		productiveCapabilityCoreSupport &&
+		!coreBlockedByExtraction &&
+		!coreBlockedByAutonomy;
 
 	let classValue;
 	let reason;
@@ -460,13 +549,14 @@ function derivedRecordFor(registryRecord, qualityRecord, extractionRecord, produ
 			'Indicators conflict strongly: welfare or income proxy is high, but extraction dependency is also high. Provisional classification is uncertain pending structural value-chain review.';
 	} else if (coreRequirementsMet) {
 		classValue = 'core';
-		reason = 'conservative_core_with_positive_structural_support';
-		explanation = `Provisional conservative core: quality-of-life score is at least 0.88, positive structural support is present (${positiveSupports.join(', ')}), and extraction-dependency/autonomy filters corroborate the classification (${filterSupports.join(', ')}). This remains provisional until value-capture/GVC evidence is added.`;
+		reason = 'provisional_core_with_productive_capability_support';
+		explanation =
+			'Provisional core candidate based on high welfare, low extraction dependency, and productive capability proxy. Final core status requires value-capture/GVC evidence.';
 	} else if (qualityScore !== null && qualityScore >= 0.88 && missingPositiveCoreEvidence) {
 		classValue = 'semi-periphery';
-		reason = 'core_like_welfare_autonomy_missing_positive_structural_evidence';
+		reason = 'core_like_welfare_autonomy_missing_productive_capability_support';
 		explanation =
-			'Core-like welfare/autonomy profile, but no positive structural evidence of value capture or productive complexity is currently available.';
+			'Core-like welfare/autonomy profile, but positive productive capability evidence is missing or insufficient.';
 	} else if (hasSemiSignal) {
 		classValue = 'semi-periphery';
 		reason = 'mixed_or_structurally_unconfirmed_position';
@@ -491,7 +581,7 @@ function derivedRecordFor(registryRecord, qualityRecord, extractionRecord, produ
 
 	const downgraded = previousClass === 'core' && classValue !== 'core';
 	const confidence =
-		reason === 'core_like_welfare_autonomy_missing_positive_structural_evidence'
+		reason === 'core_like_welfare_autonomy_missing_productive_capability_support'
 			? 'low'
 			: confidenceFor(classValue, components, positiveSupports.length, signalsConflict);
 
@@ -540,6 +630,12 @@ function diagnosticsFor(records, registry) {
 	const derivedCoreCount = coreCandidates.filter((record) =>
 		record.world_system.source.startsWith('derived')
 	).length;
+	const derivedProductiveCapabilityCore = coreCandidates.filter(
+		(record) =>
+			record.world_system.source === 'derived_productive_capability_proxy' ||
+			record.components.classification_reason ===
+				'provisional_core_with_productive_capability_support'
+	);
 	const curatedReviewedCoreCount = coreCandidates.filter(
 		(record) => record.world_system.source === 'curated_reviewed'
 	).length;
@@ -552,15 +648,46 @@ function diagnosticsFor(records, registry) {
 			record.world_system.source === 'legacy_demo_seed_reinterpreted'
 	).length;
 	const highScoreNonCore = records
-		.filter((record) => record.world_system.class !== 'core' && (record.world_system.score ?? -1) >= 78)
+		.filter(
+			(record) => record.world_system.class !== 'core' && (record.world_system.score ?? -1) >= 78
+		)
 		.sort((a, b) => (b.world_system.score ?? -1) - (a.world_system.score ?? -1));
 	const preventedMissingPositive = records
 		.filter(
 			(record) =>
 				record.components.classification_reason ===
-				'core_like_welfare_autonomy_missing_positive_structural_evidence'
+				'core_like_welfare_autonomy_missing_productive_capability_support'
 		)
 		.sort((a, b) => (b.world_system.score ?? -1) - (a.world_system.score ?? -1));
+	const topProductiveCapabilityScores = records
+		.filter((record) => isFiniteNumber(record.components.productive_capability_score))
+		.sort(
+			(a, b) =>
+				(b.components.productive_capability_score ?? -1) -
+				(a.components.productive_capability_score ?? -1)
+		);
+	const highScoreKeptSemiByProductiveCapability = records
+		.filter(
+			(record) =>
+				record.world_system.class === 'semi-periphery' &&
+				(record.world_system.score ?? -1) >= 78 &&
+				(!isFiniteNumber(record.components.productive_capability_score) ||
+					record.components.productive_capability_score < 70 ||
+					record.components.productive_capability_data_quality === 'sparse')
+		)
+		.sort((a, b) => (b.world_system.score ?? -1) - (a.world_system.score ?? -1));
+	const movedFromSemiToCoreByProductiveCapability = derivedProductiveCapabilityCore
+		.filter(
+			(record) =>
+				record.components.previous_proxy_class === 'semi-periphery' ||
+				record.components.classification_reason ===
+					'provisional_core_with_productive_capability_support'
+		)
+		.sort(
+			(a, b) =>
+				(b.components.productive_capability_score ?? -1) -
+				(a.components.productive_capability_score ?? -1)
+		);
 
 	const summarize = (record) => ({
 		id: record.id,
@@ -572,6 +699,8 @@ function diagnosticsFor(records, registry) {
 		extraction_dependency_score: record.components.extraction_dependency_score,
 		extraction_autonomy_score: record.components.extraction_autonomy_score,
 		productive_complexity_score: record.components.productive_complexity_score,
+		productive_capability_score: record.components.productive_capability_score,
+		productive_capability_data_quality: record.components.productive_capability_data_quality,
 		value_capture_score: record.components.value_capture_score,
 		geopolitical_financial_power_score: record.components.geopolitical_financial_power_score,
 		structural_supports: record.components.structural_supports,
@@ -586,6 +715,7 @@ function diagnosticsFor(records, registry) {
 		class_distribution: distribution,
 		core_count: coreCandidates.length,
 		derived_core_count: derivedCoreCount,
+		derived_productive_capability_core_count: derivedProductiveCapabilityCore.length,
 		curated_reviewed_core_count: curatedReviewedCoreCount,
 		legacy_demo_seed_count: legacyDemoSeedCount,
 		demo_seed_reinterpreted_count: demoSeedReinterpreted.length,
@@ -597,6 +727,11 @@ function diagnosticsFor(records, registry) {
 		prevented_missing_positive_structural_evidence: preventedMissingPositive
 			.slice(0, 60)
 			.map(summarize),
+		top_productive_capability_scores: topProductiveCapabilityScores.slice(0, 30).map(summarize),
+		high_score_kept_semi_periphery_productive_capability_missing_low:
+			highScoreKeptSemiByProductiveCapability.slice(0, 30).map(summarize),
+		moved_from_semi_periphery_to_core_by_productive_capability:
+			movedFromSemiToCoreByProductiveCapability.slice(0, 30).map(summarize),
 		downgraded_high_quality: downgraded.slice(0, 30).map(summarize)
 	};
 }
@@ -608,16 +743,17 @@ async function main() {
 		worldSystemDemo,
 		extractionDependency,
 		productiveComplexity,
+		productiveCapability,
 		curatedOverrides
-	] =
-		await Promise.all([
-			readJson(paths.registry),
-			readJson(paths.qualityOfLife),
-			readJson(paths.worldSystemDemo),
-			readJsonIfPresent(paths.extractionDependency),
-			readJsonIfPresent(paths.productiveComplexity),
-			readJsonIfPresent(paths.curatedOverrides)
-		]);
+	] = await Promise.all([
+		readJson(paths.registry),
+		readJson(paths.qualityOfLife),
+		readJson(paths.worldSystemDemo),
+		readJsonIfPresent(paths.extractionDependency),
+		readJsonIfPresent(paths.productiveComplexity),
+		readJsonIfPresent(paths.productiveCapability),
+		readJsonIfPresent(paths.curatedOverrides)
+	]);
 	const demoById = normalizeWorldSystemDemoData(worldSystemDemo);
 	const curatedOverrideById = normalizeCuratedOverrides(curatedOverrides);
 	const qualityById = new Map((qualityOfLife.records ?? []).map((record) => [record.id, record]));
@@ -627,6 +763,9 @@ async function main() {
 	const productiveById = recordsById(productiveComplexity, (record) =>
 		isFiniteNumber(record.productive_complexity_score)
 	);
+	const productiveCapabilityById = recordsById(productiveCapability, (record) =>
+		isFiniteNumber(record.productive_capability_score)
+	);
 
 	const records = registry.map((registryRecord) => {
 		const curatedOverride = curatedOverrideById.get(registryRecord.id);
@@ -634,6 +773,7 @@ async function main() {
 		const qualityRecord = qualityById.get(registryRecord.id);
 		const extractionRecord = extractionById.get(registryRecord.id);
 		const productiveRecord = productiveById.get(registryRecord.id);
+		const productiveCapabilityRecord = productiveCapabilityById.get(registryRecord.id);
 
 		return curatedOverride
 			? curatedOverrideRecordFor(
@@ -641,17 +781,25 @@ async function main() {
 					curatedOverride,
 					qualityRecord,
 					extractionRecord,
-					productiveRecord
+					productiveRecord,
+					productiveCapabilityRecord
 				)
 			: demoUnit
 				? demoRecordFor(
 						registryRecord,
 						demoUnit,
-					qualityRecord,
-					extractionRecord,
-					productiveRecord
-				)
-			: derivedRecordFor(registryRecord, qualityRecord, extractionRecord, productiveRecord);
+						qualityRecord,
+						extractionRecord,
+						productiveRecord,
+						productiveCapabilityRecord
+					)
+				: derivedRecordFor(
+						registryRecord,
+						qualityRecord,
+						extractionRecord,
+						productiveRecord,
+						productiveCapabilityRecord
+					);
 	});
 
 	const diagnostics = diagnosticsFor(records, registry);
@@ -681,6 +829,9 @@ async function main() {
 	console.log(`Class distribution: ${JSON.stringify(diagnostics.class_distribution, null, 2)}`);
 	console.log(`Core count: ${diagnostics.core_count}`);
 	console.log(`Derived core count: ${diagnostics.derived_core_count}`);
+	console.log(
+		`Derived productive-capability core count: ${diagnostics.derived_productive_capability_core_count}`
+	);
 	console.log(`Curated reviewed core count: ${diagnostics.curated_reviewed_core_count}`);
 	console.log(`Legacy demo seed records: ${diagnostics.legacy_demo_seed_count}`);
 	console.log(`Demo seed records reinterpreted: ${diagnostics.demo_seed_reinterpreted_count}`);
@@ -689,8 +840,26 @@ async function main() {
 	console.log(
 		`Records downgraded from previous proxy core: ${diagnostics.downgraded_from_previous_proxy_core_count}`
 	);
-	console.log('Records prevented from becoming core because positive structural evidence is missing:');
+	console.log(
+		'Records prevented from becoming core because positive structural evidence is missing:'
+	);
 	console.log(JSON.stringify(diagnostics.prevented_missing_positive_structural_evidence, null, 2));
+	console.log('Top 30 productive capability scores:');
+	console.log(JSON.stringify(diagnostics.top_productive_capability_scores, null, 2));
+	console.log(
+		'High-score countries kept semi-periphery because productive capability is missing/low:'
+	);
+	console.log(
+		JSON.stringify(
+			diagnostics.high_score_kept_semi_periphery_productive_capability_missing_low,
+			null,
+			2
+		)
+	);
+	console.log('Countries moved from semi-periphery to core by productive capability support:');
+	console.log(
+		JSON.stringify(diagnostics.moved_from_semi_periphery_to_core_by_productive_capability, null, 2)
+	);
 	console.log('Top 30 core candidates with components:');
 	console.log(JSON.stringify(diagnostics.core_candidates, null, 2));
 	console.log('Demo seed records reinterpreted:');
