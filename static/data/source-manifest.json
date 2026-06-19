@@ -112,12 +112,13 @@
 			"id": "atlas_economic_complexity",
 			"title": "Atlas of Economic Complexity",
 			"publisher": "Harvard Growth Lab",
-			"type": "planned_dataset",
-			"url": "https://atlas.cid.harvard.edu/",
-			"status": "planned",
+			"type": "download",
+			"status": "planned_or_local_import",
+			"url": "https://atlas.hks.harvard.edu/data-downloads/",
+			"coverage_note": "International trade data covering thousands of products and many countries/territories; exact coverage depends on downloaded dataset.",
 			"license_or_terms_note": "Review Atlas data access and redistribution terms.",
-			"retrieval_method": "Planned for structural world-system model v1.",
-			"methodological_note": "Planned for productive complexity and diversification components.",
+			"retrieval_method": "scripts/data/import-atlas-economic-complexity.mjs",
+			"methodological_note": "Used as a proxy for productive complexity, diversification, and high-complexity export capability; not sufficient alone for world-system class.",
 			"provenance_required": true
 		},
 		{

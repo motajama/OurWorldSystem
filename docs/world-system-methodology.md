@@ -42,7 +42,11 @@ Planned source families include OECD TiVA, UN Comtrade, CEPII BACI, UNCTAD FDI, 
 
 This component should estimate the sophistication, diversity, and non-substitutability of productive capabilities. A map unit with complex, diversified production can occupy a different structural position from one with similar income but narrow commodity or enclave dependence.
 
-Planned source families include the Atlas of Economic Complexity, trade-product diversity measures, and sectoral evidence where open, reproducible data is available.
+The first implemented structural component is `productive_complexity`. It is imported from local Atlas of Economic Complexity CSV downloads when available and written to `static/data/indicators/productive-complexity.latest.json`. The importer uses country-level economic complexity where present, can use export diversity where present, and can derive a simple diversity count from country-product export rows when product export values are available.
+
+Productive complexity is not core status. It approximates whether a map unit participates in complex, diversified, higher-capability production and export structures. It does not measure value capture, ownership, ecological externalization, coercive power, or financial centrality by itself.
+
+Source family: Atlas of Economic Complexity / Harvard Growth Lab, staged locally under `data/raw/atlas-economic-complexity/`.
 
 ### C. Extraction Dependency
 
@@ -68,7 +72,7 @@ The current dataset `world_system_provisional_latest` is a temporary proxy. It p
 
 The future dataset `world_system_structural_v1` should be a separate model with its own source IDs, component scores, data coverage, explanation, limitations, and review status. It should not overwrite or silently replace the provisional proxy until validation, documentation, and review are complete.
 
-The structural v1 scaffold currently emits a placeholder file with `model_status: "not_yet_computable"`. That is intentional: the required source pipelines and component transformations are not implemented yet.
+The structural v1 scaffold currently emits a placeholder file with `model_status: "not_yet_computable"`. That is intentional: the required source pipelines and component transformations are not complete yet. It may include available `productive_complexity` component values for review, but it still does not infer a final world-system class or total score.
 
 ## Confidence Levels
 

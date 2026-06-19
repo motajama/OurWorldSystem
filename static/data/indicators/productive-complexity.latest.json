@@ -1,0 +1,14 @@
+{
+	"dataset_id": "productive_complexity_latest",
+	"source_id": "atlas_economic_complexity",
+	"model_component": "productive_complexity",
+	"status": "no_source_file",
+	"generated_at": "2026-06-19T17:58:34.303Z",
+	"records": [],
+	"unmatched_source_rows": [],
+	"notes": [
+		"This component is a proxy for productive complexity and does not determine world-system position by itself.",
+		"Missing source rows and unmatched country codes are reported rather than coerced into map-unit records.",
+		"No CSV files were found in data/raw/atlas-economic-complexity/."
+	]
+}

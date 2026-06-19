@@ -2,7 +2,7 @@
 
 OurWorldSystem is an open-source, static-first public-interest atlas of countries and map units in the global world-system. It is intended to visualize structural positions such as core, semi-periphery, periphery, uncertainty, conflict exposure, press freedom, political freedom, quality of life, ecological pressure, and forms of extraction or externalization.
 
-The current app uses real static Natural Earth geometry, a provisional World Bank-derived world-system proxy, preserved mock/demo world-system records, an initial real World Bank WDI quality-of-life indicator pipeline, and a first UCDP conflict indicator pipeline. The default world-system layer is provisional, experimental, and needs review; it must not be interpreted as a final academic classification.
+The current app uses real static Natural Earth geometry, a provisional World Bank-derived world-system proxy, preserved mock/demo world-system records, an initial real World Bank WDI quality-of-life indicator pipeline, a first UCDP conflict indicator pipeline, and a local Atlas of Economic Complexity import for productive complexity. The default world-system layer is provisional, experimental, and needs review; it must not be interpreted as a final academic classification.
 
 ## Principles
 
@@ -102,6 +102,7 @@ The first real public indicator outputs live in:
 - `static/data/indicators/quality-of-life.world-bank.latest.json`
 - `static/data/indicators/world-system.provisional.latest.json`
 - `static/data/indicators/conflict.ucdp.latest.json`
+- `static/data/indicators/productive-complexity.latest.json`
 
 Geometry lives in:
 
@@ -150,6 +151,14 @@ Fetch only UCDP conflict indicators with:
 npm run data:fetch:ucdp
 ```
 
+Import Atlas of Economic Complexity productive-complexity data from local CSV files with:
+
+```sh
+npm run data:import:complexity
+```
+
+Place manually downloaded Atlas CSV files in `data/raw/atlas-economic-complexity/`. Supported names include `country_complexity.csv`, `country_product_exports.csv`, and `product_complexity.csv`; the importer can also scan other CSVs with recognizable country-code, year, ECI, export-value, or diversity columns. If no files are present, it writes a valid `no_source_file` placeholder and exits successfully.
+
 `npm run data:build` downloads World Bank data, attempts the optional UCDP fetch without letting UCDP source failures break the build, then generates the provisional world-system proxy. World Bank raw API responses are stored under `data/raw/world-bank/`; UCDP raw ZIP/CSV files are stored under `data/raw/ucdp/`; generated frontend outputs are written to `static/data/indicators/`. The initial World Bank indicators are life expectancy (`SP.DYN.LE00.IN`), GNI per capita PPP (`NY.GNP.PCAP.PP.CD`), secondary gross enrollment (`SE.SEC.ENRR`), and population (`SP.POP.TOTL`).
 
 `quality_of_life_score` is a transparent temporary visualization score. It requires at least life expectancy and GNI per capita PPP, optionally includes secondary enrollment, and must never be labeled as HDI. Missing World Bank values remain missing and display as `No data`; they are not fabricated or imputed.
@@ -174,7 +183,7 @@ The current default world-system layer is a provisional proxy. It preserves demo
 
 The planned structural model v1 is documented in `docs/world-system-methodology.md` and scaffolded as `world_system_structural_v1`. It will treat core, semi-periphery, and periphery as relational positions in the capitalist world-economy, not as income or quality-of-life bins. Planned components are value capture and GVC position, productive complexity, extraction autonomy, ecological unequal exchange or externalization, and geopolitical-financial-institutional power.
 
-Planned source families include OECD TiVA, UN Comtrade, CEPII BACI, the Atlas of Economic Complexity, UNEP material flows, Yale EPI, the Global E-waste Monitor, UNCTAD FDI, and SIPRI military expenditure. These are listed as planned in `static/data/source-manifest.json`; their pipelines are not implemented yet.
+Planned source families include OECD TiVA, UN Comtrade, CEPII BACI, the Atlas of Economic Complexity, UNEP material flows, Yale EPI, the Global E-waste Monitor, UNCTAD FDI, and SIPRI military expenditure. These are listed in `static/data/source-manifest.json`. The first implemented structural component is `productive_complexity`, imported from local Atlas CSV files when available.
 
 Build the structural placeholder with:
 
@@ -189,6 +198,8 @@ npm run validate:worldsystem:structural
 ```
 
 The placeholder writes `static/data/indicators/world-system.structural-v1.placeholder.json` with `model_status: "not_yet_computable"`. It exists to lock the future schema and identify missing planned data sources, not to classify map units.
+
+When `productive-complexity.latest.json` contains loaded data, the structural placeholder includes `components.productive_complexity` and the source component inputs for matching map units. This still does not compute final world-system class. Later structural model versions should combine productive complexity with value capture, extraction dependency or autonomy, ecological externalization, and geopolitical-financial power.
 
 Validate registry and mock-data joins with:
 
