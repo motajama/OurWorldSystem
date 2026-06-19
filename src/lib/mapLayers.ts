@@ -286,7 +286,9 @@ function getQualityOfLifeMapScore(mapUnit: MapUnit): number | null {
 
 	if (isNumeric(hdi)) return hdi;
 
-	const score = mapUnit.quality_of_life?.quality_of_life_score;
+	const score =
+		mapUnit.quality_of_life?.quality_of_life_score ??
+		(mapUnit as MapUnit & { quality_of_life_score?: number | null }).quality_of_life_score;
 
 	return isNumeric(score) ? score : null;
 }
