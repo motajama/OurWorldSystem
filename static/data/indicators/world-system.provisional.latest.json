@@ -5,7 +5,7 @@
 		"mock_demo_data"
 	],
 	"model_status": "provisional",
-	"generated_at": "2026-06-19T17:08:04.973Z",
+	"generated_at": "2026-06-19T18:54:01.946Z",
 	"methodology_note": "Experimental provisional world-system proxy. Existing demo world-system records are preserved as demo_curated. Other records are derived from World Bank WDI quality-of-life scores with a small normalized log-income adjustment. Thresholds are provisional: core >= 78, semi-periphery >= 55 and < 78, periphery < 55. This is not a final Wallersteinian or dependency-theory classification.",
 	"records": [
 		{
@@ -893,6 +893,40 @@
 			"review_status": "needs_review"
 		},
 		{
+			"id": "ATF",
+			"world_system": {
+				"class": "no_data",
+				"score": null,
+				"confidence": "low",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "No sufficient World Bank quality-of-life or income data is available for this provisional proxy."
+			},
+			"components": {
+				"quality_of_life_score": null,
+				"gni_per_capita_ppp": null,
+				"life_expectancy": null,
+				"secondary_enrollment_gross": null
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "NCL",
+			"world_system": {
+				"class": "no_data",
+				"score": null,
+				"confidence": "low",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "No sufficient World Bank quality-of-life or income data is available for this provisional proxy."
+			},
+			"components": {
+				"quality_of_life_score": null,
+				"gni_per_capita_ppp": null,
+				"life_expectancy": 78.921,
+				"secondary_enrollment_gross": 94.026
+			},
+			"review_status": "needs_review"
+		},
+		{
 			"id": "GAB",
 			"world_system": {
 				"class": "semi-periphery",
@@ -991,6 +1025,23 @@
 				"gni_per_capita_ppp": 40270,
 				"life_expectancy": 70.273,
 				"secondary_enrollment_gross": null
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "DNK",
+			"world_system": {
+				"class": "core",
+				"score": 97.77,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.9738,
+				"gni_per_capita_ppp": 84680,
+				"life_expectancy": 82.254,
+				"secondary_enrollment_gross": 125.628
 			},
 			"review_status": "needs_review"
 		},
@@ -2763,6 +2814,23 @@
 			"review_status": "needs_review"
 		},
 		{
+			"id": "FLK",
+			"world_system": {
+				"class": "no_data",
+				"score": null,
+				"confidence": "low",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "No sufficient World Bank quality-of-life or income data is available for this provisional proxy."
+			},
+			"components": {
+				"quality_of_life_score": null,
+				"gni_per_capita_ppp": null,
+				"life_expectancy": null,
+				"secondary_enrollment_gross": null
+			},
+			"review_status": "needs_review"
+		},
+		{
 			"id": "USA",
 			"world_system": {
 				"class": "core",
@@ -2776,6 +2844,23 @@
 				"gni_per_capita_ppp": 85980,
 				"life_expectancy": 78.89,
 				"secondary_enrollment_gross": 97.473
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "PRI",
+			"world_system": {
+				"class": "core",
+				"score": 84.32,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.8478,
+				"gni_per_capita_ppp": 34060,
+				"life_expectancy": 81.902,
+				"secondary_enrollment_gross": 81.482
 			},
 			"review_status": "needs_review"
 		},

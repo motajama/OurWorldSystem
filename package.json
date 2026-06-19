@@ -19,6 +19,7 @@
 		"data:build": "npm run data:fetch:worldbank && (npm run data:fetch:ucdp || true) && npm run data:build:worldsystem",
 		"data:coverage": "node scripts/data/build-map-unit-coverage.mjs",
 		"health:data": "node scripts/validate/data-healthcheck.mjs",
+		"validate:feature-matching": "node scripts/validate/validate-feature-registry-matching.mjs",
 		"validate:render-coverage": "node scripts/validate/validate-render-coverage.mjs",
 		"validate:map-colors": "node scripts/validate/validate-map-layer-colors.mjs",
 		"validate:worldsystem": "node scripts/validate/validate-world-system-provisional.mjs",

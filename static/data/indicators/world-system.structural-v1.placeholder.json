@@ -1,7 +1,7 @@
 {
 	"dataset_id": "world_system_structural_v1",
 	"model_status": "not_yet_computable",
-	"generated_at": "2026-06-19T18:16:20.372Z",
+	"generated_at": "2026-06-19T18:54:04.770Z",
 	"records": [
 		{
 			"id": "AFG",
@@ -5046,6 +5046,148 @@
 			"review_status": "not_started"
 		},
 		{
+			"id": "ATF",
+			"class": "no_data",
+			"score": null,
+			"confidence": "low",
+			"components": {
+				"value_capture": null,
+				"productive_complexity": null,
+				"extraction_autonomy": null,
+				"ecological_externalization": null,
+				"geopolitical_financial_power": null
+			},
+			"data_coverage": {
+				"available_source_ids": [
+					"world_bank_wdi_extraction"
+				],
+				"missing_source_ids": [
+					"oecd_tiva",
+					"un_comtrade",
+					"cepii_baci",
+					"atlas_economic_complexity",
+					"unep_material_flows",
+					"yale_epi",
+					"global_ewaste_monitor",
+					"unctad_fdi",
+					"sipri_military_expenditure"
+				],
+				"component_status": {
+					"value_capture": "missing",
+					"productive_complexity": "missing",
+					"extraction_autonomy": "partial",
+					"ecological_externalization": "missing",
+					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null,
+					"extraction_autonomy": null
+				}
+			},
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
+			"limitations": [
+				"Placeholder record only; do not use as a Wallersteinian classification.",
+				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
+				"Registry identity exists, but structural source coverage is not yet complete."
+			],
+			"sources": [],
+			"review_status": "not_started"
+		},
+		{
+			"id": "NCL",
+			"class": "no_data",
+			"score": null,
+			"confidence": "low",
+			"components": {
+				"value_capture": null,
+				"productive_complexity": null,
+				"extraction_autonomy": 59.43,
+				"ecological_externalization": null,
+				"geopolitical_financial_power": null
+			},
+			"data_coverage": {
+				"available_source_ids": [
+					"world_bank_wdi_extraction"
+				],
+				"missing_source_ids": [
+					"oecd_tiva",
+					"un_comtrade",
+					"cepii_baci",
+					"atlas_economic_complexity",
+					"unep_material_flows",
+					"yale_epi",
+					"global_ewaste_monitor",
+					"unctad_fdi",
+					"sipri_military_expenditure"
+				],
+				"component_status": {
+					"value_capture": "missing",
+					"productive_complexity": "missing",
+					"extraction_autonomy": "partial",
+					"ecological_externalization": "missing",
+					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null,
+					"extraction_autonomy": {
+						"source_id": "world_bank_wdi_extraction",
+						"source_country_code": "NCL",
+						"latest_year": 2021,
+						"values": {
+							"natural_resource_rents_gdp_pct": {
+								"value": 16.7918673249355,
+								"year": 2021,
+								"indicator": "NY.GDP.TOTL.RT.ZS"
+							},
+							"fuel_exports_merchandise_pct": {
+								"value": 0.0110083934387515,
+								"year": 2015,
+								"indicator": "TX.VAL.FUEL.ZS.UN"
+							},
+							"ores_metals_exports_merchandise_pct": {
+								"value": 37.7519607832418,
+								"year": 2015,
+								"indicator": "TX.VAL.MMTL.ZS.UN"
+							},
+							"agricultural_raw_exports_merchandise_pct": {
+								"value": 0.357920352791302,
+								"year": 2015,
+								"indicator": "TX.VAL.AGRI.ZS.UN"
+							},
+							"food_exports_merchandise_pct": {
+								"value": 1.35940366636933,
+								"year": 2015,
+								"indicator": "TX.VAL.FOOD.ZS.UN"
+							},
+							"manufactures_exports_merchandise_pct": {
+								"value": 59.0459741175102,
+								"year": 2015,
+								"indicator": "TX.VAL.MANF.ZS.UN"
+							},
+							"high_tech_exports_manufactured_pct": {
+								"value": 5.267295899888,
+								"year": 2015,
+								"indicator": "TX.VAL.TECH.MF.ZS"
+							}
+						},
+						"extraction_dependency_score": 29.78,
+						"extraction_autonomy_score": 59.43,
+						"data_quality": "good"
+					}
+				}
+			},
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
+			"limitations": [
+				"Placeholder record only; do not use as a Wallersteinian classification.",
+				"Available structural components are retained for review, but value capture, ecological externalization, and geopolitical-financial power remain missing.",
+				"Registry identity exists, but structural source coverage is not yet complete."
+			],
+			"sources": [
+				"world_bank_wdi_extraction"
+			],
+			"review_status": "not_started"
+		},
+		{
 			"id": "GAB",
 			"class": "no_data",
 			"score": null,
@@ -5548,7 +5690,7 @@
 			"components": {
 				"value_capture": null,
 				"productive_complexity": null,
-				"extraction_autonomy": 69.1,
+				"extraction_autonomy": 60.09,
 				"ecological_externalization": null,
 				"geopolitical_financial_power": null
 			},
@@ -5578,8 +5720,8 @@
 					"productive_complexity": null,
 					"extraction_autonomy": {
 						"source_id": "world_bank_wdi_extraction",
-						"source_country_code": "DNK",
-						"latest_year": 2024,
+						"source_country_code": "GRL",
+						"latest_year": 2020,
 						"values": {
 							"natural_resource_rents_gdp_pct": {
 								"value": 0,
@@ -5615,6 +5757,100 @@
 								"value": 1.70924920520931,
 								"year": 2018,
 								"indicator": "TX.VAL.TECH.MF.ZS"
+							}
+						},
+						"extraction_dependency_score": 10.04,
+						"extraction_autonomy_score": 60.09,
+						"data_quality": "good"
+					}
+				}
+			},
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
+			"limitations": [
+				"Placeholder record only; do not use as a Wallersteinian classification.",
+				"Available structural components are retained for review, but value capture, ecological externalization, and geopolitical-financial power remain missing.",
+				"Registry identity exists, but structural source coverage is not yet complete."
+			],
+			"sources": [
+				"world_bank_wdi_extraction"
+			],
+			"review_status": "not_started"
+		},
+		{
+			"id": "DNK",
+			"class": "no_data",
+			"score": null,
+			"confidence": "low",
+			"components": {
+				"value_capture": null,
+				"productive_complexity": null,
+				"extraction_autonomy": 85.24,
+				"ecological_externalization": null,
+				"geopolitical_financial_power": null
+			},
+			"data_coverage": {
+				"available_source_ids": [
+					"world_bank_wdi_extraction"
+				],
+				"missing_source_ids": [
+					"oecd_tiva",
+					"un_comtrade",
+					"cepii_baci",
+					"atlas_economic_complexity",
+					"unep_material_flows",
+					"yale_epi",
+					"global_ewaste_monitor",
+					"unctad_fdi",
+					"sipri_military_expenditure"
+				],
+				"component_status": {
+					"value_capture": "missing",
+					"productive_complexity": "missing",
+					"extraction_autonomy": "partial",
+					"ecological_externalization": "missing",
+					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null,
+					"extraction_autonomy": {
+						"source_id": "world_bank_wdi_extraction",
+						"source_country_code": "DNK",
+						"latest_year": 2024,
+						"values": {
+							"natural_resource_rents_gdp_pct": {
+								"value": 0.33866438619955,
+								"year": 2021,
+								"indicator": "NY.GDP.TOTL.RT.ZS"
+							},
+							"fuel_exports_merchandise_pct": {
+								"value": 3.77818245342826,
+								"year": 2024,
+								"indicator": "TX.VAL.FUEL.ZS.UN"
+							},
+							"ores_metals_exports_merchandise_pct": {
+								"value": 1.96131728577918,
+								"year": 2024,
+								"indicator": "TX.VAL.MMTL.ZS.UN"
+							},
+							"agricultural_raw_exports_merchandise_pct": {
+								"value": 1.66351091175877,
+								"year": 2024,
+								"indicator": "TX.VAL.AGRI.ZS.UN"
+							},
+							"food_exports_merchandise_pct": {
+								"value": 17.6997614774225,
+								"year": 2024,
+								"indicator": "TX.VAL.FOOD.ZS.UN"
+							},
+							"manufactures_exports_merchandise_pct": {
+								"value": 72.6930850874123,
+								"year": 2024,
+								"indicator": "TX.VAL.MANF.ZS.UN"
+							},
+							"high_tech_exports_manufactured_pct": {
+								"value": 17.6194498489345,
+								"year": 2024,
+								"indicator": "TX.VAL.TECH.MF.ZS"
 							},
 							"medium_high_tech_exports_manufactured_pct": {
 								"value": 57.2816957226599,
@@ -5622,8 +5858,8 @@
 								"indicator": "TX.MNF.TECH.ZS.UN"
 							}
 						},
-						"extraction_dependency_score": 10.04,
-						"extraction_autonomy_score": 69.1,
+						"extraction_dependency_score": 5.95,
+						"extraction_autonomy_score": 85.24,
 						"data_quality": "good"
 					}
 				}
@@ -15572,6 +15808,54 @@
 			"review_status": "not_started"
 		},
 		{
+			"id": "FLK",
+			"class": "no_data",
+			"score": null,
+			"confidence": "low",
+			"components": {
+				"value_capture": null,
+				"productive_complexity": null,
+				"extraction_autonomy": null,
+				"ecological_externalization": null,
+				"geopolitical_financial_power": null
+			},
+			"data_coverage": {
+				"available_source_ids": [
+					"world_bank_wdi_extraction"
+				],
+				"missing_source_ids": [
+					"oecd_tiva",
+					"un_comtrade",
+					"cepii_baci",
+					"atlas_economic_complexity",
+					"unep_material_flows",
+					"yale_epi",
+					"global_ewaste_monitor",
+					"unctad_fdi",
+					"sipri_military_expenditure"
+				],
+				"component_status": {
+					"value_capture": "missing",
+					"productive_complexity": "missing",
+					"extraction_autonomy": "partial",
+					"ecological_externalization": "missing",
+					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null,
+					"extraction_autonomy": null
+				}
+			},
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
+			"limitations": [
+				"Placeholder record only; do not use as a Wallersteinian classification.",
+				"Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.",
+				"Registry identity exists, but structural source coverage is not yet complete."
+			],
+			"sources": [],
+			"review_status": "not_started"
+		},
+		{
 			"id": "USA",
 			"class": "no_data",
 			"score": null,
@@ -15656,6 +15940,70 @@
 						"extraction_dependency_score": 10.35,
 						"extraction_autonomy_score": 82.52,
 						"data_quality": "good"
+					}
+				}
+			},
+			"explanation": "Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.",
+			"limitations": [
+				"Placeholder record only; do not use as a Wallersteinian classification.",
+				"Available structural components are retained for review, but value capture, ecological externalization, and geopolitical-financial power remain missing.",
+				"Registry identity exists, but structural source coverage is not yet complete."
+			],
+			"sources": [
+				"world_bank_wdi_extraction"
+			],
+			"review_status": "not_started"
+		},
+		{
+			"id": "PRI",
+			"class": "no_data",
+			"score": null,
+			"confidence": "low",
+			"components": {
+				"value_capture": null,
+				"productive_complexity": null,
+				"extraction_autonomy": 100,
+				"ecological_externalization": null,
+				"geopolitical_financial_power": null
+			},
+			"data_coverage": {
+				"available_source_ids": [
+					"world_bank_wdi_extraction"
+				],
+				"missing_source_ids": [
+					"oecd_tiva",
+					"un_comtrade",
+					"cepii_baci",
+					"atlas_economic_complexity",
+					"unep_material_flows",
+					"yale_epi",
+					"global_ewaste_monitor",
+					"unctad_fdi",
+					"sipri_military_expenditure"
+				],
+				"component_status": {
+					"value_capture": "missing",
+					"productive_complexity": "missing",
+					"extraction_autonomy": "partial",
+					"ecological_externalization": "missing",
+					"geopolitical_financial_power": "missing"
+				},
+				"component_inputs": {
+					"productive_complexity": null,
+					"extraction_autonomy": {
+						"source_id": "world_bank_wdi_extraction",
+						"source_country_code": "PRI",
+						"latest_year": 2021,
+						"values": {
+							"natural_resource_rents_gdp_pct": {
+								"value": 0,
+								"year": 2021,
+								"indicator": "NY.GDP.TOTL.RT.ZS"
+							}
+						},
+						"extraction_dependency_score": 0,
+						"extraction_autonomy_score": 100,
+						"data_quality": "sparse"
 					}
 				}
 			},
@@ -16557,8 +16905,8 @@
 		"extraction_autonomy": {
 			"path": "/data/indicators/extraction-dependency.world-bank.latest.json",
 			"status": "component_values_loaded",
-			"record_count": 166,
-			"scored_record_count": 166
+			"record_count": 169,
+			"scored_record_count": 169
 		}
 	},
 	"notes": [

@@ -1,7 +1,7 @@
 {
 	"dataset_id": "quality_of_life_world_bank_latest",
 	"source_id": "world_bank_wdi",
-	"retrieved_at": "2026-06-19T13:47:38.571Z",
+	"retrieved_at": "2026-06-19T18:54:01.032Z",
 	"indicators": {
 		"SP.DYN.LE00.IN": {
 			"label": "Life expectancy at birth, total (years)",
@@ -1153,6 +1153,37 @@
 				}
 			},
 			"quality_of_life_score": 0.4727,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "DNK",
+			"source_country_code": "DNK",
+			"values": {
+				"life_expectancy": {
+					"value": 82.2536585365854,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 84680,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 125.628089904785,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 5976992,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.9738,
 			"data_quality": "good",
 			"sources": [
 				"world_bank_wdi"
@@ -3324,6 +3355,32 @@
 			]
 		},
 		{
+			"id": "NCL",
+			"source_country_code": "NCL",
+			"values": {
+				"life_expectancy": {
+					"value": 78.921,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"secondary_enrollment_gross": {
+					"value": 94.0259017944336,
+					"year": 1997,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 292639,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": null,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
 			"id": "NER",
 			"source_country_code": "NER",
 			"values": {
@@ -3752,6 +3809,37 @@
 				}
 			},
 			"quality_of_life_score": 0.9052,
+			"data_quality": "good",
+			"sources": [
+				"world_bank_wdi"
+			]
+		},
+		{
+			"id": "PRI",
+			"source_country_code": "PRI",
+			"values": {
+				"life_expectancy": {
+					"value": 81.902,
+					"year": 2024,
+					"indicator": "SP.DYN.LE00.IN"
+				},
+				"gni_per_capita_ppp": {
+					"value": 34060,
+					"year": 2024,
+					"indicator": "NY.GNP.PCAP.PP.CD"
+				},
+				"secondary_enrollment_gross": {
+					"value": 81.4824139700154,
+					"year": 2024,
+					"indicator": "SE.SEC.ENRR"
+				},
+				"population": {
+					"value": 3203295,
+					"year": 2024,
+					"indicator": "SP.POP.TOTL"
+				}
+			},
+			"quality_of_life_score": 0.8478,
 			"data_quality": "good",
 			"sources": [
 				"world_bank_wdi"
@@ -5224,10 +5312,6 @@
 			"source_country_name": "Dominica"
 		},
 		{
-			"source_country_code": "DNK",
-			"source_country_name": "Denmark"
-		},
-		{
 			"source_country_code": "FRO",
 			"source_country_name": "Faroe Islands"
 		},
@@ -5308,20 +5392,12 @@
 			"source_country_name": "Mauritius"
 		},
 		{
-			"source_country_code": "NCL",
-			"source_country_name": "New Caledonia"
-		},
-		{
 			"source_country_code": "NRU",
 			"source_country_name": "Nauru"
 		},
 		{
 			"source_country_code": "PLW",
 			"source_country_name": "Palau"
-		},
-		{
-			"source_country_code": "PRI",
-			"source_country_name": "Puerto Rico (US)"
 		},
 		{
 			"source_country_code": "PYF",

@@ -18,8 +18,9 @@
 	import { getMapColorDiagnostics } from '$lib/mapColorDiagnostics';
 	import {
 		buildRegistryIndexes,
-		findRegistryRecordForNaturalEarthFeature,
+		findRegistryMatchForNaturalEarthFeature,
 		loadMapUnitRegistry,
+		type RegistryMatch,
 		type RegistryIndexes
 	} from '$lib/mapUnitRegistry';
 	import {
@@ -90,8 +91,12 @@
 		name: string;
 		path: string;
 		unit: MapUnit;
+		mapUnit: MapUnit;
 		hasIndicatorRecord: boolean;
+		featureIndex: number;
 		registryRecord: MapUnitRegistryRecord | null;
+		registryMatch: RegistryMatch | null;
+		naturalEarthProperties: GeoFeatureProperties;
 		properties: GeoFeatureProperties;
 	};
 
@@ -512,9 +517,10 @@
 					return null;
 				}
 
-				const registryCandidate = indexes
-					? findRegistryRecordForNaturalEarthFeature(properties, indexes)
+				const registryMatch = indexes
+					? findRegistryMatchForNaturalEarthFeature(properties, indexes)
 					: null;
+				const registryCandidate = registryMatch?.record ?? null;
 				const isDisputedLayer = layerName === 'disputed';
 				const registryRecord =
 					isDisputedLayer && !isDisputedRegistryRecord(registryCandidate)
@@ -542,8 +548,12 @@
 					name,
 					path: featurePath,
 					unit,
+					mapUnit: unit,
 					hasIndicatorRecord: Boolean(indicatorUnit),
+					featureIndex: index,
 					registryRecord,
+					registryMatch,
+					naturalEarthProperties: properties,
 					properties
 				};
 			})
@@ -568,6 +578,27 @@
 		if (event.defaultPrevented || suppressNextFeatureClick) {
 			suppressNextFeatureClick = false;
 			return;
+		}
+
+		if (dev) {
+			const properties = renderFeature.naturalEarthProperties;
+
+			console.info('[OurWorldSystem:feature-click]', {
+				featureIndex: renderFeature.featureIndex,
+				naturalEarth: {
+					NAME: properties.NAME,
+					NAME_LONG: properties.NAME_LONG,
+					ADMIN: properties.ADMIN,
+					ISO_A3: properties.ISO_A3,
+					ADM0_A3: properties.ADM0_A3,
+					SOV_A3: properties.SOV_A3
+				},
+				matchedRegistryId: renderFeature.registryRecord?.id ?? null,
+				matchedDisplayName: renderFeature.registryRecord?.display_name ?? null,
+				matchReason: renderFeature.registryMatch?.reason ?? null,
+				matchField: renderFeature.registryMatch?.field ?? null,
+				matchValue: renderFeature.registryMatch?.value ?? null
+			});
 		}
 
 		selectFeature(renderFeature, isDisputedOverlay);
