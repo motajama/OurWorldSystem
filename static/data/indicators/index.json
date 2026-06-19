@@ -38,6 +38,14 @@
 		"description": "Optional productive-complexity component imported from local Atlas of Economic Complexity CSV files. Placeholder output is valid when raw files are absent."
 	},
 	{
+		"id": "productive_capability_world_bank_latest",
+		"path": "/data/indicators/productive-capability.world-bank.latest.json",
+		"required": false,
+		"available": true,
+		"source_ids": ["world_bank_wdi_extraction"],
+		"description": "Optional provisional World Bank WDI export-structure proxy for productive capability support. Not full productive complexity or value-chain evidence."
+	},
+	{
 		"id": "extraction_dependency_world_bank_latest",
 		"path": "/data/indicators/extraction-dependency.world-bank.latest.json",
 		"required": false,

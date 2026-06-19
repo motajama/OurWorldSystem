@@ -48,6 +48,14 @@ Productive complexity is not core status. It approximates whether a map unit par
 
 Source family: Atlas of Economic Complexity / Harvard Growth Lab, staged locally under `data/raw/atlas-economic-complexity/`.
 
+### B1. Provisional Productive Capability Proxy
+
+The provisional model also includes `productive_capability_proxy`, generated from WDI export-structure fields already collected with the extraction pipeline. This is a temporary positive structural support component for the provisional model only. It uses manufactures exports as percent of merchandise exports, high-technology exports as percent of manufactured exports, and medium/high-technology exports as percent of manufactured exports where available.
+
+This proxy exists because a zero-core output was methodologically safer than overproducing core from welfare data, but analytically too flat: extraction autonomy can block core status, yet it cannot positively support it. Export-structure evidence is an imperfect but transparent interim signal that a map unit participates in manufacturing or high-technology export activity.
+
+It is not final productive complexity. It does not measure domestic value capture, ownership, buyer power, GVC control, domestic value added, financial centrality, or geopolitical power. High productive capability does not by itself prove core status, and some high scores may reflect enclave assembly or unusual export composition. Final structural claims still require Atlas/BACI/Comtrade complexity and product-level trade evidence plus OECD TiVA or comparable value-capture data.
+
 ### C. Extraction Dependency
 
 This component should estimate dependence on extractive exports, externally financed resource sectors, enclave production, and vulnerability to commodity terms-of-trade shocks. The intended direction is `extraction_autonomy`: higher values mean less structural dependence on externally governed extraction.
@@ -74,23 +82,23 @@ Planned evidence includes military expenditure, reserve-currency and financial-c
 
 ## Provisional Model Versus Structural Model
 
-The current dataset `world_system_provisional_latest` is a temporary conservative proxy. It treats checked-in demo records as UI/demo seeds only and otherwise derives broad coverage from World Bank WDI quality-of-life and income-related indicators, World Bank WDI extraction dependency/autonomy, and optional productive-complexity data. Each non-curated record is marked for review.
+The current dataset `world_system_provisional_latest` is a temporary conservative proxy. It treats checked-in demo records as UI/demo seeds only and otherwise derives broad coverage from World Bank WDI quality-of-life and income-related indicators, World Bank WDI extraction dependency/autonomy, and the provisional WDI productive capability proxy. Each non-curated record is marked for review.
 
 The original demo examples in `static/data/world-system.latest.json`, including CZE, DEU, and USA, were created to exercise UI and layer behavior. They were not reviewed structural Wallersteinian classifications. Demo source labels must use `legacy_demo_seed` or `legacy_demo_seed_reinterpreted`, never curated language.
 
 Real manual curation must live in `static/data/world-system.curated-overrides.json` with `source: "curated_reviewed"`, a rationale, reviewer, and review date. A curated override has priority over the derived model and may assign `core` when the rationale is present. The file can validly contain an empty `records` array until manual review is complete.
 
-The previous quality-of-life-heavy rule overproduced `core`. In the conservative proxy, high welfare or high GNI cannot generate `core` by itself. Extraction autonomy is also not positive proof of core status. It is a negative filter and corroborating condition: high extraction autonomy or low extraction dependency can disqualify or support a claim, but it does not demonstrate value capture, productive complexity, GVC control, financial centrality, or geopolitical power.
+The previous quality-of-life-heavy rule overproduced `core`. The stricter interim rule then validly produced zero derived core records, which was safer but analytically too flat. In the current conservative proxy, high welfare or high GNI cannot generate `core` by itself. Extraction autonomy is also not positive proof of core status. It is a negative filter and corroborating condition: high extraction autonomy or low extraction dependency can disqualify or support a claim, but it does not demonstrate value capture, productive complexity, GVC control, financial centrality, or geopolitical power.
 
 Derived core classification requires all of the following:
 
 - `quality_of_life_score >= 0.88`;
-- at least one positive structural support, currently `productive_complexity_score >= 75` where Atlas data exists, or future `value_capture_score >= 70` or `geopolitical_financial_power_score >= 70`;
-- at least one negative/filter support such as `extraction_autonomy_score >= 75` or `extraction_dependency_score <= 20`;
-- no extraction-dependency block at `extraction_dependency_score >= 35`;
+- `extraction_dependency_score` is missing or `<= 25`;
+- `extraction_autonomy_score` is missing or `>= 65`;
+- `productive_capability_score >= 70` with productive capability data quality other than `sparse`;
 - no disputed, special, or territory status unless explicitly reviewed through a curated override.
 
-If productive-complexity and value-capture evidence are both missing, derived records must not become `core`, even if their continuous proxy score is very high. A map unit may score 97 on the welfare/income proxy and still remain `semi-periphery` because score and class answer different questions. High quality-of-life countries may remain semi-periphery until TiVA/GVC, value-capture, productive-complexity, financial, or geopolitical evidence is added.
+If productive capability evidence is missing or below threshold, derived records must not become `core`, even if their continuous proxy score is very high. A map unit may score 97 on the welfare/income proxy and still remain `semi-periphery` because score and class answer different questions. High quality-of-life countries may remain semi-periphery until TiVA/GVC, value-capture, productive-complexity, financial, or geopolitical evidence is added.
 
 Demo seeds cannot create `core`. If a legacy demo seed says `core` but there is no curated override and no positive structural evidence, it is reinterpreted as low-confidence `semi-periphery` with `source: "legacy_demo_seed_reinterpreted"`. The current model deliberately under-classifies `core` rather than over-classifying it. It may produce zero core records until reviewed overrides or stronger structural data are added; this is preferable to overproducing core from welfare data. If welfare is core-like but positive structural evidence is incomplete, the provisional class is usually `semi-periphery`; if high welfare conflicts with high resource dependence, it is `uncertain`.
 

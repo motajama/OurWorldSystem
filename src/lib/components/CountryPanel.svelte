@@ -114,14 +114,17 @@
 			{/if}
 			{#if isReinterpretedDemoSeed(unit)}
 				<p class="warning">
-					Original demo seed data are not treated as reviewed classification. This provisional
-					class was reinterpreted under stricter structural rules.
+					Original demo seed data are not treated as reviewed classification. This provisional class
+					was reinterpreted under stricter structural rules.
 				</p>
 			{/if}
 			{#if isCuratedCore(unit)}
 				<p class="muted">Core classification source: reviewed curated override.</p>
 			{:else if isStructurallyDerivedCore(unit)}
-				<p class="muted">Core classification source: structurally derived provisional record.</p>
+				<p class="muted">
+					Provisional core candidate based on high welfare, low extraction dependency, and
+					productive capability proxy. Final core status requires value-capture/GVC evidence.
+				</p>
 			{/if}
 			{#if unit.world_system.class === 'core' && (unit.world_system.structural_supports?.length ?? 0) > 0}
 				<div class="support-block">
@@ -318,8 +321,7 @@
 					<dt>High-tech exports</dt>
 					<dd>
 						{formatSourcedValue(
-							unit.exploitation_position.extraction_values
-								?.high_tech_exports_manufactured_pct,
+							unit.exploitation_position.extraction_values?.high_tech_exports_manufactured_pct,
 							{ maximumFractionDigits: 1 }
 						)}
 					</dd>
@@ -344,6 +346,58 @@
 				</div>
 			</dl>
 			<p class="muted">This is a component score, not final world-system class.</p>
+		</section>
+
+		<section>
+			<h3>Productive capability proxy</h3>
+			<dl>
+				<div>
+					<dt>Proxy score</dt>
+					<dd>
+						{formatNumber(unit.exploitation_position.productive_capability_score, {
+							maximumFractionDigits: 1
+						})}
+					</dd>
+				</div>
+				<div>
+					<dt>Manufactures exports</dt>
+					<dd>
+						{formatSourcedValue(
+							unit.exploitation_position.productive_capability_values
+								?.manufactures_exports_merchandise_pct,
+							{ maximumFractionDigits: 1 }
+						)}
+					</dd>
+				</div>
+				<div>
+					<dt>High-tech exports</dt>
+					<dd>
+						{formatSourcedValue(
+							unit.exploitation_position.productive_capability_values
+								?.high_tech_exports_manufactured_pct,
+							{ maximumFractionDigits: 1 }
+						)}
+					</dd>
+				</div>
+				<div>
+					<dt>Medium/high-tech exports</dt>
+					<dd>
+						{formatSourcedValue(
+							unit.exploitation_position.productive_capability_values
+								?.medium_high_tech_exports_manufactured_pct,
+							{ maximumFractionDigits: 1 }
+						)}
+					</dd>
+				</div>
+				<div>
+					<dt>Data quality</dt>
+					<dd>{unit.exploitation_position.productive_capability_data_quality ?? 'No data'}</dd>
+				</div>
+			</dl>
+			<p class="warning">
+				This is a provisional export-structure proxy, not full value-chain or productive-complexity
+				evidence.
+			</p>
 		</section>
 
 		<section>

@@ -1,6 +1,6 @@
 # Data Schema
 
-The frontend currently reads the stable map-unit registry from `static/data/map-units.registry.json`, mock/demo indicator data from `static/data/world-system.latest.json`, optional curated world-system overrides from `static/data/world-system.curated-overrides.json`, optional World Bank WDI quality-of-life indicators from `static/data/indicators/quality-of-life.world-bank.latest.json`, optional provisional world-system indicators from `static/data/indicators/world-system.provisional.latest.json`, optional UCDP conflict indicators from `static/data/indicators/conflict.ucdp.latest.json`, optional productive-complexity component data from `static/data/indicators/productive-complexity.latest.json`, optional World Bank WDI extraction dependency data from `static/data/indicators/extraction-dependency.world-bank.latest.json`, and geometry from `static/geo/`.
+The frontend currently reads the stable map-unit registry from `static/data/map-units.registry.json`, mock/demo indicator data from `static/data/world-system.latest.json`, optional curated world-system overrides from `static/data/world-system.curated-overrides.json`, optional World Bank WDI quality-of-life indicators from `static/data/indicators/quality-of-life.world-bank.latest.json`, optional provisional world-system indicators from `static/data/indicators/world-system.provisional.latest.json`, optional UCDP conflict indicators from `static/data/indicators/conflict.ucdp.latest.json`, optional productive-complexity component data from `static/data/indicators/productive-complexity.latest.json`, optional World Bank WDI extraction dependency data from `static/data/indicators/extraction-dependency.world-bank.latest.json`, optional WDI productive capability proxy data from `static/data/indicators/productive-capability.world-bank.latest.json`, and geometry from `static/geo/`.
 
 Optional indicator files are discovered through `static/data/indicators/index.json`. During development, a missing optional indicator is treated as "dataset not available yet" rather than an application error. Optional entries can set `available: false`; the frontend skips those entries entirely so a not-yet-generated optional dataset does not create normal browser 404 noise. Required base files such as `world-system.latest.json`, `map-units.registry.json`, and base geometry still fail clearly when missing or invalid.
 
@@ -137,6 +137,7 @@ Future public datasets should be mapped into registry `id` values using document
     source?:
       | "derived_world_bank_quality_proxy"
       | "derived_conservative_structural_proxy"
+      | "derived_productive_capability_proxy"
       | "legacy_demo_seed"
       | "legacy_demo_seed_reinterpreted"
       | "curated_reviewed"
@@ -194,6 +195,11 @@ Future public datasets should be mapped into registry `id` values using document
     extraction_latest_year?: number | null;
     extraction_data_quality?: "good" | "partial" | "sparse" | null;
     extraction_source_country_code?: string | null;
+    productive_capability_score?: number | null;
+    productive_capability_values?: Record<string, { value: number; year: number; indicator: string }>;
+    productive_capability_latest_year?: number | null;
+    productive_capability_data_quality?: "good" | "partial" | "sparse" | null;
+    productive_capability_positive_structural_support?: boolean | null;
     resource_export_dependency: number | null;
     foreign_value_added_share: number | null;
     domestic_value_capture: number | null;
@@ -277,6 +283,7 @@ The output schema is:
       source:
         | "derived_world_bank_quality_proxy"
         | "derived_conservative_structural_proxy"
+        | "derived_productive_capability_proxy"
         | "legacy_demo_seed"
         | "legacy_demo_seed_reinterpreted"
         | "curated_reviewed";
@@ -294,6 +301,8 @@ The output schema is:
       extraction_autonomy_score: number | null;
       value_capture_score: number | null;
       productive_complexity_score: number | null;
+      productive_capability_score: number | null;
+      productive_capability_data_quality: "good" | "partial" | "sparse" | null;
       geopolitical_financial_power_score: number | null;
       structural_supports: string[];
       positive_structural_supports: string[];
@@ -311,6 +320,7 @@ The output schema is:
     class_distribution: Record<string, number>;
     core_count: number;
     derived_core_count: number;
+    derived_productive_capability_core_count: number;
     curated_reviewed_core_count: number;
     legacy_demo_seed_count: number;
     demo_seed_reinterpreted_count: number;
@@ -319,6 +329,9 @@ The output schema is:
     core_candidates: Array<Record<string, unknown>>;
     high_score_non_core: Array<Record<string, unknown>>;
     prevented_missing_positive_structural_evidence: Array<Record<string, unknown>>;
+    top_productive_capability_scores: Array<Record<string, unknown>>;
+    high_score_kept_semi_periphery_productive_capability_missing_low: Array<Record<string, unknown>>;
+    moved_from_semi_periphery_to_core_by_productive_capability: Array<Record<string, unknown>>;
     downgraded_high_quality: Array<Record<string, unknown>>;
   };
   notes: string[];
@@ -327,33 +340,33 @@ The output schema is:
 
 The model treats demo records from `world-system.latest.json` as legacy demo seeds. Demo records may provide sample display values, but they are not reviewed structural classifications and cannot create `core`. If a demo seed says `core`, the builder emits low-confidence `semi-periphery` with `source: "legacy_demo_seed_reinterpreted"` unless a separate reviewed override exists. Derived records use World Bank WDI quality-of-life and GNI only as welfare proxies. Extraction autonomy and low extraction dependency are negative/filter supports: they can corroborate a core claim or block extraction-dependent cases, but they do not prove core status.
 
-Derived `core` requires `quality_of_life_score >= 0.88`, at least one positive structural support (`productive_complexity_score >= 75`, future `value_capture_score >= 70`, or future `geopolitical_financial_power_score >= 70`), at least one extraction/autonomy filter support, and no extraction-dependency block at `extraction_dependency_score >= 35`. Disputed, special, and territory records cannot become derived core.
+Derived `core` requires `quality_of_life_score >= 0.88`, `extraction_dependency_score` missing or `<= 25`, `extraction_autonomy_score` missing or `>= 65`, `productive_capability_score >= 70`, productive capability data quality other than `sparse`, and no disputed/special/territory status unless explicitly reviewed. Disputed, special, and territory records cannot become derived core.
 
 Real manual classifications use `static/data/world-system.curated-overrides.json`:
 
 ```json
 {
-  "dataset_id": "world_system_curated_overrides",
-  "status": "manual_review_required",
-  "records": [
-    {
-      "id": "USA",
-      "world_system": {
-        "class": "core",
-        "confidence": "medium",
-        "source": "curated_reviewed",
-        "rationale": "...",
-        "reviewed_by": "...",
-        "reviewed_at": "YYYY-MM-DD"
-      }
-    }
-  ]
+	"dataset_id": "world_system_curated_overrides",
+	"status": "manual_review_required",
+	"records": [
+		{
+			"id": "USA",
+			"world_system": {
+				"class": "core",
+				"confidence": "medium",
+				"source": "curated_reviewed",
+				"rationale": "...",
+				"reviewed_by": "...",
+				"reviewed_at": "YYYY-MM-DD"
+			}
+		}
+	]
 }
 ```
 
-The current override file intentionally has an empty `records` array. Do not add CZE, DEU, USA, or any other map unit until the classification has been explicitly reviewed. A valid provisional run may produce zero core records; that is methodologically preferable to overproducing core from welfare data.
+The current override file intentionally has an empty `records` array. Do not add CZE, DEU, USA, or any other map unit until the classification has been explicitly reviewed. The stricter interim model previously produced zero core records; that was methodologically safer than overproducing core from welfare data, but analytically too flat until a positive structural support proxy was added.
 
-This file is intentionally marked `model_status: "provisional_conservative_proxy"` and every generated or demo-seed record is `review_status: "needs_review"`. High quality of life alone cannot produce `core`; quality of life plus extraction autonomy cannot produce `core`; a high continuous proxy score can still be `semi-periphery` when positive structural evidence is missing. Many high-welfare records remain `semi-periphery` or `uncertain` until value-capture/GVC or productive-complexity evidence is added. `semi-periphery` is a mixed structural position, not merely a middle-income bin. The file does not yet include OECD TiVA, complete trade/value-chain data, material footprint, e-waste, ecological externalization, military/geopolitical position, financial centrality, conflict exposure, or political-freedom indicators. The current model deliberately under-classifies core rather than over-classifying it.
+This file is intentionally marked `model_status: "provisional_conservative_proxy"` and every generated or demo-seed record is `review_status: "needs_review"`. High quality of life alone cannot produce `core`; quality of life plus extraction autonomy cannot produce `core`; a high continuous proxy score can still be `semi-periphery` when productive capability evidence is missing or insufficient. The productive capability proxy is provisional export-structure support, not final productive complexity, value-chain control, or value capture evidence. Many high-welfare records remain `semi-periphery` or `uncertain` until value-capture/GVC or productive-complexity evidence is added. `semi-periphery` is a mixed structural position, not merely a middle-income bin. The file does not yet include OECD TiVA, complete trade/value-chain data, material footprint, e-waste, ecological externalization, military/geopolitical position, financial centrality, conflict exposure, or political-freedom indicators. The current model deliberately under-classifies core rather than over-classifying it.
 
 ## Structural World-System Model V1
 
@@ -448,6 +461,44 @@ The output schema is:
 ```
 
 Scoring uses percentile ranks across matched map-unit records. If ECI and export diversity are both present, the component score is `0.75 * ECI percentile + 0.25 * diversity percentile`. If only ECI is present, the ECI percentile is used. If only diversity is present, the diversity percentile is used and data quality is partial. Missing indicators remain `null` or absent; they are not fabricated.
+
+## Productive Capability Proxy
+
+`static/data/indicators/productive-capability.world-bank.latest.json` is generated by `scripts/data/build-productive-capability-proxy.mjs` from export-structure values already present in `static/data/indicators/extraction-dependency.world-bank.latest.json`.
+
+This is a provisional positive structural proxy. It is not final productive complexity, value-chain control, ownership, or value-capture evidence. It exists so the provisional model does not have to choose between overproducing core from welfare data and producing a safe but analytically flat zero-core output.
+
+The output schema is:
+
+```ts
+{
+  dataset_id: "productive_capability_world_bank_latest";
+  source_id: "world_bank_wdi_extraction";
+  model_component: "productive_capability_proxy";
+  status: "provisional_proxy";
+  generated_at: string;
+  records: Array<{
+    id: string;
+    latest_year: number | null;
+    values: {
+      manufactures_exports_merchandise_pct?: { value: number; year: number; indicator: "TX.VAL.MANF.ZS.UN" };
+      high_tech_exports_manufactured_pct?: { value: number; year: number; indicator: "TX.VAL.TECH.MF.ZS" };
+      medium_high_tech_exports_manufactured_pct?: { value: number; year: number; indicator: "TX.MNF.TECH.ZS.UN" };
+    };
+    productive_capability_score: number | null; // 0-100
+    positive_structural_support: boolean;
+    support_reasons: string[];
+    data_quality: "good" | "partial" | "sparse";
+    limitations: string[];
+    sources: ["world_bank_wdi_extraction"];
+  }>;
+  notes: string[];
+}
+```
+
+Scoring uses only export-structure indicators: manufactures exports `/ 75`, high-tech exports `/ 25`, and medium/high-tech exports `/ 60`, each clamped to 0-1. When all three exist, weights are 0.40, 0.35, and 0.25. With manufactures plus high-tech, weights are 0.55 and 0.45. With manufactures only, the manufactures score is used and data quality is partial. No usable values produce `null` and sparse data quality.
+
+`positive_structural_support` is true only when `productive_capability_score >= 70`, data quality is not sparse, and at least manufactures or high-tech data exists. High productive capability does not by itself prove core status. OECD TiVA, Atlas/BACI/Comtrade, domestic value added, and GVC/value-capture data are still required for final structural claims.
 
 ## Extraction Dependency Indicators
 

@@ -2,7 +2,7 @@
 
 OurWorldSystem is an open-source, static-first public-interest atlas of countries and map units in the global world-system. It is intended to visualize structural positions such as core, semi-periphery, periphery, uncertainty, conflict exposure, press freedom, political freedom, quality of life, ecological pressure, and forms of extraction or externalization.
 
-The current app uses real static Natural Earth geometry, a conservative provisional world-system proxy, mock/demo world-system seed records, an empty manual curated-override file, an initial real World Bank WDI quality-of-life indicator pipeline, a first UCDP conflict indicator pipeline, a local Atlas of Economic Complexity import for productive complexity, and a World Bank WDI extraction dependency/autonomy component. The default world-system layer is provisional, experimental, and needs review; it must not be interpreted as a final academic classification.
+The current app uses real static Natural Earth geometry, a conservative provisional world-system proxy, mock/demo world-system seed records, an empty manual curated-override file, an initial real World Bank WDI quality-of-life indicator pipeline, a first UCDP conflict indicator pipeline, a local Atlas of Economic Complexity import for productive complexity, a World Bank WDI extraction dependency/autonomy component, and a provisional WDI export-structure productive capability proxy. The default world-system layer is provisional, experimental, and needs review; it must not be interpreted as a final academic classification.
 
 ## Principles
 
@@ -105,6 +105,7 @@ The first real public indicator outputs live in:
 - `static/data/indicators/conflict.ucdp.latest.json`
 - `static/data/indicators/productive-complexity.latest.json`
 - `static/data/indicators/extraction-dependency.world-bank.latest.json`
+- `static/data/indicators/productive-capability.world-bank.latest.json`
 
 Geometry lives in:
 
@@ -161,14 +162,18 @@ npm run data:import:complexity
 
 Place manually downloaded Atlas CSV files in `data/raw/atlas-economic-complexity/`. Supported names include `country_complexity.csv`, `country_product_exports.csv`, and `product_complexity.csv`; the importer can also scan other CSVs with recognizable country-code, year, ECI, export-value, or diversity columns. If no files are present, it writes a valid `no_source_file` placeholder and exits successfully.
 
-Fetch World Bank WDI extraction dependency/autonomy indicators with:
+Fetch World Bank WDI extraction dependency/autonomy indicators and build the provisional productive capability proxy with:
 
 ```sh
 npm run data:fetch:extraction
+npm run data:build:productive-capability
 npm run validate:extraction
+npm run validate:productive-capability
 ```
 
 This writes `static/data/indicators/extraction-dependency.world-bank.latest.json` and raw World Bank responses under `data/raw/world-bank/extraction/`. The score uses resource rents, fuel exports, ores/metals exports, agricultural raw materials exports, food exports, manufactures exports, high-tech exports, and medium/high-tech exports where WDI provides them. Higher `extraction_dependency_score` means stronger resource-rent or low-processing export dependence; higher `extraction_autonomy_score` means lower extraction dependence and more manufacturing/high-tech orientation. This is a structural component only, not a final world-system classification, and it needs later BACI or Comtrade product-level refinement.
+
+The productive capability proxy writes `static/data/indicators/productive-capability.world-bank.latest.json` from the same WDI export-structure values. It uses manufactures exports, high-technology exports, and medium/high-technology exports as a limited positive structural support signal. It is not final productive complexity and does not measure value-chain control, value capture, ownership, or domestic value added.
 
 `npm run data:build` downloads World Bank data, attempts the optional UCDP fetch without letting UCDP source failures break the build, then generates the provisional world-system proxy. World Bank raw API responses are stored under `data/raw/world-bank/`; UCDP raw ZIP/CSV files are stored under `data/raw/ucdp/`; generated frontend outputs are written to `static/data/indicators/`. The initial World Bank indicators are life expectancy (`SP.DYN.LE00.IN`), GNI per capita PPP (`NY.GNP.PCAP.PP.CD`), secondary gross enrollment (`SE.SEC.ENRR`), and population (`SP.POP.TOTL`).
 
@@ -180,15 +185,15 @@ Build only the provisional world-system proxy with:
 npm run data:build:worldsystem
 ```
 
-The provisional proxy is deliberately conservative because the previous quality-of-life/GNI-heavy rule overproduced `core`. Core status is not high income, high welfare, or low extraction dependency. In Wallersteinian terms it requires positive structural evidence of value capture, control of profitable production processes, productive complexity, GVC control, geopolitical-financial power, or explicit curated review.
+The provisional proxy is deliberately conservative because the previous quality-of-life/GNI-heavy rule overproduced `core`. The stricter interim rule later produced zero derived core records, which was safer but analytically too flat. Core status is not high income, high welfare, or low extraction dependency. In Wallersteinian terms it requires positive structural evidence of productive capability, value capture, control of profitable production processes, productive complexity, GVC control, geopolitical-financial power, or explicit curated review.
 
-Derived records can be provisional `core` only when `quality_of_life_score >= 0.88`, at least one positive structural support is present (`productive_complexity_score >= 75`, future `value_capture_score >= 70`, or future `geopolitical_financial_power_score >= 70`), at least one extraction/autonomy filter support is present (`extraction_autonomy_score >= 75` or `extraction_dependency_score <= 20`), extraction dependency does not block the claim, and the record is not disputed/special/territory. Demo seed records cannot become core. If a legacy demo seed says `core` without a curated override and without positive structural evidence, the provisional output is low-confidence `semi-periphery` with `source: "legacy_demo_seed_reinterpreted"`. If quality is very high but positive structural evidence is missing, the record is normally low-confidence `semi-periphery` with the explanation that value-capture or productive-complexity evidence is unavailable. A continuous proxy score may be high while the class remains `semi-periphery`.
+Derived records can be provisional `core` only when `quality_of_life_score >= 0.88`, `extraction_dependency_score` is missing or `<= 25`, `extraction_autonomy_score` is missing or `>= 65`, `productive_capability_score >= 70`, productive capability data quality is not `sparse`, and the record is not disputed/special/territory. Demo seed records cannot become core. If a legacy demo seed says `core` without a curated override, the provisional output is low-confidence `semi-periphery` with `source: "legacy_demo_seed_reinterpreted"`. If quality is very high but productive capability evidence is missing or insufficient, the record is normally low-confidence `semi-periphery` with the explanation that positive productive capability evidence is missing or insufficient. A continuous proxy score may be high while the class remains `semi-periphery`.
 
 Manual reviewed classifications belong in `static/data/world-system.curated-overrides.json` with `source: "curated_reviewed"`, rationale, reviewer, and review date. The file is currently empty, so CZE, DEU, and USA demo examples are not reviewed structural classifications. The provisional model may produce zero core records until reviewed overrides or stronger structural evidence are added; this is intentional.
 
 `semi-periphery` is not a residual middle-income bin. It represents a mixed structural position with some core-like and some periphery-like processes, including many high-development cases whose value-capture and GVC evidence is not yet complete. Contradictory signals, such as high welfare with high resource dependence, are marked `uncertain`; missing values remain `no_data`; disputed map units without explicit curated classification remain `disputed`.
 
-This proxy does not yet include the evidence needed for a real world-systems model: OECD TiVA, trade and value-chain position, material footprint, e-waste, ecological externalization, military/geopolitical position, financial centrality, conflict exposure, and political-freedom indicators. Until those evidence families are added, the model deliberately under-classifies core rather than over-classifying it.
+This proxy does not yet include the evidence needed for a real world-systems model: OECD TiVA, Atlas/BACI/Comtrade complexity and product-level trade evidence, domestic value added, trade and value-chain position, material footprint, e-waste, ecological externalization, military/geopolitical position, financial centrality, conflict exposure, and political-freedom indicators. Until those evidence families are added, the model deliberately under-classifies core rather than over-classifying it.
 
 The World Bank pipeline joins through `external_ids.world_bank`, `external_ids.iso3`, and registry IDs. Source countries that still do not match the registry are reported, while World Bank aggregate regions are ignored unless the registry explicitly includes them.
 
@@ -200,7 +205,7 @@ The current default world-system layer is a conservative provisional proxy. It t
 
 The planned structural model v1 is documented in `docs/world-system-methodology.md` and scaffolded as `world_system_structural_v1`. It will treat core, semi-periphery, and periphery as relational positions in the capitalist world-economy, not as income or quality-of-life bins. Planned components are value capture and GVC position, productive complexity, extraction autonomy, ecological unequal exchange or externalization, and geopolitical-financial-institutional power.
 
-Planned source families include OECD TiVA for GVC/value capture, UN Comtrade and CEPII BACI for trade structure, the Atlas of Economic Complexity for productive complexity, World Bank WDI extraction/export-structure indicators, UNEP material footprints, Yale EPI, the Global E-waste Monitor, UNCTAD FDI, finance/geopolitical power indicators, and SIPRI military expenditure. These are listed in `static/data/source-manifest.json`. The first implemented structural components are `productive_complexity`, imported from local Atlas CSV files when available, and `extraction_autonomy`, generated from WDI as a broad first approximation.
+Planned source families include OECD TiVA for GVC/value capture, UN Comtrade and CEPII BACI for trade structure, the Atlas of Economic Complexity for productive complexity, World Bank WDI extraction/export-structure indicators, UNEP material footprints, Yale EPI, the Global E-waste Monitor, UNCTAD FDI, finance/geopolitical power indicators, and SIPRI military expenditure. These are listed in `static/data/source-manifest.json`. The first implemented structural components are `productive_complexity`, imported from local Atlas CSV files when available, `extraction_autonomy`, generated from WDI as a broad first approximation, and the provisional WDI `productive_capability_proxy`, which is only export-structure support and not final complexity or value-capture evidence.
 
 Build the structural placeholder with:
 

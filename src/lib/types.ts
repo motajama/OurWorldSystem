@@ -88,6 +88,7 @@ export interface WorldSystemAssessment {
 	source?:
 		| 'derived_world_bank_quality_proxy'
 		| 'derived_conservative_structural_proxy'
+		| 'derived_productive_capability_proxy'
 		| 'legacy_demo_seed'
 		| 'legacy_demo_seed_reinterpreted'
 		| 'curated_reviewed'
@@ -152,6 +153,13 @@ export interface ExploitationPosition {
 	extraction_latest_year?: number | null;
 	extraction_data_quality?: 'good' | 'partial' | 'sparse' | null;
 	extraction_source_country_code?: string | null;
+	productive_capability_score?: number | null;
+	productive_capability_values?: Partial<
+		Record<ProductiveCapabilityValueKey, SourcedIndicatorValue>
+	>;
+	productive_capability_latest_year?: number | null;
+	productive_capability_data_quality?: 'good' | 'partial' | 'sparse' | null;
+	productive_capability_positive_structural_support?: boolean | null;
 	resource_export_dependency: number | null;
 	foreign_value_added_share: number | null;
 	domestic_value_capture: number | null;
@@ -273,6 +281,33 @@ export interface WorldBankExtractionDataset {
 	notes: string[];
 }
 
+export type ProductiveCapabilityValueKey =
+	| 'manufactures_exports_merchandise_pct'
+	| 'high_tech_exports_manufactured_pct'
+	| 'medium_high_tech_exports_manufactured_pct';
+
+export interface WorldBankProductiveCapabilityRecord {
+	id: MapUnitId;
+	latest_year: number | null;
+	values: Partial<Record<ProductiveCapabilityValueKey, SourcedIndicatorValue>>;
+	productive_capability_score: number | null;
+	positive_structural_support: boolean;
+	support_reasons: string[];
+	data_quality: 'good' | 'partial' | 'sparse';
+	limitations: string[];
+	sources: string[];
+}
+
+export interface WorldBankProductiveCapabilityDataset {
+	dataset_id: 'productive_capability_world_bank_latest';
+	source_id: 'world_bank_wdi_extraction';
+	model_component: 'productive_capability_proxy';
+	status: 'provisional_proxy';
+	generated_at: string;
+	records: WorldBankProductiveCapabilityRecord[];
+	notes: string[];
+}
+
 export interface ProvisionalWorldSystemRecord {
 	id: MapUnitId;
 	world_system: {
@@ -282,6 +317,7 @@ export interface ProvisionalWorldSystemRecord {
 		source:
 			| 'derived_world_bank_quality_proxy'
 			| 'derived_conservative_structural_proxy'
+			| 'derived_productive_capability_proxy'
 			| 'legacy_demo_seed'
 			| 'legacy_demo_seed_reinterpreted'
 			| 'curated_reviewed';
@@ -299,6 +335,8 @@ export interface ProvisionalWorldSystemRecord {
 		extraction_autonomy_score?: number | null;
 		value_capture_score?: number | null;
 		productive_complexity_score?: number | null;
+		productive_capability_score?: number | null;
+		productive_capability_data_quality?: 'good' | 'partial' | 'sparse' | null;
 		geopolitical_financial_power_score?: number | null;
 		structural_supports?: string[];
 		positive_structural_supports?: string[];
