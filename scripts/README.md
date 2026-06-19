@@ -26,15 +26,32 @@ Required files:
 
 Optional indicator files under `static/data/indicators/` are validated only when present. Missing UCDP output must not fail CI.
 
+Deployment to GitHub Pages uses `.github/workflows/deploy-gh-pages.yml`. The repository Pages settings should be:
+
+- Source: `Branch`
+- Branch: `gh-pages`
+- Folder: `/ root`
+
+On pushes to `main`, the workflow builds `build/`, copies it to a temporary git repository, adds `.nojekyll`, and force-pushes the result to `gh-pages` with `GITHUB_TOKEN`. It does not use the GitHub Pages Actions-source deploy workflow.
+
 Current data generation scripts are split by source:
 
 ```sh
 npm run data:fetch:worldbank
 npm run data:fetch:ucdp
 npm run data:build
+npm run data:coverage
 ```
 
 `data:build` runs both current public-data fetchers. Run individual fetchers when only one generated output needs to be refreshed.
+
+`data:coverage` does not fetch external data. It compares current static geometry and data files, then writes:
+
+- `data/processed/map-unit-coverage.report.json`
+- `static/data/generated/map-units.candidates.json`
+- `static/data/generated/map-unit-coverage.summary.json`
+
+The candidate file is review infrastructure only. Generated candidates are not authoritative registry records and must not be used as indicator IDs until manually reviewed and promoted into `static/data/map-units.registry.json`.
 
 ## Registry Validation
 
@@ -140,6 +157,21 @@ The output distinguishes:
 These fields must not be used to infer state responsibility for violence on territory. Fatality estimates are not adult/child breakdowns and are not complete civilian casualty counts. Child casualties remain `null` until a separate UN CAAC, UNICEF, or equivalent child-casualty source is added.
 
 When an optional generated output is intentionally absent, mark its `static/data/indicators/index.json` entry with `available: false`. The frontend and healthcheck skip unavailable optional entries, while required datasets continue to fail clearly.
+
+Each indicator index entry must include `id`, `path`, `required`, `available`, `source_ids`, and `description`. Healthcheck warns when `available: true` points to a missing file and when `available: false` points to a file that exists. Missing optional files with `available: false` are expected and should not fail local checks or deployment.
+
+## Data Completion Workflow
+
+Use this review loop to expand coverage without fabricating data:
+
+1. `npm run geo:build`
+2. `npm run data:build`
+3. `npm run data:coverage`
+4. Review `static/data/generated/map-units.candidates.json`
+5. Manually promote reviewed candidates into `static/data/map-units.registry.json`
+6. Rerun `npm run health:data`, `npm run validate:data`, `npm run check`, and `npm run build`
+
+Keep four categories distinct in code and documentation: real public data, mock/demo data, generated registry candidates, and missing data.
 
 ## General Indicator Pipeline
 

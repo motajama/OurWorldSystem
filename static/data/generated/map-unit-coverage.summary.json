@@ -1,0 +1,32 @@
+{
+  "generated_at": "2026-06-19T13:03:33.363Z",
+  "authoritative": false,
+  "total_base_natural_earth_features": 177,
+  "total_disputed_overlay_features": 28,
+  "registry_record_count": 26,
+  "matched_base_features": 30,
+  "unmatched_base_features": 147,
+  "matched_disputed_features": 15,
+  "unmatched_disputed_features": 13,
+  "generated_candidate_count": 160,
+  "dataset_coverage": [
+    {
+      "id": "world_system_mock",
+      "record_count": 12,
+      "unique_record_count": 12,
+      "registry_matches": 12,
+      "natural_earth_base_matches": 12,
+      "coverage_against_registry_percent": 46.15,
+      "coverage_against_natural_earth_base_percent": 6.78
+    },
+    {
+      "id": "quality_of_life_world_bank_latest",
+      "record_count": 25,
+      "unique_record_count": 25,
+      "registry_matches": 25,
+      "natural_earth_base_matches": 25,
+      "coverage_against_registry_percent": 96.15,
+      "coverage_against_natural_earth_base_percent": 14.12
+    }
+  ]
+}

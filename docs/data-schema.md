@@ -4,6 +4,21 @@ The frontend currently reads the stable map-unit registry from `static/data/map-
 
 Optional indicator files are discovered through `static/data/indicators/index.json`. During development, a missing optional indicator is treated as "dataset not available yet" rather than an application error. Optional entries can set `available: false`; the frontend skips those entries entirely so a not-yet-generated optional dataset does not create normal browser 404 noise. Required base files such as `world-system.latest.json`, `map-units.registry.json`, and base geometry still fail clearly when missing or invalid.
 
+Each indicator index entry must include:
+
+```ts
+{
+  id: string;
+  path: string;
+  required: boolean;
+  available: boolean;
+  source_ids: string[];
+  description: string;
+}
+```
+
+If `available` is `false`, the frontend and healthcheck treat the file as intentionally absent. If `available` is `true`, the healthcheck warns when the file is missing, and required entries fail validation expectations. Optional files must never become required simply because a data pipeline has not run yet.
+
 Use `npm run health:data` for a quick local inventory of required files, optional indicator outputs, registry count, mock world-system record count, and indicator record counts where present. The healthcheck fails for missing required files and reports missing optional datasets without failing.
 
 ## Map-Unit Registry
@@ -43,6 +58,34 @@ Natural Earth geometry properties are not the application identity system. They 
   last_reviewed: string;
 }
 ```
+
+## Generated Candidate Registry
+
+`npm run data:coverage` compares Natural Earth base geometry, optional disputed overlay geometry, the authoritative registry, mock world-system records, and available optional indicators. It writes a complete report to `data/processed/map-unit-coverage.report.json`, a short frontend-readable summary to `static/data/generated/map-unit-coverage.summary.json`, and review-only candidate records to `static/data/generated/map-units.candidates.json`.
+
+Generated candidates are not authoritative registry records. They use generated IDs such as `NE::...`, set `needs_review: true`, preserve Natural Earth source properties, and include confidence and reason fields. Low-confidence candidates are valid because they are review inputs, not claims.
+
+Candidate records follow this shape:
+
+```ts
+{
+  candidate_id: string;
+  suggested_display_name: string;
+  map_unit_type: string;
+  recognition_status: string;
+  sovereignty_note?: string;
+  natural_earth: Record<string, unknown>;
+  possible_iso3?: string;
+  possible_world_bank_code?: string;
+  confidence: "low" | "medium" | "high";
+  reason: string;
+  needs_review: true;
+  generated_from: "natural_earth";
+  generated_at: string;
+}
+```
+
+Do not join indicator data to `candidate_id`. To add a map unit, manually review the candidate, verify names and source identifiers, decide a neutral `recognition_status`, add provenance notes, and promote a reviewed record into `static/data/map-units.registry.json`.
 
 Interactive disputed/breakaway overlay features may create synthetic panel records when no disputed or special registry record matches. Synthetic records use stable internal IDs beginning with `disputed::`, set `map_unit_type` to `disputed`, set `recognition_status` to `disputed`, source the record to `natural_earth`, and keep indicators as no-data/null. These records are UI records, not new sovereignty claims.
 

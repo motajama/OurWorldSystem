@@ -13,6 +13,7 @@ const requiredFiles = [
 ];
 
 const indicatorIndexFile = 'static/data/indicators/index.json';
+const coverageSummaryFile = 'static/data/generated/map-unit-coverage.summary.json';
 const errors = [];
 const warnings = [];
 
@@ -98,16 +99,42 @@ const indicatorIndex = await readOptionalJson(indicatorIndexFile, 'indicator ind
 if (Array.isArray(indicatorIndex)) {
 	for (const entry of indicatorIndex) {
 		const id = typeof entry?.id === 'string' ? entry.id : 'unknown indicator';
+		for (const field of ['id', 'path', 'description']) {
+			if (typeof entry?.[field] !== 'string' || entry[field].trim().length === 0) {
+				warnings.push(`${id}: indicator index entry is missing string field ${field}.`);
+			}
+		}
+		for (const field of ['required', 'available']) {
+			if (typeof entry?.[field] !== 'boolean') {
+				warnings.push(`${id}: indicator index entry is missing boolean field ${field}.`);
+			}
+		}
+		if (!Array.isArray(entry?.source_ids)) {
+			warnings.push(`${id}: indicator index entry is missing source_ids array.`);
+		}
+
+		const datasetPath = toRelativeStaticPath(entry?.path);
+		const datasetExists = datasetPath ? await exists(path.join(repoRoot, datasetPath)) : false;
+
+		if (entry?.available === false && datasetExists) {
+			warnings.push(`${id}: available is false but file exists at ${datasetPath}.`);
+		}
+
 		if (entry?.available === false) {
 			console.log(`optional unavailable: ${id}`);
 			continue;
 		}
 
-		const datasetPath = toRelativeStaticPath(entry?.path);
-
 		if (!datasetPath) {
 			warnings.push(`${id}: indicator index entry is missing a usable path.`);
 			continue;
+		}
+
+		if (entry?.available === true && !datasetExists) {
+			const severity = entry?.required === true ? 'errors' : 'warnings';
+			const message = `${id}: available is true but file is missing at ${datasetPath}.`;
+			if (severity === 'errors') errors.push(message);
+			else warnings.push(message);
 		}
 
 		const data = await readOptionalJson(datasetPath, id);
@@ -118,6 +145,16 @@ if (Array.isArray(indicatorIndex)) {
 	}
 } else if (indicatorIndex !== null) {
 	warnings.push(`${indicatorIndexFile} root should be an array.`);
+}
+
+console.log('\nCoverage summary:');
+const coverageSummary = await readOptionalJson(coverageSummaryFile, 'map-unit coverage summary');
+if (coverageSummary) {
+	console.log(`generated candidates: ${coverageSummary.generated_candidate_count ?? 'unknown'}`);
+	console.log(`matched base features: ${coverageSummary.matched_base_features ?? 'unknown'}`);
+	console.log(`unmatched base features: ${coverageSummary.unmatched_base_features ?? 'unknown'}`);
+} else {
+	console.log('coverage summary not present; run npm run data:coverage');
 }
 
 if (warnings.length > 0) {
