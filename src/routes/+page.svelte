@@ -15,6 +15,7 @@
 		MapUnitRegistryRecord,
 		ProvisionalWorldSystemDataset,
 		UcdpConflictDataset,
+		WorldBankExtractionDataset,
 		WorldBankQualityOfLifeDataset
 	} from '$lib/types';
 
@@ -52,6 +53,14 @@
 			available: false,
 			source_ids: ['ucdp_country_year', 'ucdp_prio_armed_conflict'],
 			description: 'Optional UCDP conflict indicators.'
+		},
+		{
+			id: 'extraction_dependency_world_bank_latest',
+			path: '/data/indicators/extraction-dependency.world-bank.latest.json',
+			required: false,
+			available: true,
+			source_ids: ['world_bank_wdi_extraction'],
+			description: 'Optional World Bank WDI extraction dependency and autonomy component.'
 		}
 	];
 
@@ -239,6 +248,20 @@
 		return (await response.json()) as UcdpConflictDataset;
 	}
 
+	async function loadOptionalWorldBankExtraction(index: OptionalIndicatorIndexEntry[]) {
+		const path = optionalIndicatorPath(index, 'extraction_dependency_world_bank_latest');
+		if (!path) return null;
+
+		const response = await fetch(staticUrl(path));
+
+		if (!response.ok) {
+			if (response.status === 404) return null;
+			throw new Error(`Failed to load World Bank extraction data: ${response.status}`);
+		}
+
+		return (await response.json()) as WorldBankExtractionDataset;
+	}
+
 	function mergeProvisionalWorldSystem(
 		mapUnits: MapUnit[],
 		provisionalData: ProvisionalWorldSystemDataset | null
@@ -357,6 +380,36 @@
 		});
 	}
 
+	function mergeWorldBankExtraction(
+		mapUnits: MapUnit[],
+		extractionData: WorldBankExtractionDataset | null
+	) {
+		if (!extractionData) return mapUnits;
+
+		const recordsById = new Map(extractionData.records.map((record) => [record.id, record]));
+
+		return mapUnits.map((unit) => {
+			const record = recordsById.get(unit.id);
+			if (!record) return unit;
+
+			return {
+				...unit,
+				exploitation_position: {
+					...unit.exploitation_position,
+					extraction_risk: record.extraction_dependency_score,
+					extraction_dependency_score: record.extraction_dependency_score,
+					extraction_autonomy_score: record.extraction_autonomy_score,
+					extraction_values: record.values,
+					extraction_latest_year: record.latest_year,
+					extraction_data_quality: record.data_quality,
+					extraction_source_country_code: record.source_country_code,
+					notes: 'World Bank WDI extraction dependency/autonomy component. This is not a final world-system class.'
+				},
+				sources: [...new Set([...unit.sources, ...record.sources])]
+			};
+		});
+	}
+
 	onMount(async () => {
 		try {
 			const [response, loadedRegistry, indicatorIndex] = await Promise.all([
@@ -364,10 +417,12 @@
 				loadMapUnitRegistry(base),
 				loadOptionalIndicatorIndex()
 			]);
-			const [worldBankData, provisionalWorldSystemData, ucdpData] = await Promise.all([
+			const [worldBankData, provisionalWorldSystemData, ucdpData, extractionData] =
+				await Promise.all([
 				loadOptionalWorldBankQualityOfLife(indicatorIndex),
 				loadOptionalProvisionalWorldSystem(indicatorIndex),
-				loadOptionalUcdpConflicts(indicatorIndex)
+				loadOptionalUcdpConflicts(indicatorIndex),
+				loadOptionalWorldBankExtraction(indicatorIndex)
 			]);
 
 			if (!response.ok) {
@@ -384,9 +439,12 @@
 				normalizedWorldSystemDemoData
 			);
 			const mergedUnits = mergeUcdpConflicts(
-				mergeWorldBankQualityOfLife(
-					mergeProvisionalWorldSystem(registryBackedUnits, provisionalWorldSystemData),
-					worldBankData
+				mergeWorldBankExtraction(
+					mergeWorldBankQualityOfLife(
+						mergeProvisionalWorldSystem(registryBackedUnits, provisionalWorldSystemData),
+						worldBankData
+					),
+					extractionData
 				),
 				ucdpData
 			);

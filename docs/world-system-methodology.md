@@ -52,7 +52,13 @@ Source family: Atlas of Economic Complexity / Harvard Growth Lab, staged locally
 
 This component should estimate dependence on extractive exports, externally financed resource sectors, enclave production, and vulnerability to commodity terms-of-trade shocks. The intended direction is `extraction_autonomy`: higher values mean less structural dependence on externally governed extraction.
 
-Planned evidence includes commodity export composition, resource rents where appropriate, material-flow accounts, and FDI concentration in extractive sectors.
+The first implemented version uses World Bank WDI as a broad-coverage source and writes `static/data/indicators/extraction-dependency.world-bank.latest.json`. It keeps the raw values, years, WDI indicator IDs, source country code, and source provenance for each matched map unit.
+
+Dependency-positive WDI signals are total natural resource rents as percent of GDP (`NY.GDP.TOTL.RT.ZS`), fuel exports as percent of merchandise exports (`TX.VAL.FUEL.ZS.UN`), ores and metals exports (`TX.VAL.MMTL.ZS.UN`), agricultural raw materials exports (`TX.VAL.AGRI.ZS.UN`), and food exports (`TX.VAL.FOOD.ZS.UN`). Autonomy-positive WDI signals are manufactures exports (`TX.VAL.MANF.ZS.UN`), high-technology exports as percent of manufactured exports (`TX.VAL.TECH.MF.ZS`), and medium/high-technology exports where available (`TX.MNF.TECH.ZS.UN`).
+
+The dependency score is a 0-100 weighted mean of clamped dependency signals: resource rents divided by 30 with weight 0.30, fuel exports divided by 80 with weight 0.25, ores/metals divided by 60 with weight 0.20, agricultural raw materials divided by 30 with weight 0.15, and food exports divided by 60 with weight 0.10. `extraction_autonomy_score` is `100 * (0.65 * (1 - dependency_mean) + 0.35 * autonomy_mean)` when autonomy signals are available. If autonomy signals are absent but dependency signals exist, it uses `100 * (1 - dependency_mean)` and the record remains lower quality. If dependency signals are absent, scores remain `null`.
+
+This is not a final core/periphery classification. WDI export categories are coarse and do not identify product-level processing depth, ownership, buyer power, or enclave control. Commodity export dependence should later be refined with BACI or UN Comtrade product-level data, material-flow accounts, and FDI concentration in extractive sectors.
 
 ### D. Ecological Unequal Exchange And Externalization
 
@@ -72,7 +78,7 @@ The current dataset `world_system_provisional_latest` is a temporary proxy. It p
 
 The future dataset `world_system_structural_v1` should be a separate model with its own source IDs, component scores, data coverage, explanation, limitations, and review status. It should not overwrite or silently replace the provisional proxy until validation, documentation, and review are complete.
 
-The structural v1 scaffold currently emits a placeholder file with `model_status: "not_yet_computable"`. That is intentional: the required source pipelines and component transformations are not complete yet. It may include available `productive_complexity` component values for review, but it still does not infer a final world-system class or total score.
+The structural v1 scaffold currently emits a placeholder file with `model_status: "not_yet_computable"`. That is intentional: the required source pipelines and component transformations are not complete yet. It may include available `productive_complexity` and `extraction_autonomy` component values for review, but it still does not infer a final world-system class or total score.
 
 ## Confidence Levels
 

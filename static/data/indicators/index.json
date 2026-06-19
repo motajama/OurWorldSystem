@@ -32,6 +32,14 @@
 		"description": "Optional productive-complexity component imported from local Atlas of Economic Complexity CSV files. Placeholder output is valid when raw files are absent."
 	},
 	{
+		"id": "extraction_dependency_world_bank_latest",
+		"path": "/data/indicators/extraction-dependency.world-bank.latest.json",
+		"required": false,
+		"available": true,
+		"source_ids": ["world_bank_wdi_extraction"],
+		"description": "Optional World Bank WDI extraction dependency and extraction autonomy component."
+	},
+	{
 		"id": "world_system_structural_v1",
 		"path": "/data/indicators/world-system.structural-v1.placeholder.json",
 		"required": false,
@@ -41,6 +49,7 @@
 			"un_comtrade",
 			"cepii_baci",
 			"atlas_economic_complexity",
+			"world_bank_wdi_extraction",
 			"unep_material_flows",
 			"yale_epi",
 			"global_ewaste_monitor",

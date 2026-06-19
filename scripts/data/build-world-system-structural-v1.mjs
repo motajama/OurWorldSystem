@@ -13,6 +13,10 @@ const paths = {
 		repoRoot,
 		'static/data/indicators/productive-complexity.latest.json'
 	),
+	extractionDependency: path.join(
+		repoRoot,
+		'static/data/indicators/extraction-dependency.world-bank.latest.json'
+	),
 	output: path.join(
 		repoRoot,
 		'static/data/indicators/world-system.structural-v1.placeholder.json'
@@ -24,6 +28,7 @@ const plannedSourceIds = [
 	'un_comtrade',
 	'cepii_baci',
 	'atlas_economic_complexity',
+	'world_bank_wdi_extraction',
 	'unep_material_flows',
 	'yale_epi',
 	'global_ewaste_monitor',
@@ -34,7 +39,13 @@ const plannedSourceIds = [
 const componentRequirements = {
 	value_capture: ['oecd_tiva', 'un_comtrade', 'cepii_baci', 'unctad_fdi'],
 	productive_complexity: ['atlas_economic_complexity', 'un_comtrade', 'cepii_baci'],
-	extraction_autonomy: ['un_comtrade', 'cepii_baci', 'unep_material_flows', 'unctad_fdi'],
+	extraction_autonomy: [
+		'world_bank_wdi_extraction',
+		'un_comtrade',
+		'cepii_baci',
+		'unep_material_flows',
+		'unctad_fdi'
+	],
 	ecological_externalization: ['unep_material_flows', 'yale_epi', 'global_ewaste_monitor'],
 	geopolitical_financial_power: ['unctad_fdi', 'sipri_military_expenditure']
 };
@@ -110,11 +121,26 @@ function productiveComplexityById(data) {
 	);
 }
 
-function componentLimitations(hasProductiveComplexity, isDisputed) {
+function extractionDependencyById(data) {
+	const records = Array.isArray(data?.records) ? data.records : [];
+	return new Map(
+		records
+			.filter(
+				(record) =>
+					isObject(record) &&
+					typeof record.id === 'string' &&
+					typeof record.extraction_autonomy_score === 'number' &&
+					Number.isFinite(record.extraction_autonomy_score)
+			)
+			.map((record) => [record.id, record])
+	);
+}
+
+function componentLimitations(hasProductiveComplexity, hasExtractionAutonomy, isDisputed) {
 	const limitations = [
 		'Placeholder record only; do not use as a Wallersteinian classification.',
-		hasProductiveComplexity
-			? 'Productive complexity is available as one component only; value capture, extraction autonomy, ecological externalization, and geopolitical-financial power remain missing.'
+		hasProductiveComplexity || hasExtractionAutonomy
+			? 'Available structural components are retained for review, but value capture, ecological externalization, and geopolitical-financial power remain missing.'
 			: 'Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.',
 		isDisputed
 			? 'This disputed or special map unit requires neutral source crosswalk review before comparable structural scoring.'
@@ -124,11 +150,21 @@ function componentLimitations(hasProductiveComplexity, isDisputed) {
 	return limitations;
 }
 
-function placeholderRecordFor(registryRecord, availableSourceIds, missingSourceIds, productiveRecord) {
+function placeholderRecordFor(
+	registryRecord,
+	availableSourceIds,
+	missingSourceIds,
+	productiveRecord,
+	extractionRecord
+) {
 	const isDisputed = registryRecord?.map_unit_type === 'disputed';
 	const components = emptyComponents();
 	if (productiveRecord) components.productive_complexity = productiveRecord.productive_complexity_score;
-	const recordSources = productiveRecord ? ['atlas_economic_complexity'] : [];
+	if (extractionRecord) components.extraction_autonomy = extractionRecord.extraction_autonomy_score;
+	const recordSources = [
+		...(productiveRecord ? ['atlas_economic_complexity'] : []),
+		...(extractionRecord ? ['world_bank_wdi_extraction'] : [])
+	];
 
 	return {
 		id: registryRecord.id,
@@ -150,12 +186,23 @@ function placeholderRecordFor(registryRecord, availableSourceIds, missingSourceI
 							score_method: productiveRecord.score_method,
 							data_quality: productiveRecord.data_quality
 						}
+					: null,
+				extraction_autonomy: extractionRecord
+					? {
+							source_id: 'world_bank_wdi_extraction',
+							source_country_code: extractionRecord.source_country_code,
+							latest_year: extractionRecord.latest_year,
+							values: extractionRecord.values,
+							extraction_dependency_score: extractionRecord.extraction_dependency_score,
+							extraction_autonomy_score: extractionRecord.extraction_autonomy_score,
+							data_quality: extractionRecord.data_quality
+						}
 					: null
 			}
 		},
 		explanation:
 			'Structural world-system model v1 is not yet computable. Available component values are retained for future review, but no final class or score is inferred.',
-		limitations: componentLimitations(Boolean(productiveRecord), isDisputed),
+		limitations: componentLimitations(Boolean(productiveRecord), Boolean(extractionRecord), isDisputed),
 		sources: recordSources,
 		review_status: 'not_started'
 	};
@@ -191,6 +238,21 @@ async function main() {
 			availableSourceIds.add('atlas_economic_complexity');
 		}
 	}
+	let extractionDependency = null;
+	if (await exists(paths.extractionDependency)) {
+		extractionDependency = await readJson(paths.extractionDependency);
+		if (
+			extractionDependency?.dataset_id === 'extraction_dependency_world_bank_latest' &&
+			Array.isArray(extractionDependency.records) &&
+			extractionDependency.records.some(
+				(record) =>
+					typeof record?.extraction_autonomy_score === 'number' &&
+					Number.isFinite(record.extraction_autonomy_score)
+			)
+		) {
+			availableSourceIds.add('world_bank_wdi_extraction');
+		}
+	}
 
 	for (const entry of Array.isArray(indicatorIndex) ? indicatorIndex : []) {
 		if (entry?.id === 'world_system_structural_v1' || entry?.id === 'productive_complexity_latest') {
@@ -201,6 +263,7 @@ async function main() {
 		const datasetExists = datasetPath ? await exists(path.join(repoRoot, datasetPath)) : false;
 		if (entry?.available === true && datasetExists && Array.isArray(entry.source_ids)) {
 			for (const sourceId of entry.source_ids) {
+				if (sourceId === 'world_bank_wdi_extraction') continue;
 				if (plannedSourceIds.includes(sourceId)) availableSourceIds.add(sourceId);
 			}
 		}
@@ -208,6 +271,7 @@ async function main() {
 
 	const missingSourceIds = plannedSourceIds.filter((sourceId) => !availableSourceIds.has(sourceId));
 	const productiveRecordsById = productiveComplexityById(productiveComplexity);
+	const extractionRecordsById = extractionDependencyById(extractionDependency);
 	const records = registry
 		.filter((record) => isObject(record) && typeof record.id === 'string')
 		.map((record) =>
@@ -215,7 +279,8 @@ async function main() {
 				record,
 				availableSourceIds,
 				missingSourceIds,
-				productiveRecordsById.get(record.id)
+				productiveRecordsById.get(record.id),
+				extractionRecordsById.get(record.id)
 			)
 		);
 
@@ -240,12 +305,31 @@ async function main() {
 						path: '/data/indicators/productive-complexity.latest.json',
 						status: 'missing',
 						record_count: 0
+					},
+			extraction_autonomy: extractionDependency
+				? {
+						path: '/data/indicators/extraction-dependency.world-bank.latest.json',
+						status:
+							extractionRecordsById.size > 0
+								? 'component_values_loaded'
+								: 'present_without_scores',
+						record_count: Array.isArray(extractionDependency.records)
+							? extractionDependency.records.length
+							: 0,
+						scored_record_count: extractionRecordsById.size
+					}
+				: {
+						path: '/data/indicators/extraction-dependency.world-bank.latest.json',
+						status: 'missing',
+						record_count: 0,
+						scored_record_count: 0
 					}
 		},
 		notes: [
 			'This placeholder intentionally does not compute final world-system classifications.',
 			'The current provisional world-system proxy remains separate from this future structural model.',
 			'Productive complexity, when present, is one component and does not determine world-system position by itself.',
+			'Extraction autonomy, when present, is a World Bank WDI first approximation of extraction dependency and export structure; it requires later BACI or Comtrade product-level refinement.',
 			'Implement source pipelines and reviewed component transformations before changing model_status to draft, review, or published.'
 		]
 	};
@@ -258,6 +342,11 @@ async function main() {
 	console.log(
 		`Productive complexity records: ${productiveRecordsById.size} (${
 			productiveComplexity?.status ?? 'missing'
+		})`
+	);
+	console.log(
+		`Extraction autonomy records: ${extractionRecordsById.size} (${
+			extractionDependency?.dataset_id ?? 'missing'
 		})`
 	);
 	console.log(`Available planned source ids: ${[...availableSourceIds].sort().join(', ') || 'none'}`);

@@ -65,7 +65,7 @@ function getNoDataReason(path: DrawablePath, selectedLayer: MapLayerId) {
 		case 'quality_of_life':
 			return 'missing numeric HDI or World Bank quality-of-life score';
 		case 'exploitation':
-			return 'missing extraction risk';
+			return 'missing extraction dependency score';
 		case 'ecology':
 			return 'missing EPI score';
 	}

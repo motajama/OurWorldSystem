@@ -189,6 +189,112 @@
 		</section>
 
 		<section>
+			<h3>Extraction dependency</h3>
+			<dl>
+				<div>
+					<dt>Dependency score</dt>
+					<dd>
+						{formatNumber(unit.exploitation_position.extraction_dependency_score, {
+							maximumFractionDigits: 1
+						})}
+					</dd>
+				</div>
+				<div>
+					<dt>Autonomy score</dt>
+					<dd>
+						{formatNumber(unit.exploitation_position.extraction_autonomy_score, {
+							maximumFractionDigits: 1
+						})}
+					</dd>
+				</div>
+				<div>
+					<dt>Resource rents</dt>
+					<dd>
+						{formatSourcedValue(
+							unit.exploitation_position.extraction_values?.natural_resource_rents_gdp_pct,
+							{ maximumFractionDigits: 1 }
+						)}
+					</dd>
+				</div>
+				<div>
+					<dt>Fuel exports</dt>
+					<dd>
+						{formatSourcedValue(
+							unit.exploitation_position.extraction_values?.fuel_exports_merchandise_pct,
+							{ maximumFractionDigits: 1 }
+						)}
+					</dd>
+				</div>
+				<div>
+					<dt>Ores/metals exports</dt>
+					<dd>
+						{formatSourcedValue(
+							unit.exploitation_position.extraction_values?.ores_metals_exports_merchandise_pct,
+							{ maximumFractionDigits: 1 }
+						)}
+					</dd>
+				</div>
+				<div>
+					<dt>Agricultural raw exports</dt>
+					<dd>
+						{formatSourcedValue(
+							unit.exploitation_position.extraction_values
+								?.agricultural_raw_exports_merchandise_pct,
+							{ maximumFractionDigits: 1 }
+						)}
+					</dd>
+				</div>
+				<div>
+					<dt>Food exports</dt>
+					<dd>
+						{formatSourcedValue(
+							unit.exploitation_position.extraction_values?.food_exports_merchandise_pct,
+							{ maximumFractionDigits: 1 }
+						)}
+					</dd>
+				</div>
+				<div>
+					<dt>Manufactures exports</dt>
+					<dd>
+						{formatSourcedValue(
+							unit.exploitation_position.extraction_values?.manufactures_exports_merchandise_pct,
+							{ maximumFractionDigits: 1 }
+						)}
+					</dd>
+				</div>
+				<div>
+					<dt>High-tech exports</dt>
+					<dd>
+						{formatSourcedValue(
+							unit.exploitation_position.extraction_values
+								?.high_tech_exports_manufactured_pct,
+							{ maximumFractionDigits: 1 }
+						)}
+					</dd>
+				</div>
+				<div>
+					<dt>Medium/high-tech exports</dt>
+					<dd>
+						{formatSourcedValue(
+							unit.exploitation_position.extraction_values
+								?.medium_high_tech_exports_manufactured_pct,
+							{ maximumFractionDigits: 1 }
+						)}
+					</dd>
+				</div>
+				<div>
+					<dt>Source</dt>
+					<dd>
+						{unit.exploitation_position.extraction_source_country_code
+							? `World Bank WDI (${unit.exploitation_position.extraction_source_country_code})`
+							: 'No data'}
+					</dd>
+				</div>
+			</dl>
+			<p class="muted">This is a component score, not final world-system class.</p>
+		</section>
+
+		<section>
 			<h3>Indicators</h3>
 			<dl>
 				<div>
