@@ -2,6 +2,8 @@
 
 OurWorldSystem treats world-system classification as a reproducible, data-driven model output. A class such as core, semi-periphery, or periphery is not a moral judgment about people, culture, or legitimacy. It is a summary of structural position in a global system of production, exchange, extraction, governance, and ecological externalization.
 
+For the planned Wallerstein-inspired structural model v1, see [`docs/world-system-methodology.md`](world-system-methodology.md). That document separates the current provisional proxy from the future structural model based on value capture, productive complexity, extraction dependency, ecological externalization, and geopolitical-financial-institutional power.
+
 ## Current Status
 
 The first frontend scaffold uses Natural Earth geometry, a provisional World Bank-derived world-system proxy, preserved mock/demo world-system records, an initial real World Bank WDI quality-of-life pipeline, and a first UCDP conflict pipeline. The default world-system layer is experimental and needs review. It exists so the map does not appear broken while broader structural data is still being assembled.

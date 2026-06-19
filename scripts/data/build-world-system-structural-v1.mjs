@@ -1,0 +1,195 @@
+import { access, mkdir, readFile, writeFile } from 'node:fs/promises';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const repoRoot = path.resolve(__dirname, '../..');
+
+const paths = {
+	registry: path.join(repoRoot, 'static/data/map-units.registry.json'),
+	sourceManifest: path.join(repoRoot, 'static/data/source-manifest.json'),
+	indicatorIndex: path.join(repoRoot, 'static/data/indicators/index.json'),
+	output: path.join(
+		repoRoot,
+		'static/data/indicators/world-system.structural-v1.placeholder.json'
+	)
+};
+
+const plannedSourceIds = [
+	'oecd_tiva',
+	'un_comtrade',
+	'cepii_baci',
+	'atlas_economic_complexity',
+	'unep_material_flows',
+	'yale_epi',
+	'global_ewaste_monitor',
+	'unctad_fdi',
+	'sipri_military_expenditure'
+];
+
+const componentRequirements = {
+	value_capture: ['oecd_tiva', 'un_comtrade', 'cepii_baci', 'unctad_fdi'],
+	productive_complexity: ['atlas_economic_complexity', 'un_comtrade', 'cepii_baci'],
+	extraction_autonomy: ['un_comtrade', 'cepii_baci', 'unep_material_flows', 'unctad_fdi'],
+	ecological_externalization: ['unep_material_flows', 'yale_epi', 'global_ewaste_monitor'],
+	geopolitical_financial_power: ['unctad_fdi', 'sipri_military_expenditure']
+};
+
+function isObject(value) {
+	return Boolean(value && typeof value === 'object' && !Array.isArray(value));
+}
+
+async function readJson(filePath) {
+	const text = await readFile(filePath, 'utf8');
+	return JSON.parse(text);
+}
+
+async function exists(filePath) {
+	try {
+		await access(filePath);
+		return true;
+	} catch {
+		return false;
+	}
+}
+
+function relativePath(filePath) {
+	return path.relative(repoRoot, filePath);
+}
+
+function toRelativeStaticPath(urlPath) {
+	if (typeof urlPath !== 'string' || urlPath.trim().length === 0) return null;
+	const normalized = urlPath.startsWith('/') ? urlPath.slice(1) : urlPath;
+	return normalized.startsWith('data/') ? path.join('static', normalized) : normalized;
+}
+
+function componentStatusFor(availableSourceIds) {
+	return Object.fromEntries(
+		Object.entries(componentRequirements).map(([component, requiredSourceIds]) => {
+			const availableCount = requiredSourceIds.filter((sourceId) =>
+				availableSourceIds.has(sourceId)
+			).length;
+			const status =
+				availableCount === 0
+					? 'missing'
+					: availableCount === requiredSourceIds.length
+						? 'available'
+						: 'partial';
+
+			return [component, status];
+		})
+	);
+}
+
+function emptyComponents() {
+	return {
+		value_capture: null,
+		productive_complexity: null,
+		extraction_autonomy: null,
+		ecological_externalization: null,
+		geopolitical_financial_power: null
+	};
+}
+
+function placeholderRecordFor(registryRecord, availableSourceIds, missingSourceIds) {
+	const isDisputed = registryRecord?.map_unit_type === 'disputed';
+
+	return {
+		id: registryRecord.id,
+		class: isDisputed ? 'disputed' : 'no_data',
+		score: null,
+		confidence: 'low',
+		components: emptyComponents(),
+		data_coverage: {
+			available_source_ids: [...availableSourceIds].sort(),
+			missing_source_ids: missingSourceIds,
+			component_status: componentStatusFor(availableSourceIds)
+		},
+		explanation:
+			'Structural world-system model v1 is not yet computable. Required source pipelines and component transformations have not been implemented, so no final class or score is inferred.',
+		limitations: [
+			'Placeholder record only; do not use as a Wallersteinian classification.',
+			'Value capture, productive complexity, extraction autonomy, ecological externalization, and geopolitical-financial power components are missing.',
+			isDisputed
+				? 'This disputed or special map unit requires neutral source crosswalk review before comparable structural scoring.'
+				: 'Registry identity exists, but structural source coverage is not yet available.'
+		],
+		sources: [],
+		review_status: 'not_started'
+	};
+}
+
+async function main() {
+	const [registry, sourceManifest, indicatorIndex] = await Promise.all([
+		readJson(paths.registry),
+		readJson(paths.sourceManifest),
+		readJson(paths.indicatorIndex)
+	]);
+
+	if (!Array.isArray(registry)) {
+		throw new Error(`${relativePath(paths.registry)} root must be an array.`);
+	}
+
+	const sourceIdsInManifest = new Set(
+		(sourceManifest?.sources ?? [])
+			.filter((source) => isObject(source) && typeof source.id === 'string')
+			.map((source) => source.id)
+	);
+	const missingManifestEntries = plannedSourceIds.filter((sourceId) => !sourceIdsInManifest.has(sourceId));
+
+	const availableSourceIds = new Set();
+	for (const entry of Array.isArray(indicatorIndex) ? indicatorIndex : []) {
+		if (entry?.id === 'world_system_structural_v1') continue;
+
+		const datasetPath = toRelativeStaticPath(entry?.path);
+		const datasetExists = datasetPath ? await exists(path.join(repoRoot, datasetPath)) : false;
+		if (entry?.available === true && datasetExists && Array.isArray(entry.source_ids)) {
+			for (const sourceId of entry.source_ids) {
+				if (plannedSourceIds.includes(sourceId)) availableSourceIds.add(sourceId);
+			}
+		}
+	}
+
+	const missingSourceIds = plannedSourceIds.filter((sourceId) => !availableSourceIds.has(sourceId));
+	const records = registry
+		.filter((record) => isObject(record) && typeof record.id === 'string')
+		.map((record) => placeholderRecordFor(record, availableSourceIds, missingSourceIds));
+
+	const output = {
+		dataset_id: 'world_system_structural_v1',
+		model_status: 'not_yet_computable',
+		generated_at: new Date().toISOString(),
+		records,
+		planned_source_ids: plannedSourceIds,
+		missing_source_ids: missingSourceIds,
+		component_requirements: componentRequirements,
+		notes: [
+			'This placeholder intentionally does not compute final world-system classifications.',
+			'The current provisional world-system proxy remains separate from this future structural model.',
+			'Implement source pipelines and reviewed component transformations before changing model_status to draft, review, or published.'
+		]
+	};
+
+	await mkdir(path.dirname(paths.output), { recursive: true });
+	await writeFile(paths.output, `${JSON.stringify(output, null, '\t')}\n`);
+
+	console.log(`Wrote ${relativePath(paths.output)}`);
+	console.log(`Records: ${records.length}`);
+	console.log(`Available planned source ids: ${[...availableSourceIds].sort().join(', ') || 'none'}`);
+	console.log(`Missing planned source ids: ${missingSourceIds.join(', ') || 'none'}`);
+
+	if (missingManifestEntries.length > 0) {
+		console.log(`Missing source-manifest entries: ${missingManifestEntries.join(', ')}`);
+	}
+
+	console.log('Missing components:');
+	for (const [component, requiredSourceIds] of Object.entries(componentRequirements)) {
+		const missingForComponent = requiredSourceIds.filter((sourceId) => !availableSourceIds.has(sourceId));
+		console.log(`- ${component}: ${missingForComponent.join(', ') || 'none'}`);
+	}
+}
+
+main().catch((error) => {
+	console.error(error);
+	process.exit(1);
+});

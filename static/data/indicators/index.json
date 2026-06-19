@@ -22,5 +22,23 @@
 		"available": false,
 		"source_ids": ["ucdp_country_year", "ucdp_prio_armed_conflict"],
 		"description": "Optional UCDP conflict indicators."
+	},
+	{
+		"id": "world_system_structural_v1",
+		"path": "/data/indicators/world-system.structural-v1.placeholder.json",
+		"required": false,
+		"available": true,
+		"source_ids": [
+			"oecd_tiva",
+			"un_comtrade",
+			"cepii_baci",
+			"atlas_economic_complexity",
+			"unep_material_flows",
+			"yale_epi",
+			"global_ewaste_monitor",
+			"unctad_fdi",
+			"sipri_military_expenditure"
+		],
+		"description": "Optional placeholder scaffold for the planned structural world-system model v1. Not used as a final classification."
 	}
 ]

@@ -168,6 +168,28 @@ The World Bank pipeline joins through `external_ids.world_bank`, `external_ids.i
 
 Future data pipelines should generate static JSON from public sources such as OECD, UN, UCDP, RSF, V-Dem, Freedom House, World Bank, UNDP, UNEP, and related open datasets.
 
+## World-system model roadmap
+
+The current default world-system layer is a provisional proxy. It preserves demo records from `static/data/world-system.latest.json` and derives broader coverage from World Bank WDI quality-of-life and income-related indicators in `static/data/indicators/world-system.provisional.latest.json`. This is not a final Wallersteinian classification.
+
+The planned structural model v1 is documented in `docs/world-system-methodology.md` and scaffolded as `world_system_structural_v1`. It will treat core, semi-periphery, and periphery as relational positions in the capitalist world-economy, not as income or quality-of-life bins. Planned components are value capture and GVC position, productive complexity, extraction autonomy, ecological unequal exchange or externalization, and geopolitical-financial-institutional power.
+
+Planned source families include OECD TiVA, UN Comtrade, CEPII BACI, the Atlas of Economic Complexity, UNEP material flows, Yale EPI, the Global E-waste Monitor, UNCTAD FDI, and SIPRI military expenditure. These are listed as planned in `static/data/source-manifest.json`; their pipelines are not implemented yet.
+
+Build the structural placeholder with:
+
+```sh
+npm run data:build:worldsystem:structural
+```
+
+Validate the placeholder or future structural output with:
+
+```sh
+npm run validate:worldsystem:structural
+```
+
+The placeholder writes `static/data/indicators/world-system.structural-v1.placeholder.json` with `model_status: "not_yet_computable"`. It exists to lock the future schema and identify missing planned data sources, not to classify map units.
+
 Validate registry and mock-data joins with:
 
 ```sh
