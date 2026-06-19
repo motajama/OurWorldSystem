@@ -42,6 +42,7 @@ npm run data:fetch:worldbank
 npm run data:fetch:ucdp
 npm run data:build
 npm run registry:seed
+npm run registry:review
 npm run data:coverage
 ```
 
@@ -56,6 +57,12 @@ npm run data:coverage
 The candidate file is review infrastructure only. Generated candidates are not authoritative registry records and must not be used as indicator IDs until manually reviewed and promoted into `static/data/map-units.registry.json`.
 
 `registry:seed` reads `static/geo/world.topojson` and updates `static/data/map-units.registry.json` so Natural Earth Admin 0 base features have registry coverage. It preserves curated fields on matched records, adds missing Natural Earth aliases, and creates generated records marked `review_status: "needs_review"` for unmatched features. It also writes `data/processed/map-unit-registry-seed-report.json`.
+
+`registry:review` reads the registry, Natural Earth TopoJSON, optional World Bank quality-of-life output, and existing seed or coverage reports when present. It prints a non-failing human review report and writes:
+
+- `data/processed/registry-review-report.json`
+
+Use this report to review generated registry entries systematically. Prioritize generated `needs_review` records with placeholder `NE_` IDs, missing external IDs, unknown recognition status, disputed or special map-unit types, unusual Natural Earth TYPE/FCLASS metadata, or sovereignty notes that need neutral wording. Natural Earth geometry is provenance for map coverage only; it is not recognition, and it should never be the sole reason to merge, split, or classify a map unit.
 
 ## Registry Validation
 
@@ -93,6 +100,8 @@ This downloads Natural Earth source archives into `data/raw/natural-earth/` and 
 - `static/geo/disputed.topojson` comes from Natural Earth breakaway/disputed areas at 50m scale when that optional archive is available.
 
 Natural Earth Admin 0 countries are used primarily as de facto boundaries for small-scale web rendering. The disputed/breakaway layer is rendered separately. Geometry is not political recognition, and the pipeline must not hard-code sovereignty judgments.
+
+The registry seed workflow is provisional. It must not infer `UN member` from Natural Earth `TYPE="Sovereign country"` alone. Generated records give precedence to unrecognized, breakaway, disputed, dependency, and indeterminate Natural Earth classifications; those records remain `needs_review` until manually checked. Natural Earth `-99` placeholder codes are never valid registry or external IDs.
 
 The frontend renders the world with D3 Equal Earth, an equal-area projection that makes territorial area comparison fairer while still distorting shapes and distances.
 
@@ -176,9 +185,10 @@ Use this review loop to expand coverage without fabricating data:
 2. `npm run registry:seed`
 3. `npm run data:build`
 4. `npm run data:coverage`
-5. Review generated `needs_review` registry records and `static/data/generated/map-units.candidates.json`
-6. Manually mark verified registry records with reviewed metadata when appropriate
-7. Rerun `npm run health:data`, `npm run validate:data`, `npm run check`, and `npm run build`
+5. `npm run registry:review`
+6. Review generated `needs_review` registry records and `static/data/generated/map-units.candidates.json`
+7. Manually mark verified registry records with reviewed metadata when appropriate
+8. Rerun `npm run health:data`, `npm run validate:data`, `npm run check`, and `npm run build`
 
 Keep four categories distinct in code and documentation: real public data, mock/demo data, generated registry candidates, and missing data.
 

@@ -117,6 +117,8 @@ Natural Earth properties are source metadata for geometry, not stable applicatio
 
 After rebuilding geometry, run `npm run registry:seed`. This updates the registry so every Natural Earth Admin 0 base feature has a map-unit registry record. Existing curated records are preserved and enriched only with missing Natural Earth aliases. New generated records are marked `review_status: "needs_review"` and are not political recognition or sovereignty decisions.
 
+Generated registry records are review infrastructure, not finished political geography. Natural Earth geometry can suggest map-unit coverage, aliases, and source codes, but it must not be treated as recognition. Review generated records gradually by checking names, map-unit type, recognition status, external IDs, possible merges with curated records, and neutral sovereignty notes.
+
 Mock world-system indicators in `static/data/world-system.latest.json` join through registry IDs where available. Disputed and special cases such as Palestine, Taiwan, and Kosovo are kept as neutral map units with notes and source aliases; the atlas does not merge them into other records or decide sovereignty disputes. Missing registry entries do not block map rendering: unmatched Natural Earth features are shown as neutral `no_data` map units until the registry and indicator data are expanded.
 
 Disputed and breakaway overlay features are hoverable and clickable. Their labels use the best available Natural Earth name/status properties and a neutral reminder that OurWorldSystem does not adjudicate sovereignty. When an overlay feature has no matching disputed or special registry record, the detail panel opens a synthetic no-data map-unit record sourced to Natural Earth.
@@ -173,15 +175,24 @@ This writes:
 
 Generated candidates are not authoritative data. They are Natural Earth-derived review records for missing registry coverage. Review them manually, verify source identity and sovereignty notes, then promote only reviewed records into `static/data/map-units.registry.json`.
 
+Generate a focused review report for records already in the registry with:
+
+```sh
+npm run registry:review
+```
+
+This reads the registry, Natural Earth TopoJSON, optional World Bank quality-of-life output, and existing seed or coverage reports when present. It prints summary counts, high-priority generated records, possible duplicate/shared-sovereignty groups, and missing external IDs. It also writes `data/processed/registry-review-report.json` for machine-readable review tracking.
+
 Recommended data completion workflow:
 
 1. `npm run geo:build`
 2. `npm run registry:seed`
 3. `npm run data:build`
 4. `npm run data:coverage`
-5. Review generated `needs_review` registry records and `static/data/generated/map-units.candidates.json`
-6. Manually mark verified registry records with reviewed metadata when appropriate
-7. Rerun `npm run health:data`, `npm run validate:data`, `npm run check`, and `npm run build`
+5. `npm run registry:review`
+6. Review generated `needs_review` registry records and `static/data/generated/map-units.candidates.json`
+7. Manually mark verified registry records with reviewed metadata when appropriate
+8. Rerun `npm run health:data`, `npm run validate:data`, `npm run check`, and `npm run build`
 
 Do not fabricate missing indicator values. Keep real public data, mock/demo data, generated registry candidates, and missing data visibly distinct.
 

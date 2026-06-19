@@ -1,5 +1,5 @@
 {
-	"generated_at": "2026-06-19T13:46:55.168Z",
+	"generated_at": "2026-06-19T14:08:26.004Z",
 	"inputs": {
 		"worldTopojson": "static/geo/world.topojson",
 		"registry": "static/data/map-units.registry.json",
@@ -8,577 +8,17 @@
 	"natural_earth_object_key": "ne_110m_admin_0_countries",
 	"counts": {
 		"natural_earth_feature_count": 177,
-		"registry_count_before": 26,
+		"registry_count_before": 172,
 		"registry_count_after": 172,
-		"generated_records_before": 0,
+		"generated_records_before": 146,
 		"generated_records_after": 146,
 		"reviewed_or_curated_records_before": 26,
 		"reviewed_or_curated_records_after": 26,
-		"matched_existing_features": 31,
-		"generated_new_records": 146,
+		"matched_existing_features": 177,
+		"generated_new_records": 0,
 		"coverage_features": 177
 	},
 	"matched_existing_features": [
-		{
-			"feature_index": 3,
-			"properties": {
-				"ADM0_A3": "CAN",
-				"ISO_A3": "CAN",
-				"SOV_A3": "CAN",
-				"NAME": "Canada",
-				"NAME_LONG": "Canada",
-				"ADMIN": "Canada",
-				"TYPE": "Sovereign country",
-				"FCLASS_ISO": "Admin-0 country",
-				"FCLASS_US": "",
-				"FCLASS_FR": "",
-				"FCLASS_RU": "",
-				"FCLASS_CN": ""
-			},
-			"registry_id": "CAN"
-		},
-		{
-			"feature_index": 4,
-			"properties": {
-				"ADM0_A3": "USA",
-				"ISO_A3": "USA",
-				"SOV_A3": "US1",
-				"NAME": "United States of America",
-				"NAME_LONG": "United States",
-				"ADMIN": "United States of America",
-				"TYPE": "Country",
-				"FCLASS_ISO": "Admin-0 country",
-				"FCLASS_US": "",
-				"FCLASS_FR": "",
-				"FCLASS_RU": "",
-				"FCLASS_CN": ""
-			},
-			"registry_id": "USA"
-		},
-		{
-			"feature_index": 11,
-			"properties": {
-				"ADM0_A3": "COD",
-				"ISO_A3": "COD",
-				"SOV_A3": "COD",
-				"NAME": "Dem. Rep. Congo",
-				"NAME_LONG": "Democratic Republic of the Congo",
-				"ADMIN": "Democratic Republic of the Congo",
-				"TYPE": "Sovereign country",
-				"FCLASS_ISO": "Admin-0 country",
-				"FCLASS_US": "",
-				"FCLASS_FR": "",
-				"FCLASS_RU": "",
-				"FCLASS_CN": ""
-			},
-			"registry_id": "COD"
-		},
-		{
-			"feature_index": 18,
-			"properties": {
-				"ADM0_A3": "RUS",
-				"ISO_A3": "RUS",
-				"SOV_A3": "RUS",
-				"NAME": "Russia",
-				"NAME_LONG": "Russian Federation",
-				"ADMIN": "Russia",
-				"TYPE": "Sovereign country",
-				"FCLASS_ISO": "Admin-0 country",
-				"FCLASS_US": "",
-				"FCLASS_FR": "",
-				"FCLASS_RU": "",
-				"FCLASS_CN": ""
-			},
-			"registry_id": "RUS"
-		},
-		{
-			"feature_index": 20,
-			"properties": {
-				"ADM0_A3": "FLK",
-				"ISO_A3": "FLK",
-				"SOV_A3": "GB1",
-				"NAME": "Falkland Is.",
-				"NAME_LONG": "Falkland Islands / Malvinas",
-				"ADMIN": "Falkland Islands",
-				"TYPE": "Disputed",
-				"FCLASS_ISO": "Admin-0 dependency",
-				"FCLASS_US": "",
-				"FCLASS_FR": "",
-				"FCLASS_RU": "",
-				"FCLASS_CN": ""
-			},
-			"registry_id": "GBR"
-		},
-		{
-			"feature_index": 23,
-			"properties": {
-				"ADM0_A3": "ATF",
-				"ISO_A3": "ATF",
-				"SOV_A3": "FR1",
-				"NAME": "Fr. S. Antarctic Lands",
-				"NAME_LONG": "French Southern and Antarctic Lands",
-				"ADMIN": "French Southern and Antarctic Lands",
-				"TYPE": "Dependency",
-				"FCLASS_ISO": "Admin-0 dependency",
-				"FCLASS_US": "",
-				"FCLASS_FR": "",
-				"FCLASS_RU": "",
-				"FCLASS_CN": ""
-			},
-			"registry_id": "FRA"
-		},
-		{
-			"feature_index": 25,
-			"properties": {
-				"ADM0_A3": "ZAF",
-				"ISO_A3": "ZAF",
-				"SOV_A3": "ZAF",
-				"NAME": "South Africa",
-				"NAME_LONG": "South Africa",
-				"ADMIN": "South Africa",
-				"TYPE": "Sovereign country",
-				"FCLASS_ISO": "Admin-0 country",
-				"FCLASS_US": "",
-				"FCLASS_FR": "",
-				"FCLASS_RU": "",
-				"FCLASS_CN": ""
-			},
-			"registry_id": "ZAF"
-		},
-		{
-			"feature_index": 27,
-			"properties": {
-				"ADM0_A3": "MEX",
-				"ISO_A3": "MEX",
-				"SOV_A3": "MEX",
-				"NAME": "Mexico",
-				"NAME_LONG": "Mexico",
-				"ADMIN": "Mexico",
-				"TYPE": "Sovereign country",
-				"FCLASS_ISO": "Admin-0 country",
-				"FCLASS_US": "",
-				"FCLASS_FR": "",
-				"FCLASS_RU": "",
-				"FCLASS_CN": ""
-			},
-			"registry_id": "MEX"
-		},
-		{
-			"feature_index": 29,
-			"properties": {
-				"ADM0_A3": "BRA",
-				"ISO_A3": "BRA",
-				"SOV_A3": "BRA",
-				"NAME": "Brazil",
-				"NAME_LONG": "Brazil",
-				"ADMIN": "Brazil",
-				"TYPE": "Sovereign country",
-				"FCLASS_ISO": "Admin-0 country",
-				"FCLASS_US": "",
-				"FCLASS_FR": "",
-				"FCLASS_RU": "",
-				"FCLASS_CN": ""
-			},
-			"registry_id": "BRA"
-		},
-		{
-			"feature_index": 43,
-			"properties": {
-				"ADM0_A3": "FRA",
-				"ISO_A3": "-99",
-				"SOV_A3": "FR1",
-				"NAME": "France",
-				"NAME_LONG": "France",
-				"ADMIN": "France",
-				"TYPE": "Country",
-				"FCLASS_ISO": "Admin-0 country",
-				"FCLASS_US": "",
-				"FCLASS_FR": "",
-				"FCLASS_RU": "",
-				"FCLASS_CN": ""
-			},
-			"registry_id": "FRA"
-		},
-		{
-			"feature_index": 45,
-			"properties": {
-				"ADM0_A3": "PRI",
-				"ISO_A3": "PRI",
-				"SOV_A3": "US1",
-				"NAME": "Puerto Rico",
-				"NAME_LONG": "Puerto Rico",
-				"ADMIN": "Puerto Rico",
-				"TYPE": "Dependency",
-				"FCLASS_ISO": "Admin-0 dependency",
-				"FCLASS_US": "",
-				"FCLASS_FR": "",
-				"FCLASS_RU": "",
-				"FCLASS_CN": ""
-			},
-			"registry_id": "USA"
-		},
-		{
-			"feature_index": 76,
-			"properties": {
-				"ADM0_A3": "ISR",
-				"ISO_A3": "ISR",
-				"SOV_A3": "IS1",
-				"NAME": "Israel",
-				"NAME_LONG": "Israel",
-				"ADMIN": "Israel",
-				"TYPE": "Disputed",
-				"FCLASS_ISO": "Admin-0 country",
-				"FCLASS_US": "",
-				"FCLASS_FR": "",
-				"FCLASS_RU": "",
-				"FCLASS_CN": ""
-			},
-			"registry_id": "ISR"
-		},
-		{
-			"feature_index": 79,
-			"properties": {
-				"ADM0_A3": "PSX",
-				"ISO_A3": "PSE",
-				"SOV_A3": "IS1",
-				"NAME": "Palestine",
-				"NAME_LONG": "Palestine",
-				"ADMIN": "Palestine",
-				"TYPE": "Indeterminate",
-				"FCLASS_ISO": "Admin-0 dependency",
-				"FCLASS_US": "",
-				"FCLASS_FR": "",
-				"FCLASS_RU": "",
-				"FCLASS_CN": ""
-			},
-			"registry_id": "PSE"
-		},
-		{
-			"feature_index": 94,
-			"properties": {
-				"ADM0_A3": "VNM",
-				"ISO_A3": "VNM",
-				"SOV_A3": "VNM",
-				"NAME": "Vietnam",
-				"NAME_LONG": "Vietnam",
-				"ADMIN": "Vietnam",
-				"TYPE": "Sovereign country",
-				"FCLASS_ISO": "Admin-0 country",
-				"FCLASS_US": "",
-				"FCLASS_FR": "",
-				"FCLASS_RU": "",
-				"FCLASS_CN": ""
-			},
-			"registry_id": "VNM"
-		},
-		{
-			"feature_index": 95,
-			"properties": {
-				"ADM0_A3": "PRK",
-				"ISO_A3": "PRK",
-				"SOV_A3": "PRK",
-				"NAME": "North Korea",
-				"NAME_LONG": "Dem. Rep. Korea",
-				"ADMIN": "North Korea",
-				"TYPE": "Sovereign country",
-				"FCLASS_ISO": "Admin-0 country",
-				"FCLASS_US": "",
-				"FCLASS_FR": "",
-				"FCLASS_RU": "",
-				"FCLASS_CN": ""
-			},
-			"registry_id": "PRK"
-		},
-		{
-			"feature_index": 96,
-			"properties": {
-				"ADM0_A3": "KOR",
-				"ISO_A3": "KOR",
-				"SOV_A3": "KOR",
-				"NAME": "South Korea",
-				"NAME_LONG": "Republic of Korea",
-				"ADMIN": "South Korea",
-				"TYPE": "Sovereign country",
-				"FCLASS_ISO": "Admin-0 country",
-				"FCLASS_US": "",
-				"FCLASS_FR": "",
-				"FCLASS_RU": "",
-				"FCLASS_CN": ""
-			},
-			"registry_id": "KOR"
-		},
-		{
-			"feature_index": 98,
-			"properties": {
-				"ADM0_A3": "IND",
-				"ISO_A3": "IND",
-				"SOV_A3": "IND",
-				"NAME": "India",
-				"NAME_LONG": "India",
-				"ADMIN": "India",
-				"TYPE": "Sovereign country",
-				"FCLASS_ISO": "Admin-0 country",
-				"FCLASS_US": "",
-				"FCLASS_FR": "",
-				"FCLASS_RU": "",
-				"FCLASS_CN": ""
-			},
-			"registry_id": "IND"
-		},
-		{
-			"feature_index": 107,
-			"properties": {
-				"ADM0_A3": "IRN",
-				"ISO_A3": "IRN",
-				"SOV_A3": "IRN",
-				"NAME": "Iran",
-				"NAME_LONG": "Iran",
-				"ADMIN": "Iran",
-				"TYPE": "Sovereign country",
-				"FCLASS_ISO": "Admin-0 country",
-				"FCLASS_US": "",
-				"FCLASS_FR": "",
-				"FCLASS_RU": "",
-				"FCLASS_CN": ""
-			},
-			"registry_id": "IRN"
-		},
-		{
-			"feature_index": 112,
-			"properties": {
-				"ADM0_A3": "UKR",
-				"ISO_A3": "UKR",
-				"SOV_A3": "UKR",
-				"NAME": "Ukraine",
-				"NAME_LONG": "Ukraine",
-				"ADMIN": "Ukraine",
-				"TYPE": "Sovereign country",
-				"FCLASS_ISO": "Admin-0 country",
-				"FCLASS_US": "",
-				"FCLASS_FR": "",
-				"FCLASS_RU": "",
-				"FCLASS_CN": ""
-			},
-			"registry_id": "UKR"
-		},
-		{
-			"feature_index": 121,
-			"properties": {
-				"ADM0_A3": "DEU",
-				"ISO_A3": "DEU",
-				"SOV_A3": "DEU",
-				"NAME": "Germany",
-				"NAME_LONG": "Germany",
-				"ADMIN": "Germany",
-				"TYPE": "Sovereign country",
-				"FCLASS_ISO": "Admin-0 country",
-				"FCLASS_US": "",
-				"FCLASS_FR": "",
-				"FCLASS_RU": "",
-				"FCLASS_CN": ""
-			},
-			"registry_id": "DEU"
-		},
-		{
-			"feature_index": 124,
-			"properties": {
-				"ADM0_A3": "TUR",
-				"ISO_A3": "TUR",
-				"SOV_A3": "TUR",
-				"NAME": "Turkey",
-				"NAME_LONG": "Turkey",
-				"ADMIN": "Turkey",
-				"TYPE": "Sovereign country",
-				"FCLASS_ISO": "Admin-0 country",
-				"FCLASS_US": "",
-				"FCLASS_FR": "",
-				"FCLASS_RU": "",
-				"FCLASS_CN": ""
-			},
-			"registry_id": "TUR"
-		},
-		{
-			"feature_index": 134,
-			"properties": {
-				"ADM0_A3": "NCL",
-				"ISO_A3": "NCL",
-				"SOV_A3": "FR1",
-				"NAME": "New Caledonia",
-				"NAME_LONG": "New Caledonia",
-				"ADMIN": "New Caledonia",
-				"TYPE": "Dependency",
-				"FCLASS_ISO": "Admin-0 dependency",
-				"FCLASS_US": "",
-				"FCLASS_FR": "",
-				"FCLASS_RU": "",
-				"FCLASS_CN": ""
-			},
-			"registry_id": "FRA"
-		},
-		{
-			"feature_index": 137,
-			"properties": {
-				"ADM0_A3": "AUS",
-				"ISO_A3": "AUS",
-				"SOV_A3": "AU1",
-				"NAME": "Australia",
-				"NAME_LONG": "Australia",
-				"ADMIN": "Australia",
-				"TYPE": "Country",
-				"FCLASS_ISO": "Admin-0 country",
-				"FCLASS_US": "",
-				"FCLASS_FR": "",
-				"FCLASS_RU": "",
-				"FCLASS_CN": ""
-			},
-			"registry_id": "AUS"
-		},
-		{
-			"feature_index": 139,
-			"properties": {
-				"ADM0_A3": "CHN",
-				"ISO_A3": "CHN",
-				"SOV_A3": "CH1",
-				"NAME": "China",
-				"NAME_LONG": "China",
-				"ADMIN": "China",
-				"TYPE": "Country",
-				"FCLASS_ISO": "Admin-0 country",
-				"FCLASS_US": "",
-				"FCLASS_FR": "",
-				"FCLASS_RU": "",
-				"FCLASS_CN": ""
-			},
-			"registry_id": "CHN"
-		},
-		{
-			"feature_index": 140,
-			"properties": {
-				"ADM0_A3": "TWN",
-				"ISO_A3": "TWN",
-				"SOV_A3": "TWN",
-				"NAME": "Taiwan",
-				"NAME_LONG": "Taiwan",
-				"ADMIN": "Taiwan",
-				"TYPE": "Sovereign country",
-				"FCLASS_ISO": "Admin-1 states provinces",
-				"FCLASS_US": "",
-				"FCLASS_FR": "",
-				"FCLASS_RU": "",
-				"FCLASS_CN": "Admin-1 states provinces"
-			},
-			"registry_id": "TWN"
-		},
-		{
-			"feature_index": 142,
-			"properties": {
-				"ADM0_A3": "DNK",
-				"ISO_A3": "DNK",
-				"SOV_A3": "DN1",
-				"NAME": "Denmark",
-				"NAME_LONG": "Denmark",
-				"ADMIN": "Denmark",
-				"TYPE": "Country",
-				"FCLASS_ISO": "Admin-0 country",
-				"FCLASS_US": "",
-				"FCLASS_FR": "",
-				"FCLASS_RU": "",
-				"FCLASS_CN": ""
-			},
-			"registry_id": "GRL"
-		},
-		{
-			"feature_index": 143,
-			"properties": {
-				"ADM0_A3": "GBR",
-				"ISO_A3": "GBR",
-				"SOV_A3": "GB1",
-				"NAME": "United Kingdom",
-				"NAME_LONG": "United Kingdom",
-				"ADMIN": "United Kingdom",
-				"TYPE": "Country",
-				"FCLASS_ISO": "Admin-0 country",
-				"FCLASS_US": "",
-				"FCLASS_FR": "",
-				"FCLASS_RU": "",
-				"FCLASS_CN": ""
-			},
-			"registry_id": "GBR"
-		},
-		{
-			"feature_index": 153,
-			"properties": {
-				"ADM0_A3": "CZE",
-				"ISO_A3": "CZE",
-				"SOV_A3": "CZE",
-				"NAME": "Czechia",
-				"NAME_LONG": "Czech Republic",
-				"ADMIN": "Czechia",
-				"TYPE": "Sovereign country",
-				"FCLASS_ISO": "Admin-0 country",
-				"FCLASS_US": "",
-				"FCLASS_FR": "",
-				"FCLASS_RU": "",
-				"FCLASS_CN": ""
-			},
-			"registry_id": "CZE"
-		},
-		{
-			"feature_index": 155,
-			"properties": {
-				"ADM0_A3": "JPN",
-				"ISO_A3": "JPN",
-				"SOV_A3": "JPN",
-				"NAME": "Japan",
-				"NAME_LONG": "Japan",
-				"ADMIN": "Japan",
-				"TYPE": "Sovereign country",
-				"FCLASS_ISO": "Admin-0 country",
-				"FCLASS_US": "",
-				"FCLASS_FR": "",
-				"FCLASS_RU": "",
-				"FCLASS_CN": ""
-			},
-			"registry_id": "JPN"
-		},
-		{
-			"feature_index": 158,
-			"properties": {
-				"ADM0_A3": "SAU",
-				"ISO_A3": "SAU",
-				"SOV_A3": "SAU",
-				"NAME": "Saudi Arabia",
-				"NAME_LONG": "Saudi Arabia",
-				"ADMIN": "Saudi Arabia",
-				"TYPE": "Sovereign country",
-				"FCLASS_ISO": "Admin-0 country",
-				"FCLASS_US": "",
-				"FCLASS_FR": "",
-				"FCLASS_RU": "",
-				"FCLASS_CN": ""
-			},
-			"registry_id": "SAU"
-		},
-		{
-			"feature_index": 174,
-			"properties": {
-				"ADM0_A3": "KOS",
-				"ISO_A3": "-99",
-				"SOV_A3": "KOS",
-				"NAME": "Kosovo",
-				"NAME_LONG": "Kosovo",
-				"ADMIN": "Kosovo",
-				"TYPE": "Disputed",
-				"FCLASS_ISO": "Unrecognized",
-				"FCLASS_US": "Admin-0 country",
-				"FCLASS_FR": "Admin-0 country",
-				"FCLASS_RU": "Admin-1 region",
-				"FCLASS_CN": "Unrecognized"
-			},
-			"registry_id": "XKO"
-		}
-	],
-	"generated_features": [
 		{
 			"feature_index": 0,
 			"properties": {
@@ -632,6 +72,42 @@
 				"FCLASS_CN": ""
 			},
 			"registry_id": "ESH"
+		},
+		{
+			"feature_index": 3,
+			"properties": {
+				"ADM0_A3": "CAN",
+				"ISO_A3": "CAN",
+				"SOV_A3": "CAN",
+				"NAME": "Canada",
+				"NAME_LONG": "Canada",
+				"ADMIN": "Canada",
+				"TYPE": "Sovereign country",
+				"FCLASS_ISO": "Admin-0 country",
+				"FCLASS_US": "",
+				"FCLASS_FR": "",
+				"FCLASS_RU": "",
+				"FCLASS_CN": ""
+			},
+			"registry_id": "CAN"
+		},
+		{
+			"feature_index": 4,
+			"properties": {
+				"ADM0_A3": "USA",
+				"ISO_A3": "USA",
+				"SOV_A3": "US1",
+				"NAME": "United States of America",
+				"NAME_LONG": "United States",
+				"ADMIN": "United States of America",
+				"TYPE": "Country",
+				"FCLASS_ISO": "Admin-0 country",
+				"FCLASS_US": "",
+				"FCLASS_FR": "",
+				"FCLASS_RU": "",
+				"FCLASS_CN": ""
+			},
+			"registry_id": "USA"
 		},
 		{
 			"feature_index": 5,
@@ -742,6 +218,24 @@
 			"registry_id": "CHL"
 		},
 		{
+			"feature_index": 11,
+			"properties": {
+				"ADM0_A3": "COD",
+				"ISO_A3": "COD",
+				"SOV_A3": "COD",
+				"NAME": "Dem. Rep. Congo",
+				"NAME_LONG": "Democratic Republic of the Congo",
+				"ADMIN": "Democratic Republic of the Congo",
+				"TYPE": "Sovereign country",
+				"FCLASS_ISO": "Admin-0 country",
+				"FCLASS_US": "",
+				"FCLASS_FR": "",
+				"FCLASS_RU": "",
+				"FCLASS_CN": ""
+			},
+			"registry_id": "COD"
+		},
+		{
 			"feature_index": 12,
 			"properties": {
 				"ADM0_A3": "SOM",
@@ -850,6 +344,24 @@
 			"registry_id": "DOM"
 		},
 		{
+			"feature_index": 18,
+			"properties": {
+				"ADM0_A3": "RUS",
+				"ISO_A3": "RUS",
+				"SOV_A3": "RUS",
+				"NAME": "Russia",
+				"NAME_LONG": "Russian Federation",
+				"ADMIN": "Russia",
+				"TYPE": "Sovereign country",
+				"FCLASS_ISO": "Admin-0 country",
+				"FCLASS_US": "",
+				"FCLASS_FR": "",
+				"FCLASS_RU": "",
+				"FCLASS_CN": ""
+			},
+			"registry_id": "RUS"
+		},
+		{
 			"feature_index": 19,
 			"properties": {
 				"ADM0_A3": "BHS",
@@ -866,6 +378,24 @@
 				"FCLASS_CN": ""
 			},
 			"registry_id": "BHS"
+		},
+		{
+			"feature_index": 20,
+			"properties": {
+				"ADM0_A3": "FLK",
+				"ISO_A3": "FLK",
+				"SOV_A3": "GB1",
+				"NAME": "Falkland Is.",
+				"NAME_LONG": "Falkland Islands / Malvinas",
+				"ADMIN": "Falkland Islands",
+				"TYPE": "Disputed",
+				"FCLASS_ISO": "Admin-0 dependency",
+				"FCLASS_US": "",
+				"FCLASS_FR": "",
+				"FCLASS_RU": "",
+				"FCLASS_CN": ""
+			},
+			"registry_id": "GBR"
 		},
 		{
 			"feature_index": 21,
@@ -904,6 +434,24 @@
 			"registry_id": "GRL"
 		},
 		{
+			"feature_index": 23,
+			"properties": {
+				"ADM0_A3": "ATF",
+				"ISO_A3": "ATF",
+				"SOV_A3": "FR1",
+				"NAME": "Fr. S. Antarctic Lands",
+				"NAME_LONG": "French Southern and Antarctic Lands",
+				"ADMIN": "French Southern and Antarctic Lands",
+				"TYPE": "Dependency",
+				"FCLASS_ISO": "Admin-0 dependency",
+				"FCLASS_US": "",
+				"FCLASS_FR": "",
+				"FCLASS_RU": "",
+				"FCLASS_CN": ""
+			},
+			"registry_id": "FRA"
+		},
+		{
 			"feature_index": 24,
 			"properties": {
 				"ADM0_A3": "TLS",
@@ -920,6 +468,24 @@
 				"FCLASS_CN": ""
 			},
 			"registry_id": "TLS"
+		},
+		{
+			"feature_index": 25,
+			"properties": {
+				"ADM0_A3": "ZAF",
+				"ISO_A3": "ZAF",
+				"SOV_A3": "ZAF",
+				"NAME": "South Africa",
+				"NAME_LONG": "South Africa",
+				"ADMIN": "South Africa",
+				"TYPE": "Sovereign country",
+				"FCLASS_ISO": "Admin-0 country",
+				"FCLASS_US": "",
+				"FCLASS_FR": "",
+				"FCLASS_RU": "",
+				"FCLASS_CN": ""
+			},
+			"registry_id": "ZAF"
 		},
 		{
 			"feature_index": 26,
@@ -940,6 +506,24 @@
 			"registry_id": "LSO"
 		},
 		{
+			"feature_index": 27,
+			"properties": {
+				"ADM0_A3": "MEX",
+				"ISO_A3": "MEX",
+				"SOV_A3": "MEX",
+				"NAME": "Mexico",
+				"NAME_LONG": "Mexico",
+				"ADMIN": "Mexico",
+				"TYPE": "Sovereign country",
+				"FCLASS_ISO": "Admin-0 country",
+				"FCLASS_US": "",
+				"FCLASS_FR": "",
+				"FCLASS_RU": "",
+				"FCLASS_CN": ""
+			},
+			"registry_id": "MEX"
+		},
+		{
 			"feature_index": 28,
 			"properties": {
 				"ADM0_A3": "URY",
@@ -956,6 +540,24 @@
 				"FCLASS_CN": ""
 			},
 			"registry_id": "URY"
+		},
+		{
+			"feature_index": 29,
+			"properties": {
+				"ADM0_A3": "BRA",
+				"ISO_A3": "BRA",
+				"SOV_A3": "BRA",
+				"NAME": "Brazil",
+				"NAME_LONG": "Brazil",
+				"ADMIN": "Brazil",
+				"TYPE": "Sovereign country",
+				"FCLASS_ISO": "Admin-0 country",
+				"FCLASS_US": "",
+				"FCLASS_FR": "",
+				"FCLASS_RU": "",
+				"FCLASS_CN": ""
+			},
+			"registry_id": "BRA"
 		},
 		{
 			"feature_index": 30,
@@ -1192,6 +794,24 @@
 			"registry_id": "SUR"
 		},
 		{
+			"feature_index": 43,
+			"properties": {
+				"ADM0_A3": "FRA",
+				"ISO_A3": "-99",
+				"SOV_A3": "FR1",
+				"NAME": "France",
+				"NAME_LONG": "France",
+				"ADMIN": "France",
+				"TYPE": "Country",
+				"FCLASS_ISO": "Admin-0 country",
+				"FCLASS_US": "",
+				"FCLASS_FR": "",
+				"FCLASS_RU": "",
+				"FCLASS_CN": ""
+			},
+			"registry_id": "FRA"
+		},
+		{
 			"feature_index": 44,
 			"properties": {
 				"ADM0_A3": "ECU",
@@ -1208,6 +828,24 @@
 				"FCLASS_CN": ""
 			},
 			"registry_id": "ECU"
+		},
+		{
+			"feature_index": 45,
+			"properties": {
+				"ADM0_A3": "PRI",
+				"ISO_A3": "PRI",
+				"SOV_A3": "US1",
+				"NAME": "Puerto Rico",
+				"NAME_LONG": "Puerto Rico",
+				"ADMIN": "Puerto Rico",
+				"TYPE": "Dependency",
+				"FCLASS_ISO": "Admin-0 dependency",
+				"FCLASS_US": "",
+				"FCLASS_FR": "",
+				"FCLASS_RU": "",
+				"FCLASS_CN": ""
+			},
+			"registry_id": "USA"
 		},
 		{
 			"feature_index": 46,
@@ -1750,6 +1388,24 @@
 			"registry_id": "BDI"
 		},
 		{
+			"feature_index": 76,
+			"properties": {
+				"ADM0_A3": "ISR",
+				"ISO_A3": "ISR",
+				"SOV_A3": "IS1",
+				"NAME": "Israel",
+				"NAME_LONG": "Israel",
+				"ADMIN": "Israel",
+				"TYPE": "Disputed",
+				"FCLASS_ISO": "Admin-0 country",
+				"FCLASS_US": "",
+				"FCLASS_FR": "",
+				"FCLASS_RU": "",
+				"FCLASS_CN": ""
+			},
+			"registry_id": "ISR"
+		},
+		{
 			"feature_index": 77,
 			"properties": {
 				"ADM0_A3": "LBN",
@@ -1784,6 +1440,24 @@
 				"FCLASS_CN": ""
 			},
 			"registry_id": "MDG"
+		},
+		{
+			"feature_index": 79,
+			"properties": {
+				"ADM0_A3": "PSX",
+				"ISO_A3": "PSE",
+				"SOV_A3": "IS1",
+				"NAME": "Palestine",
+				"NAME_LONG": "Palestine",
+				"ADMIN": "Palestine",
+				"TYPE": "Indeterminate",
+				"FCLASS_ISO": "Admin-0 dependency",
+				"FCLASS_US": "",
+				"FCLASS_FR": "",
+				"FCLASS_RU": "",
+				"FCLASS_CN": ""
+			},
+			"registry_id": "PSE"
 		},
 		{
 			"feature_index": 80,
@@ -2038,6 +1712,60 @@
 			"registry_id": "MMR"
 		},
 		{
+			"feature_index": 94,
+			"properties": {
+				"ADM0_A3": "VNM",
+				"ISO_A3": "VNM",
+				"SOV_A3": "VNM",
+				"NAME": "Vietnam",
+				"NAME_LONG": "Vietnam",
+				"ADMIN": "Vietnam",
+				"TYPE": "Sovereign country",
+				"FCLASS_ISO": "Admin-0 country",
+				"FCLASS_US": "",
+				"FCLASS_FR": "",
+				"FCLASS_RU": "",
+				"FCLASS_CN": ""
+			},
+			"registry_id": "VNM"
+		},
+		{
+			"feature_index": 95,
+			"properties": {
+				"ADM0_A3": "PRK",
+				"ISO_A3": "PRK",
+				"SOV_A3": "PRK",
+				"NAME": "North Korea",
+				"NAME_LONG": "Dem. Rep. Korea",
+				"ADMIN": "North Korea",
+				"TYPE": "Sovereign country",
+				"FCLASS_ISO": "Admin-0 country",
+				"FCLASS_US": "",
+				"FCLASS_FR": "",
+				"FCLASS_RU": "",
+				"FCLASS_CN": ""
+			},
+			"registry_id": "PRK"
+		},
+		{
+			"feature_index": 96,
+			"properties": {
+				"ADM0_A3": "KOR",
+				"ISO_A3": "KOR",
+				"SOV_A3": "KOR",
+				"NAME": "South Korea",
+				"NAME_LONG": "Republic of Korea",
+				"ADMIN": "South Korea",
+				"TYPE": "Sovereign country",
+				"FCLASS_ISO": "Admin-0 country",
+				"FCLASS_US": "",
+				"FCLASS_FR": "",
+				"FCLASS_RU": "",
+				"FCLASS_CN": ""
+			},
+			"registry_id": "KOR"
+		},
+		{
 			"feature_index": 97,
 			"properties": {
 				"ADM0_A3": "MNG",
@@ -2054,6 +1782,24 @@
 				"FCLASS_CN": ""
 			},
 			"registry_id": "MNG"
+		},
+		{
+			"feature_index": 98,
+			"properties": {
+				"ADM0_A3": "IND",
+				"ISO_A3": "IND",
+				"SOV_A3": "IND",
+				"NAME": "India",
+				"NAME_LONG": "India",
+				"ADMIN": "India",
+				"TYPE": "Sovereign country",
+				"FCLASS_ISO": "Admin-0 country",
+				"FCLASS_US": "",
+				"FCLASS_FR": "",
+				"FCLASS_RU": "",
+				"FCLASS_CN": ""
+			},
+			"registry_id": "IND"
 		},
 		{
 			"feature_index": 99,
@@ -2200,6 +1946,24 @@
 			"registry_id": "TKM"
 		},
 		{
+			"feature_index": 107,
+			"properties": {
+				"ADM0_A3": "IRN",
+				"ISO_A3": "IRN",
+				"SOV_A3": "IRN",
+				"NAME": "Iran",
+				"NAME_LONG": "Iran",
+				"ADMIN": "Iran",
+				"TYPE": "Sovereign country",
+				"FCLASS_ISO": "Admin-0 country",
+				"FCLASS_US": "",
+				"FCLASS_FR": "",
+				"FCLASS_RU": "",
+				"FCLASS_CN": ""
+			},
+			"registry_id": "IRN"
+		},
+		{
 			"feature_index": 108,
 			"properties": {
 				"ADM0_A3": "SYR",
@@ -2270,6 +2034,24 @@
 				"FCLASS_CN": ""
 			},
 			"registry_id": "BLR"
+		},
+		{
+			"feature_index": 112,
+			"properties": {
+				"ADM0_A3": "UKR",
+				"ISO_A3": "UKR",
+				"SOV_A3": "UKR",
+				"NAME": "Ukraine",
+				"NAME_LONG": "Ukraine",
+				"ADMIN": "Ukraine",
+				"TYPE": "Sovereign country",
+				"FCLASS_ISO": "Admin-0 country",
+				"FCLASS_US": "",
+				"FCLASS_FR": "",
+				"FCLASS_RU": "",
+				"FCLASS_CN": ""
+			},
+			"registry_id": "UKR"
 		},
 		{
 			"feature_index": 113,
@@ -2416,6 +2198,24 @@
 			"registry_id": "EST"
 		},
 		{
+			"feature_index": 121,
+			"properties": {
+				"ADM0_A3": "DEU",
+				"ISO_A3": "DEU",
+				"SOV_A3": "DEU",
+				"NAME": "Germany",
+				"NAME_LONG": "Germany",
+				"ADMIN": "Germany",
+				"TYPE": "Sovereign country",
+				"FCLASS_ISO": "Admin-0 country",
+				"FCLASS_US": "",
+				"FCLASS_FR": "",
+				"FCLASS_RU": "",
+				"FCLASS_CN": ""
+			},
+			"registry_id": "DEU"
+		},
+		{
 			"feature_index": 122,
 			"properties": {
 				"ADM0_A3": "BGR",
@@ -2450,6 +2250,24 @@
 				"FCLASS_CN": ""
 			},
 			"registry_id": "GRC"
+		},
+		{
+			"feature_index": 124,
+			"properties": {
+				"ADM0_A3": "TUR",
+				"ISO_A3": "TUR",
+				"SOV_A3": "TUR",
+				"NAME": "Turkey",
+				"NAME_LONG": "Turkey",
+				"ADMIN": "Turkey",
+				"TYPE": "Sovereign country",
+				"FCLASS_ISO": "Admin-0 country",
+				"FCLASS_US": "",
+				"FCLASS_FR": "",
+				"FCLASS_RU": "",
+				"FCLASS_CN": ""
+			},
+			"registry_id": "TUR"
 		},
 		{
 			"feature_index": 125,
@@ -2614,6 +2432,24 @@
 			"registry_id": "IRL"
 		},
 		{
+			"feature_index": 134,
+			"properties": {
+				"ADM0_A3": "NCL",
+				"ISO_A3": "NCL",
+				"SOV_A3": "FR1",
+				"NAME": "New Caledonia",
+				"NAME_LONG": "New Caledonia",
+				"ADMIN": "New Caledonia",
+				"TYPE": "Dependency",
+				"FCLASS_ISO": "Admin-0 dependency",
+				"FCLASS_US": "",
+				"FCLASS_FR": "",
+				"FCLASS_RU": "",
+				"FCLASS_CN": ""
+			},
+			"registry_id": "FRA"
+		},
+		{
 			"feature_index": 135,
 			"properties": {
 				"ADM0_A3": "SLB",
@@ -2650,6 +2486,24 @@
 			"registry_id": "NZL"
 		},
 		{
+			"feature_index": 137,
+			"properties": {
+				"ADM0_A3": "AUS",
+				"ISO_A3": "AUS",
+				"SOV_A3": "AU1",
+				"NAME": "Australia",
+				"NAME_LONG": "Australia",
+				"ADMIN": "Australia",
+				"TYPE": "Country",
+				"FCLASS_ISO": "Admin-0 country",
+				"FCLASS_US": "",
+				"FCLASS_FR": "",
+				"FCLASS_RU": "",
+				"FCLASS_CN": ""
+			},
+			"registry_id": "AUS"
+		},
+		{
 			"feature_index": 138,
 			"properties": {
 				"ADM0_A3": "LKA",
@@ -2668,6 +2522,42 @@
 			"registry_id": "LKA"
 		},
 		{
+			"feature_index": 139,
+			"properties": {
+				"ADM0_A3": "CHN",
+				"ISO_A3": "CHN",
+				"SOV_A3": "CH1",
+				"NAME": "China",
+				"NAME_LONG": "China",
+				"ADMIN": "China",
+				"TYPE": "Country",
+				"FCLASS_ISO": "Admin-0 country",
+				"FCLASS_US": "",
+				"FCLASS_FR": "",
+				"FCLASS_RU": "",
+				"FCLASS_CN": ""
+			},
+			"registry_id": "CHN"
+		},
+		{
+			"feature_index": 140,
+			"properties": {
+				"ADM0_A3": "TWN",
+				"ISO_A3": "TWN",
+				"SOV_A3": "TWN",
+				"NAME": "Taiwan",
+				"NAME_LONG": "Taiwan",
+				"ADMIN": "Taiwan",
+				"TYPE": "Sovereign country",
+				"FCLASS_ISO": "Admin-1 states provinces",
+				"FCLASS_US": "",
+				"FCLASS_FR": "",
+				"FCLASS_RU": "",
+				"FCLASS_CN": "Admin-1 states provinces"
+			},
+			"registry_id": "TWN"
+		},
+		{
 			"feature_index": 141,
 			"properties": {
 				"ADM0_A3": "ITA",
@@ -2684,6 +2574,42 @@
 				"FCLASS_CN": ""
 			},
 			"registry_id": "ITA"
+		},
+		{
+			"feature_index": 142,
+			"properties": {
+				"ADM0_A3": "DNK",
+				"ISO_A3": "DNK",
+				"SOV_A3": "DN1",
+				"NAME": "Denmark",
+				"NAME_LONG": "Denmark",
+				"ADMIN": "Denmark",
+				"TYPE": "Country",
+				"FCLASS_ISO": "Admin-0 country",
+				"FCLASS_US": "",
+				"FCLASS_FR": "",
+				"FCLASS_RU": "",
+				"FCLASS_CN": ""
+			},
+			"registry_id": "GRL"
+		},
+		{
+			"feature_index": 143,
+			"properties": {
+				"ADM0_A3": "GBR",
+				"ISO_A3": "GBR",
+				"SOV_A3": "GB1",
+				"NAME": "United Kingdom",
+				"NAME_LONG": "United Kingdom",
+				"ADMIN": "United Kingdom",
+				"TYPE": "Country",
+				"FCLASS_ISO": "Admin-0 country",
+				"FCLASS_US": "",
+				"FCLASS_FR": "",
+				"FCLASS_RU": "",
+				"FCLASS_CN": ""
+			},
+			"registry_id": "GBR"
 		},
 		{
 			"feature_index": 144,
@@ -2848,6 +2774,24 @@
 			"registry_id": "SVK"
 		},
 		{
+			"feature_index": 153,
+			"properties": {
+				"ADM0_A3": "CZE",
+				"ISO_A3": "CZE",
+				"SOV_A3": "CZE",
+				"NAME": "Czechia",
+				"NAME_LONG": "Czech Republic",
+				"ADMIN": "Czechia",
+				"TYPE": "Sovereign country",
+				"FCLASS_ISO": "Admin-0 country",
+				"FCLASS_US": "",
+				"FCLASS_FR": "",
+				"FCLASS_RU": "",
+				"FCLASS_CN": ""
+			},
+			"registry_id": "CZE"
+		},
+		{
 			"feature_index": 154,
 			"properties": {
 				"ADM0_A3": "ERI",
@@ -2864,6 +2808,24 @@
 				"FCLASS_CN": ""
 			},
 			"registry_id": "ERI"
+		},
+		{
+			"feature_index": 155,
+			"properties": {
+				"ADM0_A3": "JPN",
+				"ISO_A3": "JPN",
+				"SOV_A3": "JPN",
+				"NAME": "Japan",
+				"NAME_LONG": "Japan",
+				"ADMIN": "Japan",
+				"TYPE": "Sovereign country",
+				"FCLASS_ISO": "Admin-0 country",
+				"FCLASS_US": "",
+				"FCLASS_FR": "",
+				"FCLASS_RU": "",
+				"FCLASS_CN": ""
+			},
+			"registry_id": "JPN"
 		},
 		{
 			"feature_index": 156,
@@ -2900,6 +2862,24 @@
 				"FCLASS_CN": ""
 			},
 			"registry_id": "YEM"
+		},
+		{
+			"feature_index": 158,
+			"properties": {
+				"ADM0_A3": "SAU",
+				"ISO_A3": "SAU",
+				"SOV_A3": "SAU",
+				"NAME": "Saudi Arabia",
+				"NAME_LONG": "Saudi Arabia",
+				"ADMIN": "Saudi Arabia",
+				"TYPE": "Sovereign country",
+				"FCLASS_ISO": "Admin-0 country",
+				"FCLASS_US": "",
+				"FCLASS_FR": "",
+				"FCLASS_RU": "",
+				"FCLASS_CN": ""
+			},
+			"registry_id": "SAU"
 		},
 		{
 			"feature_index": 159,
@@ -3172,6 +3152,24 @@
 			"registry_id": "MNE"
 		},
 		{
+			"feature_index": 174,
+			"properties": {
+				"ADM0_A3": "KOS",
+				"ISO_A3": "-99",
+				"SOV_A3": "KOS",
+				"NAME": "Kosovo",
+				"NAME_LONG": "Kosovo",
+				"ADMIN": "Kosovo",
+				"TYPE": "Disputed",
+				"FCLASS_ISO": "Unrecognized",
+				"FCLASS_US": "Admin-0 country",
+				"FCLASS_FR": "Admin-0 country",
+				"FCLASS_RU": "Admin-1 region",
+				"FCLASS_CN": "Unrecognized"
+			},
+			"registry_id": "XKO"
+		},
+		{
 			"feature_index": 175,
 			"properties": {
 				"ADM0_A3": "TTO",
@@ -3208,157 +3206,13 @@
 			"registry_id": "SSD"
 		}
 	],
-	"generated_record_ids": [
-		"FJI",
-		"TZA",
-		"ESH",
-		"KAZ",
-		"UZB",
-		"PNG",
-		"IDN",
-		"ARG",
-		"CHL",
-		"SOM",
-		"KEN",
-		"SDN",
-		"TCD",
-		"HTI",
-		"DOM",
-		"BHS",
-		"NOR",
-		"GRL",
-		"TLS",
-		"LSO",
-		"URY",
-		"BOL",
-		"PER",
-		"COL",
-		"PAN",
-		"CRI",
-		"NIC",
-		"HND",
-		"SLV",
-		"GTM",
-		"BLZ",
-		"VEN",
-		"GUY",
-		"SUR",
-		"ECU",
-		"JAM",
-		"CUB",
-		"ZWE",
-		"BWA",
-		"NAM",
-		"SEN",
-		"MLI",
-		"MRT",
-		"BEN",
-		"NER",
-		"NGA",
-		"CMR",
-		"TGO",
-		"GHA",
-		"CIV",
-		"GIN",
-		"GNB",
-		"LBR",
-		"SLE",
-		"BFA",
-		"CAF",
-		"COG",
-		"GAB",
-		"GNQ",
-		"ZMB",
-		"MWI",
-		"MOZ",
-		"SWZ",
-		"AGO",
-		"BDI",
-		"LBN",
-		"MDG",
-		"GMB",
-		"TUN",
-		"DZA",
-		"JOR",
-		"ARE",
-		"QAT",
-		"KWT",
-		"IRQ",
-		"OMN",
-		"VUT",
-		"KHM",
-		"THA",
-		"LAO",
-		"MMR",
-		"MNG",
-		"BGD",
-		"BTN",
-		"NPL",
-		"PAK",
-		"AFG",
-		"TJK",
-		"KGZ",
-		"TKM",
-		"SYR",
-		"ARM",
-		"SWE",
-		"BLR",
-		"POL",
-		"AUT",
-		"HUN",
-		"MDA",
-		"ROU",
-		"LTU",
-		"LVA",
-		"EST",
-		"BGR",
-		"GRC",
-		"ALB",
-		"HRV",
-		"CHE",
-		"LUX",
-		"BEL",
-		"NLD",
-		"PRT",
-		"ESP",
-		"IRL",
-		"SLB",
-		"NZL",
-		"LKA",
-		"ITA",
-		"ISL",
-		"AZE",
-		"GEO",
-		"PHL",
-		"MYS",
-		"BRN",
-		"SVN",
-		"FIN",
-		"SVK",
-		"ERI",
-		"PRY",
-		"YEM",
-		"ATA",
-		"CYN",
-		"CYP",
-		"MAR",
-		"EGY",
-		"LBY",
-		"ETH",
-		"DJI",
-		"SOL",
-		"UGA",
-		"RWA",
-		"BIH",
-		"MKD",
-		"SRB",
-		"MNE",
-		"TTO",
-		"SSD"
-	],
+	"generated_features": [],
+	"generated_record_ids": [],
 	"notes": [
 		"Natural Earth Admin 0 geometry is source geometry, not political recognition.",
+		"TYPE=\"Sovereign country\" is not sufficient to infer UN membership.",
+		"Unrecognized, breakaway, disputed, dependency, and indeterminate Natural Earth classifications take precedence for generated records.",
 		"Generated records require human review before they should be treated as curated registry entries.",
-		"Missing external IDs remain null unless Natural Earth provided a valid ISO_A3 code."
+		"Missing external IDs remain null unless Natural Earth provided a valid ISO_A3 code, or a valid ADM0_A3 code on a feature without disputed/breakaway markers."
 	]
 }
