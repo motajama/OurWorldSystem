@@ -46,7 +46,8 @@
 				'world_bank_wdi',
 				'world_bank_wdi_extraction',
 				'atlas_economic_complexity',
-				'mock_demo_data'
+				'legacy_demo_seed',
+				'world_system_curated_overrides'
 			],
 			description:
 				'Optional conservative provisional world-system proxy requiring structural support before core classification.'

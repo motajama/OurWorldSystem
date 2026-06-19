@@ -20,6 +20,7 @@ const paths = {
 		repoRoot,
 		'static/data/indicators/productive-complexity.latest.json'
 	),
+	curatedOverrides: path.join(repoRoot, 'static/data/world-system.curated-overrides.json'),
 	output: path.join(repoRoot, 'static/data/indicators/world-system.provisional.latest.json')
 };
 
@@ -36,14 +37,15 @@ const notes = [
 	'This is a provisional proxy model and not a final world-systems classification.',
 	'Core classification is deliberately conservative.',
 	'Quality-of-life data alone cannot generate core status.',
+	'Demo seed data cannot generate core status.',
 	'Extraction autonomy is a negative filter/corroborating condition, not positive proof of core status.',
-	'Derived core status requires positive structural support from productive complexity, value capture, geopolitical-financial power, or curated review.',
+	'Core status requires positive structural support from productive complexity, value capture, geopolitical-financial power, or a curated_reviewed override with rationale.',
 	'Many high-income countries may be provisionally semi-periphery until GVC/value-capture data are added.',
 	'Future versions should include value-chain position, ecological externalization, trade structure, extraction, financial centrality, and conflict/political indicators.'
 ];
 
 const methodologyNote =
-	'Experimental conservative provisional world-system proxy. Existing demo world-system records are preserved as demo_curated. Other records use World Bank WDI quality-of-life and income-related indicators only as welfare proxies. Derived core requires positive structural evidence such as productive complexity, value capture, geopolitical-financial power, or curated/demo review, plus low extraction-dependency/autonomy filters. Extraction autonomy and low extraction dependency can corroborate core but cannot create it. High quality-of-life alone is capped at semi-periphery or uncertain. This is not a final Wallersteinian or dependency-theory classification.';
+	'Experimental conservative provisional world-system proxy. Existing demo world-system records are treated as legacy demo seeds, not curated classifications. Real manual classifications must come from static/data/world-system.curated-overrides.json with source curated_reviewed and a rationale. Derived core requires positive structural evidence such as productive complexity, value capture, or geopolitical-financial power, plus low extraction-dependency/autonomy filters. Demo seed data cannot create core status. Extraction autonomy and low extraction dependency can corroborate core but cannot create it. High quality-of-life alone is capped at semi-periphery or uncertain. This is not a final Wallersteinian or dependency-theory classification.';
 
 function clamp(value, min, max) {
 	return Math.min(max, Math.max(min, value));
@@ -87,6 +89,16 @@ function normalizeWorldSystemDemoData(input) {
 	return new Map(
 		records
 			.filter((record) => record && typeof record === 'object' && typeof record.id === 'string')
+			.map((record) => [record.id, record])
+	);
+}
+
+function normalizeCuratedOverrides(input) {
+	const records = Array.isArray(input?.records) ? input.records : [];
+	return new Map(
+		records
+			.filter((record) => record && typeof record === 'object' && typeof record.id === 'string')
+			.filter((record) => record.world_system?.source === 'curated_reviewed')
 			.map((record) => [record.id, record])
 	);
 }
@@ -151,7 +163,7 @@ function emptyComponents() {
 	return componentsFromRecords(null, null, null);
 }
 
-function positiveStructuralSupports(components, curatedCore = false) {
+function positiveStructuralSupports(components) {
 	const supports = [];
 
 	if (
@@ -169,10 +181,6 @@ function positiveStructuralSupports(components, curatedCore = false) {
 	) {
 		supports.push('geopolitical_financial_power_score >= 70');
 	}
-	if (curatedCore) {
-		supports.push('curated/demo class was already core');
-	}
-
 	return supports;
 }
 
@@ -192,11 +200,8 @@ function negativeOrFilterSupports(components) {
 	return supports;
 }
 
-function structuralSupports(components, curatedCore = false) {
-	return [
-		...positiveStructuralSupports(components, curatedCore),
-		...negativeOrFilterSupports(components)
-	];
+function structuralSupports(components) {
+	return [...positiveStructuralSupports(components), ...negativeOrFilterSupports(components)];
 }
 
 function hasStructuralComponent(components) {
@@ -235,26 +240,41 @@ function confidenceFor(classValue, components, positiveSupportCount, signalsConf
 	return 'medium';
 }
 
-function demoRecordFor(registryRecord, demoUnit, qualityRecord, extractionRecord, productiveRecord) {
-	const demoWorldSystem = demoUnit.world_system ?? {};
-	const classValue = validClasses.has(demoWorldSystem.class) ? demoWorldSystem.class : 'uncertain';
-	const score = normalizeScoreToHundred(demoWorldSystem.score);
-	const confidence = ['low', 'medium', 'high'].includes(demoWorldSystem.confidence)
-		? demoWorldSystem.confidence
-		: 'medium';
+function curatedOverrideRecordFor(
+	registryRecord,
+	overrideRecord,
+	qualityRecord,
+	extractionRecord,
+	productiveRecord
+) {
+	const overrideWorldSystem = overrideRecord.world_system ?? {};
+	const classValue = validClasses.has(overrideWorldSystem.class)
+		? overrideWorldSystem.class
+		: 'uncertain';
 	const components = componentsFromRecords(qualityRecord, extractionRecord, productiveRecord);
-	const positiveSupports = positiveStructuralSupports(components, classValue === 'core');
+	const positiveSupports = positiveStructuralSupports(components);
 	const filterSupports = negativeOrFilterSupports(components);
-	const supports = structuralSupports(components, classValue === 'core');
+	const supports = structuralSupports(components);
+	const rationale =
+		typeof overrideWorldSystem.rationale === 'string' && overrideWorldSystem.rationale.trim().length > 0
+			? overrideWorldSystem.rationale.trim()
+			: null;
 
 	return {
 		id: registryRecord.id,
 		world_system: {
 			class: classValue,
-			score,
-			confidence,
-			source: 'demo_curated',
-			explanation: `${demoWorldSystem.explanation ?? 'Demo curated world-system class.'} This record is preserved from static/data/world-system.latest.json demo data and needs methodological review.`
+			score: normalizeScoreToHundred(overrideWorldSystem.score),
+			confidence: ['low', 'medium', 'high'].includes(overrideWorldSystem.confidence)
+				? overrideWorldSystem.confidence
+				: 'medium',
+			source: 'curated_reviewed',
+			explanation:
+				rationale ??
+				'Manual curated_reviewed override is missing a rationale and should be corrected before publication.',
+			rationale,
+			reviewed_by: overrideWorldSystem.reviewed_by ?? null,
+			reviewed_at: overrideWorldSystem.reviewed_at ?? null
 		},
 		components: {
 			...components,
@@ -263,9 +283,51 @@ function demoRecordFor(registryRecord, demoUnit, qualityRecord, extractionRecord
 			negative_or_filter_supports: filterSupports,
 			previous_proxy_class: classValue,
 			downgraded_from_previous_proxy_core: false,
-			classification_reason: 'demo_curated_preserved'
+			classification_reason: 'curated_reviewed_override'
 		},
-		review_status: demoUnit.review_status === 'reviewed' ? 'reviewed' : 'needs_review'
+		review_status: 'reviewed',
+		classification_status: 'curated_reviewed'
+	};
+}
+
+function demoRecordFor(registryRecord, demoUnit, qualityRecord, extractionRecord, productiveRecord) {
+	const demoWorldSystem = demoUnit.world_system ?? {};
+	const demoClass = validClasses.has(demoWorldSystem.class) ? demoWorldSystem.class : 'uncertain';
+	const classValue = demoClass === 'core' ? 'semi-periphery' : demoClass;
+	const score = normalizeScoreToHundred(demoWorldSystem.score);
+	const confidence = ['low', 'medium', 'high'].includes(demoWorldSystem.confidence)
+		? demoWorldSystem.confidence
+		: 'medium';
+	const components = componentsFromRecords(qualityRecord, extractionRecord, productiveRecord);
+	const positiveSupports = positiveStructuralSupports(components);
+	const filterSupports = negativeOrFilterSupports(components);
+	const supports = structuralSupports(components);
+	const reinterpretedCore = demoClass === 'core';
+
+	return {
+		id: registryRecord.id,
+		world_system: {
+			class: classValue,
+			score,
+			confidence: reinterpretedCore ? 'low' : confidence,
+			source: reinterpretedCore ? 'legacy_demo_seed_reinterpreted' : 'legacy_demo_seed',
+			explanation: reinterpretedCore
+				? 'Original demo seed marked this as core, but demo data are not treated as real curated classification. Without positive structural evidence of value capture or productive complexity, provisional class is semi-periphery.'
+				: `${demoWorldSystem.explanation ?? 'Demo seed world-system class.'} This record is a UI/demo seed from static/data/world-system.latest.json and is not a reviewed structural classification.`
+		},
+		components: {
+			...components,
+			structural_supports: supports,
+			positive_structural_supports: positiveSupports,
+			negative_or_filter_supports: filterSupports,
+			previous_proxy_class: demoClass,
+			downgraded_from_previous_proxy_core: reinterpretedCore,
+			classification_reason: reinterpretedCore
+				? 'legacy_demo_seed_core_reinterpreted_without_structural_evidence'
+				: 'legacy_demo_seed'
+		},
+		review_status: 'needs_review',
+		classification_status: 'demo_only'
 	};
 }
 
@@ -298,7 +360,8 @@ function noDataRecord(
 			downgraded_from_previous_proxy_core: false,
 			classification_reason: classValue
 		},
-		review_status: 'needs_review'
+		review_status: 'needs_review',
+		classification_status: 'provisional_model'
 	};
 }
 
@@ -450,7 +513,8 @@ function derivedRecordFor(registryRecord, qualityRecord, extractionRecord, produ
 			downgraded_from_previous_proxy_core: downgraded,
 			classification_reason: reason
 		},
-		review_status: 'needs_review'
+		review_status: 'needs_review',
+		classification_status: 'provisional_model'
 	};
 }
 
@@ -476,8 +540,16 @@ function diagnosticsFor(records, registry) {
 	const derivedCoreCount = coreCandidates.filter((record) =>
 		record.world_system.source.startsWith('derived')
 	).length;
-	const curatedDemoCoreCount = coreCandidates.filter(
-		(record) => record.world_system.source === 'demo_curated'
+	const curatedReviewedCoreCount = coreCandidates.filter(
+		(record) => record.world_system.source === 'curated_reviewed'
+	).length;
+	const demoSeedReinterpreted = records
+		.filter((record) => record.world_system.source === 'legacy_demo_seed_reinterpreted')
+		.sort((a, b) => (b.world_system.score ?? -1) - (a.world_system.score ?? -1));
+	const legacyDemoSeedCount = records.filter(
+		(record) =>
+			record.world_system.source === 'legacy_demo_seed' ||
+			record.world_system.source === 'legacy_demo_seed_reinterpreted'
 	).length;
 	const highScoreNonCore = records
 		.filter((record) => record.world_system.class !== 'core' && (record.world_system.score ?? -1) >= 78)
@@ -514,10 +586,13 @@ function diagnosticsFor(records, registry) {
 		class_distribution: distribution,
 		core_count: coreCandidates.length,
 		derived_core_count: derivedCoreCount,
-		curated_demo_core_count: curatedDemoCoreCount,
+		curated_reviewed_core_count: curatedReviewedCoreCount,
+		legacy_demo_seed_count: legacyDemoSeedCount,
+		demo_seed_reinterpreted_count: demoSeedReinterpreted.length,
 		high_score_non_core_count: highScoreNonCore.length,
 		downgraded_from_previous_proxy_core_count: downgraded.length,
 		core_candidates: coreCandidates.slice(0, 30).map(summarize),
+		demo_seed_reinterpreted: demoSeedReinterpreted.slice(0, 60).map(summarize),
 		high_score_non_core: highScoreNonCore.slice(0, 30).map(summarize),
 		prevented_missing_positive_structural_evidence: preventedMissingPositive
 			.slice(0, 60)
@@ -527,15 +602,24 @@ function diagnosticsFor(records, registry) {
 }
 
 async function main() {
-	const [registry, qualityOfLife, worldSystemDemo, extractionDependency, productiveComplexity] =
+	const [
+		registry,
+		qualityOfLife,
+		worldSystemDemo,
+		extractionDependency,
+		productiveComplexity,
+		curatedOverrides
+	] =
 		await Promise.all([
 			readJson(paths.registry),
 			readJson(paths.qualityOfLife),
 			readJson(paths.worldSystemDemo),
 			readJsonIfPresent(paths.extractionDependency),
-			readJsonIfPresent(paths.productiveComplexity)
+			readJsonIfPresent(paths.productiveComplexity),
+			readJsonIfPresent(paths.curatedOverrides)
 		]);
 	const demoById = normalizeWorldSystemDemoData(worldSystemDemo);
+	const curatedOverrideById = normalizeCuratedOverrides(curatedOverrides);
 	const qualityById = new Map((qualityOfLife.records ?? []).map((record) => [record.id, record]));
 	const extractionById = recordsById(extractionDependency, (record) =>
 		isFiniteNumber(record.extraction_autonomy_score)
@@ -545,15 +629,24 @@ async function main() {
 	);
 
 	const records = registry.map((registryRecord) => {
+		const curatedOverride = curatedOverrideById.get(registryRecord.id);
 		const demoUnit = demoById.get(registryRecord.id);
 		const qualityRecord = qualityById.get(registryRecord.id);
 		const extractionRecord = extractionById.get(registryRecord.id);
 		const productiveRecord = productiveById.get(registryRecord.id);
 
-		return demoUnit
-			? demoRecordFor(
+		return curatedOverride
+			? curatedOverrideRecordFor(
 					registryRecord,
-					demoUnit,
+					curatedOverride,
+					qualityRecord,
+					extractionRecord,
+					productiveRecord
+				)
+			: demoUnit
+				? demoRecordFor(
+						registryRecord,
+						demoUnit,
 					qualityRecord,
 					extractionRecord,
 					productiveRecord
@@ -569,7 +662,8 @@ async function main() {
 			'world_bank_wdi',
 			'world_bank_wdi_extraction',
 			'atlas_economic_complexity',
-			'mock_demo_data'
+			'legacy_demo_seed',
+			'world_system_curated_overrides'
 		],
 		model_status: 'provisional_conservative_proxy',
 		generated_at: new Date().toISOString(),
@@ -587,7 +681,9 @@ async function main() {
 	console.log(`Class distribution: ${JSON.stringify(diagnostics.class_distribution, null, 2)}`);
 	console.log(`Core count: ${diagnostics.core_count}`);
 	console.log(`Derived core count: ${diagnostics.derived_core_count}`);
-	console.log(`Curated/demo core count: ${diagnostics.curated_demo_core_count}`);
+	console.log(`Curated reviewed core count: ${diagnostics.curated_reviewed_core_count}`);
+	console.log(`Legacy demo seed records: ${diagnostics.legacy_demo_seed_count}`);
+	console.log(`Demo seed records reinterpreted: ${diagnostics.demo_seed_reinterpreted_count}`);
 	console.log(`High-score non-core count: ${diagnostics.high_score_non_core_count}`);
 	console.log(`Previous proxy core count: ${diagnostics.previous_proxy_core_count}`);
 	console.log(
@@ -597,6 +693,8 @@ async function main() {
 	console.log(JSON.stringify(diagnostics.prevented_missing_positive_structural_evidence, null, 2));
 	console.log('Top 30 core candidates with components:');
 	console.log(JSON.stringify(diagnostics.core_candidates, null, 2));
+	console.log('Demo seed records reinterpreted:');
+	console.log(JSON.stringify(diagnostics.demo_seed_reinterpreted, null, 2));
 	console.log('Top 30 high-score non-core countries:');
 	console.log(JSON.stringify(diagnostics.high_score_non_core, null, 2));
 	console.log('Top 30 downgraded high-quality countries with reason:');

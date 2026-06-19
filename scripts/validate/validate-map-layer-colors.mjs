@@ -215,9 +215,18 @@ function mergeUnits(
 							confidence: provisionalWorldSystemRecord.world_system.confidence,
 							source: provisionalWorldSystemRecord.world_system.source,
 							model_status: provisionalWorldSystem?.model_status ?? 'provisional',
-							explanation: provisionalWorldSystemRecord.world_system.explanation
+							explanation: provisionalWorldSystemRecord.world_system.explanation,
+							structural_supports: provisionalWorldSystemRecord.components.structural_supports ?? [],
+							positive_structural_supports:
+								provisionalWorldSystemRecord.components.positive_structural_supports ?? [],
+							negative_or_filter_supports:
+								provisionalWorldSystemRecord.components.negative_or_filter_supports ?? [],
+							classification_reason:
+								provisionalWorldSystemRecord.components.classification_reason
 						},
-						sources: [...new Set([...(unit.sources ?? []), 'world_bank_wdi', 'mock_demo_data'])]
+						sources: [
+							...new Set([...(unit.sources ?? []), 'world_bank_wdi', 'legacy_demo_seed'])
+						]
 					}
 				: unit;
 			const worldBankRecord = worldBankQualityById.get(record.id);
