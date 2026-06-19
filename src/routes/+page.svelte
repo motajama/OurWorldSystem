@@ -6,10 +6,12 @@
 	import Legend from '$lib/components/Legend.svelte';
 	import WorldMap from '$lib/components/WorldMap.svelte';
 	import { DEFAULT_MAP_LAYER_ID } from '$lib/mapLayers';
+	import { loadMapUnitRegistry } from '$lib/mapUnitRegistry';
 	import type {
 		DataEnvelope,
 		MapLayerId,
 		MapUnit,
+		MapUnitRegistryRecord,
 		UcdpConflictDataset,
 		WorldBankQualityOfLifeDataset
 	} from '$lib/types';
@@ -60,6 +62,99 @@
 
 	function staticUrl(path: string) {
 		return `${base}${path.startsWith('/') ? path : `/${path}`}`;
+	}
+
+	function createRegistryNoDataUnit(record: MapUnitRegistryRecord): MapUnit {
+		return {
+			id: record.id,
+			name: record.display_name,
+			map_unit_type: record.map_unit_type,
+			recognition_status: record.recognition_status,
+			sovereignty_note: record.sovereignty_note,
+			world_system: {
+				class: 'no_data',
+				score: null,
+				confidence: 'low',
+				explanation: 'Registry map unit exists, but no world-system model output is available yet.'
+			},
+			conflict: {
+				war_on_territory: null,
+				involved_in_conflict: null,
+				active_conflicts: [],
+				fatalities_best_estimate: null,
+				child_casualties_verified: null,
+				latest_year: null,
+				source: null,
+				notes: 'No conflict indicator record is available yet.'
+			},
+			press_freedom: {
+				source: 'No data',
+				score: null,
+				category: null,
+				year: 2026
+			},
+			political_freedom: {
+				source: 'No data',
+				score: null,
+				category: null,
+				year: 2026
+			},
+			quality_of_life: {
+				hdi: null,
+				ihdi: null,
+				life_expectancy: null,
+				education_index: null,
+				gni_per_capita_ppp: null,
+				secondary_enrollment_gross: null,
+				population: null,
+				quality_of_life_score: null,
+				source: null
+			},
+			ecology: {
+				epi_score: null,
+				material_footprint_per_capita: null,
+				co2_per_capita: null,
+				ewaste_generated_kg_per_capita: null
+			},
+			exploitation_position: {
+				resource_export_dependency: null,
+				foreign_value_added_share: null,
+				domestic_value_capture: null,
+				ewaste_import_risk: null,
+				notes: null
+			},
+			sources: ['map_unit_registry', 'natural_earth'],
+			last_updated: record.last_reviewed
+		};
+	}
+
+	function applyRegistryMetadata(unit: MapUnit, record: MapUnitRegistryRecord): MapUnit {
+		return {
+			...unit,
+			name: record.display_name,
+			map_unit_type: record.map_unit_type,
+			recognition_status: record.recognition_status,
+			sovereignty_note: record.sovereignty_note,
+			sources: [...new Set(['map_unit_registry', ...unit.sources])]
+		};
+	}
+
+	function mergeRegistryAndWorldSystemDemo(
+		registry: MapUnitRegistryRecord[],
+		worldSystemData: DataEnvelope
+	) {
+		const registryById = new Map(registry.map((record) => [record.id, record]));
+		const demoUnitsById = new Map(worldSystemData.map_units.map((unit) => [unit.id, unit]));
+		const registryUnits = registry.map((record) => {
+			const demoUnit = demoUnitsById.get(record.id);
+
+			return demoUnit ? applyRegistryMetadata(demoUnit, record) : createRegistryNoDataUnit(record);
+		});
+		const demoUnitsWithoutRegistryRecord = worldSystemData.map_units.filter(
+			(unit) => !registryById.has(unit.id)
+		);
+
+		return [...registryUnits, ...demoUnitsWithoutRegistryRecord];
 	}
 
 	async function loadOptionalIndicatorIndex() {
@@ -198,15 +293,18 @@
 					source: 'UCDP',
 					notes: record.conflict_summary.notes
 				},
-				sources: [...new Set([...unit.sources.filter((source) => source !== 'mock'), ...record.sources])]
+				sources: [
+					...new Set([...unit.sources.filter((source) => source !== 'mock'), ...record.sources])
+				]
 			};
 		});
 	}
 
 	onMount(async () => {
 		try {
-			const [response, indicatorIndex] = await Promise.all([
+			const [response, registry, indicatorIndex] = await Promise.all([
 				fetch(`${base}/data/world-system.latest.json`),
+				loadMapUnitRegistry(base),
 				loadOptionalIndicatorIndex()
 			]);
 			const [worldBankData, ucdpData] = await Promise.all([
@@ -219,8 +317,9 @@
 			}
 
 			const data = (await response.json()) as DataEnvelope;
+			const registryBackedUnits = mergeRegistryAndWorldSystemDemo(registry, data);
 			const mergedUnits = mergeUcdpConflicts(
-				mergeWorldBankQualityOfLife(data.map_units, worldBankData),
+				mergeWorldBankQualityOfLife(registryBackedUnits, worldBankData),
 				ucdpData
 			);
 			units = mergedUnits;
@@ -248,7 +347,7 @@
 			<LayerSelector {selectedLayer} onLayerChange={selectLayer} />
 
 			{#if loading}
-				<div class="state-message">Loading static mock data...</div>
+				<div class="state-message">Loading static map-unit data...</div>
 			{:else if error}
 				<div class="state-message error">{error}</div>
 			{:else}

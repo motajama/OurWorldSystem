@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { base } from '$app/paths';
+	import { dev } from '$app/environment';
 	import { onDestroy, onMount } from 'svelte';
 	import {
 		geoEqualEarth,
@@ -83,9 +84,19 @@
 		renderKey: string;
 		name: string;
 		path: string;
-		unit: MapUnit | null;
+		unit: MapUnit;
+		hasIndicatorRecord: boolean;
 		registryRecord: MapUnitRegistryRecord | null;
 		properties: GeoFeatureProperties;
+	};
+
+	type RenderCoverageStats = {
+		naturalEarthFeatures: number;
+		drawablePaths: number;
+		registryMatches: number;
+		worldSystemDemoDataMatches: number;
+		worldBankQualityDataMatches: number;
+		noDataPaths: number;
 	};
 
 	const viewBox = {
@@ -109,12 +120,14 @@
 	let geometryDiagnostic = $state<string | null>(null);
 	let registryDiagnostic = $state<string | null>(null);
 	let notice = $state<string | null>(null);
+	let renderCoverageDiagnostic = $state<string | null>(null);
 	let svgElement = $state<SVGSVGElement | null>(null);
 	let zoomBehavior: ZoomBehavior<SVGSVGElement, unknown> | null = null;
 	let currentTransform = $state<ZoomTransform>(zoomIdentity);
 	let isDraggingMap = $state(false);
 	let pointerStart: { x: number; y: number } | null = null;
 	let suppressNextFeatureClick = false;
+	let didLogRenderCoverage = false;
 
 	const disputedNotice =
 		'This is a disputed or special map unit in the Natural Earth source layer. OurWorldSystem does not adjudicate sovereignty.';
@@ -365,12 +378,12 @@
 	function isDisputedRegistryRecord(record: MapUnitRegistryRecord | null) {
 		return Boolean(
 			record &&
-				(record.map_unit_type === 'disputed' ||
-					record.map_unit_type === 'special' ||
-					record.map_unit_type === 'territory' ||
-					record.recognition_status === 'disputed' ||
-					record.recognition_status === 'non_un_member' ||
-					record.recognition_status === 'special')
+			(record.map_unit_type === 'disputed' ||
+				record.map_unit_type === 'special' ||
+				record.map_unit_type === 'territory' ||
+				record.recognition_status === 'disputed' ||
+				record.recognition_status === 'non_un_member' ||
+				record.recognition_status === 'special')
 		);
 	}
 
@@ -391,16 +404,18 @@
 			.join('::');
 	}
 
-	function createNoDataUnit(renderFeature: RenderFeature, isDisputedOverlay = false): MapUnit {
-		const id = renderFeature.registryRecord?.id ?? renderFeature.id;
-		const name = renderFeature.registryRecord?.display_name ?? renderFeature.name;
+	function createNoDataUnit(
+		id: string,
+		name: string,
+		registryRecord: MapUnitRegistryRecord | null,
+		isDisputedOverlay = false
+	): MapUnit {
 		const mapUnitType =
-			renderFeature.registryRecord?.map_unit_type ?? (isDisputedOverlay ? 'disputed' : 'no_data');
+			registryRecord?.map_unit_type ?? (isDisputedOverlay ? 'disputed' : 'no_data');
 		const recognitionStatus =
-			renderFeature.registryRecord?.recognition_status ?? (isDisputedOverlay ? 'disputed' : 'unknown');
+			registryRecord?.recognition_status ?? (isDisputedOverlay ? 'disputed' : 'unknown');
 		const sovereigntyNote =
-			renderFeature.registryRecord?.sovereignty_note ??
-			(isDisputedOverlay ? disputedSovereigntyNote : null);
+			registryRecord?.sovereignty_note ?? (isDisputedOverlay ? disputedSovereigntyNote : null);
 
 		return {
 			id,
@@ -496,13 +511,16 @@
 					(isDisputedLayer
 						? `disputed::${normalizeInternalId(`${renderKey}:${name}`)}`
 						: String(fallbackId));
+				const indicatorUnit = findUnit(properties, registryRecord);
+				const unit = indicatorUnit ?? createNoDataUnit(id, name, registryRecord, isDisputedLayer);
 
 				return {
 					id,
 					renderKey,
 					name,
 					path: featurePath,
-					unit: findUnit(properties, registryRecord),
+					unit,
+					hasIndicatorRecord: Boolean(indicatorUnit),
 					registryRecord,
 					properties
 				};
@@ -511,19 +529,13 @@
 	}
 
 	function selectFeature(renderFeature: RenderFeature, isDisputedOverlay = false) {
-		if (renderFeature.unit) {
-			notice = null;
-			onSelect(renderFeature.unit);
-			return;
-		}
-
 		if (isDisputedOverlay) {
 			notice = disputedNotice;
 		} else {
 			notice = null;
 		}
 
-		onSelect(createNoDataUnit(renderFeature, isDisputedOverlay));
+		onSelect(renderFeature.unit);
 	}
 
 	function handleFeatureClick(
@@ -539,9 +551,58 @@
 		selectFeature(renderFeature, isDisputedOverlay);
 	}
 
-	function getLayerValueLabel(unit: MapUnit | null) {
+	function getLayerValueLabel(unit: MapUnit) {
 		const value = getMapUnitLayerValue(unit, selectedLayer);
 		return selectedLayerLegendByValue.get(value)?.label ?? selectedLayerDefinition.noDataLabel;
+	}
+
+	function hasWorldBankQualityData(unit: MapUnit) {
+		return Boolean(
+			unit.quality_of_life?.source === 'World Bank WDI' ||
+			unit.quality_of_life?.quality_of_life_score !== undefined ||
+			unit.sources.includes('world_bank_wdi')
+		);
+	}
+
+	function buildRenderCoverageStats(
+		naturalEarthFeatureCount: number,
+		renderedWorldFeatures: RenderFeature[]
+	): RenderCoverageStats {
+		return {
+			naturalEarthFeatures: naturalEarthFeatureCount,
+			drawablePaths: renderedWorldFeatures.length,
+			registryMatches: renderedWorldFeatures.filter((renderFeature) => renderFeature.registryRecord)
+				.length,
+			worldSystemDemoDataMatches: renderedWorldFeatures.filter(
+				(renderFeature) =>
+					renderFeature.hasIndicatorRecord &&
+					(renderFeature.unit.sources.includes('mock') ||
+						renderFeature.unit.sources.includes('mock_demo_data'))
+			).length,
+			worldBankQualityDataMatches: renderedWorldFeatures.filter((renderFeature) =>
+				hasWorldBankQualityData(renderFeature.unit)
+			).length,
+			noDataPaths: renderedWorldFeatures.filter(
+				(renderFeature) => getMapUnitLayerValue(renderFeature.unit, 'world_system') === 'no_data'
+			).length
+		};
+	}
+
+	function formatRenderCoverageStats(stats: RenderCoverageStats) {
+		return `Natural Earth features extracted: ${stats.naturalEarthFeatures}; drawable paths generated: ${stats.drawablePaths}; paths with registry match: ${stats.registryMatches}; paths with world-system demo data: ${stats.worldSystemDemoDataMatches}; paths with World Bank quality data: ${stats.worldBankQualityDataMatches}; paths with no_data: ${stats.noDataPaths}.`;
+	}
+
+	function reportRenderCoverage(stats: RenderCoverageStats) {
+		const message = formatRenderCoverageStats(stats);
+
+		if (dev) {
+			renderCoverageDiagnostic = message;
+		}
+
+		if (dev && !didLogRenderCoverage) {
+			console.info(`[OurWorldSystem] ${message}`);
+			didLogRenderCoverage = true;
+		}
 	}
 
 	function handleKeydown(
@@ -711,9 +772,7 @@
 					isDraggingMap = false;
 				});
 
-			select<SVGSVGElement, unknown>(svgElement)
-				.call(zoomBehavior)
-				.on('dblclick.zoom', null);
+			select<SVGSVGElement, unknown>(svgElement).call(zoomBehavior).on('dblclick.zoom', null);
 		}
 
 		let registryIndexes: RegistryIndexes | null = null;
@@ -768,6 +827,10 @@
 				'base',
 				registryIndexes
 			);
+			const coverageStats = buildRenderCoverageStats(
+				extractedWorld.features.length,
+				renderedWorldFeatures
+			);
 
 			if (renderedWorldFeatures.length === 0) {
 				geometryDiagnostic = `TopoJSON object "${extractedWorld.objectKey}" produced ${extractedWorld.features.length} features, but none generated drawable SVG paths.`;
@@ -806,6 +869,7 @@
 					: null;
 			}
 
+			reportRenderCoverage(coverageStats);
 			geometryStatus = '';
 		} catch {
 			geometryStatus = 'Natural Earth geometry loaded, but projection or rendering failed.';
@@ -827,7 +891,7 @@
 			<p>Static Natural Earth layer</p>
 			<h2 id="map-title">World-system map units</h2>
 		</div>
-		<span>{selectedLayerDefinition.shortLabel} · {units.length} mock units</span>
+		<span>{selectedLayerDefinition.shortLabel} · {units.length} registry units</span>
 	</div>
 
 	<div class="map-frame">
@@ -863,8 +927,8 @@
 			<title>OurWorldSystem Natural Earth map layer</title>
 			<desc id="map-description">
 				An interactive Natural Earth world map. Matched map units are colored by the selected
-				{selectedLayerDefinition.label} layer. Unmatched geometry is shown as no data. Disputed and
-				breakaway areas are drawn as a subtle overlay when available.
+				{selectedLayerDefinition.label} layer. Unmatched geometry is shown as no data. Disputed and breakaway
+				areas are drawn as a subtle overlay when available.
 			</desc>
 			<rect width={viewBox.width} height={viewBox.height} fill="#07111f" />
 
@@ -878,21 +942,22 @@
 					<g class="base-layer" aria-label="Natural Earth Admin 0 map units">
 						{#each features as renderFeature (renderFeature.renderKey)}
 							{@const unit = renderFeature.unit}
-							{@const selected =
-								unit?.id === selectedId || (!unit && renderFeature.id === selectedId)}
+							{@const selected = unit.id === selectedId}
 							{@const valueLabel = getLayerValueLabel(unit)}
 							<path
 								class={`map-unit ${getMapUnitFillClass(unit, selectedLayer)}`}
 								class:selected
-								class:matched={Boolean(unit)}
+								class:matched={renderFeature.hasIndicatorRecord}
+								class:registry-matched={Boolean(renderFeature.registryRecord)}
+								class:no-data={getMapUnitLayerValue(unit, selectedLayer) === 'no_data'}
 								d={renderFeature.path}
 								role="button"
 								tabindex="0"
-								aria-label={`Select ${unit?.name ?? renderFeature.name}. ${selectedLayerDefinition.label}: ${valueLabel}`}
+								aria-label={`Select ${unit.name}. ${selectedLayerDefinition.label}: ${valueLabel}`}
 								onclick={(event) => handleFeatureClick(event, renderFeature)}
 								onkeydown={(event) => handleKeydown(event, renderFeature)}
 							>
-								<title>{unit?.name ?? renderFeature.name}: {selectedLayerDefinition.label} - {valueLabel}</title>
+								<title>{unit.name}: {selectedLayerDefinition.label} - {valueLabel}</title>
 							</path>
 						{/each}
 					</g>
@@ -902,8 +967,7 @@
 							{#each disputedFeatures as renderFeature (renderFeature.renderKey)}
 								{@const unit = renderFeature.unit}
 								{@const valueLabel = getLayerValueLabel(unit)}
-								{@const selected =
-									unit?.id === selectedId || (!unit && renderFeature.id === selectedId)}
+								{@const selected = unit.id === selectedId}
 								{@const description = getDisputedDescription(renderFeature)}
 								<path
 									class:selected
@@ -935,6 +999,9 @@
 	{/if}
 	{#if registryDiagnostic}
 		<p class="diagnostic" role="status">{registryDiagnostic}</p>
+	{/if}
+	{#if dev && renderCoverageDiagnostic}
+		<p class="diagnostic" role="status">{renderCoverageDiagnostic}</p>
 	{/if}
 </section>
 
@@ -1009,6 +1076,9 @@
 	path {
 		stroke: rgba(15, 23, 42, 0.96);
 		stroke-width: 0.45;
+		fill: #64748b;
+		opacity: 0.92;
+		pointer-events: auto;
 		vector-effect: non-scaling-stroke;
 		transition:
 			fill 140ms ease,
@@ -1048,6 +1118,8 @@
 	.map-unit.layer-exploitation-no-data,
 	.map-unit.layer-ecology-no-data {
 		fill: #64748b;
+		stroke: rgba(203, 213, 225, 0.34);
+		opacity: 0.68;
 	}
 
 	.map-unit.layer-conflict-active-war-on-territory {
