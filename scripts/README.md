@@ -40,13 +40,14 @@ Current data generation scripts are split by source:
 ```sh
 npm run data:fetch:worldbank
 npm run data:fetch:ucdp
+npm run data:build:worldsystem
 npm run data:build
 npm run registry:seed
 npm run registry:review
 npm run data:coverage
 ```
 
-`data:build` runs both current public-data fetchers. Run individual fetchers when only one generated output needs to be refreshed.
+`data:build` runs the World Bank fetcher, attempts the optional UCDP fetch, and then builds the provisional world-system proxy. UCDP source failures are intentionally non-fatal for `data:build` because the default map layer should still be reproducible from local World Bank data and demo records. Run individual fetchers when only one generated output needs to be refreshed.
 
 `data:coverage` does not fetch external data. It compares current static geometry and data files, then writes:
 
@@ -141,6 +142,45 @@ education_score = clamp(secondary_enrollment_gross / 100, 0, 1), if available
 ```
 
 The score is computed only when life expectancy and GNI per capita PPP are present. Missing World Bank values remain absent and should display as `No data`.
+
+## Provisional World-System Pipeline
+
+Run:
+
+```sh
+npm run data:build:worldsystem
+```
+
+This calls `scripts/data/build-provisional-world-system.mjs` and writes:
+
+- `static/data/indicators/world-system.provisional.latest.json`
+
+Inputs:
+
+- `static/data/map-units.registry.json`
+- `static/data/indicators/quality-of-life.world-bank.latest.json`
+- `static/data/world-system.latest.json`
+
+The output is a provisional, derived, experimental proxy for the default `world_system` layer. It is not a final Wallersteinian classification. The builder preserves existing demo records as `source: "demo_curated"` and derives other records from World Bank WDI quality-of-life data as `source: "derived_world_bank_quality_proxy"`.
+
+The provisional score is 0-100. It starts from the World Bank-derived `quality_of_life_score` and applies a small normalized log-income adjustment when GNI per capita PPP is available. Current temporary bins are:
+
+- `core`: score >= 78
+- `semi-periphery`: score >= 55 and < 78
+- `periphery`: score < 55
+- `uncertain`: insufficient or contradictory signals
+- `disputed`: disputed map units without stable comparable data
+- `no_data`: missing values
+
+Validate it with:
+
+```sh
+npm run validate:worldsystem
+```
+
+The validator checks schema, registry IDs, uniqueness, classes, score ranges, confidence, source, review status, class distribution, and no-data coverage against available World Bank records.
+
+Future versions should replace this proxy with a documented structural model that includes OECD TiVA, trade/value-chain data, material footprint, e-waste, ecological externalization, military/geopolitical position, financial centrality, conflict exposure, and political-freedom indicators.
 
 ## UCDP Conflict Pipeline
 

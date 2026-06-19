@@ -13,6 +13,7 @@
 		MapLayerId,
 		MapUnit,
 		MapUnitRegistryRecord,
+		ProvisionalWorldSystemDataset,
 		UcdpConflictDataset,
 		WorldBankQualityOfLifeDataset
 	} from '$lib/types';
@@ -34,6 +35,15 @@
 			available: true,
 			source_ids: ['world_bank_wdi'],
 			description: 'Optional World Bank WDI quality-of-life indicators.'
+		},
+		{
+			id: 'world_system_provisional_latest',
+			path: '/data/indicators/world-system.provisional.latest.json',
+			required: false,
+			available: true,
+			source_ids: ['world_bank_wdi', 'mock_demo_data'],
+			description:
+				'Optional provisional world-system proxy derived from World Bank quality-of-life indicators while preserving demo world-system classes.'
 		},
 		{
 			id: 'conflict_ucdp_latest',
@@ -201,6 +211,20 @@
 		return (await response.json()) as WorldBankQualityOfLifeDataset;
 	}
 
+	async function loadOptionalProvisionalWorldSystem(index: OptionalIndicatorIndexEntry[]) {
+		const path = optionalIndicatorPath(index, 'world_system_provisional_latest');
+		if (!path) return null;
+
+		const response = await fetch(staticUrl(path));
+
+		if (!response.ok) {
+			if (response.status === 404) return null;
+			throw new Error(`Failed to load provisional world-system data: ${response.status}`);
+		}
+
+		return (await response.json()) as ProvisionalWorldSystemDataset;
+	}
+
 	async function loadOptionalUcdpConflicts(index: OptionalIndicatorIndexEntry[]) {
 		const path = optionalIndicatorPath(index, 'conflict_ucdp_latest');
 		if (!path) return null;
@@ -213,6 +237,34 @@
 		}
 
 		return (await response.json()) as UcdpConflictDataset;
+	}
+
+	function mergeProvisionalWorldSystem(
+		mapUnits: MapUnit[],
+		provisionalData: ProvisionalWorldSystemDataset | null
+	) {
+		if (!provisionalData) return mapUnits;
+
+		const recordsById = new Map(provisionalData.records.map((record) => [record.id, record]));
+
+		return mapUnits.map((unit) => {
+			const record = recordsById.get(unit.id);
+
+			if (!record) return unit;
+
+			return {
+				...unit,
+				world_system: {
+					class: record.world_system.class,
+					score: record.world_system.score,
+					confidence: record.world_system.confidence,
+					source: record.world_system.source,
+					model_status: provisionalData.model_status,
+					explanation: record.world_system.explanation
+				},
+				sources: [...new Set([...unit.sources, ...provisionalData.source_ids])]
+			};
+		});
 	}
 
 	function mergeWorldBankQualityOfLife(
@@ -312,8 +364,9 @@
 				loadMapUnitRegistry(base),
 				loadOptionalIndicatorIndex()
 			]);
-			const [worldBankData, ucdpData] = await Promise.all([
+			const [worldBankData, provisionalWorldSystemData, ucdpData] = await Promise.all([
 				loadOptionalWorldBankQualityOfLife(indicatorIndex),
+				loadOptionalProvisionalWorldSystem(indicatorIndex),
 				loadOptionalUcdpConflicts(indicatorIndex)
 			]);
 
@@ -331,7 +384,10 @@
 				normalizedWorldSystemDemoData
 			);
 			const mergedUnits = mergeUcdpConflicts(
-				mergeWorldBankQualityOfLife(registryBackedUnits, worldBankData),
+				mergeWorldBankQualityOfLife(
+					mergeProvisionalWorldSystem(registryBackedUnits, provisionalWorldSystemData),
+					worldBankData
+				),
 				ucdpData
 			);
 			registry = loadedRegistry;

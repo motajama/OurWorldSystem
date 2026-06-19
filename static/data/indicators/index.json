@@ -8,11 +8,37 @@
 		"description": "Optional World Bank WDI quality-of-life indicators."
 	},
 	{
+		"id": "world_system_provisional_latest",
+		"path": "/data/indicators/world-system.provisional.latest.json",
+		"required": false,
+		"available": true,
+		"source_ids": ["world_bank_wdi", "mock_demo_data"],
+		"description": "Optional provisional world-system proxy derived from World Bank quality-of-life indicators while preserving demo world-system classes."
+	},
+	{
 		"id": "conflict_ucdp_latest",
 		"path": "/data/indicators/conflict.ucdp.latest.json",
 		"required": false,
 		"available": false,
 		"source_ids": ["ucdp_country_year", "ucdp_prio_armed_conflict"],
 		"description": "Optional UCDP conflict indicators."
+	},
+	{
+		"id": "world_system_structural_v1",
+		"path": "/data/indicators/world-system.structural-v1.placeholder.json",
+		"required": false,
+		"available": true,
+		"source_ids": [
+			"oecd_tiva",
+			"un_comtrade",
+			"cepii_baci",
+			"atlas_economic_complexity",
+			"unep_material_flows",
+			"yale_epi",
+			"global_ewaste_monitor",
+			"unctad_fdi",
+			"sipri_military_expenditure"
+		],
+		"description": "Optional placeholder scaffold for the planned structural world-system model v1. Not used as a final classification."
 	}
 ]

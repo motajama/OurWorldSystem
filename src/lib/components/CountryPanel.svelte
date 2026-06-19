@@ -70,7 +70,17 @@
 					<dt>Confidence</dt>
 					<dd>{unit.world_system.confidence}</dd>
 				</div>
+				<div>
+					<dt>Source</dt>
+					<dd>{unit.world_system.source ?? 'No data'}</dd>
+				</div>
 			</dl>
+			{#if unit.world_system.model_status === 'provisional'}
+				<p class="warning">
+					Provisional derived model. This is an experimental proxy and needs review; it is not a
+					final world-systems classification.
+				</p>
+			{/if}
 			<p>{unit.world_system.explanation}</p>
 		</section>
 
@@ -91,7 +101,9 @@
 				</div>
 				<div>
 					<dt>Fatalities estimate</dt>
-					<dd>{formatNumber(unit.conflict.fatalities_best_estimate, { maximumFractionDigits: 0 })}</dd>
+					<dd>
+						{formatNumber(unit.conflict.fatalities_best_estimate, { maximumFractionDigits: 0 })}
+					</dd>
 				</div>
 				<div>
 					<dt>Child casualties</dt>
@@ -115,8 +127,8 @@
 			{/if}
 			<p class="muted">{unit.conflict.notes}</p>
 			<p class="muted">
-				UCDP fatality estimates are not an adult/child breakdown and should not be read as
-				complete civilian death counts.
+				UCDP fatality estimates are not an adult/child breakdown and should not be read as complete
+				civilian death counts.
 			</p>
 		</section>
 
@@ -266,6 +278,13 @@
 		border-left: 3px solid #f87171;
 		padding-left: 0.8rem;
 		color: #fecaca;
+	}
+
+	.warning {
+		border-left: 3px solid #facc15;
+		padding-left: 0.8rem;
+		color: #fef3c7;
+		font-size: 0.9rem;
 	}
 
 	.empty {
