@@ -1,0 +1,2941 @@
+{
+	"dataset_id": "world_system_provisional_latest",
+	"source_ids": [
+		"world_bank_wdi",
+		"mock_demo_data"
+	],
+	"model_status": "provisional",
+	"generated_at": "2026-06-19T17:08:04.973Z",
+	"methodology_note": "Experimental provisional world-system proxy. Existing demo world-system records are preserved as demo_curated. Other records are derived from World Bank WDI quality-of-life scores with a small normalized log-income adjustment. Thresholds are provisional: core >= 78, semi-periphery >= 55 and < 78, periphery < 55. This is not a final Wallersteinian or dependency-theory classification.",
+	"records": [
+		{
+			"id": "AFG",
+			"world_system": {
+				"class": "periphery",
+				"score": 38.04,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.4151,
+				"gni_per_capita_ppp": 2210,
+				"life_expectancy": 66.289,
+				"secondary_enrollment_gross": 59.614
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "ALB",
+			"world_system": {
+				"class": "core",
+				"score": 85.33,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.8699,
+				"gni_per_capita_ppp": 26500,
+				"life_expectancy": 79.776,
+				"secondary_enrollment_gross": 108.355
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "DZA",
+			"world_system": {
+				"class": "core",
+				"score": 78.37,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.8055,
+				"gni_per_capita_ppp": 17290,
+				"life_expectancy": 76.475,
+				"secondary_enrollment_gross": 105.164
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "AGO",
+			"world_system": {
+				"class": "periphery",
+				"score": 49.13,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.4861,
+				"gni_per_capita_ppp": 9460,
+				"life_expectancy": 64.805,
+				"secondary_enrollment_gross": 51.484
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "ATA",
+			"world_system": {
+				"class": "no_data",
+				"score": null,
+				"confidence": "low",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "No sufficient World Bank quality-of-life or income data is available for this provisional proxy."
+			},
+			"components": {
+				"quality_of_life_score": null,
+				"gni_per_capita_ppp": null,
+				"life_expectancy": null,
+				"secondary_enrollment_gross": null
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "ARG",
+			"world_system": {
+				"class": "core",
+				"score": 84.7,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.8577,
+				"gni_per_capita_ppp": 29800,
+				"life_expectancy": 77.543,
+				"secondary_enrollment_gross": 105.575
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "ARM",
+			"world_system": {
+				"class": "core",
+				"score": 79.73,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.8116,
+				"gni_per_capita_ppp": 22020,
+				"life_expectancy": 78.32,
+				"secondary_enrollment_gross": 90.946
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "AUS",
+			"world_system": {
+				"class": "core",
+				"score": 97.67,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.9757,
+				"gni_per_capita_ppp": 69600,
+				"life_expectancy": 83.051,
+				"secondary_enrollment_gross": 131.932
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "AUT",
+			"world_system": {
+				"class": "core",
+				"score": 97.45,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.9705,
+				"gni_per_capita_ppp": 74160,
+				"life_expectancy": 81.995,
+				"secondary_enrollment_gross": 100.623
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "AZE",
+			"world_system": {
+				"class": "semi-periphery",
+				"score": 77.7,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.7839,
+				"gni_per_capita_ppp": 24220,
+				"life_expectancy": 74.576,
+				"secondary_enrollment_gross": 91.123
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "BHS",
+			"world_system": {
+				"class": "core",
+				"score": 79.43,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.7842,
+				"gni_per_capita_ppp": 39550,
+				"life_expectancy": 74.71,
+				"secondary_enrollment_gross": 79.486
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "BGD",
+			"world_system": {
+				"class": "semi-periphery",
+				"score": 61.57,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.63,
+				"gni_per_capita_ppp": 10060,
+				"life_expectancy": 74.93,
+				"secondary_enrollment_gross": 64.3
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "BLR",
+			"world_system": {
+				"class": "core",
+				"score": 81.46,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.8163,
+				"gni_per_capita_ppp": 32300,
+				"life_expectancy": 74.365,
+				"secondary_enrollment_gross": 94.79
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "BEL",
+			"world_system": {
+				"class": "core",
+				"score": 97.78,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.974,
+				"gni_per_capita_ppp": 74770,
+				"life_expectancy": 82.3,
+				"secondary_enrollment_gross": 142.96
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "BLZ",
+			"world_system": {
+				"class": "semi-periphery",
+				"score": 70.03,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.7167,
+				"gni_per_capita_ppp": 13760,
+				"life_expectancy": 73.739,
+				"secondary_enrollment_gross": 86.457
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "BEN",
+			"world_system": {
+				"class": "periphery",
+				"score": 36.06,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.3638,
+				"gni_per_capita_ppp": 4390,
+				"life_expectancy": 60.961,
+				"secondary_enrollment_gross": 43.561
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "BTN",
+			"world_system": {
+				"class": "semi-periphery",
+				"score": 70.64,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.7195,
+				"gni_per_capita_ppp": 15320,
+				"life_expectancy": 73.262,
+				"secondary_enrollment_gross": 86.181
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "BOL",
+			"world_system": {
+				"class": "semi-periphery",
+				"score": 66.27,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.676,
+				"gni_per_capita_ppp": 12620,
+				"life_expectancy": 68.739,
+				"secondary_enrollment_gross": 90.527
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "BIH",
+			"world_system": {
+				"class": "core",
+				"score": 79.9,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.8085,
+				"gni_per_capita_ppp": 24990,
+				"life_expectancy": 78.044,
+				"secondary_enrollment_gross": 87.866
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "BWA",
+			"world_system": {
+				"class": "semi-periphery",
+				"score": 65.98,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.6526,
+				"gni_per_capita_ppp": 20570,
+				"life_expectancy": 69.293,
+				"secondary_enrollment_gross": 70.629
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "BRA",
+			"world_system": {
+				"class": "semi-periphery",
+				"score": 58,
+				"confidence": "medium",
+				"source": "demo_curated",
+				"explanation": "Mock classification reflecting regional power, commodity exposure, and uneven development. This record is preserved from static/data/world-system.latest.json demo data and needs methodological review."
+			},
+			"components": {
+				"quality_of_life_score": 0.8184,
+				"gni_per_capita_ppp": 21590,
+				"life_expectancy": 76.023,
+				"secondary_enrollment_gross": 104.145
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "BRN",
+			"world_system": {
+				"class": "core",
+				"score": 90,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.8823,
+				"gni_per_capita_ppp": 92750,
+				"life_expectancy": 75.501,
+				"secondary_enrollment_gross": 91.838
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "BGR",
+			"world_system": {
+				"class": "core",
+				"score": 84.7,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.8458,
+				"gni_per_capita_ppp": 39850,
+				"life_expectancy": 75.761,
+				"secondary_enrollment_gross": 94.782
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "BFA",
+			"world_system": {
+				"class": "periphery",
+				"score": 27.68,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.2848,
+				"gni_per_capita_ppp": 2720,
+				"life_expectancy": 61.292,
+				"secondary_enrollment_gross": 29.991
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "BDI",
+			"world_system": {
+				"class": "periphery",
+				"score": 19.57,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.2228,
+				"gni_per_capita_ppp": 1200,
+				"life_expectancy": 63.818,
+				"secondary_enrollment_gross": 23.126
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "KHM",
+			"world_system": {
+				"class": "periphery",
+				"score": 54.27,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.5539,
+				"gni_per_capita_ppp": 7910,
+				"life_expectancy": 70.817,
+				"secondary_enrollment_gross": 58.789
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "CMR",
+			"world_system": {
+				"class": "periphery",
+				"score": 41.11,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.414,
+				"gni_per_capita_ppp": 5490,
+				"life_expectancy": 63.968,
+				"secondary_enrollment_gross": 44.841
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "CAN",
+			"world_system": {
+				"class": "core",
+				"score": 96.01,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.9598,
+				"gni_per_capita_ppp": 63630,
+				"life_expectancy": 82.108,
+				"secondary_enrollment_gross": 104.321
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "CAF",
+			"world_system": {
+				"class": "periphery",
+				"score": 13.62,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.1483,
+				"gni_per_capita_ppp": 1340,
+				"life_expectancy": 57.671,
+				"secondary_enrollment_gross": 15.807
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "TCD",
+			"world_system": {
+				"class": "periphery",
+				"score": 20.91,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.2052,
+				"gni_per_capita_ppp": 2710,
+				"life_expectancy": 55.238,
+				"secondary_enrollment_gross": 23.493
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "CHL",
+			"world_system": {
+				"class": "core",
+				"score": 89.21,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.905,
+				"gni_per_capita_ppp": 34320,
+				"life_expectancy": 81.359,
+				"secondary_enrollment_gross": 105.609
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "CHN",
+			"world_system": {
+				"class": "semi-periphery",
+				"score": 78,
+				"confidence": "medium",
+				"source": "demo_curated",
+				"explanation": "Mock classification reflecting major industrial capacity and uneven global hierarchy indicators. This record is preserved from static/data/world-system.latest.json demo data and needs methodological review."
+			},
+			"components": {
+				"quality_of_life_score": 0.8286,
+				"gni_per_capita_ppp": 26920,
+				"life_expectancy": 78.017,
+				"secondary_enrollment_gross": 92.26
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "COL",
+			"world_system": {
+				"class": "core",
+				"score": 81.9,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.8374,
+				"gni_per_capita_ppp": 21890,
+				"life_expectancy": 77.913,
+				"secondary_enrollment_gross": 101.574
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "CRI",
+			"world_system": {
+				"class": "core",
+				"score": 87.17,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.8881,
+				"gni_per_capita_ppp": 28840,
+				"life_expectancy": 80.996,
+				"secondary_enrollment_gross": 121.811
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "CIV",
+			"world_system": {
+				"class": "periphery",
+				"score": 48.34,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.4871,
+				"gni_per_capita_ppp": 7360,
+				"life_expectancy": 62.11,
+				"secondary_enrollment_gross": 65.307
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "HRV",
+			"world_system": {
+				"class": "core",
+				"score": 90.97,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.9105,
+				"gni_per_capita_ppp": 49740,
+				"life_expectancy": 78.929,
+				"secondary_enrollment_gross": 105.025
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "CUB",
+			"world_system": {
+				"class": "no_data",
+				"score": null,
+				"confidence": "low",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "No sufficient World Bank quality-of-life or income data is available for this provisional proxy."
+			},
+			"components": {
+				"quality_of_life_score": null,
+				"gni_per_capita_ppp": null,
+				"life_expectancy": 78.264,
+				"secondary_enrollment_gross": 91.746
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "CYP",
+			"world_system": {
+				"class": "core",
+				"score": 94.53,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.9474,
+				"gni_per_capita_ppp": 56200,
+				"life_expectancy": 81.821,
+				"secondary_enrollment_gross": 106.741
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "CZE",
+			"world_system": {
+				"class": "core",
+				"score": 82,
+				"confidence": "medium",
+				"source": "demo_curated",
+				"explanation": "Mock classification for a high-income EU member with dependency and value-chain caveats. This record is preserved from static/data/world-system.latest.json demo data and needs methodological review."
+			},
+			"components": {
+				"quality_of_life_score": 0.92,
+				"gni_per_capita_ppp": 54800,
+				"life_expectancy": 79.978,
+				"secondary_enrollment_gross": 97.615
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "COD",
+			"world_system": {
+				"class": "periphery",
+				"score": 24,
+				"confidence": "medium",
+				"source": "demo_curated",
+				"explanation": "Mock classification reflecting resource extraction exposure and low value capture. This record is preserved from static/data/world-system.latest.json demo data and needs methodological review."
+			},
+			"components": {
+				"quality_of_life_score": 0.3436,
+				"gni_per_capita_ppp": 1760,
+				"life_expectancy": 62.074,
+				"secondary_enrollment_gross": 55.486
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "DJI",
+			"world_system": {
+				"class": "periphery",
+				"score": 47.42,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.4727,
+				"gni_per_capita_ppp": 8030,
+				"life_expectancy": 66.202,
+				"secondary_enrollment_gross": null
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "DOM",
+			"world_system": {
+				"class": "semi-periphery",
+				"score": 73.68,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.7336,
+				"gni_per_capita_ppp": 26050,
+				"life_expectancy": 73.868,
+				"secondary_enrollment_gross": 76.365
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "ECU",
+			"world_system": {
+				"class": "semi-periphery",
+				"score": 76.07,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.7832,
+				"gni_per_capita_ppp": 15410,
+				"life_expectancy": 77.579,
+				"secondary_enrollment_gross": 92.812
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "EGY",
+			"world_system": {
+				"class": "semi-periphery",
+				"score": 70.83,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.7146,
+				"gni_per_capita_ppp": 18230,
+				"life_expectancy": 71.806,
+				"secondary_enrollment_gross": 84.829
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "SLV",
+			"world_system": {
+				"class": "semi-periphery",
+				"score": 60.94,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.614,
+				"gni_per_capita_ppp": 12420,
+				"life_expectancy": 72.302,
+				"secondary_enrollment_gross": 62.143
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "GNQ",
+			"world_system": {
+				"class": "periphery",
+				"score": 41.5,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.3856,
+				"gni_per_capita_ppp": 12330,
+				"life_expectancy": 63.906,
+				"secondary_enrollment_gross": 17.759
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "ERI",
+			"world_system": {
+				"class": "periphery",
+				"score": 33.22,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.3686,
+				"gni_per_capita_ppp": 1720,
+				"life_expectancy": 68.893,
+				"secondary_enrollment_gross": 44.044
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "EST",
+			"world_system": {
+				"class": "core",
+				"score": 91.08,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.9126,
+				"gni_per_capita_ppp": 48880,
+				"life_expectancy": 79.295,
+				"secondary_enrollment_gross": 108.539
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "ETH",
+			"world_system": {
+				"class": "periphery",
+				"score": 35.78,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.3724,
+				"gni_per_capita_ppp": 3280,
+				"life_expectancy": 67.603,
+				"secondary_enrollment_gross": 33.911
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "FJI",
+			"world_system": {
+				"class": "semi-periphery",
+				"score": 68.76,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.6997,
+				"gni_per_capita_ppp": 14490,
+				"life_expectancy": 67.463,
+				"secondary_enrollment_gross": 98.093
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "FIN",
+			"world_system": {
+				"class": "core",
+				"score": 96.5,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.9643,
+				"gni_per_capita_ppp": 65640,
+				"life_expectancy": 82.337,
+				"secondary_enrollment_gross": 142.395
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "FRA",
+			"world_system": {
+				"class": "core",
+				"score": 96.76,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.9684,
+				"gni_per_capita_ppp": 63880,
+				"life_expectancy": 82.98,
+				"secondary_enrollment_gross": 103.785
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "GAB",
+			"world_system": {
+				"class": "semi-periphery",
+				"score": 65.16,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.6433,
+				"gni_per_capita_ppp": 20400,
+				"life_expectancy": 68.511,
+				"secondary_enrollment_gross": 70.264
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "GEO",
+			"world_system": {
+				"class": "core",
+				"score": 81.07,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.8203,
+				"gni_per_capita_ppp": 26200,
+				"life_expectancy": 74.657,
+				"secondary_enrollment_gross": 100.959
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "DEU",
+			"world_system": {
+				"class": "core",
+				"score": 88,
+				"confidence": "medium",
+				"source": "demo_curated",
+				"explanation": "Mock classification based on industrial centrality, high income, and EU core role. This record is preserved from static/data/world-system.latest.json demo data and needs methodological review."
+			},
+			"components": {
+				"quality_of_life_score": 0.9599,
+				"gni_per_capita_ppp": 76180,
+				"life_expectancy": 80.793,
+				"secondary_enrollment_gross": 100.244
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "GHA",
+			"world_system": {
+				"class": "periphery",
+				"score": 54.68,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.5597,
+				"gni_per_capita_ppp": 7720,
+				"life_expectancy": 65.695,
+				"secondary_enrollment_gross": 75.717
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "GRC",
+			"world_system": {
+				"class": "core",
+				"score": 91.94,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.9276,
+				"gni_per_capita_ppp": 43340,
+				"life_expectancy": 81.839,
+				"secondary_enrollment_gross": 105.192
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "GRL",
+			"world_system": {
+				"class": "semi-periphery",
+				"score": 73.84,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.7176,
+				"gni_per_capita_ppp": 40270,
+				"life_expectancy": 70.273,
+				"secondary_enrollment_gross": null
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "GTM",
+			"world_system": {
+				"class": "semi-periphery",
+				"score": 59.07,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.5866,
+				"gni_per_capita_ppp": 14170,
+				"life_expectancy": 72.746,
+				"secondary_enrollment_gross": 49.577
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "GIN",
+			"world_system": {
+				"class": "periphery",
+				"score": 33.99,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.3419,
+				"gni_per_capita_ppp": 4130,
+				"life_expectancy": 60.904,
+				"secondary_enrollment_gross": 38.555
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "GNB",
+			"world_system": {
+				"class": "periphery",
+				"score": 32.76,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.3387,
+				"gni_per_capita_ppp": 3140,
+				"life_expectancy": 64.254,
+				"secondary_enrollment_gross": 34.397
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "GUY",
+			"world_system": {
+				"class": "core",
+				"score": 82.07,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.8038,
+				"gni_per_capita_ppp": 52290,
+				"life_expectancy": 70.319,
+				"secondary_enrollment_gross": 91.43
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "HTI",
+			"world_system": {
+				"class": "periphery",
+				"score": 28.75,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.2908,
+				"gni_per_capita_ppp": 3190,
+				"life_expectancy": 65.119,
+				"secondary_enrollment_gross": 17.166
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "HND",
+			"world_system": {
+				"class": "periphery",
+				"score": 52.7,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.5411,
+				"gni_per_capita_ppp": 6900,
+				"life_expectancy": 73.044,
+				"secondary_enrollment_gross": 51.764
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "HUN",
+			"world_system": {
+				"class": "core",
+				"score": 88.67,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.8856,
+				"gni_per_capita_ppp": 47290,
+				"life_expectancy": 76.724,
+				"secondary_enrollment_gross": 107.351
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "ISL",
+			"world_system": {
+				"class": "core",
+				"score": 98.22,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.9791,
+				"gni_per_capita_ppp": 84060,
+				"life_expectancy": 82.81,
+				"secondary_enrollment_gross": 108.911
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "IND",
+			"world_system": {
+				"class": "semi-periphery",
+				"score": 61,
+				"confidence": "medium",
+				"source": "demo_curated",
+				"explanation": "Mock classification reflecting scale, services and manufacturing growth, and persistent inequality. This record is preserved from static/data/world-system.latest.json demo data and needs methodological review."
+			},
+			"components": {
+				"quality_of_life_score": 0.6622,
+				"gni_per_capita_ppp": 11000,
+				"life_expectancy": 72.235,
+				"secondary_enrollment_gross": 79.595
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "IDN",
+			"world_system": {
+				"class": "semi-periphery",
+				"score": 72.6,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.7408,
+				"gni_per_capita_ppp": 16010,
+				"life_expectancy": 71.288,
+				"secondary_enrollment_gross": 97.17
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "IRN",
+			"world_system": {
+				"class": "semi-periphery",
+				"score": 76.65,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.7797,
+				"gni_per_capita_ppp": 19820,
+				"life_expectancy": 77.854,
+				"secondary_enrollment_gross": 85.147
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "IRQ",
+			"world_system": {
+				"class": "semi-periphery",
+				"score": 59.35,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.5888,
+				"gni_per_capita_ppp": 14530,
+				"life_expectancy": 72.424,
+				"secondary_enrollment_gross": 50.574
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "IRL",
+			"world_system": {
+				"class": "core",
+				"score": 98.39,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.981,
+				"gni_per_capita_ppp": 101180,
+				"life_expectancy": 83.01,
+				"secondary_enrollment_gross": 130.605
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "ISR",
+			"world_system": {
+				"class": "core",
+				"score": 95.34,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.9565,
+				"gni_per_capita_ppp": 56790,
+				"life_expectancy": 83.198,
+				"secondary_enrollment_gross": 98.547
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "ITA",
+			"world_system": {
+				"class": "core",
+				"score": 97.18,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.9748,
+				"gni_per_capita_ppp": 61620,
+				"life_expectancy": 83.951,
+				"secondary_enrollment_gross": 100.679
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "JAM",
+			"world_system": {
+				"class": "semi-periphery",
+				"score": 66.92,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.6835,
+				"gni_per_capita_ppp": 12690,
+				"life_expectancy": 71.606,
+				"secondary_enrollment_gross": 84.457
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "JPN",
+			"world_system": {
+				"class": "core",
+				"score": 96.2,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.9676,
+				"gni_per_capita_ppp": 55490,
+				"life_expectancy": 84.036,
+				"secondary_enrollment_gross": 101.537
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "JOR",
+			"world_system": {
+				"class": "semi-periphery",
+				"score": 72.32,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.7544,
+				"gni_per_capita_ppp": 10570,
+				"life_expectancy": 77.981,
+				"secondary_enrollment_gross": 91.752
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "KAZ",
+			"world_system": {
+				"class": "core",
+				"score": 83.92,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.839,
+				"gni_per_capita_ppp": 37590,
+				"life_expectancy": 74.531,
+				"secondary_enrollment_gross": 97.617
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "KEN",
+			"world_system": {
+				"class": "periphery",
+				"score": 53.94,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.5578,
+				"gni_per_capita_ppp": 6540,
+				"life_expectancy": 63.834,
+				"secondary_enrollment_gross": 84.308
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "SWZ",
+			"world_system": {
+				"class": "semi-periphery",
+				"score": 58.63,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.5927,
+				"gni_per_capita_ppp": 10760,
+				"life_expectancy": 64.264,
+				"secondary_enrollment_gross": 82.024
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "XKO",
+			"world_system": {
+				"class": "disputed",
+				"score": null,
+				"confidence": "low",
+				"source": "demo_curated",
+				"explanation": "Mock entry marks status complexity and defers classification until sourced indicators exist. This record is preserved from static/data/world-system.latest.json demo data and needs methodological review."
+			},
+			"components": {
+				"quality_of_life_score": 0.7398,
+				"gni_per_capita_ppp": 18290,
+				"life_expectancy": 78.222,
+				"secondary_enrollment_gross": null
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "KWT",
+			"world_system": {
+				"class": "core",
+				"score": 96.65,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.9675,
+				"gni_per_capita_ppp": 63270,
+				"life_expectancy": 84.58,
+				"secondary_enrollment_gross": 95.393
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "KGZ",
+			"world_system": {
+				"class": "semi-periphery",
+				"score": 64.87,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.6787,
+				"gni_per_capita_ppp": 7900,
+				"life_expectancy": 72.4,
+				"secondary_enrollment_gross": 91.726
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "LAO",
+			"world_system": {
+				"class": "periphery",
+				"score": 52.12,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.5226,
+				"gni_per_capita_ppp": 9160,
+				"life_expectancy": 69.225,
+				"secondary_enrollment_gross": 50.543
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "LVA",
+			"world_system": {
+				"class": "core",
+				"score": 87.4,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.8748,
+				"gni_per_capita_ppp": 42660,
+				"life_expectancy": 76.429,
+				"secondary_enrollment_gross": 101.253
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "LBN",
+			"world_system": {
+				"class": "semi-periphery",
+				"score": 65.98,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.6733,
+				"gni_per_capita_ppp": 12420,
+				"life_expectancy": 77.945,
+				"secondary_enrollment_gross": 63.792
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "LSO",
+			"world_system": {
+				"class": "periphery",
+				"score": 35.93,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.3706,
+				"gni_per_capita_ppp": 3580,
+				"life_expectancy": 57.798,
+				"secondary_enrollment_gross": 59.359
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "LBR",
+			"world_system": {
+				"class": "periphery",
+				"score": 26.29,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.2864,
+				"gni_per_capita_ppp": 1750,
+				"life_expectancy": 62.324,
+				"secondary_enrollment_gross": 37.742
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "LBY",
+			"world_system": {
+				"class": "semi-periphery",
+				"score": 72.2,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.7376,
+				"gni_per_capita_ppp": 15400,
+				"life_expectancy": 71.121,
+				"secondary_enrollment_gross": 97.61
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "LTU",
+			"world_system": {
+				"class": "core",
+				"score": 90.37,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.9002,
+				"gni_per_capita_ppp": 53920,
+				"life_expectancy": 77.195,
+				"secondary_enrollment_gross": 104.861
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "LUX",
+			"world_system": {
+				"class": "core",
+				"score": 98.54,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.9828,
+				"gni_per_capita_ppp": 110650,
+				"life_expectancy": 83.195,
+				"secondary_enrollment_gross": 108.577
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "MDG",
+			"world_system": {
+				"class": "periphery",
+				"score": 26.94,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.2922,
+				"gni_per_capita_ppp": 1830,
+				"life_expectancy": 63.835,
+				"secondary_enrollment_gross": 34.132
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "MWI",
+			"world_system": {
+				"class": "periphery",
+				"score": 30.67,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.3361,
+				"gni_per_capita_ppp": 1830,
+				"life_expectancy": 67.561,
+				"secondary_enrollment_gross": 36.644
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "MYS",
+			"world_system": {
+				"class": "core",
+				"score": 80.82,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.8027,
+				"gni_per_capita_ppp": 37450,
+				"life_expectancy": 76.821,
+				"secondary_enrollment_gross": 80.276
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "MLI",
+			"world_system": {
+				"class": "periphery",
+				"score": 31.44,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.322,
+				"gni_per_capita_ppp": 3230,
+				"life_expectancy": 60.675,
+				"secondary_enrollment_gross": 38.939
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "MRT",
+			"world_system": {
+				"class": "periphery",
+				"score": 45.31,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.4518,
+				"gni_per_capita_ppp": 7300,
+				"life_expectancy": 68.713,
+				"secondary_enrollment_gross": 36.028
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "MEX",
+			"world_system": {
+				"class": "core",
+				"score": 81.28,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.8239,
+				"gni_per_capita_ppp": 25460,
+				"life_expectancy": 75.264,
+				"secondary_enrollment_gross": 103.093
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "MDA",
+			"world_system": {
+				"class": "semi-periphery",
+				"score": 74.81,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.7604,
+				"gni_per_capita_ppp": 18710,
+				"life_expectancy": 71.332,
+				"secondary_enrollment_gross": 99.344
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "MNG",
+			"world_system": {
+				"class": "semi-periphery",
+				"score": 74,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.7548,
+				"gni_per_capita_ppp": 17000,
+				"life_expectancy": 72.398,
+				"secondary_enrollment_gross": 96.818
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "MNE",
+			"world_system": {
+				"class": "core",
+				"score": 84.56,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.8507,
+				"gni_per_capita_ppp": 33970,
+				"life_expectancy": 77.89,
+				"secondary_enrollment_gross": 93.872
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "MAR",
+			"world_system": {
+				"class": "semi-periphery",
+				"score": 69.5,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.7225,
+				"gni_per_capita_ppp": 10260,
+				"life_expectancy": 75.493,
+				"secondary_enrollment_gross": 89.983
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "MOZ",
+			"world_system": {
+				"class": "periphery",
+				"score": 25.93,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.2879,
+				"gni_per_capita_ppp": 1520,
+				"life_expectancy": 63.797,
+				"secondary_enrollment_gross": 37.241
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "MMR",
+			"world_system": {
+				"class": "periphery",
+				"score": 53.45,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.5564,
+				"gni_per_capita_ppp": 5890,
+				"life_expectancy": 67.095,
+				"secondary_enrollment_gross": 77.019
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "NAM",
+			"world_system": {
+				"class": "semi-periphery",
+				"score": 61.74,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.6272,
+				"gni_per_capita_ppp": 11300,
+				"life_expectancy": 67.516,
+				"secondary_enrollment_gross": 81.957
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "NPL",
+			"world_system": {
+				"class": "semi-periphery",
+				"score": 60.01,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.6339,
+				"gni_per_capita_ppp": 5830,
+				"life_expectancy": 70.636,
+				"secondary_enrollment_gross": 90.388
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "NLD",
+			"world_system": {
+				"class": "core",
+				"score": 97.54,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.9711,
+				"gni_per_capita_ppp": 84970,
+				"life_expectancy": 81.966,
+				"secondary_enrollment_gross": 137.515
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "NZL",
+			"world_system": {
+				"class": "core",
+				"score": 94.21,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.9456,
+				"gni_per_capita_ppp": 53600,
+				"life_expectancy": 82.01,
+				"secondary_enrollment_gross": 114.231
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "NIC",
+			"world_system": {
+				"class": "semi-periphery",
+				"score": 61.41,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.6361,
+				"gni_per_capita_ppp": 8270,
+				"life_expectancy": 75.1,
+				"secondary_enrollment_gross": 70.175
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "NER",
+			"world_system": {
+				"class": "periphery",
+				"score": 21.99,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.2298,
+				"gni_per_capita_ppp": 2030,
+				"life_expectancy": 61.433,
+				"secondary_enrollment_gross": 19.866
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "NGA",
+			"world_system": {
+				"class": "periphery",
+				"score": 38.92,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.3688,
+				"gni_per_capita_ppp": 8850,
+				"life_expectancy": 54.635,
+				"secondary_enrollment_gross": 46.893
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "PRK",
+			"world_system": {
+				"class": "no_data",
+				"score": null,
+				"confidence": "low",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "No sufficient World Bank quality-of-life or income data is available for this provisional proxy."
+			},
+			"components": {
+				"quality_of_life_score": null,
+				"gni_per_capita_ppp": null,
+				"life_expectancy": 73.743,
+				"secondary_enrollment_gross": 94.252
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "MKD",
+			"world_system": {
+				"class": "core",
+				"score": 79.62,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.8041,
+				"gni_per_capita_ppp": 25610,
+				"life_expectancy": 76.617,
+				"secondary_enrollment_gross": 90.072
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "CYN",
+			"world_system": {
+				"class": "disputed",
+				"score": null,
+				"confidence": "low",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Disputed map unit without stable comparable World Bank data in the current proxy model."
+			},
+			"components": {
+				"quality_of_life_score": null,
+				"gni_per_capita_ppp": null,
+				"life_expectancy": null,
+				"secondary_enrollment_gross": null
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "NOR",
+			"world_system": {
+				"class": "core",
+				"score": 98.51,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.9825,
+				"gni_per_capita_ppp": 106830,
+				"life_expectancy": 83.161,
+				"secondary_enrollment_gross": 116.254
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "OMN",
+			"world_system": {
+				"class": "core",
+				"score": 88.29,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.8886,
+				"gni_per_capita_ppp": 39340,
+				"life_expectancy": 80.246,
+				"secondary_enrollment_gross": 95.122
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "PAK",
+			"world_system": {
+				"class": "periphery",
+				"score": 46.24,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.4701,
+				"gni_per_capita_ppp": 6100,
+				"life_expectancy": 67.799,
+				"secondary_enrollment_gross": 48.281
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "PSE",
+			"world_system": {
+				"class": "disputed",
+				"score": null,
+				"confidence": "low",
+				"source": "demo_curated",
+				"explanation": "Mock entry prioritizes neutral display, conflict context, uncertainty, and source notes. This record is preserved from static/data/world-system.latest.json demo data and needs methodological review."
+			},
+			"components": {
+				"quality_of_life_score": 0.5989,
+				"gni_per_capita_ppp": 4660,
+				"life_expectancy": 69.213,
+				"secondary_enrollment_gross": 89.121
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "PAN",
+			"world_system": {
+				"class": "core",
+				"score": 82.65,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.8223,
+				"gni_per_capita_ppp": 39260,
+				"life_expectancy": 79.775,
+				"secondary_enrollment_gross": 76.6
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "PNG",
+			"world_system": {
+				"class": "periphery",
+				"score": 43.19,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.4459,
+				"gni_per_capita_ppp": 4580,
+				"life_expectancy": 66.256,
+				"secondary_enrollment_gross": 52.093
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "PRY",
+			"world_system": {
+				"class": "semi-periphery",
+				"score": 70.8,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.715,
+				"gni_per_capita_ppp": 17930,
+				"life_expectancy": 73.982,
+				"secondary_enrollment_gross": 79.131
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "PER",
+			"world_system": {
+				"class": "core",
+				"score": 79.26,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.8172,
+				"gni_per_capita_ppp": 16780,
+				"life_expectancy": 77.941,
+				"secondary_enrollment_gross": 108.289
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "PHL",
+			"world_system": {
+				"class": "semi-periphery",
+				"score": 66.31,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.6742,
+				"gni_per_capita_ppp": 13330,
+				"life_expectancy": 69.946,
+				"secondary_enrollment_gross": 85.295
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "POL",
+			"world_system": {
+				"class": "core",
+				"score": 90.5,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.9052,
+				"gni_per_capita_ppp": 49540,
+				"life_expectancy": 78.41,
+				"secondary_enrollment_gross": 107.881
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "PRT",
+			"world_system": {
+				"class": "core",
+				"score": 93.96,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.9449,
+				"gni_per_capita_ppp": 50730,
+				"life_expectancy": 82.383,
+				"secondary_enrollment_gross": 120.347
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "QAT",
+			"world_system": {
+				"class": "core",
+				"score": 97.88,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.975,
+				"gni_per_capita_ppp": 121900,
+				"life_expectancy": 82.522,
+				"secondary_enrollment_gross": 99.579
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "COG",
+			"world_system": {
+				"class": "periphery",
+				"score": 45.81,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.4634,
+				"gni_per_capita_ppp": 6340,
+				"life_expectancy": 66.001,
+				"secondary_enrollment_gross": 50.52
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "ROU",
+			"world_system": {
+				"class": "core",
+				"score": 83.38,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.8228,
+				"gni_per_capita_ppp": 47920,
+				"life_expectancy": 76.459,
+				"secondary_enrollment_gross": 81.632
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "RUS",
+			"world_system": {
+				"class": "core",
+				"score": 83.77,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.8284,
+				"gni_per_capita_ppp": 46780,
+				"life_expectancy": 73.44,
+				"secondary_enrollment_gross": 92.484
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "RWA",
+			"world_system": {
+				"class": "periphery",
+				"score": 41.32,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.4335,
+				"gni_per_capita_ppp": 3620,
+				"life_expectancy": 68.017,
+				"secondary_enrollment_gross": 48.79
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "SAU",
+			"world_system": {
+				"class": "core",
+				"score": 94.68,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.9392,
+				"gni_per_capita_ppp": 71730,
+				"life_expectancy": 78.982,
+				"secondary_enrollment_gross": 110.663
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "SEN",
+			"world_system": {
+				"class": "periphery",
+				"score": 43.79,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.4501,
+				"gni_per_capita_ppp": 4920,
+				"life_expectancy": 68.924,
+				"secondary_enrollment_gross": 44.067
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "SRB",
+			"world_system": {
+				"class": "core",
+				"score": 80.87,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.8113,
+				"gni_per_capita_ppp": 30770,
+				"life_expectancy": 75.968,
+				"secondary_enrollment_gross": 89.84
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "SLE",
+			"world_system": {
+				"class": "periphery",
+				"score": 46.85,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.5001,
+				"gni_per_capita_ppp": 3490,
+				"life_expectancy": 61.964,
+				"secondary_enrollment_gross": 86.908
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "SVK",
+			"world_system": {
+				"class": "core",
+				"score": 88.03,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.8782,
+				"gni_per_capita_ppp": 47040,
+				"life_expectancy": 78.371,
+				"secondary_enrollment_gross": 93.193
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "SVN",
+			"world_system": {
+				"class": "core",
+				"score": 94.96,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.9523,
+				"gni_per_capita_ppp": 56520,
+				"life_expectancy": 82.285,
+				"secondary_enrollment_gross": 107.627
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "SLB",
+			"world_system": {
+				"class": "periphery",
+				"score": 40.54,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.4367,
+				"gni_per_capita_ppp": 2680,
+				"life_expectancy": 70.694,
+				"secondary_enrollment_gross": 49.05
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "SOM",
+			"world_system": {
+				"class": "periphery",
+				"score": 13.11,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.1343,
+				"gni_per_capita_ppp": 1630,
+				"life_expectancy": 58.967,
+				"secondary_enrollment_gross": 3.348
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "SOL",
+			"world_system": {
+				"class": "disputed",
+				"score": null,
+				"confidence": "low",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Disputed map unit without stable comparable World Bank data in the current proxy model."
+			},
+			"components": {
+				"quality_of_life_score": null,
+				"gni_per_capita_ppp": null,
+				"life_expectancy": null,
+				"secondary_enrollment_gross": null
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "ZAF",
+			"world_system": {
+				"class": "semi-periphery",
+				"score": 52,
+				"confidence": "medium",
+				"source": "demo_curated",
+				"explanation": "Mock classification for a regional industrial center with extractive and inequality constraints. This record is preserved from static/data/world-system.latest.json demo data and needs methodological review."
+			},
+			"components": {
+				"quality_of_life_score": 0.6985,
+				"gni_per_capita_ppp": 15150,
+				"life_expectancy": 66.312,
+				"secondary_enrollment_gross": 104.133
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "KOR",
+			"world_system": {
+				"class": "core",
+				"score": 95.91,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.9597,
+				"gni_per_capita_ppp": 61930,
+				"life_expectancy": 83.629,
+				"secondary_enrollment_gross": 96.254
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "SSD",
+			"world_system": {
+				"class": "periphery",
+				"score": 34.7,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.4078,
+				"gni_per_capita_ppp": 1010,
+				"life_expectancy": 57.738,
+				"secondary_enrollment_gross": 122.121
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "ESP",
+			"world_system": {
+				"class": "core",
+				"score": 96.46,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.9691,
+				"gni_per_capita_ppp": 57670,
+				"life_expectancy": 83.888,
+				"secondary_enrollment_gross": 118.538
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "LKA",
+			"world_system": {
+				"class": "semi-periphery",
+				"score": 74.66,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.767,
+				"gni_per_capita_ppp": 15240,
+				"life_expectancy": 77.672,
+				"secondary_enrollment_gross": 87.953
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "SDN",
+			"world_system": {
+				"class": "periphery",
+				"score": 32.92,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.3579,
+				"gni_per_capita_ppp": 2050,
+				"life_expectancy": 66.521,
+				"secondary_enrollment_gross": 43.538
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "SUR",
+			"world_system": {
+				"class": "semi-periphery",
+				"score": 70.86,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.7112,
+				"gni_per_capita_ppp": 20000,
+				"life_expectancy": 73.757,
+				"secondary_enrollment_gross": 76.111
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "SWE",
+			"world_system": {
+				"class": "core",
+				"score": 99.24,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.9911,
+				"gni_per_capita_ppp": 75000,
+				"life_expectancy": 84.063,
+				"secondary_enrollment_gross": 131.964
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "CHE",
+			"world_system": {
+				"class": "core",
+				"score": 99.52,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.9944,
+				"gni_per_capita_ppp": 91110,
+				"life_expectancy": 84.407,
+				"secondary_enrollment_gross": 101.429
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "SYR",
+			"world_system": {
+				"class": "periphery",
+				"score": 44.58,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.462,
+				"gni_per_capita_ppp": 4610,
+				"life_expectancy": 72.56,
+				"secondary_enrollment_gross": 38.737
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "TWN",
+			"world_system": {
+				"class": "uncertain",
+				"score": null,
+				"confidence": "low",
+				"source": "demo_curated",
+				"explanation": "Mock entry separates structural indicators from sovereignty status and flags uncertainty. This record is preserved from static/data/world-system.latest.json demo data and needs methodological review."
+			},
+			"components": {
+				"quality_of_life_score": null,
+				"gni_per_capita_ppp": null,
+				"life_expectancy": null,
+				"secondary_enrollment_gross": null
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "TJK",
+			"world_system": {
+				"class": "semi-periphery",
+				"score": 62.04,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.6498,
+				"gni_per_capita_ppp": 7100,
+				"life_expectancy": 71.927,
+				"secondary_enrollment_gross": 86.904
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "TZA",
+			"world_system": {
+				"class": "periphery",
+				"score": 36.16,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.3675,
+				"gni_per_capita_ppp": 4130,
+				"life_expectancy": 67.212,
+				"secondary_enrollment_gross": 28.231
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "THA",
+			"world_system": {
+				"class": "core",
+				"score": 79.48,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.8052,
+				"gni_per_capita_ppp": 23960,
+				"life_expectancy": 76.564,
+				"secondary_enrollment_gross": 92.087
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "GMB",
+			"world_system": {
+				"class": "periphery",
+				"score": 53.7,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.5814,
+				"gni_per_capita_ppp": 3430,
+				"life_expectancy": 66.057,
+				"secondary_enrollment_gross": 107.027
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "TLS",
+			"world_system": {
+				"class": "periphery",
+				"score": 54.74,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.5779,
+				"gni_per_capita_ppp": 5040,
+				"life_expectancy": 67.904,
+				"secondary_enrollment_gross": 84.741
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "TGO",
+			"world_system": {
+				"class": "periphery",
+				"score": 40.66,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.4286,
+				"gni_per_capita_ppp": 3380,
+				"life_expectancy": 62.935,
+				"secondary_enrollment_gross": 63.419
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "TTO",
+			"world_system": {
+				"class": "core",
+				"score": 82.36,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.8218,
+				"gni_per_capita_ppp": 36580,
+				"life_expectancy": 73.617,
+				"secondary_enrollment_gross": 95.682
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "TUN",
+			"world_system": {
+				"class": "semi-periphery",
+				"score": 73.87,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.7605,
+				"gni_per_capita_ppp": 14230,
+				"life_expectancy": 76.711,
+				"secondary_enrollment_gross": 90.326
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "TUR",
+			"world_system": {
+				"class": "core",
+				"score": 88.65,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.8877,
+				"gni_per_capita_ppp": 44600,
+				"life_expectancy": 77.421,
+				"secondary_enrollment_gross": 118.412
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "TKM",
+			"world_system": {
+				"class": "semi-periphery",
+				"score": 73.74,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.743,
+				"gni_per_capita_ppp": 21020,
+				"life_expectancy": 70.201,
+				"secondary_enrollment_gross": 94.646
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "UGA",
+			"world_system": {
+				"class": "periphery",
+				"score": 33.43,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.3459,
+				"gni_per_capita_ppp": 3190,
+				"life_expectancy": 68.487,
+				"secondary_enrollment_gross": 24.091
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "UKR",
+			"world_system": {
+				"class": "uncertain",
+				"score": null,
+				"confidence": "low",
+				"source": "demo_curated",
+				"explanation": "Mock classification marked uncertain because active war substantially changes indicators. This record is preserved from static/data/world-system.latest.json demo data and needs methodological review."
+			},
+			"components": {
+				"quality_of_life_score": 0.7479,
+				"gni_per_capita_ppp": 18560,
+				"life_expectancy": 74.692,
+				"secondary_enrollment_gross": 86.17
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "ARE",
+			"world_system": {
+				"class": "core",
+				"score": 98.44,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.9816,
+				"gni_per_capita_ppp": 81530,
+				"life_expectancy": 83.069,
+				"secondary_enrollment_gross": 102.13
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "GBR",
+			"world_system": {
+				"class": "core",
+				"score": 95.08,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.9502,
+				"gni_per_capita_ppp": 61460,
+				"life_expectancy": 81.387,
+				"secondary_enrollment_gross": 112.12
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "USA",
+			"world_system": {
+				"class": "core",
+				"score": 91,
+				"confidence": "medium",
+				"source": "demo_curated",
+				"explanation": "Mock classification based on high income, financial centrality, and military reach. This record is preserved from static/data/world-system.latest.json demo data and needs methodological review."
+			},
+			"components": {
+				"quality_of_life_score": 0.9334,
+				"gni_per_capita_ppp": 85980,
+				"life_expectancy": 78.89,
+				"secondary_enrollment_gross": 97.473
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "URY",
+			"world_system": {
+				"class": "core",
+				"score": 86.68,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.8754,
+				"gni_per_capita_ppp": 34170,
+				"life_expectancy": 78.287,
+				"secondary_enrollment_gross": 119.105
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "UZB",
+			"world_system": {
+				"class": "semi-periphery",
+				"score": 70.98,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.7335,
+				"gni_per_capita_ppp": 12000,
+				"life_expectancy": 72.528,
+				"secondary_enrollment_gross": 98.12
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "VUT",
+			"world_system": {
+				"class": "semi-periphery",
+				"score": 60.12,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.6492,
+				"gni_per_capita_ppp": 4140,
+				"life_expectancy": 71.654,
+				"secondary_enrollment_gross": 134.671
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "VEN",
+			"world_system": {
+				"class": "semi-periphery",
+				"score": 76.52,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.7762,
+				"gni_per_capita_ppp": 20800,
+				"life_expectancy": 72.673,
+				"secondary_enrollment_gross": 97.791
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "VNM",
+			"world_system": {
+				"class": "semi-periphery",
+				"score": 74.23,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.7603,
+				"gni_per_capita_ppp": 15850,
+				"life_expectancy": 74.736,
+				"secondary_enrollment_gross": 93.412
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "ESH",
+			"world_system": {
+				"class": "no_data",
+				"score": null,
+				"confidence": "low",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "No sufficient World Bank quality-of-life or income data is available for this provisional proxy."
+			},
+			"components": {
+				"quality_of_life_score": null,
+				"gni_per_capita_ppp": null,
+				"life_expectancy": null,
+				"secondary_enrollment_gross": null
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "YEM",
+			"world_system": {
+				"class": "periphery",
+				"score": 39.21,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.4161,
+				"gni_per_capita_ppp": 3020,
+				"life_expectancy": 69.439,
+				"secondary_enrollment_gross": 43.691
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "ZMB",
+			"world_system": {
+				"class": "periphery",
+				"score": 43,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.4508,
+				"gni_per_capita_ppp": 3850,
+				"life_expectancy": 66.528,
+				"secondary_enrollment_gross": 56.789
+			},
+			"review_status": "needs_review"
+		},
+		{
+			"id": "ZWE",
+			"world_system": {
+				"class": "periphery",
+				"score": 43.19,
+				"confidence": "medium",
+				"source": "derived_world_bank_quality_proxy",
+				"explanation": "Derived provisional class from World Bank WDI quality-of-life score with a small normalized log-income adjustment. Needs review against trade, value-chain, extraction, ecological, financial, geopolitical, and conflict indicators."
+			},
+			"components": {
+				"quality_of_life_score": 0.4358,
+				"gni_per_capita_ppp": 5870,
+				"life_expectancy": 63.064,
+				"secondary_enrollment_gross": 52.416
+			},
+			"review_status": "needs_review"
+		}
+	],
+	"notes": [
+		"This is a provisional proxy model and not a final world-systems classification.",
+		"It currently uses World Bank quality-of-life and income-related indicators only.",
+		"Future versions should include value-chain position, ecological externalization, trade structure, extraction, financial centrality, and conflict/political indicators."
+	]
+}

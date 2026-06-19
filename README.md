@@ -2,7 +2,7 @@
 
 OurWorldSystem is an open-source, static-first public-interest atlas of countries and map units in the global world-system. It is intended to visualize structural positions such as core, semi-periphery, periphery, uncertainty, conflict exposure, press freedom, political freedom, quality of life, ecological pressure, and forms of extraction or externalization.
 
-The current app uses real static Natural Earth geometry, mock world-system demo data, an initial real World Bank WDI quality-of-life indicator pipeline, and a first UCDP conflict indicator pipeline. Mock classifications remain placeholders and must not be interpreted as empirical findings.
+The current app uses real static Natural Earth geometry, a provisional World Bank-derived world-system proxy, preserved mock/demo world-system records, an initial real World Bank WDI quality-of-life indicator pipeline, and a first UCDP conflict indicator pipeline. The default world-system layer is provisional, experimental, and needs review; it must not be interpreted as a final academic classification.
 
 ## Principles
 
@@ -97,9 +97,10 @@ Mock frontend data lives in:
 - `static/data/sources.json`
 - `static/data/source-manifest.json`
 
-The first real public indicator output lives in:
+The first real public indicator outputs live in:
 
 - `static/data/indicators/quality-of-life.world-bank.latest.json`
+- `static/data/indicators/world-system.provisional.latest.json`
 - `static/data/indicators/conflict.ucdp.latest.json`
 
 Geometry lives in:
@@ -123,7 +124,9 @@ Mock world-system indicators in `static/data/world-system.latest.json` join thro
 
 Disputed and breakaway overlay features are hoverable and clickable. Their labels use the best available Natural Earth name/status properties and a neutral reminder that OurWorldSystem does not adjudicate sovereignty. When an overlay feature has no matching disputed or special registry record, the detail panel opens a synthetic no-data map-unit record sourced to Natural Earth.
 
-The default thematic view is **World-system position**, which summarizes the current mock model output. The map can also switch to criterion layers for war/conflict, press freedom, political freedom, quality of life, extraction/externalization, and ecology. These layers are defined in `src/lib/mapLayers.ts`; each layer has a stable ID, label, description, binning rule, legend items, and explicit no-data category. Future real indicators should populate the existing JSON fields or generated equivalents, then reuse the same layer API for map coloring and legends.
+The default thematic view is **World-system position**. It now prefers `world-system.provisional.latest.json`, then falls back to the preserved demo records in `world-system.latest.json`, then to `No data`. The provisional dataset keeps demo/curated classes where present as `source: "demo_curated"` and derives broader coverage from World Bank quality-of-life and income-related indicators as `source: "derived_world_bank_quality_proxy"`. This is a limited visualization proxy, not a final Wallersteinian classification.
+
+The map can also switch to criterion layers for war/conflict, press freedom, political freedom, quality of life, extraction/externalization, and ecology. These layers are defined in `src/lib/mapLayers.ts`; each layer has a stable ID, label, description, binning rule, legend items, and explicit no-data category. Future real indicators should populate the existing JSON fields or generated equivalents, then reuse the same layer API for map coloring and legends.
 
 Missing data is always displayed as `No data`. Null, undefined, or absent indicator values are not converted to zero and are not treated as neutral or average conditions.
 
@@ -147,9 +150,19 @@ Fetch only UCDP conflict indicators with:
 npm run data:fetch:ucdp
 ```
 
-`npm run data:build` downloads both World Bank and UCDP outputs. World Bank raw API responses are stored under `data/raw/world-bank/`; UCDP raw ZIP/CSV files are stored under `data/raw/ucdp/`; generated frontend outputs are written to `static/data/indicators/`. The initial World Bank indicators are life expectancy (`SP.DYN.LE00.IN`), GNI per capita PPP (`NY.GNP.PCAP.PP.CD`), secondary gross enrollment (`SE.SEC.ENRR`), and population (`SP.POP.TOTL`).
+`npm run data:build` downloads World Bank data, attempts the optional UCDP fetch without letting UCDP source failures break the build, then generates the provisional world-system proxy. World Bank raw API responses are stored under `data/raw/world-bank/`; UCDP raw ZIP/CSV files are stored under `data/raw/ucdp/`; generated frontend outputs are written to `static/data/indicators/`. The initial World Bank indicators are life expectancy (`SP.DYN.LE00.IN`), GNI per capita PPP (`NY.GNP.PCAP.PP.CD`), secondary gross enrollment (`SE.SEC.ENRR`), and population (`SP.POP.TOTL`).
 
 `quality_of_life_score` is a transparent temporary visualization score. It requires at least life expectancy and GNI per capita PPP, optionally includes secondary enrollment, and must never be labeled as HDI. Missing World Bank values remain missing and display as `No data`; they are not fabricated or imputed.
+
+Build only the provisional world-system proxy with:
+
+```sh
+npm run data:build:worldsystem
+```
+
+The provisional proxy starts from `quality_of_life_score` when available and applies a small normalized log-income adjustment when GNI per capita PPP is present. Provisional bins are currently `core >= 78`, `semi-periphery >= 55 and < 78`, and `periphery < 55` on a 0-100 score. Contradictory or insufficient signals can be marked `uncertain`; missing values remain `no_data`; disputed map units without stable comparable data can remain `disputed`.
+
+This proxy does not yet include the evidence needed for a real world-systems model: OECD TiVA, trade and value-chain position, material footprint, e-waste, ecological externalization, military/geopolitical position, financial centrality, conflict exposure, and political-freedom indicators.
 
 The World Bank pipeline joins through `external_ids.world_bank`, `external_ids.iso3`, and registry IDs. Source countries that still do not match the registry are reported, while World Bank aggregate regions are ignored unless the registry explicitly includes them.
 
@@ -159,6 +172,12 @@ Validate registry and mock-data joins with:
 
 ```sh
 npm run validate:data
+```
+
+Validate only the provisional world-system output with:
+
+```sh
+npm run validate:worldsystem
 ```
 
 Generate a map-unit coverage report and review-only candidate registry with:

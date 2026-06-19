@@ -85,6 +85,8 @@ export interface WorldSystemAssessment {
 	class: WorldSystemClass;
 	score: number | null;
 	confidence: Confidence;
+	source?: 'derived_world_bank_quality_proxy' | 'demo_curated' | string;
+	model_status?: 'provisional' | string;
 	explanation: string;
 }
 
@@ -213,6 +215,34 @@ export interface WorldBankQualityOfLifeDataset {
 		source_country_name?: string | null;
 	}[];
 	latest_years?: Record<string, number | null>;
+	notes: string[];
+}
+
+export interface ProvisionalWorldSystemRecord {
+	id: MapUnitId;
+	world_system: {
+		class: WorldSystemClass;
+		score: number | null;
+		confidence: 'low' | 'medium';
+		source: 'derived_world_bank_quality_proxy' | 'demo_curated';
+		explanation: string;
+	};
+	components: {
+		quality_of_life_score: number | null;
+		gni_per_capita_ppp: number | null;
+		life_expectancy: number | null;
+		secondary_enrollment_gross: number | null;
+	};
+	review_status: 'needs_review' | string;
+}
+
+export interface ProvisionalWorldSystemDataset {
+	dataset_id: 'world_system_provisional_latest';
+	source_ids: ['world_bank_wdi', 'mock_demo_data'];
+	model_status: 'provisional';
+	generated_at: string;
+	methodology_note: string;
+	records: ProvisionalWorldSystemRecord[];
 	notes: string[];
 }
 

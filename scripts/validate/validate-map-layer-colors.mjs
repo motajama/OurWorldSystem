@@ -11,6 +11,10 @@ const paths = {
 	worldTopology: path.join(repoRoot, 'static/geo/world.topojson'),
 	registry: path.join(repoRoot, 'static/data/map-units.registry.json'),
 	worldSystem: path.join(repoRoot, 'static/data/world-system.latest.json'),
+	provisionalWorldSystem: path.join(
+		repoRoot,
+		'static/data/indicators/world-system.provisional.latest.json'
+	),
 	worldBankQuality: path.join(
 		repoRoot,
 		'static/data/indicators/quality-of-life.world-bank.latest.json'
@@ -119,6 +123,15 @@ function normalizeWorldSystemDemoData(input) {
 	);
 }
 
+function normalizeProvisionalWorldSystemData(input) {
+	const records = Array.isArray(input?.records) ? input.records : [];
+	return new Map(
+		records
+			.filter((record) => record && typeof record === 'object' && typeof record.id === 'string')
+			.map((record) => [record.id, record])
+	);
+}
+
 function createRegistryNoDataUnit(record) {
 	return {
 		id: record.id,
@@ -127,7 +140,12 @@ function createRegistryNoDataUnit(record) {
 		recognition_status: record.recognition_status,
 		sovereignty_note: record.sovereignty_note,
 		world_system: { class: 'no_data', score: null, confidence: 'low', explanation: '' },
-		conflict: { war_on_territory: null, involved_in_conflict: null, active_conflicts: [], notes: '' },
+		conflict: {
+			war_on_territory: null,
+			involved_in_conflict: null,
+			active_conflicts: [],
+			notes: ''
+		},
 		press_freedom: { source: 'No data', score: null, category: null, year: 2026 },
 		political_freedom: { source: 'No data', score: null, category: null, year: 2026 },
 		quality_of_life: {
@@ -156,7 +174,12 @@ function createRegistryNoDataUnit(record) {
 	};
 }
 
-function mergeUnits(registry, worldSystemDemoById, worldBankQualityData) {
+function mergeUnits(
+	registry,
+	worldSystemDemoById,
+	provisionalWorldSystemById,
+	worldBankQualityData
+) {
 	const worldBankQualityById = new Map(
 		(worldBankQualityData?.records ?? []).map((record) => [record.id, record])
 	);
@@ -164,6 +187,7 @@ function mergeUnits(registry, worldSystemDemoById, worldBankQualityData) {
 	return new Map(
 		registry.map((record) => {
 			const demoUnit = worldSystemDemoById.get(record.id);
+			const provisionalWorldSystemRecord = provisionalWorldSystemById.get(record.id);
 			const unit = demoUnit
 				? {
 						...demoUnit,
@@ -174,19 +198,33 @@ function mergeUnits(registry, worldSystemDemoById, worldBankQualityData) {
 						sources: [...new Set(['map_unit_registry', ...(demoUnit.sources ?? [])])]
 					}
 				: createRegistryNoDataUnit(record);
+			const worldSystemUnit = provisionalWorldSystemRecord
+				? {
+						...unit,
+						world_system: {
+							class: provisionalWorldSystemRecord.world_system.class,
+							score: provisionalWorldSystemRecord.world_system.score,
+							confidence: provisionalWorldSystemRecord.world_system.confidence,
+							source: provisionalWorldSystemRecord.world_system.source,
+							model_status: 'provisional',
+							explanation: provisionalWorldSystemRecord.world_system.explanation
+						},
+						sources: [...new Set([...(unit.sources ?? []), 'world_bank_wdi', 'mock_demo_data'])]
+					}
+				: unit;
 			const worldBankRecord = worldBankQualityById.get(record.id);
 
-			if (!worldBankRecord) return [record.id, unit];
+			if (!worldBankRecord) return [record.id, worldSystemUnit];
 
 			return [
 				record.id,
 				{
-					...unit,
+					...worldSystemUnit,
 					quality_of_life: {
-						...unit.quality_of_life,
+						...worldSystemUnit.quality_of_life,
 						life_expectancy: worldBankRecord.values.life_expectancy
 							? { ...worldBankRecord.values.life_expectancy, source: 'World Bank WDI' }
-							: unit.quality_of_life.life_expectancy,
+							: worldSystemUnit.quality_of_life.life_expectancy,
 						gni_per_capita_ppp: worldBankRecord.values.gni_per_capita_ppp
 							? { ...worldBankRecord.values.gni_per_capita_ppp, source: 'World Bank WDI' }
 							: null,
@@ -202,7 +240,7 @@ function mergeUnits(registry, worldSystemDemoById, worldBankQualityData) {
 						quality_of_life_score: worldBankRecord.quality_of_life_score,
 						source: 'World Bank WDI'
 					},
-					sources: [...new Set([...(unit.sources ?? []), ...worldBankRecord.sources])]
+					sources: [...new Set([...(worldSystemUnit.sources ?? []), ...worldBankRecord.sources])]
 				}
 			];
 		})
@@ -317,9 +355,16 @@ function recordName(featureProperties, registryRecord) {
 const topology = readJson(paths.worldTopology);
 const registry = readJson(paths.registry);
 const worldSystem = readJson(paths.worldSystem);
+const provisionalWorldSystem = readJsonIfPresent(paths.provisionalWorldSystem);
 const worldBankQuality = readJsonIfPresent(paths.worldBankQuality);
 const worldSystemDemoById = normalizeWorldSystemDemoData(worldSystem);
-const unitsById = mergeUnits(registry, worldSystemDemoById, worldBankQuality);
+const provisionalWorldSystemById = normalizeProvisionalWorldSystemData(provisionalWorldSystem);
+const unitsById = mergeUnits(
+	registry,
+	worldSystemDemoById,
+	provisionalWorldSystemById,
+	worldBankQuality
+);
 const registryIndexes = buildRegistryIndexes(registry);
 const geoFeatures = feature(topology, getTopologyObject(topology)).features;
 const projection = geoEqualEarth().fitExtent(
@@ -381,7 +426,9 @@ for (const [layerId, values] of Object.entries(layerValues)) {
 	}
 
 	const noDataCount = distribution[toFillClass(layerId, 'no_data')] ?? 0;
-	const missingCssClasses = Object.keys(distribution).filter((className) => !cssClasses.has(className));
+	const missingCssClasses = Object.keys(distribution).filter(
+		(className) => !cssClasses.has(className)
+	);
 
 	console.log(`\nLayer: ${layerId}`);
 	console.log(`Natural Earth features: ${geoFeatures.length}`);
@@ -403,6 +450,18 @@ for (const [layerId, values] of Object.entries(layerValues)) {
 	) {
 		console.error(
 			`Quality-of-life no_data ratio ${(noDataCount / drawable.length).toFixed(3)} exceeds 40% despite World Bank data.`
+		);
+		failed = true;
+	}
+
+	if (
+		layerId === 'world_system' &&
+		provisionalWorldSystemById.size > 0 &&
+		(worldBankQuality?.records?.length ?? 0) > 0 &&
+		noDataCount / drawable.length > 0.4
+	) {
+		console.error(
+			`World-system no_data ratio ${(noDataCount / drawable.length).toFixed(3)} exceeds 40% despite provisional World Bank-derived data.`
 		);
 		failed = true;
 	}

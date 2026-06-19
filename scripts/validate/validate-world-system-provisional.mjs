@@ -1,0 +1,179 @@
+import { access, readFile } from 'node:fs/promises';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const repoRoot = path.resolve(__dirname, '../..');
+
+const paths = {
+	registry: path.join(repoRoot, 'static/data/map-units.registry.json'),
+	qualityOfLife: path.join(
+		repoRoot,
+		'static/data/indicators/quality-of-life.world-bank.latest.json'
+	),
+	provisionalWorldSystem: path.join(
+		repoRoot,
+		'static/data/indicators/world-system.provisional.latest.json'
+	)
+};
+
+const validClasses = new Set([
+	'core',
+	'semi-periphery',
+	'periphery',
+	'uncertain',
+	'disputed',
+	'no_data'
+]);
+const validConfidence = new Set(['low', 'medium']);
+const validSources = new Set(['derived_world_bank_quality_proxy', 'demo_curated']);
+
+async function readJson(filePath) {
+	const text = await readFile(filePath, 'utf8');
+	return JSON.parse(text);
+}
+
+async function exists(filePath) {
+	try {
+		await access(filePath);
+		return true;
+	} catch {
+		return false;
+	}
+}
+
+function isObject(value) {
+	return Boolean(value && typeof value === 'object' && !Array.isArray(value));
+}
+
+const errors = [];
+
+if (!(await exists(paths.provisionalWorldSystem))) {
+	console.error('Missing static/data/indicators/world-system.provisional.latest.json.');
+	process.exit(1);
+}
+
+const [registry, qualityOfLife, data] = await Promise.all([
+	readJson(paths.registry),
+	readJson(paths.qualityOfLife),
+	readJson(paths.provisionalWorldSystem)
+]);
+const registryIds = new Set(Array.isArray(registry) ? registry.map((record) => record.id) : []);
+const worldBankComparableIds = new Set(
+	(qualityOfLife.records ?? [])
+		.filter(
+			(record) =>
+				typeof record.quality_of_life_score === 'number' ||
+				typeof record.values?.gni_per_capita_ppp?.value === 'number'
+		)
+		.map((record) => record.id)
+);
+const seenIds = new Set();
+const distribution = {};
+let noDataWithWorldBankData = 0;
+
+if (data?.dataset_id !== 'world_system_provisional_latest') {
+	errors.push('dataset_id must be world_system_provisional_latest.');
+}
+
+if (data?.model_status !== 'provisional') {
+	errors.push('model_status must be provisional.');
+}
+
+if (!Array.isArray(data?.records)) {
+	errors.push('records must be an array.');
+} else {
+	for (const [index, record] of data.records.entries()) {
+		const label = isObject(record) && typeof record.id === 'string' ? record.id : `index ${index}`;
+
+		if (!isObject(record)) {
+			errors.push(`${label}: record must be an object.`);
+			continue;
+		}
+
+		if (typeof record.id !== 'string' || record.id.trim().length === 0) {
+			errors.push(`${label}: id must be a non-empty string.`);
+			continue;
+		}
+
+		if (seenIds.has(record.id)) {
+			errors.push(`${label}: duplicate id.`);
+		}
+		seenIds.add(record.id);
+
+		if (!registryIds.has(record.id)) {
+			errors.push(`${label}: id is not in map-units registry.`);
+		}
+
+		if (!isObject(record.world_system)) {
+			errors.push(`${label}: world_system must be an object.`);
+			continue;
+		}
+
+		const classValue = record.world_system.class;
+		distribution[classValue] = (distribution[classValue] ?? 0) + 1;
+
+		if (!validClasses.has(classValue)) {
+			errors.push(`${label}: invalid class ${classValue}.`);
+		}
+
+		const score = record.world_system.score;
+		if (
+			score !== null &&
+			(typeof score !== 'number' || !Number.isFinite(score) || score < 0 || score > 100)
+		) {
+			errors.push(`${label}: score must be null or a finite number from 0 to 100.`);
+		}
+
+		if (!validConfidence.has(record.world_system.confidence)) {
+			errors.push(`${label}: confidence must be low or medium.`);
+		}
+
+		if (!validSources.has(record.world_system.source)) {
+			errors.push(`${label}: source must be present and valid.`);
+		}
+
+		if (
+			typeof record.world_system.explanation !== 'string' ||
+			record.world_system.explanation.trim().length === 0
+		) {
+			errors.push(`${label}: explanation must be present.`);
+		}
+
+		if (typeof record.review_status !== 'string' || record.review_status.trim().length === 0) {
+			errors.push(`${label}: review_status must be present.`);
+		}
+
+		if (classValue === 'no_data' && worldBankComparableIds.has(record.id)) {
+			noDataWithWorldBankData += 1;
+		}
+	}
+}
+
+const comparableCount = worldBankComparableIds.size;
+const noDataComparableRatio = comparableCount === 0 ? 0 : noDataWithWorldBankData / comparableCount;
+
+console.log('Provisional world-system validation report');
+console.log(`Records: ${Array.isArray(data?.records) ? data.records.length : 0}`);
+console.log(`Registry ids: ${registryIds.size}`);
+console.log(`World Bank comparable ids: ${comparableCount}`);
+console.log(`Class distribution: ${JSON.stringify(distribution, null, 2)}`);
+console.log(
+	`no_data among World Bank comparable ids: ${noDataWithWorldBankData}/${comparableCount}`
+);
+
+if (comparableCount > 0 && noDataComparableRatio > 0.4) {
+	errors.push(
+		`More than 40% no_data among records with World Bank comparable data: ${noDataComparableRatio.toFixed(3)}.`
+	);
+}
+
+if (errors.length > 0) {
+	console.error('\nErrors:');
+	for (const error of errors) {
+		console.error(`- ${error}`);
+	}
+	process.exit(1);
+}
+
+console.log('\nNo hard errors found.');

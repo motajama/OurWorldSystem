@@ -8,6 +8,14 @@
 		"description": "Optional World Bank WDI quality-of-life indicators."
 	},
 	{
+		"id": "world_system_provisional_latest",
+		"path": "/data/indicators/world-system.provisional.latest.json",
+		"required": false,
+		"available": true,
+		"source_ids": ["world_bank_wdi", "mock_demo_data"],
+		"description": "Optional provisional world-system proxy derived from World Bank quality-of-life indicators while preserving demo world-system classes."
+	},
+	{
 		"id": "conflict_ucdp_latest",
 		"path": "/data/indicators/conflict.ucdp.latest.json",
 		"required": false,
