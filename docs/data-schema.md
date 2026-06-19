@@ -60,7 +60,7 @@ Natural Earth geometry properties are not the application identity system. They 
 }
 ```
 
-Registry records can be manually curated or generated. Curated records preserve reviewed names, special-case notes, source IDs, and sovereignty language. Generated records are seeded from Natural Earth Admin 0 geometry to ensure complete map-unit coverage, set `review_status: "needs_review"`, set `last_reviewed: null`, and include a data note that they were generated from Natural Earth. Generated records improve reproducible joins and coverage checks, but they are not political recognition and do not settle sovereignty disputes.
+Registry records can be manually curated or generated. Curated records preserve reviewed names, special-case notes, source IDs, and sovereignty language. Generated records are seeded from Natural Earth Admin 0 geometry to ensure complete map-unit coverage, set `review_status: "needs_review"`, set `last_reviewed: null`, and include a data note that they were generated from Natural Earth. Generated records are provisional review records: they improve reproducible joins and coverage checks, but they are not political recognition and do not settle sovereignty disputes.
 
 Run the seed workflow after rebuilding geometry:
 
@@ -69,7 +69,9 @@ npm run geo:build
 npm run registry:seed
 ```
 
-The seed script updates `static/data/map-units.registry.json` and writes `data/processed/map-unit-registry-seed-report.json`. It preserves curated registry fields where a Natural Earth feature can be matched, adds missing Natural Earth aliases, and creates generated `needs_review` records only for unmatched base geometries. Missing external IDs remain `null`; Natural Earth placeholder code `-99` is never used as a registry ID or ISO external ID.
+The seed script updates `static/data/map-units.registry.json` and writes `data/processed/map-unit-registry-seed-report.json`. It preserves curated registry fields where a Natural Earth feature can be matched, adds missing Natural Earth aliases, refreshes provisional generated records, and creates generated `needs_review` records only for unmatched base geometries.
+
+Generated classification follows conservative precedence rules. Natural Earth `TYPE="Sovereign country"` is not enough to infer `map_unit_type: "UN member"` because geometry is not recognition. Natural Earth unrecognized, breakaway, disputed, dependency, and indeterminate classifications take precedence for generated records. A generated record is assigned `UN member` only when it has a valid `ISO_A3` or safe `ADM0_A3` code and is not marked as disputed, breakaway, indeterminate, or dependency. Missing external IDs remain `null`; Natural Earth placeholder code `-99` is never used as a registry ID or external ID.
 
 ## Generated Candidate Registry
 

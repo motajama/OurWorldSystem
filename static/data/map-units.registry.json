@@ -4,7 +4,7 @@
 		"display_name": "Afghanistan",
 		"short_name": "Afghanistan",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -28,7 +28,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -38,7 +39,7 @@
 		"display_name": "Albania",
 		"short_name": "Albania",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -62,7 +63,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -72,7 +74,7 @@
 		"display_name": "Algeria",
 		"short_name": "Algeria",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -96,7 +98,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -106,7 +109,7 @@
 		"display_name": "Angola",
 		"short_name": "Angola",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -130,7 +133,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -141,7 +145,7 @@
 		"short_name": "Antarctica",
 		"map_unit_type": "special",
 		"recognition_status": "unknown",
-		"sovereignty_note": "Generated from a Natural Earth Admin 0 feature with special or non-standard source classification; OurWorldSystem does not decide sovereignty disputes.",
+		"sovereignty_note": "Generated from a Natural Earth feature with a non-standard or indeterminate classification; OurWorldSystem does not adjudicate sovereignty.",
 		"natural_earth": {
 			"adm0_a3": [
 				"ATA"
@@ -164,7 +168,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -174,7 +179,7 @@
 		"display_name": "Argentina",
 		"short_name": "Argentina",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -198,7 +203,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -208,7 +214,7 @@
 		"display_name": "Armenia",
 		"short_name": "Armenia",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -232,7 +238,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -275,7 +282,7 @@
 		"display_name": "Austria",
 		"short_name": "Austria",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -299,7 +306,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -309,7 +317,7 @@
 		"display_name": "Azerbaijan",
 		"short_name": "Azerbaijan",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -333,7 +341,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -343,7 +352,7 @@
 		"display_name": "Bahamas",
 		"short_name": "Bahamas",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -368,7 +377,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -378,7 +388,7 @@
 		"display_name": "Bangladesh",
 		"short_name": "Bangladesh",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -402,7 +412,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -412,7 +423,7 @@
 		"display_name": "Belarus",
 		"short_name": "Belarus",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -436,7 +447,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -446,7 +458,7 @@
 		"display_name": "Belgium",
 		"short_name": "Belgium",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -470,7 +482,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -480,7 +493,7 @@
 		"display_name": "Belize",
 		"short_name": "Belize",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -504,7 +517,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -514,7 +528,7 @@
 		"display_name": "Benin",
 		"short_name": "Benin",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -538,7 +552,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -548,7 +563,7 @@
 		"display_name": "Bhutan",
 		"short_name": "Bhutan",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -572,7 +587,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -582,7 +598,7 @@
 		"display_name": "Bolivia",
 		"short_name": "Bolivia",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -606,7 +622,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -616,7 +633,7 @@
 		"display_name": "Bosnia and Herzegovina",
 		"short_name": "Bosnia and Herz.",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -641,7 +658,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -651,7 +669,7 @@
 		"display_name": "Botswana",
 		"short_name": "Botswana",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -675,7 +693,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -718,7 +737,7 @@
 		"display_name": "Brunei Darussalam",
 		"short_name": "Brunei",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -743,7 +762,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -753,7 +773,7 @@
 		"display_name": "Bulgaria",
 		"short_name": "Bulgaria",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -777,7 +797,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -787,7 +808,7 @@
 		"display_name": "Burkina Faso",
 		"short_name": "Burkina Faso",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -811,7 +832,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -821,7 +843,7 @@
 		"display_name": "Burundi",
 		"short_name": "Burundi",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -845,7 +867,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -855,7 +878,7 @@
 		"display_name": "Cambodia",
 		"short_name": "Cambodia",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -879,7 +902,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -889,7 +913,7 @@
 		"display_name": "Cameroon",
 		"short_name": "Cameroon",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -913,7 +937,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -956,7 +981,7 @@
 		"display_name": "Central African Republic",
 		"short_name": "Central African Rep.",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -981,17 +1006,121 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
+	},
+	{
+		"id": "TCD",
+		"display_name": "Chad",
+		"short_name": "Chad",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"TCD"
+			],
+			"iso_a3": [
+				"TCD"
+			],
+			"sov_a3": [
+				"TCD"
+			],
+			"name_aliases": [
+				"Chad"
+			]
+		},
+		"external_ids": {
+			"iso3": "TCD",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "TCD",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "CHL",
+		"display_name": "Chile",
+		"short_name": "Chile",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"CHL"
+			],
+			"iso_a3": [
+				"CHL"
+			],
+			"sov_a3": [
+				"CHL"
+			],
+			"name_aliases": [
+				"Chile"
+			]
+		},
+		"external_ids": {
+			"iso3": "CHL",
+			"iso2": null,
+			"un_m49": null,
+			"world_bank": "CHL",
+			"oecd": null
+		},
+		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": null,
+		"review_status": "needs_review"
+	},
+	{
+		"id": "CHN",
+		"display_name": "China",
+		"short_name": "China",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
+		"natural_earth": {
+			"adm0_a3": [
+				"CHN"
+			],
+			"iso_a3": [
+				"CHN"
+			],
+			"sov_a3": [
+				"CH1"
+			],
+			"name_aliases": [
+				"China"
+			]
+		},
+		"external_ids": {
+			"iso3": "CHN",
+			"iso2": "CN",
+			"un_m49": "156",
+			"world_bank": "CHN",
+			"oecd": null
+		},
+		"data_notes": [
+			"Matched Natural Earth feature during registry seed."
+		],
+		"last_reviewed": "2026-06-18"
 	},
 	{
 		"id": "COL",
 		"display_name": "Colombia",
 		"short_name": "Colombia",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -1015,7 +1144,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -1025,7 +1155,7 @@
 		"display_name": "Costa Rica",
 		"short_name": "Costa Rica",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -1049,7 +1179,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -1059,7 +1190,7 @@
 		"display_name": "Côte d'Ivoire",
 		"short_name": "Côte d'Ivoire",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -1084,7 +1215,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -1094,7 +1226,7 @@
 		"display_name": "Croatia",
 		"short_name": "Croatia",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -1118,7 +1250,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -1128,7 +1261,7 @@
 		"display_name": "Cuba",
 		"short_name": "Cuba",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -1152,7 +1285,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -1162,7 +1296,7 @@
 		"display_name": "Cyprus",
 		"short_name": "Cyprus",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -1186,7 +1320,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -1265,7 +1400,7 @@
 		"display_name": "Djibouti",
 		"short_name": "Djibouti",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -1289,7 +1424,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -1299,7 +1435,7 @@
 		"display_name": "Dominican Republic",
 		"short_name": "Dominican Rep.",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -1324,7 +1460,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -1334,7 +1471,7 @@
 		"display_name": "Ecuador",
 		"short_name": "Ecuador",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -1358,7 +1495,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -1368,7 +1506,7 @@
 		"display_name": "Egypt",
 		"short_name": "Egypt",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -1392,7 +1530,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -1402,7 +1541,7 @@
 		"display_name": "El Salvador",
 		"short_name": "El Salvador",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -1426,7 +1565,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -1436,7 +1576,7 @@
 		"display_name": "Equatorial Guinea",
 		"short_name": "Eq. Guinea",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -1461,7 +1601,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -1471,7 +1612,7 @@
 		"display_name": "Eritrea",
 		"short_name": "Eritrea",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -1495,7 +1636,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -1505,7 +1647,7 @@
 		"display_name": "Estonia",
 		"short_name": "Estonia",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -1529,7 +1671,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -1539,7 +1682,7 @@
 		"display_name": "Ethiopia",
 		"short_name": "Ethiopia",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -1563,7 +1706,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -1573,7 +1717,7 @@
 		"display_name": "Fiji",
 		"short_name": "Fiji",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -1597,7 +1741,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -1607,7 +1752,7 @@
 		"display_name": "Finland",
 		"short_name": "Finland",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -1631,7 +1776,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -1681,7 +1827,7 @@
 		"display_name": "Gabon",
 		"short_name": "Gabon",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -1705,7 +1851,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -1715,7 +1862,7 @@
 		"display_name": "Georgia",
 		"short_name": "Georgia",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -1739,7 +1886,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -1782,7 +1930,7 @@
 		"display_name": "Ghana",
 		"short_name": "Ghana",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -1806,7 +1954,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -1816,7 +1965,7 @@
 		"display_name": "Greece",
 		"short_name": "Greece",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -1840,7 +1989,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -1849,9 +1999,9 @@
 		"id": "GRL",
 		"display_name": "Greenland",
 		"short_name": "Greenland",
-		"map_unit_type": "special",
-		"recognition_status": "unknown",
-		"sovereignty_note": "Generated from a Natural Earth Admin 0 feature with special or non-standard source classification; OurWorldSystem does not decide sovereignty disputes.",
+		"map_unit_type": "UN member",
+		"recognition_status": "un_member",
+		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
 				"GRL",
@@ -1870,10 +2020,10 @@
 			]
 		},
 		"external_ids": {
-			"iso3": "GRL",
+			"iso3": "DNK",
 			"iso2": null,
 			"un_m49": null,
-			"world_bank": "GRL",
+			"world_bank": "DNK",
 			"oecd": null
 		},
 		"data_notes": [
@@ -1888,7 +2038,7 @@
 		"display_name": "Guatemala",
 		"short_name": "Guatemala",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -1912,7 +2062,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -1922,7 +2073,7 @@
 		"display_name": "Guinea",
 		"short_name": "Guinea",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -1946,7 +2097,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -1956,7 +2108,7 @@
 		"display_name": "Guinea-Bissau",
 		"short_name": "Guinea-Bissau",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -1980,7 +2132,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -1990,7 +2143,7 @@
 		"display_name": "Guyana",
 		"short_name": "Guyana",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -2014,7 +2167,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -2024,7 +2178,7 @@
 		"display_name": "Haiti",
 		"short_name": "Haiti",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -2048,7 +2202,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -2058,7 +2213,7 @@
 		"display_name": "Honduras",
 		"short_name": "Honduras",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -2082,7 +2237,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -2092,7 +2248,7 @@
 		"display_name": "Hungary",
 		"short_name": "Hungary",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -2116,118 +2272,18 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
-		],
-		"last_reviewed": null,
-		"review_status": "needs_review"
-	},
-	{
-		"id": "TCD",
-		"display_name": "Chad",
-		"short_name": "Chad",
-		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
-		"sovereignty_note": null,
-		"natural_earth": {
-			"adm0_a3": [
-				"TCD"
-			],
-			"iso_a3": [
-				"TCD"
-			],
-			"sov_a3": [
-				"TCD"
-			],
-			"name_aliases": [
-				"Chad"
-			]
-		},
-		"external_ids": {
-			"iso3": "TCD",
-			"iso2": null,
-			"un_m49": null,
-			"world_bank": "TCD",
-			"oecd": null
-		},
-		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
-		],
-		"last_reviewed": null,
-		"review_status": "needs_review"
-	},
-	{
-		"id": "CHL",
-		"display_name": "Chile",
-		"short_name": "Chile",
-		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
-		"sovereignty_note": null,
-		"natural_earth": {
-			"adm0_a3": [
-				"CHL"
-			],
-			"iso_a3": [
-				"CHL"
-			],
-			"sov_a3": [
-				"CHL"
-			],
-			"name_aliases": [
-				"Chile"
-			]
-		},
-		"external_ids": {
-			"iso3": "CHL",
-			"iso2": null,
-			"un_m49": null,
-			"world_bank": "CHL",
-			"oecd": null
-		},
-		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
-		],
-		"last_reviewed": null,
-		"review_status": "needs_review"
-	},
-	{
-		"id": "CHN",
-		"display_name": "China",
-		"short_name": "China",
-		"map_unit_type": "UN member",
-		"recognition_status": "un_member",
-		"sovereignty_note": null,
-		"natural_earth": {
-			"adm0_a3": [
-				"CHN"
-			],
-			"iso_a3": [
-				"CHN"
-			],
-			"sov_a3": [
-				"CH1"
-			],
-			"name_aliases": [
-				"China"
-			]
-		},
-		"external_ids": {
-			"iso3": "CHN",
-			"iso2": "CN",
-			"un_m49": "156",
-			"world_bank": "CHN",
-			"oecd": null
-		},
-		"data_notes": [
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
 			"Matched Natural Earth feature during registry seed."
 		],
-		"last_reviewed": "2026-06-18"
+		"last_reviewed": null,
+		"review_status": "needs_review"
 	},
 	{
 		"id": "ISL",
 		"display_name": "Iceland",
 		"short_name": "Iceland",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -2251,7 +2307,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -2294,7 +2351,7 @@
 		"display_name": "Indonesia",
 		"short_name": "Indonesia",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -2318,7 +2375,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -2362,7 +2420,7 @@
 		"display_name": "Iraq",
 		"short_name": "Iraq",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -2386,7 +2444,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -2396,7 +2455,7 @@
 		"display_name": "Ireland",
 		"short_name": "Ireland",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -2420,7 +2479,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -2464,7 +2524,7 @@
 		"display_name": "Italy",
 		"short_name": "Italy",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -2488,7 +2548,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -2498,7 +2559,7 @@
 		"display_name": "Jamaica",
 		"short_name": "Jamaica",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -2522,7 +2583,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -2565,7 +2627,7 @@
 		"display_name": "Jordan",
 		"short_name": "Jordan",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -2589,7 +2651,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -2599,7 +2662,7 @@
 		"display_name": "Kazakhstan",
 		"short_name": "Kazakhstan",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -2623,7 +2686,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -2633,7 +2697,7 @@
 		"display_name": "Kenya",
 		"short_name": "Kenya",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -2657,7 +2721,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -2667,7 +2732,7 @@
 		"display_name": "Kingdom of eSwatini",
 		"short_name": "eSwatini",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -2692,7 +2757,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -2734,7 +2800,7 @@
 		"display_name": "Kuwait",
 		"short_name": "Kuwait",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -2758,7 +2824,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -2768,7 +2835,7 @@
 		"display_name": "Kyrgyzstan",
 		"short_name": "Kyrgyzstan",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -2792,7 +2859,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -2802,7 +2870,7 @@
 		"display_name": "Lao PDR",
 		"short_name": "Laos",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -2827,7 +2895,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -2837,7 +2906,7 @@
 		"display_name": "Latvia",
 		"short_name": "Latvia",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -2861,7 +2930,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -2871,7 +2941,7 @@
 		"display_name": "Lebanon",
 		"short_name": "Lebanon",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -2895,7 +2965,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -2905,7 +2976,7 @@
 		"display_name": "Lesotho",
 		"short_name": "Lesotho",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -2929,7 +3000,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -2939,7 +3011,7 @@
 		"display_name": "Liberia",
 		"short_name": "Liberia",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -2963,7 +3035,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -2973,7 +3046,7 @@
 		"display_name": "Libya",
 		"short_name": "Libya",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -2997,7 +3070,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -3007,7 +3081,7 @@
 		"display_name": "Lithuania",
 		"short_name": "Lithuania",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -3031,7 +3105,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -3041,7 +3116,7 @@
 		"display_name": "Luxembourg",
 		"short_name": "Luxembourg",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -3065,7 +3140,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -3075,7 +3151,7 @@
 		"display_name": "Madagascar",
 		"short_name": "Madagascar",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -3099,7 +3175,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -3109,7 +3186,7 @@
 		"display_name": "Malawi",
 		"short_name": "Malawi",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -3133,7 +3210,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -3143,7 +3221,7 @@
 		"display_name": "Malaysia",
 		"short_name": "Malaysia",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -3167,7 +3245,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -3177,7 +3256,7 @@
 		"display_name": "Mali",
 		"short_name": "Mali",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -3201,7 +3280,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -3211,7 +3291,7 @@
 		"display_name": "Mauritania",
 		"short_name": "Mauritania",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -3235,7 +3315,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -3278,7 +3359,7 @@
 		"display_name": "Moldova",
 		"short_name": "Moldova",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -3302,7 +3383,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -3312,7 +3394,7 @@
 		"display_name": "Mongolia",
 		"short_name": "Mongolia",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -3336,7 +3418,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -3346,7 +3429,7 @@
 		"display_name": "Montenegro",
 		"short_name": "Montenegro",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -3370,7 +3453,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -3380,7 +3464,7 @@
 		"display_name": "Morocco",
 		"short_name": "Morocco",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -3404,7 +3488,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -3414,7 +3499,7 @@
 		"display_name": "Mozambique",
 		"short_name": "Mozambique",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -3438,7 +3523,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -3448,7 +3534,7 @@
 		"display_name": "Myanmar",
 		"short_name": "Myanmar",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -3472,7 +3558,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -3482,7 +3569,7 @@
 		"display_name": "Namibia",
 		"short_name": "Namibia",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -3506,7 +3593,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -3516,7 +3604,7 @@
 		"display_name": "Nepal",
 		"short_name": "Nepal",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -3540,7 +3628,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -3550,7 +3639,7 @@
 		"display_name": "Netherlands",
 		"short_name": "Netherlands",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -3574,7 +3663,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -3584,7 +3674,7 @@
 		"display_name": "New Zealand",
 		"short_name": "New Zealand",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -3608,7 +3698,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -3618,7 +3709,7 @@
 		"display_name": "Nicaragua",
 		"short_name": "Nicaragua",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -3642,7 +3733,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -3652,7 +3744,7 @@
 		"display_name": "Niger",
 		"short_name": "Niger",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -3676,7 +3768,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -3686,7 +3779,7 @@
 		"display_name": "Nigeria",
 		"short_name": "Nigeria",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -3710,7 +3803,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -3756,7 +3850,7 @@
 		"display_name": "North Macedonia",
 		"short_name": "North Macedonia",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -3780,7 +3874,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -3789,9 +3884,9 @@
 		"id": "CYN",
 		"display_name": "Northern Cyprus",
 		"short_name": "N. Cyprus",
-		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
-		"sovereignty_note": null,
+		"map_unit_type": "disputed",
+		"recognition_status": "disputed",
+		"sovereignty_note": "Generated from a Natural Earth feature marked as unrecognized, breakaway, or disputed; OurWorldSystem does not adjudicate sovereignty.",
 		"natural_earth": {
 			"adm0_a3": [
 				"CYN"
@@ -3813,7 +3908,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -3823,7 +3919,7 @@
 		"display_name": "Norway",
 		"short_name": "Norway",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -3838,14 +3934,15 @@
 			]
 		},
 		"external_ids": {
-			"iso3": null,
+			"iso3": "NOR",
 			"iso2": null,
 			"un_m49": null,
-			"world_bank": null,
+			"world_bank": "NOR",
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -3855,7 +3952,7 @@
 		"display_name": "Oman",
 		"short_name": "Oman",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -3879,7 +3976,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -3889,7 +3987,7 @@
 		"display_name": "Pakistan",
 		"short_name": "Pakistan",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -3913,7 +4011,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -3958,7 +4057,7 @@
 		"display_name": "Panama",
 		"short_name": "Panama",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -3982,7 +4081,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -3992,7 +4092,7 @@
 		"display_name": "Papua New Guinea",
 		"short_name": "Papua New Guinea",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -4016,7 +4116,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -4026,7 +4127,7 @@
 		"display_name": "Paraguay",
 		"short_name": "Paraguay",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -4050,7 +4151,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -4060,7 +4162,7 @@
 		"display_name": "Peru",
 		"short_name": "Peru",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -4084,7 +4186,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -4094,7 +4197,7 @@
 		"display_name": "Philippines",
 		"short_name": "Philippines",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -4118,7 +4221,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -4128,7 +4232,7 @@
 		"display_name": "Poland",
 		"short_name": "Poland",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -4152,7 +4256,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -4162,7 +4267,7 @@
 		"display_name": "Portugal",
 		"short_name": "Portugal",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -4186,7 +4291,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -4196,7 +4302,7 @@
 		"display_name": "Qatar",
 		"short_name": "Qatar",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -4220,7 +4326,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -4230,7 +4337,7 @@
 		"display_name": "Republic of the Congo",
 		"short_name": "Congo",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -4255,7 +4362,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -4265,7 +4373,7 @@
 		"display_name": "Romania",
 		"short_name": "Romania",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -4289,7 +4397,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -4333,7 +4442,7 @@
 		"display_name": "Rwanda",
 		"short_name": "Rwanda",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -4357,7 +4466,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -4400,7 +4510,7 @@
 		"display_name": "Senegal",
 		"short_name": "Senegal",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -4424,7 +4534,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -4434,7 +4545,7 @@
 		"display_name": "Serbia",
 		"short_name": "Serbia",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -4459,7 +4570,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -4469,7 +4581,7 @@
 		"display_name": "Sierra Leone",
 		"short_name": "Sierra Leone",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -4493,7 +4605,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -4503,7 +4616,7 @@
 		"display_name": "Slovakia",
 		"short_name": "Slovakia",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -4527,7 +4640,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -4537,7 +4651,7 @@
 		"display_name": "Slovenia",
 		"short_name": "Slovenia",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -4561,7 +4675,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -4571,7 +4686,7 @@
 		"display_name": "Solomon Islands",
 		"short_name": "Solomon Is.",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -4596,7 +4711,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -4606,7 +4722,7 @@
 		"display_name": "Somalia",
 		"short_name": "Somalia",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -4630,7 +4746,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -4639,9 +4756,9 @@
 		"id": "SOL",
 		"display_name": "Somaliland",
 		"short_name": "Somaliland",
-		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
-		"sovereignty_note": null,
+		"map_unit_type": "disputed",
+		"recognition_status": "disputed",
+		"sovereignty_note": "Generated from a Natural Earth feature marked as unrecognized, breakaway, or disputed; OurWorldSystem does not adjudicate sovereignty.",
 		"natural_earth": {
 			"adm0_a3": [
 				"SOL"
@@ -4662,7 +4779,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -4740,7 +4858,7 @@
 		"display_name": "South Sudan",
 		"short_name": "S. Sudan",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -4765,7 +4883,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -4775,7 +4894,7 @@
 		"display_name": "Spain",
 		"short_name": "Spain",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -4799,7 +4918,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -4809,7 +4929,7 @@
 		"display_name": "Sri Lanka",
 		"short_name": "Sri Lanka",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -4833,7 +4953,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -4843,7 +4964,7 @@
 		"display_name": "Sudan",
 		"short_name": "Sudan",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -4867,7 +4988,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -4877,7 +4999,7 @@
 		"display_name": "Suriname",
 		"short_name": "Suriname",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -4901,7 +5023,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -4911,7 +5034,7 @@
 		"display_name": "Sweden",
 		"short_name": "Sweden",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -4935,7 +5058,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -4945,7 +5069,7 @@
 		"display_name": "Switzerland",
 		"short_name": "Switzerland",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -4969,7 +5093,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -4979,7 +5104,7 @@
 		"display_name": "Syria",
 		"short_name": "Syria",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -5003,7 +5128,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -5047,7 +5173,7 @@
 		"display_name": "Tajikistan",
 		"short_name": "Tajikistan",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -5071,7 +5197,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -5081,7 +5208,7 @@
 		"display_name": "Tanzania",
 		"short_name": "Tanzania",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -5106,7 +5233,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -5116,7 +5244,7 @@
 		"display_name": "Thailand",
 		"short_name": "Thailand",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -5140,7 +5268,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -5150,7 +5279,7 @@
 		"display_name": "The Gambia",
 		"short_name": "Gambia",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -5175,7 +5304,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -5185,7 +5315,7 @@
 		"display_name": "Timor-Leste",
 		"short_name": "Timor-Leste",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -5210,7 +5340,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -5220,7 +5351,7 @@
 		"display_name": "Togo",
 		"short_name": "Togo",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -5244,7 +5375,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -5254,7 +5386,7 @@
 		"display_name": "Trinidad and Tobago",
 		"short_name": "Trinidad and Tobago",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -5278,7 +5410,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -5288,7 +5421,7 @@
 		"display_name": "Tunisia",
 		"short_name": "Tunisia",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -5312,7 +5445,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -5356,7 +5490,7 @@
 		"display_name": "Turkmenistan",
 		"short_name": "Turkmenistan",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -5380,7 +5514,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -5390,7 +5525,7 @@
 		"display_name": "Uganda",
 		"short_name": "Uganda",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -5414,7 +5549,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -5457,7 +5593,7 @@
 		"display_name": "United Arab Emirates",
 		"short_name": "United Arab Emirates",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -5481,7 +5617,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -5567,7 +5704,7 @@
 		"display_name": "Uruguay",
 		"short_name": "Uruguay",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -5591,7 +5728,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -5601,7 +5739,7 @@
 		"display_name": "Uzbekistan",
 		"short_name": "Uzbekistan",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -5625,7 +5763,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -5635,7 +5774,7 @@
 		"display_name": "Vanuatu",
 		"short_name": "Vanuatu",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -5659,7 +5798,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -5669,7 +5809,7 @@
 		"display_name": "Venezuela",
 		"short_name": "Venezuela",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -5693,7 +5833,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -5738,7 +5879,7 @@
 		"short_name": "W. Sahara",
 		"map_unit_type": "special",
 		"recognition_status": "unknown",
-		"sovereignty_note": "Generated from a Natural Earth Admin 0 feature with special or non-standard source classification; OurWorldSystem does not decide sovereignty disputes.",
+		"sovereignty_note": "Generated from a Natural Earth feature with a non-standard or indeterminate classification; OurWorldSystem does not adjudicate sovereignty.",
 		"natural_earth": {
 			"adm0_a3": [
 				"SAH"
@@ -5762,7 +5903,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -5772,7 +5914,7 @@
 		"display_name": "Yemen",
 		"short_name": "Yemen",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -5796,7 +5938,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -5806,7 +5949,7 @@
 		"display_name": "Zambia",
 		"short_name": "Zambia",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -5830,7 +5973,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"
@@ -5840,7 +5984,7 @@
 		"display_name": "Zimbabwe",
 		"short_name": "Zimbabwe",
 		"map_unit_type": "UN member",
-		"recognition_status": "unknown",
+		"recognition_status": "un_member",
 		"sovereignty_note": null,
 		"natural_earth": {
 			"adm0_a3": [
@@ -5864,7 +6008,8 @@
 			"oecd": null
 		},
 		"data_notes": [
-			"Generated from Natural Earth Admin 0 geometry; needs review."
+			"Generated from Natural Earth Admin 0 geometry; needs review.",
+			"Matched Natural Earth feature during registry seed."
 		],
 		"last_reviewed": null,
 		"review_status": "needs_review"

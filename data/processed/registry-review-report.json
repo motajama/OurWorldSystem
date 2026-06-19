@@ -1,0 +1,2290 @@
+{
+  "generated_at": "2026-06-19T14:12:18.087Z",
+  "inputs": {
+    "registry": "static/data/map-units.registry.json",
+    "world_topojson": "static/geo/world.topojson",
+    "world_bank_quality_of_life": "static/data/indicators/quality-of-life.world-bank.latest.json",
+    "seed_report": "data/processed/map-unit-registry-seed-report.json",
+    "coverage_report": "data/processed/map-unit-coverage.report.json"
+  },
+  "summary": {
+    "total_registry_records": 172,
+    "reviewed_records_count": 26,
+    "needs_review_count": 146,
+    "generated_records_count": 146,
+    "records_with_recognition_status_unknown": 2,
+    "records_without_iso3": 2,
+    "records_without_world_bank_id": 3,
+    "records_matched_by_world_bank_indicator_output": 167,
+    "records_missing_world_bank_data": 5
+  },
+  "priority_records": [
+    {
+      "id": "CYN",
+      "display_name": "Northern Cyprus",
+      "map_unit_type": "disputed",
+      "recognition_status": "disputed",
+      "external_ids": {
+        "iso3": null,
+        "world_bank": null,
+        "un_m49": null,
+        "iso2": null
+      },
+      "sovereignty_note": "Generated from a Natural Earth feature marked as unrecognized, breakaway, or disputed; OurWorldSystem does not adjudicate sovereignty.",
+      "natural_earth": {
+        "adm0_a3": [
+          "CYN"
+        ],
+        "iso_a3": [],
+        "sov_a3": [
+          "CYN"
+        ],
+        "features": [
+          {
+            "feature_index": 160,
+            "type": "Sovereign country",
+            "fclasses": {
+              "FCLASS_ISO": "Unrecognized",
+              "FCLASS_US": "Admin-0 breakaway and disputed",
+              "FCLASS_FR": "Unrecognized",
+              "FCLASS_RU": "Unrecognized",
+              "FCLASS_CN": "Unrecognized"
+            },
+            "properties": {
+              "ADM0_A3": "CYN",
+              "ISO_A3": "-99",
+              "SOV_A3": "CYN",
+              "NAME": "N. Cyprus",
+              "NAME_LONG": "Northern Cyprus",
+              "ADMIN": "Northern Cyprus",
+              "TYPE": "Sovereign country"
+            }
+          }
+        ]
+      },
+      "reasons": [
+        "missing external_ids.iso3",
+        "missing external_ids.world_bank",
+        "map_unit_type disputed",
+        "unusual Natural Earth FCLASS_ISO=Unrecognized",
+        "unusual Natural Earth FCLASS_US=Admin-0 breakaway and disputed",
+        "unusual Natural Earth FCLASS_FR=Unrecognized",
+        "unusual Natural Earth FCLASS_RU=Unrecognized",
+        "unusual Natural Earth FCLASS_CN=Unrecognized",
+        "sovereignty_note present"
+      ]
+    },
+    {
+      "id": "SOL",
+      "display_name": "Somaliland",
+      "map_unit_type": "disputed",
+      "recognition_status": "disputed",
+      "external_ids": {
+        "iso3": null,
+        "world_bank": null,
+        "un_m49": null,
+        "iso2": null
+      },
+      "sovereignty_note": "Generated from a Natural Earth feature marked as unrecognized, breakaway, or disputed; OurWorldSystem does not adjudicate sovereignty.",
+      "natural_earth": {
+        "adm0_a3": [
+          "SOL"
+        ],
+        "iso_a3": [],
+        "sov_a3": [
+          "SOL"
+        ],
+        "features": [
+          {
+            "feature_index": 167,
+            "type": "Sovereign country",
+            "fclasses": {
+              "FCLASS_ISO": "Unrecognized",
+              "FCLASS_US": "Unrecognized",
+              "FCLASS_FR": "Unrecognized",
+              "FCLASS_RU": "Unrecognized",
+              "FCLASS_CN": "Unrecognized"
+            },
+            "properties": {
+              "ADM0_A3": "SOL",
+              "ISO_A3": "-99",
+              "SOV_A3": "SOL",
+              "NAME": "Somaliland",
+              "NAME_LONG": "Somaliland",
+              "ADMIN": "Somaliland",
+              "TYPE": "Sovereign country"
+            }
+          }
+        ]
+      },
+      "reasons": [
+        "missing external_ids.iso3",
+        "missing external_ids.world_bank",
+        "map_unit_type disputed",
+        "unusual Natural Earth FCLASS_ISO=Unrecognized",
+        "unusual Natural Earth FCLASS_US=Unrecognized",
+        "unusual Natural Earth FCLASS_FR=Unrecognized",
+        "unusual Natural Earth FCLASS_RU=Unrecognized",
+        "unusual Natural Earth FCLASS_CN=Unrecognized",
+        "sovereignty_note present"
+      ]
+    },
+    {
+      "id": "ESH",
+      "display_name": "Western Sahara",
+      "map_unit_type": "special",
+      "recognition_status": "unknown",
+      "external_ids": {
+        "iso3": "ESH",
+        "world_bank": "ESH",
+        "un_m49": null,
+        "iso2": null
+      },
+      "sovereignty_note": "Generated from a Natural Earth feature with a non-standard or indeterminate classification; OurWorldSystem does not adjudicate sovereignty.",
+      "natural_earth": {
+        "adm0_a3": [
+          "SAH"
+        ],
+        "iso_a3": [
+          "ESH"
+        ],
+        "sov_a3": [
+          "SAH"
+        ],
+        "features": [
+          {
+            "feature_index": 2,
+            "type": "Indeterminate",
+            "fclasses": {
+              "FCLASS_ISO": "Admin-0 dependency",
+              "FCLASS_US": null,
+              "FCLASS_FR": "Unrecognized",
+              "FCLASS_RU": null,
+              "FCLASS_CN": null
+            },
+            "properties": {
+              "ADM0_A3": "SAH",
+              "ISO_A3": "ESH",
+              "SOV_A3": "SAH",
+              "NAME": "W. Sahara",
+              "NAME_LONG": "Western Sahara",
+              "ADMIN": "Western Sahara",
+              "TYPE": "Indeterminate"
+            }
+          }
+        ]
+      },
+      "reasons": [
+        "recognition_status unknown",
+        "map_unit_type special",
+        "unusual Natural Earth TYPE=Indeterminate",
+        "unusual Natural Earth FCLASS_ISO=Admin-0 dependency",
+        "unusual Natural Earth FCLASS_FR=Unrecognized",
+        "sovereignty_note present"
+      ]
+    },
+    {
+      "id": "ATA",
+      "display_name": "Antarctica",
+      "map_unit_type": "special",
+      "recognition_status": "unknown",
+      "external_ids": {
+        "iso3": "ATA",
+        "world_bank": "ATA",
+        "un_m49": null,
+        "iso2": null
+      },
+      "sovereignty_note": "Generated from a Natural Earth feature with a non-standard or indeterminate classification; OurWorldSystem does not adjudicate sovereignty.",
+      "natural_earth": {
+        "adm0_a3": [
+          "ATA"
+        ],
+        "iso_a3": [
+          "ATA"
+        ],
+        "sov_a3": [
+          "ATA"
+        ],
+        "features": [
+          {
+            "feature_index": 159,
+            "type": "Indeterminate",
+            "fclasses": {
+              "FCLASS_ISO": "Admin-0 dependency",
+              "FCLASS_US": null,
+              "FCLASS_FR": null,
+              "FCLASS_RU": null,
+              "FCLASS_CN": null
+            },
+            "properties": {
+              "ADM0_A3": "ATA",
+              "ISO_A3": "ATA",
+              "SOV_A3": "ATA",
+              "NAME": "Antarctica",
+              "NAME_LONG": "Antarctica",
+              "ADMIN": "Antarctica",
+              "TYPE": "Indeterminate"
+            }
+          }
+        ]
+      },
+      "reasons": [
+        "recognition_status unknown",
+        "map_unit_type special",
+        "unusual Natural Earth TYPE=Indeterminate",
+        "unusual Natural Earth FCLASS_ISO=Admin-0 dependency",
+        "sovereignty_note present"
+      ]
+    },
+    {
+      "id": "CUB",
+      "display_name": "Cuba",
+      "map_unit_type": "UN member",
+      "recognition_status": "un_member",
+      "external_ids": {
+        "iso3": "CUB",
+        "world_bank": "CUB",
+        "un_m49": null,
+        "iso2": null
+      },
+      "sovereignty_note": null,
+      "natural_earth": {
+        "adm0_a3": [
+          "CUB"
+        ],
+        "iso_a3": [
+          "CUB"
+        ],
+        "sov_a3": [
+          "CU1"
+        ],
+        "features": [
+          {
+            "feature_index": 47,
+            "type": "Sovereignty",
+            "fclasses": {
+              "FCLASS_ISO": "Admin-0 country",
+              "FCLASS_US": null,
+              "FCLASS_FR": null,
+              "FCLASS_RU": null,
+              "FCLASS_CN": null
+            },
+            "properties": {
+              "ADM0_A3": "CUB",
+              "ISO_A3": "CUB",
+              "SOV_A3": "CU1",
+              "NAME": "Cuba",
+              "NAME_LONG": "Cuba",
+              "ADMIN": "Cuba",
+              "TYPE": "Sovereignty"
+            }
+          }
+        ]
+      },
+      "reasons": [
+        "unusual Natural Earth TYPE=Sovereignty",
+        "sovereignty_note likely needed"
+      ]
+    },
+    {
+      "id": "GRL",
+      "display_name": "Greenland",
+      "map_unit_type": "UN member",
+      "recognition_status": "un_member",
+      "external_ids": {
+        "iso3": "DNK",
+        "world_bank": "DNK",
+        "un_m49": null,
+        "iso2": null
+      },
+      "sovereignty_note": null,
+      "natural_earth": {
+        "adm0_a3": [
+          "GRL",
+          "DNK"
+        ],
+        "iso_a3": [
+          "GRL",
+          "DNK"
+        ],
+        "sov_a3": [
+          "DN1"
+        ],
+        "features": [
+          {
+            "feature_index": 22,
+            "type": "Country",
+            "fclasses": {
+              "FCLASS_ISO": "Admin-0 dependency",
+              "FCLASS_US": null,
+              "FCLASS_FR": null,
+              "FCLASS_RU": null,
+              "FCLASS_CN": null
+            },
+            "properties": {
+              "ADM0_A3": "GRL",
+              "ISO_A3": "GRL",
+              "SOV_A3": "DN1",
+              "NAME": "Greenland",
+              "NAME_LONG": "Greenland",
+              "ADMIN": "Greenland",
+              "TYPE": "Country"
+            }
+          },
+          {
+            "feature_index": 142,
+            "type": "Country",
+            "fclasses": {
+              "FCLASS_ISO": "Admin-0 country",
+              "FCLASS_US": null,
+              "FCLASS_FR": null,
+              "FCLASS_RU": null,
+              "FCLASS_CN": null
+            },
+            "properties": {
+              "ADM0_A3": "DNK",
+              "ISO_A3": "DNK",
+              "SOV_A3": "DN1",
+              "NAME": "Denmark",
+              "NAME_LONG": "Denmark",
+              "ADMIN": "Denmark",
+              "TYPE": "Country"
+            }
+          }
+        ]
+      },
+      "reasons": [
+        "unusual Natural Earth FCLASS_ISO=Admin-0 dependency",
+        "sovereignty_note likely needed"
+      ]
+    },
+    {
+      "id": "KAZ",
+      "display_name": "Kazakhstan",
+      "map_unit_type": "UN member",
+      "recognition_status": "un_member",
+      "external_ids": {
+        "iso3": "KAZ",
+        "world_bank": "KAZ",
+        "un_m49": null,
+        "iso2": null
+      },
+      "sovereignty_note": null,
+      "natural_earth": {
+        "adm0_a3": [
+          "KAZ"
+        ],
+        "iso_a3": [
+          "KAZ"
+        ],
+        "sov_a3": [
+          "KA1"
+        ],
+        "features": [
+          {
+            "feature_index": 5,
+            "type": "Sovereignty",
+            "fclasses": {
+              "FCLASS_ISO": "Admin-0 country",
+              "FCLASS_US": null,
+              "FCLASS_FR": null,
+              "FCLASS_RU": null,
+              "FCLASS_CN": null
+            },
+            "properties": {
+              "ADM0_A3": "KAZ",
+              "ISO_A3": "KAZ",
+              "SOV_A3": "KA1",
+              "NAME": "Kazakhstan",
+              "NAME_LONG": "Kazakhstan",
+              "ADMIN": "Kazakhstan",
+              "TYPE": "Sovereignty"
+            }
+          }
+        ]
+      },
+      "reasons": [
+        "unusual Natural Earth TYPE=Sovereignty",
+        "sovereignty_note likely needed"
+      ]
+    },
+    {
+      "id": "NOR",
+      "display_name": "Norway",
+      "map_unit_type": "UN member",
+      "recognition_status": "un_member",
+      "external_ids": {
+        "iso3": "NOR",
+        "world_bank": "NOR",
+        "un_m49": null,
+        "iso2": null
+      },
+      "sovereignty_note": null,
+      "natural_earth": {
+        "adm0_a3": [
+          "NOR"
+        ],
+        "iso_a3": [],
+        "sov_a3": [
+          "NOR"
+        ],
+        "features": [
+          {
+            "feature_index": 21,
+            "type": "Sovereign country",
+            "fclasses": {
+              "FCLASS_ISO": "Unrecognized",
+              "FCLASS_US": null,
+              "FCLASS_FR": null,
+              "FCLASS_RU": null,
+              "FCLASS_CN": null
+            },
+            "properties": {
+              "ADM0_A3": "NOR",
+              "ISO_A3": "-99",
+              "SOV_A3": "NOR",
+              "NAME": "Norway",
+              "NAME_LONG": "Norway",
+              "ADMIN": "Norway",
+              "TYPE": "Sovereign country"
+            }
+          }
+        ]
+      },
+      "reasons": [
+        "unusual Natural Earth FCLASS_ISO=Unrecognized",
+        "sovereignty_note likely needed"
+      ]
+    }
+  ],
+  "duplicate_groups": {
+    "count": 1,
+    "groups": [
+      {
+        "key": "natural_earth.sov_a3",
+        "value": "IS1",
+        "records": [
+          {
+            "id": "ISR",
+            "display_name": "Israel",
+            "map_unit_type": "UN member",
+            "review_status": null
+          },
+          {
+            "id": "PSE",
+            "display_name": "Palestine",
+            "map_unit_type": "disputed",
+            "review_status": null
+          }
+        ]
+      }
+    ]
+  },
+  "missing_ids": {
+    "iso3": [
+      {
+        "id": "CYN",
+        "display_name": "Northern Cyprus",
+        "map_unit_type": "disputed",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "SOL",
+        "display_name": "Somaliland",
+        "map_unit_type": "disputed",
+        "review_status": "needs_review"
+      }
+    ],
+    "world_bank": [
+      {
+        "id": "CYN",
+        "display_name": "Northern Cyprus",
+        "map_unit_type": "disputed",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "SOL",
+        "display_name": "Somaliland",
+        "map_unit_type": "disputed",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "TWN",
+        "display_name": "Taiwan",
+        "map_unit_type": "special",
+        "review_status": null
+      }
+    ],
+    "un_m49": [
+      {
+        "id": "AFG",
+        "display_name": "Afghanistan",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "ALB",
+        "display_name": "Albania",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "DZA",
+        "display_name": "Algeria",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "AGO",
+        "display_name": "Angola",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "ATA",
+        "display_name": "Antarctica",
+        "map_unit_type": "special",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "ARG",
+        "display_name": "Argentina",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "ARM",
+        "display_name": "Armenia",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "AUT",
+        "display_name": "Austria",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "AZE",
+        "display_name": "Azerbaijan",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "BHS",
+        "display_name": "Bahamas",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "BGD",
+        "display_name": "Bangladesh",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "BLR",
+        "display_name": "Belarus",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "BEL",
+        "display_name": "Belgium",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "BLZ",
+        "display_name": "Belize",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "BEN",
+        "display_name": "Benin",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "BTN",
+        "display_name": "Bhutan",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "BOL",
+        "display_name": "Bolivia",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "BIH",
+        "display_name": "Bosnia and Herzegovina",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "BWA",
+        "display_name": "Botswana",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "BRN",
+        "display_name": "Brunei Darussalam",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "BGR",
+        "display_name": "Bulgaria",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "BFA",
+        "display_name": "Burkina Faso",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "BDI",
+        "display_name": "Burundi",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "KHM",
+        "display_name": "Cambodia",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "CMR",
+        "display_name": "Cameroon",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "CAF",
+        "display_name": "Central African Republic",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "TCD",
+        "display_name": "Chad",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "CHL",
+        "display_name": "Chile",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "COL",
+        "display_name": "Colombia",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "CRI",
+        "display_name": "Costa Rica",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "CIV",
+        "display_name": "Côte d'Ivoire",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "HRV",
+        "display_name": "Croatia",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "CUB",
+        "display_name": "Cuba",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "CYP",
+        "display_name": "Cyprus",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "DJI",
+        "display_name": "Djibouti",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "DOM",
+        "display_name": "Dominican Republic",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "ECU",
+        "display_name": "Ecuador",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "EGY",
+        "display_name": "Egypt",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "SLV",
+        "display_name": "El Salvador",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "GNQ",
+        "display_name": "Equatorial Guinea",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "ERI",
+        "display_name": "Eritrea",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "EST",
+        "display_name": "Estonia",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "ETH",
+        "display_name": "Ethiopia",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "FJI",
+        "display_name": "Fiji",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "FIN",
+        "display_name": "Finland",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "GAB",
+        "display_name": "Gabon",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "GEO",
+        "display_name": "Georgia",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "GHA",
+        "display_name": "Ghana",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "GRC",
+        "display_name": "Greece",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "GRL",
+        "display_name": "Greenland",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "GTM",
+        "display_name": "Guatemala",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "GIN",
+        "display_name": "Guinea",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "GNB",
+        "display_name": "Guinea-Bissau",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "GUY",
+        "display_name": "Guyana",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "HTI",
+        "display_name": "Haiti",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "HND",
+        "display_name": "Honduras",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "HUN",
+        "display_name": "Hungary",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "ISL",
+        "display_name": "Iceland",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "IDN",
+        "display_name": "Indonesia",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "IRQ",
+        "display_name": "Iraq",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "IRL",
+        "display_name": "Ireland",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "ITA",
+        "display_name": "Italy",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "JAM",
+        "display_name": "Jamaica",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "JOR",
+        "display_name": "Jordan",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "KAZ",
+        "display_name": "Kazakhstan",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "KEN",
+        "display_name": "Kenya",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "SWZ",
+        "display_name": "Kingdom of eSwatini",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "XKO",
+        "display_name": "Kosovo",
+        "map_unit_type": "disputed",
+        "review_status": null
+      },
+      {
+        "id": "KWT",
+        "display_name": "Kuwait",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "KGZ",
+        "display_name": "Kyrgyzstan",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "LAO",
+        "display_name": "Lao PDR",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "LVA",
+        "display_name": "Latvia",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "LBN",
+        "display_name": "Lebanon",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "LSO",
+        "display_name": "Lesotho",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "LBR",
+        "display_name": "Liberia",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "LBY",
+        "display_name": "Libya",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "LTU",
+        "display_name": "Lithuania",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "LUX",
+        "display_name": "Luxembourg",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "MDG",
+        "display_name": "Madagascar",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "MWI",
+        "display_name": "Malawi",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "MYS",
+        "display_name": "Malaysia",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "MLI",
+        "display_name": "Mali",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "MRT",
+        "display_name": "Mauritania",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "MDA",
+        "display_name": "Moldova",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "MNG",
+        "display_name": "Mongolia",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "MNE",
+        "display_name": "Montenegro",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "MAR",
+        "display_name": "Morocco",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "MOZ",
+        "display_name": "Mozambique",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "MMR",
+        "display_name": "Myanmar",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "NAM",
+        "display_name": "Namibia",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "NPL",
+        "display_name": "Nepal",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "NLD",
+        "display_name": "Netherlands",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "NZL",
+        "display_name": "New Zealand",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "NIC",
+        "display_name": "Nicaragua",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "NER",
+        "display_name": "Niger",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "NGA",
+        "display_name": "Nigeria",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "MKD",
+        "display_name": "North Macedonia",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "CYN",
+        "display_name": "Northern Cyprus",
+        "map_unit_type": "disputed",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "NOR",
+        "display_name": "Norway",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "OMN",
+        "display_name": "Oman",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "PAK",
+        "display_name": "Pakistan",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "PAN",
+        "display_name": "Panama",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "PNG",
+        "display_name": "Papua New Guinea",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "PRY",
+        "display_name": "Paraguay",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "PER",
+        "display_name": "Peru",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "PHL",
+        "display_name": "Philippines",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "POL",
+        "display_name": "Poland",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "PRT",
+        "display_name": "Portugal",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "QAT",
+        "display_name": "Qatar",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "COG",
+        "display_name": "Republic of the Congo",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "ROU",
+        "display_name": "Romania",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "RWA",
+        "display_name": "Rwanda",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "SEN",
+        "display_name": "Senegal",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "SRB",
+        "display_name": "Serbia",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "SLE",
+        "display_name": "Sierra Leone",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "SVK",
+        "display_name": "Slovakia",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "SVN",
+        "display_name": "Slovenia",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "SLB",
+        "display_name": "Solomon Islands",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "SOM",
+        "display_name": "Somalia",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "SOL",
+        "display_name": "Somaliland",
+        "map_unit_type": "disputed",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "SSD",
+        "display_name": "South Sudan",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "ESP",
+        "display_name": "Spain",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "LKA",
+        "display_name": "Sri Lanka",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "SDN",
+        "display_name": "Sudan",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "SUR",
+        "display_name": "Suriname",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "SWE",
+        "display_name": "Sweden",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "CHE",
+        "display_name": "Switzerland",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "SYR",
+        "display_name": "Syria",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "TJK",
+        "display_name": "Tajikistan",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "TZA",
+        "display_name": "Tanzania",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "THA",
+        "display_name": "Thailand",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "GMB",
+        "display_name": "The Gambia",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "TLS",
+        "display_name": "Timor-Leste",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "TGO",
+        "display_name": "Togo",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "TTO",
+        "display_name": "Trinidad and Tobago",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "TUN",
+        "display_name": "Tunisia",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "TKM",
+        "display_name": "Turkmenistan",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "UGA",
+        "display_name": "Uganda",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "ARE",
+        "display_name": "United Arab Emirates",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "URY",
+        "display_name": "Uruguay",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "UZB",
+        "display_name": "Uzbekistan",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "VUT",
+        "display_name": "Vanuatu",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "VEN",
+        "display_name": "Venezuela",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "ESH",
+        "display_name": "Western Sahara",
+        "map_unit_type": "special",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "YEM",
+        "display_name": "Yemen",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "ZMB",
+        "display_name": "Zambia",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "ZWE",
+        "display_name": "Zimbabwe",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      }
+    ],
+    "iso2": [
+      {
+        "id": "AFG",
+        "display_name": "Afghanistan",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "ALB",
+        "display_name": "Albania",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "DZA",
+        "display_name": "Algeria",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "AGO",
+        "display_name": "Angola",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "ATA",
+        "display_name": "Antarctica",
+        "map_unit_type": "special",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "ARG",
+        "display_name": "Argentina",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "ARM",
+        "display_name": "Armenia",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "AUT",
+        "display_name": "Austria",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "AZE",
+        "display_name": "Azerbaijan",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "BHS",
+        "display_name": "Bahamas",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "BGD",
+        "display_name": "Bangladesh",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "BLR",
+        "display_name": "Belarus",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "BEL",
+        "display_name": "Belgium",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "BLZ",
+        "display_name": "Belize",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "BEN",
+        "display_name": "Benin",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "BTN",
+        "display_name": "Bhutan",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "BOL",
+        "display_name": "Bolivia",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "BIH",
+        "display_name": "Bosnia and Herzegovina",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "BWA",
+        "display_name": "Botswana",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "BRN",
+        "display_name": "Brunei Darussalam",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "BGR",
+        "display_name": "Bulgaria",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "BFA",
+        "display_name": "Burkina Faso",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "BDI",
+        "display_name": "Burundi",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "KHM",
+        "display_name": "Cambodia",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "CMR",
+        "display_name": "Cameroon",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "CAF",
+        "display_name": "Central African Republic",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "TCD",
+        "display_name": "Chad",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "CHL",
+        "display_name": "Chile",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "COL",
+        "display_name": "Colombia",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "CRI",
+        "display_name": "Costa Rica",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "CIV",
+        "display_name": "Côte d'Ivoire",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "HRV",
+        "display_name": "Croatia",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "CUB",
+        "display_name": "Cuba",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "CYP",
+        "display_name": "Cyprus",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "DJI",
+        "display_name": "Djibouti",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "DOM",
+        "display_name": "Dominican Republic",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "ECU",
+        "display_name": "Ecuador",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "EGY",
+        "display_name": "Egypt",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "SLV",
+        "display_name": "El Salvador",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "GNQ",
+        "display_name": "Equatorial Guinea",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "ERI",
+        "display_name": "Eritrea",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "EST",
+        "display_name": "Estonia",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "ETH",
+        "display_name": "Ethiopia",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "FJI",
+        "display_name": "Fiji",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "FIN",
+        "display_name": "Finland",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "GAB",
+        "display_name": "Gabon",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "GEO",
+        "display_name": "Georgia",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "GHA",
+        "display_name": "Ghana",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "GRC",
+        "display_name": "Greece",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "GRL",
+        "display_name": "Greenland",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "GTM",
+        "display_name": "Guatemala",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "GIN",
+        "display_name": "Guinea",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "GNB",
+        "display_name": "Guinea-Bissau",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "GUY",
+        "display_name": "Guyana",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "HTI",
+        "display_name": "Haiti",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "HND",
+        "display_name": "Honduras",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "HUN",
+        "display_name": "Hungary",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "ISL",
+        "display_name": "Iceland",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "IDN",
+        "display_name": "Indonesia",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "IRQ",
+        "display_name": "Iraq",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "IRL",
+        "display_name": "Ireland",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "ITA",
+        "display_name": "Italy",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "JAM",
+        "display_name": "Jamaica",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "JOR",
+        "display_name": "Jordan",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "KAZ",
+        "display_name": "Kazakhstan",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "KEN",
+        "display_name": "Kenya",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "SWZ",
+        "display_name": "Kingdom of eSwatini",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "KWT",
+        "display_name": "Kuwait",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "KGZ",
+        "display_name": "Kyrgyzstan",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "LAO",
+        "display_name": "Lao PDR",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "LVA",
+        "display_name": "Latvia",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "LBN",
+        "display_name": "Lebanon",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "LSO",
+        "display_name": "Lesotho",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "LBR",
+        "display_name": "Liberia",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "LBY",
+        "display_name": "Libya",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "LTU",
+        "display_name": "Lithuania",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "LUX",
+        "display_name": "Luxembourg",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "MDG",
+        "display_name": "Madagascar",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "MWI",
+        "display_name": "Malawi",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "MYS",
+        "display_name": "Malaysia",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "MLI",
+        "display_name": "Mali",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "MRT",
+        "display_name": "Mauritania",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "MDA",
+        "display_name": "Moldova",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "MNG",
+        "display_name": "Mongolia",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "MNE",
+        "display_name": "Montenegro",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "MAR",
+        "display_name": "Morocco",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "MOZ",
+        "display_name": "Mozambique",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "MMR",
+        "display_name": "Myanmar",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "NAM",
+        "display_name": "Namibia",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "NPL",
+        "display_name": "Nepal",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "NLD",
+        "display_name": "Netherlands",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "NZL",
+        "display_name": "New Zealand",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "NIC",
+        "display_name": "Nicaragua",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "NER",
+        "display_name": "Niger",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "NGA",
+        "display_name": "Nigeria",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "MKD",
+        "display_name": "North Macedonia",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "CYN",
+        "display_name": "Northern Cyprus",
+        "map_unit_type": "disputed",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "NOR",
+        "display_name": "Norway",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "OMN",
+        "display_name": "Oman",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "PAK",
+        "display_name": "Pakistan",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "PAN",
+        "display_name": "Panama",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "PNG",
+        "display_name": "Papua New Guinea",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "PRY",
+        "display_name": "Paraguay",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "PER",
+        "display_name": "Peru",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "PHL",
+        "display_name": "Philippines",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "POL",
+        "display_name": "Poland",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "PRT",
+        "display_name": "Portugal",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "QAT",
+        "display_name": "Qatar",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "COG",
+        "display_name": "Republic of the Congo",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "ROU",
+        "display_name": "Romania",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "RWA",
+        "display_name": "Rwanda",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "SEN",
+        "display_name": "Senegal",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "SRB",
+        "display_name": "Serbia",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "SLE",
+        "display_name": "Sierra Leone",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "SVK",
+        "display_name": "Slovakia",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "SVN",
+        "display_name": "Slovenia",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "SLB",
+        "display_name": "Solomon Islands",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "SOM",
+        "display_name": "Somalia",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "SOL",
+        "display_name": "Somaliland",
+        "map_unit_type": "disputed",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "SSD",
+        "display_name": "South Sudan",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "ESP",
+        "display_name": "Spain",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "LKA",
+        "display_name": "Sri Lanka",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "SDN",
+        "display_name": "Sudan",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "SUR",
+        "display_name": "Suriname",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "SWE",
+        "display_name": "Sweden",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "CHE",
+        "display_name": "Switzerland",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "SYR",
+        "display_name": "Syria",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "TJK",
+        "display_name": "Tajikistan",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "TZA",
+        "display_name": "Tanzania",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "THA",
+        "display_name": "Thailand",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "GMB",
+        "display_name": "The Gambia",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "TLS",
+        "display_name": "Timor-Leste",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "TGO",
+        "display_name": "Togo",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "TTO",
+        "display_name": "Trinidad and Tobago",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "TUN",
+        "display_name": "Tunisia",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "TKM",
+        "display_name": "Turkmenistan",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "UGA",
+        "display_name": "Uganda",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "ARE",
+        "display_name": "United Arab Emirates",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "URY",
+        "display_name": "Uruguay",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "UZB",
+        "display_name": "Uzbekistan",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "VUT",
+        "display_name": "Vanuatu",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "VEN",
+        "display_name": "Venezuela",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "ESH",
+        "display_name": "Western Sahara",
+        "map_unit_type": "special",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "YEM",
+        "display_name": "Yemen",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "ZMB",
+        "display_name": "Zambia",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      },
+      {
+        "id": "ZWE",
+        "display_name": "Zimbabwe",
+        "map_unit_type": "UN member",
+        "review_status": "needs_review"
+      }
+    ]
+  },
+  "manual_review_checklist": [
+    "Verify display_name.",
+    "Verify map_unit_type.",
+    "Verify recognition_status.",
+    "Verify World Bank code.",
+    "Verify whether generated record should be merged with a curated record.",
+    "Add sovereignty_note only in neutral language.",
+    "Never use geometry as recognition."
+  ]
+}

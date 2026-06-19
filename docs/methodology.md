@@ -61,6 +61,8 @@ OurWorldSystem does not treat Natural Earth identifiers as stable political or s
 
 The registry can contain both curated and generated records. Generated records are seeded from Natural Earth Admin 0 geometry so the map has broad reproducible coverage, but they are marked `needs_review`, keep missing external IDs as `null`, and must not be read as political recognition. Human review is still required for display names, source crosswalks, recognition status, and sovereignty notes.
 
+Generated registry classification is deliberately conservative. Natural Earth `TYPE="Sovereign country"` describes a geometry/source category and is not sufficient evidence of UN membership or political recognition. For generated records, Natural Earth unrecognized, breakaway, disputed, dependency, and indeterminate classifications take precedence over `TYPE`. A generated record can be provisionally marked `UN member` only when it has a valid source code and no disputed, breakaway, indeterminate, or dependency marker.
+
 Natural Earth placeholder codes such as `-99` are never valid semantic IDs. They can appear in source properties, but they are ignored for registry matching. The frontend tries registry aliases first, then development-only mock indicator IDs, and finally renders unmatched geometry as neutral `no_data` map units. Missing registry coverage therefore does not hide geometry.
 
 Indicator data remains separate from geometry and registry metadata. Future public datasets should map into registry IDs through documented crosswalks rather than by assuming one source code system is authoritative.

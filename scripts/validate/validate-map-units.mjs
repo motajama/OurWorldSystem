@@ -163,8 +163,10 @@ function validateRegistry(registry) {
 			continue;
 		}
 
-		if (record?.external_ids?.iso3 === '-99') {
-			errors.push(`${label}: external_ids.iso3 must not be "-99".`);
+		for (const key of ['iso3', 'iso2', 'un_m49', 'world_bank', 'oecd']) {
+			if (record?.external_ids?.[key] === '-99') {
+				errors.push(`${label}: external_ids.${key} must not be "-99".`);
+			}
 		}
 
 		if (record?.review_status === 'needs_review') {
