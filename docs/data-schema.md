@@ -55,9 +55,21 @@ Natural Earth geometry properties are not the application identity system. They 
     oecd: string | null;
   };
   data_notes: string[];
-  last_reviewed: string;
+  last_reviewed: string | null;
+  review_status?: "reviewed" | "needs_review";
 }
 ```
+
+Registry records can be manually curated or generated. Curated records preserve reviewed names, special-case notes, source IDs, and sovereignty language. Generated records are seeded from Natural Earth Admin 0 geometry to ensure complete map-unit coverage, set `review_status: "needs_review"`, set `last_reviewed: null`, and include a data note that they were generated from Natural Earth. Generated records improve reproducible joins and coverage checks, but they are not political recognition and do not settle sovereignty disputes.
+
+Run the seed workflow after rebuilding geometry:
+
+```sh
+npm run geo:build
+npm run registry:seed
+```
+
+The seed script updates `static/data/map-units.registry.json` and writes `data/processed/map-unit-registry-seed-report.json`. It preserves curated registry fields where a Natural Earth feature can be matched, adds missing Natural Earth aliases, and creates generated `needs_review` records only for unmatched base geometries. Missing external IDs remain `null`; Natural Earth placeholder code `-99` is never used as a registry ID or ISO external ID.
 
 ## Generated Candidate Registry
 
@@ -248,6 +260,8 @@ The output schema is:
 ```
 
 Normalization uses `registry.external_ids.world_bank`, then `registry.external_ids.iso3`, then registry `id`. Source countries that do not resolve to a registry ID are reported in `unmatched_source_countries`; they are not forced into the dataset.
+
+World Bank aggregate regions are ignored when they are not explicitly represented in the registry. Ignored aggregates are reported separately in `ignored_aggregate_regions` so unmatched source-country counts focus on map units that may need registry or crosswalk review.
 
 For each indicator and source country, the pipeline selects the latest non-null year. Missing values remain absent. They are not filled, averaged, inferred, or set to zero.
 

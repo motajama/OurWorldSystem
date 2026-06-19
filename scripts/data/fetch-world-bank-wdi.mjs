@@ -88,6 +88,30 @@ async function fetchIndicator(indicator) {
 	return json[1];
 }
 
+async function fetchWorldBankAggregates() {
+	const url = `${apiBase}/country/all?format=json&per_page=400`;
+	const response = await fetch(url);
+
+	if (!response.ok) {
+		throw new Error(`World Bank country metadata request failed: ${response.status}`);
+	}
+
+	const json = await response.json();
+
+	if (!Array.isArray(json) || !Array.isArray(json[1])) {
+		throw new Error('Unexpected World Bank country metadata response shape.');
+	}
+
+	await writeFile(path.join(rawDir, 'countries.json'), `${JSON.stringify(json, null, '\t')}\n`);
+
+	return new Set(
+		json[1]
+			.filter((country) => country?.region?.value === 'Aggregates')
+			.map((country) => normalizeCode(country?.id))
+			.filter(Boolean)
+	);
+}
+
 function selectLatestByCountry(rows) {
 	const latest = new Map();
 
@@ -160,9 +184,11 @@ async function main() {
 
 	const registry = await readJson(registryPath);
 	const registryLookup = buildRegistryLookup(registry);
+	const aggregateCodes = await fetchWorldBankAggregates();
 	const retrievedAt = new Date().toISOString();
 	const recordsById = new Map();
 	const unmatched = new Map();
+	const ignoredAggregates = new Map();
 	const latestYears = {};
 
 	for (const indicator of Object.keys(indicators)) {
@@ -177,6 +203,14 @@ async function main() {
 			const registryId = registryLookup.get(row.countryCode);
 
 			if (!registryId) {
+				if (aggregateCodes.has(row.countryCode)) {
+					ignoredAggregates.set(row.countryCode, {
+						source_country_code: row.countryCode,
+						source_country_name: row.countryName
+					});
+					continue;
+				}
+
 				unmatched.set(row.countryCode, {
 					source_country_code: row.countryCode,
 					source_country_name: row.countryName
@@ -223,10 +257,14 @@ async function main() {
 		unmatched_source_countries: [...unmatched.values()].sort((a, b) =>
 			a.source_country_code.localeCompare(b.source_country_code)
 		),
+		ignored_aggregate_regions: [...ignoredAggregates.values()].sort((a, b) =>
+			a.source_country_code.localeCompare(b.source_country_code)
+		),
 		latest_years: latestYears,
 		notes: [
 			'quality_of_life_score is project-specific and must not be described as HDI.',
-			'Missing World Bank indicator values remain absent and are displayed as no_data.'
+			'Missing World Bank indicator values remain absent and are displayed as no_data.',
+			'World Bank aggregate regions are ignored unless explicitly represented in the registry.'
 		]
 	};
 
@@ -237,6 +275,7 @@ async function main() {
 	console.log('World Bank WDI quality-of-life dataset written.');
 	console.log(`Matched registry records: ${output.records.length}`);
 	console.log(`Unmatched source countries: ${output.unmatched_source_countries.length}`);
+	console.log(`Ignored World Bank aggregate regions: ${output.ignored_aggregate_regions.length}`);
 	console.log(`Static output: ${path.relative(repoRoot, staticOutputPath)}`);
 }
 
