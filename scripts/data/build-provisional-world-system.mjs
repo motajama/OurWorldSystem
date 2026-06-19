@@ -36,13 +36,14 @@ const notes = [
 	'This is a provisional proxy model and not a final world-systems classification.',
 	'Core classification is deliberately conservative.',
 	'Quality-of-life data alone cannot generate core status.',
-	'Core status requires structural support from extraction autonomy, productive complexity, value capture, or curated review.',
+	'Extraction autonomy is a negative filter/corroborating condition, not positive proof of core status.',
+	'Derived core status requires positive structural support from productive complexity, value capture, geopolitical-financial power, or curated review.',
 	'Many high-income countries may be provisionally semi-periphery until GVC/value-capture data are added.',
 	'Future versions should include value-chain position, ecological externalization, trade structure, extraction, financial centrality, and conflict/political indicators.'
 ];
 
 const methodologyNote =
-	'Experimental conservative provisional world-system proxy. Existing demo world-system records are preserved as demo_curated. Other records use World Bank WDI quality-of-life and income-related indicators only as welfare proxies, then require structural support from extraction autonomy, low extraction dependency, productive complexity, or curated/demo review before assigning provisional core. High quality-of-life alone is capped at semi-periphery or uncertain. This is not a final Wallersteinian or dependency-theory classification.';
+	'Experimental conservative provisional world-system proxy. Existing demo world-system records are preserved as demo_curated. Other records use World Bank WDI quality-of-life and income-related indicators only as welfare proxies. Derived core requires positive structural evidence such as productive complexity, value capture, geopolitical-financial power, or curated/demo review, plus low extraction-dependency/autonomy filters. Extraction autonomy and low extraction dependency can corroborate core but cannot create it. High quality-of-life alone is capped at semi-periphery or uncertain. This is not a final Wallersteinian or dependency-theory classification.';
 
 function clamp(value, min, max) {
 	return Math.min(max, Math.max(min, value));
@@ -138,9 +139,11 @@ function componentsFromRecords(qualityRecord, extractionRecord, productiveRecord
 		extraction_autonomy_score: isFiniteNumber(extractionRecord?.extraction_autonomy_score)
 			? round(extractionRecord.extraction_autonomy_score, 2)
 			: null,
+		value_capture_score: null,
 		productive_complexity_score: isFiniteNumber(productiveRecord?.productive_complexity_score)
 			? round(productiveRecord.productive_complexity_score, 2)
-			: null
+			: null,
+		geopolitical_financial_power_score: null
 	};
 }
 
@@ -148,7 +151,32 @@ function emptyComponents() {
 	return componentsFromRecords(null, null, null);
 }
 
-function structuralSupports(components, curatedCore = false) {
+function positiveStructuralSupports(components, curatedCore = false) {
+	const supports = [];
+
+	if (
+		isFiniteNumber(components.productive_complexity_score) &&
+		components.productive_complexity_score >= 75
+	) {
+		supports.push('productive_complexity_score >= 75');
+	}
+	if (isFiniteNumber(components.value_capture_score) && components.value_capture_score >= 70) {
+		supports.push('value_capture_score >= 70');
+	}
+	if (
+		isFiniteNumber(components.geopolitical_financial_power_score) &&
+		components.geopolitical_financial_power_score >= 70
+	) {
+		supports.push('geopolitical_financial_power_score >= 70');
+	}
+	if (curatedCore) {
+		supports.push('curated/demo class was already core');
+	}
+
+	return supports;
+}
+
+function negativeOrFilterSupports(components) {
 	const supports = [];
 
 	if (isFiniteNumber(components.extraction_autonomy_score) && components.extraction_autonomy_score >= 75) {
@@ -160,24 +188,24 @@ function structuralSupports(components, curatedCore = false) {
 	) {
 		supports.push('extraction_dependency_score <= 20');
 	}
-	if (
-		isFiniteNumber(components.productive_complexity_score) &&
-		components.productive_complexity_score >= 70
-	) {
-		supports.push('productive_complexity_score >= 70');
-	}
-	if (curatedCore) {
-		supports.push('curated/demo class was already core');
-	}
 
 	return supports;
+}
+
+function structuralSupports(components, curatedCore = false) {
+	return [
+		...positiveStructuralSupports(components, curatedCore),
+		...negativeOrFilterSupports(components)
+	];
 }
 
 function hasStructuralComponent(components) {
 	return (
 		components.extraction_dependency_score !== null ||
 		components.extraction_autonomy_score !== null ||
-		components.productive_complexity_score !== null
+		components.productive_complexity_score !== null ||
+		components.value_capture_score !== null ||
+		components.geopolitical_financial_power_score !== null
 	);
 }
 
@@ -198,9 +226,9 @@ function sourceForComponents(components) {
 		: 'derived_world_bank_quality_proxy';
 }
 
-function confidenceFor(classValue, components, supportCount, signalsConflict) {
+function confidenceFor(classValue, components, positiveSupportCount, signalsConflict) {
 	if (classValue === 'core') {
-		return supportCount >= 2 ? 'medium' : 'low';
+		return positiveSupportCount >= 1 ? 'medium' : 'low';
 	}
 	if (!hasStructuralComponent(components)) return 'low';
 	if (signalsConflict) return 'low';
@@ -211,7 +239,12 @@ function demoRecordFor(registryRecord, demoUnit, qualityRecord, extractionRecord
 	const demoWorldSystem = demoUnit.world_system ?? {};
 	const classValue = validClasses.has(demoWorldSystem.class) ? demoWorldSystem.class : 'uncertain';
 	const score = normalizeScoreToHundred(demoWorldSystem.score);
+	const confidence = ['low', 'medium', 'high'].includes(demoWorldSystem.confidence)
+		? demoWorldSystem.confidence
+		: 'medium';
 	const components = componentsFromRecords(qualityRecord, extractionRecord, productiveRecord);
+	const positiveSupports = positiveStructuralSupports(components, classValue === 'core');
+	const filterSupports = negativeOrFilterSupports(components);
 	const supports = structuralSupports(components, classValue === 'core');
 
 	return {
@@ -219,18 +252,20 @@ function demoRecordFor(registryRecord, demoUnit, qualityRecord, extractionRecord
 		world_system: {
 			class: classValue,
 			score,
-			confidence: demoWorldSystem.confidence === 'low' ? 'low' : 'medium',
+			confidence,
 			source: 'demo_curated',
 			explanation: `${demoWorldSystem.explanation ?? 'Demo curated world-system class.'} This record is preserved from static/data/world-system.latest.json demo data and needs methodological review.`
 		},
 		components: {
 			...components,
 			structural_supports: supports,
+			positive_structural_supports: positiveSupports,
+			negative_or_filter_supports: filterSupports,
 			previous_proxy_class: classValue,
 			downgraded_from_previous_proxy_core: false,
 			classification_reason: 'demo_curated_preserved'
 		},
-		review_status: 'needs_review'
+		review_status: demoUnit.review_status === 'reviewed' ? 'reviewed' : 'needs_review'
 	};
 }
 
@@ -257,6 +292,8 @@ function noDataRecord(
 		components: {
 			...components,
 			structural_supports: [],
+			positive_structural_supports: [],
+			negative_or_filter_supports: [],
 			previous_proxy_class: 'no_data',
 			downgraded_from_previous_proxy_core: false,
 			classification_reason: classValue
@@ -274,6 +311,8 @@ function derivedRecordFor(registryRecord, qualityRecord, extractionRecord, produ
 	const incomeSignal = normalizedLogIncome(income);
 	const score = previousProxyScore(qualityScore, incomeSignal);
 	const previousClass = previousProxyClassFromScore(score);
+	const positiveSupports = positiveStructuralSupports(components);
+	const filterSupports = negativeOrFilterSupports(components);
 	const supports = structuralSupports(components);
 	const hasQualityOrIncome = qualityScore !== null || incomeSignal !== null;
 	const hasAnyStructuralData = hasStructuralComponent(components);
@@ -329,6 +368,7 @@ function derivedRecordFor(registryRecord, qualityRecord, extractionRecord, produ
 		isFiniteNumber(components.extraction_dependency_score) &&
 		components.extraction_dependency_score >= 35;
 	const signalsConflict = highQualityResourceConflict || highIncomeResourceConflict;
+	const missingPositiveCoreEvidence = positiveSupports.length === 0;
 	const hasSemiSignal =
 		(qualityScore !== null && qualityScore >= 0.65) ||
 		(isFiniteNumber(components.extraction_autonomy_score) &&
@@ -342,7 +382,8 @@ function derivedRecordFor(registryRecord, qualityRecord, extractionRecord, produ
 	const coreRequirementsMet =
 		qualityScore !== null &&
 		qualityScore >= 0.88 &&
-		supports.length >= 2 &&
+		positiveSupports.length >= 1 &&
+		filterSupports.length >= 1 &&
 		!coreBlockedByExtraction;
 
 	let classValue;
@@ -356,13 +397,13 @@ function derivedRecordFor(registryRecord, qualityRecord, extractionRecord, produ
 			'Indicators conflict strongly: welfare or income proxy is high, but extraction dependency is also high. Provisional classification is uncertain pending structural value-chain review.';
 	} else if (coreRequirementsMet) {
 		classValue = 'core';
-		reason = 'conservative_core_with_structural_supports';
-		explanation = `Provisional conservative core: quality-of-life score is at least 0.88 and at least two structural supports are present (${supports.join(', ')}). This remains provisional until value-capture/GVC evidence is added.`;
-	} else if (qualityScore !== null && qualityScore >= 0.88 && supports.length < 2) {
+		reason = 'conservative_core_with_positive_structural_support';
+		explanation = `Provisional conservative core: quality-of-life score is at least 0.88, positive structural support is present (${positiveSupports.join(', ')}), and extraction-dependency/autonomy filters corroborate the classification (${filterSupports.join(', ')}). This remains provisional until value-capture/GVC evidence is added.`;
+	} else if (qualityScore !== null && qualityScore >= 0.88 && missingPositiveCoreEvidence) {
 		classValue = 'semi-periphery';
-		reason = 'core_like_welfare_insufficient_structural_evidence';
+		reason = 'core_like_welfare_autonomy_missing_positive_structural_evidence';
 		explanation =
-			'Core-like welfare profile but insufficient structural evidence. High quality-of-life proxy alone is insufficient for core classification; structural value-chain evidence is required.';
+			'Core-like welfare/autonomy profile, but no positive structural evidence of value capture or productive complexity is currently available.';
 	} else if (hasSemiSignal) {
 		classValue = 'semi-periphery';
 		reason = 'mixed_or_structurally_unconfirmed_position';
@@ -387,9 +428,9 @@ function derivedRecordFor(registryRecord, qualityRecord, extractionRecord, produ
 
 	const downgraded = previousClass === 'core' && classValue !== 'core';
 	const confidence =
-		reason === 'core_like_welfare_insufficient_structural_evidence'
+		reason === 'core_like_welfare_autonomy_missing_positive_structural_evidence'
 			? 'low'
-			: confidenceFor(classValue, components, supports.length, signalsConflict);
+			: confidenceFor(classValue, components, positiveSupports.length, signalsConflict);
 
 	return {
 		id: registryRecord.id,
@@ -403,6 +444,8 @@ function derivedRecordFor(registryRecord, qualityRecord, extractionRecord, produ
 		components: {
 			...components,
 			structural_supports: supports,
+			positive_structural_supports: positiveSupports,
+			negative_or_filter_supports: filterSupports,
 			previous_proxy_class: previousClass,
 			downgraded_from_previous_proxy_core: downgraded,
 			classification_reason: reason
@@ -430,6 +473,22 @@ function diagnosticsFor(records, registry) {
 	const coreCandidates = records
 		.filter((record) => record.world_system.class === 'core')
 		.sort((a, b) => (b.world_system.score ?? -1) - (a.world_system.score ?? -1));
+	const derivedCoreCount = coreCandidates.filter((record) =>
+		record.world_system.source.startsWith('derived')
+	).length;
+	const curatedDemoCoreCount = coreCandidates.filter(
+		(record) => record.world_system.source === 'demo_curated'
+	).length;
+	const highScoreNonCore = records
+		.filter((record) => record.world_system.class !== 'core' && (record.world_system.score ?? -1) >= 78)
+		.sort((a, b) => (b.world_system.score ?? -1) - (a.world_system.score ?? -1));
+	const preventedMissingPositive = records
+		.filter(
+			(record) =>
+				record.components.classification_reason ===
+				'core_like_welfare_autonomy_missing_positive_structural_evidence'
+		)
+		.sort((a, b) => (b.world_system.score ?? -1) - (a.world_system.score ?? -1));
 
 	const summarize = (record) => ({
 		id: record.id,
@@ -441,7 +500,11 @@ function diagnosticsFor(records, registry) {
 		extraction_dependency_score: record.components.extraction_dependency_score,
 		extraction_autonomy_score: record.components.extraction_autonomy_score,
 		productive_complexity_score: record.components.productive_complexity_score,
+		value_capture_score: record.components.value_capture_score,
+		geopolitical_financial_power_score: record.components.geopolitical_financial_power_score,
 		structural_supports: record.components.structural_supports,
+		positive_structural_supports: record.components.positive_structural_supports,
+		negative_or_filter_supports: record.components.negative_or_filter_supports,
 		reason: record.components.classification_reason
 	});
 
@@ -449,8 +512,16 @@ function diagnosticsFor(records, registry) {
 		total_records: records.length,
 		previous_proxy_core_count: previousProxyCoreCount,
 		class_distribution: distribution,
+		core_count: coreCandidates.length,
+		derived_core_count: derivedCoreCount,
+		curated_demo_core_count: curatedDemoCoreCount,
+		high_score_non_core_count: highScoreNonCore.length,
 		downgraded_from_previous_proxy_core_count: downgraded.length,
 		core_candidates: coreCandidates.slice(0, 30).map(summarize),
+		high_score_non_core: highScoreNonCore.slice(0, 30).map(summarize),
+		prevented_missing_positive_structural_evidence: preventedMissingPositive
+			.slice(0, 60)
+			.map(summarize),
 		downgraded_high_quality: downgraded.slice(0, 30).map(summarize)
 	};
 }
@@ -514,12 +585,20 @@ async function main() {
 	console.log(`Wrote ${path.relative(repoRoot, paths.output)}`);
 	console.log(`Total records: ${diagnostics.total_records}`);
 	console.log(`Class distribution: ${JSON.stringify(diagnostics.class_distribution, null, 2)}`);
+	console.log(`Core count: ${diagnostics.core_count}`);
+	console.log(`Derived core count: ${diagnostics.derived_core_count}`);
+	console.log(`Curated/demo core count: ${diagnostics.curated_demo_core_count}`);
+	console.log(`High-score non-core count: ${diagnostics.high_score_non_core_count}`);
 	console.log(`Previous proxy core count: ${diagnostics.previous_proxy_core_count}`);
 	console.log(
 		`Records downgraded from previous proxy core: ${diagnostics.downgraded_from_previous_proxy_core_count}`
 	);
+	console.log('Records prevented from becoming core because positive structural evidence is missing:');
+	console.log(JSON.stringify(diagnostics.prevented_missing_positive_structural_evidence, null, 2));
 	console.log('Top 30 core candidates with components:');
 	console.log(JSON.stringify(diagnostics.core_candidates, null, 2));
+	console.log('Top 30 high-score non-core countries:');
+	console.log(JSON.stringify(diagnostics.high_score_non_core, null, 2));
 	console.log('Top 30 downgraded high-quality countries with reason:');
 	console.log(JSON.stringify(diagnostics.downgraded_high_quality, null, 2));
 }

@@ -288,7 +288,11 @@
 					confidence: record.world_system.confidence,
 					source: record.world_system.source,
 					model_status: provisionalData.model_status,
-					explanation: record.world_system.explanation
+					explanation: record.world_system.explanation,
+					structural_supports: record.components.structural_supports ?? [],
+					positive_structural_supports: record.components.positive_structural_supports ?? [],
+					negative_or_filter_supports: record.components.negative_or_filter_supports ?? [],
+					classification_reason: record.components.classification_reason
 				},
 				sources: [...new Set([...unit.sources, ...provisionalData.source_ids])]
 			};

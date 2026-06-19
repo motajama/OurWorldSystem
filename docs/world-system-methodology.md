@@ -76,7 +76,19 @@ Planned evidence includes military expenditure, reserve-currency and financial-c
 
 The current dataset `world_system_provisional_latest` is a temporary conservative proxy. It preserves checked-in demo records and otherwise derives broad coverage from World Bank WDI quality-of-life and income-related indicators, World Bank WDI extraction dependency/autonomy, and optional productive-complexity data. Each record is marked for review.
 
-The previous quality-of-life-heavy rule overproduced `core`. In the conservative proxy, high welfare or high GNI cannot generate `core` by itself. Non-demo core classification requires `quality_of_life_score >= 0.88`, no extraction-dependency block, and at least two structural supports such as high extraction autonomy, low extraction dependency, high productive complexity, or curated/demo review. If welfare is core-like but structural evidence is incomplete, the provisional class is usually `semi-periphery`; if high welfare conflicts with high resource dependence, it is `uncertain`.
+The previous quality-of-life-heavy rule overproduced `core`. In the conservative proxy, high welfare or high GNI cannot generate `core` by itself. Extraction autonomy is also not positive proof of core status. It is a negative filter and corroborating condition: high extraction autonomy or low extraction dependency can disqualify or support a claim, but it does not demonstrate value capture, productive complexity, GVC control, financial centrality, or geopolitical power.
+
+Non-demo core classification requires all of the following:
+
+- `quality_of_life_score >= 0.88`;
+- at least one positive structural support, currently `productive_complexity_score >= 75` where Atlas data exists, or future `value_capture_score >= 70` or `geopolitical_financial_power_score >= 70`;
+- at least one negative/filter support such as `extraction_autonomy_score >= 75` or `extraction_dependency_score <= 20`;
+- no extraction-dependency block at `extraction_dependency_score >= 35`;
+- no disputed, special, or territory status unless explicitly curated.
+
+If productive-complexity and value-capture evidence are both missing, derived records must not become `core`, even if their continuous proxy score is very high. A map unit may score 97 on the welfare/income proxy and still remain `semi-periphery` because score and class answer different questions. High quality-of-life countries may remain semi-periphery until TiVA/GVC, value-capture, productive-complexity, financial, or geopolitical evidence is added.
+
+The current model deliberately under-classifies `core` rather than over-classifying it. If welfare is core-like but positive structural evidence is incomplete, the provisional class is usually `semi-periphery`; if high welfare conflicts with high resource dependence, it is `uncertain`.
 
 This use of `semi-periphery` is methodological, not merely income-based. It describes mixed structural positions with both core-like and periphery-like processes, including high-development map units whose value capture, ownership, production-chain control, or extraction autonomy has not yet been demonstrated.
 

@@ -50,8 +50,18 @@
 
 	const hasHighWelfareSemiPeriphery = (unit: MapUnit) =>
 		unit.world_system.class === 'semi-periphery' &&
-		typeof unit.quality_of_life.quality_of_life_score === 'number' &&
-		unit.quality_of_life.quality_of_life_score >= 0.88;
+		((typeof unit.quality_of_life.quality_of_life_score === 'number' &&
+			unit.quality_of_life.quality_of_life_score >= 0.88) ||
+			unit.world_system.classification_reason ===
+				'core_like_welfare_autonomy_missing_positive_structural_evidence');
+
+	const isCuratedCore = (unit: MapUnit) =>
+		unit.world_system.class === 'core' && unit.world_system.source === 'demo_curated';
+
+	const isStructurallyDerivedCore = (unit: MapUnit) =>
+		unit.world_system.class === 'core' &&
+		typeof unit.world_system.source === 'string' &&
+		unit.world_system.source.startsWith('derived');
 </script>
 
 <aside class="panel" aria-labelledby="panel-title">
@@ -94,7 +104,25 @@
 				</p>
 			{/if}
 			{#if hasHighWelfareSemiPeriphery(unit)}
-				<p class="muted">High welfare/core-like profile, but structural evidence is incomplete.</p>
+				<p class="warning">
+					High welfare/autonomy proxy, but no positive structural evidence of value capture or
+					productive complexity is currently available. Provisional class: semi-periphery.
+				</p>
+			{/if}
+			{#if isCuratedCore(unit)}
+				<p class="muted">Core classification source: curated/demo record pending review.</p>
+			{:else if isStructurallyDerivedCore(unit)}
+				<p class="muted">Core classification source: structurally derived provisional record.</p>
+			{/if}
+			{#if unit.world_system.class === 'core' && (unit.world_system.structural_supports?.length ?? 0) > 0}
+				<div class="support-block">
+					<p class="muted">Structural supports used</p>
+					<ul class="compact-list">
+						{#each unit.world_system.structural_supports ?? [] as support (support)}
+							<li>{support}</li>
+						{/each}
+					</ul>
+				</div>
 			{/if}
 			<p>{unit.world_system.explanation}</p>
 		</section>

@@ -25,12 +25,18 @@ const validClasses = new Set([
 	'disputed',
 	'no_data'
 ]);
-const validConfidence = new Set(['low', 'medium']);
+const validConfidence = new Set(['low', 'medium', 'high']);
 const validSources = new Set([
 	'derived_world_bank_quality_proxy',
 	'derived_conservative_structural_proxy',
 	'demo_curated'
 ]);
+const positiveSupportPatterns = [
+	'productive_complexity',
+	'value_capture',
+	'geopolitical_financial_power',
+	'curated/demo'
+];
 
 async function readJson(filePath) {
 	const text = await readFile(filePath, 'utf8');
@@ -48,6 +54,30 @@ async function exists(filePath) {
 
 function isObject(value) {
 	return Boolean(value && typeof value === 'object' && !Array.isArray(value));
+}
+
+function isFiniteNumber(value) {
+	return typeof value === 'number' && Number.isFinite(value);
+}
+
+function hasPositiveStructuralSupport(record) {
+	const componentSupports = Array.isArray(record.components?.positive_structural_supports)
+		? record.components.positive_structural_supports
+		: [];
+	const legacySupports = Array.isArray(record.components?.structural_supports)
+		? record.components.structural_supports
+		: [];
+	const supports = [...componentSupports, ...legacySupports].map((support) =>
+		String(support).toLowerCase()
+	);
+
+	return supports.some((support) =>
+		positiveSupportPatterns.some((pattern) => support.includes(pattern))
+	);
+}
+
+function highScoreSemiPeriphery(record) {
+	return record.world_system?.class === 'semi-periphery' && (record.world_system?.score ?? -1) >= 78;
 }
 
 const errors = [];
@@ -75,6 +105,8 @@ const worldBankComparableIds = new Set(
 const seenIds = new Set();
 const distribution = {};
 let noDataWithWorldBankData = 0;
+const coreRecords = [];
+const highScoreSemiPeripheryRecords = [];
 
 if (data?.dataset_id !== 'world_system_provisional_latest') {
 	errors.push('dataset_id must be world_system_provisional_latest.');
@@ -130,7 +162,7 @@ if (!Array.isArray(data?.records)) {
 		}
 
 		if (!validConfidence.has(record.world_system.confidence)) {
-			errors.push(`${label}: confidence must be low or medium.`);
+			errors.push(`${label}: confidence must be low, medium, or high.`);
 		}
 
 		if (!validSources.has(record.world_system.source)) {
@@ -145,21 +177,52 @@ if (!Array.isArray(data?.records)) {
 		const structuralSupports = Array.isArray(record.components.structural_supports)
 			? record.components.structural_supports
 			: [];
+		const positiveStructuralSupports = Array.isArray(record.components.positive_structural_supports)
+			? record.components.positive_structural_supports
+			: [];
 		const onlyQualityProxy = record.world_system.source === 'derived_world_bank_quality_proxy';
 		const curatedOrDemo = record.world_system.source === 'demo_curated';
+		const derivedSource = String(record.world_system.source).startsWith('derived');
+		const positiveSupportExists = hasPositiveStructuralSupport(record);
 
 		if (onlyQualityProxy && classValue === 'core') {
 			errors.push(`${label}: quality-only proxy records must not be core.`);
 		}
 
-		if (classValue === 'core' && !curatedOrDemo && structuralSupports.length < 2) {
+		if (
+			derivedSource &&
+			classValue === 'core' &&
+			!isFiniteNumber(record.components.productive_complexity_score) &&
+			!isFiniteNumber(record.components.value_capture_score)
+		) {
 			errors.push(
-				`${label}: core records must include at least two structural support reasons or be demo_curated.`
+				`${label}: derived core requires productive_complexity_score or value_capture_score data.`
 			);
 		}
 
-		if (classValue === 'core' && record.world_system.confidence === 'medium' && structuralSupports.length < 2) {
-			errors.push(`${label}: medium-confidence core requires at least two structural supports.`);
+		if (derivedSource && classValue === 'core' && !positiveSupportExists) {
+			errors.push(
+				`${label}: derived core structural_supports must include productive_complexity, value_capture, or equivalent positive support.`
+			);
+		}
+
+		if (
+			classValue === 'core' &&
+			(record.world_system.confidence === 'medium' || record.world_system.confidence === 'high') &&
+			!positiveSupportExists &&
+			!curatedOrDemo
+		) {
+			errors.push(
+				`${label}: medium/high-confidence core requires positive structural support or demo_curated source.`
+			);
+		}
+
+		if (
+			classValue === 'core' &&
+			!curatedOrDemo &&
+			positiveStructuralSupports.length === 0
+		) {
+			errors.push(`${label}: non-demo core must list positive_structural_supports.`);
 		}
 
 		if (
@@ -176,6 +239,34 @@ if (!Array.isArray(data?.records)) {
 		if (classValue === 'no_data' && worldBankComparableIds.has(record.id)) {
 			noDataWithWorldBankData += 1;
 		}
+
+		if (classValue === 'core') {
+			coreRecords.push({
+				id: record.id,
+				source: record.world_system.source,
+				confidence: record.world_system.confidence,
+				score: record.world_system.score,
+				structural_supports: structuralSupports,
+				positive_structural_supports: positiveStructuralSupports,
+				negative_or_filter_supports: record.components.negative_or_filter_supports ?? [],
+				reason: record.components.classification_reason,
+				explanation: record.world_system.explanation
+			});
+		}
+
+		if (highScoreSemiPeriphery(record)) {
+			highScoreSemiPeripheryRecords.push({
+				id: record.id,
+				score: record.world_system.score,
+				confidence: record.world_system.confidence,
+				source: record.world_system.source,
+				quality_of_life_score: record.components.quality_of_life_score,
+				productive_complexity_score: record.components.productive_complexity_score,
+				value_capture_score: record.components.value_capture_score,
+				structural_supports: structuralSupports,
+				reason: record.components.classification_reason
+			});
+		}
 	}
 }
 
@@ -187,6 +278,10 @@ console.log(`Records: ${Array.isArray(data?.records) ? data.records.length : 0}`
 console.log(`Registry ids: ${registryIds.size}`);
 console.log(`World Bank comparable ids: ${comparableCount}`);
 console.log(`Class distribution: ${JSON.stringify(distribution, null, 2)}`);
+console.log(`Core records: ${JSON.stringify(coreRecords, null, 2)}`);
+console.log(
+	`High-score semi-periphery records: ${JSON.stringify(highScoreSemiPeripheryRecords, null, 2)}`
+);
 console.log(
 	`no_data among World Bank comparable ids: ${noDataWithWorldBankData}/${comparableCount}`
 );
@@ -197,6 +292,10 @@ console.log(
 			previous_proxy_core_count: data?.diagnostics?.previous_proxy_core_count ?? null,
 			downgraded_from_previous_proxy_core_count:
 				data?.diagnostics?.downgraded_from_previous_proxy_core_count ?? null,
+			core_count: data?.diagnostics?.core_count ?? null,
+			derived_core_count: data?.diagnostics?.derived_core_count ?? null,
+			curated_demo_core_count: data?.diagnostics?.curated_demo_core_count ?? null,
+			high_score_non_core_count: data?.diagnostics?.high_score_non_core_count ?? null,
 			core_candidate_count: Array.isArray(data?.diagnostics?.core_candidates)
 				? data.diagnostics.core_candidates.length
 				: null,

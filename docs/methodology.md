@@ -57,16 +57,16 @@ The current default world-system layer is provisional, derived, experimental, an
 
 The builder preserves existing demo records from `static/data/world-system.latest.json` as `source: "demo_curated"` so curated/demo classes are not silently overridden by the proxy. Other registry records use World Bank WDI quality-of-life and GNI as welfare proxies, World Bank WDI extraction dependency/autonomy as an early structural component, and optional productive-complexity scores when available.
 
-The earlier provisional rule overproduced `core` because it treated high quality of life and GNI-style indicators as too close to world-system position. The current rule is deliberately more conservative and more Wallersteinian: core status requires structural support, not only welfare or development outcomes.
+The earlier provisional rule overproduced `core` because it treated high quality of life and GNI-style indicators as too close to world-system position. The current rule is deliberately more conservative and more Wallersteinian: core status requires positive structural evidence, not only welfare, development outcomes, extraction autonomy, or low extraction dependency.
 
-- `core`: `quality_of_life_score >= 0.88`, no extraction-dependency block, and at least two structural supports such as high extraction autonomy, low extraction dependency, high productive complexity, or curated/demo core review.
+- `core`: for derived records, `quality_of_life_score >= 0.88`, at least one positive structural support such as `productive_complexity_score >= 75` or future value-capture/geopolitical-financial evidence, at least one extraction/autonomy filter support, no extraction-dependency block at `extraction_dependency_score >= 35`, and no disputed/special/territory status unless explicitly curated.
 - `semi-periphery`: mixed or structurally unconfirmed positions, including many high-welfare cases without enough value-chain evidence.
 - `periphery`: low welfare proxy, high extraction dependency, or low extraction autonomy unless other structural evidence suggests semi-periphery.
 - `uncertain`: conflicting signals such as high welfare with high resource dependence, or special/territory comparability problems.
 - `disputed`: disputed map units without stable comparable data
 - `no_data`: missing values
 
-High quality of life alone cannot create `core`; it usually produces `semi-periphery` or `uncertain` until value-capture, GVC, productive-complexity, extraction, ecological externalization, and geopolitical-financial evidence is added. `semi-periphery` is not a residual middle-income category. It is a mixed structural position with both core-like and periphery-like processes.
+High quality of life alone cannot create `core`; quality of life plus extraction autonomy cannot create `core`; and a high continuous proxy score can still be `semi-periphery` when positive structural evidence is missing. The current proxy deliberately under-classifies core rather than over-classifying it until value-capture, GVC, productive-complexity, extraction, ecological externalization, and geopolitical-financial evidence is added. `semi-periphery` is not a residual middle-income category. It is a mixed structural position with both core-like and periphery-like processes.
 
 A defensible future model should include evidence families that this proxy does not yet include: OECD TiVA and GVC value-capture data, Atlas/BACI/Comtrade productive complexity and trade-structure data, extraction dependency, UNEP material footprints, e-waste, ecological externalization, finance/geopolitical power, conflict exposure, and political-freedom indicators. Those additions should preserve source years, transformation notes, uncertainty, and neutral handling of disputed map units.
 
