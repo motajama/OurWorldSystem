@@ -145,6 +145,7 @@ export interface MapUnit {
 	id: MapUnitId;
 	name: string;
 	map_unit_type: MapUnitType;
+	recognition_status?: RecognitionStatus;
 	sovereignty_note: string | null;
 	world_system: WorldSystemAssessment;
 	conflict: ConflictAssessment;
@@ -164,6 +165,8 @@ export interface GeoFeatureProperties {
 	ISO_A3?: string;
 	NAME?: string;
 	NAME_LONG?: string;
+	NAME_SORT?: string;
+	BRK_NAME?: string;
 	SOV_A3?: string;
 	TYPE?: string;
 	ADMIN?: string;

@@ -18,6 +18,7 @@
 		id: string;
 		path: string;
 		required: boolean;
+		available?: boolean;
 		source_ids: string[];
 		description: string;
 	};
@@ -27,6 +28,7 @@
 			id: 'quality_of_life_world_bank_latest',
 			path: '/data/indicators/quality-of-life.world-bank.latest.json',
 			required: false,
+			available: true,
 			source_ids: ['world_bank_wdi'],
 			description: 'Optional World Bank WDI quality-of-life indicators.'
 		},
@@ -34,6 +36,7 @@
 			id: 'conflict_ucdp_latest',
 			path: '/data/indicators/conflict.ucdp.latest.json',
 			required: false,
+			available: false,
 			source_ids: ['ucdp_country_year', 'ucdp_prio_armed_conflict'],
 			description: 'Optional UCDP conflict indicators.'
 		}
@@ -77,6 +80,9 @@
 	function optionalIndicatorPath(index: OptionalIndicatorIndexEntry[], id: string) {
 		const fallback = fallbackOptionalIndicators.find((indicator) => indicator.id === id);
 		const indexed = index.find((indicator) => indicator.id === id);
+
+		if (indexed?.available === false) return null;
+		if (!indexed && fallback?.available === false) return null;
 
 		return indexed?.path ?? fallback?.path ?? null;
 	}

@@ -35,6 +35,12 @@ download_if_missing() {
 	echo "Downloading ${url}"
 	if ! curl --fail --location --show-error --output "${destination}" "${url}"; then
 		if [ "${required}" = "required" ]; then
+			if [ -f "${GEO_DIR}/world.topojson" ]; then
+				echo "Required Natural Earth download failed; using existing ${GEO_DIR}/world.topojson" >&2
+				rm -f "${destination}"
+				return
+			fi
+
 			echo "Failed to download required Natural Earth dataset: ${url}" >&2
 			exit 1
 		fi
@@ -73,22 +79,24 @@ download_if_missing "${DISPUTED_URL}" "${DISPUTED_ZIP}" "optional"
 unzip_if_needed "${COUNTRIES_ZIP}" "${COUNTRIES_SHP}"
 unzip_if_needed "${DISPUTED_ZIP}" "${DISPUTED_SHP}"
 
-if [ ! -f "${COUNTRIES_SHP}" ]; then
+if [ -f "${COUNTRIES_SHP}" ]; then
+	echo "Building ${GEO_DIR}/world.topojson"
+	npx mapshaper "${COUNTRIES_SHP}" \
+		-filter-fields ADM0_A3,ISO_A3,NAME,NAME_LONG,NAME_SORT,BRK_NAME,SOV_A3,TYPE,ADMIN,FCLASS_ISO,FCLASS_US,FCLASS_FR,FCLASS_RU,FCLASS_CN \
+		-simplify 15% keep-shapes \
+		-clean \
+		-o format=topojson force "${GEO_DIR}/world.topojson"
+elif [ -f "${GEO_DIR}/world.topojson" ]; then
+	echo "Skipping base geometry rebuild; using existing ${GEO_DIR}/world.topojson"
+else
 	echo "Missing required shapefile after unzip: ${COUNTRIES_SHP}" >&2
 	exit 1
 fi
 
-echo "Building ${GEO_DIR}/world.topojson"
-npx mapshaper "${COUNTRIES_SHP}" \
-	-filter-fields ADM0_A3,ISO_A3,NAME,NAME_LONG,SOV_A3,TYPE,ADMIN,FCLASS_ISO,FCLASS_US,FCLASS_FR,FCLASS_RU,FCLASS_CN \
-	-simplify 15% keep-shapes \
-	-clean \
-	-o format=topojson force "${GEO_DIR}/world.topojson"
-
 if [ -f "${DISPUTED_SHP}" ]; then
 	echo "Building ${GEO_DIR}/disputed.topojson"
 	npx mapshaper "${DISPUTED_SHP}" \
-		-filter-fields ADM0_A3,ISO_A3,NAME,NAME_LONG,SOV_A3,TYPE,ADMIN,FCLASS_ISO,FCLASS_US,FCLASS_FR,FCLASS_RU,FCLASS_CN \
+		-filter-fields ADM0_A3,ISO_A3,NAME,NAME_LONG,NAME_SORT,BRK_NAME,SOV_A3,TYPE,ADMIN,FCLASS_ISO,FCLASS_US,FCLASS_FR,FCLASS_RU,FCLASS_CN \
 		-simplify 12% keep-shapes \
 		-clean \
 		-o format=topojson force "${GEO_DIR}/disputed.topojson"

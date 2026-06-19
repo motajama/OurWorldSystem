@@ -33,6 +33,12 @@ npm install
 npm run dev
 ```
 
+Local development is served at:
+
+```text
+http://127.0.0.1:5173/
+```
+
 ## Build
 
 ```sh
@@ -46,8 +52,18 @@ The production build is emitted to `build/` and is configured for a GitHub Pages
 ## Preview
 
 ```sh
-npm run preview
+npm run preview -- --host 127.0.0.1
 ```
+
+Because production uses the GitHub Pages base path, preview the built site at:
+
+```text
+http://127.0.0.1:4173/OurWorldSystem/
+```
+
+## GitHub Pages
+
+The app is static and GitHub Pages compatible. The SvelteKit base path is `''` in development and `/OurWorldSystem` in production. GitHub Actions runs CI on pushes and pull requests, and `deploy-pages.yml` builds `build/` and deploys it with the official GitHub Pages actions on pushes to `main` or manual dispatch.
 
 ## Data
 
@@ -72,15 +88,21 @@ The base geometry is Natural Earth Admin 0 countries at 110m scale. This layer i
 
 The main map is an interactive SVG map with D3 zoom and pan controls, mouse wheel or trackpad zoom, drag panning, and keyboard shortcuts for focused map navigation. It does not use external tiles, proprietary map services, tracking, or map API tokens.
 
+The map uses D3 Equal Earth, an equal-area projection, by default. This makes visual comparison of territorial surface areas fairer than compromise or Mercator-like projections. It is still a projection, so shapes and distances remain distorted.
+
 Natural Earth properties are source metadata for geometry, not stable application identities. Some Natural Earth features use placeholder codes such as `-99`, and those values must never be used as semantic map-unit IDs. OurWorldSystem therefore keeps a separate map-unit registry in `static/data/map-units.registry.json`. The registry provides stable neutral IDs, display names, Natural Earth aliases, external dataset IDs, recognition-status notes, and review dates.
 
 Mock world-system indicators in `static/data/world-system.latest.json` join through registry IDs where available. Disputed and special cases such as Palestine, Taiwan, and Kosovo are kept as neutral map units with notes and source aliases; the atlas does not merge them into other records or decide sovereignty disputes. Missing registry entries do not block map rendering: unmatched Natural Earth features are shown as neutral `no_data` map units until the registry and indicator data are expanded.
+
+Disputed and breakaway overlay features are hoverable and clickable. Their labels use the best available Natural Earth name/status properties and a neutral reminder that OurWorldSystem does not adjudicate sovereignty. When an overlay feature has no matching disputed or special registry record, the detail panel opens a synthetic no-data map-unit record sourced to Natural Earth.
 
 The default thematic view is **World-system position**, which summarizes the current mock model output. The map can also switch to criterion layers for war/conflict, press freedom, political freedom, quality of life, extraction/externalization, and ecology. These layers are defined in `src/lib/mapLayers.ts`; each layer has a stable ID, label, description, binning rule, legend items, and explicit no-data category. Future real indicators should populate the existing JSON fields or generated equivalents, then reuse the same layer API for map coloring and legends.
 
 Missing data is always displayed as `No data`. Null, undefined, or absent indicator values are not converted to zero and are not treated as neutral or average conditions.
 
 Most current criterion-layer values are mock/demo values only. The quality-of-life layer can now use real World Bank WDI data when the generated static indicator file is present. The conflict layer can use UCDP country-year and UCDP/PRIO state-based armed-conflict data when `conflict.ucdp.latest.json` is present. Real UCDP records override demo conflict flags; unmatched map units remain no-data or visibly demo-only.
+
+Optional indicator datasets are discovered through `static/data/indicators/index.json`. Entries marked `available: false` are not fetched by the frontend, which prevents normal browser 404 noise for optional outputs such as a not-yet-generated UCDP file. Required base datasets still fail clearly.
 
 The UCDP conflict layer distinguishes organized violence within a map unit's territory from state involvement in state-based armed conflict. `war_on_territory` means the UCDP country-year dataset records organized violence within that map unit's borders in the latest available year. It is not a claim of state responsibility. `involved_in_conflict` means the UCDP/PRIO Armed Conflict Dataset participant fields could be confidently mapped to the map-unit registry for the latest year.
 

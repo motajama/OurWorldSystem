@@ -53,6 +53,8 @@ This score is not HDI. It must be labeled as a project-specific quality-of-life 
 
 The base map uses Natural Earth Admin 0 countries. Natural Earth Admin 0 countries are rendered primarily as de facto control boundaries suitable for small-scale web mapping. Geometry is not the same as political recognition.
 
+The default map projection is D3 Equal Earth. It is an equal-area projection, so it gives a fairer visual comparison of territorial surface areas than compromise or Mercator-like projections. Equal-area does not mean distortion-free: shapes, directions, and distances are still distorted because every world projection makes tradeoffs.
+
 Natural Earth breakaway and disputed areas are handled as a separate overlay when the optional source layer is available. The overlay is intentionally subtle. It is a signal that the source geometry contains disputed or special-status features, not a settlement of sovereignty.
 
 OurWorldSystem does not treat Natural Earth identifiers as stable political or semantic IDs. Natural Earth supplies geometry and source properties; OurWorldSystem supplies a transparent map-unit registry. The registry stores neutral application IDs, display names, Natural Earth aliases, external dataset IDs, recognition status, sovereignty notes, and review dates.
@@ -66,6 +68,8 @@ Indicator data remains separate from geometry and registry metadata. Future publ
 Missing data is a first-class map state. Null, undefined, or absent indicator values are shown as `No data`. They are not converted to zero, not treated as normal or peaceful conditions, and not hidden behind neutral colors.
 
 For example, a missing conflict object means no conflict data is available. It does not mean no active war. A missing score for press freedom, political freedom, HDI, project quality-of-life score, or ecology means no numeric score is available for that layer.
+
+Optional generated indicator files are listed in `static/data/indicators/index.json`. The frontend only fetches optional entries that are not marked `available: false`; unavailable optional datasets are skipped without normal browser 404s. Required base data and required geometry still fail clearly when missing or invalid.
 
 ## Layer API
 
@@ -99,6 +103,8 @@ Future classifications should:
 Disputed or special-status units should be shown neutrally. The atlas should record notes and source attribution but should not decide sovereignty disputes. When geometry and data differ, the UI should make that uncertainty visible rather than hiding it or hard-coding a political judgment.
 
 Registry records for disputed or special cases use neutral status fields and notes. Palestine and Israel remain separate records where source geometry and data do so. Taiwan and Kosovo are represented as separate map units with recognition-status notes and dataset aliases. North Korea and South Korea remain separate map units where Natural Earth does so.
+
+The disputed/breakaway overlay is interactive. Hover and keyboard-accessible labels use the best available Natural Earth name and status properties and include the neutral note that OurWorldSystem does not adjudicate sovereignty. Clicking an overlay feature prefers a matching disputed or special registry record; otherwise it opens a synthetic no-data map-unit record sourced to Natural Earth.
 
 ## Adding UNDP HDI Later
 

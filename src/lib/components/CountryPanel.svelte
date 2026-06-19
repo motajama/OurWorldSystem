@@ -48,7 +48,11 @@
 
 <aside class="panel" aria-labelledby="panel-title">
 	{#if unit}
-		<p class="eyebrow">{unit.id} · {unit.map_unit_type}</p>
+		<p class="eyebrow">
+			{unit.id} · {unit.map_unit_type}{unit.recognition_status
+				? ` · ${unit.recognition_status}`
+				: ''}
+		</p>
 		<h2 id="panel-title">{unit.name}</h2>
 
 		{#if unit.sovereignty_note}

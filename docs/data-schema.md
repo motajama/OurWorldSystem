@@ -2,7 +2,7 @@
 
 The frontend currently reads the stable map-unit registry from `static/data/map-units.registry.json`, mock indicator data from `static/data/world-system.latest.json`, optional World Bank WDI quality-of-life indicators from `static/data/indicators/quality-of-life.world-bank.latest.json`, optional UCDP conflict indicators from `static/data/indicators/conflict.ucdp.latest.json`, and geometry from `static/geo/`.
 
-Optional indicator files are discovered through `static/data/indicators/index.json`. During development, a missing optional indicator is treated as "dataset not available yet" rather than an application error. Required base files such as `world-system.latest.json`, `map-units.registry.json`, and base geometry still fail clearly when missing or invalid.
+Optional indicator files are discovered through `static/data/indicators/index.json`. During development, a missing optional indicator is treated as "dataset not available yet" rather than an application error. Optional entries can set `available: false`; the frontend skips those entries entirely so a not-yet-generated optional dataset does not create normal browser 404 noise. Required base files such as `world-system.latest.json`, `map-units.registry.json`, and base geometry still fail clearly when missing or invalid.
 
 Use `npm run health:data` for a quick local inventory of required files, optional indicator outputs, registry count, mock world-system record count, and indicator record counts where present. The healthcheck fails for missing required files and reports missing optional datasets without failing.
 
@@ -43,6 +43,8 @@ Natural Earth geometry properties are not the application identity system. They 
   last_reviewed: string;
 }
 ```
+
+Interactive disputed/breakaway overlay features may create synthetic panel records when no disputed or special registry record matches. Synthetic records use stable internal IDs beginning with `disputed::`, set `map_unit_type` to `disputed`, set `recognition_status` to `disputed`, source the record to `natural_earth`, and keep indicators as no-data/null. These records are UI records, not new sovereignty claims.
 
 Future public datasets should be mapped into registry `id` values using documented source IDs such as ISO-3, UN M49, World Bank, OECD, or explicit manual crosswalks for special cases. Indicator files should not duplicate registry metadata except where a legacy UI field still requires it.
 
@@ -163,6 +165,8 @@ Each layer has:
 ```
 
 Every layer includes an explicit `no_data` legend item. Missing objects, null scores, undefined values, and absent risk fields must remain `no_data`; they must not be coerced to zero, low risk, no conflict, or any neutral category.
+
+The rendered SVG map uses D3 Equal Earth as its default equal-area projection. This improves visual comparison of territorial surface areas while still distorting shapes and distances like any world projection.
 
 Current values in `world-system.latest.json` are mock/demo values. Real indicator pipelines should write separate static files and merge by registry ID in the frontend or a build step. The layer API handles binning, labels, fill classes, and legend items.
 

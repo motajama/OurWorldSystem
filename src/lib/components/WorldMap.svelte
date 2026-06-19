@@ -2,7 +2,7 @@
 	import { base } from '$app/paths';
 	import { onDestroy, onMount } from 'svelte';
 	import {
-		geoNaturalEarth1,
+		geoEqualEarth,
 		geoPath,
 		select,
 		zoom,
@@ -96,6 +96,7 @@
 	const disputedTopologyPath = 'geo/disputed.topojson';
 	const worldTopologyUrl = `${base}/${worldTopologyPath}`;
 	const disputedTopologyUrl = `${base}/${disputedTopologyPath}`;
+	const debugGeometryDiagnostics = false;
 	const minZoomScale = 1;
 	const maxZoomScale = 8;
 	const zoomStep = 1.5;
@@ -117,6 +118,8 @@
 
 	const disputedNotice =
 		'This is a disputed or special map unit in the Natural Earth source layer. OurWorldSystem does not adjudicate sovereignty.';
+	const disputedSovereigntyNote =
+		'This area is represented from the Natural Earth disputed/breakaway overlay. OurWorldSystem does not adjudicate sovereignty or recognition claims.';
 
 	const zoomPercent = $derived(Math.round(currentTransform.k * 100));
 	const canZoomIn = $derived(currentTransform.k < maxZoomScale - 0.01);
@@ -274,6 +277,7 @@
 			...unit,
 			name: registryRecord.display_name,
 			map_unit_type: registryRecord.map_unit_type,
+			recognition_status: registryRecord.recognition_status,
 			sovereignty_note: registryRecord.sovereignty_note
 		};
 	}
@@ -298,10 +302,46 @@
 			properties.NAME_LONG ??
 			properties.NAME ??
 			properties.ADMIN ??
+			properties.BRK_NAME ??
+			properties.NAME_SORT ??
 			properties.ISO_A3 ??
 			properties.ADM0_A3 ??
 			'Unnamed map unit'
 		);
+	}
+
+	function getDisputedFeatureName(properties: GeoFeatureProperties) {
+		return (
+			properties.NAME_LONG ??
+			properties.NAME ??
+			properties.ADMIN ??
+			properties.BRK_NAME ??
+			properties.NAME_SORT ??
+			'Disputed/special map unit'
+		);
+	}
+
+	function getDisputedStatus(properties: GeoFeatureProperties) {
+		const values = [
+			properties.TYPE,
+			properties.FCLASS_ISO,
+			properties.FCLASS_US,
+			properties.FCLASS_FR,
+			properties.FCLASS_RU,
+			properties.FCLASS_CN
+		]
+			.filter((value): value is string => typeof value === 'string' && value.trim().length > 0)
+			.map((value) => value.trim());
+		const uniqueValues = [...new Set(values)];
+
+		return uniqueValues.length > 0 ? uniqueValues.join(', ') : null;
+	}
+
+	function getDisputedDescription(renderFeature: RenderFeature) {
+		const status = getDisputedStatus(renderFeature.properties);
+		const statusText = status ? ` Status/type: ${status}.` : '';
+
+		return `${renderFeature.name}.${statusText} Disputed/special map unit - OurWorldSystem does not adjudicate sovereignty.`;
 	}
 
 	function getFeatureId(properties: GeoFeatureProperties, fallback: string) {
@@ -312,6 +352,26 @@
 		}
 
 		return fallback;
+	}
+
+	function normalizeInternalId(value: string) {
+		return value
+			.toLocaleLowerCase()
+			.replace(/[^a-z0-9]+/g, '-')
+			.replace(/^-+|-+$/g, '')
+			.slice(0, 96);
+	}
+
+	function isDisputedRegistryRecord(record: MapUnitRegistryRecord | null) {
+		return Boolean(
+			record &&
+				(record.map_unit_type === 'disputed' ||
+					record.map_unit_type === 'special' ||
+					record.map_unit_type === 'territory' ||
+					record.recognition_status === 'disputed' ||
+					record.recognition_status === 'non_un_member' ||
+					record.recognition_status === 'special')
+		);
 	}
 
 	function getRenderKey(layerName: string, index: number, properties: GeoFeatureProperties) {
@@ -331,26 +391,34 @@
 			.join('::');
 	}
 
-	function createNoDataUnit(renderFeature: RenderFeature): MapUnit {
+	function createNoDataUnit(renderFeature: RenderFeature, isDisputedOverlay = false): MapUnit {
 		const id = renderFeature.registryRecord?.id ?? renderFeature.id;
 		const name = renderFeature.registryRecord?.display_name ?? renderFeature.name;
-		const mapUnitType = renderFeature.registryRecord?.map_unit_type ?? 'no_data';
-		const sovereigntyNote = renderFeature.registryRecord?.sovereignty_note ?? null;
+		const mapUnitType =
+			renderFeature.registryRecord?.map_unit_type ?? (isDisputedOverlay ? 'disputed' : 'no_data');
+		const recognitionStatus =
+			renderFeature.registryRecord?.recognition_status ?? (isDisputedOverlay ? 'disputed' : 'unknown');
+		const sovereigntyNote =
+			renderFeature.registryRecord?.sovereignty_note ??
+			(isDisputedOverlay ? disputedSovereigntyNote : null);
 
 		return {
 			id,
 			name,
 			map_unit_type: mapUnitType,
+			recognition_status: recognitionStatus,
 			sovereignty_note: sovereigntyNote,
 			world_system: {
-				class: 'no_data',
+				class: isDisputedOverlay ? 'disputed' : 'no_data',
 				score: null,
 				confidence: 'low',
-				explanation: 'Geometry exists but no indicator record is available yet.'
+				explanation: isDisputedOverlay
+					? 'Disputed/special overlay geometry exists, but no indicator record is available yet.'
+					: 'Geometry exists but no indicator record is available yet.'
 			},
 			conflict: {
-				war_on_territory: false,
-				involved_in_conflict: false,
+				war_on_territory: null,
+				involved_in_conflict: null,
 				active_conflicts: [],
 				fatalities_best_estimate: null,
 				child_casualties_verified: null,
@@ -407,18 +475,31 @@
 					return null;
 				}
 
-				const registryRecord = indexes
+				const registryCandidate = indexes
 					? findRegistryRecordForNaturalEarthFeature(properties, indexes)
 					: null;
-				const id = getFeatureId(
+				const isDisputedLayer = layerName === 'disputed';
+				const registryRecord =
+					isDisputedLayer && !isDisputedRegistryRecord(registryCandidate)
+						? null
+						: registryCandidate;
+				const renderKey = getRenderKey(layerName, index, properties);
+				const fallbackId = getFeatureId(
 					properties,
 					`natural-earth:${layerName}:${index}:${properties.NAME_LONG ?? properties.NAME ?? 'feature'}`
 				);
-				const name = registryRecord?.display_name ?? getFeatureName(properties);
+				const name =
+					registryRecord?.display_name ??
+					(isDisputedLayer ? getDisputedFeatureName(properties) : getFeatureName(properties));
+				const id =
+					registryRecord?.id ??
+					(isDisputedLayer
+						? `disputed::${normalizeInternalId(`${renderKey}:${name}`)}`
+						: String(fallbackId));
 
 				return {
-					id: registryRecord?.id ?? String(id),
-					renderKey: getRenderKey(layerName, index, properties),
+					id,
+					renderKey,
 					name,
 					path: featurePath,
 					unit: findUnit(properties, registryRecord),
@@ -442,7 +523,7 @@
 			notice = null;
 		}
 
-		onSelect(createNoDataUnit(renderFeature));
+		onSelect(createNoDataUnit(renderFeature, isDisputedOverlay));
 	}
 
 	function handleFeatureClick(
@@ -673,8 +754,11 @@
 				type: 'FeatureCollection',
 				features: extractedWorld.features
 			};
-			const projection = geoNaturalEarth1().fitSize(
-				[viewBox.width, viewBox.height],
+			const projection = geoEqualEarth().fitExtent(
+				[
+					[12, 12],
+					[viewBox.width - 12, viewBox.height - 12]
+				],
 				worldCollection
 			);
 			const path = geoPath(projection);
@@ -708,19 +792,21 @@
 						'disputed',
 						registryIndexes
 					);
-					geometryDiagnostic = `Attempted ${worldTopology.url}. Available object keys: ${extractedWorld.availableObjectKeys.join(', ')}. Extracted ${extractedWorld.features.length} base features from "${extractedWorld.objectKey}". Attempted ${disputedTopology.url}. Available object keys: ${extractedDisputed.availableObjectKeys.join(', ')}. Extracted ${extractedDisputed.features.length} disputed overlay features from "${extractedDisputed.objectKey}".`;
+					geometryDiagnostic = debugGeometryDiagnostics
+						? `Attempted ${worldTopology.url}. Available object keys: ${extractedWorld.availableObjectKeys.join(', ')}. Extracted ${extractedWorld.features.length} base features from "${extractedWorld.objectKey}". Attempted ${disputedTopology.url}. Available object keys: ${extractedDisputed.availableObjectKeys.join(', ')}. Extracted ${extractedDisputed.features.length} disputed overlay features from "${extractedDisputed.objectKey}".`
+						: null;
 				} else {
 					geometryDiagnostic = extractedDisputed.message;
 				}
 			} else if (disputedTopology.status !== 404) {
 				geometryDiagnostic = `Attempted optional overlay ${disputedTopology.url}. ${disputedTopology.message}.`;
 			} else {
-				geometryDiagnostic = `Attempted ${worldTopology.url}. Available object keys: ${extractedWorld.availableObjectKeys.join(', ')}. Extracted ${extractedWorld.features.length} base features from "${extractedWorld.objectKey}". Optional overlay ${disputedTopology.url} returned HTTP 404.`;
+				geometryDiagnostic = debugGeometryDiagnostics
+					? `Attempted ${worldTopology.url}. Available object keys: ${extractedWorld.availableObjectKeys.join(', ')}. Extracted ${extractedWorld.features.length} base features from "${extractedWorld.objectKey}". Optional overlay ${disputedTopology.url} returned HTTP 404.`
+					: null;
 			}
 
-			geometryStatus = disputedTopology.ok
-				? `Natural Earth base geometry loaded from object "${extractedWorld.objectKey}" with disputed overlay.`
-				: `Natural Earth base geometry loaded from object "${extractedWorld.objectKey}". Optional disputed overlay not found.`;
+			geometryStatus = '';
 		} catch {
 			geometryStatus = 'Natural Earth geometry loaded, but projection or rendering failed.';
 			geometryDiagnostic =
@@ -816,16 +902,19 @@
 							{#each disputedFeatures as renderFeature (renderFeature.renderKey)}
 								{@const unit = renderFeature.unit}
 								{@const valueLabel = getLayerValueLabel(unit)}
+								{@const selected =
+									unit?.id === selectedId || (!unit && renderFeature.id === selectedId)}
+								{@const description = getDisputedDescription(renderFeature)}
 								<path
-									class:selected={unit?.id === selectedId}
+									class:selected
 									d={renderFeature.path}
 									role="button"
 									tabindex="0"
-									aria-label={`Inspect disputed or special map unit: ${unit?.name ?? renderFeature.name}. ${selectedLayerDefinition.label}: ${valueLabel}`}
+									aria-label={`${description} ${selectedLayerDefinition.label}: ${valueLabel}`}
 									onclick={(event) => handleFeatureClick(event, renderFeature, true)}
 									onkeydown={(event) => handleKeydown(event, renderFeature, true)}
 								>
-									<title>{unit?.name ?? renderFeature.name}: {selectedLayerDefinition.label} - {valueLabel}</title>
+									<title>{description} {selectedLayerDefinition.label}: {valueLabel}</title>
 								</path>
 							{/each}
 						</g>
@@ -838,7 +927,9 @@
 	{#if notice}
 		<p class="notice" role="status">{notice}</p>
 	{/if}
-	<p class="status">{geometryStatus}</p>
+	{#if geometryStatus}
+		<p class="status">{geometryStatus}</p>
+	{/if}
 	{#if geometryDiagnostic}
 		<p class="diagnostic" role="status">{geometryDiagnostic}</p>
 	{/if}

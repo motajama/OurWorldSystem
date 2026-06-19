@@ -98,6 +98,11 @@ const indicatorIndex = await readOptionalJson(indicatorIndexFile, 'indicator ind
 if (Array.isArray(indicatorIndex)) {
 	for (const entry of indicatorIndex) {
 		const id = typeof entry?.id === 'string' ? entry.id : 'unknown indicator';
+		if (entry?.available === false) {
+			console.log(`optional unavailable: ${id}`);
+			continue;
+		}
+
 		const datasetPath = toRelativeStaticPath(entry?.path);
 
 		if (!datasetPath) {

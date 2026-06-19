@@ -9,12 +9,13 @@ GitHub Actions runs the local, deterministic static build path:
 ```sh
 npm ci
 npm run geo:build
+npm run health:data
 npm run validate:data
 npm run check
 npm run build
 ```
 
-`npm run health:data` is useful before CI because it prints whether required assets exist and reports record counts, but CI keeps `validate:data` as the hard gate.
+`npm run health:data` prints whether required assets exist and reports record counts. CI also runs `validate:data` as the hard gate for schema and join checks.
 
 Required files:
 
@@ -25,16 +26,15 @@ Required files:
 
 Optional indicator files under `static/data/indicators/` are validated only when present. Missing UCDP output must not fail CI.
 
-Current data generation scripts are split by source stability:
+Current data generation scripts are split by source:
 
 ```sh
-npm run data:build:required
-npm run data:build:optional
+npm run data:fetch:worldbank
+npm run data:fetch:ucdp
+npm run data:build
 ```
 
-`data:build:required` runs the World Bank WDI pipeline. `data:build` is an alias for this required pipeline.
-
-`data:build:optional` runs the UCDP conflict pipeline. Run it when network access and UCDP source availability allow.
+`data:build` runs both current public-data fetchers. Run individual fetchers when only one generated output needs to be refreshed.
 
 ## Registry Validation
 
@@ -70,6 +70,8 @@ This downloads Natural Earth source archives into `data/raw/natural-earth/` and 
 - `static/geo/disputed.topojson` comes from Natural Earth breakaway/disputed areas at 50m scale when that optional archive is available.
 
 Natural Earth Admin 0 countries are used primarily as de facto boundaries for small-scale web rendering. The disputed/breakaway layer is rendered separately. Geometry is not political recognition, and the pipeline must not hard-code sovereignty judgments.
+
+The frontend renders the world with D3 Equal Earth, an equal-area projection that makes territorial area comparison fairer while still distorting shapes and distances.
 
 ## World Bank WDI Quality-of-Life Pipeline
 
@@ -136,6 +138,8 @@ The output distinguishes:
 - `fatalities_best_estimate`: UCDP best estimate for organized violence in the processed country-year layer.
 
 These fields must not be used to infer state responsibility for violence on territory. Fatality estimates are not adult/child breakdowns and are not complete civilian casualty counts. Child casualties remain `null` until a separate UN CAAC, UNICEF, or equivalent child-casualty source is added.
+
+When an optional generated output is intentionally absent, mark its `static/data/indicators/index.json` entry with `available: false`. The frontend and healthcheck skip unavailable optional entries, while required datasets continue to fail clearly.
 
 ## General Indicator Pipeline
 
