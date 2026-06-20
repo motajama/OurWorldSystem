@@ -65,6 +65,12 @@
 
 	const isReinterpretedDemoSeed = (unit: MapUnit) =>
 		unit.world_system.source === 'legacy_demo_seed_reinterpreted';
+
+	const hasIndustrialSemiperipheryWarning = (unit: MapUnit) =>
+		unit.world_system.profile === 'industrial_semiperiphery' ||
+		(unit.world_system.guardrails_triggered ?? []).some((guardrail) =>
+			guardrail.startsWith('industrial_semiperiphery_guard:')
+		);
 </script>
 
 <aside class="panel" aria-labelledby="panel-title">
@@ -99,6 +105,10 @@
 					<dt>Source</dt>
 					<dd>{unit.world_system.source ?? 'No data'}</dd>
 				</div>
+				<div>
+					<dt>Profile</dt>
+					<dd>{unit.world_system.profile ?? 'No data'}</dd>
+				</div>
 			</dl>
 			{#if isProvisionalWorldSystem(unit.world_system.model_status)}
 				<p class="warning">
@@ -125,6 +135,22 @@
 					Provisional core candidate based on high welfare, low extraction dependency, and
 					productive capability proxy. Final core status requires value-capture/GVC evidence.
 				</p>
+			{/if}
+			{#if hasIndustrialSemiperipheryWarning(unit)}
+				<p class="warning">
+					Manufacturing/high-tech export shares may reflect dependent industrial integration. Core
+					status requires value-capture/GVC evidence.
+				</p>
+			{/if}
+			{#if (unit.world_system.guardrails_triggered?.length ?? 0) > 0}
+				<div class="support-block">
+					<p class="muted">Guardrails triggered</p>
+					<ul class="compact-list">
+						{#each unit.world_system.guardrails_triggered ?? [] as guardrail (guardrail)}
+							<li>{guardrail}</li>
+						{/each}
+					</ul>
+				</div>
 			{/if}
 			{#if unit.world_system.class === 'core' && (unit.world_system.structural_supports?.length ?? 0) > 0}
 				<div class="support-block">
@@ -394,10 +420,115 @@
 					<dd>{unit.exploitation_position.productive_capability_data_quality ?? 'No data'}</dd>
 				</div>
 			</dl>
+			{#if unit.world_system.productive_capability_values}
+				<div class="support-block">
+					<p class="muted">World-system model evidence</p>
+					<dl>
+						<div>
+							<dt>Model score</dt>
+							<dd>
+								{formatNumber(unit.world_system.productive_capability_score, {
+									maximumFractionDigits: 1
+								})}
+							</dd>
+						</div>
+						<div>
+							<dt>Model data quality</dt>
+							<dd>{unit.world_system.productive_capability_data_quality ?? 'No data'}</dd>
+						</div>
+						<div>
+							<dt>Manufactures exports</dt>
+							<dd>
+								{formatNumber(
+									unit.world_system.productive_capability_values
+										.manufactures_exports_merchandise_pct,
+									{ maximumFractionDigits: 1 }
+								)}
+							</dd>
+						</div>
+						<div>
+							<dt>High-tech exports</dt>
+							<dd>
+								{formatNumber(
+									unit.world_system.productive_capability_values
+										.high_tech_exports_manufactured_pct,
+									{ maximumFractionDigits: 1 }
+								)}
+							</dd>
+						</div>
+						<div>
+							<dt>Medium/high-tech exports</dt>
+							<dd>
+								{formatNumber(
+									unit.world_system.productive_capability_values
+										.medium_high_tech_exports_manufactured_pct,
+									{ maximumFractionDigits: 1 }
+								)}
+							</dd>
+						</div>
+					</dl>
+				</div>
+			{/if}
 			<p class="warning">
 				This is a provisional export-structure proxy, not full value-chain or productive-complexity
 				evidence.
 			</p>
+		</section>
+
+		<section>
+			<h3>World-system extraction evidence</h3>
+			<dl>
+				<div>
+					<dt>Dependency score</dt>
+					<dd>
+						{formatNumber(unit.world_system.extraction_dependency_score, {
+							maximumFractionDigits: 1
+						})}
+					</dd>
+				</div>
+				<div>
+					<dt>Autonomy score</dt>
+					<dd>
+						{formatNumber(unit.world_system.extraction_autonomy_score, {
+							maximumFractionDigits: 1
+						})}
+					</dd>
+				</div>
+				<div>
+					<dt>Food exports</dt>
+					<dd>
+						{formatNumber(unit.world_system.extraction_values?.food_exports_merchandise_pct, {
+							maximumFractionDigits: 1
+						})}
+					</dd>
+				</div>
+				<div>
+					<dt>Fuel exports</dt>
+					<dd>
+						{formatNumber(unit.world_system.extraction_values?.fuel_exports_merchandise_pct, {
+							maximumFractionDigits: 1
+						})}
+					</dd>
+				</div>
+				<div>
+					<dt>Ores/metals exports</dt>
+					<dd>
+						{formatNumber(
+							unit.world_system.extraction_values?.ores_metals_exports_merchandise_pct,
+							{ maximumFractionDigits: 1 }
+						)}
+					</dd>
+				</div>
+				<div>
+					<dt>Resource rents</dt>
+					<dd>
+						{formatNumber(
+							unit.world_system.extraction_values?.natural_resource_rents_gdp_pct,
+							{ maximumFractionDigits: 1 }
+						)}
+					</dd>
+				</div>
+			</dl>
 		</section>
 
 		<section>

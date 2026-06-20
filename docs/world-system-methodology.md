@@ -54,7 +54,22 @@ The provisional model also includes `productive_capability_proxy`, generated fro
 
 This proxy exists because a zero-core output was methodologically safer than overproducing core from welfare data, but analytically too flat: extraction autonomy can block core status, yet it cannot positively support it. Export-structure evidence is an imperfect but transparent interim signal that a map unit participates in manufacturing or high-technology export activity.
 
-It is not final productive complexity. It does not measure domestic value capture, ownership, buyer power, GVC control, domestic value added, financial centrality, or geopolitical power. High productive capability does not by itself prove core status, and some high scores may reflect enclave assembly or unusual export composition. Final structural claims still require Atlas/BACI/Comtrade complexity and product-level trade evidence plus OECD TiVA or comparable value-capture data.
+It is not final productive complexity. It does not measure domestic value capture, ownership, buyer power, GVC control, domestic value added, financial centrality, or geopolitical power. High productive capability does not by itself prove core status, and some high scores may reflect dependent manufacturing, enclave assembly, FDI-led production, re-export platforms, or unusual export composition. Final structural claims still require Atlas/BACI/Comtrade complexity and product-level trade evidence plus OECD TiVA or comparable value-capture data.
+
+### B2. Industrial Semiperiphery Guard
+
+The provisional model includes an `industrial_semiperiphery_guard` to prevent WDI manufacturing or high-tech export shares from being treated as sufficient proof of core status. This guard exists because a map unit can host major industrial production while remaining dependent on foreign lead firms, imported technology, low-margin assembly, enclave exports, or platform/re-export effects.
+
+The guard is a provisional methodological safeguard, not a final classification. It is designed to be easy to remove or override once value-capture/GVC evidence exists. A guarded record is normally classified as `semi-periphery` with profile `industrial_semiperiphery`, and the explanation states that strong manufacturing/high-tech export proxy evidence may indicate dependent industrial integration rather than core value-chain control.
+
+The current guard triggers when no direct value-capture/GVC evidence is available and one or more of the following applies:
+
+- productive capability is at least 70, manufactures exports are at least 60 percent of merchandise exports, and high-tech exports are below 20 percent of manufactured exports;
+- medium/high-tech exports are at least 50 percent of manufactured exports while high-tech exports remain below 20 percent;
+- food exports are at least 15 percent of merchandise exports, indicating review is needed for structurally significant primary exports;
+- the map unit is on the documented provisional review watchlist: CRI, HUN, LTU, POL, SVN, EST.
+
+The watchlist is not a claim that those map units are permanently semiperipheral. It is a transparent review list for Costa Rica-, Hungary-, Poland-, Lithuania-, Slovenia-, and Estonia-type cases where export structure can look core-like while value capture, ownership, and lead-firm control remain unmeasured. OECD TiVA, domestic value added in exports, foreign value added dependence, Atlas/BACI/Comtrade product-level structure, and ownership evidence should eventually replace this safeguard.
 
 ### C. Extraction Dependency
 
@@ -92,13 +107,17 @@ The previous quality-of-life-heavy rule overproduced `core`. The stricter interi
 
 Derived core classification requires all of the following:
 
-- `quality_of_life_score >= 0.88`;
-- `extraction_dependency_score` is missing or `<= 25`;
-- `extraction_autonomy_score` is missing or `>= 65`;
-- `productive_capability_score >= 70` with productive capability data quality other than `sparse`;
+- `quality_of_life_score >= 0.90`;
+- `extraction_dependency_score <= 20`;
+- `extraction_autonomy_score >= 70`;
+- `productive_capability_score >= 85`;
+- `productive_capability_data_quality == "good"`;
+- `high_tech_exports_manufactured_pct >= 20` or `medium_high_tech_exports_manufactured_pct >= 65`;
+- the direct evidence fields for quality of life, productive capability, extraction dependency/autonomy, productive capability raw values, and extraction raw values are present;
+- `industrial_semiperiphery_guard` is not triggered;
 - no disputed, special, or territory status unless explicitly reviewed through a curated override.
 
-If productive capability evidence is missing or below threshold, derived records must not become `core`, even if their continuous proxy score is very high. A map unit may score 97 on the welfare/income proxy and still remain `semi-periphery` because score and class answer different questions. High quality-of-life countries may remain semi-periphery until TiVA/GVC, value-capture, productive-complexity, financial, or geopolitical evidence is added.
+If `productive_capability_score` is 80-85, the profile is `core_like_semiperiphery` rather than derived core. If `productive_capability_score >= 85` but the industrial-semiperiphery guard triggers, the profile is `industrial_semiperiphery`. If productive capability evidence is missing or below threshold, derived records must not become `core`, even if their continuous proxy score is very high. A map unit may score 97 on the welfare/income proxy and still remain `semi-periphery` because score and class answer different questions. High quality-of-life countries may remain semi-periphery until TiVA/GVC, value-capture, productive-complexity, financial, or geopolitical evidence is added.
 
 Demo seeds cannot create `core`. If a legacy demo seed says `core` but there is no curated override and no positive structural evidence, it is reinterpreted as low-confidence `semi-periphery` with `source: "legacy_demo_seed_reinterpreted"`. The current model deliberately under-classifies `core` rather than over-classifying it. It may produce zero core records until reviewed overrides or stronger structural data are added; this is preferable to overproducing core from welfare data. If welfare is core-like but positive structural evidence is incomplete, the provisional class is usually `semi-periphery`; if high welfare conflicts with high resource dependence, it is `uncertain`.
 

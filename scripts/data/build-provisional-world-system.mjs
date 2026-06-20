@@ -45,12 +45,17 @@ const notes = [
 	'Extraction autonomy is a negative filter/corroborating condition, not positive proof of core status.',
 	'Core status requires provisional positive structural support from the productive capability proxy, future productive complexity, value capture, geopolitical-financial power, or a curated_reviewed override with rationale.',
 	'The productive capability proxy is based on WDI export structure and is not final productive complexity or value-chain control evidence.',
+	'Manufacturing and high-tech export shares are useful but insufficient: the industrial_semiperiphery_guard downgrades likely dependent manufacturing/export-platform cases pending TiVA/GVC/value-capture review.',
 	'Many high-income countries may be provisionally semi-periphery until GVC/value-capture data are added.',
 	'Future versions should include value-chain position, ecological externalization, trade structure, extraction, financial centrality, and conflict/political indicators.'
 ];
 
 const methodologyNote =
-	'Experimental conservative provisional world-system proxy. Existing demo world-system records are treated as legacy demo seeds, not curated classifications. Real manual classifications must come from static/data/world-system.curated-overrides.json with source curated_reviewed and a rationale. Derived core requires positive structural evidence from the provisional productive capability export-structure proxy, later productive complexity, value capture, or geopolitical-financial power, plus low extraction-dependency/autonomy filters. Demo seed data cannot create core status. Extraction autonomy and low extraction dependency can corroborate core but cannot create it. High quality-of-life alone is capped at semi-periphery or uncertain. The productive capability proxy is not final productive complexity and does not measure value-chain control. This is not a final Wallersteinian or dependency-theory classification.';
+	'Experimental conservative provisional world-system proxy. Existing demo world-system records are treated as legacy demo seeds, not curated classifications. Real manual classifications must come from static/data/world-system.curated-overrides.json with source curated_reviewed and a rationale. Derived core requires positive structural evidence from the provisional productive capability export-structure proxy, later productive complexity, value capture, or geopolitical-financial power, plus low extraction-dependency/autonomy filters. Demo seed data cannot create core status. Extraction autonomy and low extraction dependency can corroborate core but cannot create it. High quality-of-life alone is capped at semi-periphery or uncertain. The productive capability proxy is not final productive complexity and does not measure value-chain control. Manufacturing/high-tech export shares can indicate dependent industrial integration, assembly, enclave exports, FDI-led production, or re-export/platform effects rather than core value-chain control, so the industrial_semiperiphery_guard blocks derived core pending TiVA/GVC/value-capture evidence. This is not a final Wallersteinian or dependency-theory classification.';
+
+const industrialSemiperipheryWatchlist = new Set(['CRI', 'HUN', 'LTU', 'POL', 'SVN', 'EST']);
+const industrialSemiperipheryWatchlistNote =
+	'Provisional methodological safeguard list for likely dependent manufacturing/export-platform review: CRI, HUN, LTU, POL, SVN, EST. It is not a final classification and should be removed or overridden when TiVA/GVC/value-capture evidence is available.';
 
 function clamp(value, min, max) {
 	return Math.min(max, Math.max(min, value));
@@ -140,6 +145,32 @@ function componentsFromRecords(
 	productiveRecord,
 	productiveCapabilityRecord
 ) {
+	const productiveCapabilityValues = {
+		manufactures_exports_merchandise_pct: numericIndicatorValue(
+			productiveCapabilityRecord?.values?.manufactures_exports_merchandise_pct
+		),
+		high_tech_exports_manufactured_pct: numericIndicatorValue(
+			productiveCapabilityRecord?.values?.high_tech_exports_manufactured_pct
+		),
+		medium_high_tech_exports_manufactured_pct: numericIndicatorValue(
+			productiveCapabilityRecord?.values?.medium_high_tech_exports_manufactured_pct
+		)
+	};
+	const extractionValues = {
+		food_exports_merchandise_pct: numericIndicatorValue(
+			extractionRecord?.values?.food_exports_merchandise_pct
+		),
+		fuel_exports_merchandise_pct: numericIndicatorValue(
+			extractionRecord?.values?.fuel_exports_merchandise_pct
+		),
+		ores_metals_exports_merchandise_pct: numericIndicatorValue(
+			extractionRecord?.values?.ores_metals_exports_merchandise_pct
+		),
+		natural_resource_rents_gdp_pct: numericIndicatorValue(
+			extractionRecord?.values?.natural_resource_rents_gdp_pct
+		)
+	};
+
 	return {
 		quality_of_life_score: isFiniteNumber(qualityRecord?.quality_of_life_score)
 			? round(qualityRecord.quality_of_life_score, 4)
@@ -175,6 +206,8 @@ function componentsFromRecords(
 		)
 			? productiveCapabilityRecord.data_quality
 			: null,
+		productive_capability_values: productiveCapabilityValues,
+		extraction_values: extractionValues,
 		geopolitical_financial_power_score: null
 	};
 }
@@ -194,10 +227,10 @@ function positiveStructuralSupports(components) {
 	}
 	if (
 		isFiniteNumber(components.productive_capability_score) &&
-		components.productive_capability_score >= 70 &&
+		components.productive_capability_score >= 85 &&
 		components.productive_capability_data_quality !== 'sparse'
 	) {
-		supports.push('productive_capability_score >= 70');
+		supports.push('productive_capability_score >= 85');
 	}
 	if (isFiniteNumber(components.value_capture_score) && components.value_capture_score >= 70) {
 		supports.push('value_capture_score >= 70');
@@ -209,6 +242,119 @@ function positiveStructuralSupports(components) {
 		supports.push('geopolitical_financial_power_score >= 70');
 	}
 	return supports;
+}
+
+function numericIndicatorValue(indicatorValue) {
+	return isFiniteNumber(indicatorValue?.value) ? round(indicatorValue.value, 4) : null;
+}
+
+function hasValueCaptureGvcEvidence(components) {
+	return (
+		isFiniteNumber(components.value_capture_score) ||
+		isFiniteNumber(components.geopolitical_financial_power_score)
+	);
+}
+
+function hasRequiredCoreEvidenceFields(components) {
+	return (
+		isFiniteNumber(components.quality_of_life_score) &&
+		isFiniteNumber(components.productive_capability_score) &&
+		components.productive_capability_data_quality === 'good' &&
+		isFiniteNumber(components.extraction_dependency_score) &&
+		isFiniteNumber(components.extraction_autonomy_score) &&
+		isFiniteNumber(components.productive_capability_values.manufactures_exports_merchandise_pct) &&
+		isFiniteNumber(components.productive_capability_values.high_tech_exports_manufactured_pct) &&
+		isFiniteNumber(
+			components.productive_capability_values.medium_high_tech_exports_manufactured_pct
+		) &&
+		isFiniteNumber(components.extraction_values.food_exports_merchandise_pct) &&
+		isFiniteNumber(components.extraction_values.fuel_exports_merchandise_pct) &&
+		isFiniteNumber(components.extraction_values.ores_metals_exports_merchandise_pct) &&
+		isFiniteNumber(components.extraction_values.natural_resource_rents_gdp_pct)
+	);
+}
+
+function industrialSemiperipheryGuard(registryRecord, components) {
+	const guardrails = [];
+	const hasValueEvidence = hasValueCaptureGvcEvidence(components);
+	const manufactures =
+		components.productive_capability_values.manufactures_exports_merchandise_pct;
+	const highTech =
+		components.productive_capability_values.high_tech_exports_manufactured_pct;
+	const mediumHighTech =
+		components.productive_capability_values.medium_high_tech_exports_manufactured_pct;
+	const food = components.extraction_values.food_exports_merchandise_pct;
+
+	if (
+		!hasValueEvidence &&
+		isFiniteNumber(components.productive_capability_score) &&
+		components.productive_capability_score >= 70 &&
+		isFiniteNumber(manufactures) &&
+		manufactures >= 60 &&
+		isFiniteNumber(highTech) &&
+		highTech < 20
+	) {
+		guardrails.push('industrial_semiperiphery_guard: manufacturing_share_high_high_tech_depth_modest');
+	}
+
+	if (
+		!hasValueEvidence &&
+		isFiniteNumber(mediumHighTech) &&
+		mediumHighTech >= 50 &&
+		isFiniteNumber(highTech) &&
+		highTech < 20
+	) {
+		guardrails.push('industrial_semiperiphery_guard: medium_high_tech_high_high_tech_modest');
+	}
+
+	if (!hasValueEvidence && isFiniteNumber(food) && food >= 15) {
+		guardrails.push('industrial_semiperiphery_guard: food_exports_structurally_significant');
+	}
+
+	if (!hasValueEvidence && industrialSemiperipheryWatchlist.has(registryRecord.id)) {
+		guardrails.push('industrial_semiperiphery_guard: provisional_watchlist_pending_tiva_gvc_review');
+	}
+
+	return {
+		triggered: guardrails.length > 0,
+		guardrails
+	};
+}
+
+function limitationsFor(components, guard) {
+	const limitations = [
+		'Provisional proxy model; not a final world-systems classification.',
+		'World Bank WDI export-structure fields do not measure domestic value capture, ownership, lead-firm control, or GVC position.',
+		'Core status requires value-capture/GVC evidence such as OECD TiVA, Atlas/BACI/Comtrade product structure, domestic value added, or comparable reviewed evidence.'
+	];
+
+	if (!hasValueCaptureGvcEvidence(components)) {
+		limitations.push('No direct value-capture/GVC evidence is available in this provisional output.');
+	}
+
+	if (guard.triggered) {
+		limitations.push(
+			'industrial_semiperiphery_guard is a provisional methodological safeguard pending TiVA/GVC/value-capture review.'
+		);
+	}
+
+	return limitations;
+}
+
+function worldSystemFields(components, guard, profile, positiveSupports) {
+	return {
+		profile,
+		quality_of_life_score: components.quality_of_life_score,
+		productive_capability_score: components.productive_capability_score,
+		productive_capability_data_quality: components.productive_capability_data_quality,
+		extraction_dependency_score: components.extraction_dependency_score,
+		extraction_autonomy_score: components.extraction_autonomy_score,
+		productive_capability_values: components.productive_capability_values,
+		extraction_values: components.extraction_values,
+		positive_structural_supports: positiveSupports,
+		guardrails_triggered: guard.guardrails,
+		limitations: limitationsFor(components, guard)
+	};
 }
 
 function negativeOrFilterSupports(components) {
@@ -303,11 +449,18 @@ function curatedOverrideRecordFor(
 	const positiveSupports = positiveStructuralSupports(components);
 	const filterSupports = negativeOrFilterSupports(components);
 	const supports = structuralSupports(components);
+	const guard = industrialSemiperipheryGuard(registryRecord, components);
 	const rationale =
 		typeof overrideWorldSystem.rationale === 'string' &&
 		overrideWorldSystem.rationale.trim().length > 0
 			? overrideWorldSystem.rationale.trim()
 			: null;
+	const profile =
+		typeof overrideWorldSystem.profile === 'string'
+			? overrideWorldSystem.profile
+			: classValue === 'semi-periphery' && guard.triggered
+				? 'industrial_semiperiphery'
+				: null;
 
 	return {
 		id: registryRecord.id,
@@ -323,13 +476,16 @@ function curatedOverrideRecordFor(
 				'Manual curated_reviewed override is missing a rationale and should be corrected before publication.',
 			rationale,
 			reviewed_by: overrideWorldSystem.reviewed_by ?? null,
-			reviewed_at: overrideWorldSystem.reviewed_at ?? null
+			reviewed_at: overrideWorldSystem.reviewed_at ?? null,
+			...worldSystemFields(components, guard, profile, positiveSupports)
 		},
 		components: {
 			...components,
 			structural_supports: supports,
 			positive_structural_supports: positiveSupports,
 			negative_or_filter_supports: filterSupports,
+			guardrails_triggered: guard.guardrails,
+			profile,
 			previous_proxy_class: classValue,
 			downgraded_from_previous_proxy_core: false,
 			classification_reason: 'curated_reviewed_override'
@@ -363,7 +519,14 @@ function demoRecordFor(
 	const positiveSupports = positiveStructuralSupports(components);
 	const filterSupports = negativeOrFilterSupports(components);
 	const supports = structuralSupports(components);
+	const guard = industrialSemiperipheryGuard(registryRecord, components);
 	const reinterpretedCore = demoClass === 'core';
+	const profile =
+		classValue === 'semi-periphery' && guard.triggered
+			? 'industrial_semiperiphery'
+			: reinterpretedCore
+				? 'core_like_semiperiphery'
+				: null;
 
 	return {
 		id: registryRecord.id,
@@ -374,13 +537,16 @@ function demoRecordFor(
 			source: reinterpretedCore ? 'legacy_demo_seed_reinterpreted' : 'legacy_demo_seed',
 			explanation: reinterpretedCore
 				? 'Original demo seed marked this as core, but demo data are not treated as real curated classification. Without reviewed classification or sufficient productive capability support, provisional class is semi-periphery.'
-				: `${demoWorldSystem.explanation ?? 'Demo seed world-system class.'} This record is a UI/demo seed from static/data/world-system.latest.json and is not a reviewed structural classification.`
+				: `${demoWorldSystem.explanation ?? 'Demo seed world-system class.'} This record is a UI/demo seed from static/data/world-system.latest.json and is not a reviewed structural classification.`,
+			...worldSystemFields(components, guard, profile, positiveSupports)
 		},
 		components: {
 			...components,
 			structural_supports: supports,
 			positive_structural_supports: positiveSupports,
 			negative_or_filter_supports: filterSupports,
+			guardrails_triggered: guard.guardrails,
+			profile,
 			previous_proxy_class: demoClass,
 			downgraded_from_previous_proxy_core: reinterpretedCore,
 			classification_reason: reinterpretedCore
@@ -407,6 +573,7 @@ function noDataRecord(
 		productiveRecord,
 		productiveCapabilityRecord
 	);
+	const guard = industrialSemiperipheryGuard(registryRecord, components);
 	return {
 		id: registryRecord.id,
 		world_system: {
@@ -416,13 +583,16 @@ function noDataRecord(
 			source: sourceForComponents(components),
 			explanation:
 				explanation ??
-				'No sufficient World Bank quality-of-life or income data is available for this provisional proxy.'
+				'No sufficient World Bank quality-of-life or income data is available for this provisional proxy.',
+			...worldSystemFields(components, guard, null, [])
 		},
 		components: {
 			...components,
 			structural_supports: [],
 			positive_structural_supports: [],
 			negative_or_filter_supports: [],
+			guardrails_triggered: guard.guardrails,
+			profile: null,
 			previous_proxy_class: 'no_data',
 			downgraded_from_previous_proxy_core: false,
 			classification_reason: classValue
@@ -455,6 +625,7 @@ function derivedRecordFor(
 	const positiveSupports = positiveStructuralSupports(components);
 	const filterSupports = negativeOrFilterSupports(components);
 	const supports = structuralSupports(components);
+	const guard = industrialSemiperipheryGuard(registryRecord, components);
 	const hasQualityOrIncome = qualityScore !== null || incomeSignal !== null;
 	const hasAnyStructuralData = hasStructuralComponent(components);
 	const disputed = isDisputedRegistryRecord(registryRecord);
@@ -508,17 +679,28 @@ function derivedRecordFor(
 		isFiniteNumber(components.extraction_autonomy_score) &&
 		components.extraction_autonomy_score < 35;
 	const coreBlockedByExtraction =
-		isFiniteNumber(components.extraction_dependency_score) &&
-		components.extraction_dependency_score > 25;
+		!isFiniteNumber(components.extraction_dependency_score) ||
+		components.extraction_dependency_score > 20;
 	const coreBlockedByAutonomy =
-		isFiniteNumber(components.extraction_autonomy_score) &&
-		components.extraction_autonomy_score < 65;
+		!isFiniteNumber(components.extraction_autonomy_score) ||
+		components.extraction_autonomy_score < 70;
 	const signalsConflict = highQualityResourceConflict || highIncomeResourceConflict;
 	const productiveCapabilityCoreSupport =
 		isFiniteNumber(components.productive_capability_score) &&
-		components.productive_capability_score >= 70 &&
-		components.productive_capability_data_quality !== 'sparse';
+		components.productive_capability_score >= 85 &&
+		components.productive_capability_data_quality === 'good';
 	const missingPositiveCoreEvidence = !productiveCapabilityCoreSupport;
+	const productiveCapabilityCoreLike =
+		isFiniteNumber(components.productive_capability_score) &&
+		components.productive_capability_score >= 80 &&
+		components.productive_capability_score < 85;
+	const hasCoreExportDepth =
+		(isFiniteNumber(components.productive_capability_values.high_tech_exports_manufactured_pct) &&
+			components.productive_capability_values.high_tech_exports_manufactured_pct >= 20) ||
+		(isFiniteNumber(
+			components.productive_capability_values.medium_high_tech_exports_manufactured_pct
+		) &&
+			components.productive_capability_values.medium_high_tech_exports_manufactured_pct >= 65);
 	const hasSemiSignal =
 		(qualityScore !== null && qualityScore >= 0.65) ||
 		(isFiniteNumber(components.extraction_autonomy_score) &&
@@ -533,14 +715,18 @@ function derivedRecordFor(
 		lowExtractionAutonomy;
 	const coreRequirementsMet =
 		qualityScore !== null &&
-		qualityScore >= 0.88 &&
+		qualityScore >= 0.9 &&
 		productiveCapabilityCoreSupport &&
+		hasCoreExportDepth &&
+		hasRequiredCoreEvidenceFields(components) &&
 		!coreBlockedByExtraction &&
-		!coreBlockedByAutonomy;
+		!coreBlockedByAutonomy &&
+		!guard.triggered;
 
 	let classValue;
 	let reason;
 	let explanation;
+	let profile = null;
 
 	if (signalsConflict) {
 		classValue = 'uncertain';
@@ -552,9 +738,26 @@ function derivedRecordFor(
 		reason = 'provisional_core_with_productive_capability_support';
 		explanation =
 			'Provisional core candidate based on high welfare, low extraction dependency, and productive capability proxy. Final core status requires value-capture/GVC evidence.';
+	} else if (
+		isFiniteNumber(components.productive_capability_score) &&
+		components.productive_capability_score >= 70 &&
+		guard.triggered
+	) {
+		classValue = 'semi-periphery';
+		reason = 'industrial_semiperiphery_guard';
+		profile = 'industrial_semiperiphery';
+		explanation =
+			'Strong manufacturing/high-tech export proxy, but this may indicate dependent industrial integration rather than core value-chain control. Core status requires value-capture/GVC evidence. This is a provisional guard pending TiVA/GVC/value-capture review.';
+	} else if (productiveCapabilityCoreLike) {
+		classValue = 'semi-periphery';
+		reason = 'core_like_productive_capability_below_core_threshold';
+		profile = 'core_like_semiperiphery';
+		explanation =
+			'Core-like productive capability proxy, but productive_capability_score is below the stricter derived-core threshold. Provisional class is semi-periphery pending value-capture/GVC review.';
 	} else if (qualityScore !== null && qualityScore >= 0.88 && missingPositiveCoreEvidence) {
 		classValue = 'semi-periphery';
 		reason = 'core_like_welfare_autonomy_missing_productive_capability_support';
+		profile = 'core_like_semiperiphery';
 		explanation =
 			'Core-like welfare/autonomy profile, but positive productive capability evidence is missing or insufficient.';
 	} else if (hasSemiSignal) {
@@ -581,7 +784,9 @@ function derivedRecordFor(
 
 	const downgraded = previousClass === 'core' && classValue !== 'core';
 	const confidence =
-		reason === 'core_like_welfare_autonomy_missing_productive_capability_support'
+		reason === 'core_like_welfare_autonomy_missing_productive_capability_support' ||
+		reason === 'industrial_semiperiphery_guard' ||
+		reason === 'core_like_productive_capability_below_core_threshold'
 			? 'low'
 			: confidenceFor(classValue, components, positiveSupports.length, signalsConflict);
 
@@ -592,13 +797,16 @@ function derivedRecordFor(
 			score,
 			confidence,
 			source: sourceForComponents(components),
-			explanation
+			explanation,
+			...worldSystemFields(components, guard, profile, positiveSupports)
 		},
 		components: {
 			...components,
 			structural_supports: supports,
 			positive_structural_supports: positiveSupports,
 			negative_or_filter_supports: filterSupports,
+			guardrails_triggered: guard.guardrails,
+			profile,
 			previous_proxy_class: previousClass,
 			downgraded_from_previous_proxy_core: downgraded,
 			classification_reason: reason
@@ -688,11 +896,38 @@ function diagnosticsFor(records, registry) {
 				(b.components.productive_capability_score ?? -1) -
 				(a.components.productive_capability_score ?? -1)
 		);
+	const downgradedByIndustrialGuard = records
+		.filter(
+			(record) =>
+				record.components.classification_reason === 'industrial_semiperiphery_guard' ||
+				(record.components.guardrails_triggered ?? []).some((guardrail) =>
+					String(guardrail).startsWith('industrial_semiperiphery_guard:')
+				)
+		)
+		.sort(
+			(a, b) =>
+				(b.components.productive_capability_score ?? -1) -
+				(a.components.productive_capability_score ?? -1)
+		);
+	const industrialSemiperipheryRecords = records
+		.filter((record) => record.world_system.profile === 'industrial_semiperiphery')
+		.sort(
+			(a, b) =>
+				(b.components.productive_capability_score ?? -1) -
+				(a.components.productive_capability_score ?? -1)
+		);
+	const coreLikeSemiperipheryRecords = records
+		.filter((record) => record.world_system.profile === 'core_like_semiperiphery')
+		.sort((a, b) => (b.world_system.score ?? -1) - (a.world_system.score ?? -1));
+	const keptCoreDespiteWarnings = coreCandidates.filter(
+		(record) => (record.components.guardrails_triggered ?? []).length > 0
+	);
 
 	const summarize = (record) => ({
 		id: record.id,
 		name: registryById.get(record.id)?.display_name ?? record.id,
 		class: record.world_system.class,
+		profile: record.world_system.profile,
 		score: record.world_system.score,
 		confidence: record.world_system.confidence,
 		quality_of_life_score: record.components.quality_of_life_score,
@@ -701,8 +936,11 @@ function diagnosticsFor(records, registry) {
 		productive_complexity_score: record.components.productive_complexity_score,
 		productive_capability_score: record.components.productive_capability_score,
 		productive_capability_data_quality: record.components.productive_capability_data_quality,
+		productive_capability_values: record.components.productive_capability_values,
+		extraction_values: record.components.extraction_values,
 		value_capture_score: record.components.value_capture_score,
 		geopolitical_financial_power_score: record.components.geopolitical_financial_power_score,
+		guardrails_triggered: record.components.guardrails_triggered,
 		structural_supports: record.components.structural_supports,
 		positive_structural_supports: record.components.positive_structural_supports,
 		negative_or_filter_supports: record.components.negative_or_filter_supports,
@@ -732,6 +970,12 @@ function diagnosticsFor(records, registry) {
 			highScoreKeptSemiByProductiveCapability.slice(0, 30).map(summarize),
 		moved_from_semi_periphery_to_core_by_productive_capability:
 			movedFromSemiToCoreByProductiveCapability.slice(0, 30).map(summarize),
+		downgraded_by_industrial_semiperiphery_guard: downgradedByIndustrialGuard
+			.slice(0, 80)
+			.map(summarize),
+		kept_core_despite_warnings: keptCoreDespiteWarnings.slice(0, 30).map(summarize),
+		industrial_semiperiphery_records: industrialSemiperipheryRecords.slice(0, 80).map(summarize),
+		core_like_semiperiphery_records: coreLikeSemiperipheryRecords.slice(0, 80).map(summarize),
 		downgraded_high_quality: downgraded.slice(0, 30).map(summarize)
 	};
 }
@@ -816,6 +1060,8 @@ async function main() {
 		model_status: 'provisional_conservative_proxy',
 		generated_at: new Date().toISOString(),
 		methodology_note: methodologyNote,
+		industrial_semiperiphery_watchlist: [...industrialSemiperipheryWatchlist],
+		industrial_semiperiphery_watchlist_note: industrialSemiperipheryWatchlistNote,
 		records,
 		diagnostics,
 		notes
@@ -862,6 +1108,14 @@ async function main() {
 	);
 	console.log('Top 30 core candidates with components:');
 	console.log(JSON.stringify(diagnostics.core_candidates, null, 2));
+	console.log('Records downgraded by industrial_semiperiphery_guard:');
+	console.log(JSON.stringify(diagnostics.downgraded_by_industrial_semiperiphery_guard, null, 2));
+	console.log('Records kept as core despite warnings:');
+	console.log(JSON.stringify(diagnostics.kept_core_despite_warnings, null, 2));
+	console.log('All records with profile industrial_semiperiphery:');
+	console.log(JSON.stringify(diagnostics.industrial_semiperiphery_records, null, 2));
+	console.log('All records with profile core_like_semiperiphery:');
+	console.log(JSON.stringify(diagnostics.core_like_semiperiphery_records, null, 2));
 	console.log('Demo seed records reinterpreted:');
 	console.log(JSON.stringify(diagnostics.demo_seed_reinterpreted, null, 2));
 	console.log('Top 30 high-score non-core countries:');

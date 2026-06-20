@@ -40,6 +40,30 @@ const positiveSupportPatterns = [
 	'value_capture',
 	'geopolitical_financial_power'
 ];
+const directWorldSystemEvidenceFields = [
+	'profile',
+	'quality_of_life_score',
+	'productive_capability_score',
+	'productive_capability_data_quality',
+	'extraction_dependency_score',
+	'extraction_autonomy_score',
+	'productive_capability_values',
+	'extraction_values',
+	'positive_structural_supports',
+	'guardrails_triggered',
+	'limitations'
+];
+const productiveCapabilityValueKeys = [
+	'manufactures_exports_merchandise_pct',
+	'high_tech_exports_manufactured_pct',
+	'medium_high_tech_exports_manufactured_pct'
+];
+const extractionValueKeys = [
+	'food_exports_merchandise_pct',
+	'fuel_exports_merchandise_pct',
+	'ores_metals_exports_merchandise_pct',
+	'natural_resource_rents_gdp_pct'
+];
 
 async function readJson(filePath) {
 	const text = await readFile(filePath, 'utf8');
@@ -85,6 +109,38 @@ function highScoreSemiPeriphery(record) {
 	);
 }
 
+function industrialSemiperipheryGuardTriggered(record) {
+	const guardrails = Array.isArray(record.world_system?.guardrails_triggered)
+		? record.world_system.guardrails_triggered
+		: Array.isArray(record.components?.guardrails_triggered)
+			? record.components.guardrails_triggered
+			: [];
+
+	return guardrails.some((guardrail) =>
+		String(guardrail).startsWith('industrial_semiperiphery_guard:')
+	);
+}
+
+function directEvidenceUndefinedFields(record) {
+	const missing = directWorldSystemEvidenceFields.filter(
+		(field) => record.world_system?.[field] === undefined
+	);
+
+	for (const key of productiveCapabilityValueKeys) {
+		if (record.world_system?.productive_capability_values?.[key] === undefined) {
+			missing.push(`productive_capability_values.${key}`);
+		}
+	}
+
+	for (const key of extractionValueKeys) {
+		if (record.world_system?.extraction_values?.[key] === undefined) {
+			missing.push(`extraction_values.${key}`);
+		}
+	}
+
+	return missing;
+}
+
 const errors = [];
 
 if (!(await exists(paths.provisionalWorldSystem))) {
@@ -113,6 +169,8 @@ let noDataWithWorldBankData = 0;
 const coreRecords = [];
 const demoSeedReinterpretedRecords = [];
 const highScoreSemiPeripheryRecords = [];
+const industrialSemiperipheryRecords = [];
+const coreLikeSemiperipheryRecords = [];
 
 if (data?.dataset_id !== 'world_system_provisional_latest') {
 	errors.push('dataset_id must be world_system_provisional_latest.');
@@ -219,21 +277,68 @@ if (!Array.isArray(data?.records)) {
 			derivedSource &&
 			classValue === 'core' &&
 			(!isFiniteNumber(record.components.productive_capability_score) ||
-				record.components.productive_capability_score < 70)
+				record.components.productive_capability_score < 85)
 		) {
-			errors.push(`${label}: derived core requires productive_capability_score >= 70.`);
+			errors.push(`${label}: derived core requires productive_capability_score >= 85.`);
+		}
+
+		if (
+			derivedSource &&
+			classValue === 'core' &&
+			record.components.productive_capability_data_quality !== 'good'
+		) {
+			errors.push(`${label}: derived core requires productive_capability_data_quality == good.`);
 		}
 
 		if (
 			classValue === 'core' &&
 			isFiniteNumber(record.components.extraction_dependency_score) &&
-			record.components.extraction_dependency_score > 25
+			record.components.extraction_dependency_score > 20
 		) {
-			errors.push(`${label}: core requires extraction_dependency_score missing or <= 25.`);
+			errors.push(`${label}: core requires extraction_dependency_score <= 20.`);
+		}
+
+		if (classValue === 'core' && !isFiniteNumber(record.components.extraction_dependency_score)) {
+			errors.push(`${label}: core requires extraction_dependency_score evidence.`);
+		}
+
+		if (
+			classValue === 'core' &&
+			(!isFiniteNumber(record.components.extraction_autonomy_score) ||
+				record.components.extraction_autonomy_score < 70)
+		) {
+			errors.push(`${label}: core requires extraction_autonomy_score >= 70.`);
+		}
+
+		const highTechShare =
+			record.world_system.productive_capability_values?.high_tech_exports_manufactured_pct;
+		const mediumHighTechShare =
+			record.world_system.productive_capability_values
+				?.medium_high_tech_exports_manufactured_pct;
+
+		if (
+			classValue === 'core' &&
+			(!isFiniteNumber(highTechShare) || highTechShare < 20) &&
+			(!isFiniteNumber(mediumHighTechShare) || mediumHighTechShare < 65)
+		) {
+			errors.push(
+				`${label}: core requires high_tech_exports_manufactured_pct >= 20 or medium_high_tech_exports_manufactured_pct >= 65.`
+			);
+		}
+
+		if (classValue === 'core' && industrialSemiperipheryGuardTriggered(record)) {
+			errors.push(`${label}: core must not have industrial_semiperiphery_guard triggered.`);
 		}
 
 		if (classValue === 'core' && record.world_system.confidence === 'high') {
 			errors.push(`${label}: confidence must never be high for core in the provisional model.`);
+		}
+
+		const undefinedEvidenceFields = directEvidenceUndefinedFields(record);
+		if (classValue === 'core' && undefinedEvidenceFields.length > 0) {
+			errors.push(
+				`${label}: core has undefined direct evidence fields: ${undefinedEvidenceFields.join(', ')}.`
+			);
 		}
 
 		if (derivedSource && classValue === 'core' && !positiveSupportExists) {
@@ -293,8 +398,42 @@ if (!Array.isArray(data?.records)) {
 				structural_supports: structuralSupports,
 				positive_structural_supports: positiveStructuralSupports,
 				negative_or_filter_supports: record.components.negative_or_filter_supports ?? [],
+				profile: record.world_system.profile,
+				productive_capability_values: record.world_system.productive_capability_values,
+				extraction_values: record.world_system.extraction_values,
+				guardrails_triggered: record.world_system.guardrails_triggered,
 				reason: record.components.classification_reason,
 				explanation: record.world_system.explanation
+			});
+		}
+
+		if (record.world_system.profile === 'industrial_semiperiphery') {
+			industrialSemiperipheryRecords.push({
+				id: record.id,
+				class: classValue,
+				score: record.world_system.score,
+				confidence: record.world_system.confidence,
+				source: record.world_system.source,
+				productive_capability_score: record.world_system.productive_capability_score,
+				productive_capability_values: record.world_system.productive_capability_values,
+				extraction_values: record.world_system.extraction_values,
+				guardrails_triggered: record.world_system.guardrails_triggered,
+				reason: record.components.classification_reason
+			});
+		}
+
+		if (record.world_system.profile === 'core_like_semiperiphery') {
+			coreLikeSemiperipheryRecords.push({
+				id: record.id,
+				class: classValue,
+				score: record.world_system.score,
+				confidence: record.world_system.confidence,
+				source: record.world_system.source,
+				quality_of_life_score: record.world_system.quality_of_life_score,
+				productive_capability_score: record.world_system.productive_capability_score,
+				productive_capability_data_quality:
+					record.world_system.productive_capability_data_quality,
+				reason: record.components.classification_reason
 			});
 		}
 
@@ -337,6 +476,12 @@ console.log(`Registry ids: ${registryIds.size}`);
 console.log(`World Bank comparable ids: ${comparableCount}`);
 console.log(`Class distribution: ${JSON.stringify(distribution, null, 2)}`);
 console.log(`Core records: ${JSON.stringify(coreRecords, null, 2)}`);
+console.log(
+	`industrial_semiperiphery records: ${JSON.stringify(industrialSemiperipheryRecords, null, 2)}`
+);
+console.log(
+	`core_like_semiperiphery records: ${JSON.stringify(coreLikeSemiperipheryRecords, null, 2)}`
+);
 console.log(
 	`Demo seed records reinterpreted: ${JSON.stringify(demoSeedReinterpretedRecords, null, 2)}`
 );

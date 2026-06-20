@@ -144,6 +144,26 @@ Future public datasets should be mapped into registry `id` values using document
       | string;
     model_status?: "provisional" | string;
     explanation: string;
+    profile?: "industrial_semiperiphery" | "core_like_semiperiphery" | string | null;
+    quality_of_life_score?: number | null;
+    productive_capability_score?: number | null;
+    productive_capability_data_quality?: "good" | "partial" | "sparse" | null;
+    extraction_dependency_score?: number | null;
+    extraction_autonomy_score?: number | null;
+    productive_capability_values?: {
+      manufactures_exports_merchandise_pct: number | null;
+      high_tech_exports_manufactured_pct: number | null;
+      medium_high_tech_exports_manufactured_pct: number | null;
+    };
+    extraction_values?: {
+      food_exports_merchandise_pct: number | null;
+      fuel_exports_merchandise_pct: number | null;
+      ores_metals_exports_merchandise_pct: number | null;
+      natural_resource_rents_gdp_pct: number | null;
+    };
+    positive_structural_supports?: string[];
+    guardrails_triggered?: string[];
+    limitations?: string[];
   };
   conflict: {
     war_on_territory: boolean | null;
@@ -288,6 +308,26 @@ The output schema is:
         | "legacy_demo_seed_reinterpreted"
         | "curated_reviewed";
       explanation: string;
+      profile: "industrial_semiperiphery" | "core_like_semiperiphery" | string | null;
+      quality_of_life_score: number | null;
+      productive_capability_score: number | null;
+      productive_capability_data_quality: "good" | "partial" | "sparse" | null;
+      extraction_dependency_score: number | null;
+      extraction_autonomy_score: number | null;
+      productive_capability_values: {
+        manufactures_exports_merchandise_pct: number | null;
+        high_tech_exports_manufactured_pct: number | null;
+        medium_high_tech_exports_manufactured_pct: number | null;
+      };
+      extraction_values: {
+        food_exports_merchandise_pct: number | null;
+        fuel_exports_merchandise_pct: number | null;
+        ores_metals_exports_merchandise_pct: number | null;
+        natural_resource_rents_gdp_pct: number | null;
+      };
+      positive_structural_supports: string[];
+      guardrails_triggered: string[];
+      limitations: string[];
       rationale?: string | null;
       reviewed_by?: string | null;
       reviewed_at?: string | null;
@@ -303,10 +343,23 @@ The output schema is:
       productive_complexity_score: number | null;
       productive_capability_score: number | null;
       productive_capability_data_quality: "good" | "partial" | "sparse" | null;
+      productive_capability_values: {
+        manufactures_exports_merchandise_pct: number | null;
+        high_tech_exports_manufactured_pct: number | null;
+        medium_high_tech_exports_manufactured_pct: number | null;
+      };
+      extraction_values: {
+        food_exports_merchandise_pct: number | null;
+        fuel_exports_merchandise_pct: number | null;
+        ores_metals_exports_merchandise_pct: number | null;
+        natural_resource_rents_gdp_pct: number | null;
+      };
       geopolitical_financial_power_score: number | null;
       structural_supports: string[];
       positive_structural_supports: string[];
       negative_or_filter_supports: string[];
+      guardrails_triggered: string[];
+      profile: "industrial_semiperiphery" | "core_like_semiperiphery" | string | null;
       previous_proxy_class: string;
       downgraded_from_previous_proxy_core: boolean;
       classification_reason: string;
@@ -332,6 +385,10 @@ The output schema is:
     top_productive_capability_scores: Array<Record<string, unknown>>;
     high_score_kept_semi_periphery_productive_capability_missing_low: Array<Record<string, unknown>>;
     moved_from_semi_periphery_to_core_by_productive_capability: Array<Record<string, unknown>>;
+    downgraded_by_industrial_semiperiphery_guard: Array<Record<string, unknown>>;
+    kept_core_despite_warnings: Array<Record<string, unknown>>;
+    industrial_semiperiphery_records: Array<Record<string, unknown>>;
+    core_like_semiperiphery_records: Array<Record<string, unknown>>;
     downgraded_high_quality: Array<Record<string, unknown>>;
   };
   notes: string[];
@@ -340,7 +397,9 @@ The output schema is:
 
 The model treats demo records from `world-system.latest.json` as legacy demo seeds. Demo records may provide sample display values, but they are not reviewed structural classifications and cannot create `core`. If a demo seed says `core`, the builder emits low-confidence `semi-periphery` with `source: "legacy_demo_seed_reinterpreted"` unless a separate reviewed override exists. Derived records use World Bank WDI quality-of-life and GNI only as welfare proxies. Extraction autonomy and low extraction dependency are negative/filter supports: they can corroborate a core claim or block extraction-dependent cases, but they do not prove core status.
 
-Derived `core` requires `quality_of_life_score >= 0.88`, `extraction_dependency_score` missing or `<= 25`, `extraction_autonomy_score` missing or `>= 65`, `productive_capability_score >= 70`, productive capability data quality other than `sparse`, and no disputed/special/territory status unless explicitly reviewed. Disputed, special, and territory records cannot become derived core.
+Derived `core` requires `quality_of_life_score >= 0.90`, `productive_capability_score >= 85`, `productive_capability_data_quality == "good"`, `extraction_dependency_score <= 20`, `extraction_autonomy_score >= 70`, `high_tech_exports_manufactured_pct >= 20` or `medium_high_tech_exports_manufactured_pct >= 65`, direct evidence fields present, no `industrial_semiperiphery_guard`, and no disputed/special/territory status unless explicitly reviewed. Disputed, special, and territory records cannot become derived core.
+
+`industrial_semiperiphery_guard` is a provisional guardrail for cases where WDI manufacturing/high-tech export shares may indicate dependent industrial integration rather than core value-chain control. It triggers without value-capture/GVC evidence when manufacturing share is high but high-tech depth is modest, medium/high-tech share is high but high-tech share is below 20 percent, food exports remain structurally significant, or the map unit is on the transparent provisional watchlist `CRI`, `HUN`, `LTU`, `POL`, `SVN`, `EST`. Guarded productive-capability candidates are emitted as `semi-periphery` with `profile: "industrial_semiperiphery"`. This watchlist is a methodological safeguard, not a final classification, and should be removed or overridden once OECD TiVA/GVC/value-capture evidence exists.
 
 Real manual classifications use `static/data/world-system.curated-overrides.json`:
 

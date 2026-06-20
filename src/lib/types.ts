@@ -95,9 +95,21 @@ export interface WorldSystemAssessment {
 		| string;
 	model_status?: 'provisional' | 'provisional_conservative_proxy' | string;
 	explanation: string;
+	profile?: 'industrial_semiperiphery' | 'core_like_semiperiphery' | string | null;
+	quality_of_life_score?: number | null;
+	productive_capability_score?: number | null;
+	productive_capability_data_quality?: 'good' | 'partial' | 'sparse' | null;
+	extraction_dependency_score?: number | null;
+	extraction_autonomy_score?: number | null;
+	productive_capability_values?: Partial<
+		Record<ProductiveCapabilityValueKey, number | null>
+	>;
+	extraction_values?: Partial<Record<ExtractionEvidenceValueKey, number | null>>;
 	structural_supports?: string[];
 	positive_structural_supports?: string[];
 	negative_or_filter_supports?: string[];
+	guardrails_triggered?: string[];
+	limitations?: string[];
 	classification_reason?: string;
 }
 
@@ -252,6 +264,12 @@ export type ExtractionDependencyValueKey =
 	| 'high_tech_exports_manufactured_pct'
 	| 'medium_high_tech_exports_manufactured_pct';
 
+export type ExtractionEvidenceValueKey =
+	| 'food_exports_merchandise_pct'
+	| 'fuel_exports_merchandise_pct'
+	| 'ores_metals_exports_merchandise_pct'
+	| 'natural_resource_rents_gdp_pct';
+
 export interface WorldBankExtractionRecord {
 	id: MapUnitId;
 	source_country_code: string;
@@ -322,6 +340,19 @@ export interface ProvisionalWorldSystemRecord {
 			| 'legacy_demo_seed_reinterpreted'
 			| 'curated_reviewed';
 		explanation: string;
+		profile?: 'industrial_semiperiphery' | 'core_like_semiperiphery' | string | null;
+		quality_of_life_score?: number | null;
+		productive_capability_score?: number | null;
+		productive_capability_data_quality?: 'good' | 'partial' | 'sparse' | null;
+		extraction_dependency_score?: number | null;
+		extraction_autonomy_score?: number | null;
+		productive_capability_values?: Partial<
+			Record<ProductiveCapabilityValueKey, number | null>
+		>;
+		extraction_values?: Partial<Record<ExtractionEvidenceValueKey, number | null>>;
+		positive_structural_supports?: string[];
+		guardrails_triggered?: string[];
+		limitations?: string[];
 		rationale?: string | null;
 		reviewed_by?: string | null;
 		reviewed_at?: string | null;
@@ -337,10 +368,16 @@ export interface ProvisionalWorldSystemRecord {
 		productive_complexity_score?: number | null;
 		productive_capability_score?: number | null;
 		productive_capability_data_quality?: 'good' | 'partial' | 'sparse' | null;
+		productive_capability_values?: Partial<
+			Record<ProductiveCapabilityValueKey, number | null>
+		>;
+		extraction_values?: Partial<Record<ExtractionEvidenceValueKey, number | null>>;
 		geopolitical_financial_power_score?: number | null;
 		structural_supports?: string[];
 		positive_structural_supports?: string[];
 		negative_or_filter_supports?: string[];
+		guardrails_triggered?: string[];
+		profile?: 'industrial_semiperiphery' | 'core_like_semiperiphery' | string | null;
 		previous_proxy_class?: WorldSystemClass;
 		downgraded_from_previous_proxy_core?: boolean;
 		classification_reason?: string;

@@ -314,9 +314,23 @@
 					source: record.world_system.source,
 					model_status: provisionalData.model_status,
 					explanation: record.world_system.explanation,
+					profile: record.world_system.profile,
+					quality_of_life_score: record.world_system.quality_of_life_score,
+					productive_capability_score: record.world_system.productive_capability_score,
+					productive_capability_data_quality:
+						record.world_system.productive_capability_data_quality,
+					extraction_dependency_score: record.world_system.extraction_dependency_score,
+					extraction_autonomy_score: record.world_system.extraction_autonomy_score,
+					productive_capability_values: record.world_system.productive_capability_values,
+					extraction_values: record.world_system.extraction_values,
 					structural_supports: record.components.structural_supports ?? [],
-					positive_structural_supports: record.components.positive_structural_supports ?? [],
+					positive_structural_supports:
+						record.world_system.positive_structural_supports ??
+						record.components.positive_structural_supports ??
+						[],
 					negative_or_filter_supports: record.components.negative_or_filter_supports ?? [],
+					guardrails_triggered: record.world_system.guardrails_triggered ?? [],
+					limitations: record.world_system.limitations ?? [],
 					classification_reason: record.components.classification_reason
 				},
 				sources: [...new Set([...unit.sources, ...provisionalData.source_ids])]
